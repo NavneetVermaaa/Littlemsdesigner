@@ -1,0 +1,1948 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interior Designer's Material Library | Little Ms Designer</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+    rel="stylesheet">
+    
+  <style>
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #f5f5f5;
+      color: #2d2d2d;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    :root {
+      --navy: #1e2d4a;
+      --blue: #2e5d9e;
+      --blue-mid: #3a6bb5;
+      --blue-light: #e8eef8;
+      --white: #ffffff;
+      --off-white: #f5f5f5;
+      --light: #f0f0f0;
+      --border: #ddd;
+      --text: #2d2d2d;
+      --text-mid: #555;
+      --text-light: #888;
+      --hero-bg: #ebebeb;
+    }
+
+    /* HEADER */
+    .lmd-header {
+      background: var(--white);
+      border-bottom: 2px solid var(--border);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+    }
+
+    .header-search {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
+    }
+
+    .header-search input {
+      width: 100%;
+      padding: 11px 18px 11px 42px;
+      border: 1.5px solid var(--border);
+      border-radius: 6px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      background: var(--light);
+      color: var(--text);
+      outline: none;
+      transition: border 0.2s, background 0.2s;
+    }
+
+    .header-search input:focus {
+      border-color: var(--blue);
+      background: var(--white);
+    }
+
+    .header-search svg {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-light);
+    }
+
+    /* HERO */
+    .hero-banner {
+      background: var(--hero-bg);
+      padding: 52px 24px 44px;
+      text-align: center;
+    }
+
+    .hero-h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 6vw, 52px);
+      font-weight: 600;
+      line-height: 1.15;
+      color: var(--navy);
+      margin-bottom: 14px;
+    }
+
+    .hero-h1 em {
+      font-style: italic;
+      color: var(--blue);
+    }
+
+    .hero-sub {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--text-mid);
+      max-width: 520px;
+      margin: 0 auto 32px;
+      line-height: 1.7;
+    }
+
+    .hero-pills {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+
+    .hero-pill {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      color: var(--navy);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 7px 16px;
+      border-radius: 100px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 0;
+      justify-content: center;
+      border-top: 1px solid var(--border);
+      padding-top: 28px;
+      flex-wrap: wrap;
+    }
+
+    .hero-stat {
+      padding: 0 28px;
+      border-right: 1px solid var(--border);
+    }
+
+    .hero-stat:last-child {
+      border-right: none;
+    }
+
+    .hero-stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 34px;
+      font-weight: 600;
+      color: var(--blue);
+      line-height: 1;
+    }
+
+    .hero-stat-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-top: 5px;
+    }
+
+    /* FILTER TABS */
+    .filter-tabs {
+      background: var(--white);
+      border-bottom: 2px solid var(--border);
+      padding: 0 16px;
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .filter-tabs::-webkit-scrollbar {
+      display: none;
+    }
+
+    .tab-btn {
+      padding: 15px 16px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      background: none;
+      border: none;
+      border-bottom: 3px solid transparent;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+
+    .tab-btn:hover {
+      color: var(--blue);
+    }
+
+    .tab-btn.active {
+      color: var(--blue);
+      border-bottom-color: var(--blue);
+    }
+
+    /* MAIN */
+    .main-wrap {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 32px 16px 80px;
+    }
+
+    .sec-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .sec-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(22px, 4vw, 28px);
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    .sec-count {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-light);
+    }
+
+    /* CATEGORY GRID */
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .cat-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.28s;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .cat-card:hover,
+    .cat-card:active {
+      border-color: var(--blue);
+      box-shadow: 0 6px 24px rgba(46, 93, 158, 0.14);
+      transform: translateY(-3px);
+    }
+
+    .cat-card.hidden {
+      display: none;
+    }
+
+    .cat-img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      display: block;
+      background: var(--light);
+    }
+
+    .cat-body {
+      padding: 14px 16px 16px;
+    }
+
+    .cat-name {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.3;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .cat-desc {
+      font-size: 11px;
+      color: var(--text-mid);
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .cat-cta {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue);
+    }
+
+    /* BACK BUTTON */
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      background: none;
+      border: 1.5px solid var(--border);
+      padding: 10px 18px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: 'Montserrat', sans-serif;
+      margin-bottom: 28px;
+      transition: all 0.2s;
+    }
+
+    .back-btn:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+    }
+
+    /* TABLE */
+    .material-section {
+      animation: fadeUp 0.32s ease;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: 8px;
+      border: 1.5px solid var(--border);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--white);
+      font-size: 13px;
+      min-width: 500px;
+    }
+
+    thead th {
+      background: var(--navy);
+      color: var(--white);
+      padding: 12px 16px;
+      text-align: left;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    tbody tr {
+      border-bottom: 1px solid #f0f0f0;
+      transition: background 0.15s;
+    }
+
+    tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    tbody tr:hover {
+      background: var(--blue-light);
+    }
+
+    tbody td {
+      padding: 12px 16px;
+      color: var(--text-mid);
+      line-height: 1.5;
+      vertical-align: top;
+      font-size: 13px;
+    }
+
+    td.t-name {
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    td.t-cat {
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    td.t-price {
+      font-weight: 700;
+      color: #2e5d9e;
+      white-space: nowrap;
+    }
+
+    td.t-brand {
+      font-size: 11px;
+      color: var(--text-light);
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--blue-light);
+      color: var(--blue);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    /* MATERIAL IMAGE */
+    .mat-image-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .mat-img-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .mat-img-card img {
+      width: 100%;
+      height: 110px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .mat-img-label {
+      padding: 8px 10px;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      line-height: 1.3;
+    }
+
+    /* DETAIL CARD */
+    .detail-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      max-width: 720px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .detail-card-head {
+      background: var(--navy);
+      color: var(--white);
+      padding: 20px 24px;
+    }
+
+    .detail-card-head h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    .d-row {
+      display: flex;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+    }
+
+    .d-row:last-child {
+      border-bottom: none;
+    }
+
+    .d-label {
+      flex-shrink: 0;
+      width: 160px;
+      background: var(--light);
+      padding: 14px 16px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue);
+      line-height: 1.4;
+    }
+
+    .d-value {
+      padding: 14px 16px;
+      color: var(--text-mid);
+      line-height: 1.7;
+      flex: 1;
+      font-size: 13px;
+    }
+
+    /* SPLIT COVER */
+    .cat-split {
+      width: 100%;
+      height: 150px;
+      display: flex;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cat-split-img {
+      flex: 1;
+      object-fit: cover;
+      display: block;
+      width: 50%;
+      height: 100%;
+    }
+
+    .cat-split-divider {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: var(--white);
+      transform: translateX(-50%);
+      z-index: 2;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .cat-split-label-left,
+    .cat-split-label-right {
+      position: absolute;
+      bottom: 8px;
+      background: rgba(30, 45, 74, 0.75);
+      color: #fff;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 7px;
+      border-radius: 2px;
+    }
+
+    .cat-split-label-left {
+      left: 6px;
+    }
+
+    .cat-split-label-right {
+      right: 6px;
+    }
+
+    /* FOOTER */
+    .lmd-footer {
+      background: var(--navy);
+      color: rgba(255, 255, 255, 0.5);
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 11px;
+      letter-spacing: 0.04em;
+    }
+
+    .lmd-footer a {
+      color: var(--blue-mid);
+      text-decoration: none;
+    }
+
+    /* NO RESULTS */
+    .no-results {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .no-results h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .no-results p {
+      color: var(--text-light);
+      font-size: 13px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 600px) {
+      .lmd-header {
+        padding: 12px 16px;
+      }
+
+      .hero-banner {
+        padding: 36px 16px 32px;
+      }
+
+      .hero-stat {
+        padding: 0 16px;
+      }
+
+      .hero-stat-num {
+        font-size: 26px;
+      }
+
+      .hero-stat-label {
+        font-size: 9px;
+      }
+
+      .cat-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .cat-img {
+        height: 120px;
+      }
+
+      .cat-name {
+        font-size: 11px;
+      }
+
+      .cat-desc {
+        display: none;
+      }
+
+      .main-wrap {
+        padding: 20px 12px 60px;
+      }
+
+      table {
+        font-size: 12px;
+      }
+
+      thead th {
+        font-size: 8px;
+        padding: 10px 10px;
+      }
+
+      tbody td {
+        padding: 10px 10px;
+        font-size: 12px;
+      }
+
+      .d-label {
+        width: 110px;
+        font-size: 8px;
+        padding: 12px 10px;
+      }
+
+      .d-value {
+        padding: 12px 10px;
+        font-size: 12px;
+      }
+
+      .mat-image-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .mat-img-card img {
+        height: 90px;
+      }
+
+      .sec-title {
+        font-size: 20px;
+      }
+
+      .back-btn {
+        font-size: 10px;
+        padding: 9px 14px;
+        margin-bottom: 20px;
+      }
+
+      .hero-pills {
+        gap: 7px;
+      }
+
+      .hero-pill {
+        font-size: 10px;
+        padding: 6px 12px;
+      }
+
+      .tab-btn {
+        padding: 13px 12px;
+        font-size: 9px;
+      }
+
+      .filter-tabs {
+        padding: 0 8px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .cat-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .cat-img {
+        height: 100px;
+      }
+    }
+
+    /* LIGHTBOX */
+    #lmd-lb {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, .92);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      cursor: zoom-out;
+    }
+
+    #lmd-lb.on {
+      display: flex;
+    }
+
+    #lmd-lb img {
+      max-width: min(90vw, 900px);
+      max-height: 88vh;
+      object-fit: contain;
+      border-radius: 6px;
+      box-shadow: 0 8px 60px rgba(0, 0, 0, .7);
+      cursor: default;
+      display: block;
+    }
+
+    #lmd-lb-cap {
+      position: fixed;
+      bottom: 22px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 255, 255, .1);
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      padding: 7px 18px;
+      border-radius: 100px;
+      backdrop-filter: blur(8px);
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    #lmd-lb-x {
+      position: fixed;
+      top: 16px;
+      right: 20px;
+      color: #fff;
+      font-size: 28px;
+      line-height: 1;
+      cursor: pointer;
+      opacity: .7;
+      z-index: 10000;
+      transition: opacity .15s;
+      background: none;
+      border: none;
+      font-family: sans-serif;
+      padding: 0;
+    }
+
+    #lmd-lb-x:hover {
+      opacity: 1;
+    }
+
+    /* COMPARE TABLE */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--white);
+      border-radius: 8px;
+      border: 1.5px solid var(--border);
+      overflow: hidden;
+      font-size: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      min-width: 480px;
+    }
+
+    .compare-table th {
+      background: var(--navy);
+      color: var(--white);
+      padding: 12px 14px;
+      text-align: left;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .compare-table td {
+      padding: 11px 14px;
+      border-bottom: 1px solid #f0f0f0;
+      color: var(--text-mid);
+      line-height: 1.6;
+      vertical-align: top;
+    }
+
+    .compare-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .compare-table tr:hover td {
+      background: var(--blue-light);
+    }
+
+    .compare-table td:first-child {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--navy);
+      background: var(--light);
+      white-space: nowrap;
+    }
+
+    /* THUMBNAIL */
+    td.t-th {
+      width: 50px;
+      min-width: 50px;
+      padding: 5px 7px !important;
+      vertical-align: middle !important;
+    }
+
+    .row-img {
+      width: 42px;
+      height: 42px;
+      object-fit: cover;
+      border-radius: 4px;
+      cursor: zoom-in;
+      border: 1.5px solid var(--border);
+      display: block;
+      transition: transform .15s, box-shadow .15s;
+    }
+
+    .row-img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, .2);
+    }
+
+    .th-ph {
+      width: 42px;
+      height: 42px;
+      border-radius: 4px;
+      background: var(--light);
+      border: 1.5px dashed var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      color: var(--text-light);
+    }
+
+    /* ITEM DETAIL */
+    .item-meta {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin-top: 4px;
+      flex-wrap: wrap;
+    }
+
+    .meta-cost {
+      background: #e8eef8;
+      color: #1e2d4a;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 100px;
+      letter-spacing: .06em;
+      white-space: nowrap;
+    }
+
+    .meta-lbl {
+      font-size: 10px;
+      font-weight: 600;
+      color: #888;
+    }
+
+    .item-detail {
+      margin-top: 6px;
+      font-size: 11px;
+      color: #555;
+      line-height: 1.7;
+      border-top: 1px solid #f0f0f0;
+      padding-top: 5px;
+    }
+
+    .item-detail b {
+      color: #1e2d4a;
+      font-weight: 700;
+    }
+
+    .item-detail div {
+      margin-bottom: 2px;
+    }
+
+    /* DETAIL TABLE */
+    .detail-tbl {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+      min-width: 800px;
+      background: var(--white);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .detail-tbl thead th {
+      background: var(--navy);
+      color: #fff;
+      padding: 12px 14px;
+      text-align: left;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .detail-tbl tbody tr {
+      border-bottom: 1px solid #f0f0f0;
+      transition: background .15s;
+    }
+
+    .detail-tbl tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    .detail-tbl tbody tr:hover {
+      background: var(--blue-light);
+    }
+
+    .detail-tbl tbody td {
+      padding: 14px;
+      color: var(--text-mid);
+      line-height: 1.5;
+      vertical-align: top;
+      font-size: 12px;
+    }
+
+    .detail-tbl .td-name {
+      font-weight: 700;
+      color: var(--navy);
+      min-width: 120px;
+    }
+
+    .detail-tbl .td-cost {
+      font-weight: 700;
+      color: var(--blue);
+      white-space: nowrap;
+      font-size: 11px;
+    }
+
+    .detail-tbl .td-pros {
+      color: #2d7a2d;
+      font-size: 11px;
+    }
+
+    .detail-tbl .td-cons {
+      color: #c0392b;
+      font-size: 11px;
+    }
+
+    .detail-tbl .td-use {
+      font-size: 11px;
+      font-style: italic;
+      color: var(--navy);
+    }
+
+    .detail-tbl .td-cost {
+      font-weight: 700;
+      color: #2e5d9e;
+      white-space: nowrap;
+      font-size: 12px;
+    }
+
+    .detail-tbl .td-pros {
+      color: #2e7d32;
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    .detail-tbl .td-cons {
+      color: #c0392b;
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    .detail-tbl .td-name {
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 13px;
+    }
+
+    .detail-tbl .t-th {
+      width: 80px;
+      min-width: 80px;
+      padding: 8px 10px !important;
+      vertical-align: middle !important;
+    }
+
+    .detail-tbl .row-img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 4px;
+      border: 1.5px solid var(--border);
+      display: block;
+    }
+
+    .detail-tbl .item-detail {
+      font-size: 11px;
+      color: #666;
+      margin-top: 6px;
+      line-height: 1.6;
+    }
+
+    /* SIDE GRID */
+    .st-grid-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .st-grid-img {
+      width: 100%;
+      border-radius: 6px;
+      border: 1.5px solid var(--border);
+      cursor: zoom-in;
+      display: block;
+      transition: transform .15s;
+    }
+
+    .st-grid-img:hover {
+      transform: scale(1.01);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, .12);
+    }
+
+    @media(max-width:600px) {
+      .st-grid-row {
+        grid-template-columns: 1fr;
+      }
+
+      .detail-tbl {
+        font-size: 11px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="lmd-header">
+    <div class="header-search">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="8" />
+        <path d="m21 21-4.35-4.35" />
+      </svg>
+      <input type="text" id="searchInput" placeholder="Search materials, brands, finishes…"
+        oninput="handleSearch(this.value)">
+    </div>
+  </header>
+
+  <div class="hero-banner" id="heroBanner">
+    <h1 class="hero-h1">Interior Designer's<br><em>Material Library</em></h1>
+    <p class="hero-sub">A complete curated reference of every finish, material, specification and brand — the exact
+      resource professional designers use with clients.</p>
+    <div class="hero-pills">
+      <span class="hero-pill">✓ 37 Categories</span>
+      <span class="hero-pill">✓ 200+ Materials</span>
+      <span class="hero-pill">✓ Price Ranges</span>
+      <span class="hero-pill">✓ Brand Recommendations</span>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">37</div>
+        <div class="hero-stat-label">Categories</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">200+</div>
+        <div class="hero-stat-label">Materials</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">100+</div>
+        <div class="hero-stat-label">Brands</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="filter-tabs" id="filterTabs">
+    <button class="tab-btn active" onclick="filterCats('all',this)">All</button>
+    <button class="tab-btn" onclick="filterCats('finishes',this)">Room Finishes</button>
+    <button class="tab-btn" onclick="filterCats('stone',this)">Stone & Tile</button>
+    <button class="tab-btn" onclick="filterCats('wood',this)">Wood & Laminates</button>
+    <button class="tab-btn" onclick="filterCats('glass',this)">Glass</button>
+    <button class="tab-btn" onclick="filterCats('special',this)">Natural Finishes</button>
+    <button class="tab-btn" onclick="filterCats('furniture',this)">Furniture</button>
+    <button class="tab-btn" onclick="filterCats('kitchen',this)">Kitchen</button>
+  </div>
+
+  <div class="main-wrap">
+    <div id="homeView">
+      <div class="sec-head">
+        <span class="sec-title">Browse by Category</span>
+        <span class="sec-count" id="catCount">37 categories</span>
+      </div>
+      <div class="cat-grid" id="catGrid">
+        <!-- ROOM FINISHES -->
+        <div class="cat-card" data-id="flooring" data-tag="finishes" onclick="showDetail('flooring')">
+          <img class="cat-img" src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=400&q=70"
+            alt="Flooring">
+          <div class="cat-body">
+            <div class="cat-name">Flooring Finishes</div>
+            <div class="cat-desc">27 materials — marble, wood, vinyl, tiles, concrete & more</div>
+            <div class="cat-cta">View 27 finishes →</div>
+          </div>
+        </div>
+        <div class="cat-card" data-id="wall" data-tag="finishes" onclick="showDetail('wall')">
+          <img class="cat-img" src="https://images.unsplash.com/photo-1615873968403-89e068629265?w=400&q=70" alt="Wall">
+          <div class="cat-body">
+            <div class="cat-name">Wall Finishes</div>
+            <div class="cat-desc">39 finishes — paint, plaster, panels, stone, wallpaper</div>
+            <div class="cat-cta">View 39 items →</div>
+          </div>
+        </div>
+        <div class="cat-card" data-id="ceiling" data-tag="finishes" onclick="showDetail('ceiling')">
+          <img class="cat-img" src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=400&q=70"
+            alt="Ceiling">
+          <div class="cat-body">
+            <div class="cat-name">False Ceiling Finishes</div>
+            <div class="cat-desc">19 types — POP, gypsum, wood, metal, stretch ceiling</div>
+            <div class="cat-cta">View 19 items →</div>
+          </div>
+        </div>
+        <!-- FURNITURE -->
+        <div class="cat-card" data-id="door" data-tag="furniture" onclick="showDetail('door')">
+          <img class="cat-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=70" alt="Door">
+          <div class="cat-body">
+            <div class="cat-name">Door Finishes</div>
+            <div class="cat-desc">Laminate, veneer, glass, duco, WPC and more</div>
+            <div class="cat-cta">View 8 items →</div>
+          </div>
+        </div>
+        <div class="cat-card" data-id="bed" data-tag="furniture" onclick="showDetail('bed')">
+          <img class="cat-img" src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe23?w=400&q=70" alt="Bed">
+          <div class="cat-body">
+            <div class="cat-name">Bed Finishes</div>
+            <div class="cat-desc">Laminate, upholstered, veneer, solid wood and more</div>
+            <div class="cat-cta">View 6 items →</div>
+          </div>
+        </div>
+        <div class="cat-card" data-id="headboard" data-tag="furniture" onclick="showDetail('headboard')">
+          <img class="cat-img" src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe23?w=400&q=70"
+            alt="Headboard">
+          <div class="cat-body">
+            <div class="cat-name">Headboard Finishes</div>
+            <div class="cat-desc">Fabric, cane, laminate, lime plaster, fluted panels</div>
+            <div class="cat-cta">View 7 items →</div>
+          </div>
+        </div>
+        <div class="cat-card" data-id="sidetable" data-tag="furniture" onclick="showDetail('sidetable')">
+          <img class="cat-img" src="https://images.unsplash.com/photo-1532372320572-cda25653a26d?w=400&q=70"
+            alt="Side Table">
+          <div class="cat-body">
+            <div class="cat-name">Side Table Finishes</div>
+            <div class="cat-desc">Laminate, marble, glass, duco, veneer</div>
+            <div class="cat-cta">View 5 items →</div>
+          </div>
+        </div>
+        <div class="cat-card" data-id="study" data-tag="furniture" onclick="showDetail('study')">
+          <img class="cat-img" src="https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=400&q=70"
+            alt="Study">
+          <div class="cat-body">
+            <div class="cat-name">Study Table Finishes</div>
+            <div class="cat-desc">Laminate, duco, veneer, microcement, marble top</div>
+            <div class="cat-cta">View 5 items →</div>
+          </div>
+        </div>
+        <div class="cat-card" data-id="dresser" data-tag="furniture" onclick="showDetail('dresser')">
+          <img class="cat-img" src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&q=70" alt="Dresser">
+          <div class="cat-body">
+            <div class="cat-name">Dresser Table Finishes</div>
+            <div class="cat-desc">Laminate, duco, acrylic high gloss, veneer, PU</div>
+            <div class="cat-cta">View 5 items →</div>
+          </div>
+        </div>
+        <div class="cat-card" data-id="wardrobe" data-tag="furniture" onclick="showDetail('wardrobe')">
+          <img class="cat-img" src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=400&q=70"
+            alt="Wardrobe">
+          <div class="cat-body">
+            <div class="cat-name">Wardrobe Shutter Finishes</div>
+            <div class="cat-desc">Top 11 — fluted glass, cane, laminate, mirror, acrylic</div>
+            <div class="cat-cta">View 11 items →</div>
+          </div>
+        </div>
+        <div class="cat-card" data-id="wardrobe-must" data-tag="furniture" onclick="showDetail('wardrobe-must')">
+          <img class="cat-img" src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=400&q=70"
+            alt="Wardrobe Must Haves">
+          <div class="cat-body">
+            <div class="cat-name">5 Wardrobe Must Haves</div>
+            <div class="cat-desc">Revolving rack, trouser pull-out, LED drawers and more</div>
+            <div class="cat-cta">View 5 items →</div>
+          </div>
+        </div>
+        <div class="cat-card" data-id="tvunit" data-tag="furniture" onclick="showDetail('tvunit')">
+          <img class="cat-img" src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=400&q=70"
+            alt="TV Unit">
+          <div class="cat-body">
+            <div class="cat-name">TV Unit Finishes</div>
+            <div class="cat-desc">Laminate, veneer, fluted panel, microcement, duco</div>
+            <div class="cat-cta">View 6 items →</div>
+          </div>
+        </div>
+        <!-- KITCHEN -->
+        <div class="cat-card" data-id="kitchen-counter" data-tag="kitchen" onclick="showDetail('kitchen-counter')">
+          <img class="cat-img" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=70"
+            alt="Kitchen Counter">
+          <div class="cat-body">
+            <div class="cat-name">Kitchen Counter Top</div>
+            <div class="cat-desc">Quartz, granite, marble, microcement, Corian, sintered stone</div>
+            <div class="cat-cta">View 6 options →</div>
+          </div>
+        </div>
+        <div class="cat-card" data-id="kitchen-shutter" data-tag="kitchen" onclick="showDetail('kitchen-shutter')">
+          <img class="cat-img" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=70"
+            alt="Kitchen Shutter">
+          <div class="cat-body">
+            <div class="cat-name">Kitchen Shutter Finishes</div>
+            <div class="cat-desc">Laminate, acrylic, PU, veneer, glass, profile shutters</div>
+            <div class="cat-cta">View 8 items →</div>
+          </div>
+        </div>
+        <div class="cat-card" data-id="kitchen-must" data-tag="kitchen" onclick="showDetail('kitchen-must')">
+          <img class="cat-img" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=70"
+            alt="Kitchen Must Haves">
+          <div class="cat-body">
+            <div class="cat-name">5 Kitchen Must Haves</div>
+            <div class="cat-desc">Corner drawers, waste bin, LED strips and more</div>
+            <div class="cat-cta">View 5 items →</div>
+          </div>
+        </div>
+        <!-- NATURAL FINISHES -->
+        <div class="cat-card" data-id="limewash" data-tag="special" onclick="showDetail('limewash')">
+          <img class="cat-img" src="https://images.unsplash.com/photo-1582582621959-48d27397dc69?w=400&q=70"
+            alt="Limewash">
+          <div class="cat-body">
+            <div class="cat-name">Limewash</div>
+            <div class="cat-desc">Natural brushed coating — soft chalky finish, eco-friendly</div>
+            <div class="cat-cta">Full guide →</div>
+          </div>
+        </div>
+        <div class="cat-card" data-id="limeplaster" data-tag="special" onclick="showDetail('limeplaster')">
+          <img class="cat-img" src="https://images.unsplash.com/photo-1582582621959-48d27397dc69?w=400&q=70"
+            alt="Lime Plaster">
+          <div class="cat-body">
+            <div class="cat-name">Lime Plaster</div>
+            <div class="cat-desc">Natural mineral plaster — smooth to textured, 20–50yr lifespan</div>
+            <div class="cat-cta">Full guide →</div>
+          </div>
+        </div>
+        <div class="cat-card" data-id="venetian" data-tag="special" onclick="showDetail('venetian')">
+          <img class="cat-img" src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=400&q=70"
+            alt="Venetian Plaster">
+          <div class="cat-body">
+            <div class="cat-name">Venetian Plaster</div>
+            <div class="cat-desc">Premium marble-like polished plaster — glossy, luxurious</div>
+            <div class="cat-cta">Full guide →</div>
+          </div>
+        </div>
+        <div class="cat-card" data-id="microcement" data-tag="special" onclick="showDetail('microcement')">
+          <img class="cat-img" src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=400&q=70"
+            alt="Microcement">
+          <div class="cat-body">
+            <div class="cat-name">Microcement</div>
+            <div class="cat-desc">Seamless concrete-look coating for floors, walls and counters</div>
+            <div class="cat-cta">Full guide →</div>
+          </div>
+        </div>
+        <div class="cat-card" data-id="clay" data-tag="special" onclick="showDetail('clay')">
+          <img class="cat-img" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=70"
+            alt="Clay Cladding">
+          <div class="cat-body">
+            <div class="cat-name">Clay Cladding</div>
+            <div class="cat-desc">Kiln-fired natural clay panels — earthy, warm, architectural</div>
+            <div class="cat-cta">Full guide →</div>
+          </div>
+        </div>
+        <div class="cat-card" data-id="metallic" data-tag="special" onclick="showDetail('metallic')">
+          <img class="cat-img" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&q=70"
+            alt="Liquid Metallic">
+          <div class="cat-body">
+            <div class="cat-name">Liquid Metallic Ombres</div>
+            <div class="cat-desc">Gradient metallic wall finish — gold, copper, silver, bronze</div>
+            <div class="cat-cta">Full guide →</div>
+          </div>
+        </div>
+        <div class="cat-card" data-id="compare-special" data-tag="special" onclick="showDetail('compare-special')">
+          <img class="cat-img" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=70"
+            alt="Natural Finishes Comparison">
+          <div class="cat-body">
+            <div class="cat-name">Natural Finishes Comparison</div>
+            <div class="cat-desc">Side-by-side: Limewash vs Lime Plaster vs Venetian vs Clay</div>
+            <div class="cat-cta">Comparison →</div>
+          </div>
+        </div>
+        <!-- STONE & TILE -->
+        <div class="cat-card" data-id="marbles" data-tag="stone" onclick="showDetail('marbles')">
+          <img class="cat-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=70" alt="Marbles">
+          <div class="cat-body">
+            <div class="cat-name">Marbles</div>
+            <div class="cat-desc">Italian & Indian marbles — types, appearance, price/sq.ft</div>
+            <div class="cat-cta">View 15 types →</div>
+          </div>
+        </div>
+        <div class="cat-card" data-id="tiles" data-tag="stone" onclick="showDetail('tiles')">
+          <img class="cat-img" src="https://images.unsplash.com/photo-1620641622396-e15e78c3dd26?w=400&q=70"
+            alt="Tiles">
+          <div class="cat-body">
+            <div class="cat-name">Tiles</div>
+            <div class="cat-desc">Vitrified, ceramic, porcelain, digital, large format, encaustic</div>
+            <div class="cat-cta">View 10 types →</div>
+          </div>
+        </div>
+        <div class="cat-card" data-id="marble-vs-tiles" data-tag="stone" onclick="showDetail('marble-vs-tiles')">
+          <div class="cat-split">
+            <img class="cat-split-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=70"
+              alt="Marble">
+            <div class="cat-split-divider"></div>
+            <img class="cat-split-img" src="https://images.unsplash.com/photo-1620641622396-e15e78c3dd26?w=400&q=70"
+              alt="Tiles">
+            <span class="cat-split-label-left">Marble</span>
+            <span class="cat-split-label-right">Tiles</span>
+          </div>
+          <div class="cat-body">
+            <div class="cat-name">Marble vs Tiles</div>
+            <div class="cat-desc">Price, durability, maintenance, best use — compared</div>
+            <div class="cat-cta">Comparison →</div>
+          </div>
+        </div>
+        <div class="cat-card" data-id="granite" data-tag="stone" onclick="showDetail('granite')">
+          <img class="cat-img" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=70" alt="Granite">
+          <div class="cat-body">
+            <div class="cat-name">Granite</div>
+            <div class="cat-desc">Black, Tan Brown, Kashmir White, Vizag Blue and more</div>
+            <div class="cat-cta">View 10 types →</div>
+          </div>
+        </div>
+        <div class="cat-card" data-id="quartz" data-tag="stone" onclick="showDetail('quartz')">
+          <img class="cat-img" src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=400&q=70"
+            alt="Quartz">
+          <div class="cat-body">
+            <div class="cat-name">Quartz</div>
+            <div class="cat-desc">Calacatta, Statuario, Nero, Sparkling White and more</div>
+            <div class="cat-cta">View 10 types →</div>
+          </div>
+        </div>
+        <div class="cat-card" data-id="quartzite" data-tag="stone" onclick="showDetail('quartzite')">
+          <img class="cat-img" src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=400&q=70"
+            alt="Quartzite">
+          <div class="cat-body">
+            <div class="cat-name">Quartzite</div>
+            <div class="cat-desc">Taj Mahal, Sea Pearl, Fantasy Brown and more premium quartzites</div>
+            <div class="cat-cta">View 8 types →</div>
+          </div>
+        </div>
+        <div class="cat-card" data-id="compare-stone" data-tag="stone" onclick="showDetail('compare-stone')">
+          <img class="cat-img" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=70"
+            alt="Stone Comparison">
+          <div class="cat-body">
+            <div class="cat-name">Granite vs Quartz vs Quartzite</div>
+            <div class="cat-desc">Hardness, price, heat resistance, stain resistance compared</div>
+            <div class="cat-cta">Comparison →</div>
+          </div>
+        </div>
+        <!-- GLASS -->
+        <div class="cat-card" data-id="glass" data-tag="glass" onclick="showDetail('glass')">
+          <img class="cat-img" src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=400&q=70" alt="Glass">
+          <div class="cat-body">
+            <div class="cat-name">Glass</div>
+            <div class="cat-desc">Clear, toughened, frosted, fluted, smart glass — all types</div>
+            <div class="cat-cta">View 10 types →</div>
+          </div>
+        </div>
+        <div class="cat-card" data-id="mirror" data-tag="glass" onclick="showDetail('mirror')">
+          <img class="cat-img" src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=400&q=70" alt="Mirror">
+          <div class="cat-body">
+            <div class="cat-name">Mirror</div>
+            <div class="cat-desc">Plain, antique, tinted mirror — sizes, prices, uses</div>
+            <div class="cat-cta">Full guide →</div>
+          </div>
+        </div>
+        <!-- WOOD & LAMINATES -->
+        <div class="cat-card" data-id="laminates" data-tag="wood" onclick="showDetail('laminates')">
+          <img class="cat-img" src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&q=70"
+            alt="Laminates">
+          <div class="cat-body">
+            <div class="cat-name">Laminates</div>
+            <div class="cat-desc">HPL, acrylic, designer, metallic, suede — all types with specs</div>
+            <div class="cat-cta">View 16 types →</div>
+          </div>
+        </div>
+        <div class="cat-card" data-id="veneer" data-tag="wood" onclick="showDetail('veneer')">
+          <img class="cat-img" src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&q=70"
+            alt="Veneer">
+          <div class="cat-body">
+            <div class="cat-name">Veneer</div>
+            <div class="cat-desc">Natural, recon, exotic, designer veneers — full guide</div>
+            <div class="cat-cta">View 18 types →</div>
+          </div>
+        </div>
+        <div class="cat-card" data-id="lam-vs-veneer" data-tag="wood" onclick="showDetail('lam-vs-veneer')">
+          <div class="cat-split">
+            <img class="cat-split-img" src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&q=70"
+              alt="Laminate">
+            <div class="cat-split-divider"></div>
+            <img class="cat-split-img" src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&q=70"
+              alt="Veneer">
+            <span class="cat-split-label-left">Laminate</span>
+            <span class="cat-split-label-right">Veneer</span>
+          </div>
+          <div class="cat-body">
+            <div class="cat-name">Laminate vs Veneer</div>
+            <div class="cat-desc">Material, feel, price, durability, eco-factor compared</div>
+            <div class="cat-cta">Comparison →</div>
+          </div>
+        </div>
+        <div class="cat-card" data-id="plywood" data-tag="wood" onclick="showDetail('plywood')">
+          <img class="cat-img" src="https://images.unsplash.com/photo-1504148455328-c376907d081c?w=400&q=70"
+            alt="Plywood">
+          <div class="cat-body">
+            <div class="cat-name">Plywood</div>
+            <div class="cat-desc">MR, BWR, Marine, MDF, HDHMR, blockboard — types & specs</div>
+            <div class="cat-cta">View 9 types →</div>
+          </div>
+        </div>
+        <div class="cat-card" data-id="wood-types" data-tag="wood" onclick="showDetail('wood-types')">
+          <img class="cat-img" src="https://images.unsplash.com/photo-1562663474-6cbb3eaa4d14?w=400&q=70" alt="Wood">
+          <div class="cat-body">
+            <div class="cat-name">Wood</div>
+            <div class="cat-desc">Teak, sheesham, mango, walnut, oak, pine, bamboo — full guide</div>
+            <div class="cat-cta">View 8 types →</div>
+          </div>
+        </div>
+        <!-- OVERVIEW -->
+        <div class="cat-card" data-id="overview" data-tag="all" onclick="showDetail('overview')">
+          <img class="cat-img" src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=400&q=70"
+            alt="Overview">
+          <div class="cat-body">
+            <div class="cat-name">Material Price Overview</div>
+            <div class="cat-desc">Quick price reference for all common interior materials</div>
+            <div class="cat-cta">View 20 materials →</div>
+          </div>
+        </div>
+        <div class="cat-card" data-id="top10" data-tag="all" onclick="showDetail('top10')">
+          <img class="cat-img" src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=400&q=70"
+            alt="Top 10">
+          <div class="cat-body">
+            <div class="cat-name">Top 10 Materials 2026</div>
+            <div class="cat-desc">The hottest, most trending materials for this year</div>
+            <div class="cat-cta">View 10 materials →</div>
+          </div>
+        </div>
+        <div class="cat-card" data-id="exp-look" data-tag="all" onclick="showDetail('exp-look')">
+          <img class="cat-img" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=70"
+            alt="Expensive Look">
+          <div class="cat-body">
+            <div class="cat-name">Materials That Look Expensive</div>
+            <div class="cat-desc">Looks ₹50L+, costs under ₹50K — the smart designer's list</div>
+            <div class="cat-cta">View 10 ideas →</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="detailView" style="display:none;">
+      <button class="back-btn" onclick="goHome()">
+        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path d="M19 12H5M12 5l-7 7 7 7" />
+        </svg>
+        All categories
+      </button>
+      <div id="detailContent" class="material-section"></div>
+    </div>
+
+    <div id="searchView" style="display:none;">
+      <div class="sec-head">
+        <span class="sec-title">Search Results</span>
+        <span class="sec-count" id="searchMeta"></span>
+      </div>
+      <div id="searchContent"></div>
+    </div>
+  </div>
+
+  <footer class="lmd-footer">
+    <p>© 2025 <a href="https://littlemsdesigner.com">Little Ms Designer</a> · Interior Designer's Material Library ·
+      Prices are indicative and subject to market variation.</p>
+  </footer>
+
+  <div id="lmd-lb" onclick="closeLightbox()"><button id="lmd-lb-x">×</button><img id="lmd-lb-img" src="" alt="">
+    <div id="lmd-lb-cap"></div>
+  </div>
+
+  <script>
+    /* TABLE DATA - Same as original */
+    const tableData = {
+      flooring: {
+        title: 'Flooring Finishes',
+        cols: ['#', 'Category', 'Material', 'Thickness', 'Price Range', 'Recommended Brands', 'Where to Use'],
+        rows: [
+          [1, 'Outdoor Flooring', 'WPC Deck Flooring', '20–25 mm', '₹350 – ₹900 / sq.ft', 'Inovar Flooring, VOX', 'Balconies, terraces, pool decks'],
+          [2, 'Vinyl Flooring', 'SPC Flooring', '4–8 mm', '₹180 – ₹350 / sq.ft', 'Welspun, Euro Pratik', 'Bedroom flooring, office flooring'],
+          [3, 'Vinyl Flooring', 'PVC Vinyl Flooring', '2–5 mm', '₹120 – ₹300 / sq.ft', 'Welspun, Euro Pratik', 'Bedrooms, office spaces, retail stores'],
+          [4, 'Wood Flooring', 'Laminate Wood', '8–12 mm', '₹120 – ₹350 / sq.ft', 'Pergo, Greenlam', 'Bedrooms, study rooms, offices'],
+          [5, 'Wood Flooring', 'Engineered Wood', '12–18 mm', '₹350 – ₹900 / sq.ft', 'Square Foot, Mikasa, Greenlam', 'Living rooms, bedrooms, luxury apartments'],
+          [6, 'Wood Flooring', 'Solid Wood', '18–20 mm', '₹600 – ₹2,000 / sq.ft', 'Square Foot, Mikasa Floors', 'Luxury living rooms, villas, premium bedrooms'],
+          [7, 'Natural Stone', 'Italian Marble', '16–20 mm', '₹250 – ₹8,000+ / sq.ft', 'Classic Marble Company', 'Living rooms, staircases, luxury bathrooms'],
+          [8, 'Natural Stone', 'Indian Marble', '16–20 mm', '₹90 – ₹600 / sq.ft', 'RK Marble, Bhandari Marble Group', 'Living rooms, bedrooms, staircases'],
+          [9, 'Natural Stone', 'Granite', '18–20 mm', '₹120 – ₹400 / sq.ft', 'RK Marble, Classic Marble Company', 'Staircases, exterior flooring'],
+          [10, 'Natural Stone', 'Kota Stone', '18–25 mm', '₹90 – ₹200 / sq.ft', 'Local quarries', 'Outdoor, staircases, utility areas'],
+        ]
+      },
+      wall: {
+        title: 'Wall Finishes',
+        cols: ['#', 'Category', 'Material', 'Thickness', 'Price Range', 'Recommended Brands', 'Where to Use'],
+        rows: [
+          [1, 'Decorative Paint', 'Texture Paint', '1–3 mm', '₹80 – ₹250/sq.ft', 'Asian Paints Royale Play, Nerolac', 'Living room feature walls, bedroom accent walls'],
+          [2, 'Spray Paint', 'PU Paint', '0.06–0.12 mm', '₹250 – ₹600/sq.ft', 'ICA Pidilite, Asian Paints PU', 'Wardrobe shutters, wall panels, furniture finishes'],
+          [3, 'Spray Paint', 'Duco Paint', '0.08–0.15 mm', '₹200 – ₹450/sq.ft', 'Asian Paints, ICA Pidilite', 'MDF panels, furniture, decorative wall panels'],
+          [4, 'Paint Finish', 'Emulsion Paint', '0.04–0.08 mm', '₹18 – ₹40/sq.ft', 'Asian Paints, Berger, Dulux', 'Living rooms, bedrooms, ceilings'],
+          [5, 'Paint Finish', 'Royale Paint', '0.04–0.08 mm', '₹40 – ₹80/sq.ft', 'Asian Paints Royale, Dulux Velvet Touch', 'Living rooms, master bedrooms'],
+          [6, 'Decorative Paint', 'Metallic Paint', '0.1–0.3 mm', '₹150 – ₹400/sq.ft', 'Asian Paints Royal Play', 'Luxury feature walls'],
+          [7, 'Decorative Paint', 'Stucco Finish', '1–3 mm', '₹250 – ₹700/sq.ft', 'Asian Paints', 'Premium living rooms'],
+          [8, 'Decorative Paint', 'Limewash Paint', '0.05–0.10 mm', '₹50 – ₹200/sq.ft', 'Limocoat', 'Premium living rooms, bedrooms'],
+          [9, 'Decorative Plaster', 'Lime Plaster', '1–2 mm', '₹150 – ₹500/sq.ft', 'Limocoat', 'Premium living rooms, bedrooms'],
+          [10, 'Wooden Panels', 'Veneer Paneling', '4–8 mm on ply/MDF', '₹250 – ₹700/sq.ft', 'Century Veneers, Greenply', 'TV walls, luxury bedrooms, living rooms'],
+        ]
+      },
+      ceiling: {
+        title: 'False Ceiling Finishes',
+        cols: ['#', 'Category', 'Material', 'Thickness', 'Price Range', 'Recommended Brands', 'Where to Use'],
+        rows: [
+          [1, 'False Ceiling', 'POP False Ceiling', '10–15 mm', '₹80 – ₹150/sq.ft', 'Local POP contractors', 'Living rooms, decorative ceilings'],
+          [2, 'False Ceiling', 'Gypsum Board Ceiling', '9–12 mm', '₹80 – ₹150/sq.ft', 'Gyproc, Saint Gobain', 'Homes, offices'],
+          [3, 'False Ceiling', 'Calcium Silicate Board', '6–12 mm', '₹70 – ₹140/sq.ft', 'Shera, Hilux', 'Bathrooms, balconies, moisture-prone areas'],
+          [4, 'False Ceiling', 'PVC Ceiling Panels', '6–10 mm', '₹120 – ₹300/sq.ft', 'Alstone, Ecoste', 'Kitchens, bathrooms, commercial interiors'],
+          [5, 'False Ceiling', 'Metal Ceiling (Aluminium/GI)', '0.5–1 mm', '₹250 – ₹700/sq.ft', 'Armstrong, Hunter Douglas', 'Offices, airports, commercial buildings'],
+          [6, 'False Ceiling', 'Wooden Ceiling Panels', '12–18 mm', '₹250 – ₹800/sq.ft', 'Greenpanel, CenturyPly', 'Luxury living rooms, lounges'],
+        ]
+      },
+      overview: {
+        title: 'Interior Material Price Overview',
+        cols: ['Material', 'Typical Price Range', 'Recommended Brands'],
+        rows: [
+          ['Vitrified Tiles', '₹60 – ₹250/sq.ft', 'Kajaria, Somany, Johnson'],
+          ['Ceramic Tiles', '₹40 – ₹120/sq.ft', 'Kajaria, Somany'],
+          ['Natural Marble', '₹150 – ₹1,200/sq.ft', 'RK Marble, Classic Marble Company'],
+          ['Granite', '₹120 – ₹400/sq.ft', 'Pokarna, Rashi Granite'],
+          ['Engineered Quartz', '₹350 – ₹800/sq.ft', 'Caesarstone, KalingaStone'],
+          ['Laminates (1mm)', '₹70 – ₹250/sq.ft', 'Greenlam, Merino, CenturyLaminates'],
+          ['Acrylic Laminates', '₹250 – ₹600/sq.ft', 'Greenlam, Stylam'],
+          ['Veneer', '₹80 – ₹250/sq.ft', 'Century Veneers, Durian'],
+          ['PU Polish', '₹180 – ₹450/sq.ft', 'ICA Pidilite, Asian Paints'],
+          ['Duco Paint', '₹150 – ₹350/sq.ft', 'Asian Paints, Berger'],
+        ]
+      },
+    };
+
+    const detailData = {
+      limewash: {
+        title: 'Limewash', props: [
+          { l: 'Material & Composition', v: 'Thin, brush-on coating made from slaked lime (lime putty) and water, with natural mineral pigments.' },
+          { l: 'Finish & Look', v: 'Soft, chalky, painterly matte finish with cloudy tonal variations.' },
+          { l: 'Durability', v: 'Moderate durability. Requires periodic recoating every 5–10 years.' },
+          { l: 'Best Used For', v: 'Feature walls, living rooms, bedrooms, heritage homes.' },
+          { l: 'Price Range', v: '₹50 – ₹200 / sq.ft' },
+          { l: 'Recommended Brands', v: 'Limocoat, Asian Paints Limewash range' },
+        ]
+      },
+      limeplaster: {
+        title: 'Lime Plaster', props: [
+          { l: 'Material & Composition', v: 'Natural wall finish made from slaked lime, fine sand or marble dust, and water.' },
+          { l: 'Finish & Look', v: 'Smooth to lightly textured matte finish with subtle tonal variation.' },
+          { l: 'Durability', v: 'Highly durable. Lifespan of 20–50 years with minimal maintenance.' },
+          { l: 'Best Used For', v: 'Premium living rooms, master bedrooms, bathrooms, villas.' },
+          { l: 'Price Range', v: '₹150 – ₹500 / sq.ft' },
+          { l: 'Recommended Brands', v: 'Limocoat, Kreidezeit' },
+        ]
+      },
+      venetian: {
+        title: 'Venetian Plaster', props: [
+          { l: 'Material & Composition', v: 'Premium decorative plaster made from slaked lime combined with very fine marble dust.' },
+          { l: 'Finish & Look', v: 'Smooth, glossy to satin finish with high depth and translucency.' },
+          { l: 'Durability', v: 'Very durable. Lasts 15–30 years.' },
+          { l: 'Best Used For', v: 'Luxury living rooms, premium bedrooms, hotel lobbies.' },
+          { l: 'Price Range', v: '₹250 – ₹600/sq.ft' },
+          { l: 'Recommended Brands', v: 'San Marco, Novacolor, Asian Paints Royale Play' },
+        ]
+      },
+      microcement: {
+        title: 'Microcement', props: [
+          { l: 'Material & Composition', v: 'Cement-based decorative coating made from cement, fine aggregates, polymers, resins, and pigments.' },
+          { l: 'Finish & Look', v: 'Seamless, modern finish ranging from matte to satin.' },
+          { l: 'Durability', v: 'Excellent durability when sealed properly.' },
+          { l: 'Best Used For', v: 'Modern homes, bathrooms, kitchen counters, floors.' },
+          { l: 'Price Range', v: '₹300 – ₹700 / sq.ft' },
+          { l: 'Recommended Brands', v: 'Ideal Work, Topciment, Terraco' },
+        ]
+      },
+      clay: {
+        title: 'Clay Cladding', props: [
+          { l: 'Material & Composition', v: 'Natural clay shaped and kiln-fired into panels, tiles, or bricks.' },
+          { l: 'Finish & Look', v: 'Earthy, warm aesthetic with matte to slightly textured finish.' },
+          { l: 'Durability', v: 'Very durable. Low maintenance.' },
+          { l: 'Best Used For', v: 'Feature walls, exterior facades, courtyards, villas.' },
+          { l: 'Price Range', v: '₹120 – ₹450 / sq.ft' },
+          { l: 'Recommended Brands', v: 'Porotherm, ATC, Naveen Clay Products' },
+        ]
+      },
+      metallic: {
+        title: 'Liquid Metallic Ombres', props: [
+          { l: 'Material & Composition', v: 'Decorative coating made from water-based metallic paints containing mica pigments.' },
+          { l: 'Finish & Look', v: 'Luxurious metallic finish with gradient colour transition (ombré effect).' },
+          { l: 'Durability', v: 'Moderate durability. Best used in low-traffic feature walls.' },
+          { l: 'Best Used For', v: 'Luxury feature walls, headboards, TV unit backdrops.' },
+          { l: 'Price Range', v: '₹1,200 – ₹4,000 / sq.ft' },
+          { l: 'Recommended Brands', v: 'Midas Metal, De Castelli' },
+        ]
+      },
+      mirror: {
+        title: 'Mirror & Reflective Glass', props: [
+          { l: 'Description', v: 'Glass coated with a reflective metallic layer used for reflection.' },
+          { l: 'Types', v: 'Plain mirror, Antique mirror, Tinted mirror, Back-painted glass.' },
+          { l: 'Thickness', v: '4 mm, 5 mm, 6 mm standard. 8–12 mm for heavy feature pieces.' },
+          { l: 'Best Used For', v: 'Dressing rooms, bathrooms, wardrobe shutters, feature walls.' },
+          { l: 'Price Range', v: '₹80 – ₹400 / sq.ft' },
+          { l: 'Recommended Brands', v: 'Saint-Gobain, Modiguard, Gold Plus Glass' },
+        ]
+      },
+    };
+
+    const listData = {
+      microcement: {
+        title: 'Microcement — Detailed Guide',
+        items: [
+          'Microcement||₹180 – ₹450 / sq.ft||2–4 mm||Surface prepared → primer applied → base coat → 2–3 thin layers with sanding → sealed with PU/acrylic||Clean with mild detergent; avoid abrasives; resealing may be required over time||Seamless finish, modern aesthetic, highly versatile, waterproof when sealed, can be applied over existing surfaces||Requires skilled labour, risk of cracks if substrate moves, expensive vs paint/tiles, repair is difficult||Bathrooms, kitchens, living rooms, feature walls, floors, staircases, modern industrial interiors'
+        ]
+      },
+      flooring: {
+        title: 'Flooring Finishes — Detailed Guide',
+        items: [
+          'WPC Deck Flooring||₹350 – ₹900 / sq.ft||20–25 mm||Deck boards fixed on subframe using clips or screws; planks interlock or are secured||Sweep regularly; mop with mild cleaner; occasional sealing||Waterproof, eco-friendly, wood-like appearance, low maintenance||Can fade in direct sunlight; higher initial cost||Balconies, terraces, pool decks, outdoor areas',
+          'SPC Flooring||₹180 – ₹350 / sq.ft||4–8 mm||Click-lock system over level surface with underlayment; floating floor, no adhesive needed||Vacuum or sweep; damp mop with mild cleaner||Rigid core, waterproof, easy installation, comfortable underfoot||Less authentic wood feel; can dent under heavy loads||Bedrooms, office flooring, living rooms',
+          'PVC Vinyl Flooring||₹120 – ₹300 / sq.ft||2–5 mm||Adhesive applied or click-lock planks over level subfloor; flexible and easy to install||Sweep; damp mop; avoid harsh chemicals||Budget-friendly, waterproof, soft underfoot, wide design options||Less durable than SPC; can tear or peel over time||Bedrooms, office spaces, retail stores',
+          'Laminate Wood||₹120 – ₹350 / sq.ft||8–12 mm||Click-lock floating floor over underlayment; foam or cork padding underneath||Sweep or vacuum; damp mop; avoid excess water||Realistic wood look, scratch-resistant, DIY-friendly, affordable||Not waterproof; can swell if exposed to moisture||Bedrooms, study rooms, offices',
+          'Engineered Wood||₹350 – ₹900 / sq.ft||12–18 mm||Nailed, glued, or floating over subfloor; real wood veneer on top, can be refinished||Sweep; damp mop; refinish when worn||Real wood top layer, dimensionally stable, warm underfoot||Requires maintenance; sensitive to moisture||Living rooms, bedrooms, luxury apartments',
+          'Solid Wood||₹600 – ₹2,000 / sq.ft||18–20 mm||Nailed or screwed to joists; can be sanded and refinished multiple times over decades||Sweep; damp mop; periodic polishing||Premium natural look, extremely durable, timeless beauty||Expensive; needs skilled installation; expands/contracts seasonally||Luxury living rooms, villas, premium bedrooms',
+          'Italian Marble||₹250 – ₹8,000+ / sq.ft||16–20 mm||Laid on cement bed with grout; polished and sealed after installation||Mop with pH-neutral cleaner; periodic polishing and sealing||Luxurious appearance, unique veining, adds property value||Expensive; porous; scratches easily; needs regular maintenance||Living rooms, staircases, luxury bathrooms',
+          'Indian Marble||₹90 – ₹600 / sq.ft||16–20 mm||Laid on cement bed; grouted and polished; various finishes available||Regular cleaning; occasional polishing and sealing||Affordable variety; good range of colours and patterns||Less uniform than Italian marble; requires maintenance||Living rooms, bedrooms, staircases',
+          'Granite||₹120 – ₹400 / sq.ft||18–20 mm||Laid on cement bed with grout; polished or flamed finish applied||Easy cleaning; occasional sealing recommended||Extremely durable, heat-resistant, scratch-resistant, long-lasting||Limited designs; can look heavy; cold underfoot||Staircases, exterior flooring, kitchen counters',
+          'Kota Stone||₹90 – ₹200 / sq.ft||18–25 mm||Laid on cement bed; normally left with natural cleft finish; can be polished||Regular sweeping; occasional washing with water||Affordable, locally available, natural non-slip surface||Porous; limited polish; can be uneven in places||Outdoor areas, staircases, utility areas, gardens',
+          'Slate Stone||₹150 – ₹400 / sq.ft||10–15 mm||Laid on cement bed with natural uneven joints; grouted or left dry-stack||Sweep and wash; occasional sealing to prevent stains||Natural textured look, slip-resistant, durable, earthy aesthetic||Can be rough; limited colour options; edges may chip||Outdoor flooring, rustic interiors, pathways',
+          'Sandstone||₹80 – ₹250 / sq.ft||18–25 mm||Laid on cement bed; natural cleft finish or honed; outdoor or indoor use||Sweep regularly; power wash outdoor areas; seal for longevity||Rustic appearance, warm tones, natural slip-resistance, affordable||Absorbs water if unsealed; limited modern designs||Outdoor pathways, patios, garden areas',
+          'Cement Tiles||₹150 – ₹500 / sq.ft||16–20 mm||Laid on cement bed with spacers; requires sealing after installation||Sweep; damp mop; reseal periodically||Patterned vintage aesthetic, customizable colours, eco-friendly||Porous without sealer; can crack; cold underfoot||Feature floors, kitchens, bathrooms, patios',
+          'Vitrified Tiles||₹60 – ₹250 / sq.ft||8–12 mm||Laid with adhesive or cement; grouted and cleaned; various sizes available||Sweep and mop; easy cleaning||Durable, low porosity, wide range of finishes, affordable||Can feel cold; less premium than stone||Living rooms, bedrooms, commercial spaces',
+          'Ceramic Tiles||₹40 – ₹120 / sq.ft||6–10 mm||Laid with adhesive; grouted; suitable for walls and floors||Wipe clean; mop regularly||Budget-friendly, easy to clean, good for wet areas||Less durable than vitrified; chips can be visible||Bathrooms, kitchens, budget projects',
+          'Porcelain Tiles||₹120 – ₹400 / sq.ft||8–12 mm||Laid with adhesive; dense body requires special cutting tools||Sweep and damp mop; low maintenance||Dense, water-resistant, suitable for high-traffic areas||Heavier; requires professional cutting||Floors, walls, outdoor areas',
+          'Glazed Tiles||₹50 – ₹150 / sq.ft||6–10 mm||Laid with adhesive; glazed surface provides shine and protection||Wipe with damp cloth; easy cleaning||Glossy finish, stain-resistant, easy to maintain||Can be slippery when wet; shows scratches||Kitchens, bathrooms, feature walls',
+          'Digital Tiles||₹80 – ₹300 / sq.ft||8–12 mm||Laid with adhesive; prints allow realistic stone or wood patterns||Sweep and mop; easy cleaning||Realistic prints, huge variety, modern aesthetic||Grout lines visible; less durable than natural materials||Living rooms, feature walls, commercial spaces',
+          'Large Format Tiles||₹150 – ₹500 / sq.ft||6–12 mm||Laid with adhesive; requires levelling system for large slabs||Sweep and mop; easy cleaning||Minimal grout lines, seamless look, modern||Heavy to handle; requires professional installation||Living rooms, hallways, feature walls',
+          'Mosaic Tiles||₹100 – ₹400 / sq.ft||4–8 mm||Fixed on mesh sheets; laid with adhesive; grouted after setting||Clean with mild detergent; avoid harsh chemicals||Decorative patterns, adds visual interest, versatile||Grout maintenance required; can be expensive||Bathrooms, kitchens, accent areas',
+          'Hexagon Tiles||₹80 – ₹300 / sq.ft||8–12 mm||Laid with adhesive in honeycomb pattern; requires careful alignment||Sweep and mop; easy cleaning||Trendy geometric pattern, modern aesthetic, adds character||Installation complexity; visible grout lines||Feature floors, bathrooms, kitchens',
+          'Terrazzo Tiles||₹200 – ₹600 / sq.ft||12–20 mm||Laid on cement bed; requires polishing after installation||Sweep and mop; occasional polishing||Unique patterns, durable, sustainable, timeless||Heavy; limited suppliers; cold underfoot||Living rooms, hallways, commercial spaces',
+          'Polished Concrete||₹150 – ₹400 / sq.ft||10–20 mm||Poured and polished in place; can be stained or dyed||Sweep and damp mop; occasional resealing||Industrial modern look, seamless, customizable colours||Can crack over time; cold and hard underfoot||Modern lofts, commercial spaces, garages',
+          'Wooden Plank Tiles||₹80 – ₹250 / sq.ft||8–12 mm||Porcelain tiles with wood-look print; laid like regular tiles||Sweep and mop; easy cleaning||Wood-like appearance, water-resistant, easy maintenance||Less authentic feel than real wood||Living rooms, bedrooms, moisture-prone areas',
+          'Outdoor Tiles||₹100 – ₹350 / sq.ft||12–20 mm||Anti-skid tiles laid with adhesive; frost-resistant for outdoor use||Pressure wash outdoor areas; sweep regularly||Anti-skid surface, frost-resistant, weatherproof||Limited designs; can be rough underfoot||Patios, pool areas, outdoor steps',
+          'Anti-Skid Tiles||₹60 – ₹200 / sq.ft||8–12 mm||Laid with adhesive; textured surface provides grip||Sweep and mop; easy cleaning||Non-slip surface, safe for wet areas, practical||Limited aesthetic options; rougher texture||Bathrooms, pool areas, commercial kitchens',
+          'Encaustic Tiles||₹250 – ₹700 / sq.ft||10–16 mm||Laid on cement bed; pattern is inlaid, not printed||Sweep; damp mop; seal periodically||Handmade aesthetic, vibrant patterns, historic charm||Porous; expensive; requires skilled installation||Feature floors, entryways, patios'
+        ]
+      }
+    };
+
+    const compareData = {
+      'compare-special': {
+        title: 'Natural Finishes Comparison',
+        cols: ['Feature', 'Limewash', 'Lime Plaster', 'Venetian Plaster', 'Clay Cladding'],
+        rows: [
+          ['Finish', 'Matte, chalky', 'Smooth to textured', 'Glossy, marble-like', 'Matte, earthy'],
+          ['Durability', '5–10 years', '20–50 years', '15–30 years', '25+ years'],
+          ['Price/sq.ft', '₹50–₹200', '₹150–₹500', '₹250–₹600', '₹120–₹450'],
+          ['Best Use', 'Feature walls', 'Premium interiors', 'Luxury spaces', 'Architectural walls'],
+        ]
+      },
+      'marble-vs-tiles': {
+        title: 'Marble vs Tiles Comparison',
+        cols: ['Feature', 'Marble', 'Tiles'],
+        rows: [
+          ['Price/sq.ft', '₹90 – ₹8,000+', '₹40 – ₹400'],
+          ['Durability', '30–50 years with maintenance', '15–20 years'],
+          ['Maintenance', 'Regular polishing needed', 'Easy to clean'],
+          ['Best Use', 'Luxury living rooms, staircases', 'All rooms, budget-friendly'],
+        ]
+      },
+      'lam-vs-veneer': {
+        title: 'Laminate vs Veneer Comparison',
+        cols: ['Feature', 'Laminate', 'Veneer'],
+        rows: [
+          ['Material', 'Synthetic layers', 'Natural wood thin slice'],
+          ['Feel', 'Artificial texture', 'Natural wood grain'],
+          ['Price/sq.ft', '₹70–₹600', '₹80–₹250'],
+          ['Durability', 'High scratch resistance', 'Needs care, natural aging'],
+        ]
+      },
+      'compare-stone': {
+        title: 'Stone Comparison',
+        cols: ['Feature', 'Granite', 'Quartz', 'Quartzite'],
+        rows: [
+          ['Hardness (Mohs)', '6–7', '7', '7–8'],
+          ['Price/sq.ft', '₹120–₹400', '₹350–₹800', '₹300–₹1,200'],
+          ['Heat Resistance', 'Excellent', 'Good', 'Excellent'],
+          ['Stain Resistance', 'Needs sealing', 'Excellent', 'Good'],
+        ]
+      },
+      'compare-glass': {
+        title: 'Glass Types Comparison',
+        cols: ['Feature', 'Clear', 'Toughened', 'Frosted', 'Fluted'],
+        rows: [
+          ['Transparency', 'High', 'High', 'Medium', 'Medium'],
+          ['Price/sq.ft', '₹40–₹150', '₹180–₹400', '₹150–₹350', '₹350–₹900'],
+          ['Safety', 'Standard', 'High (safety)', 'Standard', 'Standard'],
+        ]
+      },
+    };
+
+    /* FILTER FUNCTIONALITY */
+    function filterCats(filter, btn) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const cards = document.querySelectorAll('.cat-card');
+      let visible = 0;
+      cards.forEach(card => {
+        const tag = card.dataset.tag;
+        if (filter === 'all' || tag === filter || tag === 'all') {
+          card.classList.remove('hidden');
+          visible++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+      document.getElementById('catCount').textContent = visible + ' categories';
+    }
+
+    /* SEARCH FUNCTIONALITY */
+    function handleSearch(query) {
+      query = query.toLowerCase().trim();
+      if (!query) {
+        goHome();
+        return;
+      }
+
+      document.getElementById('homeView').style.display = 'none';
+      document.getElementById('detailView').style.display = 'none';
+      document.getElementById('searchView').style.display = 'block';
+
+      const cards = document.querySelectorAll('.cat-card');
+      let results = [];
+      cards.forEach(card => {
+        const name = card.querySelector('.cat-name').textContent.toLowerCase();
+        const desc = card.querySelector('.cat-desc').textContent.toLowerCase();
+        if (name.includes(query) || desc.includes(query)) {
+          results.push(card.outerHTML);
+        }
+      });
+
+      document.getElementById('searchMeta').textContent = results.length + ' results';
+      document.getElementById('searchContent').innerHTML = results.length ?
+        '<div class="cat-grid">' + results.join('') + '</div>' :
+        '<div class="no-results"><h3>No results found</h3><p>Try different keywords</p></div>';
+    }
+
+    /* DETAIL VIEW */
+    function showDetail(id) {
+      document.getElementById('homeView').style.display = 'none';
+      document.getElementById('searchView').style.display = 'none';
+      document.getElementById('detailView').style.display = 'block';
+
+      const content = document.getElementById('detailContent');
+
+      if (listData[id]) {
+        content.innerHTML = renderDetailTable(listData[id]);
+      } else if (tableData[id]) {
+        content.innerHTML = renderTable(tableData[id]);
+      } else if (detailData[id]) {
+        content.innerHTML = renderDetail(detailData[id]);
+      } else if (compareData[id]) {
+        content.innerHTML = renderCompareTable(compareData[id]);
+      } else {
+        content.innerHTML = '<div class="no-results"><h3>Content coming soon</h3><p>This category is being updated.</p></div>';
+      }
+      window.scrollTo(0, 0);
+    }
+
+    function renderTable(data) {
+      let html = `<div class="sec-head"><span class="sec-title">${data.title}</span><span class="sec-count">${data.rows.length} items</span></div>`;
+      html += '<div class="table-wrap"><table><thead><tr>';
+      data.cols.forEach(col => html += `<th>${col}</th>`);
+      html += '</tr></thead><tbody>';
+      data.rows.forEach(row => {
+        html += '<tr>';
+        row.forEach((cell, i) => {
+          if (i === 1) html += `<td class="t-cat">${cell}</td>`;
+          else if (i === 4) html += `<td class="t-price">${cell}</td>`;
+          else if (i === 5) html += `<td class="t-brand">${cell}</td>`;
+          else html += `<td>${cell}</td>`;
+        });
+        html += '</tr>';
+      });
+      html += '</tbody></table></div>';
+      return html;
+    }
+
+    function renderDetailTable(data) {
+      const needThumb = data.items && data.items.length > 0 && data.items[0].includes('||');
+      const thumbNeeded = true;
+      
+      let html = `<div class="sec-head"><span class="sec-title">${data.title}</span><span class="sec-count">${data.items.length} finishes</span></div>`;
+      html += '<div class="table-wrap"><table class="detail-tbl"><thead><tr>';
+      html += '<th style="width:80px">&#x1F4F7;</th>';
+      html += '<th style="width:40px">#</th>';
+      html += '<th>Material / Finish</th>';
+      html += '<th>Cost</th>';
+      html += '<th>Thickness</th>';
+      html += '<th>Pros</th>';
+      html += '<th>Cons</th>';
+      html += '<th>Best Use</th>';
+      html += '</tr></thead><tbody>';
+      
+      data.items.forEach((item, i) => {
+        const parts = item.split('||');
+        const name = parts[0] || item;
+        const cost = parts[1] || '';
+        const thick = parts[2] || '';
+        const install = parts[3] || '';
+        const maint = parts[4] || '';
+        const pros = parts[5] || '';
+        const cons = parts[6] || '';
+        const bestuse = parts[7] || '';
+        
+        html += '<tr>';
+        html += `<td class="t-th"><img class="row-img" src="https://via.placeholder.com/80" alt="${name}" loading="lazy"></td>`;
+        html += `<td><span class="badge">${String(i + 1).padStart(2, '0')}</span></td>`;
+        html += `<td class="td-name">${name}`;
+        if (install || maint) {
+          html += `<div class="item-detail" style="font-size:11px;color:#666;margin-top:4px">`;
+          if (install) html += `<b>Install:</b> ${install}<br>`;
+          if (maint) html += `<b>Maintenance:</b> ${maint}`;
+          html += '</div>';
+        }
+        html += '</td>';
+        html += `<td class="td-cost">${cost}</td>`;
+        html += `<td style="font-size:11px;color:#555">${thick}</td>`;
+        html += `<td class="td-pros">${pros}</td>`;
+        html += `<td class="td-cons">${cons}</td>`;
+        html += `<td class="td-use">${bestuse}</td>`;
+        html += '</tr>';
+      });
+      
+      html += '</tbody></table></div>';
+      return html;
+    }
+
+    function renderDetail(data) {
+      let html = `<div class="detail-card">
+        <div class="detail-card-head"><h3>${data.title}</h3></div>`;
+      data.props.forEach(prop => {
+        html += `<div class="d-row"><div class="d-label">${prop.l}</div><div class="d-value">${prop.v}</div></div>`;
+      });
+      html += '</div>';
+      return html;
+    }
+
+    function renderCompareTable(data) {
+      let html = `<div class="sec-head"><span class="sec-title">${data.title}</span></div>`;
+      html += '<div class="table-wrap"><table class="compare-table"><thead><tr>';
+      data.cols.forEach(col => html += `<th>${col}</th>`);
+      html += '</tr></thead><tbody>';
+      data.rows.forEach(row => {
+        html += '<tr>';
+        row.forEach((cell, i) => html += `<td>${cell}</td>`);
+        html += '</tr>';
+      });
+      html += '</tbody></table></div>';
+      return html;
+    }
+
+    function goHome() {
+      document.getElementById('homeView').style.display = 'block';
+      document.getElementById('detailView').style.display = 'none';
+      document.getElementById('searchView').style.display = 'none';
+      document.getElementById('searchInput').value = '';
+    }
+
+    /* LIGHTBOX */
+    function openLightbox(src, caption) {
+      document.getElementById('lmd-lb-img').src = src;
+      document.getElementById('lmd-lb-cap').textContent = caption;
+      document.getElementById('lmd-lb').classList.add('on');
+    }
+    function closeLightbox() {
+      document.getElementById('lmd-lb').classList.remove('on');
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+  </script>
+</body>
+
+</html>
