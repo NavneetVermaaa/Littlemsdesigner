@@ -219,7 +219,7 @@
 
     /* -- MAIN -- */
     .main-wrap {
-      max-width: 1280px;
+      max-width: 1600px;
       margin: 0 auto;
       padding: 32px 16px 80px;
     }
@@ -363,6 +363,7 @@
       border: 1.5px solid var(--border);
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
       -webkit-overflow-scrolling: touch;
+      max-width: 100%;
     }
 
     table {
@@ -370,7 +371,8 @@
       border-collapse: collapse;
       background: var(--white);
       font-size: 13px;
-      min-width: 500px;
+      min-width: 900px;
+      table-layout: auto;
     }
 
     thead th {
@@ -382,7 +384,6 @@
       font-weight: 700;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      white-space: nowrap;
     }
 
     tbody tr {
@@ -584,6 +585,7 @@
       font-size: 18px;
       color: var(--blue);
       font-weight: 400;
+      white-space: nowrap;
     }
 
     /* -- NO RESULTS -- */
@@ -1005,9 +1007,11 @@
     .detail-tbl tbody td {
       padding: 10px 11px;
       color: var(--mid);
-      line-height: 1.5;
+      line-height: 1.6;
       vertical-align: top;
       font-size: 12px;
+      white-space: normal;
+      word-break: break-word;
     }
 
     .detail-tbl .td-name {
@@ -1019,7 +1023,6 @@
     .detail-tbl .td-cost {
       font-weight: 700;
       color: #2e5d9e;
-      white-space: nowrap;
       font-size: 12px;
     }
 
@@ -1046,6 +1049,19 @@
     .top10-table td,
     .exp-look-table td {
       color: #5f6b7a;
+      white-space: normal;
+      word-wrap: break-word;
+    }
+
+    /* Global Table Cell Full Content Display */
+    .detail-tbl td,
+    .top10-table td,
+    .exp-look-table td,
+    .compare-table td,
+    .table-wrap table td {
+      white-space: normal;
+      word-wrap: break-word;
+      word-break: break-word;
     }
 
     .top10-table td.t-name,
@@ -1054,19 +1070,30 @@
       font-weight: 700;
     }
 
+    .material-desc {
+      display: block;
+      font-size: 12px;
+      line-height: 1.4;
+      color: #6b7a90;
+      margin-top: 4px;
+    }
+
     .top10-table td:nth-child(8),
     .exp-look-table td:nth-child(9) {
-      color: #2e7d32;
+      color: #2e7d32 !important;
+      min-width: 250px;
+      max-width: 350px;
     }
 
     .top10-table td:nth-child(9),
     .exp-look-table td:nth-child(10) {
-      color: #c62828;
+      color: #c62828 !important;
+      min-width: 250px;
+      max-width: 350px;
     }
 
     .top10-table td:nth-child(10),
     .exp-look-table td:nth-child(11) {
-      color: #6b7a90;
     }
 
     .top10-table td:nth-child(4),
@@ -1250,6 +1277,7 @@
         "Marble": "23.Marbles.jpg",
         "Tiles": "24.Tiles.jpg",
         "Types of Tiles": "24.Tiles.jpg",
+        "TILES": "24.Tiles.jpg",
         "Granite": "26.Granite.jpg",
         "Quartz": "27.Quartz.jpg",
         "Quartzite": "28.Quartzite.jpg",
@@ -1266,7 +1294,9 @@
         "Wood": "36.Wood.jpg",
         "Material Price Overview": "37.Material Price Overview.jpg",
         "Top 10 Materials 2026": "38.Top 10 materials 2026.jpg",
-        "Materials That Look Expensive": "39.Materials that look expensive.jpg"
+        "Materials That Look Expensive": "39.Materials that look expensive.jpg",
+        "Marble vs Tiles": "marble vs tiles.png",
+        "Laminate vs Veneer": "laminate vs vaneer.png"
       },
 
       // Maps internal category IDs to their physical folder names
@@ -1376,7 +1406,8 @@
       // -- CIVIL MATERIALS --
       { id: 'italian-marbles', img: PIMG.marble, name: 'Italian Marbles', desc: 'Premium Italian marble types with pricing', tag: 'civil', cnt: '10 types' },
       { id: 'indian-marbles', img: PIMG.marble, name: 'Indian Marbles', desc: 'Indian marble types with pricing', tag: 'civil', cnt: '5 types' },
-      { id: 'marble-vs-tiles', img: splitCoverHTML(PIMG.marbleLeft, PIMG.tilesRight), name: 'Marble vs Tiles', desc: 'Price, durability, maintenance, best use – compared', tag: 'civil', cnt: 'Comparison' },
+      { id: 'tiles', img: PIMG.tiles, name: 'TILES', desc: 'Types of Tiles (Detailed)', tag: 'civil', cnt: '6 types' },
+      { id: 'marble-vs-tiles', name: 'Marble vs Tiles', desc: 'Price, durability, maintenance, best use – compared', tag: 'civil', cnt: 'Comparison' },
       { id: 'granite', img: PIMG.granite, name: 'Granite', desc: 'Black, Tan Brown, Kashmir White, Vizag Blue and more', tag: 'civil', cnt: '7 types' },
       { id: 'quartz', img: PIMG.quartz, name: 'Quartz', desc: 'Calacatta, Statuario, Nero, Sparkling White and more', tag: 'civil', cnt: '6 types' },
       { id: 'quartzite', img: PIMG.quartzite, name: 'Quartzite', desc: 'Taj Mahal, Sea Pearl, Fantasy Brown and more premium quartzites', tag: 'civil', cnt: '5 types' },
@@ -1384,7 +1415,7 @@
       // -- CARPENTRY MATERIALS --
       { id: 'laminates', img: PIMG.laminate, name: 'Laminates', desc: 'HPL, acrylic, designer, metallic, suede – all types with specs', tag: 'carpentry', cnt: '16 types' },
       { id: 'veneer', img: PIMG.veneer, name: 'Veneer', desc: 'Natural, recon, exotic, designer veneers – full guide', tag: 'carpentry', cnt: '18 types' },
-      { id: 'lam-vs-veneer', img: splitCoverHTML(PIMG.lamLeft, PIMG.veneerRight), name: 'Laminate vs Veneer', desc: 'Material, feel, price, durability, eco-factor compared', tag: 'carpentry', cnt: 'Comparison' },
+      { id: 'lam-vs-veneer', name: 'Laminate vs Veneer', desc: 'Material, feel, price, durability, eco-factor compared', tag: 'carpentry', cnt: 'Comparison' },
       { id: 'plywood', img: PIMG.plywood, name: 'Plywood', desc: 'MR, BWR, Marine, MDF, HDHMR, blockboard – types & specs', tag: 'carpentry', cnt: '9 types' },
       { id: 'wood-types', img: PIMG.wood, name: 'Wood', desc: 'Teak, sheesham, mango, walnut, oak, pine, bamboo – full guide', tag: 'carpentry', cnt: '8 types' },
       { id: 'glass', img: PIMG.glass, name: 'Glass', desc: 'Clear, toughened, frosted, fluted, smart glass – all types', tag: 'carpentry', cnt: '10 types' },
@@ -1869,28 +1900,29 @@
     const listData = {
       top10: {
         title: 'Top 10 Materials 2026', items: [
-          'Liquid Metallic Ombre||₹250 – ₹800 / sq.ft||0.5–1 mm||Prep surface → primer → base colour → metallic layers → seal with clear coat → level & cure||Wipe with soft, damp microfiber; avoid abrasive cleaners||High visual impact & custom gradient effects for feature walls; ultra-modern look; seamless finish with minimal joints||Skilled application needed for smooth blends; can show imperfections if surface not prepped perfectly||Feature walls, entry foyers, dining accent walls, bar alcoves',
-          'Alabaster Lights||₹12,000 – ₹40,000+ per fixture||5–20 mm||Electrical point planning → ceiling hook/mounting plate → fixture installation → LED integration & testing||Dust gently; avoid harsh cleaners||Soft, warm glow; strong visual centerpiece; timeless luxury material||Premium pricing compared to regular fixtures; requires careful handling due to delicate nature||Dining table pendant lights, bedside lamps, statement chandeliers, entry foyer',
-          'Artistic Acoustic Panels||₹7,000 – ₹14,000+ per panel||20–50 mm+||Mark layout → mount clips/framing → fix panels → seal gaps||Vacuum or gentle fabric brush dusting||Reduces echo & improves acoustics; visual design element with texture & artwork||Higher cost than plain wall finishes; needs correct placement for real impact||Home offices, studios, media rooms, living rooms',
-          'Textured Lime Plaster||₹40 – ₹120 / sq.ft||8–15 mm||Prep substrate → scratch coat → intermediary coat → final finish coat → curing||Wipe lightly; avoid harsh solvents; lime breathes & ages beautifully||Breathable, sustainable & timeless finish; reduces mould risk & regulates humidity||Longer install & requires skilled plasterer; slightly higher cost and time than gypsum plaster||Feature walls, living rooms, hallways',
-          '3D Artwork||₹55,000 onwards||4–5 inches||Artwork mounted using heavy-duty anchors & adhesives; alignment & load calculation done on site||Dust gently with soft dry cloth; avoid water or harsh cleaners||One-of-a-kind luxury focal point; fully customizable in design, size, texture, and colour||Requires professional installation due to weight & complexity||Living room feature wall, double-height foyers, bedroom statement wall',
-          'Optical Fibre Fabric (Luminous Textile)||Varies on request||LED integrated||Fabric stretched/panel-mounted over LED light source; concealed wiring & power supply||Gentle vacuuming and dry cloth cleaning||Soft ambient lighting; futuristic luxury feel; highly custom & experiential||High cost due to import & electrical integration; requires specialized installation||Feature walls in bedrooms, dining table tops, luxury retail interiors',
-          'Venetian Plaster (Polished Plaster Finish)||₹250 – ₹600 / sq.ft||2–5 mm||Wall leveling → primer → 2–3 plaster coats with steel trowel → burnishing → optional sealer||Clean with slightly damp cloth; avoid abrasive cleaners||Luxury stone-like finish without joints; durable, breathable, and visually rich||Requires skilled applicators; costlier than regular paint finishes||Foyer & entry walls, dining room feature walls, master bedroom walls',
-          'Flexible MDF Curves||₹2,400 per sheet (8×4 ft)||4/6/8/12 mm||Fixed onto curved surface using Marine Fevicol; clear silicone at joints for flexibility||Wipe with dry or lightly damp cloth; protect from moisture||Enables seamless curves impossible with regular MDF; lightweight; ideal for contemporary designs||Needs precise surface preparation; must be properly sealed to prevent moisture damage||TV units & feature walls',
-          'Sound Proof Wall Acoustic Fluted Panels||₹60 / sq.ft onwards||9–24 mm (8×4 ft)||Panels fixed on wall/battens using adhesive/screws; optional acoustic insulation backing||Vacuum flutes periodically to avoid dust accumulation||Enhances sound absorption & speech clarity; adds modern linear texture to interiors||Grooves require regular cleaning; performance depends on correct backing & installation||Home theatres, study rooms, bedrooms, conference rooms'
+          'Liquid Metallic Ombre||Metallic paint/epoxy base + metallic pigments: ₹250–₹800/sq ft (finish-dependent) – varies widely by brand & effect.||0.5–1 mm (thin liquid coats/epoxy layers; build up by multiple thin layers)||Prep surface → primer → base colour → metallic layers → seal with clear coat → level & cure||Wipe with soft, damp microfiber; avoid abrasive cleaners||High visual impact & custom gradient effects for feature walls; ultra-modern look; seamless finish with minimal joints||Skilled application needed for smooth blends; can show imperfections if surface not prepped perfectly||Feature walls, entry foyers, dining accent walls, bar alcoves||Think subtle shimmer, seamless gradients, and luxury without heaviness. Perfect for feature walls, bars, powder rooms, and statement ceilings.',
+          'Alabaster Lights||₹12,000 – ₹40,000+ per light fixture (Price varies based on size, craftsmanship, natural vs synthetic alabaster, and brand)||5–20 mm solid alabaster stone or cast alabaster used in fixtures||Electrical point planning → ceiling hook/mounting plate → fixture installation → LED integration & testing||Dust gently; avoid harsh cleaners||Soft, warm glow; strong visual centerpiece; timeless luxury material||Premium pricing compared to regular fixtures; requires careful handling due to delicate nature||Dining table pendant lights, bedside lamps, statement chandeliers, entry foyer||Soft, glowing, sculptural lighting that instantly elevates a space. Alabaster lights are used as hero lighting pieces, creating warmth and luxury without visual heaviness.',
+          'Microcement||As premium finish ₹200–₹500 per sq ft materials only (project/brand dependent) – labour extra||2–3 mm total on walls/floors (ultra-thin)||Surface prep → primer → base coat → microcement layers (2-3 coats) → sanding between coats → top sealer||Clean with pH-neutral cleaner; avoid abrasive; re-seal periodically for durability||Seamless, modern, industrial aesthetic; versatile for walls, floors, furniture; waterproof when sealed||Requires skilled applicator; surface prep critical; cannot be applied on unstable substrates||Feature walls, bathrooms, kitchens, furniture, commercial spaces||Minimal, seamless, and ultra-modern. Works beautifully on floors, walls, bathrooms, and even furniture—especially for contemporary and Wabi-sabi spaces.',
+          'Artistic Acoustic Panels||₹7,000 – ₹14,000+ per panel unit (varies by size & material) for decorative acoustic panels||20–50 mm+ (deep enough for performance + art element)||Mark layout → mount clips/framing → fix panels → seal gaps||Vacuum or gentle fabric brush dusting||Reduces echo & improves acoustics; visual design element with texture & artwork||Higher cost than plain wall finishes; needs correct placement for real impact||Home offices, studios, media rooms, living rooms||Where function meets art. Improves sound quality and doubles up as wall décor. It\'s great for homes, studios, and work-from-home setups.',
+          'Textured Lime Plaster||Lime plaster material ₹40–₹120 per sq ft materials only (traditional lime + sand mixture; labour extra)||8–15 mm typical multi-coat (scratch, brown, finish coats)||Prep substrate → scratch coat → intermediary coat → final finish coat → curing||Wipe lightly; avoid harsh solvents; lime breathes & ages beautifully||Breathable, sustainable & timeless finish; reduces mould risk & regulates humidity||Longer install & requires skilled plasterer; slightly higher cost and time than gypsum plaster||Feature walls, living rooms, hallways||Breathable, natural, and timeless. Adds depth, softness, and an earthy elegance. It\'s perfect for warm, calm and sustainable interiors.',
+          '3D Artwork||₹55,000 onwards. Goes up to ₹3,00,000+ for large-scale or highly detailed artworks. Pricing depends on design complexity, detailing & execution time||4–5 inches||Artwork mounted using heavy-duty anchors & adhesives; alignment & load calculation done on site||Dust gently with soft dry cloth; avoid water or harsh cleaners||One-of-a-kind luxury focal point; fully customizable in design, size, texture, and colour||Requires professional installation due to weight & complexity||Living room feature wall, double-height foyers, bedroom statement wall||Custom, handcrafted sculptural wall art with strong depth, giving a 3D feel, designed as a luxury focal element.',
+          'Optical Fibre Fabric (Luminous Textile)||Varies on request||||Fabric stretched/panel-mounted over LED light source; concealed wiring & power supply||Gentle vacuuming and dry cloth cleaning||Soft ambient lighting; futuristic luxury feel; highly custom & experiential||High cost due to import & electrical integration; requires specialized installation||Feature walls in bedrooms, Dining Table Tops, Luxury retail interiors|||A high-end luminous fabric that create glowing surfaces with light within.',
+          'Venetian Plaster (Polished Plaster Finish)||₹250 – ₹600 per sq.ft (material + application)||2–5 mm (applied in multiple thin coats)||Wall leveling → primer → 2–3 plaster coats with steel trowel → burnishing → optional sealer||Clean with slightly damp cloth; avoid abrasive cleaners||Luxury stone-like finish without joints; durable, breathable, and visually rich||Requires skilled applicators; costlier than regular paint finishes||Foyer & entry walls, dining room feature walls, master bedroom walls||A premium wall finish that mimics natural stone with depth and subtle sheen.',
+          'Flexible MDF Curves||₹2,400 per sheet||4 mm | 6 mm | 8 mm | 12 mm||Fixed onto curved surface using Marine Fevicol; clear silicone at joints for flexibility||Wipe with dry or lightly damp cloth; protect from moisture||Enables seamless curves impossible with regular MDF; lightweight; ideal for contemporary designs||Needs precise surface preparation; must be properly sealed to prevent moisture damage||TV units & feature walls||Flexible MDF sheets help give flute panel look, specially for curved or rounded walls.',
+          'Sound Proof Wall Acoustic Fluted Panels||₹60 /- sq.ft onwards (without installation), depending on acoustic core & finish||Sound proof material thk – 9mm–24mm (Size – 8 x 4 ft)||Panels fixed on wall/battens using adhesive/screws; optional acoustic insulation backing||Vacuum flutes periodically to avoid dust accumulation||Enhances sound absorption & speech clarity; adds modern linear texture to interiors||Grooves require regular cleaning; performance depends on correct backing & installation||Home theatres, study rooms, bedrooms, conference rooms||Decorative fluted panels that improve acoustics while adding aesthetic look to walls.'
         ]
       },
       'exp-look': {
         title: 'Materials That Look ₹50L+ But Cost Under ₹50K', items: [
-          'Textured Decorative & Venetian Plaster Paint||₹80 – ₹350 / sq.ft||1–3 mm||Prep wall → base coat → texture/Venetian layers → seal||Wipe dust lightly; reseal every few years||Creates luxurious depth; customizable patterns; mimics high-end finishes||Requires skilled applicator; not ideal for high-moisture areas||Living room feature wall, bedroom accent wall, foyer, hotel lobbies||Asian Paints (Royale Play/Stucco), San Marco, Novacolor, Birla White',
-          'Limewash Wall Treatment||₹50 – ₹200 / sq.ft|| || || || || || ||',
-          'Fluted Glass Panels (as wardrobe/partition)||₹350 – ₹650 / sq.ft|| || || || || || ||',
-          'Marble-Finish Tiles||₹90 / sq.ft onwards||8–10 mm||Lay tiles with adhesive on screed → grout → seal if matte||Mop with mild detergent; avoid harsh acids||Realistic marble aesthetic; durable for floors/walls; many vein styles||Can feel cold/echoey; grout lines visible unless large format||Living room floors, bathroom walls, kitchen backsplash||Kajaria, Somany, Nitco',
-          'Premium Finish Laminates||₹200 / sq.ft onwards||0.8–1.5 mm||Bond laminate to ply/MDF with adhesive; edge band for finish||Wipe with soft damp cloth; avoid abrasive cleaners||Wide texture range (stone, wood, gloss, matte); durable and scratch-resistant||Less rich than real wood up close; thin laminates can peel||TV units, wardrobes, kitchen cabinets, accent panels||Royale Touche Luxury Laminates',
-          'Liquid Metallic Ombre Wall||₹200 – ₹600 / sq.ft|| || || || || || ||',
-          'Handmade-look Encaustic Cement Tiles||₹250 – ₹700 / sq.ft|| || || || || || ||',
-          'Acoustic Fabric Wall Panels||₹150 – ₹600 / sq.ft|| || || || || || ||',
-          'Charcoal Panel TV Wall||₹180 – ₹400 / sq.ft|| || || || || || ||'
+          'Textured Decorative & Venetian Plaster Paint|||₹80 / sq.ft onwards for textured coats; Venetian Plaster marble-look additives ~₹180 – ₹350 / sq.ft material-only.|||1–3 mm finished texture coat on prepared wall.|||Prep wall (repair/primer) → apply base coat → apply texture/Venetian layers → seal with protective finish.|||Wipe dust lightly; reseal every few years to preserve sheen.|||Creates luxurious depth and dimension like stone or polished plaster, elevating feature walls.<br>Can be customized with color, sheen, and vein patterns to mimic high-end finishes.|||Requires skilled applicator for premium finish. DIY often looks uneven.<br>Not ideal for high-moisture areas without proper sealing.|||Living room feature wall, bedroom accent wall, foyer, hotel lobbies.<br>Living room feature walls, bedroom accent walls, hotel lobbies, luxury bathrooms, reception areas.',
+          '',
+          '',
+          'Marble-Finish Tiles|||₹90 / sq.ft onwards for decent marble-look tiles.|||Typically 8–10 mm tile thickness.|||Lay tiles on pre-prepared screed with adhesive → grout joints → seal if matte finish.|||Mop with mild detergent; avoid harsh acids on polished surfaces.|||Realistic marble aesthetic at a fraction of stone cost and no upkeep of real stone.<br>Durable for floors/walls and available in many vein styles.|||Can feel cold/echoey without rugs or soft materials.<br>Grout lines still visible unless large format used.|||Living room floors, bathroom walls, kitchen backsplash.',
+          'Premium Finish Laminates|||₹200 / sq.ft onwards for high-finish decorative laminates|||0.8 mm – 1.5 mm based on quality.|||Laminate sheets are bonded to substrates (ply/MDF) with adhesive; edges banded for finish.|||Wipe with a soft damp cloth; avoid abrasive cleaners.|||Wide range of textures— stone, wood, gloss, matte.<br>Durable, scratch-resistant surfaces with easy cleaning.|||Looks less rich than real wood or lacquer if viewed closely.<br>Thin laminates can peel if bonded poorly or exposed to moisture.|||TV units, wardrobes, kitchen cabinets, accent panels.',
+          '',
+          '',
+          '',
+          ''
         ]
       },
       glass: {
@@ -2103,8 +2135,17 @@
           'Shutter Storages||Varies by finish||18–22 mm panels||Build cabinets → mount shutters → align hinges.||Wipe weekly; avoid excess water.||Conceals clutter; many style options.||Hinges may loosen; premium finishes cost more.||Upper & lower kitchen cabinets'
         ]
       },
-      marbles: { title: 'Marbles – Detailed Guide', items: ['Carrara Marble (Italian) – White, soft grey veins. Classic, versatile. ₹500 – ₹1,500 / sq.ft', 'Calacatta Marble (Italian) – Bright white, bold veins. Ultra-luxury. ₹2,000 – ₹6,000 / sq.ft', 'Statuario Marble (Italian) – Pure white, strong grey veining. Premium. ₹1,500 – ₹5,000 / sq.ft', 'Crema Marfil (Italian) – Beige, subtle veins. Warm and elegant. ₹600 – ₹1,500 / sq.ft', 'Onyx Marble (Italian) – Translucent, dramatic. Luxury feature walls. ₹2,000 – ₹7,000 / sq.ft', 'Armani Brown (Italian) – Dark brown, linear veins. Modern luxury. ₹700 – ₹2,000 / sq.ft', 'White Portoro (Italian) – Black with gold veins. Ultra premium. ₹2,500 – ₹8,000 / sq.ft', 'Michelangelo (Italian) – White with grey/beige veins. Classic. ₹900 – ₹2,500 / sq.ft', 'Bianco Lasa (Italian) – Bright white, fine grey veins. Minimal. ₹1,500 – ₹4,000 / sq.ft', 'Travertine (Italian) – Beige cream, natural holes. Mediterranean look. ₹250 – ₹800 / sq.ft', 'Makrana Marble (Indian) – Pure white, minimal veins. Iconic Indian marble. ₹150 – ₹600 / sq.ft', 'Banswara Marble (Indian) – White with purple/grey veins. ₹120 – ₹400 / sq.ft', 'Katni Marble (Indian) – Beige to cream with soft veins. ₹90 – ₹250 / sq.ft', 'Ambaji Marble (Indian) – Milky white, very light patterns. ₹100 – ₹350 / sq.ft', 'Morwad Marble (Indian) – White with soft grey patterns. ₹90 – ₹250 / sq.ft'] },
-      tiles: { title: 'Types of Tiles', items: ['Vitrified Tiles – Highly durable, low porosity, wide range of finishes. ₹60 – ₹250 / sq.ft', 'Ceramic Tiles – Budget-friendly, good for bathrooms and kitchens. ₹40 – ₹120 / sq.ft', 'Porcelain Tiles – Dense, water-resistant, suitable for high-traffic areas. ₹120 – ₹400 / sq.ft', 'Full Body Vitrified – Consistent colour throughout thickness, extra durable', 'Double Charged Vitrified – Extra durable top layer, popular for living rooms', 'Nano Polished Tiles – Mirror-like finish, easy to clean, very popular', 'Digital / GVT Tiles – Realistic stone and wood prints, huge variety', 'Matt Finish Tiles – Anti-glare, hides footmarks, modern aesthetic', 'Large Format Tiles (600×1200 & above) – Seamless, minimal grout lines, modern look', 'Cement / Encaustic Tiles – Handmade, artisanal, patterned. ₹250 – ₹700 / sq.ft'] },
+      marbles: { title: 'Marbles – Detailed Guide', items: ['Carrara Marble (Italian) – White, soft grey veins. Classic, versatile. ₹500 – ₹1,500 / sq.ft', 'Calacatta Marble (Italian) – Bright white, bold veins. Ultra-luxury. ₹2,000 – ₹6,000 / sq.ft', 'Statuario Marble (Italian) – Pure white, strong grey veining. Premium. ₹1,500 – ₹5,000 / sq.ft', 'Crema Marfil (Italian) – Beige, subtle veins. Warm and elegant. ₹600 – ₹1,500 / sq.ft', 'Onyx Marble (Italian) – Translucent, dramatic. Luxury feature walls. ₹2,000 – ₹7,000 / sq.ft', 'Armani Brown (Italian) – Dark brown, linear veins. Modern luxury. ₹700 – ₹2,000 / sq.ft', 'White Portoro (Italian) – Black with gold veins. Ultra premium. ₹2,500 – ₹8,000 / sq.ft', 'Michelangelo (Italian) – White with grey/beige veins. Classic. ₹900 – ₹2,500 / sq.ft', 'Bianco Lasa (Italian) – Bright white, fine grey veins. Minimal. ₹1,500 – ₹4,000 / sq.ft', 'Travertine (Italian) – Beige cream, natural holes. Mediterranean look. ₹250 – ₹800 / sq.ft', 'Makrana Marble (Indian) – Pure white, minimal veins. Iconic Indian marble. ₹150 – ₹600 / sq.ft', 'Banswara Marble (Indian) – White with purple/grey veins. ₹120 – ₹400 / sq.ft', 'Katni Marble (Indian) – Beige to cream with soft veins. ₹90 – ₹250 / sq.ft', 'Ambaji Marble (Indian) – Milky white, very light patterns. ₹100 – ₹350 / sq.ft', 'Morwad Marble (Indian) – White with soft grey patterns. ₹90 – ₹250 / sq.ft']       },
+      tiles: {
+        title: 'Types of Tiles', items: [
+          'Vitrified Tiles||₹60 – ₹250 per sq ft||8–10 mm||Tile adhesive + spacers||Easy cleaning, no sealing required||Durable, low maintenance, stain-resistant||Can be slippery (polished), less natural look||Flooring, living rooms, bedrooms, commercial spaces||Highly durable tiles made from clay and silica, fired at high temperatures for low porosity and high strength.||Double Charged, Full Body, Glazed Vitrified (GVT), Polished Glazed Vitrified (PGVT)||600×600 mm, 600×1200 mm, 800×1600 mm',
+          'Ceramic Tiles||₹30 – ₹120 per sq ft||6–8 mm||Tile adhesive||Easy cleaning||Affordable, wide designs, easy installation||Less durable for heavy flooring||Bathroom walls, kitchen backsplashes||Lightweight tiles made from natural clay, commonly used for walls.||Glazed, Unglazed, Digital Printed||300×300 mm, 300×600 mm',
+          'Porcelain Tiles||₹80 – ₹300 per sq ft||8–12 mm||Tile adhesive (heavy-duty for large slabs)||Low maintenance||Highly durable, water-resistant, versatile||Costlier than ceramic||Flooring, outdoor areas, bathrooms, facades||Dense, high-strength tiles with very low water absorption, ideal for heavy-duty use.||Full Body, Glazed, Matte, Polished||600×600 mm, 600×1200 mm, large slabs up to 1200×2400 mm',
+          'Natural Stone Tiles||₹150 – ₹800+ per sq ft||10–20 mm||Cement bedding or stone adhesive||Sealing required||Natural beauty, premium finish||Requires maintenance, can stain||Flooring, walls, feature areas||Tiles made from natural stones like marble, granite, slate, or travertine.||Marble, Granite, Slate, Travertine||300×300 mm, 600×600 mm (custom sizes available)',
+          'Cement Concrete Tiles||₹150 – ₹400 per sq ft||15–20 mm||Cement bedding||Regular sealing required||Unique patterns, artisanal look||Porous, needs sealing||Accent flooring, bathrooms, cafes||Handmade tiles with pigmented cement, known for bold patterns and matte finish.||Encaustic Tiles, Plain Cement Tiles||200×200 mm, 300×300 mm',
+          'Mosaic Tiles||₹200 – ₹800 per sq ft||4–8 mm||Tile adhesive||Regular grout cleaning||Decorative, flexible for curved surfaces||Expensive, grout-heavy maintenance||Backsplashes, bathrooms, pools||Small tiles arranged in patterns, often mounted on mesh sheets.||Glass, Ceramic, Stone Mosaic||Sheets (300×300 mm typical)'
+        ]
+      },
       quartz: {
         title: 'Quartz', items: [
           'Calacatta Quartz||₹300 – ₹800 per sq.ft||15 mm, 18 mm, 20 mm||Engineered quartz with bright white base and bold grey veining. Types: Calacatta Gold, Classic, Oro. Sizes: Slabs (8×10 ft), jumbo slabs. Installation: Adhesive on base||Low maintenance; no sealing. Brands: Caesarstone, KalingaStone, Specta, AGL Quartz||Marble-like look, non-porous, stain-resistant, premium||Expensive, visible seams||Kitchen countertops, islands, bathrooms',
@@ -2429,8 +2470,21 @@
           <span class="sec-count">${d.items.length} materials</span>
         </div>
         ${imgRow('top10')}
-        <div class="table-wrap top10-table"><table>
-          <thead><tr><th style="width:50px;font-size:9px">Photo</th><th>#</th><th>Material / Finish</th><th>Raw Material Cost</th><th>Thickness</th><th>Installation Process</th><th>Maintenance</th><th>Pros</th><th>Cons</th><th>Best For</th></tr></thead>
+        <div class="table-wrap top10-table"><table class="detail-tbl">
+          <thead>
+            <tr style="background:#1a2b45;color:#fff">
+              <th style="width:50px;font-size:9px">Photo</th>
+              <th>#</th>
+              <th style="min-width:180px">MATERIAL / FINISH</th>
+              <th style="min-width:150px">RAW MATERIAL COST</th>
+              <th style="min-width:100px">THICKNESS</th>
+              <th style="min-width:200px">INSTALLATION PROCESS</th>
+              <th style="min-width:150px">MAINTENANCE</th>
+              <th style="min-width:250px;max-width:350px">PROS</th>
+              <th style="min-width:250px;max-width:350px">CONS</th>
+              <th style="min-width:180px">BEST FOR</th>
+            </tr>
+          </thead>
             <tbody>${d.items.map((it, i) => {
             var parts = it.split('||');
             var name = parts[0] || it;
@@ -2441,10 +2495,11 @@
             var pros = parts[5] || '';
             var cons = parts[6] || '';
             var bestuse = parts[7] || '';
+            var desc = parts[8] || parts[9] || '';
             return `<tr>
               ${thumbTD('top10', i, name)}
               <td><span class="list-num">${String(i + 1).padStart(2, '0')}</span></td>
-              <td class="t-name">${name}</td>
+              <td class="t-name">${name}<span class="material-desc">${desc}</span></td>
               <td>${cost}</td>
               <td>${thick}</td>
               <td>${install}</td>
@@ -2467,17 +2522,28 @@
         </div>
         ${imgRow('exp-look')}
         <div class="table-wrap exp-look-table"><table>
-          <thead><tr><th style="width:50px;font-size:9px">Photo</th><th>#</th><th>MATERIAL / FINISH</th><th>RAW MATERIAL COST</th><th>THICKNESS</th><th>INSTALLATION PROCESS</th><th>MAINTENANCE</th><th>PROS</th><th>CONS</th><th>BEST FOR</th></tr></thead>
+          <thead><tr>
+            <th style="width:60px">Photo</th>
+            <th style="width:40px">#</th>
+            <th style="min-width:150px">MATERIAL / FINISH</th>
+            <th style="min-width:180px">RAW MATERIAL COST</th>
+            <th style="min-width:100px">THICKNESS</th>
+            <th style="min-width:180px">INSTALLATION PROCESS</th>
+            <th style="min-width:140px">MAINTENANCE</th>
+            <th style="min-width:250px;max-width:350px">PROS</th>
+            <th style="min-width:250px;max-width:350px">CONS</th>
+            <th style="min-width:180px">BEST FOR</th>
+          </tr></thead>
             <tbody>${d.items.map((it, i) => {
-            var parts = it.split('||');
+            var parts = it.split('|||');
             var name = parts[0] || it;
-            var cost = parts[1] || '';
-            var thick = parts[2] || '';
-            var install = parts[3] || '';
-            var maint = parts[4] || '';
-            var pros = parts[5] || '';
-            var cons = parts[6] || '';
-            var bestuse = parts[7] || '';
+            var cost = parts[1] || "";
+            var thick = parts[2] || "";
+            var install = parts[3] || "";
+            var maint = parts[4] || "";
+            var pros = parts[5] || "";
+            var cons = parts[6] || "";
+            var bestuse = parts[7] || "";
             return `<tr>
               ${thumbTD('exp-look', i, name)}
               <td><span class="list-num">${String(i + 1).padStart(2, '0')}</span></td>
@@ -2486,9 +2552,64 @@
               <td>${thick}</td>
               <td>${install}</td>
               <td>${maint}</td>
-              <td>${pros}</td>
-              <td>${cons}</td>
-              <td>${bestuse}</td>
+              <td style="color:#2e7d32 !important">${pros}</td>
+              <td style="color:#c62828 !important">${cons}</td>
+              <td style="color:#5f6b7a">${bestuse}</td>
+            </tr>`;
+        }).join('')}</tbody>
+        </table></div>`;
+        return;
+      }
+
+      if (id === 'tiles') {
+        const d = listData[id];
+        el.innerHTML = `
+        <div class="sec-head">
+          <span class="sec-title">${d.title}</span>
+          <span class="sec-count">${d.items.length} types</span>
+        </div>
+        ${imgRow('tiles')}
+        <div class="table-wrap exp-look-table"><table>
+          <thead><tr>
+            <th style="width:60px">Photo</th>
+            <th style="width:40px">#</th>
+            <th style="min-width:150px">MATERIAL / FINISH</th>
+            <th style="min-width:180px">TYPES</th>
+            <th style="min-width:150px">SIZES</th>
+            <th style="min-width:180px">PRICE RANGE</th>
+            <th style="min-width:100px">THICKNESS</th>
+            <th style="min-width:180px">INSTALLATION PROCESS</th>
+            <th style="min-width:140px">MAINTENANCE</th>
+            <th style="min-width:250px;max-width:350px">PROS</th>
+            <th style="min-width:250px;max-width:350px">CONS</th>
+            <th style="min-width:180px">BEST FOR</th>
+          </tr></thead>
+            <tbody>${d.items.map((it, i) => {
+            var parts = it.split('||');
+            var name = parts[0] || it;
+            var types = parts[9] || '';
+            var sizes = parts[10] || '';
+            var desc = parts[8] || '';
+            var cost = parts[1] || "";
+            var thick = parts[2] || "";
+            var install = parts[3] || "";
+            var maint = parts[4] || "";
+            var pros = parts[5] || "";
+            var cons = parts[6] || "";
+            var bestuse = parts[7] || "";
+            return `<tr>
+              ${thumbTD('tiles', i, name)}
+              <td><span class="list-num">${String(i + 1).padStart(2, '0')}</span></td>
+              <td class="t-name">${name}<span class="material-desc">${desc}</span></td>
+              <td>${types}</td>
+              <td>${sizes}</td>
+              <td>${cost}</td>
+              <td>${thick}</td>
+              <td>${install}</td>
+              <td>${maint}</td>
+              <td style="color:#2e7d32 !important">${pros}</td>
+              <td style="color:#c62828 !important">${cons}</td>
+              <td style="color:#5f6b7a">${bestuse}</td>
             </tr>`;
         }).join('')}</tbody>
         </table></div>`;
