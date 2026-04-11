@@ -16,7 +16,7 @@
       padding: 0;
       box-sizing: border-box;
     }
-
+    
     html {
       scroll-behavior: smooth;
     }
@@ -1133,6 +1133,83 @@
         font-size: 11px;
       }
     }
+
+    /* -- MATERIAL CARD STYLE -- */
+    .material-cards-section {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 2px solid var(--border);
+    }
+
+    .material-cards-section .sec-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 20px;
+    }
+
+    .material-card {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 24px;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .material-card img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+
+    .material-info {
+      flex: 1;
+    }
+
+    .material-info p {
+      margin: 4px 0;
+      font-size: 14px;
+      line-height: 1.4;
+      color: var(--text-mid);
+    }
+
+    .material-info p strong {
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .material-content {
+      flex: 1;
+    }
+
+    .material-content p {
+      margin: 4px 0;
+      font-size: 14px;
+      line-height: 1.4;
+      color: var(--text-mid);
+    }
+
+    .material-content p strong {
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    @media(max-width:500px) {
+      .material-card {
+        flex-direction: column;
+      }
+
+      .material-card img {
+        width: 100%;
+        height: 180px;
+      }
+    }
   </style>
 </head>
 
@@ -1163,15 +1240,15 @@
     </div>
     <div class="hero-stats">
       <div class="hero-stat">
-        <div class="hero-stat-num">37</div>
+        <div class="hero-stat-num count-up" data-target="37">37</div>
         <div class="hero-stat-label">Categories</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num">200+</div>
+        <div class="hero-stat-num count-up" data-target="200">200+</div>
         <div class="hero-stat-label">Materials</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num">100+</div>
+        <div class="hero-stat-num count-up" data-target="100">100+</div>
         <div class="hero-stat-label">Brands</div>
       </div>
     </div>
@@ -2515,10 +2592,11 @@
 
       if (id === 'exp-look') {
         const d = listData[id];
+        const validItems = d.items.filter(it => it.trim() !== '');
         el.innerHTML = `
         <div class="sec-head">
           <span class="sec-title">${d.title}</span>
-          <span class="sec-count">${d.items.length} ideas</span>
+          <span class="sec-count">${validItems.length} ideas</span>
         </div>
         ${imgRow('exp-look')}
         <div class="table-wrap exp-look-table"><table>
@@ -2534,7 +2612,7 @@
             <th style="min-width:250px;max-width:350px">CONS</th>
             <th style="min-width:180px">BEST FOR</th>
           </tr></thead>
-            <tbody>${d.items.map((it, i) => {
+            <tbody>${validItems.map((it, i) => {
             var parts = it.split('|||');
             var name = parts[0] || it;
             var cost = parts[1] || "";
@@ -2557,7 +2635,38 @@
               <td style="color:#5f6b7a">${bestuse}</td>
             </tr>`;
         }).join('')}</tbody>
-        </table></div>`;
+        </table></div>
+        <div class="material-cards-section">
+          <div class="sec-title">Materials Overview</div>
+          ${validItems.map((it, i) => {
+            var parts = it.split('|||');
+            var name = parts[0] || it;
+            var cost = parts[1] || "";
+            var thick = parts[2] || "";
+            var install = parts[3] || "";
+            var maint = parts[4] || "";
+            var pros = parts[5] || "";
+            var cons = parts[6] || "";
+            var bestuse = parts[7] || "";
+            var imgSrc = "assets/2.Materials that look expensive/" + name + ".png";
+            if (name.includes("Marble")) {
+              imgSrc = "assets/2.Materials that look expensive/" + name + ".jpg";
+            }
+            return `<div class="material-card">
+              <img class="material-img" src="${imgSrc}" alt="${name}" onerror="this.style.display='none'">
+              <div class="material-content">
+                <p><strong>Material:</strong> ${name}</p>
+                <p><strong>Cost:</strong> ${cost}</p>
+                <p><strong>Thickness:</strong> ${thick}</p>
+                <p><strong>Installation:</strong> ${install}</p>
+                <p><strong>Maintenance:</strong> ${maint}</p>
+                <p><strong>Pros:</strong> ${pros}</p>
+                <p><strong>Cons:</strong> ${cons}</p>
+                <p><strong>Best For:</strong> ${bestuse}</p>
+              </div>
+            </div>`;
+          }).join('')}
+        </div>`;
         return;
       }
 
@@ -2997,6 +3106,41 @@
     }
 
     renderCats('all');
+
+    // Count-up animation for stats
+    const counters = document.querySelectorAll('.count-up');
+    if (counters.length > 0) {
+      const animateCounters = () => {
+        counters.forEach(counter => {
+          const target = parseInt(counter.getAttribute('data-target'));
+          const hasPlus = counter.innerText.includes('+');
+          let count = 0;
+          let startTime = null;
+          const duration = 2000; // 2 seconds for full animation
+          
+          const updateCount = (timestamp) => {
+            if (!startTime) startTime = timestamp;
+            const progress = Math.min((timestamp - startTime) / duration, 1);
+            // Ease out quadratic for smooth deceleration
+            const easeProgress = 1 - Math.pow(1 - progress, 2);
+            count = target * easeProgress;
+            
+            counter.innerText = Math.floor(count) + (hasPlus ? '+' : '');
+            
+            if (progress < 1) {
+              requestAnimationFrame(updateCount);
+            } else {
+              counter.innerText = target + (hasPlus ? '+' : '');
+            }
+          };
+          
+          requestAnimationFrame(updateCount);
+        });
+      };
+
+      // Run animation after a short delay for better visual effect
+      setTimeout(animateCounters, 800);
+    }
   </script>
 
   <div id="lmd-lb" onclick="lbClose()">
