@@ -23,10 +23,30 @@
 
     body {
       font-family: 'Montserrat', sans-serif;
-      background: #f5f5f5;
-      color: #2d2d2d;
+      background: var(--bg-color);
+      color: var(--text);
       font-weight: 400;
       line-height: 1.6;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .dark-mode body,
+    .dark-mode .cat-card,
+    .dark-mode .table-wrap,
+    .dark-mode table,
+    .dark-mode th,
+    .dark-mode td,
+    .dark-mode .detail-card {
+      background: var(--card-bg);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .dark-mode .cat-body,
+    .dark-mode .sec-head,
+    .dark-mode th,
+    .dark-mode td,
+    .dark-mode .detail-card {
+      color: var(--text);
     }
 
     :root {
@@ -42,6 +62,25 @@
       --text-mid: #555;
       --text-light: #888;
       --hero-bg: #ebebeb;
+      --bg-color: #ffffff;
+      --card-bg: #ffffff;
+      --table-bg: #ffffff;
+      --input-bg: #ffffff;
+    }
+
+    .dark-mode {
+      --white: #1a1a1a;
+      --off-white: #2a2a2a;
+      --light: #1a1a1a;
+      --border: #333;
+      --text: #e0e0e0;
+      --text-mid: #aaa;
+      --text-light: #777;
+      --hero-bg: #121212;
+      --bg-color: #0f0f0f;
+      --card-bg: #1a1a1a;
+      --table-bg: #1a1a1a;
+      --input-bg: #2a2a2a;
     }
 
     /* -- HEADER -- */
@@ -56,6 +95,29 @@
       top: 0;
       z-index: 1000;
       box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+      position: relative;
+    }
+
+    .dark-mode-btn {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 50%;
+      transition: transform 0.2s;
+    }
+
+    .dark-mode-btn:hover {
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .dark-mode .dark-mode-btn {
+      filter: grayscale(1);
     }
 
     .header-search {
@@ -1225,6 +1287,7 @@
       <input type="text" id="searchInput" placeholder="Search materials, brands, finishes…"
         oninput="handleSearch(this.value)">
     </div>
+    <button id="darkModeToggle" class="dark-mode-btn" aria-label="Toggle Dark Mode">🌙</button>
   </header>
 
   <!-- HERO: grey bg, no eyebrow, blue text -->
@@ -1304,6 +1367,23 @@
   </footer>
 
   <script>
+    // Dark mode toggle
+    (function() {
+      const toggle = document.getElementById('darkModeToggle');
+      if (toggle) {
+        // Load saved preference
+        if (localStorage.getItem('darkMode') === 'enabled') {
+          document.body.classList.add('dark-mode');
+          toggle.textContent = '☀️';
+        }
+        toggle.addEventListener('click', function() {
+          const isDark = document.body.classList.toggle('dark-mode');
+          toggle.textContent = isDark ? '☀️' : '🌙';
+          localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
+        });
+      }
+    })();
+
     /**
      * ============================================================
      * 📸 IMAGE MAINTENANCE GUIDE (FOR NON-CODERS)
