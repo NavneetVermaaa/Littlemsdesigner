@@ -2361,55 +2361,107 @@
       font-weight: 700;
     }
 
-    /* Bootstrap-specific styles for the expensive materials table */
+    /* Bootstrap-specific styles for responsive tables */
     .bootstrap-test {
       overflow-x: auto !important;
       -webkit-overflow-scrolling: touch;
+      border-radius: 8px;
+      border: 1.5px solid var(--border);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     }
     .bootstrap-test table {
-      font-size: 10px !important;
+      font-size: 12px !important;
       table-layout: auto !important;
-      transform: none !important;
       width: 100% !important;
+      border-collapse: collapse;
     }
 
     .bootstrap-test th,
     .bootstrap-test td {
-      padding: 6px 4px !important;
-      font-size: 9px !important;
+      padding: 8px 6px !important;
+      font-size: 11px !important;
       white-space: nowrap !important;
-      word-break: normal !important;
+      word-break: keep-all !important;
+      border: 1px solid #dee2e6;
+    }
+
+    .bootstrap-test thead th {
+      background: var(--navy) !important;
+      color: var(--white) !important;
+      font-weight: 700;
+      font-size: 10px !important;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 8px 6px !important;
     }
 
     .bootstrap-exp {
       overflow-x: auto !important;
       -webkit-overflow-scrolling: touch;
+      border-radius: 8px;
+      border: 1.5px solid var(--border);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     }
     .bootstrap-exp table {
-      font-size: 10px !important;
+      font-size: 12px !important;
       table-layout: auto !important;
-      transform: none !important;
       width: 100% !important;
+      border-collapse: collapse;
     }
 
     .bootstrap-exp th,
     .bootstrap-exp td {
-      padding: 6px 4px !important;
-      font-size: 9px !important;
+      padding: 8px 6px !important;
+      font-size: 11px !important;
       white-space: nowrap !important;
-      word-break: normal !important;
+      word-break: keep-all !important;
+      border: 1px solid #dee2e6;
+    }
+
+    .bootstrap-exp thead th {
+      background: var(--navy) !important;
+      color: var(--white) !important;
+      font-weight: 700;
+      font-size: 10px !important;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 8px 6px !important;
+    }
+
+    /* Bootstrap responsive wrapper */
+    .table-responsive {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      max-width: 100%;
+    }
+
+    .table-responsive::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .table-responsive::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.05);
+    }
+
+    .table-responsive::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 3px;
     }
 
     /* Global custom-table styles */
     .custom-table {
       width: 100%;
       overflow-x: auto !important;
+      border-radius: 8px;
+      border: 1.5px solid var(--border);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     }
 
     .custom-table-inner {
       width: 100% !important;
       table-layout: auto !important;
       border-collapse: collapse !important;
+      min-width: 100%;
     }
 
     .custom-table-inner th,
@@ -2418,41 +2470,123 @@
       word-break: break-word !important;
       overflow: visible !important;
       text-overflow: clip !important;
+      padding: 8px 6px !important;
+      border: 1px solid #dee2e6;
     }
 
-    @media (max-width: 1024px) {
+    .custom-table-inner thead th {
+      background: var(--navy) !important;
+      color: var(--white) !important;
+      font-weight: 700;
+      font-size: 10px !important;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 8px 6px !important;
+    }
+
+    /* Desktop views */
+    @media (min-width: 1200px) {
+      .bootstrap-exp table,
+      .bootstrap-test table,
       .custom-table-inner {
         font-size: 12px !important;
       }
+
+      .bootstrap-exp th,
+      .bootstrap-exp td,
+      .bootstrap-test th,
+      .bootstrap-test td,
+      .custom-table-inner th,
+      .custom-table-inner td {
+        padding: 8px 6px !important;
+        font-size: 11px !important;
+      }
     }
 
-    @media (max-width: 768px) {
+    /* Tablet & Large Mobile */
+    @media (max-width: 1199px) {
+      .bootstrap-exp,
+      .bootstrap-test {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .bootstrap-exp table,
+      .bootstrap-test table,
       .custom-table-inner {
         font-size: 10px !important;
       }
+
+      .bootstrap-exp th,
+      .bootstrap-exp td,
+      .bootstrap-test th,
+      .bootstrap-test td,
       .custom-table-inner th,
       .custom-table-inner td {
-        padding: 4px 6px !important;
+        padding: 6px 4px !important;
+        font-size: 9px !important;
+      }
+
+      .bootstrap-exp thead th,
+      .bootstrap-test thead th,
+      .custom-table-inner thead th {
+        font-size: 8px !important;
       }
     }
 
+    /* Tablet Portrait */
+    @media (max-width: 768px) {
+      .custom-table-inner {
+        font-size: 9px !important;
+      }
+      .custom-table-inner th,
+      .custom-table-inner td {
+        padding: 4px 3px !important;
+        font-size: 8px !important;
+      }
+
+      .bootstrap-exp,
+      .bootstrap-test {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .bootstrap-exp table,
+      .bootstrap-test table {
+        font-size: 9px !important;
+      }
+
+      .bootstrap-exp th,
+      .bootstrap-exp td,
+      .bootstrap-test th,
+      .bootstrap-test td {
+        padding: 4px 3px !important;
+        font-size: 8px !important;
+      }
+    }
+
+    /* Mobile */
     @media (max-width: 480px) {
       .custom-table-inner {
         font-size: 8px !important;
       }
       .custom-table-inner th,
       .custom-table-inner td {
-        padding: 2px 4px !important;
-      }
-    }
-
-    @media (max-width: 440px) {
-      .custom-table-inner {
+        padding: 2px 2px !important;
         font-size: 7px !important;
       }
-      .custom-table-inner th,
-      .custom-table-inner td {
-        padding: 1px 3px !important;
+
+      .bootstrap-exp table,
+      .bootstrap-test table {
+        font-size: 8px !important;
+      }
+
+      .bootstrap-exp th,
+      .bootstrap-exp td,
+      .bootstrap-test th,
+      .bootstrap-test td {
+        padding: 2px 2px !important;
+        font-size: 7px !important;
       }
     }
 
@@ -2492,11 +2626,24 @@
       }
     }
 
-    /* exp-responsive - Materials that look expensive table */
+    /* exp-responsive - Materials that look expensive table - Bootstrap Responsive */
+    .exp-responsive {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      max-width: 100%;
+    }
+
     .exp-responsive table {
       width: 100% !important;
-      table-layout: fixed !important;
+      table-layout: auto !important;
       border-collapse: collapse !important;
+      min-width: 100%;
+      margin: 0;
+      padding: 0;
+      font-size: 13px;
     }
 
     .exp-responsive th,
@@ -2504,46 +2651,232 @@
       white-space: nowrap !important;
       word-break: keep-all !important;
       overflow: visible !important;
-      text-overflow: unset !important;
+      text-overflow: clip !important;
+      padding: 8px 6px !important;
+      vertical-align: middle;
+      border: 1px solid #dee2e6;
     }
 
-    .exp-responsive table {
-      font-size: inherit;
+    .exp-responsive thead th {
+      background: var(--navy) !important;
+      color: var(--white) !important;
+      font-weight: 700;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 8px 6px !important;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
-    @media (max-width: 1024px) {
+    .exp-responsive tbody tr {
+      border-bottom: 1px solid #dee2e6 !important;
+    }
+
+    .exp-responsive tbody tr:hover {
+      background: var(--blue-light);
+    }
+
+    .exp-responsive tbody td {
+      font-size: 12px;
+      padding: 7px 5px !important;
+    }
+
+    /* Desktop - 1200px and up */
+    @media (min-width: 1200px) {
       .exp-responsive table {
+        font-size: 13px !important;
+      }
+      .exp-responsive th,
+      .exp-responsive td {
+        padding: 8px 6px !important;
         font-size: 12px !important;
       }
-      .exp-responsive th,
-      .exp-responsive td {
-        padding: 6px 6px !important;
+      .exp-responsive thead th {
+        font-size: 11px !important;
       }
     }
 
-    @media (max-width: 768px) {
+    /* Tablet Landscape - 1024px to 1199px */
+    @media (max-width: 1199px) and (min-width: 1024px) {
       .exp-responsive table {
+        font-size: 11px !important;
+        min-width: 100%;
+      }
+      .exp-responsive th,
+      .exp-responsive td {
+        padding: 6px 5px !important;
         font-size: 10px !important;
       }
-      .exp-responsive th,
-      .exp-responsive td {
-        padding: 4px 4px !important;
+      .exp-responsive thead th {
+        font-size: 9px !important;
       }
     }
 
-    @media (max-width: 480px) {
+    /* Tablet Portrait - 768px to 1023px */
+    @media (max-width: 1023px) and (min-width: 768px) {
+      .exp-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
       .exp-responsive table {
+        font-size: 10px !important;
+        min-width: 900px;
+      }
+      .exp-responsive th,
+      .exp-responsive td {
+        padding: 5px 4px !important;
+        font-size: 9px !important;
+      }
+      .exp-responsive thead th {
         font-size: 8px !important;
       }
+    }
+
+    /* Large Mobile - 600px to 767px */
+    @media (max-width: 767px) and (min-width: 600px) {
+      .exp-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin-left: -12px;
+        margin-right: -12px;
+      }
+      .exp-responsive table {
+        font-size: 9px !important;
+        min-width: 850px;
+      }
       .exp-responsive th,
       .exp-responsive td {
-        padding: 2px 3px !important;
+        padding: 4px 3px !important;
+        font-size: 8px !important;
+      }
+      .exp-responsive thead th {
+        font-size: 7px !important;
+        padding: 4px 3px !important;
       }
     }
 
-    @media (max-width: 360px) {
+    /* Small Mobile - 480px to 599px */
+    @media (max-width: 599px) and (min-width: 480px) {
+      .exp-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin-left: -8px;
+        margin-right: -8px;
+      }
+      .exp-responsive table {
+        font-size: 8px !important;
+        min-width: 800px;
+      }
+      .exp-responsive th,
+      .exp-responsive td {
+        padding: 3px 2px !important;
+        font-size: 7px !important;
+      }
+      .exp-responsive thead th {
+        font-size: 6px !important;
+        padding: 3px 2px !important;
+        line-height: 1.2;
+      }
+    }
+
+    /* Extra Small Mobile - below 480px */
+    @media (max-width: 479px) {
+      .exp-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin-left: -4px;
+        margin-right: -4px;
+        width: calc(100% + 8px);
+      }
       .exp-responsive table {
         font-size: 7px !important;
+        min-width: 750px;
+      }
+      .exp-responsive th,
+      .exp-responsive td {
+        padding: 2px 1px !important;
+        font-size: 6px !important;
+      }
+      .exp-responsive thead th {
+        font-size: 5px !important;
+        padding: 2px 1px !important;
+        line-height: 1.1;
+      }
+    }
+
+    /* MOBILE FONT SIZE OPTIMIZATION FOR MATERIALS THAT LOOK EXPENSIVE SECTION */
+    @media (max-width: 768px) {
+      /* Section Heading */
+      .exp-section .sec-title,
+      .exp-section h1,
+      .exp-section h2 {
+        font-size: 18px !important;
+        line-height: 1.2 !important;
+      }
+
+      /* Table Header */
+      .exp-section table thead th {
+        font-size: 7px !important;
+        padding: 4px 3px !important;
+        white-space: nowrap !important;
+      }
+
+      /* Table Body Content */
+      .exp-section table tbody td {
+        font-size: 9px !important;
+        padding: 4px 3px !important;
+        white-space: nowrap !important;
+      }
+    }
+
+    /* Smaller mobiles */
+    @media (max-width: 480px) {
+      .exp-section .sec-title,
+      .exp-section h1,
+      .exp-section h2 {
+        font-size: 16px !important;
+      }
+
+      .exp-section table thead th {
+        font-size: 6px !important;
+        padding: 3px 2px !important;
+      }
+
+      .exp-section table tbody td {
+        font-size: 8px !important;
+        padding: 3px 2px !important;
+      }
+    }
+
+    /* Extra small screens */
+    @media (max-width: 380px) {
+      .exp-section table thead th {
+        font-size: 5.5px !important;
+      }
+
+      .exp-section table tbody td {
+        font-size: 7px !important;
+      }
+    }
+
+    /* HIDE SCROLLBAR ON MOBILE & TABLET - TABLE FITS SCREEN */
+    @media (max-width: 768px) {
+      .exp-section .table-wrap {
+        overflow-x: hidden !important;
+        -webkit-overflow-scrolling: auto !important;
+      }
+      .exp-section .table-wrap table {
+        min-width: auto !important;
+        width: 100% !important;
+        table-layout: auto !important;
+      }
+      .exp-section table thead th,
+      .exp-section table tbody td {
+        white-space: normal !important;
+        word-wrap: break-word !important;
+        word-break: break-word !important;
       }
     }
   </style>
@@ -3987,6 +4320,7 @@
         const d = listData[id];
         const validItems = d.items.filter(it => it.trim() !== '');
         el.innerHTML = `
+        <div class="exp-section">
         <div class="sec-head">
           <span class="sec-title">${d.title}</span>
           <span class="sec-count">${validItems.length} ideas</span>
@@ -4065,6 +4399,7 @@
             </div>
           </div>`;
         }).join('')}
+        </div>
         </div>`;
         return;
       }
