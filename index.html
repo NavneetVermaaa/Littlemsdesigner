@@ -2831,6 +2831,16 @@
       }
     }
 
+    /* COLOR FIXES FOR EXP-LOOK SECTION */
+    .exp-section .mat-cost { color: #e6eaf2; font-weight: 600; }
+    .exp-section .mat-pros-label { color: #6ea8ff; font-weight: 600; }
+    .exp-section .mat-cons-label { color: #cbd3df; font-weight: 600; }
+    .exp-section .mat-brand-label { color: #8ab4ff; }
+    .exp-section .mat-brand-value { color: #8ab4ff; font-weight: 600; }
+    .exp-section .d-value { color: #e6eaf2; }
+    .exp-section .detail-card h3 { color: #2f5eff; }
+    .exp-section .d-label { color: #6ea8ff; }
+
     /* Smaller mobiles */
     @media (max-width: 480px) {
       .exp-section .sec-title,
@@ -2872,12 +2882,19 @@
         width: 100% !important;
         table-layout: auto !important;
       }
-      .exp-section table thead th,
-      .exp-section table tbody td {
-        white-space: normal !important;
-        word-wrap: break-word !important;
-        word-break: break-word !important;
-      }
+.exp-section table thead th,
+    .exp-section table tbody td {
+      white-space: normal !important;
+      word-wrap: break-word !important;
+      word-break: break-word !important;
+    }
+
+    .exp-look-static {
+      margin-bottom: 30px;
+    }
+
+    .exp-responsive {
+      margin-bottom: 30px;
     }
   </style>
 </head>
@@ -3603,6 +3620,18 @@
           { l: 'Avoid Using In', v: 'High-humidity areas without proper sealing, budget projects, areas prone to scratches' }
         ]
       },
+      'exp-look': {
+        title: 'Materials That Look ₹50L+ But Cost Under ₹50K', props: [
+          { l: 'Raw Material Cost', v: '₹180 – ₹350 / sq.ft' },
+          { l: 'Thickness Required', v: '1–3 mm finished texture coat on prepared wall' },
+          { l: 'Installation Process', v: 'Prep wall (repair/primer) → apply base coat → apply texture/Venetian layers → seal with protective finish' },
+          { l: 'Maintenance', v: 'Wipe dust lightly; reseal every few years to preserve sheen' },
+          { l: 'Pros', v: 'Creates luxurious depth like stone or polished plaster, elevating feature walls. Can be customized with colour, sheen, and vein patterns to mimic high-end finishes.' },
+          { l: 'Cons', v: 'Requires skilled applicator for premium finish. Not ideal for high-moisture areas without proper sealing.' },
+          { l: 'Best Places to Use', v: 'Living room and bedroom accent walls, hotel lobbies, luxury bathrooms, foyer, reception' },
+          { l: 'Recommended Brands', v: 'Vasari India' }
+        ]
+      },
     };
 
     /* COMPARE DATA */
@@ -3719,15 +3748,9 @@
       },
       'exp-look': {
         title: 'Materials That Look ₹50L+ But Cost Under ₹50K', items: [
-          'Textured Decorative & Venetian Plaster Paint|||₹80 / sq.ft onwards for textured coats; Venetian Plaster marble-look additives ~₹180 – ₹350 / sq.ft material-only.|||1–3 mm finished texture coat on prepared wall.|||Prep wall (repair/primer) → apply base coat → apply texture/Venetian layers → seal with protective finish.|||Wipe dust lightly; reseal every few years to preserve sheen.|||Creates luxurious depth and dimension like stone or polished plaster, elevating feature walls.<br>Can be customized with color, sheen, and vein patterns to mimic high-end finishes.|||Requires skilled applicator for premium finish. DIY often looks uneven.<br>Not ideal for high-moisture areas without proper sealing.|||Living room feature wall, bedroom accent wall, foyer, hotel lobbies.<br>Living room feature walls, bedroom accent walls, hotel lobbies, luxury bathrooms, reception areas.',
-          '',
-          '',
-          'Marble-Finish Tiles|||₹90 / sq.ft onwards for decent marble-look tiles.|||Typically 8–10 mm tile thickness.|||Lay tiles on pre-prepared screed with adhesive → grout joints → seal if matte finish.|||Mop with mild detergent; avoid harsh acids on polished surfaces.|||Realistic marble aesthetic at a fraction of stone cost and no upkeep of real stone.<br>Durable for floors/walls and available in many vein styles.|||Can feel cold/echoey without rugs or soft materials.<br>Grout lines still visible unless large format used.|||Living room floors, bathroom walls, kitchen backsplash.',
-          'Premium Finish Laminates|||₹200 / sq.ft onwards for high-finish decorative laminates|||0.8 mm – 1.5 mm based on quality.|||Laminate sheets are bonded to substrates (ply/MDF) with adhesive; edges banded for finish.|||Wipe with a soft damp cloth; avoid abrasive cleaners.|||Wide range of textures— stone, wood, gloss, matte.<br>Durable, scratch-resistant surfaces with easy cleaning.|||Looks less rich than real wood or lacquer if viewed closely.<br>Thin laminates can peel if bonded poorly or exposed to moisture.|||TV units, wardrobes, kitchen cabinets, accent panels.',
-          '',
-          '',
-          '',
-          ''
+          'Textured Decorative & Venetian Plaster Paint|||₹80 / sq.ft onwards for textured coats; Venetian Plaster marble-look additives ~₹180 – ₹350 / sq.ft material-only.|||1–3 mm finished texture coat on prepared wall.|||Prep wall (repair/primer) → apply base coat → apply texture/Venetian layers → seal with protective finish.|||Wipe dust lightly; reseal every few years to preserve sheen.|||Creates luxurious depth and dimension like stone or polished plaster, elevating feature walls.Can be customized with color, sheen, and vein patterns to mimic high-end finishes.|||Requires skilled applicator for premium finish. DIY often looks uneven. Not ideal for high-moisture areas without proper sealing.|||Living room feature wall, bedroom accent wall, foyer, hotel lobbies. Living room feature walls, bedroom accent walls, hotel lobbies, luxury bathrooms, reception areas.|||Vasari India',
+          'Marble-Finish Tiles|||₹90 / sq.ft onwards for decent marble-look tiles.|||Typically 8–10 mm tile thickness.|||Lay tiles on pre-prepared screed with adhesive → grout joints → seal if matte finish.|||Mop with mild detergent; avoid harsh acids on polished surfaces.|||Realistic marble aesthetic at a fraction of stone cost and no upkeep of real stone. Durable for floors/walls and available in many vein styles.|||Can feel cold/echoey without rugs or soft materials. Grout lines still visible unless large format used.|||Living room floors, bathroom walls, kitchen backsplash.|||Kajaria, Somany, Nitco',
+          'Premium Finish Laminates|||₹200 / sq.ft onwards for high-finish decorative laminates|||0.8 mm – 1.5 mm based on quality.|||Laminate sheets are bonded to substrates (ply/MDF) with adhesive; edges banded for finish.|||Wipe with a soft damp cloth; avoid abrasive cleaners.|||Wide range of textures— stone, wood, gloss, matte. Durable, scratch-resistant surfaces with easy cleaning.|||Looks less rich than real wood or lacquer if viewed closely. Thin laminates can peel if bonded poorly or exposed to moisture.|||TV units, wardrobes, kitchen cabinets, accent panels.|||Royale Touche Luxury Laminates'
         ]
       },
       glass: {
@@ -4318,89 +4341,51 @@
 
       if (id === 'exp-look') {
         const d = listData[id];
-        const validItems = d.items.filter(it => it.trim() !== '');
-        el.innerHTML = `
-        <div class="exp-section">
-        <div class="sec-head">
-          <span class="sec-title">${d.title}</span>
-          <span class="sec-count">${validItems.length} ideas</span>
-        </div>
-        ${imgRow('exp-look')}
-        <div class="table-wrap table-responsive bootstrap-test"><table class="table table-bordered table-striped detail-tbl">
-          <thead><tr>
-            <th style="width:60px">IMAGES</th>
-            <th style="width:35px">SR.NO</th>
-            <th style="min-width:100px">MATERIAL</th>
-            <th style="min-width:80px">COST (SQ.FT)</th>
-            <th style="min-width:60px">THK(MM)</th>
-            <th style="min-width:160px">BEST PLACES TO USE</th>
-            <th style="min-width:100px">BRANDS</th>
-          </tr></thead>
-          <tbody>
-            <tr>
-              ${thumbTD('exp-look', 0, 'Textured Decorative & Venetian Plaster Paint')}
-              <td>01</td>
-              <td>Venetian Plaster Paint</td>
-              <td>₹180 – ₹350</td>
-              <td>1–3</td>
-              <td>Living room and bedroom accent walls, hotel lobbies, foyer, reception.</td>
-              <td>Vasari India</td>
-            </tr>
-            <tr>
-              ${thumbTD('exp-look', 1, 'Marble-Finish Tiles')}
-              <td>02</td>
-              <td>Marble-Finish Tiles</td>
-              <td>₹90+</td>
-              <td>8–10</td>
-              <td>Living room floors, bathroom walls, kitchen backsplash.</td>
-              <td>Kajaria, Somany, Nitco</td>
-            </tr>
-            <tr>
-              ${thumbTD('exp-look', 2, 'Premium Finish Laminates')}
-              <td>03</td>
-              <td>Premium Finish Laminates</td>
-              <td>₹200+</td>
-              <td>0.8 – 1.5</td>
-              <td>TV units, wardrobes, kitchen cabinets, accent panels.</td>
-              <td>Royale Touche Luxury Laminates</td>
-            </tr>
-          </tbody>
-        </table></div>
-        <div class="material-cards-section">
-          ${validItems.map((it, i) => {
+        const matImgs = ['assets/venetian.jpg', 'assets/marble.jpg', 'assets/laminate.jpg'];
+        const validItems = d.items.filter(function(it) { return it.trim() !== ''; });
+        console.log('EXP DATA:', validItems.length, 'materials found:', validItems.map(function(it){ return it.split('|||')[0]; }));
+        var cardsHtml = validItems.map(function(it, idx) {
           var parts = it.split('|||');
-          var name = parts[0] || it;
-          var cost = parts[1] || "";
-          var thick = parts[2] || "";
-          var install = parts[3] || "";
-          var maint = parts[4] || "";
-          var pros = parts[5] || "";
-          var cons = parts[6] || "";
-          var bestuse = parts[7] || "";
-          var imgSrc = "assets/2.Materials that look expensive/" + name + ".png";
-          if (name.includes("Marble")) {
-            imgSrc = "assets/2.Materials that look expensive/" + name + ".jpg";
-          }
-          return `<div class="detail-card">
-            <div class="detail-card-img-wrap">
-              <img class="detail-card-img" src="${imgSrc}" alt="${name}" onerror="this.style.display='none'">
-            </div>
-            <div class="detail-card-content">
-              <div class="detail-card-head"><h3>${name}</h3></div>
-              <div class="detail-card-body">
-                ${cost ? `<div class="d-row"><div class="d-label">Cost (sq.ft)</div><div class="d-value">${cost}</div></div>` : ''}
-                ${thick ? `<div class="d-row"><div class="d-label">Thickness (mm)</div><div class="d-value">${thick}</div></div>` : ''}
-                ${install ? `<div class="d-row"><div class="d-label">Installation Process</div><div class="d-value">${install}</div></div>` : ''}
-                ${maint ? `<div class="d-row"><div class="d-label">Maintenance</div><div class="d-value">${maint}</div></div>` : ''}
-                ${pros ? `<div class="d-row"><div class="d-label">Pros</div><div class="d-value">${pros}</div></div>` : ''}
-                ${cons ? `<div class="d-row"><div class="d-label">Cons</div><div class="d-value">${cons}</div></div>` : ''}
-                ${bestuse ? `<div class="d-row"><div class="d-label">Best For</div><div class="d-value">${bestuse}</div></div>` : ''}
-              </div>
-            </div>
-          </div>`;
-        }).join('')}
-        </div>
-        </div>`;
+          var name    = (parts[0] || it).trim();
+          var cost    = (parts[1] || '').trim();
+          var thick   = (parts[2] || '').trim();
+          var install = (parts[3] || '').trim();
+          var maint   = (parts[4] || '').trim();
+          var pros    = (parts[5] || '').trim();
+          var cons    = (parts[6] || '').trim();
+          var best    = (parts[7] || '').trim();
+          var brand   = (parts[8] || '').trim();
+          var imgSrc  = matImgs[idx] || '';
+          var rows = '';
+          if (cost)    rows += '<div class="d-row"><div class="d-label">Raw Material Cost</div><div class="d-value mat-cost">' + cost + '</div></div>';
+          if (thick)   rows += '<div class="d-row"><div class="d-label">Thickness Required</div><div class="d-value">' + thick + '</div></div>';
+          if (install) rows += '<div class="d-row"><div class="d-label">Installation Process</div><div class="d-value">' + install + '</div></div>';
+          if (maint)   rows += '<div class="d-row"><div class="d-label">Maintenance</div><div class="d-value">' + maint + '</div></div>';
+          if (best)    rows += '<div class="d-row"><div class="d-label">Best Places to Use</div><div class="d-value">' + best + '</div></div>';
+          if (pros)    rows += '<div class="d-row"><div class="d-label mat-pros-label">✓ Pros</div><div class="d-value">' + pros + '</div></div>';
+          if (cons)    rows += '<div class="d-row"><div class="d-label mat-cons-label">✗ Cons</div><div class="d-value">' + cons + '</div></div>';
+          if (brand)   rows += '<div class="d-row"><div class="d-label mat-brand-label">Recommended Brands</div><div class="d-value mat-brand-value">' + brand + '</div></div>';
+          var imgCell = imgSrc ? '<div style="display:table-cell;width:160px;min-width:160px;vertical-align:top"><img src="' + imgSrc + '" alt="' + name + '" style="width:100%;min-height:200px;height:100%;object-fit:cover" onerror="this.parentElement.style.display=\'none\'"></div>' : '';
+          return '<div class="detail-card" style="display:table;width:100%;margin-bottom:20px;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.08)">'
+            + imgCell
+            + '<div class="detail-card-body" style="display:table-cell;vertical-align:top;padding:16px">'
+            + '<div class="detail-card-head"><h3 style="margin:0 0 12px">' + name + '</h3></div>'
+            + rows
+            + '</div></div>';
+        }).join('');
+        el.innerHTML = '<div class="sec-head"><span class="sec-title">' + d.title + '</span><span class="sec-count">' + validItems.length + ' materials</span></div>'
+          + imgRow(id)
+          + '<div class="exp-section">'
+          + '<div class="exp-responsive">'
+          + '<table class="exp-look-static">'
+          + '<thead><tr><th>Image</th><th>Sr. No</th><th>Material</th><th>Cost (sq.ft)</th><th>Thk (mm)</th><th>Best Places to Use</th><th>Brands</th></tr></thead>'
+          + '<tbody>'
+          + '<tr><td class="t-th"><div class="thumb-wrap"><img src="assets/2.Materials that look expensive/Textured Decorative & Venetian Plaster Paint.png" class="row-img"></div></td><td>1</td><td class="t-name">Venetian Plaster Paint</td><td>₹180 – ₹350</td><td>1–3</td><td>Living room, bedroom accent walls, hotel lobbies, foyer</td><td>Vasari India</td></tr>'
+          + '<tr><td class="t-th"><div class="thumb-wrap"><img src="assets/2.Materials that look expensive/Marble-Finish Tiles.jpg" class="row-img"></div></td><td>2</td><td class="t-name">Marble-Finish Tiles</td><td>₹90+</td><td>8–10</td><td>Living room floors, bathroom walls, kitchen backsplash</td><td>Kajaria, Somany, Nitco</td></tr>'
+          + '<tr><td class="t-th"><div class="thumb-wrap"><img src="assets/2.Materials that look expensive/Premium Finish Laminates.png" class="row-img"></div></td><td>3</td><td class="t-name">Premium Finish Laminates</td><td>₹200+</td><td>0.8 – 1.5</td><td>TV units, wardrobes, kitchen cabinets, panels</td><td>Royale Touche Luxury Laminates</td></tr>'
+          + '</tbody></table></div>'
+          + cardsHtml
+          + '</div>';
         return;
       }
 
