@@ -2896,6 +2896,130 @@
     .exp-responsive {
       margin-bottom: 30px;
     }
+
+    /* exp-look - match Limewash exactly */
+    .exp-section .detail-card,
+    .exp-section .mat-detail-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      max-width: 720px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+
+    .exp-section .detail-card-head h3,
+    .exp-section .mat-card-title {
+      background: var(--navy);
+      color: var(--white);
+      padding: 20px 24px;
+    }
+
+    .exp-section .detail-card-body > .d-row,
+    .exp-section .mat-card-body > div {
+      display: flex;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .exp-section .detail-card-body .d-label,
+    .exp-section .mat-card-body strong,
+    .exp-section .mat-card-body .label {
+      width: 160px;
+      flex-shrink: 0;
+      background: var(--light);
+      padding: 14px 16px;
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--blue);
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+    }
+
+    .exp-section .detail-card-body .d-value,
+    .exp-section .mat-card-body p,
+    .exp-section .mat-card-body span,
+    .exp-section .mat-card-body li {
+      flex: 1;
+      padding: 14px 16px;
+      color: var(--text-mid);
+      box-sizing: border-box;
+    }
+
+    .dark-mode .exp-section .detail-card,
+    .dark-mode .exp-section .mat-detail-card {
+      background: var(--card-bg);
+    }
+
+    .dark-mode .exp-section .detail-card-body .d-value,
+    .dark-mode .exp-section .mat-card-body p,
+    .dark-mode .exp-section .mat-card-body span,
+    .dark-mode .exp-section .mat-card-body li {
+      color: var(--text);
+    }
+
+    /* FIX: Exp-look info text visibility (LIGHT MODE ONLY) */
+    body:not(.dark-mode) .exp-section .d-value,
+    body:not(.dark-mode) .exp-section .mat-card-body p,
+    body:not(.dark-mode) .exp-section .mat-card-body span,
+    body:not(.dark-mode) .exp-section .mat-card-body li {
+      color: #2d2d2d !important;
+    }
+
+    /* FIX: remove fade / opacity in exp-look (LIGHT MODE ONLY) */
+    body:not(.dark-mode) .exp-section .d-value,
+    body:not(.dark-mode) .exp-section .mat-card-body,
+    body:not(.dark-mode) .exp-section .mat-card-body * {
+      opacity: 1 !important;
+    }
+
+    /* FIX: lock colors + visibility across ALL breakpoints */
+    .exp-section .mat-card-body,
+    .exp-section .mat-card-body *,
+    .exp-section .d-value {
+      color: #374151 !important;
+      opacity: 1 !important;
+    }
+
+    /* Ensure labels stay correct */
+    .exp-section .d-label,
+    .exp-section .mat-card-body strong {
+      color: #2f5eff !important;
+      opacity: 1 !important;
+    }
+
+    /* Ensure titles stay same */
+    .exp-section .mat-card-title {
+      color: #ffffff !important;
+    }
+
+    @media (max-width: 1024px) {
+      .exp-section .mat-card-body,
+      .exp-section .mat-card-body *,
+      .exp-section .d-value {
+        color: #374151 !important;
+        opacity: 1 !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .exp-section .mat-card-body,
+      .exp-section .mat-card-body *,
+      .exp-section .d-value {
+        color: #374151 !important;
+        opacity: 1 !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .exp-section .mat-card-body,
+      .exp-section .mat-card-body *,
+      .exp-section .d-value {
+        color: #374151 !important;
+        opacity: 1 !important;
+      }
+    }
   </style>
 </head>
 
@@ -4378,7 +4502,7 @@
           + '<div class="exp-section">'
           + '<div class="exp-responsive">'
           + '<table class="exp-look-static">'
-          + '<thead><tr><th>Image</th><th>Sr. No</th><th>Material</th><th>Cost (sq.ft)</th><th>Thk (mm)</th><th>Best Places to Use</th><th>Brands</th></tr></thead>'
+          + '<thead><tr><th>Image</th><th>#</th><th>Material</th><th>Cost (sq.ft)</th><th>Thk (mm)</th><th>Best Places to Use</th><th>Brands</th></tr></thead>'
           + '<tbody>'
           + '<tr><td class="t-th"><div class="thumb-wrap"><img src="assets/2.Materials that look expensive/Textured Decorative & Venetian Plaster Paint.png" class="row-img"></div></td><td>1</td><td class="t-name">Venetian Plaster Paint</td><td>₹180 – ₹350</td><td>1–3</td><td>Living room, bedroom accent walls, hotel lobbies, foyer</td><td>Vasari India</td></tr>'
           + '<tr><td class="t-th"><div class="thumb-wrap"><img src="assets/2.Materials that look expensive/Marble-Finish Tiles.jpg" class="row-img"></div></td><td>2</td><td class="t-name">Marble-Finish Tiles</td><td>₹90+</td><td>8–10</td><td>Living room floors, bathroom walls, kitchen backsplash</td><td>Kajaria, Somany, Nitco</td></tr>'
