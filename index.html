@@ -1877,10 +1877,14 @@
     }
 
     #lmd-lb img {
-      max-width: min(90vw, 900px);
+      width: 50vw;
+      height: 50vh;
+      min-width: 300px;
+      min-height: 200px;
+      max-width: 90vw;
       max-height: 88vh;
       object-fit: contain;
-      border-radius: 6px;
+      border-radius: 8px;
       box-shadow: 0 8px 60px rgba(0, 0, 0, .7);
       cursor: default;
       display: block;
@@ -2897,6 +2901,24 @@
       margin-bottom: 30px;
     }
 
+    .exp-img-wrap {
+      border: 1.5px solid #ccc;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .exp-img-wrap:hover {
+      transform: scale(1.04);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    }
+    .exp-img-wrap img {
+      cursor: zoom-in;
+      transition: transform 0.25s ease;
+    }
+    .exp-img-wrap:hover img {
+      transform: scale(1.03);
+    }
+
     /* exp-look - match Limewash exactly */
     .exp-section .detail-card,
     .exp-section .mat-detail-card {
@@ -2959,66 +2981,31 @@
       color: var(--text);
     }
 
-    /* FIX: Exp-look info text visibility (LIGHT MODE ONLY) */
-    body:not(.dark-mode) .exp-section .d-value,
-    body:not(.dark-mode) .exp-section .mat-card-body p,
-    body:not(.dark-mode) .exp-section .mat-card-body span,
-    body:not(.dark-mode) .exp-section .mat-card-body li {
-      color: #2d2d2d !important;
-    }
-
-    /* FIX: remove fade / opacity in exp-look (LIGHT MODE ONLY) */
-    body:not(.dark-mode) .exp-section .d-value,
-    body:not(.dark-mode) .exp-section .mat-card-body,
-    body:not(.dark-mode) .exp-section .mat-card-body * {
-      opacity: 1 !important;
-    }
-
-    /* FIX: lock colors + visibility across ALL breakpoints */
-    .exp-section .mat-card-body,
-    .exp-section .mat-card-body *,
-    .exp-section .d-value {
-      color: #374151 !important;
-      opacity: 1 !important;
-    }
-
-    /* Ensure labels stay correct */
-    .exp-section .d-label,
-    .exp-section .mat-card-body strong {
-      color: #2f5eff !important;
-      opacity: 1 !important;
-    }
-
-    /* Ensure titles stay same */
-    .exp-section .mat-card-title {
+    /* EXP-LOOK BOTTOM CARDS — LIGHT MODE COLOR FIX */
+    body:not(.dark-mode) .exp-section .detail-card .detail-card-head h3 {
       color: #ffffff !important;
     }
-
-    @media (max-width: 1024px) {
-      .exp-section .mat-card-body,
-      .exp-section .mat-card-body *,
-      .exp-section .d-value {
-        color: #374151 !important;
-        opacity: 1 !important;
-      }
+    body:not(.dark-mode) .exp-section .detail-card .d-label {
+      color: #2e5d9e !important;
+      background: #f0f0f0 !important;
+      opacity: 1 !important;
+    }
+    body:not(.dark-mode) .exp-section .detail-card .d-value {
+      color: #2d2d2d !important;
+      opacity: 1 !important;
+    }
+    body:not(.dark-mode) .exp-section .detail-card .d-row {
+      border-bottom: 1px solid #ddd !important;
     }
 
-    @media (max-width: 768px) {
-      .exp-section .mat-card-body,
-      .exp-section .mat-card-body *,
-      .exp-section .d-value {
-        color: #374151 !important;
-        opacity: 1 !important;
-      }
+    /* Dark mode stays unchanged */
+    .dark-mode .exp-section .detail-card .d-label {
+      color: #6ea8ff !important;
+      opacity: 1 !important;
     }
-
-    @media (max-width: 480px) {
-      .exp-section .mat-card-body,
-      .exp-section .mat-card-body *,
-      .exp-section .d-value {
-        color: #374151 !important;
-        opacity: 1 !important;
-      }
+    .dark-mode .exp-section .detail-card .d-value {
+      color: #e0e0e0 !important;
+      opacity: 1 !important;
     }
   </style>
 </head>
@@ -4465,7 +4452,11 @@
 
       if (id === 'exp-look') {
         const d = listData[id];
-        const matImgs = ['assets/venetian.jpg', 'assets/marble.jpg', 'assets/laminate.jpg'];
+        const matImgs = [
+          'assets/2.Materials that look expensive/Textured Decorative & Venetian Plaster Paint.png',
+          'assets/2.Materials that look expensive/Marble-Finish Tiles.jpg',
+          'assets/2.Materials that look expensive/Premium Finish Laminates.png'
+        ];
         const validItems = d.items.filter(function(it) { return it.trim() !== ''; });
         console.log('EXP DATA:', validItems.length, 'materials found:', validItems.map(function(it){ return it.split('|||')[0]; }));
         var cardsHtml = validItems.map(function(it, idx) {
@@ -4489,7 +4480,13 @@
           if (pros)    rows += '<div class="d-row"><div class="d-label mat-pros-label">✓ Pros</div><div class="d-value">' + pros + '</div></div>';
           if (cons)    rows += '<div class="d-row"><div class="d-label mat-cons-label">✗ Cons</div><div class="d-value">' + cons + '</div></div>';
           if (brand)   rows += '<div class="d-row"><div class="d-label mat-brand-label">Recommended Brands</div><div class="d-value mat-brand-value">' + brand + '</div></div>';
-          var imgCell = imgSrc ? '<div style="display:table-cell;width:160px;min-width:160px;vertical-align:top"><img src="' + imgSrc + '" alt="' + name + '" style="width:100%;min-height:200px;height:100%;object-fit:cover" onerror="this.parentElement.style.display=\'none\'"></div>' : '';
+          var imgCell = imgSrc
+            ? '<div style="display:table-cell;width:220px;min-width:220px;vertical-align:middle;background:#f5f5f5;border-right:1.5px solid #ddd;">'
+              + '<div class="exp-img-wrap">'
+              + '<div style="font-size:9px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#2e5d9e;padding:10px 12px 6px;background:#f0f0f5;border-bottom:1px solid #ddd;">Image</div>'
+              + '<img src="' + imgSrc + '" alt="' + name + '" style="width:100%;height:260px;object-fit:cover;display:block;border-radius:0 0 8px 8px;" onclick="lbOpen(this.src,\'' + name.replace(/'/g,"") + '\')" onerror="this.parentElement.style.display=\'none\'">'
+              + '</div></div>'
+            : '';
           return '<div class="detail-card" style="display:table;width:100%;margin-bottom:20px;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.08)">'
             + imgCell
             + '<div class="detail-card-body" style="display:table-cell;vertical-align:top;padding:16px">'
