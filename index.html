@@ -3144,11 +3144,11 @@
     .exp-look-new colgroup .col-brands { width: 16%; }
     .exp-look-new thead th {
       background: var(--table-header-bg);
-      color: var(--table-header-text);
-      font-size: 8px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
+      color: var(--title-bar-text);
+      font-size: 11.5px;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      line-height: 1.2;
       padding: 9px 6px;
       border: 1px solid var(--table-header-border);
       text-align: left;
@@ -3248,7 +3248,7 @@
         width: 100%;
         table-layout: fixed;
       }
-      .exp-look-new colgroup .col-image { width: 34px; }
+      .exp-look-new colgroup .col-image { width: 38px; }
       .exp-look-new colgroup .col-sno   { width: 18px; }
       .exp-look-new colgroup .col-material { width: 17%; }
       .exp-look-new colgroup .col-cost  { width: 12%; }
@@ -3256,12 +3256,16 @@
       .exp-look-new colgroup .col-places { width: 29%; }
       .exp-look-new colgroup .col-brands { width: 16%; }
       .exp-look-new thead th {
-        font-size: 6.5px;
+        font-size: 10px;
         padding: 5px 3px;
-        letter-spacing: 1px;
+        letter-spacing: 0.3px;
+        line-height: 1.2;
         word-break: normal;
         overflow-wrap: normal;
         hyphens: none;
+      }
+      .exp-look-new thead th:first-child {
+        white-space: nowrap;
       }
       .exp-look-new tbody td {
         padding: 5px 3px;
@@ -3279,18 +3283,25 @@
     }
 
     @media (max-width: 480px) {
+      .exp-look-new .section-header {
+        margin-bottom: 12px;
+      }
       .exp-look-new .section-title {
-        font-size: 12px;
+        font-size: 11px;
+        letter-spacing: 0.2px;
+        white-space: nowrap;
+        max-width: 80%;
       }
       .exp-look-new .top-label {
         font-size: 5.5px;
-        padding: 2px 6px;
+        padding: 2px 5px;
         letter-spacing: 1px;
       }
       .exp-look-new thead th {
-        font-size: 5px;
+        font-size: 7.5px;
         padding: 3px 2px;
-        letter-spacing: 0.8px;
+        letter-spacing: 0.3px;
+        line-height: 1.2;
         word-break: normal;
         overflow-wrap: normal;
         hyphens: none;
@@ -3309,7 +3320,7 @@
         border-radius: 2px;
       }
       .exp-look-new .material-cell { font-size: 6px; }
-      .exp-look-new colgroup .col-image { width: 26px; }
+      .exp-look-new colgroup .col-image { width: 30px; }
       .exp-look-new colgroup .col-sno   { width: 14px; }
       .exp-look-new colgroup .col-material { width: 16%; }
       .exp-look-new colgroup .col-cost  { width: 14%; }
@@ -3320,7 +3331,10 @@
 
     @media (max-width: 400px) {
       .exp-look-new .section-title {
-        font-size: 10px;
+        font-size: 9px;
+        letter-spacing: 0.1px;
+        white-space: nowrap;
+        max-width: 82%;
       }
     }
 
