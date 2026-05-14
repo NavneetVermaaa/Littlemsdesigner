@@ -424,7 +424,6 @@
   }
 
   .detail-section-title {
-    font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
     font-size: 18px;
     font-weight: 700;
     color: var(--accent-navy);
@@ -506,7 +505,6 @@
   }
 
   .spec-title-bar h2 {
-    font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
     font-size: 15px;
     font-weight: 700;
     color: var(--title-bar-text);
@@ -556,8 +554,8 @@
     overflow-wrap: break-word;
     transition: color 0.3s;
   }
-  .spec-value .pros { color: var(--pros-color); }
-  .spec-value .cons { color: var(--cons-color); }
+  .spec-value .pros { color: inherit; }
+  .spec-value .cons { color: inherit; }
 
   @media (max-width: 900px) {
     .spec-image-col {
