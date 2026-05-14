@@ -122,6 +122,57 @@
             background: #b91c1c;
         }
 
+        .preview-table-wrap {
+            overflow-x: auto;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            background: #0f172a;
+            margin: 20px 0;
+        }
+
+        .preview-table-wrap table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: auto;
+        }
+
+        .preview-table-wrap th {
+            background: #1e293b;
+            color: #94a3b8;
+            padding: 10px 12px;
+            font-size: 11px;
+            font-weight: 600;
+            text-align: left;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            text-transform: uppercase;
+        }
+
+        .preview-table-wrap td {
+            padding: 10px 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            color: #c8c6c2;
+            font-size: 12px;
+            vertical-align: middle;
+        }
+
+        .preview-table-wrap .row-img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 8px;
+            display: block;
+        }
+
+        .preview-table-wrap .t-name {
+            font-weight: 600;
+            color: #e8e6e3;
+        }
+
+        .preview-table-wrap tr:last-child td {
+            border-bottom: none;
+        }
+
         @media (max-width: 900px) {
 
             .form-grid,
@@ -133,6 +184,102 @@
                 padding: 20px;
             }
 
+        }
+
+        .rb-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        .rb-table th {
+            padding: 12px 10px;
+            background: #1e293b;
+            color: #94a3b8;
+            font-size: 12px;
+            font-weight: 600;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .rb-table th:last-child {
+            text-align: center;
+        }
+
+        .rb-table td {
+            padding: 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            vertical-align: middle;
+        }
+
+        .rb-table td:last-child {
+            text-align: center;
+        }
+
+        .rb-input {
+            width: 100%;
+            padding: 10px 12px;
+            font-size: 13px;
+            background: #0f172a;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            color: white;
+            box-sizing: border-box;
+        }
+
+        .rb-file-input {
+            padding: 6px;
+            font-size: 12px;
+            background: transparent;
+            border: none;
+            width: auto;
+            color: white;
+        }
+
+        .rb-img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-top: 6px;
+            display: block;
+        }
+
+        .rb-delete-btn {
+            width: auto;
+            padding: 8px 14px;
+            margin: 0;
+            background: #dc2626;
+            border-radius: 8px;
+            font-size: 13px;
+            cursor: pointer;
+            border: none;
+            color: white;
+        }
+
+        .rb-add-btn {
+            width: auto;
+            padding: 12px 24px;
+            margin-top: 10px;
+            background: #1d4ed8;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            color: white;
+        }
+
+        .rb-empty {
+            color: #94a3b8;
+            padding: 10px;
+        }
+
+        .rb-wrap {
+            overflow-x: auto;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            background: #0f172a;
         }
     </style>
 
@@ -212,6 +359,10 @@ display:none;
 
                         <option value="comparison">Comparison Layout</option>
 
+                        <option value="top10">
+                            Top 10 Materials
+                        </option>
+
                         <option value="grid">Simple Grid</option>
 
                     </select>
@@ -252,6 +403,20 @@ display:none;
             flex-wrap:wrap;
             margin-top:20px;
         "></div>
+
+                </div>
+
+                <div id="rowBuilder" style="display:none;margin-top:30px">
+
+                    <div class="section-title">
+                        Dynamic Row Builder
+                    </div>
+
+                    <div id="rowBuilderContainer"></div>
+
+                    <button type="button" id="addRowBtn" class="rb-add-btn">
+                        + Add Row
+                    </button>
 
                 </div>
 
@@ -356,7 +521,15 @@ display:none;
                     document.getElementById('columns')?.value || '',
 
                 rows:
-                    document.getElementById('rows')?.value || ''
+                    document.getElementById('rows')?.value || '',
+
+                top10Columns:
+                    document.getElementById('template').value === 'top10'
+                        ? JSON.stringify(dynamicColumns) : '',
+
+                top10Data:
+                    document.getElementById('template').value === 'top10'
+                        ? JSON.stringify(dynamicRows) : ''
 
             };
 
@@ -373,6 +546,33 @@ display:none;
         function renderCards() {
 
             preview.innerHTML = cards.map(card => {
+
+                if (card.template === 'top10') {
+                    const cols = JSON.parse(card.top10Columns || '[]');
+                    const rows = JSON.parse(card.top10Data || '[]');
+                    let tableHtml = `<div style="margin-bottom:20px">
+                        <h3 style="margin:0 0 6px">${card.name}</h3>
+                        <small style="color:#94a3b8">${card.desc}</small>
+                    </div>
+                    <div class="preview-table-wrap"><table><thead><tr>`;
+                    tableHtml += '<th>Image</th><th>Title</th>';
+                    cols.forEach(c => { tableHtml += `<th>${c}</th>`; });
+                    tableHtml += '<th>Action</th></tr></thead><tbody>';
+                    rows.forEach((row, i) => {
+                        tableHtml += '<tr>';
+                        tableHtml += `<td>${row.image ? `<img src="${row.image}" class="row-img">` : '<span style="color:#666">—</span>'}</td>`;
+                        tableHtml += `<td class="t-name">${row.title || '—'}</td>`;
+                        cols.forEach(c => {
+                            tableHtml += `<td>${(row.fields && row.fields[c]) || '—'}</td>`;
+                        });
+                        tableHtml += `<td>
+                            <button type="button" onclick="editCard('${card.id}')" style="width:auto;padding:6px 12px;margin:0 4px 0 0;background:#2563eb;border-radius:6px;font-size:11px">Edit</button>
+                            <button type="button" onclick="deleteCard('${card.id}')" style="width:auto;padding:6px 12px;margin:0;background:#dc2626;border-radius:6px;font-size:11px">Delete</button>
+                        </td></tr>`;
+                    });
+                    tableHtml += '</tbody></table></div>';
+                    return tableHtml;
+                }
 
                 return `
 
@@ -447,6 +647,13 @@ display:none;
 
             renderDynamicFields();
 
+            if (card.template === 'top10') {
+                dynamicColumns = JSON.parse(card.top10Columns || '[]');
+                dynamicRows = JSON.parse(card.top10Data || '[]');
+                renderColumns();
+                renderRowBuilder();
+            }
+
             if (document.getElementById('material')) {
                 document.getElementById('material').value =
                     card.material || '';
@@ -508,7 +715,7 @@ display:none;
     <script>
         const password = prompt("Enter Admin Password");
 
-        if (password !== "LittleMsDesigner#2342") {
+        if (password !== "admin1234") {
 
             document.body.innerHTML = `
         <h1 style="
@@ -534,6 +741,9 @@ display:none;
         templateSelect.addEventListener('change', renderDynamicFields);
 
         let dynamicColumns = [];
+        let dynamicRows = [];
+        const rowBuilder = document.getElementById('rowBuilder');
+        const addRowBtn = document.getElementById('addRowBtn');
 
         function renderDynamicFields() {
             const value = templateSelect.value;
@@ -542,6 +752,7 @@ display:none;
 
             if (value === 'detail') {
                 tableBuilder.style.display = 'none';
+                rowBuilder.style.display = 'none';
                 dynamicFields.innerHTML = `
                     <input type="text" id="material" placeholder="Material">
                     <input type="text" id="thickness" placeholder="Thickness">
@@ -551,18 +762,26 @@ display:none;
                 `;
             } else if (value === 'table') {
                 tableBuilder.style.display = 'block';
+                rowBuilder.style.display = 'none';
                 dynamicFields.innerHTML = `
                     <textarea id="columns" placeholder="Columns separated by comma"></textarea>
                     <textarea id="rows" placeholder="Rows"></textarea>
                 `;
             } else if (value === 'comparison') {
                 tableBuilder.style.display = 'none';
+                rowBuilder.style.display = 'none';
                 dynamicFields.innerHTML = `
                     <input type="text" placeholder="Left Item">
                     <input type="text" placeholder="Right Item">
                 `;
+            } else if (value === 'top10') {
+                tableBuilder.style.display = 'block';
+                rowBuilder.style.display = 'block';
+                dynamicFields.innerHTML = '';
+                renderRowBuilder();
             } else {
                 tableBuilder.style.display = 'none';
+                rowBuilder.style.display = 'none';
                 dynamicFields.innerHTML = '';
             }
         }
@@ -628,6 +847,10 @@ display:none;
 
                 }).join('');
 
+            if (templateSelect.value === 'top10') {
+                renderRowBuilder();
+            }
+
         }
 
         function removeColumn(index) {
@@ -636,10 +859,94 @@ display:none;
 
             renderColumns();
 
+            if (templateSelect.value === 'top10') {
+                renderRowBuilder();
+            }
+
         }
 
         window.removeColumn =
             removeColumn;
+
+        function renderRowBuilder() {
+            const container = document.getElementById('rowBuilderContainer');
+            if (!dynamicColumns.length) {
+                container.innerHTML = '<div class="rb-empty">Add columns first using the column builder above.</div>';
+                return;
+            }
+            let html = '<div class="rb-wrap"><table class="rb-table"><thead><tr>';
+            html += '<th>Image</th>';
+            html += '<th>Title</th>';
+            dynamicColumns.forEach(col => {
+                html += `<th>${col}</th>`;
+            });
+            html += '<th>Action</th></tr></thead><tbody>';
+            dynamicRows.forEach((row, index) => {
+                html += '<tr>';
+                html += `<td>
+                    <input type="file" accept="image/*" class="rb-file-input" onchange="uploadRowImage(${index}, this)">
+                    ${row.image ? `<img src="${row.image}" class="rb-img">` : ''}
+                </td>`;
+                html += `<td>
+                    <input type="text" class="rb-input" value="${row.title || ''}" oninput="updateRowTitle(${index}, this.value)">
+                </td>`;
+                dynamicColumns.forEach((col) => {
+                    const val = (row.fields && row.fields[col]) || '';
+                    html += `<td>
+                        <input type="text" class="rb-input" value="${val}" oninput="updateRowField(${index}, ${dynamicColumns.indexOf(col)}, this.value)">
+                    </td>`;
+                });
+                html += `<td>
+                    <button type="button" class="rb-delete-btn" onclick="deleteRow(${index})">Delete</button>
+                </td></tr>`;
+            });
+            html += '</tbody></table></div>';
+            container.innerHTML = html;
+        }
+
+        function addRow() {
+            dynamicRows.push({ image: '', title: '', fields: {} });
+            renderRowBuilder();
+        }
+
+        function deleteRow(index) {
+            dynamicRows.splice(index, 1);
+            renderRowBuilder();
+        }
+
+        function updateRowTitle(index, value) {
+            if (!dynamicRows[index]) return;
+            dynamicRows[index].title = value;
+        }
+
+        function updateRowField(index, colIndex, value) {
+            if (!dynamicRows[index]) return;
+            const colName = dynamicColumns[colIndex];
+            if (!colName) return;
+            if (!dynamicRows[index].fields) dynamicRows[index].fields = {};
+            dynamicRows[index].fields[colName] = value;
+        }
+
+        function uploadRowImage(index, input) {
+            const file = input.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                if (!dynamicRows[index]) return;
+                dynamicRows[index].image = e.target.result;
+                renderRowBuilder();
+            };
+            reader.readAsDataURL(file);
+        }
+
+        addRowBtn.addEventListener('click', addRow);
+
+        window.addRow = addRow;
+        window.deleteRow = deleteRow;
+        window.updateRowTitle = updateRowTitle;
+        window.updateRowField = updateRowField;
+        window.uploadRowImage = uploadRowImage;
+        window.renderRowBuilder = renderRowBuilder;
     </script>
 </body>
 

@@ -259,6 +259,7 @@
     object-fit: cover;
     display: block;
     margin: 0 auto;
+    cursor: pointer;
   }
 
   .sno-cell {
@@ -514,6 +515,7 @@
     border-radius: 4px;
     display: block;
     margin: auto;
+    cursor: pointer;
   }
 
   .spec-table-col {
@@ -629,7 +631,7 @@
       padding: 4px 8px;
       font-size: 7.5px;
     }
-    .spec-value { padding: 4px 10px; font-size: 9px; line-height: 1.35; }
+    .spec-value { padding: 4px 10px; font-size: 9px; line-height: 1.5; }
   }
 
   @media (max-width: 400px) {
@@ -654,7 +656,7 @@
       padding: 3px 6px;
       font-size: 6px;
     }
-    .spec-value { padding: 3px 7px; font-size: 9px; line-height: 1.3; }
+    .spec-value { padding: 3px 7px; font-size: 9px; line-height: 1.5; }
   }
 
   /* ===== LIGHTBOX ===== */
@@ -667,13 +669,35 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.25s ease;
   }
-  .spec-lb.active { display: flex; }
-  .spec-lb img {
-    max-width: 98vw;
-    max-height: 98vh;
-    object-fit: contain;
-    border-radius: 4px;
+  .spec-lb.active {
+    display: flex;
+    opacity: 1;
+  }
+  #specLightboxImg {
+    width: auto !important;
+    height: auto !important;
+    max-width: 95vw !important;
+    max-height: 80vh !important;
+    min-height: 70vh;
+    object-fit: contain !important;
+    border-radius: 10px;
+    display: block;
+    transform: scale(0.92);
+    transition: transform 0.25s ease;
+  }
+  .spec-lb.active #specLightboxImg {
+    transform: scale(1);
+  }
+  @media (max-width: 768px) {
+    #specLightboxImg {
+      max-width: 96vw !important;
+      max-height: 80vh !important;
+      min-height: 65vh;
+    }
   }
 </style>
 </head>
@@ -714,7 +738,7 @@
       <tbody>
         <tr>
           <td class="img-cell">
-            <img src="assets/2.Materials%20that%20look%20expensive/Textured%20Decorative%20%26%20Venetian%20Plaster%20Paint.png" alt="Venetian Plaster" loading="lazy">
+            <img src="assets/2.Materials%20that%20look%20expensive/Textured%20Decorative%20%26%20Venetian%20Plaster%20Paint.png" alt="Venetian Plaster" loading="lazy" onclick="specZoom(this.src)">
           </td>
           <td class="sno-cell">1</td>
           <td class="material-cell">Venetian Plaster Paint</td>
@@ -725,7 +749,7 @@
         </tr>
         <tr>
           <td class="img-cell">
-            <img src="assets/2.Materials%20that%20look%20expensive/Marble-Finish%20Tiles.jpg" alt="Marble Finish Tiles" loading="lazy">
+            <img src="assets/2.Materials%20that%20look%20expensive/Marble-Finish%20Tiles.jpg" alt="Marble Finish Tiles" loading="lazy" onclick="specZoom(this.src)">
           </td>
           <td class="sno-cell">2</td>
           <td class="material-cell">Marble-Finish Tiles</td>
@@ -854,7 +878,7 @@
   <div class="spec-card">
     <div class="spec-image-col">
       <div class="spec-image-label">Image</div>
-      <img src="assets/2.Materials%20that%20look%20expensive/Premium%20Finish%20Laminates.png" alt="Premium Finish Laminates" loading="lazy">
+      <img src="assets/2.Materials%20that%20look%20expensive/Premium%20Finish%20Laminates.png" alt="Premium Finish Laminates" loading="lazy" onclick="specZoom(this.src)">
     </div>
     <div class="spec-table-col">
       <div class="spec-title-bar">
@@ -907,17 +931,13 @@ function specZoom(src) {
   document.getElementById('specLightboxImg').src = src;
   document.getElementById('specLightbox').classList.add('active');
 }
-
-function toggleTheme() {
-  const html = document.documentElement;
-  const btn = document.querySelector('.theme-toggle');
-  html.classList.toggle('dark-mode');
-  btn.textContent = html.classList.contains('dark-mode') ? '☀️' : '🌙';
-}
-
-if (!document.documentElement.classList.contains('dark-mode')) {
-  document.querySelector('.theme-toggle').textContent = '🌙';
-}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.exp-lb.active, .spec-lb.active').forEach(function(el) {
+      el.classList.remove('active');
+    });
+  }
+});
 </script>
 
 </body>
