@@ -69,6 +69,38 @@
       --card-bg: #ffffff;
       --table-bg: #ffffff;
       --input-bg: #ffffff;
+      --section-bg: #ffffff;
+      --section-border: rgba(0,0,0,0.06);
+      --table-header-bg: #0c1624;
+      --table-header-text: #ffffff;
+      --table-header-border: rgba(0,0,0,0.06);
+      --table-cell-border: rgba(0,0,0,0.05);
+      --table-cell-text: #555;
+      --card-border: rgba(0,0,0,0.07);
+      --spec-image-bg: #f8f8f6;
+      --spec-image-border: rgba(0,0,0,0.05);
+      --spec-image-label: #999;
+      --title-bar-bg: #1e2d4a;
+      --title-bar-border: rgba(0,0,0,0.05);
+      --title-bar-text: #ffffff;
+      --spec-row-border: rgba(0,0,0,0.04);
+      --spec-label-bg: #f0f0ee;
+      --spec-label-text: #2e5d9e;
+      --spec-label-border: rgba(0,0,0,0.03);
+      --spec-value-text: #444;
+      --pros-color: #2d7a2d;
+      --cons-color: #b94a4a;
+      --sno-color: #999;
+      --material-color: #1e2d4a;
+      --cost-color: #555;
+      --thk-color: #777;
+      --places-color: #666;
+      --brands-color: #666;
+      --top-label-border: rgba(0,0,0,0.1);
+      --detail-header-border: rgba(0,0,0,0.06);
+      --detail-count-border: rgba(0,0,0,0.08);
+      --detail-count-color: #999;
+      --lb-bg: rgba(0,0,0,0.92);
     }
 
     .dark-mode {
@@ -84,6 +116,38 @@
       --card-bg: #1a1a1a;
       --table-bg: #1a1a1a;
       --input-bg: #2a2a2a;
+      --section-bg: #0d0d0d;
+      --section-border: rgba(255,255,255,0.08);
+      --table-header-bg: #0c1624;
+      --table-header-text: #8896a8;
+      --table-header-border: rgba(255,255,255,0.06);
+      --table-cell-border: rgba(255,255,255,0.05);
+      --table-cell-text: #c8c6c2;
+      --card-border: rgba(255,255,255,0.07);
+      --spec-image-bg: #101012;
+      --spec-image-border: rgba(255,255,255,0.05);
+      --spec-image-label: #4a5568;
+      --title-bar-bg: #0c1624;
+      --title-bar-border: rgba(255,255,255,0.05);
+      --title-bar-text: #3b5998;
+      --spec-row-border: rgba(255,255,255,0.04);
+      --spec-label-bg: #111114;
+      --spec-label-text: #4a7bbf;
+      --spec-label-border: rgba(255,255,255,0.03);
+      --spec-value-text: #d4d0c8;
+      --pros-color: #6b9e6b;
+      --cons-color: #c97a7a;
+      --sno-color: #555;
+      --material-color: #1e2d4a;
+      --cost-color: #c8c6c2;
+      --thk-color: #999;
+      --places-color: #aaa;
+      --brands-color: #999;
+      --top-label-border: rgba(255,255,255,0.1);
+      --detail-header-border: rgba(255,255,255,0.06);
+      --detail-count-border: rgba(255,255,255,0.08);
+      --detail-count-color: #666;
+      --lb-bg: rgba(0,0,0,0.92);
     }
 
     /* -- HEADER -- */
@@ -1511,7 +1575,7 @@
     .exp-look-table td.t-name::before {
       display: none !important;
     }
-    }
+
 
     @media (max-width: 600px) {
       .exp-look-table table {
@@ -2110,8 +2174,7 @@
       max-width: 350px;
     }
 
-    .top10-table td:nth-child(10),
-    .exp-look-table td:nth-child(7) {}
+
 
     .top10-table td:nth-child(4),
     .exp-look-table td:nth-child(4) {
@@ -2318,10 +2381,11 @@
       }
     }
 
-    border: 1.5px solid var(--border);
-    border-radius: 8px;
-    padding: 16px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    .material-card {
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     }
 
     .material-card img {
@@ -2372,6 +2436,7 @@
       border: 1.5px solid var(--border);
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     }
+
     .bootstrap-test table {
       font-size: 12px !important;
       table-layout: auto !important;
@@ -2405,6 +2470,7 @@
       border: 1.5px solid var(--border);
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     }
+
     .bootstrap-exp table {
       font-size: 12px !important;
       table-layout: auto !important;
@@ -2489,6 +2555,7 @@
 
     /* Desktop views */
     @media (min-width: 1200px) {
+
       .bootstrap-exp table,
       .bootstrap-test table,
       .custom-table-inner {
@@ -2508,6 +2575,7 @@
 
     /* Tablet & Large Mobile */
     @media (max-width: 1199px) {
+
       .bootstrap-exp,
       .bootstrap-test {
         overflow-x: auto !important;
@@ -2542,6 +2610,7 @@
       .custom-table-inner {
         font-size: 9px !important;
       }
+
       .custom-table-inner th,
       .custom-table-inner td {
         padding: 4px 3px !important;
@@ -2573,6 +2642,7 @@
       .custom-table-inner {
         font-size: 8px !important;
       }
+
       .custom-table-inner th,
       .custom-table-inner td {
         padding: 2px 2px !important;
@@ -2599,6 +2669,7 @@
         overflow-x: auto !important;
         -webkit-overflow-scrolling: touch;
       }
+
       .top10-table th,
       .top10-table td {
         font-size: 9px !important;
@@ -2607,23 +2678,28 @@
         word-break: break-word !important;
         overflow: visible !important;
       }
+
       .top10-table .list-num {
         font-size: 10px !important;
       }
+
       .top10-table .t-name {
         font-size: 10px !important;
       }
     }
 
     @media (max-width: 440px) {
+
       .top10-table th,
       .top10-table td {
         font-size: 7px !important;
         padding: 2px 2px !important;
       }
+
       .top10-table .list-num {
         font-size: 8px !important;
       }
+
       .top10-table .t-name {
         font-size: 8px !important;
       }
@@ -2691,11 +2767,13 @@
       .exp-responsive table {
         font-size: 13px !important;
       }
+
       .exp-responsive th,
       .exp-responsive td {
         padding: 8px 6px !important;
         font-size: 12px !important;
       }
+
       .exp-responsive thead th {
         font-size: 11px !important;
       }
@@ -2707,11 +2785,13 @@
         font-size: 11px !important;
         min-width: 100%;
       }
+
       .exp-responsive th,
       .exp-responsive td {
         padding: 6px 5px !important;
         font-size: 10px !important;
       }
+
       .exp-responsive thead th {
         font-size: 9px !important;
       }
@@ -2723,15 +2803,18 @@
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
       }
+
       .exp-responsive table {
         font-size: 10px !important;
         min-width: 900px;
       }
+
       .exp-responsive th,
       .exp-responsive td {
         padding: 5px 4px !important;
         font-size: 9px !important;
       }
+
       .exp-responsive thead th {
         font-size: 8px !important;
       }
@@ -2745,15 +2828,18 @@
         margin-left: -12px;
         margin-right: -12px;
       }
+
       .exp-responsive table {
         font-size: 9px !important;
         min-width: 850px;
       }
+
       .exp-responsive th,
       .exp-responsive td {
         padding: 4px 3px !important;
         font-size: 8px !important;
       }
+
       .exp-responsive thead th {
         font-size: 7px !important;
         padding: 4px 3px !important;
@@ -2768,15 +2854,18 @@
         margin-left: -8px;
         margin-right: -8px;
       }
+
       .exp-responsive table {
         font-size: 8px !important;
         min-width: 800px;
       }
+
       .exp-responsive th,
       .exp-responsive td {
         padding: 3px 2px !important;
         font-size: 7px !important;
       }
+
       .exp-responsive thead th {
         font-size: 6px !important;
         padding: 3px 2px !important;
@@ -2793,15 +2882,18 @@
         margin-right: -4px;
         width: calc(100% + 8px);
       }
+
       .exp-responsive table {
         font-size: 7px !important;
         min-width: 750px;
       }
+
       .exp-responsive th,
       .exp-responsive td {
         padding: 2px 1px !important;
         font-size: 6px !important;
       }
+
       .exp-responsive thead th {
         font-size: 5px !important;
         padding: 2px 1px !important;
@@ -2809,24 +2901,26 @@
       }
     }
 
-    /* MOBILE FONT SIZE OPTIMIZATION FOR MATERIALS THAT LOOK EXPENSIVE SECTION */
+    /* ================================================================
+       [COMMENTED OUT - OLD "Materials That Look Expensive" section CSS]
+       Restore by uncommenting the block below if needed.
+       ================================================================ */
+    /*
+    // ===== BEGIN OLD EXP-LOOK CSS =====
+
+    // MOBILE FONT SIZE OPTIMIZATION FOR MATERIALS THAT LOOK EXPENSIVE SECTION
     @media (max-width: 768px) {
-      /* Section Heading */
       .exp-section .sec-title,
       .exp-section h1,
       .exp-section h2 {
         font-size: 18px !important;
         line-height: 1.2 !important;
       }
-
-      /* Table Header */
       .exp-section table thead th {
         font-size: 7px !important;
         padding: 4px 3px !important;
         white-space: nowrap !important;
       }
-
-      /* Table Body Content */
       .exp-section table tbody td {
         font-size: 9px !important;
         padding: 4px 3px !important;
@@ -2834,7 +2928,7 @@
       }
     }
 
-    /* COLOR FIXES FOR EXP-LOOK SECTION */
+    // COLOR FIXES FOR EXP-LOOK SECTION
     .exp-section .mat-cost { color: #e6eaf2; font-weight: 600; }
     .exp-section .mat-pros-label { color: #6ea8ff; font-weight: 600; }
     .exp-section .mat-cons-label { color: #cbd3df; font-weight: 600; }
@@ -2844,346 +2938,609 @@
     .exp-section .detail-card h3 { color: #2f5eff; }
     .exp-section .d-label { color: #6ea8ff; }
 
-    /* Smaller mobiles */
+    // Smaller mobiles
     @media (max-width: 480px) {
       .exp-section .sec-title,
       .exp-section h1,
-      .exp-section h2 {
-        font-size: 16px !important;
-      }
-
-      .exp-section table thead th {
-        font-size: 6px !important;
-        padding: 3px 2px !important;
-      }
-
-      .exp-section table tbody td {
-        font-size: 8px !important;
-        padding: 3px 2px !important;
-      }
+      .exp-section h2 { font-size: 16px !important; }
+      .exp-section table thead th { font-size: 6px !important; padding: 3px 2px !important; }
+      .exp-section table tbody td { font-size: 8px !important; padding: 3px 2px !important; }
     }
 
-    /* Extra small screens */
+    // Extra small screens
     @media (max-width: 380px) {
-      .exp-section table thead th {
-        font-size: 5.5px !important;
-      }
-
-      .exp-section table tbody td {
-        font-size: 7px !important;
-      }
+      .exp-section table thead th { font-size: 5.5px !important; }
+      .exp-section table tbody td { font-size: 7px !important; }
     }
 
-    /* HIDE SCROLLBAR ON MOBILE & TABLET - TABLE FITS SCREEN */
+    // HIDE SCROLLBAR ON MOBILE & TABLET - TABLE FITS SCREEN
     @media (max-width: 768px) {
-      .exp-section .table-wrap {
-        overflow-x: hidden !important;
-        -webkit-overflow-scrolling: auto !important;
+      .exp-section .table-wrap { overflow-x: hidden !important; -webkit-overflow-scrolling: auto !important; }
+      .exp-section .table-wrap table { min-width: auto !important; width: 100% !important; table-layout: auto !important; }
+      .exp-section table thead th,
+      .exp-section table tbody td { white-space: normal !important; word-wrap: break-word !important; word-break: break-word !important; }
+      .exp-look-static { margin-bottom: 30px; }
+      .exp-responsive { margin-bottom: 30px; }
+      .exp-img-wrap { border: 1.5px solid #ccc; border-radius: 10px; overflow: hidden; transition: transform 0.25s ease, box-shadow 0.25s ease; }
+      .exp-img-wrap:hover { transform: scale(1.04); box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12); }
+      .exp-img-wrap img { cursor: zoom-in; transition: transform 0.25s ease; }
+      .exp-img-wrap:hover img { transform: scale(1.03); }
+      .exp-section .detail-card,
+      .exp-section .mat-detail-card { background: var(--white); border: 1.5px solid var(--border); border-radius: 8px; overflow: hidden; max-width: 720px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); }
+      .exp-section .detail-card-head h3,
+      .exp-section .mat-card-title { background: var(--navy); color: var(--white); padding: 20px 24px; }
+      .exp-section .detail-card-body>.d-row,
+      .exp-section .mat-card-body>div { display: flex; border-bottom: 1px solid var(--border); }
+      .exp-section .detail-card-body .d-label,
+      .exp-section .mat-card-body strong,
+      .exp-section .mat-card-body .label { width: 160px; flex-shrink: 0; background: var(--light); padding: 14px 16px; font-size: 9px; font-weight: 700; text-transform: uppercase; color: var(--blue); display: flex; align-items: center; box-sizing: border-box; }
+      .exp-section .detail-card-body .d-value,
+      .exp-section .mat-card-body p,
+      .exp-section .mat-card-body span,
+      .exp-section .mat-card-body li { flex: 1; padding: 14px 16px; color: var(--text-mid); box-sizing: border-box; }
+      .dark-mode .exp-section .detail-card,
+      .dark-mode .exp-section .mat-detail-card { background: var(--card-bg); }
+      .dark-mode .exp-section .detail-card-body .d-value,
+      .dark-mode .exp-section .mat-card-body p,
+      .dark-mode .exp-section .mat-card-body span,
+      .dark-mode .exp-section .mat-card-body li { color: var(--text); }
+      .exp-card-img-col { background: #f5f5f5; }
+      .exp-card-img-label { background: #f0f0f0; color: #2e5d9e; }
+      .dark-mode .exp-card-img-col { background: #1a1a1a; }
+      .dark-mode .exp-card-img-label { background: #111111; color: #6ea8ff; }
+
+      // Tablet: 768px - 1024px
+      @media (max-width: 1024px) {
+        .exp-section .detail-card { flex-direction: row !important; }
+        .exp-section .exp-card-img-col { width: 180px !important; min-width: 180px !important; }
+        .exp-section .exp-card-img-col img { max-height: 180px !important; }
+        .exp-section .material-cards-section .d-label { width: 100px !important; font-size: 7px !important; padding: 8px 8px !important; }
+        .exp-section .material-cards-section .d-value { font-size: 11px !important; padding: 8px 8px !important; }
+        .exp-section .material-cards-section .detail-card-head h3 { font-size: 14px !important; }
       }
-      .exp-section .table-wrap table {
-        min-width: auto !important;
-        width: 100% !important;
-        table-layout: auto !important;
+
+      // Large Mobile: 600px - 767px
+      @media (max-width: 767px) {
+        .exp-section .detail-card { flex-direction: row !important; transform: scale(0.82); transform-origin: top left; width: 122% !important; margin-bottom: 0px !important; }
+        .exp-section .exp-card-img-col { width: 130px !important; min-width: 130px !important; }
+        .exp-section .exp-card-img-col img { max-height: 150px !important; padding: 0 !important; }
+        .exp-section .exp-card-img-col>div:last-child { padding: 8px !important; }
+        .exp-section .exp-card-img-label { font-size: 7px !important; padding: 6px 8px 4px !important; }
+        .exp-section .material-cards-section .d-label { width: 80px !important; font-size: 6px !important; padding: 6px 6px !important; letter-spacing: 0.04em !important; }
+        .exp-section .material-cards-section .d-value { font-size: 10px !important; padding: 6px 6px !important; line-height: 1.4 !important; }
+        .exp-section .material-cards-section .detail-card-head { padding: 10px 10px 6px !important; }
+        .exp-section .material-cards-section .detail-card-head h3 { font-size: 12px !important; }
       }
-.exp-section table thead th,
-    .exp-section table tbody td {
-      white-space: normal !important;
-      word-wrap: break-word !important;
-      word-break: break-word !important;
+
+      // Small Mobile: 480px - 599px
+      @media (max-width: 599px) {
+        .exp-section .detail-card { flex-direction: row !important; transform: scale(0.75); transform-origin: top left; width: 133% !important; margin-bottom: -20px !important; }
+        .exp-section .exp-card-img-col { width: 100px !important; min-width: 100px !important; }
+        .exp-section .exp-card-img-col img { max-height: 120px !important; }
+        .exp-section .exp-card-img-col>div:last-child { padding: 6px !important; }
+        .exp-section .exp-card-img-label { font-size: 6px !important; padding: 4px 6px 3px !important; }
+        .exp-section .material-cards-section .d-label { width: 68px !important; font-size: 5.5px !important; padding: 5px 4px !important; letter-spacing: 0.02em !important; }
+        .exp-section .material-cards-section .d-value { font-size: 9px !important; padding: 5px 5px !important; line-height: 1.3 !important; }
+        .exp-section .material-cards-section .detail-card-head h3 { font-size: 11px !important; }
+      }
+
+      // Extra Small: below 480px
+      @media (max-width: 479px) {
+        .exp-section .detail-card { flex-direction: row !important; transform: scale(0.68); transform-origin: top left; width: 147% !important; margin-bottom: -30px !important; }
+        .exp-section .exp-card-img-col { width: 80px !important; min-width: 80px !important; }
+        .exp-section .exp-card-img-col img { max-height: 100px !important; }
+        .exp-section .exp-card-img-col>div:last-child { padding: 4px !important; }
+        .exp-section .exp-card-img-label { font-size: 5px !important; padding: 3px 4px !important; }
+        .exp-section .material-cards-section .d-label { width: 58px !important; font-size: 5px !important; padding: 4px 3px !important; }
+        .exp-section .material-cards-section .d-value { font-size: 8px !important; padding: 4px 4px !important; line-height: 1.2 !important; }
+        .exp-section .material-cards-section .detail-card-head h3 { font-size: 10px !important; }
+      }
+
+      // LIGHT MODE COLOR FIX
+      body:not(.dark-mode) .exp-section .detail-card .detail-card-head h3 { color: #ffffff !important; }
+      body:not(.dark-mode) .exp-section .detail-card .d-label { color: #2e5d9e !important; background: #f0f0f0 !important; opacity: 1 !important; }
+      body:not(.dark-mode) .exp-section .detail-card .d-value { color: #2d2d2d !important; opacity: 1 !important; }
+      body:not(.dark-mode) .exp-section .detail-card .d-row { border-bottom: 1px solid #ddd !important; }
+
+      // Dark mode
+      .dark-mode .exp-section .detail-card .d-label { color: #6ea8ff !important; opacity: 1 !important; }
+      .dark-mode .exp-section .detail-card .d-value { color: #e0e0e0 !important; opacity: 1 !important; }
+      .dark-mode .exp-section .detail-card .exp-img-wrap { border-color: #444 !important; }
+      .dark-mode .exp-section .detail-card [style*="display:table-cell"][style*="#f5f5f5"] { background: #1e1e1e !important; border-right-color: #444 !important; }
+      .dark-mode .exp-section .detail-card .exp-img-wrap>div[style*="#2e5d9e"] { color: #6ea8ff !important; background: #2a2a2a !important; border-bottom-color: #444 !important; }
+
+      // FIX 1
+      @media (max-width: 1024px) {
+        .exp-section .exp-responsive tbody td { white-space: nowrap !important; word-break: keep-all !important; hyphens: none !important; }
+        .exp-section .exp-responsive th:nth-child(6),
+        .exp-section .exp-responsive td:nth-child(6) { max-width: 90px !important; overflow: hidden !important; text-overflow: ellipsis !important; }
+      }
+
+      // FIX 2
+      @media (max-width: 1024px) {
+        .exp-section .detail-card .d-value.mat-cost { font-weight: 400 !important; }
+      }
+
+      // FIX 3
+      @media (max-width: 767px) {
+        .exp-section .detail-card { transform: none !important; width: 100% !important; margin-bottom: 12px !important; }
+        .exp-section .detail-card .detail-card-head { padding: 12px !important; }
+        .exp-section .detail-card .detail-card-head h3 { font-size: 13px !important; }
+        .exp-section .detail-card .d-label { width: 85px !important; font-size: 7px !important; padding: 8px 6px !important; }
+        .exp-section .detail-card .d-value { font-size: 11px !important; padding: 8px !important; }
+        .exp-section .exp-card-img-col { width: 90px !important; min-width: 90px !important; }
+        .exp-section .exp-card-img-col img { max-height: 110px !important; }
+      }
     }
 
-    .exp-look-static {
-      margin-bottom: 30px;
-    }
+    // ===== END OLD EXP-LOOK CSS =====
+    */
 
-    .exp-responsive {
-      margin-bottom: 30px;
+    /* ================================================================
+       NEW "Materials That Look Expensive" section CSS (fully independent)
+       All selectors scoped under .exp-look-new to avoid conflicts.
+       ================================================================ */
+    .exp-look-new .section {
+      max-width: 1100px;
+      width: 100%;
+      background: var(--section-bg);
+      padding: 36px 28px 28px;
+      position: relative;
+      transition: background-color 0.3s;
     }
-
-    .exp-img-wrap {
-      border: 1.5px solid #ccc;
-      border-radius: 10px;
-      overflow: hidden;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    .exp-look-new .section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 28px;
+      right: 28px;
+      height: 1px;
+      background: var(--section-border);
     }
-    .exp-img-wrap:hover {
-      transform: scale(1.04);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-    }
-    .exp-img-wrap img {
-      cursor: zoom-in;
-      transition: transform 0.25s ease;
-    }
-    .exp-img-wrap:hover img {
-      transform: scale(1.03);
-    }
-
-    /* exp-look - match Limewash exactly */
-    .exp-section .detail-card,
-    .exp-section .mat-detail-card {
-      background: var(--white);
-      border: 1.5px solid var(--border);
-      border-radius: 8px;
-      overflow: hidden;
-      max-width: 720px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    }
-
-    .exp-section .detail-card-head h3,
-    .exp-section .mat-card-title {
-      background: var(--navy);
-      color: var(--white);
-      padding: 20px 24px;
-    }
-
-    .exp-section .detail-card-body > .d-row,
-    .exp-section .mat-card-body > div {
+    .exp-look-new .section-header {
       display: flex;
-      border-bottom: 1px solid var(--border);
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 24px;
     }
-
-    .exp-section .detail-card-body .d-label,
-    .exp-section .mat-card-body strong,
-    .exp-section .mat-card-body .label {
-      width: 160px;
-      flex-shrink: 0;
-      background: var(--light);
-      padding: 14px 16px;
-      font-size: 9px;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: var(--blue);
-      display: flex;
-      align-items: center;
-      box-sizing: border-box;
-    }
-
-    .exp-section .detail-card-body .d-value,
-    .exp-section .mat-card-body p,
-    .exp-section .mat-card-body span,
-    .exp-section .mat-card-body li {
-      flex: 1;
-      padding: 14px 16px;
-      color: var(--text-mid);
-      box-sizing: border-box;
-    }
-
-    .dark-mode .exp-section .detail-card,
-    .dark-mode .exp-section .mat-detail-card {
-      background: var(--card-bg);
-    }
-
-    .dark-mode .exp-section .detail-card-body .d-value,
-    .dark-mode .exp-section .mat-card-body p,
-    .dark-mode .exp-section .mat-card-body span,
-    .dark-mode .exp-section .mat-card-body li {
+    .exp-look-new .section-title {
+      font-size: 20px;
+      font-weight: 500;
       color: var(--text);
+      letter-spacing: 0.4px;
+      line-height: 1.3;
+      max-width: 72%;
+      transition: color 0.3s;
+    }
+    .exp-look-new .section-title span {
+      color: var(--navy);
+    }
+    .exp-look-new .top-label {
+      font-size: 9px;
+      font-weight: 500;
+      color: var(--text-light);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border: 1px solid var(--top-label-border);
+      transition: color 0.3s, border-color 0.3s;
+    }
+    .exp-look-new .table-wrapper {
+      overflow: hidden;
+    }
+    .exp-look-new table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--table-bg);
+      table-layout: fixed;
+      transition: background-color 0.3s;
+    }
+    .exp-look-new colgroup .col-image { width: 52px; }
+    .exp-look-new colgroup .col-sno   { width: 28px; }
+    .exp-look-new colgroup .col-material { width: 18%; }
+    .exp-look-new colgroup .col-cost  { width: 11%; }
+    .exp-look-new colgroup .col-thk   { width: 7%; }
+    .exp-look-new colgroup .col-places { width: 31%; }
+    .exp-look-new colgroup .col-brands { width: 16%; }
+    .exp-look-new thead th {
+      background: var(--table-header-bg);
+      color: var(--table-header-text);
+      font-size: 8px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 9px 6px;
+      border: 1px solid var(--table-header-border);
+      text-align: left;
+      white-space: normal;
+      overflow-wrap: break-word;
+      transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    }
+    .exp-look-new thead th:nth-child(2) {
+      text-align: center;
+    }
+    .exp-look-new tbody td {
+      padding: 9px 6px;
+      border: 1px solid var(--table-cell-border);
+      vertical-align: middle;
+      font-size: 10.5px;
+      color: var(--table-cell-text);
+      line-height: 1.35;
+      transition: color 0.3s, border-color 0.3s;
+    }
+    .exp-look-new .img-cell {
+      width: 52px;
+      padding: 5px !important;
+      text-align: center;
+    }
+    .exp-look-new .img-cell img {
+      width: 38px;
+      height: 38px;
+      border-radius: 4px;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto;
+    }
+    .exp-look-new .sno-cell {
+      text-align: center;
+      font-size: 9px;
+      color: var(--sno-color);
+      font-weight: 500;
+    }
+    .exp-look-new .material-cell {
+      font-size: 11.5px;
+      font-weight: 500;
+      color: var(--material-color);
+    }
+    .exp-look-new .cost-cell {
+      font-size: 10.5px;
+      font-weight: 400;
+      color: var(--cost-color);
+    }
+    .exp-look-new .thk-cell {
+      font-size: 9px;
+      color: var(--thk-color);
+      text-align: center;
+      white-space: nowrap;
+    }
+    .exp-look-new .places-cell {
+      font-size: 9px;
+      color: var(--places-color);
+      line-height: 1.4;
+    }
+    .exp-look-new .brands-cell {
+      font-size: 9px;
+      color: var(--brands-color);
+      line-height: 1.35;
     }
 
-    /* EXP-LOOK IMAGE COLUMN BACKGROUNDS */
-    .exp-card-img-col {
-      background: #f5f5f5;
-    }
-    .exp-card-img-label {
-      background: #f0f0f0;
-      color: #2e5d9e;
-    }
-
-    .dark-mode .exp-card-img-col {
-      background: #1a1a1a;
-    }
-    .dark-mode .exp-card-img-label {
-      background: #111111;
-      color: #6ea8ff;
-    }
-
-    /* EXP-LOOK BOTTOM CARDS — RESPONSIVE */
-
-    /* Tablet: 768px - 1024px */
-    @media (max-width: 1024px) {
-      .exp-section .detail-card {
-        flex-direction: row !important;
+    @media (max-width: 768px) {
+      .exp-look-new .section {
+        padding: 24px 12px 20px;
       }
-      .exp-section .exp-card-img-col {
-        width: 180px !important;
-        min-width: 180px !important;
+      .exp-look-new .section::before {
+        left: 12px;
+        right: 12px;
       }
-      .exp-section .exp-card-img-col img {
-        max-height: 180px !important;
+      .exp-look-new .section-header {
+        margin-bottom: 16px;
       }
-      .exp-section .material-cards-section .d-label {
-        width: 100px !important;
-        font-size: 7px !important;
-        padding: 8px 8px !important;
+      .exp-look-new .section-title {
+        font-size: 13px;
+        max-width: 75%;
       }
-      .exp-section .material-cards-section .d-value {
-        font-size: 11px !important;
-        padding: 8px 8px !important;
+      .exp-look-new .top-label {
+        font-size: 7px;
+        padding: 3px 8px;
+        letter-spacing: 1.5px;
       }
-      .exp-section .material-cards-section .detail-card-head h3 {
-        font-size: 14px !important;
-      }
-    }
-
-    /* Large Mobile: 600px - 767px */
-    @media (max-width: 767px) {
-      .exp-section .detail-card {
-        flex-direction: row !important;
-        transform: scale(0.82);
+      .exp-look-new .table-wrapper {
+        overflow: visible;
+        width: 100%;
         transform-origin: top left;
-        width: 122% !important;
-        margin-bottom: 0px !important;
       }
-      .exp-section .exp-card-img-col {
-        width: 130px !important;
-        min-width: 130px !important;
+      .exp-look-new table {
+        width: 100%;
+        table-layout: fixed;
       }
-      .exp-section .exp-card-img-col img {
-        max-height: 150px !important;
-        padding: 0 !important;
+      .exp-look-new colgroup .col-image { width: 34px; }
+      .exp-look-new colgroup .col-sno   { width: 18px; }
+      .exp-look-new colgroup .col-material { width: 17%; }
+      .exp-look-new colgroup .col-cost  { width: 10%; }
+      .exp-look-new colgroup .col-thk   { width: 8%; }
+      .exp-look-new colgroup .col-places { width: 33%; }
+      .exp-look-new colgroup .col-brands { width: 15%; }
+      .exp-look-new thead th {
+        font-size: 6.5px;
+        padding: 5px 3px;
+        letter-spacing: 1px;
+        word-break: normal;
+        overflow-wrap: break-word;
+        hyphens: none;
       }
-      .exp-section .exp-card-img-col > div:last-child {
-        padding: 8px !important;
+      .exp-look-new tbody td {
+        padding: 5px 3px;
+        font-size: 7.5px;
       }
-      .exp-section .exp-card-img-label {
-        font-size: 7px !important;
-        padding: 6px 8px 4px !important;
+      .exp-look-new .img-cell { width: 34px; padding: 3px !important; }
+      .exp-look-new .img-cell img {
+        width: 26px;
+        height: 26px;
       }
-      .exp-section .material-cards-section .d-label {
-        width: 80px !important;
-        font-size: 6px !important;
-        padding: 6px 6px !important;
-        letter-spacing: 0.04em !important;
-      }
-      .exp-section .material-cards-section .d-value {
-        font-size: 10px !important;
-        padding: 6px 6px !important;
-        line-height: 1.4 !important;
-      }
-      .exp-section .material-cards-section .detail-card-head {
-        padding: 10px 10px 6px !important;
-      }
-      .exp-section .material-cards-section .detail-card-head h3 {
-        font-size: 12px !important;
-      }
+      .exp-look-new .sno-cell { font-size: 6.5px; }
+      .exp-look-new .material-cell { font-size: 7.5px; }
+      .exp-look-new .cost-cell { font-size: 7.5px; }
+      .exp-look-new .thk-cell { font-size: 6.5px; white-space: nowrap; }
+      .exp-look-new .places-cell { font-size: 6.5px; }
+      .exp-look-new .brands-cell { font-size: 6.5px; }
     }
 
-    /* Small Mobile: 480px - 599px */
-    @media (max-width: 599px) {
-      .exp-section .detail-card {
-        flex-direction: row !important;
-        transform: scale(0.75);
-        transform-origin: top left;
-        width: 133% !important;
-        margin-bottom: -20px !important;
+    @media (max-width: 480px) {
+      .exp-look-new .section-title {
+        font-size: 10px;
       }
-      .exp-section .exp-card-img-col {
-        width: 100px !important;
-        min-width: 100px !important;
+      .exp-look-new .top-label {
+        font-size: 5.5px;
+        padding: 2px 6px;
+        letter-spacing: 1px;
       }
-      .exp-section .exp-card-img-col img {
-        max-height: 120px !important;
+      .exp-look-new thead th {
+        font-size: 5px;
+        padding: 3px 2px;
+        letter-spacing: 0.8px;
+        word-break: normal;
+        overflow-wrap: break-word;
+        hyphens: none;
       }
-      .exp-section .exp-card-img-col > div:last-child {
-        padding: 6px !important;
+      .exp-look-new tbody td {
+        padding: 3px 2px;
+        font-size: 6px;
       }
-      .exp-section .exp-card-img-label {
-        font-size: 6px !important;
-        padding: 4px 6px 3px !important;
+      .exp-look-new .img-cell { width: 26px; padding: 2px !important; }
+      .exp-look-new .img-cell img {
+        width: 20px;
+        height: 20px;
+        border-radius: 2px;
       }
-      .exp-section .material-cards-section .d-label {
-        width: 68px !important;
-        font-size: 5.5px !important;
-        padding: 5px 4px !important;
-        letter-spacing: 0.02em !important;
-      }
-      .exp-section .material-cards-section .d-value {
-        font-size: 9px !important;
-        padding: 5px 5px !important;
-        line-height: 1.3 !important;
-      }
-      .exp-section .material-cards-section .detail-card-head h3 {
-        font-size: 11px !important;
-      }
+      .exp-look-new .material-cell { font-size: 6px; }
+      .exp-look-new .cost-cell { font-size: 6px; }
+      .exp-look-new .thk-cell { font-size: 5.5px; white-space: nowrap; }
+      .exp-look-new .places-cell { font-size: 5.5px; }
+      .exp-look-new .brands-cell { font-size: 5.5px; }
+      .exp-look-new colgroup .col-image { width: 26px; }
+      .exp-look-new colgroup .col-sno   { width: 14px; }
+      .exp-look-new colgroup .col-material { width: 16%; }
+      .exp-look-new colgroup .col-cost  { width: 9%; }
+      .exp-look-new colgroup .col-thk   { width: 5%; }
+      .exp-look-new colgroup .col-places { width: 32%; }
+      .exp-look-new colgroup .col-brands { width: 14%; }
     }
 
-    /* Extra Small: below 480px */
-    @media (max-width: 479px) {
-      .exp-section .detail-card {
-        flex-direction: row !important;
-        transform: scale(0.68);
-        transform-origin: top left;
-        width: 147% !important;
-        margin-bottom: -30px !important;
+    .exp-look-new .detail-section {
+      margin-top: 28px;
+    }
+    .exp-look-new .detail-section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0 10px;
+      border-bottom: 1px solid var(--detail-header-border);
+      margin-bottom: 16px;
+      transition: border-color 0.3s;
+    }
+    .exp-look-new .detail-section-title {
+      font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 0.3px;
+      line-height: 1.2;
+      transition: color 0.3s;
+    }
+    .exp-look-new .detail-section-count {
+      font-size: 8px;
+      font-weight: 500;
+      color: var(--detail-count-color);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 3px 12px;
+      border: 1px solid var(--detail-count-border);
+      border-radius: 2px;
+      transition: color 0.3s, border-color 0.3s;
+    }
+    .exp-look-new .spec-card {
+      display: flex;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 5px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      transition: background-color 0.3s, border-color 0.3s;
+    }
+    .exp-look-new .spec-card:last-child {
+      margin-bottom: 0;
+    }
+    .exp-look-new .spec-image-col {
+      width: 220px;
+      min-width: 220px;
+      background: var(--spec-image-bg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      position: relative;
+      border-right: 1px solid var(--spec-image-border);
+      transition: background-color 0.3s, border-color 0.3s;
+    }
+    .exp-look-new .spec-image-label {
+      position: absolute;
+      top: 8px;
+      left: 10px;
+      font-size: 7px;
+      font-weight: 600;
+      color: var(--spec-image-label);
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+    }
+    .exp-look-new .spec-image-col img {
+      width: 100%;
+      max-width: 150px;
+      height: auto;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      border-radius: 4px;
+      display: block;
+    }
+    .exp-look-new .spec-table-col {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+    .exp-look-new .spec-title-bar {
+      background: var(--title-bar-bg);
+      padding: 10px 18px;
+      border-bottom: 1px solid var(--title-bar-border);
+      transition: background-color 0.3s, border-color 0.3s;
+    }
+    .exp-look-new .spec-title-bar h2 {
+      font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--title-bar-text);
+      letter-spacing: 0.3px;
+      line-height: 1.2;
+      margin: 0;
+      transition: color 0.3s;
+    }
+    .exp-look-new .spec-rows {
+      display: flex;
+      flex-direction: column;
+    }
+    .exp-look-new .spec-row {
+      display: flex;
+      border-bottom: 1px solid var(--spec-row-border);
+    }
+    .exp-look-new .spec-row:last-child {
+      border-bottom: none;
+    }
+    .exp-look-new .spec-label {
+      width: 150px;
+      min-width: 150px;
+      background: var(--spec-label-bg);
+      padding: 7px 14px;
+      font-size: 7.5px;
+      font-weight: 700;
+      color: var(--spec-label-text);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: flex-start;
+      border-right: 1px solid var(--spec-label-border);
+      line-height: 1.35;
+      transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    }
+    .exp-look-new .spec-value {
+      flex: 1;
+      padding: 7px 16px;
+      font-size: 11px;
+      color: var(--spec-value-text);
+      line-height: 1.45;
+      min-width: 0;
+      overflow-wrap: break-word;
+      transition: color 0.3s;
+    }
+    .exp-look-new .spec-value .pros { color: var(--pros-color); }
+    .exp-look-new .spec-value .cons { color: var(--cons-color); }
+
+    @media (max-width: 900px) {
+      .exp-look-new .spec-image-col {
+        width: 160px;
+        min-width: 160px;
+        padding: 12px;
       }
-      .exp-section .exp-card-img-col {
-        width: 80px !important;
-        min-width: 80px !important;
+      .exp-look-new .spec-image-label { font-size: 6px; letter-spacing: 2px; }
+      .exp-look-new .spec-image-col img { max-width: 110px; }
+      .exp-look-new .spec-title-bar { padding: 8px 14px; }
+      .exp-look-new .spec-title-bar h2 { font-size: 13px; }
+      .exp-look-new .spec-label {
+        width: 110px;
+        min-width: 110px;
+        padding: 5px 10px;
+        font-size: 6.5px;
+        letter-spacing: 1.2px;
       }
-      .exp-section .exp-card-img-col img {
-        max-height: 100px !important;
-      }
-      .exp-section .exp-card-img-col > div:last-child {
-        padding: 4px !important;
-      }
-      .exp-section .exp-card-img-label {
-        font-size: 5px !important;
-        padding: 3px 4px !important;
-      }
-      .exp-section .material-cards-section .d-label {
-        width: 58px !important;
-        font-size: 5px !important;
-        padding: 4px 3px !important;
-      }
-      .exp-section .material-cards-section .d-value {
-        font-size: 8px !important;
-        padding: 4px 4px !important;
-        line-height: 1.2 !important;
-      }
-      .exp-section .material-cards-section .detail-card-head h3 {
-        font-size: 10px !important;
-      }
+      .exp-look-new .spec-value { padding: 5px 12px; font-size: 10px; line-height: 1.4; }
+      .exp-look-new .detail-section-title { font-size: 16px; }
+      .exp-look-new .detail-section-count { font-size: 7px; padding: 2px 10px; }
     }
 
-    /* EXP-LOOK BOTTOM CARDS — LIGHT MODE COLOR FIX */
-    body:not(.dark-mode) .exp-section .detail-card .detail-card-head h3 {
-      color: #ffffff !important;
-    }
-    body:not(.dark-mode) .exp-section .detail-card .d-label {
-      color: #2e5d9e !important;
-      background: #f0f0f0 !important;
-      opacity: 1 !important;
-    }
-    body:not(.dark-mode) .exp-section .detail-card .d-value {
-      color: #2d2d2d !important;
-      opacity: 1 !important;
-    }
-    body:not(.dark-mode) .exp-section .detail-card .d-row {
-      border-bottom: 1px solid #ddd !important;
-    }
-
-    /* Dark mode stays unchanged */
-    .dark-mode .exp-section .detail-card .d-label {
-      color: #6ea8ff !important;
-      opacity: 1 !important;
-    }
-    .dark-mode .exp-section .detail-card .d-value {
-      color: #e0e0e0 !important;
-      opacity: 1 !important;
+    @media (max-width: 600px) {
+      .exp-look-new .detail-section-header { padding: 10px 0 8px; margin-bottom: 12px; }
+      .exp-look-new .detail-section-title { font-size: 12px; }
+      .exp-look-new .detail-section-count { font-size: 6px; padding: 2px 8px; letter-spacing: 1.2px; }
+      .exp-look-new .spec-card { margin-bottom: 14px; border-radius: 4px; }
+      .exp-look-new .spec-image-col {
+        width: 110px;
+        min-width: 110px;
+        padding: 8px;
+      }
+      .exp-look-new .spec-image-label { top: 5px; left: 7px; font-size: 5px; letter-spacing: 1.8px; }
+      .exp-look-new .spec-image-col img { max-width: 75px; border-radius: 3px; }
+      .exp-look-new .spec-title-bar { padding: 6px 10px; }
+      .exp-look-new .spec-title-bar h2 { font-size: 10px; }
+      .exp-look-new .spec-label {
+        width: 80px;
+        min-width: 80px;
+        padding: 4px 8px;
+        font-size: 5.5px;
+        letter-spacing: 1px;
+        line-height: 1.3;
+      }
+      .exp-look-new .spec-value { padding: 4px 10px; font-size: 8px; line-height: 1.35; }
     }
 
-    /* Dark mode: image column background */
-    .dark-mode .exp-section .detail-card .exp-img-wrap {
-      border-color: #444 !important;
+    @media (max-width: 400px) {
+      .exp-look-new .detail-section-header { padding: 8px 0 6px; margin-bottom: 10px; }
+      .exp-look-new .detail-section-title { font-size: 10px; }
+      .exp-look-new .detail-section-count { font-size: 5px; padding: 2px 6px; letter-spacing: 1px; }
+      .exp-look-new .spec-image-col {
+        width: 80px;
+        min-width: 80px;
+        padding: 6px;
+      }
+      .exp-look-new .spec-image-label { display: none; }
+      .exp-look-new .spec-image-col img { max-width: 55px; }
+      .exp-look-new .spec-title-bar { padding: 4px 8px; }
+      .exp-look-new .spec-title-bar h2 { font-size: 8px; }
+      .exp-look-new .spec-label {
+        width: 60px;
+        min-width: 60px;
+        padding: 3px 6px;
+        font-size: 4.5px;
+        letter-spacing: 0.8px;
+        line-height: 1.25;
+      }
+      .exp-look-new .spec-value { padding: 3px 7px; font-size: 6.5px; line-height: 1.3; }
     }
-    .dark-mode .exp-section .detail-card [style*="display:table-cell"][style*="#f5f5f5"] {
-      background: #1e1e1e !important;
-      border-right-color: #444 !important;
+
+    .exp-look-new .exp-lb {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: var(--lb-bg);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
     }
-    .dark-mode .exp-section .detail-card .exp-img-wrap > div[style*="#2e5d9e"] {
-      color: #6ea8ff !important;
-      background: #2a2a2a !important;
-      border-bottom-color: #444 !important;
+    .exp-look-new .exp-lb.active { display: flex; }
+    .exp-look-new .exp-lb img {
+      max-width: 98vw;
+      max-height: 98vh;
+      object-fit: contain;
+      border-radius: 4px;
     }
   </style>
 </head>
@@ -3404,14 +3761,14 @@
         "Wood": "36.Wood.jpg",
         "Material Price Overview": "37.Material Price Overview.jpg",
         "Top 10 Materials 2026": "38.Top 10 materials 2026.jpg",
-        "Materials That Look Expensive": "39.Materials that look expensive.jpg",
+        // [COMMENTED OUT] "Materials That Look Expensive": "39.Materials that look expensive.jpg",
         "Marble vs Tiles": "marble vs tiles.png",
         "Laminate vs Veneer": "laminate vs vaneer.png"
       },
 
       // Maps internal category IDs to their physical folder names
       FOLDER_MAP: {
-        "exp-look": "2.Materials that look expensive",
+        // [COMMENTED OUT] "exp-look": "2.Materials that look expensive",
         "top10": "3. Top 10 Materials",
         "bed": "5.Bed Finishes",
         "bed_grid": "5.Bed Finishes",
@@ -3498,70 +3855,36 @@
       - marble-vs-tiles
       - lam-vs-veneer
       ============================================================ */
-    const categories = [
-      // -- TRENDY MATERIALS --
-      { id: 'exp-look', img: PIMG.expLook, name: 'Materials That Look Expensive', desc: 'Looks ₹50L+, costs under ₹50K — the smart designer\'s list', tag: 'trendy', cnt: '10 ideas' },
-      { id: 'top10', img: PIMG.top10, name: 'Top 10 Materials 2026', desc: 'The hottest, most trending materials for this year', tag: 'trendy', cnt: '10 materials' },
-      // -- NATURAL FINISHES --
-      { id: 'limewash', img: PIMG.limewash, name: 'Lime Wash', desc: 'Natural brushed coating – soft chalky finish, eco-friendly', tag: 'natural', cnt: '1 finish' },
-      { id: 'limeplaster', img: PIMG.limeplaster, name: 'Lime Plaster', desc: 'Natural mineral plaster – smooth to textured, 20–50yr lifespan', tag: 'natural', cnt: '1 finish' },
-      { id: 'venetian', img: PIMG.venetian, name: 'Venetian Plaster', desc: 'Premium marble-like polished plaster – glossy, luxurious', tag: 'natural', cnt: '1 finish' },
-      { id: 'microcement', img: PIMG.microcement, name: 'Microcement', desc: 'Seamless concrete-look coating for floors, walls and counters', tag: 'natural', cnt: '1 finish' },
-      { id: 'clay', img: PIMG.clay, name: 'Clay Cladding', desc: 'Kiln-fired natural clay panels – earthy, warm, architectural', tag: 'natural', cnt: '1 finish' },
-      { id: 'metallic', img: PIMG.metallic, name: 'Liquid Metallic Ombres', desc: 'Gradient metallic wall finish – gold, copper, silver, bronze', tag: 'natural', cnt: '1 finish' },
-      { id: 'compare-special', img: PIMG.compareSpecial, name: 'Natural Finishes Comparison', desc: 'Side-by-side: Limewash vs Lime Plaster vs Venetian vs Clay', tag: 'natural', cnt: 'Comparison' },
-      // -- ROOM FINISHES --
-      { id: 'flooring', img: PIMG.flooring, name: 'Flooring Finishes', desc: '27 materials – marble, wood, vinyl, tiles, cement & more', tag: 'finishes', cnt: '27 materials' },
-      { id: 'wall', img: PIMG.wall, name: 'Wall Finishes', desc: '39 finishes – paint, plaster, panels, stone, wallpaper', tag: 'finishes', cnt: '39 materials' },
-      { id: 'ceiling', img: PIMG.ceiling, name: 'False Ceiling Finishes', desc: '19 types – POP, gypsum, wood, metal, stretch ceiling', tag: 'finishes', cnt: '19 materials' },
-      // -- CIVIL MATERIALS --
-      { id: 'italian-marbles', img: PIMG.marble, name: 'Italian Marbles', desc: 'Premium Italian marble types with pricing', tag: 'civil', cnt: '10 types' },
-      { id: 'indian-marbles', img: PIMG.marble, name: 'Indian Marbles', desc: 'Indian marble types with pricing', tag: 'civil', cnt: '5 types' },
-      { id: 'tiles', img: PIMG.tiles, name: 'TILES', desc: 'Types of Tiles (Detailed)', tag: 'civil', cnt: '6 types' },
-      { id: 'marble-vs-tiles', name: 'Marble vs Tiles', desc: 'Price, durability, maintenance, best use – compared', tag: 'civil', cnt: 'Comparison' },
-      { id: 'granite', img: PIMG.granite, name: 'Granite', desc: 'Black, Tan Brown, Kashmir White, Vizag Blue and more', tag: 'civil', cnt: '7 types' },
-      { id: 'quartz', img: PIMG.quartz, name: 'Quartz', desc: 'Calacatta, Statuario, Nero, Sparkling White and more', tag: 'civil', cnt: '6 types' },
-      { id: 'quartzite', img: PIMG.quartzite, name: 'Quartzite', desc: 'Taj Mahal, Sea Pearl, Fantasy Brown and more premium quartzites', tag: 'civil', cnt: '5 types' },
-      { id: 'compare-stone', img: PIMG.compareStone, name: 'Granite vs Quartz vs Quartzite', desc: 'Hardness, price, heat resistance, stain resistance compared', tag: 'civil', cnt: 'Comparison' },
-      // -- CARPENTRY MATERIALS --
-      { id: 'laminates', img: PIMG.laminate, name: 'Laminates', desc: 'HPL, acrylic, designer, metallic, suede – all types with specs', tag: 'carpentry', cnt: '16 types' },
-      { id: 'veneer', img: PIMG.veneer, name: 'Veneer', desc: 'Natural, recon, exotic, designer veneers – full guide', tag: 'carpentry', cnt: '18 types' },
-      { id: 'lam-vs-veneer', name: 'Laminate vs Veneer', desc: 'Material, feel, price, durability, eco-factor compared', tag: 'carpentry', cnt: 'Comparison' },
-      { id: 'plywood', img: PIMG.plywood, name: 'Plywood', desc: 'MR, BWR, Marine, MDF, HDHMR, blockboard – types & specs', tag: 'carpentry', cnt: '9 types' },
-      { id: 'wood-types', img: PIMG.wood, name: 'Wood', desc: 'Teak, sheesham, mango, walnut, oak, pine, bamboo – full guide', tag: 'carpentry', cnt: '8 types' },
-      { id: 'glass', img: PIMG.glass, name: 'Glass', desc: 'Clear, toughened, frosted, fluted, smart glass – all types', tag: 'carpentry', cnt: '10 types' },
-      { id: 'mirror', img: PIMG.mirror, name: 'Mirror', desc: 'Plain, antique, tinted mirror – sizes, prices, uses', tag: 'carpentry', cnt: 'Full guide' },
-      { id: 'hardware', img: PIMG.plywood, name: 'Hardware', desc: 'Hinges, channels, handles and more', tag: 'carpentry', cnt: 'Coming Soon' },
-      // -- FURNITURE --
-      { id: 'door', img: PIMG.door, name: 'Door Finishes', desc: 'Laminate, veneer, glass, duco, WPC and more', tag: 'furniture', cnt: '8 finishes' },
-      { id: 'bed', img: PIMG.bed, name: 'Bed Finishes', desc: 'Laminate, upholstered, veneer, solid wood and more', tag: 'furniture', cnt: '6 finishes' },
-      { id: 'headboard', img: PIMG.headboard, name: 'Headboard Finishes', desc: 'Fabric, cane, laminate, lime plaster, fluted panels', tag: 'furniture', cnt: '7 finishes' },
-      { id: 'sidetable', img: PIMG.sidetable, name: 'Side Table Finishes', desc: 'Laminate, marble, glass, duco, veneer', tag: 'furniture', cnt: '5 finishes' },
-      { id: 'study', img: PIMG.study, name: 'Study Table Finishes', desc: 'Laminate, duco, veneer, microcement, marble top', tag: 'furniture', cnt: '5 finishes' },
-      { id: 'dresser', img: PIMG.dresser, name: 'Dresser Table Finishes', desc: 'Laminate, duco, acrylic high gloss, veneer, PU', tag: 'furniture', cnt: '5 finishes' },
-      { id: 'wardrobe', img: PIMG.wardrobe, name: 'Wardrobe Shutter Finishes', desc: 'Top 11 – fluted glass, cane, laminate, mirror, acrylic', tag: 'furniture', cnt: '11 finishes' },
-      { id: 'wardrobe-must', img: PIMG.wardrobemust, name: '5 Wardrobe Must Haves', desc: 'Revolving rack, trouser pull-out, LED drawers and more', tag: 'furniture', cnt: '5 items' },
-      { id: 'tvunit', img: PIMG.tvunit, name: 'TV Unit Finishes', desc: 'Laminate, veneer, fluted panel, microcement, duco', tag: 'furniture', cnt: '6 finishes' },
-      // -- ELECTRICAL --
-      { id: 'lights', img: PIMG.plywood, name: 'Lights', desc: 'All types of lights for interiors', tag: 'electrical', cnt: 'Coming Soon' },
-      { id: 'switches', img: PIMG.plywood, name: 'Switch Boards', desc: 'Switch boards and plates', tag: 'electrical', cnt: 'Coming Soon' },
-      { id: 'automation', img: PIMG.plywood, name: 'Automation', desc: 'Home automation systems', tag: 'electrical', cnt: 'Coming Soon' },
-      // -- PAINT --
-      { id: 'kitchen-colors', img: PIMG.plywood, name: 'Kitchen Colour Combinations', desc: 'Colour combinations for kitchens', tag: 'paint', cnt: 'Coming Soon' },
-      { id: 'bathroom-colors', img: PIMG.plywood, name: 'Bathroom Colour Combinations', desc: 'Colour combinations for bathrooms', tag: 'paint', cnt: 'Coming Soon' },
-      { id: 'bedroom-colors', img: PIMG.plywood, name: 'Bedroom Colour Combinations', desc: 'Colour combinations for bedrooms', tag: 'paint', cnt: 'Coming Soon' },
-      { id: 'living-colors', img: PIMG.plywood, name: 'Living Room Colour Combinations', desc: 'Colour combinations for living rooms', tag: 'paint', cnt: 'Coming Soon' },
-      // -- KITCHEN --
-      { id: 'kitchen-counter', img: PIMG.kitchenCounter, name: 'Kitchen Counter Top', desc: 'Quartz, granite, marble, microcement, Corian, sintered stone', tag: 'kitchen', cnt: '6 options' },
-      { id: 'kitchen-shutter', img: PIMG.kitchenShutter, name: 'Kitchen Shutter Finishes', desc: 'Laminate, acrylic, PU, veneer, glass, profile shutters', tag: 'kitchen', cnt: '8 finishes' },
-      { id: 'kitchen-must', img: PIMG.kitchenMust, name: '5 Kitchen Must Haves', desc: 'Corner drawers, waste bin, LED strips and more', tag: 'kitchen', cnt: '5 items' },
-      { id: 'kitchen-colors-2', img: PIMG.plywood, name: 'Kitchen Colour Combinations', desc: 'Colour combinations for kitchens', tag: 'kitchen', cnt: 'Coming Soon' },
-      // -- BATHROOM --
-      { id: 'sanitary', img: PIMG.plywood, name: 'Sanitary Fittings', desc: 'Toilets, basins, faucets and more', tag: 'bathroom', cnt: 'Coming Soon' },
-      { id: 'bathroom-colors-2', img: PIMG.plywood, name: 'Bathroom Colour Combinations', desc: 'Colour combinations for bathrooms', tag: 'bathroom', cnt: 'Coming Soon' },
-      // -- OVERVIEW (keep for 'all') --
-      { id: 'overview', img: PIMG.overview, name: 'Material Price Overview', desc: 'Quick price reference for all common interior materials', tag: 'all', cnt: '20 materials' },
-    ];
+
+
+
+
+
+
+let categories = [];
+
+async function loadCategories() {
+
+    const response = await fetch('categories.json');
+
+    const jsonCards = await response.json();
+
+    const localCards =
+        JSON.parse(localStorage.getItem('cards')) || [];
+
+    categories = [...jsonCards, ...localCards];
+
+    renderCats('all');
+}
+
+window.addEventListener(
+    "DOMContentLoaded",
+    loadCategories
+);
+
+
+
+
 
     /* ============================================================
       DETAIL IMAGE BANKS (shown inside each category)
@@ -3909,6 +4232,7 @@
           { l: 'Avoid Using In', v: 'High-humidity areas without proper sealing, budget projects, areas prone to scratches' }
         ]
       },
+      /* [COMMENTED OUT - OLD exp-look detailData]
       'exp-look': {
         title: 'Materials That Look ₹50L+ But Cost Under ₹50K', props: [
           { l: 'Raw Material Cost', v: '₹180 – ₹350 / sq.ft' },
@@ -3921,6 +4245,7 @@
           { l: 'Recommended Brands', v: 'Vasari India' }
         ]
       },
+      */
     };
 
     /* COMPARE DATA */
@@ -4035,6 +4360,7 @@
           'Sound Proof Wall Acoustic Fluted Panels||₹60 /- sq.ft onwards (without installation), depending on acoustic core & finish||Sound proof material thk – 9mm–24mm (Size – 8 x 4 ft)||Panels fixed on wall/battens using adhesive/screws; optional acoustic insulation backing||Vacuum flutes periodically to avoid dust accumulation||Enhances sound absorption & speech clarity; adds modern linear texture to interiors||Grooves require regular cleaning; performance depends on correct backing & installation||Home theatres, study rooms, bedrooms, conference rooms||Decorative fluted panels that improve acoustics while adding aesthetic look to walls.'
         ]
       },
+      /* [COMMENTED OUT - OLD exp-look listData]
       'exp-look': {
         title: 'Materials That Look ₹50L+ But Cost Under ₹50K', items: [
           'Textured Decorative & Venetian Plaster Paint|||₹80 / sq.ft onwards for textured coats; Venetian Plaster marble-look additives ~₹180 – ₹350 / sq.ft material-only.|||1–3 mm finished texture coat on prepared wall.|||Prep wall (repair/primer) → apply base coat → apply texture/Venetian layers → seal with protective finish.|||Wipe dust lightly; reseal every few years to preserve sheen.|||Creates luxurious depth and dimension like stone or polished plaster, elevating feature walls.Can be customized with color, sheen, and vein patterns to mimic high-end finishes.|||Requires skilled applicator for premium finish. DIY often looks uneven. Not ideal for high-moisture areas without proper sealing.|||Living room feature wall, bedroom accent wall, foyer, hotel lobbies. Living room feature walls, bedroom accent walls, hotel lobbies, luxury bathrooms, reception areas.|||Vasari India',
@@ -4042,6 +4368,7 @@
           'Premium Finish Laminates|||₹200 / sq.ft onwards for high-finish decorative laminates|||0.8 mm – 1.5 mm based on quality.|||Laminate sheets are bonded to substrates (ply/MDF) with adhesive; edges banded for finish.|||Wipe with a soft damp cloth; avoid abrasive cleaners.|||Wide range of textures— stone, wood, gloss, matte. Durable, scratch-resistant surfaces with easy cleaning.|||Looks less rich than real wood or lacquer if viewed closely. Thin laminates can peel if bonded poorly or exposed to moisture.|||TV units, wardrobes, kitchen cabinets, accent panels.|||Royale Touche Luxury Laminates'
         ]
       },
+      */
       glass: {
         title: 'Types of Glass', items: [
           'Clear Glass||₹40 – ₹150 / sq.ft||4–12 mm||Installed in aluminium, wood, or metal frames||Clean regularly with glass cleaner and soft cloth||High transparency, affordable, widely available||Breaks into sharp shards if not tempered||Windows, partitions, doors, tabletops',
@@ -4440,9 +4767,12 @@
       ============================================================ */
     function renderCats(filter) {
       const grid = document.getElementById('catGrid');
-      let list = filter === 'all' ? categories : categories.filter(c => c.tag === filter);
 
-      // Filter duplicates on homepage only (when filter === 'all')
+      let list = filter === 'all'
+        ? categories
+        : categories.filter(c => c.tag === filter);
+
+      // Remove duplicate names on homepage
       if (filter === 'all') {
         const seen = new Set();
         list = list.filter(c => {
@@ -4452,49 +4782,46 @@
         });
       }
 
-      document.getElementById('catCount').textContent = list.length + ' categories';
-
       grid.innerHTML = list.map(c => {
-        // Build the image section – handle split covers
-        let imgHTML;
-        if (c.img && c.img.startsWith('split:')) {
-          const parts = c.img.replace('split:', '').split('|||');
-          const leftSrc = parts[0];
-          const rightSrc = parts[1];
-          // Derive labels from the card name, e.g. "Marble vs Tiles" ? "Marble" / "Tiles"
-          const nameParts = c.name.split(' vs ');
-          const leftLabel = nameParts[0] || 'Left';
-          const rightLabel = nameParts[1] || 'Right';
-          imgHTML = `
-          <div class="cat-split">
-            <img class="cat-split-img" src="${leftSrc}"  alt="${leftLabel}"  loading="lazy" onerror="this.style.background='#ddd';this.removeAttribute('src')">
-            <img class="cat-split-img" src="${rightSrc}" alt="${rightLabel}" loading="lazy" onerror="this.style.background='#e8e8e8';this.removeAttribute('src')">
-            <div class="cat-split-divider"></div>
-            <span class="cat-split-label-left">${leftLabel}</span>
-            <span class="cat-split-label-right">${rightLabel}</span>
-          </div>`;
-        } else if (c.cnt === 'Coming Soon') {
-          imgHTML = `<img class="cat-img" src="assets/1.Cover Images/coming soon.jpg" alt="${c.name}" loading="lazy" onerror="this.style.background='#e0e4ec';this.removeAttribute('src')">`;
-        } else {
-          imgHTML = `<img class="cat-img" src="${getCoverPath(c.name)}" alt="${c.name}" loading="lazy"
-          onerror="this.style.background='#e0e4ec';this.removeAttribute('src')">`;
-        }
-
-        const isComingSoon = c.cnt === 'Coming Soon';
-        const clickHandler = isComingSoon ? `openComingSoon('${c.name}')` : `openCat('${c.id}')`;
-        const ctaText = isComingSoon ? 'Coming Soon' : 'View Details';
+        let imgHTML = `
+      <img 
+        class="cat-img" 
+        src="${c.img}" 
+        alt="${c.name}" 
+        loading="lazy"
+        onerror="this.style.background='#e0e4ec'; this.removeAttribute('src')"
+      >
+    `;
 
         return `
-      <div class="cat-card" onclick="${clickHandler}">
-        ${imgHTML}
-        <div class="cat-body">
-          <div class="cat-name">${c.name}</div>
-          <div class="cat-desc">${c.desc}</div>
-          <div class="cat-cta">${ctaText}</div>
+<div class="cat-card"
+     onclick="openCat('${c.id}')">
+
+    ${imgHTML}
+
+    <div class="cat-body">
+
+        <div class="cat-name">
+            ${c.name}
         </div>
-      </div>`;
+
+        <div class="cat-desc">
+            ${c.desc}
+        </div>
+
+        <div class="cat-cta">
+            View Details
+        </div>
+
+    </div>
+
+</div>
+`;
       }).join('');
     }
+
+
+
 
     /**
      * Finds the correct local path for a detail image (shown in grids).
@@ -4520,6 +4847,14 @@
     }
 
     function openCat(id) {
+      const localCards =
+        JSON.parse(localStorage.getItem('cards')) || [];
+      const dynamicCard =
+        localCards.find(c => c.id === id);
+      if (dynamicCard) {
+        openDynamicCard(dynamicCard);
+        return;
+      }
       document.getElementById('homeView').style.display = 'none';
       document.getElementById('searchView').style.display = 'none';
       document.getElementById('detailView').style.display = 'block';
@@ -4628,66 +4963,10 @@
         return;
       }
 
-      if (id === 'exp-look') {
-        const d = listData[id];
-        const matImgs = [
-          'assets/2.Materials that look expensive/Textured Decorative & Venetian Plaster Paint.png',
-          'assets/2.Materials that look expensive/Marble-Finish Tiles.jpg',
-          'assets/2.Materials that look expensive/Premium Finish Laminates.png'
-        ];
-        const validItems = d.items.filter(function(it) { return it.trim() !== ''; });
-        console.log('EXP DATA:', validItems.length, 'materials found:', validItems.map(function(it){ return it.split('|||')[0]; }));
-        var cardsHtml = validItems.map(function(it, idx) {
-          var parts = it.split('|||');
-          var name    = (parts[0] || it).trim();
-          var cost    = (parts[1] || '').trim();
-          var thick   = (parts[2] || '').trim();
-          var install = (parts[3] || '').trim();
-          var maint   = (parts[4] || '').trim();
-          var pros    = (parts[5] || '').trim();
-          var cons    = (parts[6] || '').trim();
-          var best    = (parts[7] || '').trim();
-          var brand   = (parts[8] || '').trim();
-          var imgSrc  = matImgs[idx] || '';
-          var rows = '';
-          if (cost)    rows += '<div class="d-row"><div class="d-label">Raw Material Cost</div><div class="d-value mat-cost">' + cost + '</div></div>';
-          if (thick)   rows += '<div class="d-row"><div class="d-label">Thickness Required</div><div class="d-value">' + thick + '</div></div>';
-          if (install) rows += '<div class="d-row"><div class="d-label">Installation Process</div><div class="d-value">' + install + '</div></div>';
-          if (maint)   rows += '<div class="d-row"><div class="d-label">Maintenance</div><div class="d-value">' + maint + '</div></div>';
-          if (best)    rows += '<div class="d-row"><div class="d-label">Best Places to Use</div><div class="d-value">' + best + '</div></div>';
-          if (pros)    rows += '<div class="d-row"><div class="d-label mat-pros-label">✓ Pros</div><div class="d-value">' + pros + '</div></div>';
-          if (cons)    rows += '<div class="d-row"><div class="d-label mat-cons-label">✗ Cons</div><div class="d-value">' + cons + '</div></div>';
-          if (brand)   rows += '<div class="d-row"><div class="d-label mat-brand-label">Recommended Brands</div><div class="d-value mat-brand-value">' + brand + '</div></div>';
-          var imgCell = imgSrc
-            ? '<div class="exp-card-img-col" style="width:220px;min-width:220px;flex-shrink:0;display:flex;flex-direction:column;border-right:1.5px solid var(--border);">'
-              + '<div class="exp-card-img-label" style="font-size:9px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:10px 12px 6px;border-bottom:1px solid var(--border);flex-shrink:0;">Image</div>'
-              + '<div style="flex:1;display:flex;align-items:center;justify-content:center;padding:16px;">'
-              + '<img src="' + imgSrc + '" alt="' + name + '" style="width:100%;max-height:220px;object-fit:cover;display:block;border-radius:6px;cursor:zoom-in;" onclick="lbOpen(this.src,\'' + name.replace(/'/g,"") + '\')" onerror="this.closest(\'.exp-card-img-col\').style.display=\'none\'">'
-              + '</div>'
-              + '</div>'
-            : '';
-          return '<div class="detail-card" style="display:flex;flex-direction:row;width:100%;margin-bottom:20px;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.08)">'
-            + imgCell
-            + '<div class="detail-card-body" style="flex:1;min-width:0;">'
-            + '<div class="detail-card-head"><h3 style="margin:0 0 12px">' + name + '</h3></div>'
-            + rows
-            + '</div></div>';
-        }).join('');
-        el.innerHTML = '<div class="sec-head"><span class="sec-title">' + d.title + '</span><span class="sec-count">' + validItems.length + ' materials</span></div>'
-          + imgRow(id)
-          + '<div class="exp-section">'
-          + '<div class="exp-responsive">'
-          + '<table class="exp-look-static">'
-          + '<thead><tr><th>Image</th><th>#</th><th>Material</th><th>Cost (sq.ft)</th><th>Thk (mm)</th><th>Best Places to Use</th><th>Brands</th></tr></thead>'
-          + '<tbody>'
-          + '<tr><td class="t-th"><div class="thumb-wrap"><img src="assets/2.Materials that look expensive/Textured Decorative & Venetian Plaster Paint.png" class="row-img"></div></td><td>1</td><td class="t-name">Venetian Plaster Paint</td><td>₹180 – ₹350</td><td>1–3</td><td>Living room, bedroom accent walls, hotel lobbies, foyer</td><td>Vasari India</td></tr>'
-          + '<tr><td class="t-th"><div class="thumb-wrap"><img src="assets/2.Materials that look expensive/Marble-Finish Tiles.jpg" class="row-img"></div></td><td>2</td><td class="t-name">Marble-Finish Tiles</td><td>₹90+</td><td>8–10</td><td>Living room floors, bathroom walls, kitchen backsplash</td><td>Kajaria, Somany, Nitco</td></tr>'
-          + '<tr><td class="t-th"><div class="thumb-wrap"><img src="assets/2.Materials that look expensive/Premium Finish Laminates.png" class="row-img"></div></td><td>3</td><td class="t-name">Premium Finish Laminates</td><td>₹200+</td><td>0.8 – 1.5</td><td>TV units, wardrobes, kitchen cabinets, panels</td><td>Royale Touche Luxury Laminates</td></tr>'
-          + '</tbody></table></div>'
-          + cardsHtml
-          + '</div>';
-        return;
-      }
+      /* [COMMENTED OUT - OLD exp-look render handler - preserved below for restoration]
+      if (id === 'exp-look') { renderNewExpLook(el); return; }
+      */
+      if (id === 'exp-look') { renderNewExpLook(el); return; }
 
       if (id === 'tiles') {
         const d = listData[id];
@@ -5107,6 +5386,75 @@
       </table></div>`;
     }
 
+    function openDynamicCard(card) {
+      document.getElementById('homeView').style.display = 'none';
+      document.getElementById('searchView').style.display = 'none';
+      document.getElementById('detailView').style.display = 'block';
+      document.getElementById('heroBanner').style.display = 'none';
+      window.scrollTo(0, 0);
+
+      const el = document.getElementById('detailContent');
+
+      if (card.template === 'table') {
+        const cols = card.columns.split(',');
+        const rows = card.rows.split('\n');
+        el.innerHTML = `
+        <div class="sec-head">
+          <span class="sec-title">${card.name}</span>
+        </div>
+        <div class="table-wrap">
+          <table class="table">
+            <thead>
+              <tr>
+                ${cols.map(col => `<th>${col}</th>`).join('')}
+              </tr>
+            </thead>
+            <tbody>
+              ${rows.map(row => {
+                const cells = row.split(',');
+                return `<tr>
+                  ${cells.map(cell => `<td>${cell}</td>`).join('')}
+                </tr>`;
+              }).join('')}
+            </tbody>
+          </table>
+        </div>`;
+        return;
+      }
+
+      el.innerHTML = `
+      <div class="sec-head">
+        <span class="sec-title">${card.name}</span>
+      </div>
+      <div class="detail-card">
+        <div class="detail-card-head">
+          <h3>${card.name}</h3>
+        </div>
+        <div class="detail-card-body">
+          <div class="d-row">
+            <div class="d-label">MATERIAL</div>
+            <div class="d-value">${card.material || '-'}</div>
+          </div>
+          <div class="d-row">
+            <div class="d-label">THICKNESS</div>
+            <div class="d-value">${card.thickness || '-'}</div>
+          </div>
+          <div class="d-row">
+            <div class="d-label">BRANDS</div>
+            <div class="d-value">${card.brands || '-'}</div>
+          </div>
+          <div class="d-row">
+            <div class="d-label">PROS</div>
+            <div class="d-value">${card.pros || '-'}</div>
+          </div>
+          <div class="d-row">
+            <div class="d-label">CONS</div>
+            <div class="d-value">${card.cons || '-'}</div>
+          </div>
+        </div>
+      </div>`;
+    }
+
     function goHome() {
       document.getElementById('homeView').style.display = 'block';
       document.getElementById('detailView').style.display = 'none';
@@ -5183,8 +5531,6 @@
       </div>`).join('');
     }
 
-    renderCats('all');
-
     // Count-up animation for stats
     const counters = document.querySelectorAll('.count-up');
     if (counters.length > 0) {
@@ -5218,6 +5564,244 @@
 
       // Run animation after a short delay for better visual effect
       setTimeout(animateCounters, 800);
+    }
+
+    /* ================================================================
+       NEW "Materials That Look Expensive" render function (independent)
+       ================================================================ */
+    function renderNewExpLook(el) {
+      var html = `
+      <div class="exp-look-new">
+        <div class="section">
+          <div class="section-header">
+            <div class="section-title">
+              Materials That Look <span>₹50L+</span> But Cost Under <span>₹50K</span>
+            </div>
+            <div class="top-label">3 Materials</div>
+          </div>
+          <div class="table-wrapper">
+            <table>
+              <colgroup>
+                <col class="col-image">
+                <col class="col-sno">
+                <col class="col-material">
+                <col class="col-cost">
+                <col class="col-thk">
+                <col class="col-places">
+                <col class="col-brands">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>Image</th>
+                  <th>#</th>
+                  <th>Material</th>
+                  <th>Cost (Sq.Ft)</th>
+                  <th>THK<br><span style="text-transform:none;letter-spacing:0.5px">(mm)</span></th>
+                  <th>Best Places to Use</th>
+                  <th>Brands</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="img-cell">
+                    <img src="assets/2.Materials%20that%20look%20expensive/Textured%20Decorative%20%26%20Venetian%20Plaster%20Paint.png" alt="Venetian Plaster" loading="lazy">
+                  </td>
+                  <td class="sno-cell">1</td>
+                  <td class="material-cell">Venetian Plaster Paint</td>
+                  <td class="cost-cell">₹180 – ₹350</td>
+                  <td class="thk-cell">1–3</td>
+                  <td class="places-cell">Living room and bedroom accent walls, hotel lobbies, foyer, reception</td>
+                  <td class="brands-cell">Vasari India</td>
+                </tr>
+                <tr>
+                  <td class="img-cell">
+                    <img src="assets/2.Materials%20that%20look%20expensive/Marble-Finish%20Tiles.jpg" alt="Marble Finish Tiles" loading="lazy">
+                  </td>
+                  <td class="sno-cell">2</td>
+                  <td class="material-cell">Marble-Finish Tiles</td>
+                  <td class="cost-cell">₹90+</td>
+                  <td class="thk-cell">8–10</td>
+                  <td class="places-cell">Living room floors, bathroom walls, kitchen backsplash</td>
+                  <td class="brands-cell">Kajaria, Somany, Nitco</td>
+                </tr>
+                <tr>
+                  <td class="img-cell">
+                    <img src="assets/2.Materials%20that%20look%20expensive/Premium%20Finish%20Laminates.png" alt="Premium Finish Laminates" loading="lazy" onclick="expNewZoom(this.src)">
+                  </td>
+                  <td class="sno-cell">3</td>
+                  <td class="material-cell">Premium Finish Laminates</td>
+                  <td class="cost-cell">₹200+</td>
+                  <td class="thk-cell">0.8–1.5</td>
+                  <td class="places-cell">TV units, wardrobes, kitchen cabinets, accent panels</td>
+                  <td class="brands-cell">Royale Touche Luxury Laminates</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="section detail-section">
+          <div class="detail-section-header">
+            <div class="detail-section-title">Material Detail Specification</div>
+            <div class="detail-section-count">3 Materials</div>
+          </div>
+
+          <div class="spec-card">
+            <div class="spec-image-col">
+              <div class="spec-image-label">Image</div>
+              <img src="assets/2.Materials%20that%20look%20expensive/Textured%20Decorative%20%26%20Venetian%20Plaster%20Paint.png" alt="Textured Decorative &amp; Venetian Plaster Paint" loading="lazy" onclick="expNewZoom(this.src)">
+            </div>
+            <div class="spec-table-col">
+              <div class="spec-title-bar">
+                <h2>Textured Decorative &amp; Venetian Plaster Paint</h2>
+              </div>
+              <div class="spec-rows">
+                <div class="spec-row">
+                  <div class="spec-label">Raw Material Cost</div>
+                  <div class="spec-value">₹80 / sq.ft onwards for textured coats; Venetian Plaster marble-look additives ~₹180 – ₹350 / sq.ft material-only.</div>
+                </div>
+                <div class="spec-row">
+                  <div class="spec-label">Thickness Required</div>
+                  <div class="spec-value">1–3 mm finished texture coat on prepared wall.</div>
+                </div>
+                <div class="spec-row">
+                  <div class="spec-label">Installation Process</div>
+                  <div class="spec-value">Prep wall (repair/primer) → apply base coat → apply texture/Venetian layers → seal with protective finish.</div>
+                </div>
+                <div class="spec-row">
+                  <div class="spec-label">Maintenance</div>
+                  <div class="spec-value">Wipe dust lightly; reseal every few years to preserve sheen.</div>
+                </div>
+                <div class="spec-row">
+                  <div class="spec-label">Best Places to Use</div>
+                  <div class="spec-value">Living room feature wall, bedroom accent wall, foyer, hotel lobbies. Living room feature walls, bedroom accent walls, hotel lobbies, luxury bathrooms, reception areas.</div>
+                </div>
+                <div class="spec-row">
+                  <div class="spec-label">✓ Pros</div>
+                  <div class="spec-value"><span class="pros">Creates luxurious depth and dimension like stone or polished plaster, elevating feature walls. Can be customized with color, sheen, and vein patterns to mimic high-end finishes.</span></div>
+                </div>
+                <div class="spec-row">
+                  <div class="spec-label">✕ Cons</div>
+                  <div class="spec-value"><span class="cons">Requires skilled applicator for premium finish. DIY often looks uneven. Not ideal for high-moisture areas without proper sealing.</span></div>
+                </div>
+                <div class="spec-row">
+                  <div class="spec-label">Recommended Brands</div>
+                  <div class="spec-value">Vasari India</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="spec-card">
+            <div class="spec-image-col">
+              <div class="spec-image-label">Image</div>
+              <img src="assets/2.Materials%20that%20look%20expensive/Marble-Finish%20Tiles.jpg" alt="Marble-Finish Tiles" loading="lazy" onclick="expNewZoom(this.src)">
+            </div>
+            <div class="spec-table-col">
+              <div class="spec-title-bar">
+                <h2>Marble-Finish Tiles</h2>
+              </div>
+              <div class="spec-rows">
+                <div class="spec-row">
+                  <div class="spec-label">Raw Material Cost</div>
+                  <div class="spec-value">₹90 / sq.ft onwards for decent marble-look tiles.</div>
+                </div>
+                <div class="spec-row">
+                  <div class="spec-label">Thickness Required</div>
+                  <div class="spec-value">Typically 8–10 mm tile thickness.</div>
+                </div>
+                <div class="spec-row">
+                  <div class="spec-label">Installation Process</div>
+                  <div class="spec-value">Lay tiles on pre-prepared screed with adhesive → grout joints → seal if matte finish.</div>
+                </div>
+                <div class="spec-row">
+                  <div class="spec-label">Maintenance</div>
+                  <div class="spec-value">Mop with mild detergent; avoid harsh acids on polished surfaces.</div>
+                </div>
+                <div class="spec-row">
+                  <div class="spec-label">Best Places to Use</div>
+                  <div class="spec-value">Living room floors, bathroom walls, kitchen backsplash.</div>
+                </div>
+                <div class="spec-row">
+                  <div class="spec-label">✓ Pros</div>
+                  <div class="spec-value"><span class="pros">Realistic marble aesthetic at a fraction of stone cost and no upkeep of real stone. Durable for floors/walls and available in many vein styles.</span></div>
+                </div>
+                <div class="spec-row">
+                  <div class="spec-label">✕ Cons</div>
+                  <div class="spec-value"><span class="cons">Can feel cold/echoey without rugs or soft materials. Grout lines still visible unless large format used.</span></div>
+                </div>
+                <div class="spec-row">
+                  <div class="spec-label">Recommended Brands</div>
+                  <div class="spec-value">Kajaria, Somany, Nitco</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="spec-card">
+            <div class="spec-image-col">
+              <div class="spec-image-label">Image</div>
+              <img src="assets/2.Materials%20that%20look%20expensive/Premium%20Finish%20Laminates.png" alt="Premium Finish Laminates" loading="lazy">
+            </div>
+            <div class="spec-table-col">
+              <div class="spec-title-bar">
+                <h2>Premium Finish Laminates</h2>
+              </div>
+              <div class="spec-rows">
+                <div class="spec-row">
+                  <div class="spec-label">Raw Material Cost</div>
+                  <div class="spec-value">₹200 / sq.ft onwards for high-finish decorative laminates</div>
+                </div>
+                <div class="spec-row">
+                  <div class="spec-label">Thickness Required</div>
+                  <div class="spec-value">0.8 mm – 1.5 mm based on quality.</div>
+                </div>
+                <div class="spec-row">
+                  <div class="spec-label">Installation Process</div>
+                  <div class="spec-value">Laminate sheets are bonded to substrates (ply/MDF) with adhesive; edges banded for finish.</div>
+                </div>
+                <div class="spec-row">
+                  <div class="spec-label">Maintenance</div>
+                  <div class="spec-value">Wipe with a soft damp cloth; avoid abrasive cleaners.</div>
+                </div>
+                <div class="spec-row">
+                  <div class="spec-label">Best Places to Use</div>
+                  <div class="spec-value">TV units, wardrobes, kitchen cabinets, accent panels.</div>
+                </div>
+                <div class="spec-row">
+                  <div class="spec-label">✓ Pros</div>
+                  <div class="spec-value"><span class="pros">Wide range of textures—stone, wood, gloss, matte. Durable, scratch-resistant surfaces with easy cleaning.</span></div>
+                </div>
+                <div class="spec-row">
+                  <div class="spec-label">✕ Cons</div>
+                  <div class="spec-value"><span class="cons">Looks less rich than real wood or lacquer if viewed closely. Thin laminates can peel if bonded poorly or exposed to moisture.</span></div>
+                </div>
+                <div class="spec-row">
+                  <div class="spec-label">Recommended Brands</div>
+                  <div class="spec-value">Royale Touche Luxury Laminates</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-lb" id="expNewLightbox" onclick="this.classList.remove('active')">
+          <img id="expNewLightboxImg" src="" alt="zoom">
+        </div>
+      </div>`;
+
+      el.innerHTML = html;
+      // Scroll top after rendering
+      window.scrollTo(0, 0);
+    }
+
+    function expNewZoom(src) {
+      var lb = document.getElementById('expNewLightbox');
+      var img = document.getElementById('expNewLightboxImg');
+      if (lb && img) {
+        img.src = src;
+        lb.classList.add('active');
+      }
     }
   </script>
 

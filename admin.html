@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+
+    <style>
+        body {
+            background: #050505;
+            color: white;
+            font-family: Inter, sans-serif;
+            padding: 40px;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        form {
+            max-width: 1400px;
+        }
+
+        .form-section {
+            background: #111827;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 30px;
+            border-radius: 24px;
+            margin-bottom: 25px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .form-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            background: #0f172a;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: white;
+            padding: 16px;
+            border-radius: 14px;
+            font-size: 15px;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        button {
+            width: 100%;
+            padding: 18px;
+            border: none;
+            border-radius: 16px;
+            background: #2563eb;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        .section-title {
+            font-size: 22px;
+            margin-bottom: 25px;
+            color: #60a5fa;
+        }
+
+        .preview {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: #111827;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+        .delete-btn {
+            background: #dc2626;
+            margin-top: 15px;
+        }
+
+        .delete-btn:hover {
+            background: #b91c1c;
+        }
+
+        @media (max-width: 900px) {
+
+            .form-grid,
+            .form-grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            body {
+                padding: 20px;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="admin-container">
+
+        <div class="top-head">
+
+            <div>
+                <h1>Admin Panel</h1>
+                <p class="sub">
+                    Create and manage content for your website
+                </p>
+            </div>
+
+        </div>
+
+        <form id="cardForm">
+
+            <!-- BASIC INFO -->
+
+            <div class="form-section">
+
+                <div class="section-title">
+                    Basic Information
+                </div>
+
+                <div class="form-grid">
+
+                    <input type="text" id="id" placeholder="Enter unique ID">
+
+                    <input type="text" id="name" placeholder="Enter name">
+
+                    <input type="text" id="tag" placeholder="Enter tag">
+
+                    <input type="text" id="cnt" placeholder="Enter count">
+
+                </div>
+
+                <div style="margin-top:20px">
+
+                    <textarea id="desc" placeholder="Enter description"></textarea>
+
+                </div>
+
+                <div style="margin-top:20px">
+
+                    <input type="file" id="imgFile" accept="image/*">
+
+                    <img id="imgPreview" style="
+width:220px;
+margin-top:20px;
+border-radius:16px;
+display:none;
+">
+
+                </div>
+
+                <div class="form-grid" style="margin-top:20px">
+
+                    <select id="type">
+
+                        <option value="detail">Detail Page</option>
+
+                        <option value="table">Table Page</option>
+
+                    </select>
+
+                    <select id="template">
+
+                        <option value="detail">Detail Layout</option>
+
+                        <option value="table">Table Layout</option>
+
+                        <option value="comparison">Comparison Layout</option>
+
+                        <option value="grid">Simple Grid</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <!-- DYNAMIC FIELDS -->
+
+            <div class="form-section">
+
+                <div class="section-title">
+                    Template Fields
+                </div>
+
+                <div id="dynamicFields"></div>
+
+                <div id="tableBuilder" style="display:none;margin-top:30px">
+
+                    <div class="section-title">
+                        Dynamic Table Builder
+                    </div>
+
+                    <div class="form-grid">
+
+                        <input type="text" id="columnInput" placeholder="Enter column name">
+
+                        <button type="button" id="addColumnBtn">
+                            Add Column
+                        </button>
+
+                    </div>
+
+                    <div id="columnsPreview" style="
+            display:flex;
+            gap:10px;
+            flex-wrap:wrap;
+            margin-top:20px;
+        "></div>
+
+                </div>
+
+            </div>
+
+            <button type="submit">
+                Add Card
+            </button>
+
+        </form>
+
+        <!-- PREVIEW -->
+
+        <div class="form-section" style="margin-top:30px">
+
+            <div class="section-title">
+                Existing Cards (Preview)
+            </div>
+
+            <div class="preview" id="preview"></div>
+
+        </div>
+
+    </div>
+
+
+
+    <script>
+
+        const form = document.getElementById('cardForm');
+
+        const preview = document.getElementById('preview');
+
+        const imgFile =
+            document.getElementById('imgFile');
+
+        const imgPreview =
+            document.getElementById('imgPreview');
+
+        let uploadedImage = '';
+
+        imgFile.addEventListener('change', function () {
+
+            const file = this.files[0];
+
+            if (!file) return;
+
+            const reader =
+                new FileReader();
+
+            reader.onload = function (e) {
+
+                uploadedImage =
+                    e.target.result;
+
+                imgPreview.src =
+                    uploadedImage;
+
+                imgPreview.style.display =
+                    'block';
+            };
+
+            reader.readAsDataURL(file);
+
+        });
+
+        let cards = JSON.parse(localStorage.getItem('cards')) || [];
+
+        form.addEventListener('submit', function (e) {
+
+            e.preventDefault();
+
+            const card = {
+
+                id: document.getElementById('id').value,
+
+                img: uploadedImage,
+
+                name: document.getElementById('name').value,
+
+                desc: document.getElementById('desc').value,
+
+                tag: document.getElementById('tag').value,
+
+                cnt: document.getElementById('cnt').value,
+
+                template: document.getElementById('template').value,
+
+                type: document.getElementById('type').value,
+
+                material: document.getElementById('material')?.value || '',
+
+                thickness: document.getElementById('thickness')?.value || '',
+
+                brands: document.getElementById('brands')?.value || '',
+
+                pros: document.getElementById('pros')?.value || '',
+
+                cons: document.getElementById('cons')?.value || '',
+
+                columns:
+                    document.getElementById('columns')?.value || '',
+
+                rows:
+                    document.getElementById('rows')?.value || ''
+
+            };
+
+            cards.push(card);
+
+            localStorage.setItem('cards', JSON.stringify(cards));
+
+            renderCards();
+
+            form.reset();
+
+        });
+
+        function renderCards() {
+
+            preview.innerHTML = cards.map(card => {
+
+                return `
+
+        <div class="card">
+
+          <img src="${card.img}" alt="${card.name}">
+
+          <div class="card-body">
+
+            <h3>${card.name}</h3>
+
+            <p>${card.desc}</p>
+
+            <small>${card.cnt}</small>
+
+            <button type="button" onclick="editCard('${card.id}')">
+                Edit
+            </button>
+            <button type="button" onclick="deleteCard('${card.id}')">Delete</button>
+
+          </div>
+
+        </div>
+
+      `;
+
+            }).join('');
+
+        }
+
+        renderCards();
+
+        function deleteCard(id) {
+            cards = cards.filter(card => card.id !== id);
+            localStorage.setItem('cards', JSON.stringify(cards));
+            renderCards();
+        }
+
+        function editCard(id) {
+
+            const card =
+                cards.find(card => card.id === id);
+
+            if (!card) return;
+
+            document.getElementById('id').value =
+                card.id;
+
+            uploadedImage = card.img;
+
+            imgPreview.src = card.img;
+
+            imgPreview.style.display = 'block';
+
+            document.getElementById('name').value =
+                card.name;
+
+            document.getElementById('desc').value =
+                card.desc;
+
+            document.getElementById('tag').value =
+                card.tag;
+
+            document.getElementById('cnt').value =
+                card.cnt;
+
+            document.getElementById('type').value =
+                card.type;
+
+            document.getElementById('template').value =
+                card.template;
+
+            renderDynamicFields();
+
+            if (document.getElementById('material')) {
+                document.getElementById('material').value =
+                    card.material || '';
+            }
+
+            if (document.getElementById('thickness')) {
+                document.getElementById('thickness').value =
+                    card.thickness || '';
+            }
+
+            if (document.getElementById('brands')) {
+                document.getElementById('brands').value =
+                    card.brands || '';
+            }
+
+            if (document.getElementById('pros')) {
+                document.getElementById('pros').value =
+                    card.pros || '';
+            }
+
+            if (document.getElementById('cons')) {
+                document.getElementById('cons').value =
+                    card.cons || '';
+            }
+
+            if (document.getElementById('thickness')) {
+                document.getElementById('thickness').value =
+                    card.thickness || '';
+            }
+
+            if (document.getElementById('brands')) {
+                document.getElementById('brands').value =
+                    card.brands || '';
+            }
+
+            if (document.getElementById('pros')) {
+                document.getElementById('pros').value =
+                    card.pros || '';
+            }
+
+            if (document.getElementById('cons')) {
+                document.getElementById('cons').value =
+                    card.cons || '';
+            }
+
+            deleteCard(id);
+
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+
+        }
+
+        window.editCard = editCard;
+        window.deleteCard = deleteCard;
+    </script>
+
+    <script>
+        const password = prompt("Enter Admin Password");
+
+        if (password !== "LittleMsDesigner#2342") {
+
+            document.body.innerHTML = `
+        <h1 style="
+            color:white;
+            text-align:center;
+            margin-top:100px;
+        ">
+            Access Denied
+        </h1>
+    `;
+        }
+
+
+
+
+
+
+
+
+        const templateSelect = document.getElementById('template');
+        const dynamicFields = document.getElementById('dynamicFields');
+
+        templateSelect.addEventListener('change', renderDynamicFields);
+
+        let dynamicColumns = [];
+
+        function renderDynamicFields() {
+            const value = templateSelect.value;
+            const tableBuilder =
+                document.getElementById('tableBuilder');
+
+            if (value === 'detail') {
+                tableBuilder.style.display = 'none';
+                dynamicFields.innerHTML = `
+                    <input type="text" id="material" placeholder="Material">
+                    <input type="text" id="thickness" placeholder="Thickness">
+                    <input type="text" id="brands" placeholder="Brands">
+                    <textarea id="pros" placeholder="Pros"></textarea>
+                    <textarea id="cons" placeholder="Cons"></textarea>
+                `;
+            } else if (value === 'table') {
+                tableBuilder.style.display = 'block';
+                dynamicFields.innerHTML = `
+                    <textarea id="columns" placeholder="Columns separated by comma"></textarea>
+                    <textarea id="rows" placeholder="Rows"></textarea>
+                `;
+            } else if (value === 'comparison') {
+                tableBuilder.style.display = 'none';
+                dynamicFields.innerHTML = `
+                    <input type="text" placeholder="Left Item">
+                    <input type="text" placeholder="Right Item">
+                `;
+            } else {
+                tableBuilder.style.display = 'none';
+                dynamicFields.innerHTML = '';
+            }
+        }
+
+        renderDynamicFields();
+        const addColumnBtn =
+            document.getElementById('addColumnBtn');
+
+        const columnsPreview =
+            document.getElementById('columnsPreview');
+
+        addColumnBtn.addEventListener('click', () => {
+
+            const input =
+                document.getElementById('columnInput');
+
+            const value =
+                input.value.trim();
+
+            if (!value) return;
+
+            dynamicColumns.push(value);
+
+            renderColumns();
+
+            input.value = '';
+
+        });
+
+        function renderColumns() {
+
+            columnsPreview.innerHTML =
+                dynamicColumns.map((col, index) => {
+
+                    return `
+                <div
+                    style="
+                        background:#1d4ed8;
+                        padding:10px 16px;
+                        border-radius:12px;
+                        display:flex;
+                        align-items:center;
+                        gap:10px;
+                    "
+                >
+                    <span>${col}</span>
+
+                    <button
+                        type="button"
+                        onclick="removeColumn(${index})"
+                        style="
+                            width:auto;
+                            padding:4px 10px;
+                            margin:0;
+                            background:#dc2626;
+                            border-radius:8px;
+                        "
+                    >
+                        ×
+                    </button>
+                </div>
+            `;
+
+                }).join('');
+
+        }
+
+        function removeColumn(index) {
+
+            dynamicColumns.splice(index, 1);
+
+            renderColumns();
+
+        }
+
+        window.removeColumn =
+            removeColumn;
+    </script>
+</body>
+
+</html>

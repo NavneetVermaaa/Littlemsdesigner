@@ -1,0 +1,411 @@
+[
+  {
+    "id": "exp-look",
+    "img": "assets/1.Cover Images/39.Materials that look expensive.jpg",
+    "name": "Materials That Look Expensive",
+    "desc": "Looks ₹50L+, costs under ₹50K — the smart designer's list",
+    "tag": "trendy",
+    "cnt": "10 ideas"
+  },
+  {
+    "id": "top10",
+    "img": "assets/1.Cover Images/38.Top 10 materials 2026.jpg",
+    "name": "Top 10 Materials 2026",
+    "desc": "The hottest, most trending materials for this year",
+    "tag": "trendy",
+    "cnt": "10 materials"
+  },
+  {
+    "id": "limewash",
+    "img": "assets/1.Cover Images/16. Limewash.jpg",
+    "name": "Lime Wash",
+    "desc": "Natural brushed coating – soft chalky finish, eco-friendly",
+    "tag": "natural",
+    "cnt": "1 finish"
+  },
+  {
+    "id": "limeplaster",
+    "img": "assets/1.Cover Images/17. Lime Plaster.jpg",
+    "name": "Lime Plaster",
+    "desc": "Natural mineral plaster – smooth to textured, 20–50yr lifespan",
+    "tag": "natural",
+    "cnt": "1 finish"
+  },
+  {
+    "id": "venetian",
+    "img": "assets/1.Cover Images/18. Venetian Plaster.jpg",
+    "name": "Venetian Plaster",
+    "desc": "Premium marble-like polished plaster – glossy, luxurious",
+    "tag": "natural",
+    "cnt": "1 finish"
+  },
+  {
+    "id": "microcement",
+    "img": "assets/1.Cover Images/19. Micro Concrete.jpg",
+    "name": "Microcement",
+    "desc": "Seamless concrete-look coating for floors, walls and counters",
+    "tag": "natural",
+    "cnt": "1 finish"
+  },
+  {
+    "id": "clay",
+    "img": "assets/1.Cover Images/20. Clay Cladding.jpg",
+    "name": "Clay Cladding",
+    "desc": "Kiln-fired natural clay panels – earthy, warm, architectural",
+    "tag": "natural",
+    "cnt": "1 finish"
+  },
+  {
+    "id": "metallic",
+    "img": "assets/1.Cover Images/21.Liquid Mettalic Ombres.jpg",
+    "name": "Liquid Metallic Ombres",
+    "desc": "Gradient metallic wall finish – gold, copper, silver, bronze",
+    "tag": "natural",
+    "cnt": "1 finish"
+  },
+  {
+    "id": "compare-special",
+    "img": "assets/1.Cover Images/22. Natural Finishes Comparison.jpg",
+    "name": "Natural Finishes Comparison",
+    "desc": "Side-by-side: Limewash vs Lime Plaster vs Venetian vs Clay",
+    "tag": "natural",
+    "cnt": "Comparison"
+  },
+  {
+    "id": "flooring",
+    "img": "assets/1.Cover Images/1.Flooring Finishes Cover.jpg",
+    "name": "Flooring Finishes",
+    "desc": "27 materials – marble, wood, vinyl, tiles, cement & more",
+    "tag": "finishes",
+    "cnt": "27 materials"
+  },
+  {
+    "id": "wall",
+    "img": "assets/1.Cover Images/2.Wall Finishes.jpg",
+    "name": "Wall Finishes",
+    "desc": "39 finishes – paint, plaster, panels, stone, wallpaper",
+    "tag": "finishes",
+    "cnt": "39 materials"
+  },
+  {
+    "id": "ceiling",
+    "img": "assets/1.Cover Images/3.False Ceiling Finishes.jpeg",
+    "name": "False Ceiling Finishes",
+    "desc": "19 types – POP, gypsum, wood, metal, stretch ceiling",
+    "tag": "finishes",
+    "cnt": "19 materials"
+  },
+  {
+    "id": "italian-marbles",
+    "img": "assets/1.Cover Images/23.Marbles.jpg",
+    "name": "Italian Marbles",
+    "desc": "Premium Italian marble types with pricing",
+    "tag": "civil",
+    "cnt": "10 types"
+  },
+  {
+    "id": "indian-marbles",
+    "img": "assets/1.Cover Images/23.Marbles.jpg",
+    "name": "Indian Marbles",
+    "desc": "Indian marble types with pricing",
+    "tag": "civil",
+    "cnt": "5 types"
+  },
+  {
+    "id": "tiles",
+    "img": "assets/1.Cover Images/24.Tiles.jpg",
+    "name": "TILES",
+    "desc": "Types of Tiles (Detailed)",
+    "tag": "civil",
+    "cnt": "6 types"
+  },
+  {
+    "id": "marble-vs-tiles",
+    "img": "assets/1.Cover Images/marble vs tiles.png",
+    "name": "Marble vs Tiles",
+    "desc": "Price, durability, maintenance, best use – compared",
+    "tag": "civil",
+    "cnt": "Comparison"
+  },
+  {
+    "id": "granite",
+    "img": "assets/1.Cover Images/26.Granite.jpg",
+    "name": "Granite",
+    "desc": "Black, Tan Brown, Kashmir White, Vizag Blue and more",
+    "tag": "civil",
+    "cnt": "7 types"
+  },
+  {
+    "id": "quartz",
+    "img": "assets/1.Cover Images/27.Quartz.jpg",
+    "name": "Quartz",
+    "desc": "Calacatta, Statuario, Nero, Sparkling White and more",
+    "tag": "civil",
+    "cnt": "6 types"
+  },
+  {
+    "id": "quartzite",
+    "img": "assets/1.Cover Images/28.Quartzite.jpg",
+    "name": "Quartzite",
+    "desc": "Taj Mahal, Sea Pearl, Fantasy Brown and more premium quartzites",
+    "tag": "civil",
+    "cnt": "5 types"
+  },
+  {
+    "id": "compare-stone",
+    "img": "assets/1.Cover Images/29.Granite vs qurtz vs quartzite.jpg",
+    "name": "Granite vs Quartz vs Quartzite",
+    "desc": "Hardness, price, heat resistance, stain resistance compared",
+    "tag": "civil",
+    "cnt": "Comparison"
+  },
+  {
+    "id": "laminates",
+    "img": "assets/1.Cover Images/32.Laminates.jpg",
+    "name": "Laminates",
+    "desc": "HPL, acrylic, designer, metallic, suede – all types with specs",
+    "tag": "carpentry",
+    "cnt": "16 types"
+  },
+  {
+    "id": "veneer",
+    "img": "assets/1.Cover Images/33.Veneer.jpg",
+    "name": "Veneer",
+    "desc": "Natural, recon, exotic, designer veneers – full guide",
+    "tag": "carpentry",
+    "cnt": "18 types"
+  },
+  {
+    "id": "lam-vs-veneer",
+    "img": "assets/1.Cover Images/laminate vs vaneer.png",
+    "name": "Laminate vs Veneer",
+    "desc": "Material, feel, price, durability, eco-factor compared",
+    "tag": "carpentry",
+    "cnt": "Comparison"
+  },
+  {
+    "id": "plywood",
+    "img": "assets/1.Cover Images/35.Plywood.jpg",
+    "name": "Plywood",
+    "desc": "MR, BWR, Marine, MDF, HDHMR, blockboard – types & specs",
+    "tag": "carpentry",
+    "cnt": "9 types"
+  },
+  {
+    "id": "wood-types",
+    "img": "assets/1.Cover Images/36.Wood.jpg",
+    "name": "Wood",
+    "desc": "Teak, sheesham, mango, walnut, oak, pine, bamboo – full guide",
+    "tag": "carpentry",
+    "cnt": "8 types"
+  },
+  {
+    "id": "glass",
+    "img": "assets/1.Cover Images/30.Glass.jpg",
+    "name": "Glass",
+    "desc": "Clear, toughened, frosted, fluted, smart glass – all types",
+    "tag": "carpentry",
+    "cnt": "10 types"
+  },
+  {
+    "id": "mirror",
+    "img": "assets/1.Cover Images/31.Mirror.jpg",
+    "name": "Mirror",
+    "desc": "Plain, antique, tinted mirror – sizes, prices, uses",
+    "tag": "carpentry",
+    "cnt": "Full guide"
+  },
+  {
+    "id": "hardware",
+    "img": "assets/1.Cover Images/coming soon.jpg",
+    "name": "Hardware",
+    "desc": "Hinges, channels, handles and more",
+    "tag": "carpentry",
+    "cnt": "Coming Soon"
+  },
+  {
+    "id": "door",
+    "img": "assets/1.Cover Images/4.Door Finishes.jpg",
+    "name": "Door Finishes",
+    "desc": "Laminate, veneer, glass, duco, WPC and more",
+    "tag": "furniture",
+    "cnt": "8 finishes"
+  },
+  {
+    "id": "bed",
+    "img": "assets/1.Cover Images/5.Bed Finishes.jpg",
+    "name": "Bed Finishes",
+    "desc": "Laminate, upholstered, veneer, solid wood and more",
+    "tag": "furniture",
+    "cnt": "6 finishes"
+  },
+  {
+    "id": "headboard",
+    "img": "assets/1.Cover Images/6.Headboard Finishes.jpg",
+    "name": "Headboard Finishes",
+    "desc": "Fabric, cane, laminate, lime plaster, fluted panels",
+    "tag": "furniture",
+    "cnt": "7 finishes"
+  },
+  {
+    "id": "sidetable",
+    "img": "assets/1.Cover Images/7.Side Table Finishes.jpg",
+    "name": "Side Table Finishes",
+    "desc": "Laminate, marble, glass, duco, veneer",
+    "tag": "furniture",
+    "cnt": "5 finishes"
+  },
+  {
+    "id": "study",
+    "img": "assets/1.Cover Images/8.Study table.jpg",
+    "name": "Study Table Finishes",
+    "desc": "Laminate, duco, veneer, microcement, marble top",
+    "tag": "furniture",
+    "cnt": "5 finishes"
+  },
+  {
+    "id": "dresser",
+    "img": "assets/1.Cover Images/9.Dresser Table Finishes.jpg",
+    "name": "Dresser Table Finishes",
+    "desc": "Laminate, duco, acrylic high gloss, veneer, PU",
+    "tag": "furniture",
+    "cnt": "5 finishes"
+  },
+  {
+    "id": "wardrobe",
+    "img": "assets/1.Cover Images/10. Wardrobe Shutter Finishes.jpg",
+    "name": "Wardrobe Shutter Finishes",
+    "desc": "Top 11 – fluted glass, cane, laminate, mirror, acrylic",
+    "tag": "furniture",
+    "cnt": "11 finishes"
+  },
+  {
+    "id": "wardrobe-must",
+    "img": "assets/1.Cover Images/11. 5 Wardrobe Must Haves.jpg",
+    "name": "5 Wardrobe Must Haves",
+    "desc": "Revolving rack, trouser pull-out, LED drawers and more",
+    "tag": "furniture",
+    "cnt": "5 items"
+  },
+  {
+    "id": "tvunit",
+    "img": "assets/1.Cover Images/12.TV Unit Finishes.jpg",
+    "name": "TV Unit Finishes",
+    "desc": "Laminate, veneer, fluted panel, microcement, duco",
+    "tag": "furniture",
+    "cnt": "6 finishes"
+  },
+  {
+    "id": "lights",
+    "img": "assets/1.Cover Images/coming soon.jpg",
+    "name": "Lights",
+    "desc": "All types of lights for interiors",
+    "tag": "electrical",
+    "cnt": "Coming Soon"
+  },
+  {
+    "id": "switches",
+    "img": "assets/1.Cover Images/coming soon.jpg",
+    "name": "Switch Boards",
+    "desc": "Switch boards and plates",
+    "tag": "electrical",
+    "cnt": "Coming Soon"
+  },
+  {
+    "id": "automation",
+    "img": "assets/1.Cover Images/coming soon.jpg",
+    "name": "Automation",
+    "desc": "Home automation systems",
+    "tag": "electrical",
+    "cnt": "Coming Soon"
+  },
+  {
+    "id": "kitchen-colors",
+    "img": "assets/1.Cover Images/coming soon.jpg",
+    "name": "Kitchen Colour Combinations",
+    "desc": "Colour combinations for kitchens",
+    "tag": "paint",
+    "cnt": "Coming Soon"
+  },
+  {
+    "id": "bathroom-colors",
+    "img": "assets/1.Cover Images/coming soon.jpg",
+    "name": "Bathroom Colour Combinations",
+    "desc": "Colour combinations for bathrooms",
+    "tag": "paint",
+    "cnt": "Coming Soon"
+  },
+  {
+    "id": "bedroom-colors",
+    "img": "assets/1.Cover Images/coming soon.jpg",
+    "name": "Bedroom Colour Combinations",
+    "desc": "Colour combinations for bedrooms",
+    "tag": "paint",
+    "cnt": "Coming Soon"
+  },
+  {
+    "id": "living-colors",
+    "img": "assets/1.Cover Images/coming soon.jpg",
+    "name": "Living Room Colour Combinations",
+    "desc": "Colour combinations for living rooms",
+    "tag": "paint",
+    "cnt": "Coming Soon"
+  },
+  {
+    "id": "kitchen-counter",
+    "img": "assets/1.Cover Images/13. Kitchen Counter Top.jpg",
+    "name": "Kitchen Counter Top",
+    "desc": "Quartz, granite, marble, microcement, Corian, sintered stone",
+    "tag": "kitchen",
+    "cnt": "6 options"
+  },
+  {
+    "id": "kitchen-shutter",
+    "img": "assets/1.Cover Images/14. Kitchen Shutters.jpg",
+    "name": "Kitchen Shutter Finishes",
+    "desc": "Laminate, acrylic, PU, veneer, glass, profile shutters",
+    "tag": "kitchen",
+    "cnt": "8 finishes"
+  },
+  {
+    "id": "kitchen-must",
+    "img": "assets/1.Cover Images/15. Kitchen Must Haves.jpg",
+    "name": "5 Kitchen Must Haves",
+    "desc": "Corner drawers, waste bin, LED strips and more",
+    "tag": "kitchen",
+    "cnt": "5 items"
+  },
+  {
+    "id": "kitchen-colors-2",
+    "img": "assets/1.Cover Images/coming soon.jpg",
+    "name": "Kitchen Colour Combinations",
+    "desc": "Colour combinations for kitchens",
+    "tag": "kitchen",
+    "cnt": "Coming Soon"
+  },
+  {
+    "id": "sanitary",
+    "img": "assets/1.Cover Images/coming soon.jpg",
+    "name": "Sanitary Fittings",
+    "desc": "Toilets, basins, faucets and more",
+    "tag": "bathroom",
+    "cnt": "Coming Soon"
+  },
+  {
+    "id": "bathroom-colors-2",
+    "img": "assets/1.Cover Images/coming soon.jpg",
+    "name": "Bathroom Colour Combinations",
+    "desc": "Colour combinations for bathrooms",
+    "tag": "bathroom",
+    "cnt": "Coming Soon"
+  },
+  {
+    "id": "overview",
+    "img": "assets/1.Cover Images/37.Material Price Overview.jpg",
+    "name": "Material Price Overview",
+    "desc": "Quick price reference for all common interior materials",
+    "tag": "all",
+    "cnt": "20 materials"
+  }
+
+]

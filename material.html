@@ -1,492 +1,906 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark-mode">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Materials That Look Expensive</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    :root {
-      --bg-color: #f8f9fa;
-      --card-bg: #ffffff;
-      --text-primary: #1e2d4a;
-      --text-secondary: #5a6a7a;
-      --accent-color: #1a2b45;
-      --success-color: #2e7d32;
-      --brand-color: #1565c0;
-      --border-color: #dee2e6;
-      --header-bg: #1a2b45;
-      --header-text: #ffffff;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Materials Comparison</title>
+<style>
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-    .dark-mode {
-      --bg-color: #1a1a2e;
-      --card-bg: #16213e;
-      --text-primary: #e0e0e0;
-      --text-secondary: #a0a0a0;
-      --accent-color: #2a3f5f;
-      --border-color: #3a3a5a;
-    }
+  :root {
+    --page-bg: #f5f5f0;
+    --section-bg: #ffffff;
+    --section-border: rgba(0,0,0,0.06);
+    --text-primary: #2d2d2d;
+    --text-secondary: #555;
+    --text-muted: #888;
+    --text-muted2: #999;
+    --text-muted3: #aaa;
+    --text-muted4: #666;
+    --text-muted5: #777;
+    --accent-navy: #1e2d4a;
+    --accent-blue: #2e5d9e;
+    --accent-blue2: #3b5998;
+    --accent-blue3: #4a7bbf;
+    --accent-blue4: #8896a8;
+    --table-bg: #ffffff;
+    --table-header-bg: #0c1624;
+    --table-header-text: #ffffff;
+    --table-header-border: rgba(0,0,0,0.06);
+    --table-cell-border: rgba(0,0,0,0.05);
+    --table-cell-text: #555;
+    --card-bg: #ffffff;
+    --card-border: rgba(0,0,0,0.07);
+    --spec-image-bg: #f8f8f6;
+    --spec-image-border: rgba(0,0,0,0.05);
+    --spec-image-label: #999;
+    --title-bar-bg: #1e2d4a;
+    --title-bar-border: rgba(0,0,0,0.05);
+    --title-bar-text: #ffffff;
+    --spec-row-border: rgba(0,0,0,0.04);
+    --spec-label-bg: #f0f0ee;
+    --spec-label-text: #2e5d9e;
+    --spec-label-border: rgba(0,0,0,0.03);
+    --spec-value-text: #444;
+    --pros-color: #2d7a2d;
+    --cons-color: #b94a4a;
+    --sno-color: #999;
+    --material-color: #1e2d4a;
+    --cost-color: #555;
+    --thk-color: #777;
+    --places-color: #666;
+    --brands-color: #666;
+    --top-label-border: rgba(0,0,0,0.1);
+    --detail-header-border: rgba(0,0,0,0.06);
+    --detail-count-border: rgba(0,0,0,0.08);
+    --detail-count-color: #999;
+    --lb-bg: rgba(0,0,0,0.92);
+  }
 
-    * {
-      box-sizing: border-box;
-    }
+  .dark-mode {
+    --page-bg: #0a0a0a;
+    --section-bg: #0d0d0d;
+    --section-border: rgba(255,255,255,0.08);
+    --text-primary: #e8e6e3;
+    --text-secondary: #c8c6c2;
+    --text-muted: #888;
+    --text-muted2: #999;
+    --text-muted3: #aaa;
+    --text-muted4: #666;
+    --text-muted5: #999;
+    --accent-navy: #1e2d4a;
+    --accent-blue: #2e5d9e;
+    --accent-blue2: #3b5998;
+    --accent-blue3: #4a7bbf;
+    --accent-blue4: #8896a8;
+    --table-bg: #141416;
+    --table-header-bg: #0c1624;
+    --table-header-text: #8896a8;
+    --table-header-border: rgba(255,255,255,0.06);
+    --table-cell-border: rgba(255,255,255,0.05);
+    --table-cell-text: #c8c6c2;
+    --card-bg: #141416;
+    --card-border: rgba(255,255,255,0.07);
+    --spec-image-bg: #101012;
+    --spec-image-border: rgba(255,255,255,0.05);
+    --spec-image-label: #4a5568;
+    --title-bar-bg: #0c1624;
+    --title-bar-border: rgba(255,255,255,0.05);
+    --title-bar-text: #3b5998;
+    --spec-row-border: rgba(255,255,255,0.04);
+    --spec-label-bg: #111114;
+    --spec-label-text: #4a7bbf;
+    --spec-label-border: rgba(255,255,255,0.03);
+    --spec-value-text: #d4d0c8;
+    --pros-color: #6b9e6b;
+    --cons-color: #c97a7a;
+    --sno-color: #555;
+    --material-color: #1e2d4a;
+    --cost-color: #c8c6c2;
+    --thk-color: #999;
+    --places-color: #aaa;
+    --brands-color: #999;
+    --top-label-border: rgba(255,255,255,0.1);
+    --detail-header-border: rgba(255,255,255,0.06);
+    --detail-count-border: rgba(255,255,255,0.08);
+    --detail-count-color: #666;
+    --lb-bg: rgba(0,0,0,0.92);
+  }
 
-    html {
-      overflow-x: hidden;
-    }
+  body {
+    background: var(--page-bg);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px;
+    transition: background-color 0.3s;
+  }
 
+  .theme-toggle {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 999;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    color: var(--text-primary);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s, color 0.3s, border-color 0.3s;
+  }
+
+  .section {
+    max-width: 1100px;
+    width: 100%;
+    background: var(--section-bg);
+    padding: 36px 28px 28px;
+    position: relative;
+    transition: background-color 0.3s;
+  }
+
+  .section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 28px;
+    right: 28px;
+    height: 1px;
+    background: var(--section-border);
+  }
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+  }
+
+  .section-title {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text-primary);
+    letter-spacing: 0.4px;
+    line-height: 1.3;
+    max-width: 72%;
+  }
+
+  .section-title span {
+    color: var(--accent-navy);
+  }
+
+  .top-label {
+    font-size: 9px;
+    font-weight: 500;
+    color: var(--text-muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border: 1px solid var(--top-label-border);
+  }
+
+  .table-wrapper {
+    overflow: hidden;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--table-bg);
+    table-layout: fixed;
+    transition: background-color 0.3s;
+  }
+
+  colgroup .col-image { width: 52px; }
+  colgroup .col-sno   { width: 28px; }
+  colgroup .col-material { width: 18%; }
+  colgroup .col-cost  { width: 11%; }
+    colgroup .col-thk   { width: 7%; }
+  colgroup .col-places { width: 31%; }
+  colgroup .col-brands { width: 16%; }
+
+  thead th {
+    background: var(--table-header-bg);
+    color: var(--table-header-text);
+    font-size: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 9px 6px;
+    border: 1px solid var(--table-header-border);
+    text-align: left;
+    white-space: normal;
+    overflow-wrap: break-word;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  thead th:nth-child(2) {
+    text-align: center;
+  }
+
+  tbody td {
+    padding: 9px 6px;
+    border: 1px solid var(--table-cell-border);
+    vertical-align: middle;
+    font-size: 10.5px;
+    color: var(--table-cell-text);
+    line-height: 1.35;
+    transition: color 0.3s, border-color 0.3s;
+  }
+
+  .img-cell {
+    width: 52px;
+    padding: 5px !important;
+    text-align: center;
+  }
+  .img-cell img {
+    width: 38px;
+    height: 38px;
+    border-radius: 4px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .sno-cell {
+    text-align: center;
+    font-size: 9px;
+    color: var(--sno-color);
+    font-weight: 500;
+  }
+
+  .material-cell {
+    font-size: 11.5px;
+    font-weight: 500;
+    color: var(--material-color);
+  }
+
+  .cost-cell {
+    font-size: 10.5px;
+    font-weight: 400;
+    color: var(--cost-color);
+  }
+
+  .thk-cell {
+    font-size: 9px;
+    color: var(--thk-color);
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .places-cell {
+    font-size: 9px;
+    color: var(--places-color);
+    line-height: 1.4;
+  }
+
+  .brands-cell {
+    font-size: 9px;
+    color: var(--brands-color);
+    line-height: 1.35;
+  }
+
+  @media (max-width: 768px) {
     body {
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-primary);
-      transition: background-color 0.3s, color 0.3s;
-      overflow-x: hidden;
+      padding: 20px 8px;
     }
-
-    .mat-header {
-      background: var(--header-bg);
-      color: var(--header-text);
-      padding: 20px;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    .section {
+      padding: 24px 12px 20px;
     }
-
-    .mat-header h1 {
-      margin: 0 0 8px 0;
-      font-size: 22px;
-      font-weight: 700;
-      padding: 0 80px;
+    .section::before {
+      left: 12px;
+      right: 12px;
     }
-
-    .mat-header p {
-      margin: 0;
-      font-size: 13px;
-      opacity: 0.9;
-    }
-
-    .dark-toggle {
-      position: absolute;
-      top: 18px;
-      right: 16px;
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.3);
-      color: #fff;
-      padding: 6px 12px;
-      border-radius: 16px;
-      cursor: pointer;
-      font-size: 12px;
-    }
-
-    @media (max-width: 600px) {
-      .mat-header h1 { font-size: 16px; padding: 0 60px; }
-      .mat-header p { font-size: 11px; }
-      .dark-toggle { padding: 5px 10px; font-size: 11px; }
-    }
-
-    @media (max-width: 400px) {
-      .mat-header h1 { font-size: 14px; padding: 0 55px; }
-      .dark-toggle { padding: 4px 8px; font-size: 10px; }
-    }
-
-    @media (max-width: 350px) {
-      .mat-header h1 { font-size: 12px; padding: 0 50px; }
-      .mat-header p { font-size: 10px; }
-      .dark-toggle { top: 15px; right: 10px; padding: 4px 8px; font-size: 9px; }
-    }
-
-    .mat-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px 12px;
-    }
-
-    .mat-section-title {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 14px;
-      padding-bottom: 8px;
-      border-bottom: 2px solid var(--accent-color);
-    }
-
-/* SUMMARY TABLE - DESKTOP STYLE ON ALL SCREENS */
-    .mat-summary-wrapper {
-      background: #fff;
-      border-radius: 10px;
-      overflow: hidden;
-      margin-bottom: 32px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    }
-
-    .mat-summary-table {
-      width: 100% !important;
-      table-layout: fixed !important;
-      border-collapse: collapse;
-      font-size: clamp(5px, 1.2vw, 12px);
-    }
-
-    .mat-summary-table thead {
-      background: #1a2b45;
-    }
-
-    .mat-summary-table th {
-      padding: clamp(2px, 0.5vw, 10px);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: #fff;
-      text-align: center;
-      border: none;
-      white-space: nowrap !important;
-      word-break: keep-all !important;
-      overflow: hidden !important;
-    }
-
-    .mat-summary-table td {
-      padding: clamp(2px, 0.5vw, 10px);
-      text-align: center;
-      border-bottom: 1px solid #eee;
-      white-space: nowrap !important;
-      word-break: keep-all !important;
-      overflow: hidden !important;
-      color: #555;
-    }
-
-    .mat-summary-table tbody tr:hover td {
-      background: #f8f9fa;
-    }
-
-    .mat-summary-table .col-img { width: 8%; }
-    .mat-summary-table .col-sr { width: 5%; }
-    .mat-summary-table .col-material { width: 20%; text-align: left; font-weight: 700; color: #1a2b45; }
-    .mat-summary-table .col-cost { width: 10%; color: #e6eaf2; font-weight: 700; }
-    .mat-summary-table .col-thk { width: 8%; }
-    .mat-summary-table .col-places { width: 29%; text-align: left; }
-    .mat-summary-table .col-brand { width: 20%; text-align: left; color: #1565c0; font-weight: 600; }
-
-.mat-thumb {
-      width: 22px;
-      height: 22px;
-    }
-
-    .mat-thumb {
-      width: 42px;
-      height: 42px;
-      object-fit: cover;
-      border-radius: 6px;
-      background: var(--border-color);
-    }
-
-/* DETAIL CARDS - SAME FORMAT ON ALL SCREENS */
-    .mat-detail-card {
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    .section-header {
       margin-bottom: 16px;
-      display: table;
+    }
+    .section-title {
+      font-size: 13px;
+      max-width: 75%;
+    }
+    .top-label {
+      font-size: 7px;
+      padding: 3px 8px;
+      letter-spacing: 1.5px;
+    }
+
+    .table-wrapper {
+      overflow: visible;
+      width: 100%;
+      transform-origin: top left;
+    }
+
+    table {
       width: 100%;
       table-layout: fixed;
-      font-size: clamp(8px, 1.2vw, 14px);
     }
 
-    .mat-detail-card .mat-card-img {
-      display: table-cell;
-      vertical-align: top;
-      width: 140px;
-      min-width: 140px;
-      height: auto;
-      min-height: 160px;
-      object-fit: cover;
-      background: #eee;
+    colgroup .col-image { width: 34px; }
+    colgroup .col-sno   { width: 18px; }
+    colgroup .col-material { width: 17%; }
+    colgroup .col-cost  { width: 10%; }
+  colgroup .col-thk   { width: 8%; }
+    colgroup .col-places { width: 33%; }
+    colgroup .col-brands { width: 15%; }
+
+    thead th {
+      font-size: 6.5px;
+      padding: 5px 3px;
+      letter-spacing: 1px;
+      word-break: normal;
+      overflow-wrap: break-word;
+      hyphens: none;
     }
 
-    .mat-detail-card .mat-card-body {
-      display: table-cell;
-      vertical-align: top;
-      padding: 12px 14px;
-      width: auto;
+    tbody td {
+      padding: 5px 3px;
+      font-size: 7.5px;
     }
 
-    .mat-detail-card .mat-card-title {
-      font-size: 12px;
-      font-weight: 700;
-      color: #1a2b45;
-      margin: 0 0 4px 0;
-      display: flex;
-      align-items: center;
-      gap: 6px;
+    .img-cell { width: 34px; padding: 3px !important; }
+    .img-cell img {
+      width: 26px;
+      height: 26px;
     }
 
-    .mat-detail-card .mat-sr-badge {
-      background: #1a2b45;
-      color: #fff;
+    .sno-cell { font-size: 6.5px; }
+    .material-cell { font-size: 7.5px; }
+    .cost-cell { font-size: 7.5px; }
+    .thk-cell { font-size: 6.5px; white-space: nowrap; }
+    .places-cell { font-size: 6.5px; }
+    .brands-cell { font-size: 6.5px; }
+  }
+
+  @media (max-width: 480px) {
+    .section-title {
+      font-size: 10px;
+    }
+    .top-label {
+      font-size: 5.5px;
+      padding: 2px 6px;
+      letter-spacing: 1px;
+    }
+
+    thead th {
+      font-size: 5px;
+      padding: 3px 2px;
+      letter-spacing: 0.8px;
+      word-break: normal;
+      overflow-wrap: break-word;
+      hyphens: none;
+    }
+
+    tbody td {
+      padding: 3px 2px;
+      font-size: 6px;
+    }
+
+    .img-cell { width: 26px; padding: 2px !important; }
+    .img-cell img {
       width: 20px;
       height: 20px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 9px;
-      font-weight: 700;
-      flex-shrink: 0;
+      border-radius: 2px;
     }
 
-    .mat-detail-card .mat-card-desc {
-      font-size: 10px;
-      color: #666;
-      margin-bottom: 6px;
-      font-style: italic;
-    }
+    .material-cell { font-size: 6px; }
+    .cost-cell { font-size: 6px; }
+    .thk-cell { font-size: 5.5px; white-space: nowrap; }
+    .places-cell { font-size: 5.5px; }
+    .brands-cell { font-size: 5.5px; }
 
-    .mat-detail-card .mat-info-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
+    colgroup .col-image { width: 26px; }
+    colgroup .col-sno   { width: 14px; }
+    colgroup .col-material { width: 16%; }
+    colgroup .col-cost  { width: 9%; }
+    colgroup .col-thk   { width: 5%; }
+    colgroup .col-places { width: 32%; }
+    colgroup .col-brands { width: 14%; }
+  }
 
-    .mat-detail-card .mat-info-list li {
-      font-size: 9px;
-      margin-bottom: 2px;
-      display: flex;
-      line-height: 1.2;
-    }
+  /* =============================================
+     MATERIAL DETAIL SPECIFICATION CARDS
+     ============================================= */
+  .detail-section {
+    margin-top: 28px;
+  }
 
-    .mat-detail-card .mat-info-list .label {
-      font-weight: 600;
-      color: #6ea8ff;
-      min-width: 65px;
-    }
+  .detail-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0 10px;
+    border-bottom: 1px solid var(--detail-header-border);
+    margin-bottom: 16px;
+  }
 
-    .mat-card-title {
-      color: #2f5eff;
-    }
+  .detail-section-title {
+    font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--accent-navy);
+    letter-spacing: 0.3px;
+    line-height: 1.2;
+  }
 
-    .mat-detail-card .mat-info-list .value {
-      color: #e6eaf2;
-      flex: 1;
-    }
+  .detail-section-count {
+    font-size: 8px;
+    font-weight: 500;
+    color: var(--detail-count-color);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 3px 12px;
+    border: 1px solid var(--detail-count-border);
+    border-radius: 2px;
+  }
 
-    .mat-detail-card .mat-info-list .value.success {
-      color: #6ea8ff;
-      font-weight: 600;
-    }
+  .spec-card {
+    display: flex;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  .spec-card:last-child {
+    margin-bottom: 0;
+  }
 
-    .mat-detail-card .mat-info-list .value.blue {
-      color: #8ab4ff;
-      font-weight: 500;
-    }
+  .spec-image-col {
+    width: 220px;
+    min-width: 220px;
+    background: var(--spec-image-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    position: relative;
+    border-right: 1px solid var(--spec-image-border);
+    transition: background-color 0.3s;
+  }
 
-    .mat-detail-card .mat-pros-cons {
-      display: flex;
-      gap: 8px;
-      margin-top: 6px;
-      padding-top: 6px;
-      border-top: 1px solid #eee;
-    }
+  .spec-image-label {
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    font-size: 7px;
+    font-weight: 600;
+    color: var(--spec-image-label);
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+  }
 
-    .mat-detail-card .mat-pros,
-    .mat-detail-card .mat-cons {
-      flex: 1;
-    }
+  .spec-image-col img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+  }
 
-    .mat-detail-card .mat-pros h5,
-    .mat-detail-card .mat-cons h5 {
-      font-size: 8px;
-      font-weight: 700;
-      margin: 0 0 2px 0;
-    }
+  .spec-table-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
 
-    .mat-detail-card .mat-pros h5 { color: #6ea8ff; }
-    .mat-detail-card .mat-cons h5 { color: #cbd3df; }
+  .spec-title-bar {
+    background: var(--title-bar-bg);
+    padding: 10px 18px;
+    border-bottom: 1px solid var(--title-bar-border);
+    transition: background-color 0.3s;
+  }
 
-    .mat-detail-card .mat-pros p,
-    .mat-detail-card .mat-cons p {
-      font-size: 8px;
-      color: #cbd3df;
-      margin: 0;
-      line-height: 1.2;
-    }
+  .spec-title-bar h2 {
+    font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--title-bar-text);
+    letter-spacing: 0.3px;
+    line-height: 1.2;
+    margin: 0;
+    transition: color 0.3s;
+  }
 
-/* STRUCTURE LOCK - NO BREAKING ON ANY SCREEN */
-    .mat-detail-card,
-    .mat-card-body,
-    .mat-card-body * {
-      white-space: nowrap !important;
-      word-break: keep-all !important;
-      overflow: visible !important;
-      text-overflow: unset !important;
-    }
+  .spec-rows {
+    display: flex;
+    flex-direction: column;
+  }
 
-/* FONT INHERITANCE - CHILDREN FOLLOW CLAMP */
-    .mat-card-body p,
-    .mat-card-body li,
-    .mat-card-body span {
-      font-size: inherit;
-    }
+  .spec-row {
+    display: flex;
+    border-bottom: 1px solid var(--spec-row-border);
+  }
+  .spec-row:last-child {
+    border-bottom: none;
+  }
 
-/* RESPONSIVE - HEADER ONLY (detail cards scale via clamp automatically) */
-    @media (max-width: 992px) {
-      .mat-header h1 { font-size: 18px; padding: 0 70px; }
+  .spec-label {
+    width: 150px;
+    min-width: 150px;
+    background: var(--spec-label-bg);
+    padding: 7px 14px;
+    font-size: 7.5px;
+    font-weight: 700;
+    color: var(--spec-label-text);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: flex-start;
+    border-right: 1px solid var(--spec-label-border);
+    line-height: 1.35;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .spec-value {
+    flex: 1;
+    padding: 7px 16px;
+    font-size: 11px;
+    color: var(--spec-value-text);
+    line-height: 1.45;
+    min-width: 0;
+    overflow-wrap: break-word;
+    transition: color 0.3s;
+  }
+  .spec-value .pros { color: var(--pros-color); }
+  .spec-value .cons { color: var(--cons-color); }
+
+  @media (max-width: 900px) {
+    .spec-image-col {
+      width: 160px;
+      min-width: 160px;
+      padding: 12px;
     }
-  </style>
+    .spec-image-label { font-size: 6px; letter-spacing: 2px; }
+    .spec-image-col img { max-width: 110px; }
+
+    .spec-title-bar { padding: 8px 14px; }
+    .spec-title-bar h2 { font-size: 13px; }
+
+    .spec-label {
+      width: 110px;
+      min-width: 110px;
+      padding: 5px 10px;
+      font-size: 6.5px;
+      letter-spacing: 1.2px;
+    }
+    .spec-value { padding: 5px 12px; font-size: 10px; line-height: 1.4; }
+    .detail-section-title { font-size: 16px; }
+    .detail-section-count { font-size: 7px; padding: 2px 10px; }
+  }
+
+  @media (max-width: 600px) {
+    .detail-section-header { padding: 10px 0 8px; margin-bottom: 12px; }
+    .detail-section-title { font-size: 12px; }
+    .detail-section-count { font-size: 6px; padding: 2px 8px; letter-spacing: 1.2px; }
+
+    .spec-card { margin-bottom: 14px; border-radius: 4px; }
+
+    .spec-image-col {
+      width: 110px;
+      min-width: 110px;
+      padding: 8px;
+    }
+    .spec-image-label { top: 5px; left: 7px; font-size: 5px; letter-spacing: 1.8px; }
+    .spec-image-col img { max-width: 75px; border-radius: 3px; }
+
+    .spec-title-bar { padding: 6px 10px; }
+    .spec-title-bar h2 { font-size: 10px; }
+
+    .spec-label {
+      width: 80px;
+      min-width: 80px;
+      padding: 4px 8px;
+      font-size: 5.5px;
+      letter-spacing: 1px;
+      line-height: 1.3;
+    }
+    .spec-value { padding: 4px 10px; font-size: 8px; line-height: 1.35; }
+  }
+
+  @media (max-width: 400px) {
+    .detail-section-header { padding: 8px 0 6px; margin-bottom: 10px; }
+    .detail-section-title { font-size: 10px; }
+    .detail-section-count { font-size: 5px; padding: 2px 6px; letter-spacing: 1px; }
+
+    .spec-image-col {
+      width: 80px;
+      min-width: 80px;
+      padding: 6px;
+    }
+    .spec-image-label { display: none; }
+    .spec-image-col img { max-width: 55px; }
+
+    .spec-title-bar { padding: 4px 8px; }
+    .spec-title-bar h2 { font-size: 8px; }
+
+    .spec-label {
+      width: 60px;
+      min-width: 60px;
+      padding: 3px 6px;
+      font-size: 4.5px;
+      letter-spacing: 0.8px;
+      line-height: 1.25;
+    }
+    .spec-value { padding: 3px 7px; font-size: 6.5px; line-height: 1.3; }
+  }
+
+  /* ===== LIGHTBOX ===== */
+  .spec-lb {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--lb-bg);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .spec-lb.active { display: flex; }
+  .spec-lb img {
+    max-width: 98vw;
+    max-height: 98vh;
+    object-fit: contain;
+    border-radius: 4px;
+  }
+</style>
 </head>
 <body>
 
-  <header class="mat-header">
-    <h1>Materials That Look ₹50L+ But Cost Under ₹50K</h1>
-    <p>Premium finishes at budget-friendly prices</p>
-    <button class="dark-toggle" onclick="toggleDarkMode()">🌙 Dark</button>
-  </header>
+<button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">☀️</button>
 
-  <main class="mat-container">
-
-    <!-- ABOVE TABLE -->
-    <h2 class="mat-section-title">Summary</h2>
-
-    <div class="mat-summary-wrapper">
-      <table class="mat-summary-table">
-        <thead>
-          <tr>
-            <th class="col-img">Image</th>
-            <th class="col-sr">Sr. No</th>
-            <th class="col-material">Material</th>
-            <th class="col-cost">Cost (sq.ft)</th>
-            <th class="col-thk">Thk(mm)</th>
-            <th class="col-places">Best Places to Use</th>
-            <th class="col-brand">Brands</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><img src="https://via.placeholder.com/60x60/1a2b45/ffffff?text=VP" alt="VP" class="mat-thumb"></td>
-            <td>01</td>
-            <td class="col-material">Venetian Plaster Paint</td>
-            <td class="col-cost">₹180 – ₹350</td>
-            <td class="col-thk">1–3</td>
-            <td class="col-places">Living room and bedroom accent walls, hotel lobbies, foyer, reception.</td>
-            <td class="col-brand">Vasari India</td>
-          </tr>
-          <tr>
-            <td><img src="https://via.placeholder.com/60x60/2a3f5f/ffffff?text=MT" alt="MT" class="mat-thumb"></td>
-            <td>02</td>
-            <td class="col-material">Marble-Finish Tiles</td>
-            <td class="col-cost">₹90+</td>
-            <td class="col-thk">8–10</td>
-            <td class="col-places">Living room floors, bathroom walls, kitchen backsplash.</td>
-            <td class="col-brand">Kajaria, Somany, Nitco</td>
-          </tr>
-          <tr>
-            <td><img src="https://via.placeholder.com/60x60/3a4f6f/ffffff?text=PL" alt="PL" class="mat-thumb"></td>
-            <td>03</td>
-            <td class="col-material">Premium Finish Laminates</td>
-            <td class="col-cost">₹200+</td>
-            <td class="col-thk">0.8 – 1.5</td>
-            <td class="col-places">TV units, wardrobes, kitchen cabinets, accent panels.</td>
-            <td class="col-brand">Royale Touche Luxury Laminates</td>
-          </tr>
-        </tbody>
-      </table>
+<div class="section">
+  <div class="section-header">
+    <div class="section-title">
+      Materials That Look <span>₹50L+</span> But Cost Under <span>₹50K</span>
     </div>
+    <div class="top-label">3 Materials</div>
+  </div>
 
-    <!-- BELOW SECTION - DETAILED CARDS -->
-    <h2 class="mat-section-title">Material Details</h2>
+  <div class="table-wrapper">
+    <table>
+      <colgroup>
+        <col class="col-image">
+        <col class="col-sno">
+        <col class="col-material">
+        <col class="col-cost">
+        <col class="col-thk">
+        <col class="col-places">
+        <col class="col-brands">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>#</th>
+          <th>Material</th>
+          <th>Cost (Sq.Ft)</th>
+          <th>THK<br><span style="text-transform:none;letter-spacing:0.5px">(mm)</span></th>
+          <th>Best Places to Use</th>
+          <th>Brands</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="img-cell">
+            <img src="assets/2.Materials%20that%20look%20expensive/Textured%20Decorative%20%26%20Venetian%20Plaster%20Paint.png" alt="Venetian Plaster" loading="lazy">
+          </td>
+          <td class="sno-cell">1</td>
+          <td class="material-cell">Venetian Plaster Paint</td>
+          <td class="cost-cell">₹180 – ₹350</td>
+          <td class="thk-cell">1–3</td>
+          <td class="places-cell">Living room and bedroom accent walls, hotel lobbies, foyer, reception</td>
+          <td class="brands-cell">Vasari India</td>
+        </tr>
+        <tr>
+          <td class="img-cell">
+            <img src="assets/2.Materials%20that%20look%20expensive/Marble-Finish%20Tiles.jpg" alt="Marble Finish Tiles" loading="lazy">
+          </td>
+          <td class="sno-cell">2</td>
+          <td class="material-cell">Marble-Finish Tiles</td>
+          <td class="cost-cell">₹90+</td>
+          <td class="thk-cell">8–10</td>
+          <td class="places-cell">Living room floors, bathroom walls, kitchen backsplash</td>
+          <td class="brands-cell">Kajaria, Somany, Nitco</td>
+        </tr>
+        <tr>
+          <td class="img-cell">
+      <img src="assets/2.Materials%20that%20look%20expensive/Premium%20Finish%20Laminates.png" alt="Premium Finish Laminates" loading="lazy" onclick="specZoom(this.src)">
+          </td>
+          <td class="sno-cell">3</td>
+          <td class="material-cell">Premium Finish Laminates</td>
+          <td class="cost-cell">₹200+</td>
+          <td class="thk-cell">0.8–1.5</td>
+          <td class="places-cell">TV units, wardrobes, kitchen cabinets, accent panels</td>
+          <td class="brands-cell">Royale Touche Luxury Laminates</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
-    <!-- Material 1 -->
-    <div class="mat-detail-card">
-      <img src="assets/venetian.jpg" alt="Venetian Plaster" class="mat-card-img">
-      <div class="mat-card-body">
-        <h3 class="mat-card-title"><span class="mat-sr-badge">01</span> Venetian Plaster Paint</h3>
-        <p class="mat-card-desc">Luxurious textured marble-like wall finish</p>
-        <ul class="mat-info-list">
-          <li><span class="label">Raw Cost:</span><span class="value success">₹180 – ₹350 / sq.ft</span></li>
-          <li><span class="label">Thickness:</span><span class="value">1–3 mm finished texture coat</span></li>
-          <li><span class="label">Install:</span><span class="value">Prep wall → Base → Texture/Venetian → Seal</span></li>
-          <li><span class="label">Maint:</span><span class="value">Wipe dust lightly, reseal every few years</span></li>
-          <li><span class="label">Best Places:</span><span class="value">Living room, bedroom accent walls, hotel lobbies, luxury bathrooms, foyer, reception</span></li>
-          <li><span class="label">Brands:</span><span class="value blue">Vasari India</span></li>
-        </ul>
-        <div class="mat-pros-cons">
-          <div class="mat-pros">
-            <h5>✓ Pros</h5>
-            <p>Creates luxurious depth like stone/polished plaster. Can be customized with colour, sheen, vein patterns.</p>
-          </div>
-          <div class="mat-cons">
-            <h5>✗ Cons</h5>
-            <p>Requires skilled applicator. Not ideal for high-moisture areas without proper sealing.</p>
-          </div>
+<div class="section detail-section">
+  <div class="detail-section-header">
+    <div class="detail-section-title">Material Detail Specification</div>
+    <div class="detail-section-count">3 Materials</div>
+  </div>
+
+  <!-- CARD 1 -->
+  <div class="spec-card">
+    <div class="spec-image-col">
+      <div class="spec-image-label">Image</div>
+      <img src="assets/2.Materials%20that%20look%20expensive/Textured%20Decorative%20%26%20Venetian%20Plaster%20Paint.png" alt="Textured Decorative &amp; Venetian Plaster Paint" loading="lazy" onclick="specZoom(this.src)">
+    </div>
+    <div class="spec-table-col">
+      <div class="spec-title-bar">
+        <h2>Textured Decorative &amp; Venetian Plaster Paint</h2>
+      </div>
+      <div class="spec-rows">
+        <div class="spec-row">
+          <div class="spec-label">Raw Material Cost</div>
+          <div class="spec-value">₹80 / sq.ft onwards for textured coats; Venetian Plaster marble-look additives ~₹180 – ₹350 / sq.ft material-only.</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Thickness Required</div>
+          <div class="spec-value">1–3 mm finished texture coat on prepared wall.</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Installation Process</div>
+          <div class="spec-value">Prep wall (repair/primer) → apply base coat → apply texture/Venetian layers → seal with protective finish.</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Maintenance</div>
+          <div class="spec-value">Wipe dust lightly; reseal every few years to preserve sheen.</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Best Places to Use</div>
+          <div class="spec-value">Living room feature wall, bedroom accent wall, foyer, hotel lobbies. Living room feature walls, bedroom accent walls, hotel lobbies, luxury bathrooms, reception areas.</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">✓ Pros</div>
+          <div class="spec-value"><span class="pros">Creates luxurious depth and dimension like stone or polished plaster, elevating feature walls. Can be customized with color, sheen, and vein patterns to mimic high-end finishes.</span></div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">✕ Cons</div>
+          <div class="spec-value"><span class="cons">Requires skilled applicator for premium finish. DIY often looks uneven. Not ideal for high-moisture areas without proper sealing.</span></div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Recommended Brands</div>
+          <div class="spec-value">Vasari India</div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Material 2 -->
-    <div class="mat-detail-card">
-      <img src="assets/marble.jpg" alt="Marble-Finish Tiles" class="mat-card-img">
-      <div class="mat-card-body">
-        <h3 class="mat-card-title"><span class="mat-sr-badge">02</span> Marble-Finish Tiles</h3>
-        <p class="mat-card-desc">Elegant marble-look durable floor tiles</p>
-        <ul class="mat-info-list">
-          <li><span class="label">Raw Cost:</span><span class="value success">₹90 / sq.ft onwards</span></li>
-          <li><span class="label">Thickness:</span><span class="value">8–10 mm tile thickness</span></li>
-          <li><span class="label">Install:</span><span class="value">Lay tiles on pre-prepared screed with adhesive → grout joints → seal if matte finish</span></li>
-          <li><span class="label">Maint:</span><span class="value">Mop with mild detergent; avoid harsh acids</span></li>
-          <li><span class="label">Best Places:</span><span class="value">Living room floors, bathroom walls, kitchen backsplash</span></li>
-          <li><span class="label">Brands:</span><span class="value blue">Kajaria, Somany, Nitco</span></li>
-        </ul>
-        <div class="mat-pros-cons">
-          <div class="mat-pros">
-            <h5>✓ Pros</h5>
-            <p>Realistic marble aesthetic at fraction of stone cost. Durable for floors/walls, many vein styles.</p>
-          </div>
-          <div class="mat-cons">
-            <h5>✗ Cons</h5>
-            <p>Can feel cold without rugs. Grout lines visible unless large format used.</p>
-          </div>
+  <!-- CARD 2 -->
+  <div class="spec-card">
+    <div class="spec-image-col">
+      <div class="spec-image-label">Image</div>
+      <img src="assets/2.Materials%20that%20look%20expensive/Marble-Finish%20Tiles.jpg" alt="Marble-Finish Tiles" loading="lazy" onclick="specZoom(this.src)">
+    </div>
+    <div class="spec-table-col">
+      <div class="spec-title-bar">
+        <h2>Marble-Finish Tiles</h2>
+      </div>
+      <div class="spec-rows">
+        <div class="spec-row">
+          <div class="spec-label">Raw Material Cost</div>
+          <div class="spec-value">₹90 / sq.ft onwards for decent marble-look tiles.</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Thickness Required</div>
+          <div class="spec-value">Typically 8–10 mm tile thickness.</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Installation Process</div>
+          <div class="spec-value">Lay tiles on pre-prepared screed with adhesive → grout joints → seal if matte finish.</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Maintenance</div>
+          <div class="spec-value">Mop with mild detergent; avoid harsh acids on polished surfaces.</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Best Places to Use</div>
+          <div class="spec-value">Living room floors, bathroom walls, kitchen backsplash.</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">✓ Pros</div>
+          <div class="spec-value"><span class="pros">Realistic marble aesthetic at a fraction of stone cost and no upkeep of real stone. Durable for floors/walls and available in many vein styles.</span></div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">✕ Cons</div>
+          <div class="spec-value"><span class="cons">Can feel cold/echoey without rugs or soft materials. Grout lines still visible unless large format used.</span></div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Recommended Brands</div>
+          <div class="spec-value">Kajaria, Somany, Nitco</div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Material 3 -->
-    <div class="mat-detail-card">
-      <img src="assets/laminate.jpg" alt="Premium Finish Laminates" class="mat-card-img">
-      <div class="mat-card-body">
-        <h3 class="mat-card-title"><span class="mat-sr-badge">03</span> Premium Finish Laminates</h3>
-        <p class="mat-card-desc">High-finish decorative laminates</p>
-        <ul class="mat-info-list">
-          <li><span class="label">Raw Cost:</span><span class="value success">₹200 / sq.ft onwards</span></li>
-          <li><span class="label">Thickness:</span><span class="value">0.8 mm – 1.5 mm</span></li>
-          <li><span class="label">Install:</span><span class="value">Bond laminate sheets to ply/MDF with adhesive → edge banding</span></li>
-          <li><span class="label">Maint:</span><span class="value">Wipe with soft damp cloth</span></li>
-          <li><span class="label">Best Places:</span><span class="value">TV units, wardrobes, kitchen cabinets, panels</span></li>
-          <li><span class="label">Brands:</span><span class="value blue">Royale Touche Luxury Laminates</span></li>
-        </ul>
-        <div class="mat-pros-cons">
-          <div class="mat-pros">
-            <h5>✓ Pros</h5>
-            <p>Wide range of textures (stone, wood, gloss, matte). Durable and easy to clean.</p>
-          </div>
-          <div class="mat-cons">
-            <h5>✗ Cons</h5>
-            <p>Looks less rich than real wood. Can peel if exposed to moisture.</p>
-          </div>
+  <!-- CARD 3 -->
+  <div class="spec-card">
+    <div class="spec-image-col">
+      <div class="spec-image-label">Image</div>
+      <img src="assets/2.Materials%20that%20look%20expensive/Premium%20Finish%20Laminates.png" alt="Premium Finish Laminates" loading="lazy">
+    </div>
+    <div class="spec-table-col">
+      <div class="spec-title-bar">
+        <h2>Premium Finish Laminates</h2>
+      </div>
+      <div class="spec-rows">
+        <div class="spec-row">
+          <div class="spec-label">Raw Material Cost</div>
+          <div class="spec-value">₹200 / sq.ft onwards for high-finish decorative laminates</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Thickness Required</div>
+          <div class="spec-value">0.8 mm – 1.5 mm based on quality.</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Installation Process</div>
+          <div class="spec-value">Laminate sheets are bonded to substrates (ply/MDF) with adhesive; edges banded for finish.</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Maintenance</div>
+          <div class="spec-value">Wipe with a soft damp cloth; avoid abrasive cleaners.</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Best Places to Use</div>
+          <div class="spec-value">TV units, wardrobes, kitchen cabinets, accent panels.</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">✓ Pros</div>
+          <div class="spec-value"><span class="pros">Wide range of textures—stone, wood, gloss, matte. Durable, scratch-resistant surfaces with easy cleaning.</span></div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">✕ Cons</div>
+          <div class="spec-value"><span class="cons">Looks less rich than real wood or lacquer if viewed closely. Thin laminates can peel if bonded poorly or exposed to moisture.</span></div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Recommended Brands</div>
+          <div class="spec-value">Royale Touche Luxury Laminates</div>
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-  </main>
+<div class="spec-lb" id="specLightbox" onclick="this.classList.remove('active')">
+  <img id="specLightboxImg" src="" alt="zoom">
+</div>
 
-  <script>
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark-mode');
-      const btn = document.querySelector('.dark-toggle');
-      btn.textContent = document.body.classList.contains('dark-mode') ? '☀️ Light' : '🌙 Dark';
-    }
-  </script>
+<script>
+function specZoom(src) {
+  document.getElementById('specLightboxImg').src = src;
+  document.getElementById('specLightbox').classList.add('active');
+}
+
+function toggleTheme() {
+  const html = document.documentElement;
+  const btn = document.querySelector('.theme-toggle');
+  html.classList.toggle('dark-mode');
+  btn.textContent = html.classList.contains('dark-mode') ? '☀️' : '🌙';
+}
+
+if (!document.documentElement.classList.contains('dark-mode')) {
+  document.querySelector('.theme-toggle').textContent = '🌙';
+}
+</script>
 
 </body>
 </html>
