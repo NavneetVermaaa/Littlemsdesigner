@@ -497,7 +497,6 @@
       position: relative;
       margin-left: auto;
       margin-right: auto;
-      background: var(--white);
     }
 
     .table-wrap::-webkit-scrollbar {
@@ -509,11 +508,7 @@
       -ms-overflow-style: none;
     }
 
-    /* =========================================
-       EXPENSIVE MATERIALS TABLE STYLES
-       (scoped under .exp-look-new)
-    ========================================= */
-    .exp-look-new table {
+    table {
       width: 100%;
       border-collapse: collapse;
       background: var(--white);
@@ -522,7 +517,7 @@
       table-layout: auto;
     }
 
-    .exp-look-new thead th {
+    thead th {
       background: var(--navy);
       color: var(--white);
       padding: 12px 16px;
@@ -548,7 +543,7 @@
         display: none;
       }
 
-      .exp-look-new table {
+      table {
         min-width: unset;
         width: 100%;
       }
@@ -655,14 +650,14 @@
         display: none !important;
       }
 
-      .exp-look-new table {
+      table {
         font-size: 11px;
         min-width: unset !important;
         width: 100% !important;
         table-layout: fixed !important;
       }
 
-      .exp-look-new thead th {
+      thead th {
         padding: 6px 4px !important;
         font-size: 8px !important;
         white-space: normal !important;
@@ -674,7 +669,7 @@
         max-width: unset !important;
       }
 
-      .exp-look-new tbody td {
+      tbody td {
         padding: 6px 4px;
         font-size: 11px;
         line-height: 1.3;
@@ -683,11 +678,11 @@
         max-width: unset !important;
       }
 
-      .exp-look-new td.t-name {
+      td.t-name {
         font-size: 11px;
       }
 
-      .exp-look-new td.t-cat {
+      td.t-cat {
         font-size: 9px;
       }
     }
@@ -704,14 +699,14 @@
         display: none !important;
       }
 
-      .exp-look-new table {
+      table {
         font-size: 10px;
         min-width: unset !important;
         width: 100% !important;
         table-layout: fixed !important;
       }
 
-      .exp-look-new thead th {
+      thead th {
         padding: 4px 3px !important;
         font-size: 7px !important;
         letter-spacing: 0.03em;
@@ -719,14 +714,14 @@
         max-width: unset !important;
       }
 
-      .exp-look-new tbody td {
+      tbody td {
         padding: 4px 3px;
         font-size: 10px;
         min-width: unset !important;
         max-width: unset !important;
       }
 
-      .exp-look-new td.t-name {
+      td.t-name {
         font-size: 10px;
       }
     }
@@ -743,14 +738,14 @@
         display: none !important;
       }
 
-      .exp-look-new table {
+      table {
         font-size: 9px;
         width: 100% !important;
         min-width: unset !important;
         table-layout: fixed !important;
       }
 
-      .exp-look-new thead th {
+      thead th {
         padding: 3px 2px !important;
         font-size: 6px !important;
         letter-spacing: 0.02em;
@@ -758,11 +753,11 @@
         max-width: unset !important;
       }
 
-      .exp-look-new tbody tr {
+      tbody tr {
         border-bottom: 0.5px solid #f0f0f0;
       }
 
-      .exp-look-new tbody td {
+      tbody td {
         padding: 3px 2px;
         font-size: 9px;
         line-height: 1.2;
@@ -770,15 +765,15 @@
         max-width: unset !important;
       }
 
-      .exp-look-new td.t-name {
+      td.t-name {
         font-size: 9px;
       }
 
-      .exp-look-new thead th:first-child {
+      thead th:first-child {
         padding: 3px 2px;
       }
 
-      .exp-look-new tbody td:first-child {
+      tbody td:first-child {
         padding: 3px 2px;
       }
     }
@@ -798,103 +793,9 @@
       display: none !important;
     }
 
-    .exp-look-new table {
+    table {
       font-size: 12px;
       width: 100% !important;
-    }
-
-    .exp-look-new thead th {
-      padding: 5px 6px;
-      font-size: 9px;
-      letter-spacing: 0.03em;
-    }
-
-    .exp-look-new tbody tr {
-      border-bottom: 0.5px solid #f0f0f0;
-    }
-
-    .exp-look-new tbody td {
-      padding: 5px 6px;
-      font-size: 12px;
-      line-height: 1.2;
-    }
-
-    .exp-look-new td.t-name {
-      font-size: 12px;
-    }
-
-    /* Hide some content on very small screens for PHOTO column */
-    .exp-look-new thead th:first-child {
-      padding: 5px 3px;
-    }
-
-    .exp-look-new tbody td:first-child {
-      padding: 5px 3px;
-    }
-
-    /* =========================================
-       CATEGORY / COMPARE / DETAIL TABLE BASELINE
-    ========================================= */
-    .exp-look-table,
-    .compare-table,
-    .detail-tbl {
-      background: var(--white);
-    }
-
-    .exp-look-table thead th,
-    .compare-table thead th,
-    .detail-tbl thead th {
-      background: var(--navy);
-      color: var(--white);
-      padding: 12px 16px;
-      text-align: left;
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-    .exp-look-table tbody tr,
-    .compare-table tbody tr,
-    .detail-tbl tbody tr {
-      border-bottom: 1px solid #f0f0f0;
-      transition: background 0.15s;
-      display: table-row;
-    }
-
-    .exp-look-table tbody tr:last-child,
-    .compare-table tbody tr:last-child,
-    .detail-tbl tbody tr:last-child {
-      border-bottom: none;
-    }
-
-    .exp-look-table tbody tr:hover,
-    .compare-table tbody tr:hover,
-    .detail-tbl tbody tr:hover {
-      background: var(--blue-light);
-    }
-
-    .exp-look-table tbody td,
-    .compare-table tbody td,
-    .detail-tbl tbody td {
-      padding: 12px 16px;
-      color: var(--text-mid);
-      line-height: 1.5;
-      vertical-align: middle;
-      font-size: 13px;
-      word-wrap: break-word;
-      word-break: break-word;
-      overflow-wrap: break-word;
-      hyphens: auto;
-      text-align: left;
-      display: table-cell;
-    }
-
-    .exp-look-table td.t-name,
-    .compare-table td.t-name,
-    .detail-tbl td.t-name {
-      font-weight: 700;
-      color: var(--navy);
     }
 
     thead th {
@@ -1405,16 +1306,16 @@
         padding: 20px 12px 0px;
       }
 
-      .exp-look-new table {
+      table {
         font-size: 12px;
       }
 
-      .exp-look-new thead th {
+      thead th {
         font-size: 8px;
         padding: 10px 10px;
       }
 
-      .exp-look-new tbody td {
+      tbody td {
         padding: 10px 10px;
         font-size: 12px;
       }
@@ -2534,7 +2435,6 @@
       border-radius: 8px;
       border: 1.5px solid var(--border);
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-      background: var(--white);
     }
 
     .bootstrap-test table {
@@ -2569,7 +2469,6 @@
       border-radius: 8px;
       border: 1.5px solid var(--border);
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-      background: var(--white);
     }
 
     .bootstrap-exp table {
@@ -2625,7 +2524,6 @@
       border-radius: 8px;
       border: 1.5px solid var(--border);
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-      background: var(--white);
     }
 
     .custom-table-inner {
@@ -2825,7 +2723,6 @@
       margin: 0;
       padding: 0;
       font-size: 13px;
-      background: var(--white);
     }
 
     .exp-responsive th,
@@ -3702,11 +3599,10 @@
       color: var(--title-bar-text);
     }
 
-    .dark-mode .exp-look-new .spec-label,
-    .dark-mode .exp-look-new .material-cell {
-      color: var(--title-bar-text);
-    }
-
+    /* ================================================================
+       "Top 10 Materials" section CSS (fully independent)
+       All selectors scoped under .top10-new to avoid conflicts.
+       ================================================================ */
     .top10-new .section {
       max-width: 1100px;
       width: 100%;
@@ -3762,13 +3658,13 @@
       table-layout: fixed;
       transition: background-color 0.3s;
     }
-    .top10-new colgroup .col-image { width: 44px; }
-    .top10-new colgroup .col-sno   { width: 24px; }
-    .top10-new colgroup .col-material { width: 16%; }
-    .top10-new colgroup .col-cost  { width: 14%; }
-    .top10-new colgroup .col-thk   { width: 9%; }
-    .top10-new colgroup .col-places { width: 30%; }
-    .top10-new colgroup .col-brands { width: 15%; }
+    .top10-new colgroup .col-image { width: 52px; }
+    .top10-new colgroup .col-sno   { width: 28px; }
+    .top10-new colgroup .col-material { width: 18%; }
+    .top10-new colgroup .col-cost  { width: 11%; }
+    .top10-new colgroup .col-thk   { width: 7%; }
+    .top10-new colgroup .col-places { width: 31%; }
+    .top10-new colgroup .col-brands { width: 16%; }
     .top10-new thead th {
       background: var(--table-header-bg);
       color: var(--title-bar-text);
@@ -3796,13 +3692,13 @@
     .top10-new tbody td {
       padding: 9px 6px;
       border: 1px solid var(--table-cell-border);
-      vertical-align: top;
+      vertical-align: middle;
       font-size: 11px;
       color: var(--table-cell-text);
-      line-height: 1.45;
-      overflow-wrap: break-word;
-      word-break: break-word;
-      hyphens: auto;
+      line-height: 1.35;
+      overflow-wrap: normal;
+      word-break: normal;
+      hyphens: none;
       transition: color 0.3s, border-color 0.3s;
     }
     .top10-new .img-cell {
@@ -3828,34 +3724,23 @@
       font-size: 11.5px;
       font-weight: 500;
       color: var(--material-color);
-      overflow-wrap: break-word;
-      word-break: break-word;
     }
     .top10-new .cost-cell {
       font-weight: 400;
       color: var(--cost-color);
-      overflow-wrap: break-word;
-      word-break: break-word;
     }
     .top10-new .thk-cell {
       color: var(--thk-color);
       text-align: center;
-      white-space: normal;
-      overflow-wrap: break-word;
-      word-break: break-word;
+      white-space: nowrap;
     }
     .top10-new .places-cell {
-      /* color: var(--places-color); */
       color: #444;
       line-height: 1.4;
-      overflow-wrap: break-word;
-      word-break: break-word;
     }
     .top10-new .brands-cell {
       color: var(--brands-color);
       line-height: 1.35;
-      overflow-wrap: break-word;
-      word-break: break-word;
     }
 
     @media (max-width: 768px) {
@@ -3887,21 +3772,21 @@
         width: 100%;
         table-layout: fixed;
       }
-      .top10-new colgroup .col-image { width: 34px; }
-      .top10-new colgroup .col-sno   { width: 16px; }
-      .top10-new colgroup .col-material { width: 15%; }
-      .top10-new colgroup .col-cost  { width: 15%; }
-      .top10-new colgroup .col-thk   { width: 10%; }
-      .top10-new colgroup .col-places { width: 28%; }
-      .top10-new colgroup .col-brands { width: 15%; }
+      .top10-new colgroup .col-image { width: 38px; }
+      .top10-new colgroup .col-sno   { width: 18px; }
+      .top10-new colgroup .col-material { width: 17%; }
+      .top10-new colgroup .col-cost  { width: 12%; }
+      .top10-new colgroup .col-thk   { width: 9%; }
+      .top10-new colgroup .col-places { width: 29%; }
+      .top10-new colgroup .col-brands { width: 16%; }
       .top10-new thead th {
         font-size: 10px;
         padding: 5px 3px;
         letter-spacing: 0.3px;
         line-height: 1.2;
-        word-break: break-word;
-        overflow-wrap: break-word;
-        hyphens: auto;
+        word-break: normal;
+        overflow-wrap: normal;
+        hyphens: none;
       }
       .top10-new thead th:first-child {
         white-space: nowrap;
@@ -3909,11 +3794,9 @@
       .top10-new tbody td {
         padding: 5px 3px;
         font-size: 9px;
-        vertical-align: top;
-        line-height: 1.4;
-        overflow-wrap: break-word;
-        word-break: break-word;
-        hyphens: auto;
+        overflow-wrap: normal;
+        word-break: normal;
+        hyphens: none;
       }
       .top10-new .img-cell { width: 34px; padding: 3px !important; }
       .top10-new .img-cell img {
@@ -3943,18 +3826,16 @@
         padding: 3px 2px;
         letter-spacing: 0.3px;
         line-height: 1.2;
-        word-break: break-word;
-        overflow-wrap: break-word;
-        hyphens: auto;
+        word-break: normal;
+        overflow-wrap: normal;
+        hyphens: none;
       }
       .top10-new tbody td {
         padding: 3px 2px;
         font-size: 7px;
-        vertical-align: top;
-        line-height: 1.4;
-        overflow-wrap: break-word;
-        word-break: break-word;
-        hyphens: auto;
+        overflow-wrap: normal;
+        word-break: normal;
+        hyphens: none;
       }
       .top10-new .img-cell { width: 26px; padding: 2px !important; }
       .top10-new .img-cell img {
@@ -3963,13 +3844,13 @@
         border-radius: 2px;
       }
       .top10-new .material-cell { font-size: 6px; }
-      .top10-new colgroup .col-image { width: 26px; }
-      .top10-new colgroup .col-sno   { width: 12px; }
-      .top10-new colgroup .col-material { width: 14%; }
-      .top10-new colgroup .col-cost  { width: 16%; }
-      .top10-new colgroup .col-thk   { width: 10%; }
-      .top10-new colgroup .col-places { width: 26%; }
-      .top10-new colgroup .col-brands { width: 14%; }
+      .top10-new colgroup .col-image { width: 30px; }
+      .top10-new colgroup .col-sno   { width: 14px; }
+      .top10-new colgroup .col-material { width: 16%; }
+      .top10-new colgroup .col-cost  { width: 14%; }
+      .top10-new colgroup .col-thk   { width: 8%; }
+      .top10-new colgroup .col-places { width: 24%; }
+      .top10-new colgroup .col-brands { width: 16%; }
     }
 
     @media (max-width: 400px) {
@@ -4233,11 +4114,6 @@
         max-height: 80vh !important;
         min-height: 65vh;
       }
-    }
-
-    .dark-mode .top10-new .spec-label,
-    .dark-mode .top10-new .material-cell {
-      color: var(--title-bar-text);
     }
 
     .dark-mode .top10-new .spec-label,
@@ -5050,16 +4926,16 @@ window.addEventListener(
     const listData = {
       top10: {
         title: 'Top 10 Materials 2026', items: [
-          'Liquid Metallic Ombre||₹800-₹2500 /sq ft Metallic epoxy base paint + metallic pigments||0.5\u20131 mm thin liquid coats epoxy layers, build up by multiple thin layers||Prep surface \u2192 primer \u2192 base colour \u2192 metallic layers \u2192 seal with clear coat \u2192 level & cure.||Wipe with a soft, damp microfiber, avoid abrasive cleaners.||High visual impact & custom gradient effects with ultra-modern look. Seamless, continuous finish with minimal joints.||Skilled application needed for smooth blends & avoiding streaks. Can show imperfections if surface not prepped perfectly.||Feature walls, entry foyers, dining accent walls, bars, powder rooms||Colortale',
-          'Microcement||As premium finish \u20b9200\u2013\u20b9500/ sq ft||2\u20133 mm total on walls/floors||Clean & prep \u2192 primer \u2192 base coats (2-3 coats) \u2192 top finish coats \u2192 sealing.||Mop with neutral pH cleaner; avoid harsh chemicals.||Seamless & waterproof finish with minimal look. Ultra-thin so no change to floor/door levels.||Must be applied by experienced skills for good adhesion. Can show cracks/chips if substrate moves.||Floors, walls, bathrooms, furniture||Colortale',
-          'Alabaster Lights||\u20b912,000 \u2013 \u20b940,000/ light fixture||5\u201320 mm solid alabaster stone or cast alabaster used in fixtures.||Electrical point planning \u2192 ceiling hook / mounting plate \u2192 fixture installation \u2192 LED integration & testing||Dust regularly and wipe gently with a dry or slightly damp cloth, avoid harsh cleaners.||Creates a soft, warm glow and works as a strong visual centerpiece. Pairs beautifully with modern interiors.||Premium pricing. Requires careful handling due to the stone\'s delicate nature.||Dining rooms, bedrooms, table lamps, Luxury lounges||World of abner, Mugen Design Lab',
-          'Artistic Acoustic Panels||\u20b97,000 \u2013 \u20b914,000/ panel unit||20\u201350 mm||Mark panel layout \u2192 mount clips/framing \u2192 fix panels \u2192 seal gaps.||Vacuum or gentle fabric brush dusting.||Reduces echo & improves room acoustics. Visual design element.||Higher cost than plain wall finishes. Needs correct placement for real acoustic impact.||Home offices, studios, media rooms, living rooms.||Unidus Accoustics',
-          'Textured Lime Plaster||Lime plaster material \u20b940\u2013\u20b9120/ sq ft||8\u201315 mm typical multi-coat||Prep substrate \u2192 scratch coat \u2192 intermediary coat \u2192 final finish coat \u2192 curing.||Wipe lightly & avoid harsh solvents.||Breathable, sustainable & timeless finish. Reduces mould risk & regulates humidity.||Longer install & requires skilled plasterer. Slightly higher cost and time than gypsum plaster.||Feature walls, living rooms, hallway||Limocoat',
-          '3D Artwork||\u20b955,000 onwards.||4\u20135 inches||Artwork mounted on prepared wall using heavy-duty anchors & adhesives||Dust gently with a soft dry cloth; avoid water or harsh cleaners.||Creates a one-of-a-kind luxury focal point that cannot be replicated. Fully customizable in design, size, texture, and colour.||Longer install & requires skilled plasterer. Slightly higher cost and time than gypsum plaster. Requires professional installation.||Living room feature wall, Bedroom statement wall, Luxury hotel & reception areas||Godai Arts',
-          'Optical Fibre Fabric (Luminous Textile)||Varies on request.||\u2014||Fabric stretched or panel-mounted over LED light source, with concealed wiring and power supply. Executed with fabricator + electrician.||Gentle vacuuming and dry cloth cleaning keeps lighting components dust-free.||Creates soft ambient lighting with a futuristic luxury feel. Highly custom and experiential material.||High cost. Requires specialized installation expertise.||Feature walls in bedrooms, Dining Table Tops||DreamLux (Italy)',
-          'Venetian Plaster (Polished Plaster Finish)||\u20b9180- \u20b9400/ sq.ft||2\u20135 mm applied in multiple thin coats||Wall leveling \u2192 primer \u2192 2\u20133 plaster coats applied with steel trowel \u2192 burnishing \u2192 optional sealer.||Clean with a slightly damp cloth. Avoid abrasive cleaners.||Gives a luxury stone-like finish without joints. Durable, breathable, and visually rich.||Requires skilled applicators for best results. Costlier than regular paint finishes.||Foyer & entry walls, Dining room feature walls, Master bedroom walls||Vasari India',
-          'Flexible MDF Curves||\u20b92,400 / sheet||4 mm, 6 mm, 8 mm, 12 mm||Fixed onto curved surface or framework using Marine Fevicol. Clear silicone used at joints for flexibility and neat finish.||Wipe with a dry or lightly damp cloth, protect from moisture.||Enables seamless curves impossible with regular MDF. Lightweight and ideal for contemporary designs.||Needs precise surface preparation. Must be properly sealed to prevent moisture damage.||TV units & feature walls||Element D\u00e9cor',
-          'Sound Proof Wall Acoustic Fluted Panels||\u20b960 /- sq.ft onwards depending on acoustic core & finish||9mm-24mm thk||Panels fixed on wall or battens using adhesive/screws, with optional acoustic insulation backing.||Vacuum flutes periodically to avoid dust accumulation.||Enhances sound absorption and speech clarity. Adds modern linear texture to interiors.||Grooves require regular cleaning. Performance depends on correct backing and installation.||Home theatres, Study rooms, Bedrooms, Conference & meeting rooms||Unidus Acoustics'
+          'Liquid Metallic Ombre||Metallic paint/epoxy base + metallic pigments: ₹250–₹800/sq ft (finish-dependent) – varies widely by brand & effect.||0.5–1 mm (thin liquid coats/epoxy layers; build up by multiple thin layers)||Prep surface → primer → base colour → metallic layers → seal with clear coat → level & cure||Wipe with soft, damp microfiber; avoid abrasive cleaners||High visual impact & custom gradient effects for feature walls; ultra-modern look; seamless finish with minimal joints||Skilled application needed for smooth blends; can show imperfections if surface not prepped perfectly||Feature walls, entry foyers, dining accent walls, bar alcoves||Think subtle shimmer, seamless gradients, and luxury without heaviness. Perfect for feature walls, bars, powder rooms, and statement ceilings.',
+          'Alabaster Lights||₹12,000 – ₹40,000+ per light fixture (Price varies based on size, craftsmanship, natural vs synthetic alabaster, and brand)||5–20 mm solid alabaster stone or cast alabaster used in fixtures||Electrical point planning → ceiling hook/mounting plate → fixture installation → LED integration & testing||Dust gently; avoid harsh cleaners||Soft, warm glow; strong visual centerpiece; timeless luxury material||Premium pricing compared to regular fixtures; requires careful handling due to delicate nature||Dining table pendant lights, bedside lamps, statement chandeliers, entry foyer||Soft, glowing, sculptural lighting that instantly elevates a space. Alabaster lights are used as hero lighting pieces, creating warmth and luxury without visual heaviness.',
+          'Microcement||As premium finish ₹200–₹500 per sq ft materials only (project/brand dependent) – labour extra||2–3 mm total on walls/floors (ultra-thin)||Surface prep → primer → base coat → microcement layers (2-3 coats) → sanding between coats → top sealer||Clean with pH-neutral cleaner; avoid abrasive; re-seal periodically for durability||Seamless, modern, industrial aesthetic; versatile for walls, floors, furniture; waterproof when sealed||Requires skilled applicator; surface prep critical; cannot be applied on unstable substrates||Feature walls, bathrooms, kitchens, furniture, commercial spaces||Minimal, seamless, and ultra-modern. Works beautifully on floors, walls, bathrooms, and even furniture—especially for contemporary and Wabi-sabi spaces.',
+          'Artistic Acoustic Panels||₹7,000 – ₹14,000+ per panel unit (varies by size & material) for decorative acoustic panels||20–50 mm+ (deep enough for performance + art element)||Mark layout → mount clips/framing → fix panels → seal gaps||Vacuum or gentle fabric brush dusting||Reduces echo & improves acoustics; visual design element with texture & artwork||Higher cost than plain wall finishes; needs correct placement for real impact||Home offices, studios, media rooms, living rooms||Where function meets art. Improves sound quality and doubles up as wall décor. It\'s great for homes, studios, and work-from-home setups.',
+          'Textured Lime Plaster||Lime plaster material ₹40–₹120 per sq ft materials only (traditional lime + sand mixture; labour extra)||8–15 mm typical multi-coat (scratch, brown, finish coats)||Prep substrate → scratch coat → intermediary coat → final finish coat → curing||Wipe lightly; avoid harsh solvents; lime breathes & ages beautifully||Breathable, sustainable & timeless finish; reduces mould risk & regulates humidity||Longer install & requires skilled plasterer; slightly higher cost and time than gypsum plaster||Feature walls, living rooms, hallways||Breathable, natural, and timeless. Adds depth, softness, and an earthy elegance. It\'s perfect for warm, calm and sustainable interiors.',
+          '3D Artwork||₹55,000 onwards. Goes up to ₹3,00,000+ for large-scale or highly detailed artworks. Pricing depends on design complexity, detailing & execution time||4–5 inches||Artwork mounted using heavy-duty anchors & adhesives; alignment & load calculation done on site||Dust gently with soft dry cloth; avoid water or harsh cleaners||One-of-a-kind luxury focal point; fully customizable in design, size, texture, and colour||Requires professional installation due to weight & complexity||Living room feature wall, double-height foyers, bedroom statement wall||Custom, handcrafted sculptural wall art with strong depth, giving a 3D feel, designed as a luxury focal element.',
+          'Optical Fibre Fabric (Luminous Textile)||Varies on request||||Fabric stretched/panel-mounted over LED light source; concealed wiring & power supply||Gentle vacuuming and dry cloth cleaning||Soft ambient lighting; futuristic luxury feel; highly custom & experiential||High cost due to import & electrical integration; requires specialized installation||Feature walls in bedrooms, Dining Table Tops, Luxury retail interiors|||A high-end luminous fabric that create glowing surfaces with light within.',
+          'Venetian Plaster (Polished Plaster Finish)||₹250 – ₹600 per sq.ft (material + application)||2–5 mm (applied in multiple thin coats)||Wall leveling → primer → 2–3 plaster coats with steel trowel → burnishing → optional sealer||Clean with slightly damp cloth; avoid abrasive cleaners||Luxury stone-like finish without joints; durable, breathable, and visually rich||Requires skilled applicators; costlier than regular paint finishes||Foyer & entry walls, dining room feature walls, master bedroom walls||A premium wall finish that mimics natural stone with depth and subtle sheen.',
+          'Flexible MDF Curves||₹2,400 per sheet||4 mm | 6 mm | 8 mm | 12 mm||Fixed onto curved surface using Marine Fevicol; clear silicone at joints for flexibility||Wipe with dry or lightly damp cloth; protect from moisture||Enables seamless curves impossible with regular MDF; lightweight; ideal for contemporary designs||Needs precise surface preparation; must be properly sealed to prevent moisture damage||TV units & feature walls||Flexible MDF sheets help give flute panel look, specially for curved or rounded walls.',
+          'Sound Proof Wall Acoustic Fluted Panels||₹60 /- sq.ft onwards (without installation), depending on acoustic core & finish||Sound proof material thk – 9mm–24mm (Size – 8 x 4 ft)||Panels fixed on wall/battens using adhesive/screws; optional acoustic insulation backing||Vacuum flutes periodically to avoid dust accumulation||Enhances sound absorption & speech clarity; adds modern linear texture to interiors||Grooves require regular cleaning; performance depends on correct backing & installation||Home theatres, study rooms, bedrooms, conference rooms||Decorative fluted panels that improve acoustics while adding aesthetic look to walls.'
         ]
       },
       /* [COMMENTED OUT - OLD exp-look listData]
@@ -5615,7 +5491,53 @@ window.addEventListener(
         return;
       }
       if (id === 'top10') {
-        renderTop10New(el, { data: listData[id], isAdmin: false });
+        const d = listData[id];
+        el.innerHTML = `
+        <div class="sec-head">
+          <span class="sec-title">${d.title}</span>
+          <span class="sec-count">${d.items.length} materials</span>
+        </div>
+        ${imgRow('top10')}
+        <div class="table-wrap top10-table table-responsive custom-table"><table class="table custom-table-inner detail-tbl">
+          <thead>
+            <tr style="background:#1a2b45;color:#fff">
+              <th>Photo</th>
+              <th>#</th>
+              <th>MATERIAL / FINISH</th>
+              <th>RAW MATERIAL COST</th>
+              <th>THICKNESS</th>
+              <th>INSTALLATION PROCESS</th>
+              <th>MAINTENANCE</th>
+              <th>PROS</th>
+              <th>CONS</th>
+              <th>BEST FOR</th>
+            </tr>
+          </thead>
+            <tbody>${d.items.map((it, i) => {
+          var parts = it.split('||');
+          var name = parts[0] || it;
+          var cost = parts[1] || '';
+          var thick = parts[2] || '';
+          var install = parts[3] || '';
+          var maint = parts[4] || '';
+          var pros = parts[5] || '';
+          var cons = parts[6] || '';
+          var bestuse = parts[7] || '';
+          var desc = parts[8] || parts[9] || '';
+          return `<tr>
+              ${thumbTD('top10', i, name)}
+              <td><span class="list-num">${String(i + 1).padStart(2, '0')}</span></td>
+              <td class="t-name">${name}<span class="material-desc">${desc}</span></td>
+              <td>${cost}</td>
+              <td>${thick}</td>
+              <td>${install}</td>
+              <td>${maint}</td>
+              <td>${pros}</td>
+              <td>${cons}</td>
+              <td>${bestuse}</td>
+            </tr>`;
+        }).join('')}</tbody>
+        </table></div>`;
         return;
       }
 
@@ -6051,11 +5973,6 @@ window.addEventListener(
 
       const el = document.getElementById('detailContent');
 
-      if (card.template === 'top10') {
-        renderTop10New(el, { data: card, isAdmin: true });
-        return;
-      }
-
       if (card.template === 'table') {
         const cols = card.columns.split(',');
         const rows = card.rows.split('\n');
@@ -6456,161 +6373,6 @@ window.addEventListener(
       window.scrollTo(0, 0);
     }
 
-    function renderTop10New(el, opts) {
-      var data = opts && opts.data;
-      var isAdmin = opts && opts.isAdmin;
-      var items = [];
-
-      if (isAdmin && data && data.top10Data && data.top10Columns) {
-        var cols = data.top10Columns;
-        var raw = data.top10Data;
-        for (var ai = 0; ai < raw.length; ai++) {
-          var entry = raw[ai];
-          var imageUrl = entry.image || '';
-          var title = entry.title || '';
-          var fields = entry.fields || {};
-          items.push({
-            name: title, image: imageUrl, isAdmin: true,
-            cost: fields[cols[1]] || '', thick: fields[cols[2]] || '',
-            install: fields[cols[3]] || '', maint: fields[cols[4]] || '',
-            pros: fields[cols[5]] || '', cons: fields[cols[6]] || '',
-            bestuse: fields[cols[7]] || '', brands: fields[cols[8]] || ''
-          });
-        }
-      } else if (data && data.items) {
-        for (var fi = 0; fi < data.items.length; fi++) {
-          var parts = data.items[fi].split('||');
-          items.push({
-            name: parts[0] || '', cost: parts[1] || '', thick: parts[2] || '',
-            install: parts[3] || '', maint: parts[4] || '', pros: parts[5] || '',
-            cons: parts[6] || '', bestuse: parts[7] || '',
-            brands: parts[8] || '', image: '', isAdmin: false
-          });
-        }
-      }
-
-      var top10ImgMap = {
-        'Liquid Metallic Ombre': 'assets/3. Top 10 Materials/Liquid Metallic Ombre.jpg',
-        'Alabaster Lights': 'assets/3. Top 10 Materials/Alabaster Lights.jpg',
-        'Microcement': 'assets/3. Top 10 Materials/Microcement.jpg',
-        'Artistic Acoustic Panels': 'assets/3. Top 10 Materials/Artistic Acoustic Panels.jpg',
-        'Textured Lime Plaster': 'assets/3. Top 10 Materials/Textured Lime Plaster.jpg',
-        '3D Artwork': 'assets/3. Top 10 Materials/3D ARTWORK.jpg',
-        'Optical Fibre Fabric (Luminous Textile)': 'assets/3. Top 10 Materials/OPTICAL FIBRE FABRIC (LUMINOUS TEXTILE).jpg',
-        'Venetian Plaster (Polished Plaster Finish)': 'assets/3. Top 10 Materials/VENETIAN PLASTER (POLISHED PLASTER FINISH).jpg',
-        'Flexible MDF Curves': 'assets/3. Top 10 Materials/FLEXIBLE MDF CURVES.jpg',
-        'Sound Proof Wall Acoustic Fluted Panels': 'assets/3. Top 10 Materials/Sound Proof Wall Acoustic Fluted Panels.jpg'
-      };
-      function top10Img(name) { return top10ImgMap[name] || ''; }
-
-      var html = '<div class="top10-new">';
-
-      // Top Summary Table
-      html += '<div class="section">';
-      html += '<div class="section-header">';
-      html += '<div class="section-title">';
-      html += 'Top 10 <span>Materials</span> 2026';
-      html += '</div>';
-      html += '<div class="top-label">' + items.length + ' Materials</div>';
-      html += '</div>';
-      html += '<div class="table-wrapper">';
-      html += '<table>';
-      html += '<colgroup>';
-      html += '<col class="col-image">';
-      html += '<col class="col-sno">';
-      html += '<col class="col-material">';
-      html += '<col class="col-cost">';
-      html += '<col class="col-thk">';
-      html += '<col class="col-places">';
-      html += '<col class="col-brands">';
-      html += '</colgroup>';
-      html += '<thead>';
-      html += '<tr>';
-      html += '<th>Image</th>';
-      html += '<th>#</th>';
-      html += '<th>Material</th>';
-      html += '<th>Cost (Sq.Ft)</th>';
-      html += '<th>Thk<br><span style="text-transform:none;letter-spacing:0.5px;white-space:nowrap">(mm)</span></th>';
-      html += '<th>Best Places to Use</th>';
-      html += '<th>Brands</th>';
-      html += '</tr>';
-      html += '</thead>';
-      html += '<tbody>';
-
-      for (var si = 0; si < items.length; si++) {
-        var it = items[si];
-        var imgSrc = it.image || top10Img(it.name);
-        html += '<tr>';
-        html += '<td class="img-cell">';
-        html += '<img src="' + imgSrc + '" alt="' + it.name + '" loading="lazy" onclick="top10Zoom(this.src)" onerror="this.style.display=\'none\'">';
-        html += '</td>';
-        html += '<td class="sno-cell">' + (si + 1) + '</td>';
-        html += '<td class="material-cell">' + it.name + '</td>';
-        html += '<td class="cost-cell">' + it.cost + '</td>';
-        html += '<td class="thk-cell">' + it.thick + '</td>';
-        html += '<td class="places-cell">' + it.bestuse + '</td>';
-        html += '<td class="brands-cell">' + it.brands + '</td>';
-        html += '</tr>';
-      }
-
-      html += '</tbody>';
-      html += '</table>';
-      html += '</div>';
-      html += '</div>';
-
-      // Detail Specification Section
-      html += '<div class="section detail-section">';
-      html += '<div class="detail-section-header">';
-      html += '<div class="detail-section-title">Material Detail Specification</div>';
-      html += '<div class="detail-section-count">' + items.length + ' Materials</div>';
-      html += '</div>';
-
-      for (var di = 0; di < items.length; di++) {
-        var ci = items[di];
-        var detImg = ci.image || top10Img(ci.name);
-
-        html += '<div class="spec-card">';
-        html += '<div class="spec-image-col">';
-        html += '<div class="spec-image-label">Image</div>';
-        html += '<img src="' + detImg + '" alt="' + ci.name + '" loading="lazy" onclick="top10Zoom(this.src)" onerror="this.style.display=\'none\'">';
-        html += '</div>';
-        html += '<div class="spec-table-col">';
-        html += '<div class="spec-title-bar">';
-        html += '<h2>' + ci.name + '</h2>';
-        html += '</div>';
-        html += '<div class="spec-rows">';
-        html += '<div class="spec-row"><div class="spec-label">Raw Material Cost</div><div class="spec-value">' + ci.cost + '</div></div>';
-        html += '<div class="spec-row"><div class="spec-label">Thickness Required</div><div class="spec-value">' + ci.thick + '</div></div>';
-        html += '<div class="spec-row"><div class="spec-label">Installation Process</div><div class="spec-value">' + ci.install + '</div></div>';
-        html += '<div class="spec-row"><div class="spec-label">Maintenance</div><div class="spec-value">' + ci.maint + '</div></div>';
-        html += '<div class="spec-row"><div class="spec-label">Best Places to Use</div><div class="spec-value">' + ci.bestuse + '</div></div>';
-        html += '<div class="spec-row"><div class="spec-label">\u2713 Pros</div><div class="spec-value"><span class="pros">' + ci.pros + '</span></div></div>';
-        html += '<div class="spec-row"><div class="spec-label">\u2715 Cons</div><div class="spec-value"><span class="cons">' + ci.cons + '</span></div></div>';
-        html += '<div class="spec-row"><div class="spec-label">Recommended Brands</div><div class="spec-value">' + ci.brands + '</div></div>';
-        html += '</div></div></div>';
-      }
-
-      html += '</div>';
-
-      // Lightbox
-      html += '<div class="top10-lb" id="top10Lightbox" onclick="this.classList.remove(\'active\')">';
-      html += '<img id="top10LightboxImg" src="" alt="zoom">';
-      html += '</div>';
-      html += '</div>';
-
-      el.innerHTML = html;
-      window.scrollTo(0, 0);
-    }
-
-    function top10Zoom(src) {
-      var lb = document.getElementById('top10Lightbox');
-      var img = document.getElementById('top10LightboxImg');
-      if (lb && img) {
-        img.src = src;
-        lb.classList.add('active');
-      }
-    }
-
     function expNewZoom(src) {
       var lb = document.getElementById('expNewLightbox');
       var img = document.getElementById('expNewLightboxImg');
@@ -6621,7 +6383,7 @@ window.addEventListener(
     }
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') {
-        document.querySelectorAll('.exp-lb.active, .spec-lb.active, .top10-lb.active').forEach(function(el) {
+        document.querySelectorAll('.exp-lb.active, .spec-lb.active').forEach(function(el) {
           el.classList.remove('active');
         });
       }

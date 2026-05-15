@@ -189,14 +189,11 @@
     border: 1px solid var(--top-label-border);
   }
 
-  /* =========================================
-     EXPENSIVE MATERIALS TABLE
-  ========================================= */
   .table-wrapper {
     overflow: hidden;
   }
 
-  .exp-look-new table {
+  table {
     width: 100%;
     border-collapse: collapse;
     background: var(--table-bg);
@@ -204,15 +201,15 @@
     transition: background-color 0.3s;
   }
 
-  .exp-look-new colgroup .col-image { width: 52px; }
-  .exp-look-new colgroup .col-sno   { width: 28px; }
-  .exp-look-new colgroup .col-material { width: 18%; }
-  .exp-look-new colgroup .col-cost  { width: 11%; }
-  .exp-look-new colgroup .col-thk   { width: 7%; }
-  .exp-look-new colgroup .col-places { width: 31%; }
-  .exp-look-new colgroup .col-brands { width: 16%; }
+  colgroup .col-image { width: 52px; }
+  colgroup .col-sno   { width: 28px; }
+  colgroup .col-material { width: 18%; }
+  colgroup .col-cost  { width: 11%; }
+  colgroup .col-thk   { width: 7%; }
+  colgroup .col-places { width: 31%; }
+  colgroup .col-brands { width: 16%; }
 
-  .exp-look-new thead th {
+  thead th {
     background: var(--table-header-bg);
     color: var(--title-bar-text);
     font-size: 11.5px;
@@ -229,15 +226,15 @@
     transition: background-color 0.3s, color 0.3s;
   }
 
-  .exp-look-new thead th:nth-child(2) {
+  thead th:nth-child(2) {
     text-align: center;
   }
-  .exp-look-new thead th:nth-child(4),
-  .exp-look-new thead th:nth-child(5) {
+  thead th:nth-child(4),
+  thead th:nth-child(5) {
     text-align: center;
   }
 
-  .exp-look-new tbody td {
+  tbody td {
     padding: 9px 6px;
     border: 1px solid var(--table-cell-border);
     vertical-align: middle;
@@ -328,20 +325,20 @@
       transform-origin: top left;
     }
 
-    .exp-look-new table {
+    table {
       width: 100%;
       table-layout: fixed;
     }
 
-    .exp-look-new colgroup .col-image { width: 38px; }
-    .exp-look-new colgroup .col-sno   { width: 18px; }
-    .exp-look-new colgroup .col-material { width: 17%; }
-    .exp-look-new colgroup .col-cost  { width: 12%; }
-    .exp-look-new colgroup .col-thk   { width: 9%; }
-    .exp-look-new colgroup .col-places { width: 29%; }
-    .exp-look-new colgroup .col-brands { width: 16%; }
+    colgroup .col-image { width: 38px; }
+    colgroup .col-sno   { width: 18px; }
+    colgroup .col-material { width: 17%; }
+    colgroup .col-cost  { width: 12%; }
+    colgroup .col-thk   { width: 9%; }
+    colgroup .col-places { width: 29%; }
+    colgroup .col-brands { width: 16%; }
 
-    .exp-look-new thead th {
+    thead th {
       font-size: 10px;
       padding: 5px 3px;
       letter-spacing: 0.3px;
@@ -350,11 +347,11 @@
       overflow-wrap: normal;
       hyphens: none;
     }
-    .exp-look-new thead th:first-child {
+    thead th:first-child {
       white-space: nowrap;
     }
 
-    .exp-look-new tbody td {
+    tbody td {
       padding: 5px 3px;
       font-size: 9px;
       overflow-wrap: normal;
@@ -387,7 +384,7 @@
       letter-spacing: 1px;
     }
 
-    .exp-look-new thead th {
+    thead th {
       font-size: 7.5px;
       padding: 3px 2px;
       letter-spacing: 0.3px;
@@ -397,7 +394,7 @@
       hyphens: none;
     }
 
-    .exp-look-new tbody td {
+    tbody td {
       padding: 3px 2px;
       font-size: 7px;
       overflow-wrap: normal;
@@ -414,13 +411,13 @@
 
     .material-cell { font-size: 6px; }
 
-    .exp-look-new colgroup .col-image { width: 30px; }
-    .exp-look-new colgroup .col-sno   { width: 14px; }
-    .exp-look-new colgroup .col-material { width: 16%; }
-    .exp-look-new colgroup .col-cost  { width: 14%; }
-    .exp-look-new colgroup .col-thk   { width: 8%; }
-    .exp-look-new colgroup .col-places { width: 24%; }
-    .exp-look-new colgroup .col-brands { width: 16%; }
+    colgroup .col-image { width: 30px; }
+    colgroup .col-sno   { width: 14px; }
+    colgroup .col-material { width: 16%; }
+    colgroup .col-cost  { width: 14%; }
+    colgroup .col-thk   { width: 8%; }
+    colgroup .col-places { width: 24%; }
+    colgroup .col-brands { width: 16%; }
   }
 
   @media (max-width: 400px) {
@@ -715,7 +712,6 @@
 
 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">☀️</button>
 
-<div class="exp-look-new">
 <div class="section">
   <div class="section-header">
     <div class="section-title">
@@ -931,7 +927,6 @@
       </div>
     </div>
   </div>
-</div>
 </div>
 
 <div class="spec-lb" id="specLightbox" onclick="this.classList.remove('active')">
