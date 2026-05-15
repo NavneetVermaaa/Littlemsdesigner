@@ -3242,8 +3242,8 @@
     .exp-look-new colgroup .col-sno   { width: 28px; }
     .exp-look-new colgroup .col-material { width: 18%; }
     .exp-look-new colgroup .col-cost  { width: 11%; }
-    .exp-look-new colgroup .col-thk   { width: 7%; }
-    .exp-look-new colgroup .col-places { width: 31%; }
+    .exp-look-new colgroup .col-thk   { width: 12%; }
+    .exp-look-new colgroup .col-places { width: 26%; }
     .exp-look-new colgroup .col-brands { width: 16%; }
     .exp-look-new thead th {
       background: var(--table-header-bg);
@@ -3272,11 +3272,11 @@
     .exp-look-new tbody td {
       padding: 9px 6px;
       border: 1px solid var(--table-cell-border);
-      vertical-align: middle;
+      vertical-align: top;
       font-size: 11px;
       color: var(--table-cell-text);
       line-height: 1.35;
-      overflow-wrap: normal;
+      overflow-wrap: break-word;
       word-break: normal;
       hyphens: none;
       transition: color 0.3s, border-color 0.3s;
@@ -3312,7 +3312,9 @@
     .exp-look-new .thk-cell {
       color: var(--thk-color);
       text-align: center;
-      white-space: nowrap;
+      white-space: normal;
+      overflow-wrap: break-word;
+      word-break: normal;
     }
     .exp-look-new .places-cell {
       /* color: var(--places-color); */
@@ -3357,9 +3359,8 @@
       .exp-look-new colgroup .col-sno   { width: 18px; }
       .exp-look-new colgroup .col-material { width: 17%; }
       .exp-look-new colgroup .col-cost  { width: 12%; }
-      .exp-look-new colgroup .col-thk   { width: 9%; }
-      .exp-look-new colgroup .col-places { width: 29%; }
-      .exp-look-new colgroup .col-brands { width: 16%; }
+      .exp-look-new colgroup .col-thk   { width: 12%; }
+      .exp-look-new colgroup .col-places { width: 26%; }
       .exp-look-new thead th {
         font-size: 10px;
         padding: 5px 3px;
@@ -3368,6 +3369,17 @@
         word-break: normal;
         overflow-wrap: normal;
         hyphens: none;
+      }
+      .exp-look-new thead th:first-child {
+        white-space: nowrap;
+      }
+      .exp-look-new tbody td {
+        padding: 5px 3px;
+        font-size: 9px;
+        overflow-wrap: break-word;
+        word-break: normal;
+        hyphens: none;
+        vertical-align: top;
       }
       .exp-look-new thead th:first-child {
         white-space: nowrap;
@@ -3429,8 +3441,8 @@
       .exp-look-new colgroup .col-sno   { width: 14px; }
       .exp-look-new colgroup .col-material { width: 16%; }
       .exp-look-new colgroup .col-cost  { width: 14%; }
-      .exp-look-new colgroup .col-thk   { width: 8%; }
-      .exp-look-new colgroup .col-places { width: 24%; }
+      .exp-look-new colgroup .col-thk   { width: 11%; }
+      .exp-look-new colgroup .col-places { width: 21%; }
       .exp-look-new colgroup .col-brands { width: 16%; }
     }
 
@@ -4833,16 +4845,7 @@ window.addEventListener(
 
     /* DETAIL DATA */
     const detailData = {
-      mirror: {
-        title: 'Mirror & Reflective Glass', props: [
-          { l: 'Description', v: 'Glass coated with a reflective metallic layer used for reflection. Available in multiple finishes and sizes.' },
-          { l: 'Types', v: 'Plain mirror, Antique mirror, Tinted mirror (bronze, grey, black), Back-painted glass, One-way mirror' },
-          { l: 'Thickness', v: '4 mm, 5 mm, 6 mm standard. 8–12 mm for heavy feature pieces.' },
-          { l: 'Best Used For', v: 'Dressing rooms, bathrooms, wardrobe shutters, feature walls, corridors, furniture panels. Visually expands smaller spaces.' },
-          { l: 'Price Range', v: '₹80 – ₹400 / sq.ft (plain to antique/tinted)' },
-          { l: 'Recommended Brands', v: 'Saint-Gobain, Modiguard, Gold Plus Glass' },
-        ]
-      },
+
 
       microcement: {
         title: 'Microcement', props: [
@@ -5049,17 +5052,30 @@ window.addEventListener(
     /* LIST DATA */
     const listData = {
       top10: {
-        title: 'Top 10 Materials 2026', items: [
-          'Liquid Metallic Ombre||₹800-₹2500 /sq ft Metallic epoxy base paint + metallic pigments||0.5\u20131 mm thin liquid coats epoxy layers, build up by multiple thin layers||Prep surface \u2192 primer \u2192 base colour \u2192 metallic layers \u2192 seal with clear coat \u2192 level & cure.||Wipe with a soft, damp microfiber, avoid abrasive cleaners.||High visual impact & custom gradient effects with ultra-modern look. Seamless, continuous finish with minimal joints.||Skilled application needed for smooth blends & avoiding streaks. Can show imperfections if surface not prepped perfectly.||Feature walls, entry foyers, dining accent walls, bars, powder rooms||Colortale',
-          'Microcement||As premium finish \u20b9200\u2013\u20b9500/ sq ft||2\u20133 mm total on walls/floors||Clean & prep \u2192 primer \u2192 base coats (2-3 coats) \u2192 top finish coats \u2192 sealing.||Mop with neutral pH cleaner; avoid harsh chemicals.||Seamless & waterproof finish with minimal look. Ultra-thin so no change to floor/door levels.||Must be applied by experienced skills for good adhesion. Can show cracks/chips if substrate moves.||Floors, walls, bathrooms, furniture||Colortale',
-          'Alabaster Lights||\u20b912,000 \u2013 \u20b940,000/ light fixture||5\u201320 mm solid alabaster stone or cast alabaster used in fixtures.||Electrical point planning \u2192 ceiling hook / mounting plate \u2192 fixture installation \u2192 LED integration & testing||Dust regularly and wipe gently with a dry or slightly damp cloth, avoid harsh cleaners.||Creates a soft, warm glow and works as a strong visual centerpiece. Pairs beautifully with modern interiors.||Premium pricing. Requires careful handling due to the stone\'s delicate nature.||Dining rooms, bedrooms, table lamps, Luxury lounges||World of abner, Mugen Design Lab',
-          'Artistic Acoustic Panels||\u20b97,000 \u2013 \u20b914,000/ panel unit||20\u201350 mm||Mark panel layout \u2192 mount clips/framing \u2192 fix panels \u2192 seal gaps.||Vacuum or gentle fabric brush dusting.||Reduces echo & improves room acoustics. Visual design element.||Higher cost than plain wall finishes. Needs correct placement for real acoustic impact.||Home offices, studios, media rooms, living rooms.||Unidus Accoustics',
-          'Textured Lime Plaster||Lime plaster material \u20b940\u2013\u20b9120/ sq ft||8\u201315 mm typical multi-coat||Prep substrate \u2192 scratch coat \u2192 intermediary coat \u2192 final finish coat \u2192 curing.||Wipe lightly & avoid harsh solvents.||Breathable, sustainable & timeless finish. Reduces mould risk & regulates humidity.||Longer install & requires skilled plasterer. Slightly higher cost and time than gypsum plaster.||Feature walls, living rooms, hallway||Limocoat',
-          '3D Artwork||\u20b955,000 onwards.||4\u20135 inches||Artwork mounted on prepared wall using heavy-duty anchors & adhesives||Dust gently with a soft dry cloth; avoid water or harsh cleaners.||Creates a one-of-a-kind luxury focal point that cannot be replicated. Fully customizable in design, size, texture, and colour.||Longer install & requires skilled plasterer. Slightly higher cost and time than gypsum plaster. Requires professional installation.||Living room feature wall, Bedroom statement wall, Luxury hotel & reception areas||Godai Arts',
-          'Optical Fibre Fabric (Luminous Textile)||Varies on request.||\u2014||Fabric stretched or panel-mounted over LED light source, with concealed wiring and power supply. Executed with fabricator + electrician.||Gentle vacuuming and dry cloth cleaning keeps lighting components dust-free.||Creates soft ambient lighting with a futuristic luxury feel. Highly custom and experiential material.||High cost. Requires specialized installation expertise.||Feature walls in bedrooms, Dining Table Tops||DreamLux (Italy)',
-          'Venetian Plaster (Polished Plaster Finish)||\u20b9180- \u20b9400/ sq.ft||2\u20135 mm applied in multiple thin coats||Wall leveling \u2192 primer \u2192 2\u20133 plaster coats applied with steel trowel \u2192 burnishing \u2192 optional sealer.||Clean with a slightly damp cloth. Avoid abrasive cleaners.||Gives a luxury stone-like finish without joints. Durable, breathable, and visually rich.||Requires skilled applicators for best results. Costlier than regular paint finishes.||Foyer & entry walls, Dining room feature walls, Master bedroom walls||Vasari India',
-          'Flexible MDF Curves||\u20b92,400 / sheet||4 mm, 6 mm, 8 mm, 12 mm||Fixed onto curved surface or framework using Marine Fevicol. Clear silicone used at joints for flexibility and neat finish.||Wipe with a dry or lightly damp cloth, protect from moisture.||Enables seamless curves impossible with regular MDF. Lightweight and ideal for contemporary designs.||Needs precise surface preparation. Must be properly sealed to prevent moisture damage.||TV units & feature walls||Element D\u00e9cor',
-          'Sound Proof Wall Acoustic Fluted Panels||\u20b960 /- sq.ft onwards depending on acoustic core & finish||9mm-24mm thk||Panels fixed on wall or battens using adhesive/screws, with optional acoustic insulation backing.||Vacuum flutes periodically to avoid dust accumulation.||Enhances sound absorption and speech clarity. Adds modern linear texture to interiors.||Grooves require regular cleaning. Performance depends on correct backing and installation.||Home theatres, Study rooms, Bedrooms, Conference & meeting rooms||Unidus Acoustics'
+        title: 'Top 10 Materials 2026',
+        tableItems: [
+          'Liquid Metallic Ombre||₹800-₹2500||0.5\u20131||Feature walls, entry foyers, dining accent walls, bars, powder rooms||Colortale',
+          'Microcement||₹200\u2013₹500||2\u20133||Floors, walls, bathrooms, furniture||Colortale',
+          'Alabaster Lights||₹12,000 \u2013 ₹40,000 / light||5\u201320||Dining rooms, bedrooms, table lamps, Luxury lounges||World of abner, Mugen Design Lab',
+          'Artistic Acoustic Panels||₹7,000 \u2013 ₹14,000||20\u201350||Home offices, studios, media rooms, living rooms.||Unidus Accoustics',
+          'Textured Lime Plaster||₹40\u2013₹120||8\u201315||Feature walls, living rooms, hallway||Limocoat',
+          '3D Artwork||₹55,000 +||4\u20135"||Living room feature wall, Bedroom statement wall, Luxury hotel & reception areas||Godai Arts',
+          'Optical Fibre Fabric||varies on request.||—||Feature walls in bedrooms, Dining Table Tops||DreamLux',
+          'Venetian Plaster||₹180- ₹400||2\u20135||Foyer & entry walls, Dining room feature walls, Master bedroom walls||Vasari India',
+          'Flexible MDF Curves||2400 /sheet||4\u201312||TV units & feature walls||Element D\u00e9cor',
+          'WALL ACCOUSTIC FLUTED PANELS||₹60+||9\u201324||Home theatres, Study rooms, Bedrooms, Conference & meeting rooms||:Unidus Acoustics'
+        ],
+        detailItems: [
+          'Liquid Metallic Ombre||₹800-₹2500||0.5\u20131||Prep surface \u2192 primer \u2192 base colour \u2192 metallic layers \u2192 seal with clear coat \u2192 level & cure.||Wipe with a soft, damp microfiber, avoid abrasive cleaners.||High visual impact & custom gradient effects with ultra-modern look. Seamless, continuous finish with minimal joints.||Skilled application needed for smooth blends & avoiding streaks. Can show imperfections if surface not prepped perfectly.||Feature walls, entry foyers, dining accent walls, bars, powder rooms||Colortale',
+          'Microcement||₹200\u2013₹500||2\u20133||Clean & prep \u2192 primer \u2192 base coats (2-3 coats) \u2192 top finish coats \u2192 sealing.||Mop with neutral pH cleaner; avoid harsh chemicals.||Seamless & waterproof finish with minimal look. Ultra-thin so no change to floor/door levels.||Must be applied by experienced skills for good adhesion. Can show cracks/chips if substrate moves.||Floors, walls, bathrooms, furniture||Colortale',
+          'Alabaster Lights||₹12,000 \u2013 ₹40,000 / light||5\u201320||Electrical point planning \u2192 ceiling hook / mounting plate \u2192 fixture installation \u2192 LED integration & testing||Dust regularly and wipe gently with a dry or slightly damp cloth, avoid harsh cleaners.||Creates a soft, warm glow and works as a strong visual centerpiece. Pairs beautifully with modern interiors.||Premium pricing. Requires careful handling due to the stone\'s delicate nature.||Dining rooms, bedrooms, table lamps, Luxury lounges||World of abner, Mugen Design Lab',
+          'Artistic Acoustic Panels||₹7,000 \u2013 ₹14,000||20\u201350||Mark panel layout \u2192 mount clips/framing \u2192 fix panels \u2192 seal gaps.||Vacuum or gentle fabric brush dusting.||Reduces echo & improves room acoustics. Visual design element.||Higher cost than plain wall finishes. Needs correct placement for real acoustic impact.||Home offices, studios, media rooms, living rooms.||Unidus Accoustics',
+          'Textured Lime Plaster||₹40\u2013₹120||8\u201315||Prep substrate \u2192 scratch coat \u2192 intermediary coat \u2192 final finish coat \u2192 curing.||Wipe lightly & avoid harsh solvents.||Breathable, sustainable & timeless finish. Reduces mould risk & regulates humidity.||Longer install & requires skilled plasterer. Slightly higher cost and time than gypsum plaster.||Feature walls, living rooms, hallway||Limocoat',
+          '3D Artwork||₹55,000 +||4\u20135"||Artwork mounted on prepared wall using heavy-duty anchors & adhesives||Dust gently with a soft dry cloth; avoid water or harsh cleaners.||Creates a one-of-a-kind luxury focal point that cannot be replicated. Fully customizable in design, size, texture, and colour.||Longer install & requires skilled plasterer. Slightly higher cost and time than gypsum plaster. Requires professional installation.||Living room feature wall, Bedroom statement wall, Luxury hotel & reception areas||Godai Arts',
+          'Optical Fibre Fabric||varies on request.||—||Fabric stretched or panel-mounted over LED light source, with concealed wiring and power supply. Executed with fabricator + electrician.||Gentle vacuuming and dry cloth cleaning keeps lighting components dust-free.||Creates soft ambient lighting with a futuristic luxury feel. Highly custom and experiential material.||High cost. Requires specialized installation expertise.||Feature walls in bedrooms, Dining Table Tops||DreamLux',
+          'Venetian Plaster||₹180- ₹400||2\u20135||Wall leveling \u2192 primer \u2192 2\u20133 plaster coats applied with steel trowel \u2192 burnishing \u2192 optional sealer.||Clean with a slightly damp cloth. Avoid abrasive cleaners.||Gives a luxury stone-like finish without joints. Durable, breathable, and visually rich.||Requires skilled applicators for best results. Costlier than regular paint finishes.||Foyer & entry walls, Dining room feature walls, Master bedroom walls||Vasari India',
+          'Flexible MDF Curves||2400 /sheet||4\u201312||Fixed onto curved surface or framework using Marine Fevicol. Clear silicone used at joints for flexibility and neat finish.||Wipe with a dry or lightly damp cloth, protect from moisture.||Enables seamless curves impossible with regular MDF. Lightweight and ideal for contemporary designs.||Needs precise surface preparation. Must be properly sealed to prevent moisture damage.||TV units & feature walls||Element D\u00e9cor',
+          'WALL ACCOUSTIC FLUTED PANELS||₹60+||9\u201324||Panels fixed on wall or battens using adhesive/screws, with optional acoustic insulation backing.||Vacuum flutes periodically to avoid dust accumulation.||Enhances sound absorption and speech clarity. Adds modern linear texture to interiors.||Grooves require regular cleaning. Performance depends on correct backing and installation.||Home theatres, Study rooms, Bedrooms, Conference & meeting rooms||:Unidus Acoustics'
         ]
       },
       /* [COMMENTED OUT - OLD exp-look listData]
@@ -5247,20 +5263,6 @@ window.addEventListener(
           'Textured Paint Finish||₹120 – ₹500 / sq.ft||2–5 mm textured coating||Texture paint applied using tools (roller/trowel/spray) over primed surface to create patterns||Easy—wipe with damp cloth; more durable than wallpaper||Seamless finish, more durable, variety of textures (stucco, concrete, etc.)||Requires skilled applicator; difficult to repair patches||Feature TV walls, modern and contemporary interiors'
         ]
       },
-      'kitchen-counter': {
-        title: 'Kitchen Counter Top Finishes', items: [
-          'Engineered Quartz||₹400 – ₹1200 / sq.ft||15–20 mm slab||Factory-cut slabs installed over base; joints sealed||Very low; easy cleaning||Non-porous, stain-resistant, uniform finish||Not fully heat-proof; expensive||Modern kitchens, low-maintenance',
-          'Granite||₹150 – ₹600 / sq.ft||18–20 mm slab||Slab installed and edge polished||Very low; occasional sealing||Highly durable, heat-resistant, affordable||Limited patterns vs quartz||Indian kitchens (best overall choice)',
-          'Natural Quartzite||₹500 – ₹2000+ / sq.ft||18–20 mm slab||Installed like marble/granite||Moderate; sealing required||Stronger than marble; natural luxury look||Expensive; limited availability||High-end luxury kitchens',
-          '15mm Tiles||₹80 – ₹250 / sq.ft||10–15 mm tiles||Tiles fixed over base with grout joints||Grout cleaning required||Budget-friendly, easy replacement||Joints visible; less premium||Budget kitchens, utility areas',
-          'Corian||₹800 – ₹2500 / sq.ft||6–12 mm sheets (built-up to thickness)||Seamless joining; can integrate sink||Easy; scratches repairable||Seamless, hygienic, premium finish||Heat-sensitive; expensive||Luxury kitchens, seamless designs',
-          'Natural Marble||₹300 – ₹1500+ / sq.ft||18–20 mm slab||Slabs installed and polished; sealing required||Needs sealing; prone to stains||Premium, elegant, natural beauty||Porous; stains easily; high maintenance||Low-usage or luxury kitchens',
-          'Terrazzo Slabs||₹300 – ₹900 / sq.ft||15–20 mm slab||Precast slabs installed and polished||Easy; durable surface||Unique patterns, trendy look||Slightly porous; niche aesthetic||Designer kitchens, statement spaces',
-          'Concrete / Microtopping||₹200 – ₹600 / sq.ft||10–40 mm (or 2–5 mm topping)||Cast-in-place or coated over base||Sealing required||Seamless, modern, industrial look||Can crack; requires expertise||Minimal/industrial kitchens',
-          'Porcelain Stone||₹600 – ₹2000+ / sq.ft||6–12 mm slab||Installed over support base||Very low maintenance||Heat-proof, scratch-resistant, ultra-modern||Expensive; needs skilled installation||High-end modern kitchens',
-          'Stainless Steel||₹800 – ₹2500 / sq.ft||Steel sheet over base||Fabricated and fixed||Easy; hygienic cleaning||Waterproof, hygienic, heat-resistant||Scratches visible; industrial look||Commercial or ultra-modern kitchens'
-        ]
-      },
       'kitchen-shutter': {
         title: 'Kitchen Shutter Finishes', items: [
           'Laminate||₹80 – ₹300 per sq.ft||0.8–1 mm laminate on ply/MDF||Laminate sheets are cut, glued, and pressed on plywood/MDF; edges finished with PVC edge banding.||Easy—clean with damp cloth or mild soap solution.||Budget-friendly, durable, scratch-resistant, huge variety of colours & textures.||Less premium look compared to veneer/PU. Edge banding may peel if poor quality.||Budget homes, rental properties, kids\' rooms',
@@ -5283,23 +5285,250 @@ window.addEventListener(
       },
       marbles: { title: 'Marbles – Detailed Guide', items: ['Carrara Marble (Italian) – White, soft grey veins. Classic, versatile. ₹500 – ₹1,500 / sq.ft', 'Calacatta Marble (Italian) – Bright white, bold veins. Ultra-luxury. ₹2,000 – ₹6,000 / sq.ft', 'Statuario Marble (Italian) – Pure white, strong grey veining. Premium. ₹1,500 – ₹5,000 / sq.ft', 'Crema Marfil (Italian) – Beige, subtle veins. Warm and elegant. ₹600 – ₹1,500 / sq.ft', 'Onyx Marble (Italian) – Translucent, dramatic. Luxury feature walls. ₹2,000 – ₹7,000 / sq.ft', 'Armani Brown (Italian) – Dark brown, linear veins. Modern luxury. ₹700 – ₹2,000 / sq.ft', 'White Portoro (Italian) – Black with gold veins. Ultra premium. ₹2,500 – ₹8,000 / sq.ft', 'Michelangelo (Italian) – White with grey/beige veins. Classic. ₹900 – ₹2,500 / sq.ft', 'Bianco Lasa (Italian) – Bright white, fine grey veins. Minimal. ₹1,500 – ₹4,000 / sq.ft', 'Travertine (Italian) – Beige cream, natural holes. Mediterranean look. ₹250 – ₹800 / sq.ft', 'Makrana Marble (Indian) – Pure white, minimal veins. Iconic Indian marble. ₹150 – ₹600 / sq.ft', 'Banswara Marble (Indian) – White with purple/grey veins. ₹120 – ₹400 / sq.ft', 'Katni Marble (Indian) – Beige to cream with soft veins. ₹90 – ₹250 / sq.ft', 'Ambaji Marble (Indian) – Milky white, very light patterns. ₹100 – ₹350 / sq.ft', 'Morwad Marble (Indian) – White with soft grey patterns. ₹90 – ₹250 / sq.ft'] },
       tiles: {
-        title: 'Types of Tiles', items: [
-          'Vitrified Tiles||₹60 – ₹250 per sq ft||8–10 mm||Tile adhesive + spacers||Easy cleaning, no sealing required||Durable, low maintenance, stain-resistant||Can be slippery (polished), less natural look||Flooring, living rooms, bedrooms, commercial spaces||Highly durable tiles made from clay and silica, fired at high temperatures for low porosity and high strength.||Double Charged, Full Body, Glazed Vitrified (GVT), Polished Glazed Vitrified (PGVT)||600×600 mm, 600×1200 mm, 800×1600 mm',
-          'Ceramic Tiles||₹30 – ₹120 per sq ft||6–8 mm||Tile adhesive||Easy cleaning||Affordable, wide designs, easy installation||Less durable for heavy flooring||Bathroom walls, kitchen backsplashes||Lightweight tiles made from natural clay, commonly used for walls.||Glazed, Unglazed, Digital Printed||300×300 mm, 300×600 mm',
-          'Porcelain Tiles||₹80 – ₹300 per sq ft||8–12 mm||Tile adhesive (heavy-duty for large slabs)||Low maintenance||Highly durable, water-resistant, versatile||Costlier than ceramic||Flooring, outdoor areas, bathrooms, facades||Dense, high-strength tiles with very low water absorption, ideal for heavy-duty use.||Full Body, Glazed, Matte, Polished||600×600 mm, 600×1200 mm, large slabs up to 1200×2400 mm',
-          'Natural Stone Tiles||₹150 – ₹800+ per sq ft||10–20 mm||Cement bedding or stone adhesive||Sealing required||Natural beauty, premium finish||Requires maintenance, can stain||Flooring, walls, feature areas||Tiles made from natural stones like marble, granite, slate, or travertine.||Marble, Granite, Slate, Travertine||300×300 mm, 600×600 mm (custom sizes available)',
-          'Cement Concrete Tiles||₹150 – ₹400 per sq ft||15–20 mm||Cement bedding||Regular sealing required||Unique patterns, artisanal look||Porous, needs sealing||Accent flooring, bathrooms, cafes||Handmade tiles with pigmented cement, known for bold patterns and matte finish.||Encaustic Tiles, Plain Cement Tiles||200×200 mm, 300×300 mm',
-          'Mosaic Tiles||₹200 – ₹800 per sq ft||4–8 mm||Tile adhesive||Regular grout cleaning||Decorative, flexible for curved surfaces||Expensive, grout-heavy maintenance||Backsplashes, bathrooms, pools||Small tiles arranged in patterns, often mounted on mesh sheets.||Glass, Ceramic, Stone Mosaic||Sheets (300×300 mm typical)'
+        title: 'Types of Tiles',
+        tableItems: [
+          'Vitrified Tiles||₹60 – ₹250 per sq ft||8–10 mm||Flooring, living rooms, bedrooms, commercial spaces||Kajaria, Somany, Nitco',
+          'Ceramic Tiles||₹30 – ₹120 per sq ft||6–8 mm||Bathroom walls, kitchen backsplashes||Kajaria, Johnson',
+          'Porcelain Tiles||₹80 – ₹300 per sq ft||8–12 mm||Flooring, outdoor areas, bathrooms, facades||Simpolo, Kajaria, RAK Ceramics',
+          'Natural Stone Tiles||₹150 – ₹800+ per sq ft||10–20 mm||Flooring, walls, feature areas||Galaxy',
+          'Cement Concrete Tiles||₹150 – ₹400 per sq ft||15–20 mm||Accent flooring, bathrooms, cafes||Bharat Floorings',
+          'Mosaic Tiles||₹200 – ₹800 per sq ft||4–8 mm||Backsplashes, bathrooms, pools||'
+        ],
+        detailItems: [
+          {title: 'Vitrified Tiles', rows: [
+            ['Cost (sq.ft)', '₹60 – ₹250 per sq ft'],
+            ['Thickness', '8–10 mm'],
+            ['Installation', 'Tile adhesive + spacers'],
+            ['Maintenance', 'Easy cleaning, no sealing required'],
+            ['Types', 'Double Charged, Full Body, Glazed Vitrified (GVT), Polished Glazed Vitrified (PGVT)'],
+            ['Sizes', '600×600 mm, 600×1200 mm, 800×1600 mm'],
+            ['Description', 'Highly durable tiles made from clay and silica, fired at high temperatures for low porosity and high strength.'],
+            {label: '\u2713 Pros', value: 'Durable, low maintenance, stain-resistant', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Can be slippery (polished), less natural look', cls: 'cons'},
+            ['Best Places to Use', 'Flooring, living rooms, bedrooms, commercial spaces']
+          ]},
+          {title: 'Ceramic Tiles', rows: [
+            ['Cost (sq.ft)', '₹30 – ₹120 per sq ft'],
+            ['Thickness', '6–8 mm'],
+            ['Installation', 'Tile adhesive'],
+            ['Maintenance', 'Easy cleaning'],
+            ['Types', 'Glazed, Unglazed, Digital Printed'],
+            ['Sizes', '300×300 mm, 300×600 mm'],
+            ['Description', 'Lightweight tiles made from natural clay, commonly used for walls.'],
+            {label: '\u2713 Pros', value: 'Affordable, wide designs, easy installation', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Less durable for heavy flooring', cls: 'cons'},
+            ['Best Places to Use', 'Bathroom walls, kitchen backsplashes']
+          ]},
+          {title: 'Porcelain Tiles', rows: [
+            ['Cost (sq.ft)', '₹80 – ₹300 per sq ft'],
+            ['Thickness', '8–12 mm'],
+            ['Installation', 'Tile adhesive (heavy-duty for large slabs)'],
+            ['Maintenance', 'Low maintenance'],
+            ['Types', 'Full Body, Glazed, Matte, Polished'],
+            ['Sizes', '600×600 mm, 600×1200 mm, large slabs up to 1200×2400 mm'],
+            ['Description', 'Dense, high-strength tiles with very low water absorption, ideal for heavy-duty use.'],
+            {label: '\u2713 Pros', value: 'Highly durable, water-resistant, versatile', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Costlier than ceramic', cls: 'cons'},
+            ['Best Places to Use', 'Flooring, outdoor areas, bathrooms, facades']
+          ]},
+          {title: 'Natural Stone Tiles', rows: [
+            ['Cost (sq.ft)', '₹150 – ₹800+ per sq ft'],
+            ['Thickness', '10–20 mm'],
+            ['Installation', 'Cement bedding or stone adhesive'],
+            ['Maintenance', 'Sealing required'],
+            ['Types', 'Marble, Granite, Slate, Travertine'],
+            ['Sizes', '300×300 mm, 600×600 mm (custom sizes available)'],
+            ['Description', 'Tiles made from natural stones like marble, granite, slate, or travertine.'],
+            {label: '\u2713 Pros', value: 'Natural beauty, premium finish', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Requires maintenance, can stain', cls: 'cons'},
+            ['Best Places to Use', 'Flooring, walls, feature areas']
+          ]},
+          {title: 'Cement Concrete Tiles', rows: [
+            ['Cost (sq.ft)', '₹150 – ₹400 per sq ft'],
+            ['Thickness', '15–20 mm'],
+            ['Installation', 'Cement bedding'],
+            ['Maintenance', 'Regular sealing required'],
+            ['Types', 'Encaustic Tiles, Plain Cement Tiles'],
+            ['Sizes', '200×200 mm, 300×300 mm'],
+            ['Description', 'Handmade tiles with pigmented cement, known for bold patterns and matte finish.'],
+            {label: '\u2713 Pros', value: 'Unique patterns, artisanal look', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Porous, needs sealing', cls: 'cons'},
+            ['Best Places to Use', 'Accent flooring, bathrooms, cafes']
+          ]},
+          {title: 'Mosaic Tiles', rows: [
+            ['Cost (sq.ft)', '₹200 – ₹800 per sq ft'],
+            ['Thickness', '4–8 mm'],
+            ['Installation', 'Tile adhesive'],
+            ['Maintenance', 'Regular grout cleaning'],
+            ['Types', 'Glass, Ceramic, Stone Mosaic'],
+            ['Sizes', 'Sheets (300\u00d7300 mm typical)'],
+            ['Description', 'Small tiles arranged in patterns, often mounted on mesh sheets.'],
+            {label: '\u2713 Pros', value: 'Decorative, flexible for curved surfaces', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Expensive, grout-heavy maintenance', cls: 'cons'},
+            ['Best Places to Use', 'Backsplashes, bathrooms, pools']
+          ]}
         ]
       },
       quartz: {
-        title: 'Quartz', items: [
-          'Calacatta Quartz||₹300 – ₹800 per sq.ft||15 mm, 18 mm, 20 mm||Engineered quartz with bright white base and bold grey veining. Types: Calacatta Gold, Classic, Oro. Sizes: Slabs (8×10 ft), jumbo slabs. Installation: Adhesive on base||Low maintenance; no sealing. Brands: Caesarstone, KalingaStone, Specta, AGL Quartz||Marble-like look, non-porous, stain-resistant, premium||Expensive, visible seams||Kitchen countertops, islands, bathrooms',
-          'Carrara Quartz||₹250 – ₹650 per sq.ft||15 mm, 18 mm, 20 mm||Engineered quartz with white base and soft subtle grey veins. Types: Carrara Classic, Carrara Mix. Sizes: Standard and jumbo slabs. Installation: Adhesive on base||Easy cleaning; no sealing required||Elegant and versatile, stain-resistant, low maintenance||Premium pricing compared to other options||Kitchen countertops, vanities, wall panels',
-          'Solid White Quartz||₹200 – ₹500 per sq.ft||15 mm, 18 mm||Uniform bright white quartz with no veining. Types: Pure White, Snow White, Polar White. Installation: Adhesive on base||Simple cleaning; no sealing needed||Minimal and clean look, versatile, affordable||Can look plain, may show seams||Kitchens, bathrooms, commercial spaces',
-          'Black Quartz||₹250 – ₹700 per sq.ft||15 mm, 18 mm, 20 mm||Deep black quartz with subtle patterns. Types: Nero Marquina, Absolute Black, Midnight Black. Installation: Adhesive on base||Easy maintenance; no sealing||Dramatic and bold, modern aesthetic, non-porous||Shows fingerprints, limited pairing options||Feature walls, dark kitchens, bar countertops',
-          'Grey Quartz||₹200 – ₹550 per sq.ft||15 mm, 18 mm||Mid-grey quartz with contemporary look. Types: Grigio, Concrete Grey, Silver Grey. Installation: Adhesive on base||Low maintenance; wipe clean||Modern and neutral, hides wear, versatile||Can look cold in some settings||Offices, modern kitchens, bathrooms',
-          'Terrazzo Quartz||₹300 – ₹750 per sq.ft||15 mm, 18 mm||Multi-colour chip quartz for fun modern look. Types: Classic Terrazzo, Colourful Terrazzo. Installation: Adhesive on base||Easy cleaning; no sealing||Unique and modern, variety of colours, durable||Busy pattern may not suit all styles||Modern kitchens, commercial spaces, accent areas'
+        title: 'Quartz',
+        tableItems: [
+          'Calacatta Quartz||₹300 – ₹800 / sq.ft||15–20||Kitchen countertops, islands, backsplashes, bathrooms||Caesarstone, KalingaStone, Specta, AGL Quartz',
+          'Carrara Quartz||₹250 – ₹600 / sq.ft||15–20||Countertops, bathrooms, wall cladding||KalingaStone, Caesarstone',
+          'Solid White Quartz||₹200 – ₹500 / sq.ft||15–20||Kitchen countertops, lab counters, modern interiors||AGL Quartz, KalingaStone',
+          'Black Quartz||₹250 – ₹700 / sq.ft||15–20||Countertops, vanities, feature walls||Caesarstone, KalingaStone',
+          'Grey Quartz||₹220 – ₹600 / sq.ft||15–20||Kitchens, bathrooms, commercial spaces||AGL Quartz, KalingaStone',
+          'Terrazzo Quartz||₹300 – ₹700 / sq.ft||15–18||Countertops, feature walls, cafes, retail||AGL Quartz',
+          'Brown Quartz||₹250 – ₹700 / sq.ft||15–20||Kitchen countertops, bar units, vanities, feature counters||KalingaStone, Caesarstone, AGL Quartz'
+        ],
+        detailItems: [
+          {title: 'Calacatta Quartz', rows: [
+            ['Cost (sq.ft)', '₹300 – ₹800 / sq.ft'],
+            ['Thickness', '15–20 mm'],
+            ['Description', 'Engineered quartz with bright white base and bold grey veining.'],
+            ['Types', 'Calacatta Gold, Classic, Oro'],
+            ['Sizes', 'Slabs (8\u00d710 ft), jumbo slabs'],
+            ['Installation', 'Adhesive on base'],
+            ['Maintenance', 'Low maintenance; no sealing'],
+            {label: '\u2713 Pros', value: 'Marble-like look, non-porous, stain-resistant, premium', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Expensive, visible seams', cls: 'cons'},
+            ['Best Places to Use', 'Kitchen countertops, islands, backsplashes, bathrooms'],
+            ['Brands', 'Caesarstone, KalingaStone, Specta, AGL Quartz']
+          ]},
+          {title: 'Carrara Quartz', rows: [
+            ['Cost (sq.ft)', '₹250 – ₹600 / sq.ft'],
+            ['Thickness', '15–20 mm'],
+            ['Description', 'Engineered quartz with white base and soft subtle grey veins.'],
+            ['Types', 'Carrara Classic, Carrara Mix'],
+            ['Sizes', 'Standard and jumbo slabs'],
+            ['Installation', 'Adhesive on base'],
+            ['Maintenance', 'Easy cleaning; no sealing required'],
+            {label: '\u2713 Pros', value: 'Elegant and versatile, stain-resistant, low maintenance', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Premium pricing compared to other options', cls: 'cons'},
+            ['Best Places to Use', 'Countertops, bathrooms, wall cladding'],
+            ['Brands', 'KalingaStone, Caesarstone']
+          ]},
+          {title: 'Solid White Quartz', rows: [
+            ['Cost (sq.ft)', '₹200 – ₹500 / sq.ft'],
+            ['Thickness', '15–20 mm'],
+            ['Description', 'Uniform bright white quartz with no veining.'],
+            ['Types', 'Pure White, Snow White, Polar White'],
+            ['Installation', 'Adhesive on base'],
+            ['Maintenance', 'Simple cleaning; no sealing needed'],
+            {label: '\u2713 Pros', value: 'Minimal and clean look, versatile, affordable', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Can look plain, may show seams', cls: 'cons'},
+            ['Best Places to Use', 'Kitchen countertops, lab counters, modern interiors'],
+            ['Brands', 'AGL Quartz, KalingaStone']
+          ]},
+          {title: 'Black Quartz', rows: [
+            ['Cost (sq.ft)', '₹250 – ₹700 / sq.ft'],
+            ['Thickness', '15–20 mm'],
+            ['Description', 'Deep black quartz with subtle patterns.'],
+            ['Types', 'Nero Marquina, Absolute Black, Midnight Black'],
+            ['Installation', 'Adhesive on base'],
+            ['Maintenance', 'Easy maintenance; no sealing'],
+            {label: '\u2713 Pros', value: 'Dramatic and bold, modern aesthetic, non-porous', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Shows fingerprints, limited pairing options', cls: 'cons'},
+            ['Best Places to Use', 'Countertops, vanities, feature walls'],
+            ['Brands', 'Caesarstone, KalingaStone']
+          ]},
+          {title: 'Grey Quartz', rows: [
+            ['Cost (sq.ft)', '₹220 – ₹600 / sq.ft'],
+            ['Thickness', '15–20 mm'],
+            ['Description', 'Mid-grey quartz with contemporary look.'],
+            ['Types', 'Grigio, Concrete Grey, Silver Grey'],
+            ['Installation', 'Adhesive on base'],
+            ['Maintenance', 'Low maintenance; wipe clean'],
+            {label: '\u2713 Pros', value: 'Modern and neutral, hides wear, versatile', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Can look cold in some settings', cls: 'cons'},
+            ['Best Places to Use', 'Kitchens, bathrooms, commercial spaces'],
+            ['Brands', 'AGL Quartz, KalingaStone']
+          ]},
+          {title: 'Terrazzo Quartz', rows: [
+            ['Cost (sq.ft)', '₹300 – ₹700 / sq.ft'],
+            ['Thickness', '15–18 mm'],
+            ['Description', 'Multi-colour chip quartz for fun modern look.'],
+            ['Types', 'Classic Terrazzo, Colourful Terrazzo'],
+            ['Installation', 'Adhesive on base'],
+            ['Maintenance', 'Easy cleaning; no sealing'],
+            {label: '\u2713 Pros', value: 'Unique and modern, variety of colours, durable', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Busy pattern may not suit all styles', cls: 'cons'},
+            ['Best Places to Use', 'Countertops, feature walls, cafes, retail'],
+            ['Brands', 'AGL Quartz']
+          ]},
+          {title: 'Brown Quartz', rows: [
+            ['Cost (sq.ft)', '₹250 – ₹700 / sq.ft'],
+            ['Thickness', '15–20 mm'],
+            ['Description', 'Warm brown engineered quartz with subtle speckled patterns.'],
+            ['Types', 'Brown Classic, Chocolate Brown, Cappuccino'],
+            ['Installation', 'Adhesive on base'],
+            ['Maintenance', 'Easy cleaning; no sealing needed'],
+            {label: '\u2713 Pros', value: 'Warm earthy tone, non-porous, durable, versatile', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Limited colour pairing, less popular', cls: 'cons'},
+            ['Best Places to Use', 'Kitchen countertops, bar units, vanities, feature counters'],
+            ['Brands', 'KalingaStone, Caesarstone, AGL Quartz']
+          ]}
+        ]
+      },
+      mirror: {
+        title: 'Mirror & Reflective Glass',
+        tableItems: [
+          'Plain Mirror||₹80 – ₹200 per sq.ft||4–6 mm||Dressing rooms, bathrooms, wardrobe shutters||Saint-Gobain, Modiguard',
+          'Antique Mirror||₹250 – ₹400 per sq.ft||4–6 mm||Feature walls, luxury interiors, furniture panels||Saint-Gobain, Modiguard',
+          'Tinted Mirror||₹150 – ₹350 per sq.ft||4–6 mm||Bathrooms, feature walls, modern interiors||Saint-Gobain, Gold Plus Glass',
+          'Back-painted Glass||₹200 – ₹400 per sq.ft||5–8 mm||Kitchen backsplashes, wardrobes, wall panels||Saint-Gobain, Modiguard',
+          'One-way Mirror||₹400 – ₹800 per sq.ft||5–8 mm||Office meeting rooms, security rooms, modern partitions||Saint-Gobain'
+        ],
+        detailItems: [
+          {title: 'Plain Mirror', rows: [
+            ['Cost (sq.ft)', '₹80 – ₹200 per sq.ft'],
+            ['Thickness', '4–6 mm'],
+            ['Description', 'Standard silver-coated glass mirror with high reflectivity. The most common mirror type used in homes and commercial spaces.'],
+            ['Maintenance', 'Clean with glass cleaner and soft cloth; avoid harsh abrasives'],
+            {label: '\u2713 Pros', value: 'High clarity, affordable, widely available, easy to install', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Can fog in high humidity, fragile, shows smudges easily', cls: 'cons'},
+            ['Best Places to Use', 'Dressing rooms, bathrooms, wardrobe shutters'],
+            ['Brands', 'Saint-Gobain, Modiguard']
+          ]},
+          {title: 'Antique Mirror', rows: [
+            ['Cost (sq.ft)', '₹250 – ₹400 per sq.ft'],
+            ['Thickness', '4–6 mm'],
+            ['Description', 'Mirror with an aged, distressed patina finish created by chemical treatment. Adds vintage character and warmth to interiors.'],
+            ['Maintenance', 'Wipe gently with a dry or slightly damp cloth; avoid harsh cleaners'],
+            {label: '\u2713 Pros', value: 'Unique vintage aesthetic, warm tones, hides smudges well', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Expensive, limited availability, delicate finish can scratch', cls: 'cons'},
+            ['Best Places to Use', 'Feature walls, luxury interiors, furniture panels'],
+            ['Brands', 'Saint-Gobain, Modiguard']
+          ]},
+          {title: 'Tinted Mirror', rows: [
+            ['Cost (sq.ft)', '₹150 – ₹350 per sq.ft'],
+            ['Thickness', '4–6 mm'],
+            ['Description', 'Mirror with a coloured coating that adds a tint (bronze, grey, or black). Provides a unique look while maintaining reflectivity.'],
+            ['Maintenance', 'Regular glass cleaning; avoid ammonia-based cleaners on tinted surface'],
+            {label: '\u2713 Pros', value: 'Modern aesthetic, reduces glare, coordinates with interior palette', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Limited colour options, darker reflection, higher cost than plain mirror', cls: 'cons'},
+            ['Best Places to Use', 'Bathrooms, feature walls, modern interiors'],
+            ['Brands', 'Saint-Gobain, Gold Plus Glass']
+          ]},
+          {title: 'Back-painted Glass', rows: [
+            ['Cost (sq.ft)', '₹200 – ₹400 per sq.ft'],
+            ['Thickness', '5–8 mm'],
+            ['Description', 'Toughened glass with a painted back layer. Provides a glossy, vibrant, and seamless coloured surface without losing durability.'],
+            ['Maintenance', 'Clean with mild soap solution and soft cloth; avoid abrasive cleaners'],
+            {label: '\u2713 Pros', value: 'Glossy and vibrant finish, durable, moisture-resistant, custom colours', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Fingerprints show easily, chips at edges if mishandled, expensive', cls: 'cons'},
+            ['Best Places to Use', 'Kitchen backsplashes, wardrobes, wall panels'],
+            ['Brands', 'Saint-Gobain, Modiguard']
+          ]},
+          {title: 'One-way Mirror', rows: [
+            ['Cost (sq.ft)', '₹400 – ₹800 per sq.ft'],
+            ['Thickness', '5–8 mm'],
+            ['Description', 'Special mirror coating that is reflective on one side and transparent on the other under proper lighting conditions.'],
+            ['Maintenance', 'Gentle cleaning with recommended glass cleaner; avoid scratching the coating'],
+            {label: '\u2713 Pros', value: 'Privacy control, modern and sleek, creates separation while allowing visibility', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Very expensive, requires specific lighting setup, limited applications', cls: 'cons'},
+            ['Best Places to Use', 'Office meeting rooms, security rooms, modern partitions'],
+            ['Brands', 'Saint-Gobain']
+          ]}
         ]
       },
       quartzite: {
@@ -5313,14 +5542,107 @@ window.addEventListener(
       },
       'granite': {
         title: 'Types of Granite (Detailed)',
-        items: [
-          'Black Granite||₹180 – ₹700 per sq ft||16–20 mm (standard), 20–30 mm (countertops)||Description: Deep black, uniform granite with a sleek and modern appearance, widely used in premium interiors.|||Types: Absolute Black, Premium Black, Jet Black|||Sizes: Slabs (8–10 ft), Cut sizes (2×2 ft, 2×4 ft)|||Installation Method: Cement mortar or stone adhesive||Easy cleaning; occasional sealing recommended||RK Marble, Classic Marble Company||Highly durable, stain-resistant, premium look, easy to maintain||Shows dust and fingerprints, limited pattern variation||Kitchen countertops, flooring, staircases, wall cladding',
-          'Black Galaxy Granite||₹250 – ₹800 per sq ft||16–20 mm, 20–30 mm||Description: Black granite with gold or white specks resembling a starry sky, creating a luxurious appearance.|||Types: Small Galaxy, Medium Galaxy, Premium Galaxy|||Sizes: Slabs (8–10 ft), Cut tiles|||Installation Method: Cement mortar or stone adhesive||Easy cleaning; periodic sealing||RK Marble, Classic Marble Company||Luxurious look, durable, unique pattern||Costlier than other granites||Kitchen countertops, feature walls, tabletops',
-          'Steel Grey Granite||₹150 – ₹400 per sq ft||16–20 mm, 20–30 mm (countertops)||Description: Grey granite with subtle speckled patterns, offering a contemporary and neutral aesthetic.|||Types: Steel Grey Polished, Steel Grey Leather Finish|||Sizes: Slabs (8–10 ft), Cut sizes|||Installation Method: Cement mortar or stone adhesive||Low maintenance; periodic sealing||RK Marble, Classic Marble Company||Durable, budget-friendly, hides dust well||Less luxurious compared to marble, limited veining||Kitchen countertops, flooring, outdoor areas',
-          'Tan Brown Granite||₹140 – ₹350 per sq ft||16–20 mm, 20–30 mm||Description: Dark brown granite with black and reddish specks, giving a warm and rich appearance.|||Types: Tan Brown Classic, Tan Brown Dark|||Sizes: Slabs (8–10 ft), Cut tiles|||Installation Method: Cement mortar or stone adhesive||Easy cleaning; occasional sealing||RK Marble, Classic Marble Company||Affordable, durable, warm tones||Busy pattern may not suit minimal interiors||Countertops, flooring, staircases',
-          'Viscount White Granite||₹180 – ₹450 per sq ft||16–20 mm (standard), 20–30 mm (countertops)||Description: A white to light grey granite with flowing linear black and grey veins, closely resembling marble and ideal for modern interiors.|||Types: Viscount White Classic, Viscount White Premium|||Sizes: Slabs (8–10 ft length, 4–6 ft width), Cut sizes|||Installation Method: Cement mortar or stone adhesive||Easy maintenance; periodic sealing recommended||RK Marble, Classic Marble Company||Marble-like look, durable, cost-effective, widely available||Pattern variation between slabs, may require careful selection||Flooring, kitchen countertops, wall cladding, staircases',
-          'Alaska White Granite||₹250 – ₹700 per sq ft||16–20 mm (standard), 20–30 mm (countertops)||Description: A premium white granite with dramatic grey, black, and beige patterns, offering a luxurious and high-end marble-like appearance.|||Types: Alaska White Standard, Alaska White Premium|||Sizes: Slabs (8–10 ft length, 4–6 ft width), Cut sizes|||Installation Method: Cement mortar or stone adhesive||Periodic sealing recommended; easy cleaning||RK Marble, Classic Marble Company||Premium aesthetic, unique patterns, durable, enhances luxury appeal||Higher cost, high variation in patterns, requires selection from slabs||Kitchen countertops, islands, feature walls, bathrooms',
-          'Imperial Red Granite||₹140 – ₹350 per sq ft||16–20 mm (standard), 20–30 mm (countertops & heavy-duty use)||Description: A rich, deep red granite with black and grey crystalline specks, known for its bold appearance and high durability. One of the most widely used red granites in India.|||Types: Imperial Red, New Imperial Red, Ruby Red, Jhansi Red|||Sizes: Slabs (8–10 ft length, 4–6 ft width), Cut tiles (2×2 ft, 2×4 ft)|||Installation Method: Cement mortar or stone adhesive||Easy maintenance; periodic sealing recommended||RK Marble, Classic Marble Company||Extremely durable, weather-resistant, bold color, low maintenance, widely available||Strong color may not suit modern minimal interiors, busy pattern||Flooring, staircases, exterior cladding, kitchen countertops, commercial spaces'
+        tableItems: [
+          'Black Granite||₹180 – ₹700 per sq ft||16–20 mm (standard), 20–30 mm (countertops)||Kitchen countertops, flooring, staircases, wall cladding||RK Marble, Classic Marble Company',
+          'Black Galaxy Granite||₹250 – ₹800 per sq ft||16–20 mm, 20–30 mm||Kitchen countertops, feature walls, tabletops||RK Marble, Classic Marble Company',
+          'Steel Grey Granite||₹150 – ₹400 per sq ft||16–20 mm, 20–30 mm (countertops)||Kitchen countertops, flooring, outdoor areas||RK Marble, Classic Marble Company',
+          'Tan Brown Granite||₹140 – ₹350 per sq ft||16–20 mm, 20–30 mm||Countertops, flooring, staircases||RK Marble, Classic Marble Company',
+          'Viscount White Granite||₹180 – ₹450 per sq ft||16–20 mm (standard), 20–30 mm (countertops)||Flooring, kitchen countertops, wall cladding, staircases||RK Marble, Classic Marble Company',
+          'Alaska White Granite||₹250 – ₹700 per sq ft||16–20 mm (standard), 20–30 mm (countertops)||Kitchen countertops, islands, feature walls, bathrooms||RK Marble, Classic Marble Company',
+          'Imperial Red Granite||₹140 – ₹350 per sq ft||16–20 mm (standard), 20–30 mm (countertops & heavy-duty use)||Flooring, staircases, exterior cladding, kitchen countertops, commercial spaces||RK Marble, Classic Marble Company'
+        ],
+        detailItems: [
+          {title: 'Black Granite', rows: [
+            ['Cost (sq.ft)', '₹180 – ₹700 per sq ft'],
+            ['Thickness', '16–20 mm (standard), 20–30 mm (countertops)'],
+            ['Description', 'Deep black, uniform granite with a sleek and modern appearance, widely used in premium interiors.'],
+            ['Types', 'Absolute Black, Premium Black, Jet Black'],
+            ['Sizes', 'Slabs (8–10 ft), Cut sizes (2×2 ft, 2×4 ft)'],
+            ['Installation Method', 'Cement mortar or stone adhesive'],
+            ['Maintenance', 'Easy cleaning; occasional sealing recommended'],
+            {label: '\u2713 Pros', value: 'Highly durable, stain-resistant, premium look, easy to maintain', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Shows dust and fingerprints, limited pattern variation', cls: 'cons'},
+            ['Best Places to Use', 'Kitchen countertops, flooring, staircases, wall cladding'],
+            ['Brands', 'RK Marble, Classic Marble Company']
+          ]},
+          {title: 'Black Galaxy Granite', rows: [
+            ['Cost (sq.ft)', '₹250 – ₹800 per sq ft'],
+            ['Thickness', '16–20 mm, 20–30 mm'],
+            ['Description', 'Black granite with gold or white specks resembling a starry sky, creating a luxurious appearance.'],
+            ['Types', 'Small Galaxy, Medium Galaxy, Premium Galaxy'],
+            ['Sizes', 'Slabs (8–10 ft), Cut tiles'],
+            ['Installation Method', 'Cement mortar or stone adhesive'],
+            ['Maintenance', 'Easy cleaning; periodic sealing'],
+            {label: '\u2713 Pros', value: 'Luxurious look, durable, unique pattern', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Costlier than other granites', cls: 'cons'},
+            ['Best Places to Use', 'Kitchen countertops, feature walls, tabletops'],
+            ['Brands', 'RK Marble, Classic Marble Company']
+          ]},
+          {title: 'Steel Grey Granite', rows: [
+            ['Cost (sq.ft)', '₹150 – ₹400 per sq ft'],
+            ['Thickness', '16–20 mm, 20–30 mm (countertops)'],
+            ['Description', 'Grey granite with subtle speckled patterns, offering a contemporary and neutral aesthetic.'],
+            ['Types', 'Steel Grey Polished, Steel Grey Leather Finish'],
+            ['Sizes', 'Slabs (8–10 ft), Cut sizes'],
+            ['Installation Method', 'Cement mortar or stone adhesive'],
+            ['Maintenance', 'Low maintenance; periodic sealing'],
+            {label: '\u2713 Pros', value: 'Durable, budget-friendly, hides dust well', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Less luxurious compared to marble, limited veining', cls: 'cons'},
+            ['Best Places to Use', 'Kitchen countertops, flooring, outdoor areas'],
+            ['Brands', 'RK Marble, Classic Marble Company']
+          ]},
+          {title: 'Tan Brown Granite', rows: [
+            ['Cost (sq.ft)', '₹140 – ₹350 per sq ft'],
+            ['Thickness', '16–20 mm, 20–30 mm'],
+            ['Description', 'Dark brown granite with black and reddish specks, giving a warm and rich appearance.'],
+            ['Types', 'Tan Brown Classic, Tan Brown Dark'],
+            ['Sizes', 'Slabs (8–10 ft), Cut tiles'],
+            ['Installation Method', 'Cement mortar or stone adhesive'],
+            ['Maintenance', 'Easy cleaning; occasional sealing'],
+            {label: '\u2713 Pros', value: 'Affordable, durable, warm tones', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Busy pattern may not suit minimal interiors', cls: 'cons'},
+            ['Best Places to Use', 'Countertops, flooring, staircases'],
+            ['Brands', 'RK Marble, Classic Marble Company']
+          ]},
+          {title: 'Viscount White Granite', rows: [
+            ['Cost (sq.ft)', '₹180 – ₹450 per sq ft'],
+            ['Thickness', '16–20 mm (standard), 20–30 mm (countertops)'],
+            ['Description', 'A white to light grey granite with flowing linear black and grey veins, closely resembling marble and ideal for modern interiors.'],
+            ['Types', 'Viscount White Classic, Viscount White Premium'],
+            ['Sizes', 'Slabs (8–10 ft length, 4–6 ft width), Cut sizes'],
+            ['Installation Method', 'Cement mortar or stone adhesive'],
+            ['Maintenance', 'Easy maintenance; periodic sealing recommended'],
+            {label: '\u2713 Pros', value: 'Marble-like look, durable, cost-effective, widely available', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Pattern variation between slabs, may require careful selection', cls: 'cons'},
+            ['Best Places to Use', 'Flooring, kitchen countertops, wall cladding, staircases'],
+            ['Brands', 'RK Marble, Classic Marble Company']
+          ]},
+          {title: 'Alaska White Granite', rows: [
+            ['Cost (sq.ft)', '₹250 – ₹700 per sq ft'],
+            ['Thickness', '16–20 mm (standard), 20–30 mm (countertops)'],
+            ['Description', 'A premium white granite with dramatic grey, black, and beige patterns, offering a luxurious and high-end marble-like appearance.'],
+            ['Types', 'Alaska White Standard, Alaska White Premium'],
+            ['Sizes', 'Slabs (8–10 ft length, 4–6 ft width), Cut sizes'],
+            ['Installation Method', 'Cement mortar or stone adhesive'],
+            ['Maintenance', 'Periodic sealing recommended; easy cleaning'],
+            {label: '\u2713 Pros', value: 'Premium aesthetic, unique patterns, durable, enhances luxury appeal', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Higher cost, high variation in patterns, requires selection from slabs', cls: 'cons'},
+            ['Best Places to Use', 'Kitchen countertops, islands, feature walls, bathrooms'],
+            ['Brands', 'RK Marble, Classic Marble Company']
+          ]},
+          {title: 'Imperial Red Granite', rows: [
+            ['Cost (sq.ft)', '₹140 – ₹350 per sq ft'],
+            ['Thickness', '16–20 mm (standard), 20–30 mm (countertops & heavy-duty use)'],
+            ['Description', 'A rich, deep red granite with black and grey crystalline specks, known for its bold appearance and high durability.'],
+            ['Types', 'Imperial Red, New Imperial Red, Ruby Red, Jhansi Red'],
+            ['Sizes', 'Slabs (8–10 ft length, 4–6 ft width), Cut tiles (2×2 ft, 2×4 ft)'],
+            ['Installation Method', 'Cement mortar or stone adhesive'],
+            ['Maintenance', 'Easy maintenance; periodic sealing recommended'],
+            {label: '\u2713 Pros', value: 'Extremely durable, weather-resistant, bold color, low maintenance, widely available', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Strong color may not suit modern minimal interiors, busy pattern', cls: 'cons'},
+            ['Best Places to Use', 'Flooring, staircases, exterior cladding, kitchen countertops, commercial spaces'],
+            ['Brands', 'RK Marble, Classic Marble Company']
+          ]}
         ]
       },
       'designer-laminates': { title: 'Types of Designer Laminates', items: ['Solid Color Laminate – Plain, uniform colors offering a clean and minimal aesthetic', 'Wood Grain Laminate – Realistic wood textures and patterns, most popular finish', 'Fabric Texture Laminate – Soft textile-like surface finish, tactile and warm', 'Metallic Laminate – Gold, silver, copper reflective finish for feature panels', 'Leather Texture Laminate – Luxury leather-like appearance for premium furniture', 'Woven / Basket Weave Laminate – Intricate woven patterns, unique visual texture', 'Matt Suede Laminate – Velvety soft-touch finish, very on-trend for 2025–26', 'Digital Print Laminate – Custom printed images and patterns, completely bespoke'] },
@@ -5404,6 +5726,302 @@ window.addEventListener(
         ]
       },
       'wood-types': { title: 'Types of Wood', items: ['Teak Wood – Premium hardwood, natural oils, moisture and termite resistant. Best for furniture and flooring.', 'Sheesham (Rosewood) – Dense, durable Indian hardwood with rich grain. Popular for dining and bedroom furniture.', 'Mango Wood – Eco-friendly, light weight, attractive grain. Budget-friendly option for furniture.', 'Walnut Wood – Premium, dark chocolate colour. Used in luxury furniture and flooring.', 'Oak Wood – Hard, durable, light brown. Popular for European-style furniture.', 'Pine Wood – Light weight, affordable. Used for rustic and Scandinavian-style furniture.', 'Bamboo – Sustainable, fast-growing. Used for flooring and furniture panels.', 'Deodar (Cedar) – Fragrant, insect-repellent. Used traditionally in wardrobes and linen closets.'] },
+      'kitchen-counter': {
+        title: 'Kitchen Counter Top Finishes',
+        tableItems: [
+          'Engineered Quartz||₹400–₹1200||15–20||Modern kitchens||Caesarstone, Kalinga Stone',
+          'Granite||₹150–₹600||18–20||Indian kitchens||RK Marble',
+          'Natural Quartzite||₹500–₹2000||18–20||High-end luxury kitchens||Balaji Stone Export',
+          '15 MM Tiles||₹80–₹250||15||Budget kitchens, utility areas||Italica Tiles',
+          'Corian||₹800–₹2500||6–12||Luxury kitchens||Evo Surfaces',
+          'Natural Marble||₹300–₹1500||18–20||Low-usage luxury kitchens||Classic Marble Company',
+          'Terrazzo Slabs||₹300–₹900||15–20||Designer kitchens||Kalinga Stone',
+          'Concrete Microtopping||₹200–₹600||10–40||Industrial kitchens||Colortale',
+          'Porcelain Stone||₹600–₹2000||6–12||High-end modern kitchens||AGL',
+          'Stainless Steel||₹800–₹2500||1.2||Commercial kitchens||Jindal Stainless'
+        ],
+        detailItems: [
+          'Engineered Quartz||₹400–₹1200||15–20||Factory-cut slabs installed over base; joints sealed.||Very low, easy cleaning.||Non-porous, stain-resistant, uniform finish.||Not fully heat-proof; expensive.||Modern kitchens||Caesarstone, Kalinga Stone',
+          'Granite||₹150–₹600||18–20||Slab installed and edge polished.||Very low, occasional sealing.||Highly durable, heat-resistant, affordable.||Limited patterns vs quartz.||Indian kitchens||RK Marble',
+          'Natural Quartzite||₹500–₹2000||18–20||Slab installed and edge polished.||Moderate; sealing required.||Stronger than marble; natural luxury look.||Expensive; limited availability.||High-end luxury kitchens||Balaji Stone Export',
+          '15 MM Tiles||₹80–₹250||15||Tiles fixed over base with grout joints.||Grout cleaning required.||Budget-friendly, easy replacement.||Joints visible; less premium.||Budget kitchens, utility areas||Italica Tiles',
+          'Corian||₹800–₹2500||6–12||Seamless joining; can integrate sink.||Easy; scratches repairable.||Seamless, hygienic, premium finish.||Heat-sensitive; expensive.||Luxury kitchens||Evo Surfaces',
+          'Natural Marble||₹300–₹1500||18–20||Slabs installed and polished.||Needs sealing; prone to stains.||Premium, elegant, natural beauty.||Porous; stains easily; high maintenance.||Low-usage luxury kitchens||Classic Marble Company',
+          'Terrazzo Slabs||₹300–₹900||15–20||Precast slabs installed and polished.||Easy; durable surface.||Unique patterns, trendy look.||Slightly porous; niche aesthetic.||Designer kitchens||Kalinga Stone',
+          'Concrete Microtopping||₹200–₹600||10–40||Cast-in-place or coated over base.||Sealing required.||Seamless, modern, industrial look.||Can crack; requires expertise.||Industrial kitchens||Colortale',
+          'Porcelain Stone||₹600–₹2000||6–12||Installed over support base.||Very low maintenance.||Heat-proof, scratch-resistant, ultra-modern.||Expensive; needs skilled installation.||High-end modern kitchens||AGL',
+          'Stainless Steel||₹800–₹2500||1.2||Fabricated and fixed.||Easy; hygienic cleaning.||Waterproof, hygienic, heat-resistant.||Scratches visible; industrial look.||Commercial kitchens||Jindal Stainless'
+        ]
+      },
+      'italian-marbles': {
+        title: 'Italian Marbles',
+        tableItems: [
+          'Carrara Marble||₹500 – ₹1,500 / sq.ft||16–18||Flooring, wall panels, bathrooms, countertops||Classic Marble Company, Elegant Marble',
+          'Calacatta Marble||₹2,000 – ₹6,000 / sq.ft||18–20||Luxury flooring, statement walls, countertops||Classic Marble Company, Elegant Marble',
+          'Statuario Marble||₹1,500 – ₹5,000 / sq.ft||16–20||Luxury flooring, wall cladding, bathrooms, tabletops||Classic Marble Company, Elegant Marble',
+          'Crema Marfil||₹600 – ₹1,500 / sq.ft||18–20||Flooring, staircases, wall panels||Classic Marble Company, Elegant Marble',
+          'Onyx Marble||₹2,000 – ₹7,000 / sq.ft||16–20||Feature walls, bar counters, luxury interiors||Classic Marble Company, Elegant Marble',
+          'Armani Brown Marble||₹700 – ₹2,000 / sq.ft||16–20||Luxury flooring, wall cladding, bathroom walls, feature walls, countertops||Classic Marble Company, Elegant Marble',
+          'White Portoro Marble||₹2,500 – ₹8,000 / sq.ft||18–20||Feature walls, luxury bathrooms, decorative panels, tabletops||Classic Marble Company, Elegant Marble',
+          'Michelangelo Marble||₹900 – ₹2,500 / sq.ft||18–20||Luxury flooring, wall cladding, bathrooms, countertops, decorative wall panels||Classic Marble Company, Elegant Marble',
+          'Bianco Lasa Marble||₹1,500 – ₹4,000 / sq.ft||16–20||Premium flooring, wall cladding, bathrooms, luxury feature walls||Classic Marble Company, Elegant Marble',
+          'Travertine Marble||₹250 – ₹800 / sq.ft||16–20||Living room flooring, bathroom walls, outdoor flooring, staircases||Classic Marble Company, Elegant Marble'
+        ],
+        detailItems: [
+          {
+            title: 'Carrara Marble',
+            rows: [
+              { label: 'Material', value: 'Popular Italian marble with a light grey or white background and soft grey veining, widely used in contemporary interiors.' },
+              { label: 'Types', value: 'Bianco Carrara, Carrara Venato' },
+              { label: 'Sizes', value: 'Slabs 8\u201310 ft length, 4\u20136 ft width' },
+              { label: 'Thk (mm)', value: '16\u201318 mm (standard), 18\u201320 mm (premium slabs)' },
+              { label: 'Slab Cost (sq.ft)', value: '\u20b9500 \u2013 \u20b91,500' },
+              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' },
+              { label: 'Best Places to Use', value: 'Flooring, wall panels, bathrooms, countertops' },
+              { label: '\u2713 Pros', value: 'Elegant look, relatively affordable for Italian marble', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Can stain easily', cls: 'cons' },
+              { label: 'Installation Method', value: 'Cement bedding or stone adhesive' },
+              { label: 'Maintenance', value: 'Sealing recommended' }
+            ]
+          },
+          {
+            title: 'Calacatta Marble',
+            rows: [
+              { label: 'Material', value: 'Luxurious Italian marble featuring a white base with dramatic thick gold or grey veining.' },
+              { label: 'Types', value: 'Calacatta Gold, Calacatta Borghini, Calacatta Oro' },
+              { label: 'Sizes', value: 'Large random slabs 8\u201310 ft length' },
+              { label: 'Thk (mm)', value: '18\u201320 mm' },
+              { label: 'Slab Cost (sq.ft)', value: '\u20b92,000 \u2013 \u20b96,000' },
+              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' },
+              { label: 'Best Places to Use', value: 'Luxury flooring, statement walls, countertops' },
+              { label: '\u2713 Pros', value: 'Highly luxurious aesthetic, Bold dramatic veining', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Very expensive, Porous', cls: 'cons' },
+              { label: 'Installation Method', value: 'Installed using marble adhesive' },
+              { label: 'Maintenance', value: 'Requires sealing' }
+            ]
+          },
+          {
+            title: 'Statuario Marble',
+            rows: [
+              { label: 'Material', value: 'Premium Italian marble known for its bright white background with bold grey veins.' },
+              { label: 'Types', value: 'Statuario Classic, Statuario Extra, Statuario Venato' },
+              { label: 'Sizes', value: '8\u201310 ft length Slabs' },
+              { label: 'Thk (mm)', value: '16\u201318 mm, 18\u201320 mm premium slabs' },
+              { label: 'Slab Cost (sq.ft)', value: '\u20b91,500 \u2013 \u20b95,000' },
+              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' },
+              { label: 'Best Places to Use', value: 'Luxury flooring, wall cladding, bathrooms, tabletops' },
+              { label: '\u2713 Pros', value: 'Premium appearance, elegant veining', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Expensive, porous', cls: 'cons' },
+              { label: 'Installation Method', value: 'Installed using cement mortar or stone adhesive' },
+              { label: 'Maintenance', value: 'Requires sealing' }
+            ]
+          },
+          {
+            title: 'Crema Marfil',
+            rows: [
+              { label: 'Material', value: 'Beige marble with subtle veining, commonly used for elegant flooring and wall finishes.' },
+              { label: 'Types', value: 'Crema Marfil Classic, Crema Marfil Select, Crema Marfil Coto' },
+              { label: 'Sizes', value: 'Random slabs (7\u20139 ft typical)' },
+              { label: 'Thk (mm)', value: '18\u201320 mm' },
+              { label: 'Slab Cost (sq.ft)', value: '\u20b9600 \u2013 \u20b91,500' },
+              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' },
+              { label: 'Best Places to Use', value: 'Flooring, staircases, wall panels' },
+              { label: '\u2713 Pros', value: 'Warm neutral tone, very versatile', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Porous stone', cls: 'cons' },
+              { label: 'Installation Method', value: 'Cement mortar bedding' },
+              { label: 'Maintenance', value: 'Requires sealing' }
+            ]
+          },
+          {
+            title: 'Onyx Marble',
+            rows: [
+              { label: 'Material', value: 'Translucent natural stone with dramatic patterns and vibrant colors, often backlit for decorative walls.' },
+              { label: 'Types', value: 'Honey Onyx, Green Onyx, White Onyx, Pink Onyx' },
+              { label: 'Sizes', value: 'Random slabs (6\u20139 ft typical)' },
+              { label: 'Thk (mm)', value: '16\u201320 mm' },
+              { label: 'Slab Cost (sq.ft)', value: '\u20b92,000 \u2013 \u20b97,000' },
+              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' },
+              { label: 'Best Places to Use', value: 'Feature walls, bar counters, luxury interiors' },
+              { label: '\u2713 Pros', value: 'Translucent, unique patterns', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Fragile and expensive', cls: 'cons' },
+              { label: 'Installation Method', value: 'Special stone adhesive with back support' },
+              { label: 'Maintenance', value: 'Careful cleaning and sealing' }
+            ]
+          },
+          {
+            title: 'Armani Brown Marble',
+            rows: [
+              { label: 'Material', value: 'Luxurious dark brown marble known for its fine linear veins and elegant texture.' },
+              { label: 'Types', value: 'Armani Brown Classic, Armani Grey, Armani Bronze' },
+              { label: 'Sizes', value: '8\u201310 ft length Slabs' },
+              { label: 'Thk (mm)', value: '16\u201320 mm' },
+              { label: 'Slab Cost (sq.ft)', value: '\u20b9700 \u2013 \u20b92,000' },
+              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' },
+              { label: 'Best Places to Use', value: 'Luxury flooring, wall cladding, bathroom walls, feature walls, countertops' },
+              { label: '\u2713 Pros', value: 'Rich elegant colour, luxurious appearance, suitable for modern interiors', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Requires sealing, darker colour may show dust', cls: 'cons' },
+              { label: 'Installation Method', value: 'Installed with cement mortar or stone adhesive with proper leveling' },
+              { label: 'Maintenance', value: 'Periodic polishing and sealing recommended' }
+            ]
+          },
+          {
+            title: 'White Portoro Marble',
+            rows: [
+              { label: 'Material', value: 'Rare and luxurious Italian marble characterized by a deep black base with dramatic gold and white veins.' },
+              { label: 'Types', value: 'Portoro Gold, Portoro Black' },
+              { label: 'Sizes', value: 'Random slabs (6\u20138 ft typical)' },
+              { label: 'Thk (mm)', value: '18\u201320 mm' },
+              { label: 'Slab Cost (sq.ft)', value: '\u20b92,500 \u2013 \u20b98,000' },
+              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' },
+              { label: 'Best Places to Use', value: 'Feature walls, luxury bathrooms, decorative panels, tabletops' },
+              { label: '\u2713 Pros', value: 'Highly luxurious appearance, unique veining pattern', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Very expensive, limited availability', cls: 'cons' },
+              { label: 'Installation Method', value: 'Installed using stone adhesive with skilled stone installation' },
+              { label: 'Maintenance', value: 'Regular sealing and careful cleaning recommended' }
+            ]
+          },
+          {
+            title: 'Michelangelo Marble',
+            rows: [
+              { label: 'Material', value: 'Premium Italian marble featuring a soft white background with elegant grey and beige veining.' },
+              { label: 'Types', value: 'Michelangelo White, Michelangelo Grey' },
+              { label: 'Sizes', value: '8\u201310 ft length Slabs' },
+              { label: 'Thk (mm)', value: '18\u201320 mm' },
+              { label: 'Slab Cost (sq.ft)', value: '\u20b9900 \u2013 \u20b92,500' },
+              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' },
+              { label: 'Best Places to Use', value: 'Luxury flooring, wall cladding, bathrooms, countertops, decorative wall panels' },
+              { label: '\u2713 Pros', value: 'Elegant veining, premium aesthetic, versatile for modern and classic interiors', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Porous material, requires sealing', cls: 'cons' },
+              { label: 'Installation Method', value: 'Installed using cement mortar bedding or stone adhesive by skilled marble installers' },
+              { label: 'Maintenance', value: 'Periodic sealing and polishing recommended' }
+            ]
+          },
+          {
+            title: 'Bianco Lasa Marble',
+            rows: [
+              { label: 'Material', value: 'High-quality Italian marble known for its bright white background with fine grey veining.' },
+              { label: 'Types', value: 'Bianco Lasa Classic, Bianco Lasa Venato' },
+              { label: 'Sizes', value: 'Random slabs (7\u20139 ft typical)' },
+              { label: 'Thk (mm)', value: '16\u201320 mm' },
+              { label: 'Slab Cost (sq.ft)', value: '\u20b91,500 \u2013 \u20b94,000' },
+              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' },
+              { label: 'Best Places to Use', value: 'Premium flooring, wall cladding, bathrooms, luxury feature walls' },
+              { label: '\u2713 Pros', value: 'Bright white appearance, elegant and timeless design', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Expensive and requires regular maintenance', cls: 'cons' },
+              { label: 'Installation Method', value: 'Installed with cement mortar or marble adhesive with professional stone fixing' },
+              { label: 'Maintenance', value: 'Sealing and periodic polishing required to maintain shine' }
+            ]
+          },
+          {
+            title: 'Travertine Marble',
+            rows: [
+              { label: 'Material', value: 'Natural limestone formed by mineral deposits from hot springs, known for its warm earthy tones and naturally occurring holes and linear patterns.' },
+              { label: 'Types', value: 'Classic Travertine, Silver Travertine, Walnut Travertine, Ivory Travertine' },
+              { label: 'Sizes', value: 'Random slabs (approx. 7\u201310 ft length), Tiles 2\u00d72 ft, 2\u00d74 ft also available' },
+              { label: 'Thk (mm)', value: '16\u201320 mm (flooring), 12\u201316 mm (wall cladding)' },
+              { label: 'Slab Cost (sq.ft)', value: '\u20b9250 \u2013 \u20b9800' },
+              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' },
+              { label: 'Best Places to Use', value: 'Living room flooring, bathroom walls, outdoor flooring and patios, staircases' },
+              { label: '\u2713 Pros', value: 'Elegant natural texture, unique patterns, cool temperature, durable', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Porous material, natural holes may require filling, can stain, softer', cls: 'cons' },
+              { label: 'Installation Method', value: 'Installed using cement mortar or stone adhesive on a prepared base' },
+              { label: 'Maintenance', value: 'Seal the stone. Clean with mild pH-neutral stone cleaner. Avoid acidic cleaners.' }
+            ]
+          }
+        ]
+      },
+      'indian-marbles': {
+        title: 'Indian Marbles',
+        tableItems: [
+          'Makrana Marble||₹200 – ₹700 per sq ft||16–20||Flooring, temples, wall cladding||Classic Marble Company, Elegant Marble',
+          'Banswara Marble||₹120 – ₹400||16–20||Living room flooring, Staircases, Feature walls||Classic Marble Company, Elegant Marble',
+          'Katni Marble||₹90 – ₹250||12–16||Living rooms, Bedrooms, Commercial flooring||Classic Marble Company, Elegant Marble',
+          'Ambaji Marble||₹100 – ₹350||12–18||Flooring, staircases, wall panels||RK Marble',
+          'Morwad Marble||₹90 – ₹250||12–18||Bedrooms, Living room flooring, Staircases||Rajasthan marble suppliers'
+        ],
+        detailItems: [
+          {
+            title: 'Makrana Marble',
+            rows: [
+              { label: 'Material', value: 'Pure white colour' },
+              { label: 'Types', value: 'Makrana White, Makrana Albeta' },
+              { label: 'Sizes', value: '8\u201310 ft length slabs, Cut tiles: 1\u00d71 ft, 2\u00d72 ft, 2\u00d74 ft' },
+              { label: 'Thk (mm)', value: '16\u201318 flooring, 18\u201320 staircases, 12\u201315 wall cladding' },
+              { label: 'Slab Cost (sq.ft)', value: '\u20b9200 \u2013 \u20b9700' },
+              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' },
+              { label: 'Best Places to Use', value: 'Flooring, temples, wall cladding' },
+              { label: '\u2713 Pros', value: 'Durable and long-lasting', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Limited vein patterns', cls: 'cons' },
+              { label: 'Installation Method', value: 'Cement mortar bedding' },
+              { label: 'Maintenance', value: 'Periodic polishing' }
+            ]
+          },
+          {
+            title: 'Banswara Marble',
+            rows: [
+              { label: 'Material', value: 'White marble with distinctive purple or grey veins' },
+              { label: 'Types', value: 'Banswara White, Banswara Purple, Banswara Gold' },
+              { label: 'Sizes', value: '5\u20139 ft length slabs, Cut tiles 2\u00d72 ft, 2\u00d74 ft' },
+              { label: 'Thk (mm)', value: '16\u201318 flooring, 18\u201320 heavy-use areas, 12\u201315 wall cladding' },
+              { label: 'Slab Cost (sq.ft)', value: '\u20b9120 \u2013 \u20b9400' },
+              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' },
+              { label: 'Best Places to Use', value: 'Living room flooring, Staircases, Feature walls' },
+              { label: '\u2713 Pros', value: 'Attractive natural veining, Good durability, Suitable for large flooring areas', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Requires sealing, Slight colour variation between slabs', cls: 'cons' },
+              { label: 'Installation Method', value: 'Cement mortar bed installation, Polishing after laying' },
+              { label: 'Maintenance', value: 'Periodic sealing recommended, Avoid acidic cleaners' }
+            ]
+          },
+          {
+            title: 'Katni Marble',
+            rows: [
+              { label: 'Material', value: 'Beige and cream tones with subtle veining' },
+              { label: 'Types', value: 'Katni Beige, Katni Brown, Katni Pink' },
+              { label: 'Sizes', value: '4\u20138 ft length slabs, Tiles 1\u00d71 ft, 2\u00d72 ft' },
+              { label: 'Thk (mm)', value: '16\u201318 flooring, 12\u201315 wall cladding' },
+              { label: 'Slab Cost (sq.ft)', value: '\u20b990 \u2013 \u20b9250' },
+              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' },
+              { label: 'Best Places to Use', value: 'Living rooms, Bedrooms, Commercial flooring' },
+              { label: '\u2713 Pros', value: 'Affordable, Neutral colours, Widely available', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Slightly porous, Less luxurious than Italian marbles', cls: 'cons' },
+              { label: 'Installation Method', value: 'Installed with cement mortar, Mirror polishing done after installation' },
+              { label: 'Maintenance', value: 'Seal periodically, Regular cleaning with mild detergent' }
+            ]
+          },
+          {
+            title: 'Ambaji Marble',
+            rows: [
+              { label: 'Material', value: 'Milky white marble with uniform appearance and smooth texture' },
+              { label: 'Types', value: 'Ambaji White, Ambaji Grey' },
+              { label: 'Sizes', value: 'Slabs 5\u20138 ft length, Tiles 2\u00d72 ft, 2\u00d74 ft' },
+              { label: 'Thk (mm)', value: '16\u201318 flooring, 12\u201315 cladding' },
+              { label: 'Slab Cost (sq.ft)', value: '\u20b9100 \u2013 \u20b9350' },
+              { label: 'Brands', value: 'RK Marble' },
+              { label: 'Best Places to Use', value: 'Flooring, Wall cladding, Staircases' },
+              { label: '\u2713 Pros', value: 'Clean white appearance, Affordable, Easy to polish', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Can stain if not sealed, Slightly porous', cls: 'cons' },
+              { label: 'Installation Method', value: 'Installed using cement mortar or stone adhesive' },
+              { label: 'Maintenance', value: 'Periodic polishing, Use pH-neutral cleaners' }
+            ]
+          },
+          {
+            title: 'Morwad Marble',
+            rows: [
+              { label: 'Material', value: 'White marble with subtle grey patterns' },
+              { label: 'Types', value: 'Morwad White, Morwad Light Vein' },
+              { label: 'Sizes', value: 'Slabs 5\u20138 ft length, Tiles 2\u00d72 ft' },
+              { label: 'Thk (mm)', value: '16\u201318 flooring, 12\u201315 cladding' },
+              { label: 'Slab Cost (sq.ft)', value: '\u20b990 \u2013 \u20b9250' },
+              { label: 'Brands', value: 'Rajasthan marble suppliers' },
+              { label: 'Best Places to Use', value: 'Bedrooms, Living room flooring, Staircases' },
+              { label: '\u2713 Pros', value: 'Budget-friendly marble, Light colour brightens interiors, Easy to install', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Slightly softer than premium marbles, May require regular polishing', cls: 'cons' },
+              { label: 'Installation Method', value: 'Cement mortar installation, Polishing after laying' },
+              { label: 'Maintenance', value: 'Periodic sealing recommended, Clean with mild stone cleaner' }
+            ]
+          }
+        ]
+      },
     };
 
 
@@ -5574,46 +6192,55 @@ window.addEventListener(
       if (id === 'laminates') { renderLaminatesFull(el); return; }
 
       if (id === 'plywood') { renderPlywoodFull(el); return; }
-      if (id === 'italian-marbles') {
-        const d = tableData['italian-marbles'];
-        el.innerHTML = `
-        <div class="sec-head">
-          <span class="sec-title">${d.title}</span>
-          <span class="sec-count">${d.rows.length} types</span>
-        </div>
-        ${imgRow('italian-marbles')}
-        <div class="table-wrap table-responsive custom-table"><table class="table custom-table-inner detail-tbl">
-          <thead><tr><th style="width:50px;font-size:9px">Photo</th>${d.cols.map(c => `<th>${c}</th>`).join('')}</tr></thead>
-          <tbody>${d.rows.map((r, ri) => `<tr>
-            ${thumbTD('italian-marbles', ri, r[1] || '')}
-            ${r.map((cell, i) => {
-          if (i === 0) return `<td><span class="badge">${cell}</span></td>`;
-          return `<td>${cell}</td>`;
-        }).join('')}
-          </tr>`).join('')}</tbody>
-        </table></div>`;
+      if (id === 'italian-marbles' || id === 'indian-marbles' || id === 'kitchen-counter') {
+        var imgMap = {};
+        var renderOpts = { title: listData[id].title };
+        if (id === 'kitchen-counter') {
+          imgMap = {
+            'Engineered Quartz': 'assets/14. Kitchen Counter Tops/Engineered Quartz.jpg',
+            'Granite': 'assets/14. Kitchen Counter Tops/Granite.jpg',
+            'Natural Quartzite': 'assets/14. Kitchen Counter Tops/Natural Quartzite.jpg',
+            '15 MM Tiles': 'assets/14. Kitchen Counter Tops/15mm Tiles.jpg',
+            'Corian': 'assets/14. Kitchen Counter Tops/Corian.jpg',
+            'Natural Marble': 'assets/14. Kitchen Counter Tops/Natural Marble.jpg',
+            'Terrazzo Slabs': 'assets/14. Kitchen Counter Tops/Terrazzo Slabs.jpg',
+            'Concrete Microtopping': 'assets/14. Kitchen Counter Tops/Concrete.jpg',
+            'Porcelain Stone': 'assets/14. Kitchen Counter Tops/Porcelain Stone.jpg',
+            'Stainless Steel': 'assets/14. Kitchen Counter Tops/Stainless Steel.jpg'
+          };
+          renderOpts.tableItems = listData[id].tableItems;
+          renderOpts.detailItems = listData[id].detailItems;
+        } else if (id === 'indian-marbles') {
+          imgMap = {
+            'Makrana Marble': 'assets/18. Marbles/Makrana Marble.jpg',
+            'Banswara Marble': 'assets/18. Marbles/Banswara Marble.jpg',
+            'Katni Marble': 'assets/18. Marbles/Katni Marble.jpg',
+            'Ambaji Marble': 'assets/18. Marbles/Ambaji Marble.jpg',
+            'Morwad Marble': 'assets/18. Marbles/Morwad Marble.jpg'
+          };
+          renderOpts.tableItems = listData[id].tableItems;
+          renderOpts.detailItems = listData[id].detailItems;
+        } else if (id === 'italian-marbles') {
+          imgMap = {
+            'Carrara Marble': 'assets/18. Marbles/Carrara marble.jpg',
+            'Calacatta Marble': 'assets/18. Marbles/Calacatta marble.jpg',
+            'Statuario Marble': 'assets/18. Marbles/Statuario marble.jpg',
+            'Crema Marfil': 'assets/18. Marbles/Crema Marfil.jpg',
+            'Onyx Marble': 'assets/18. Marbles/Onyx Marble.jpg',
+            'Armani Brown Marble': 'assets/18. Marbles/Armani Brown marble.jpg',
+            'White Portoro Marble': 'assets/18. Marbles/White Portoro marble.jpg',
+            'Michelangelo Marble': 'assets/18. Marbles/Michelangelo marble.jpg',
+            'Bianco Lasa Marble': 'assets/18. Marbles/Bianco Lasa marble.jpg',
+            'Travertine Marble': 'assets/18. Marbles/Travertine Marble.jpg'
+          };
+          renderOpts.tableItems = listData[id].tableItems;
+          renderOpts.detailItems = listData[id].detailItems;
+        }
+        renderOpts.imgMap = imgMap;
+        renderDataDrivenSection(el, renderOpts);
         return;
       }
-      if (id === 'indian-marbles') {
-        const d = tableData['indian-marbles'];
-        el.innerHTML = `
-        <div class="sec-head">
-          <span class="sec-title">${d.title}</span>
-          <span class="sec-count">${d.rows.length} types</span>
-        </div>
-        ${imgRow('indian-marbles')}
-        <div class="table-wrap table-responsive custom-table"><table class="table custom-table-inner detail-tbl">
-          <thead><tr><th style="width:50px;font-size:9px">Photo</th>${d.cols.map(c => `<th>${c}</th>`).join('')}</tr></thead>
-          <tbody>${d.rows.map((r, ri) => `<tr>
-            ${thumbTD('indian-marbles', ri, r[1] || '')}
-            ${r.map((cell, i) => {
-          if (i === 0) return `<td><span class="badge">${cell}</span></td>`;
-          return `<td>${cell}</td>`;
-        }).join('')}
-          </tr>`).join('')}</tbody>
-        </table></div>`;
-        return;
-      }
+
       if (id === 'top10') {
         renderTop10New(el, { data: listData[id], isAdmin: false });
         return;
@@ -5624,58 +6251,50 @@ window.addEventListener(
       */
       if (id === 'exp-look') { renderNewExpLook(el); return; }
 
-      if (id === 'tiles') {
-        const d = listData[id];
-        el.innerHTML = `
-        <div class="sec-head">
-          <span class="sec-title">${d.title}</span>
-          <span class="sec-count">${d.items.length} types</span>
-        </div>
-        ${imgRow('tiles')}
-        <div class="table-wrap exp-look-table table-responsive bootstrap-exp exp-responsive"><table class="table table-bordered table-striped">
-          <thead><tr>
-            <th style="width:60px">Photo</th>
-            <th style="width:40px">#</th>
-            <th style="min-width:150px">MATERIAL / FINISH</th>
-            <th style="min-width:180px">TYPES</th>
-            <th style="min-width:150px">SIZES</th>
-            <th style="min-width:180px">PRICE RANGE</th>
-            <th style="min-width:100px">THICKNESS</th>
-            <th style="min-width:180px">INSTALLATION PROCESS</th>
-            <th style="min-width:140px">MAINTENANCE</th>
-            <th style="min-width:250px;max-width:350px">PROS</th>
-            <th style="min-width:250px;max-width:350px">CONS</th>
-            <th style="min-width:180px">BEST_FOR</th>
-          </tr></thead>
-            <tbody>${d.items.map((it, i) => {
-          var parts = it.split('||');
-          var name = parts[0] || it;
-          var types = parts[9] || '';
-          var sizes = parts[10] || '';
-          var desc = parts[8] || '';
-          var cost = parts[1] || "";
-          var thick = parts[2] || "";
-          var install = parts[3] || "";
-          var maint = parts[4] || "";
-          var pros = parts[5] || "";
-          var cons = parts[6] || "";
-          var bestuse = parts[7] || "";
-          return `<tr>
-              ${thumbTD('tiles', i, name)}
-              <td><span class="list-num">${String(i + 1).padStart(2, '0')}</span></td>
-              <td class="t-name">${name}<span class="material-desc">${desc}</span></td>
-              <td>${types}</td>
-              <td>${sizes}</td>
-              <td>${cost}</td>
-              <td>${thick}</td>
-              <td>${install}</td>
-              <td>${maint}</td>
-              <td style="color:#2e7d32 !important">${pros}</td>
-              <td style="color:#c62828 !important">${cons}</td>
-              <td style="color:#5f6b7a">${bestuse}</td>
-            </tr>`;
-        }).join('')}</tbody>
-        </table></div>`;
+      if (id === 'tiles' || id === 'granite' || id === 'quartz' || id === 'mirror') {
+        var imgMap = {};
+        if (id === 'tiles') {
+          imgMap = {
+            'Vitrified Tiles': 'assets/19. Tiles/Vitrified Tiles.jpg',
+            'Ceramic Tiles': 'assets/19. Tiles/Ceramic Tiles.jpg',
+            'Porcelain Tiles': 'assets/19. Tiles/Porcelain Tiles.jpg',
+            'Natural Stone Tiles': 'assets/19. Tiles/Stone Tile.jpg',
+            'Cement Concrete Tiles': 'assets/19. Tiles/Cement Concrete Tile.jpg',
+            'Mosaic Tiles': 'assets/19. Tiles/Terrazzo Tile.jpg'
+          };
+        } else if (id === 'granite') {
+          imgMap = {
+            'Black Granite': 'assets/20. Granite/Black Granite.jpg',
+            'Black Galaxy Granite': 'assets/20. Granite/Black Galaxy Granite.jpg',
+            'Steel Grey Granite': 'assets/20. Granite/Steel Grey Granite.jpg',
+            'Tan Brown Granite': 'assets/20. Granite/Tan Brown Granite.jpg',
+            'Viscount White Granite': 'assets/20. Granite/Viscount White Granite.jpg',
+            'Alaska White Granite': 'assets/20. Granite/Alaska White Granite.jpg',
+            'Imperial Red Granite': 'assets/20. Granite/Imperial Red Granite.jpg'
+          };
+        } else if (id === 'quartz') {
+          imgMap = {
+            'Calacatta Quartz': 'assets/21. Quartz/Calacatta Quartz.jpg',
+            'Carrara Quartz': 'assets/21. Quartz/Carrara Quartz.jpg',
+            'Solid White Quartz': 'assets/21. Quartz/Solid White Quartz.jpg',
+            'Black Quartz': 'assets/21. Quartz/Black Quartz.jpg',
+            'Grey Quartz': 'assets/21. Quartz/Grey Quartz.jpg',
+            'Terrazzo Quartz': 'assets/21. Quartz/Terrazzo Quartz.jpg',
+            'Brown Quartz': 'assets/21. Quartz/Brown Quartz.jpg'
+          };
+        } else if (id === 'mirror') {
+          imgMap = {
+            'Plain Mirror': 'assets/23. Glass/Clear glass.jpg',
+            'Tinted Mirror': 'assets/23. Glass/Tinted glass.jpg',
+            'Back-painted Glass': 'assets/23. Glass/Lacquered-Back Painted Glass.jpg'
+          };
+        }
+        renderDataDrivenSection(el, {
+          title: listData[id].title,
+          tableItems: listData[id].tableItems,
+          detailItems: listData[id].detailItems,
+          imgMap: imgMap
+        });
         return;
       }
 
@@ -5774,8 +6393,8 @@ window.addEventListener(
         return;
       } else if (listData[id]) {
         const d = listData[id];
-        const isFurniture = ['bed', 'door', 'headboard', 'sidetable', 'study', 'dresser', 'wardrobe', 'wardrobe-must', 'tvunit', 'kitchen-counter', 'kitchen-shutter', 'kitchen-must', 'limewash', 'limeplaster', 'venetian', 'microcement', 'clay', 'metallic', 'granite', 'quartz', 'quartzite', 'glass', 'laminate-types', 'veneer', 'designer-veneer', 'plywood'].indexOf(id) >= 0;
-        const needThumb = ['bed', 'door', 'headboard', 'sidetable', 'study', 'dresser', 'tvunit', 'wardrobe', 'wardrobe-must', 'kitchen-counter', 'kitchen-shutter', 'kitchen-must', 'exp-look', 'limewash', 'limeplaster', 'venetian', 'microcement', 'clay', 'metallic', 'granite', 'quartz', 'quartzite', 'glass', 'laminate-types', 'veneer', 'designer-veneer', 'plywood'].indexOf(id) >= 0;
+        const isFurniture = ['bed', 'door', 'headboard', 'sidetable', 'study', 'dresser', 'wardrobe', 'wardrobe-must', 'tvunit', 'kitchen-shutter', 'kitchen-must', 'limewash', 'limeplaster', 'venetian', 'microcement', 'clay', 'metallic', 'quartzite', 'glass', 'laminate-types', 'veneer', 'designer-veneer', 'plywood'].indexOf(id) >= 0;
+        const needThumb = ['bed', 'door', 'headboard', 'sidetable', 'study', 'dresser', 'tvunit', 'wardrobe', 'wardrobe-must', 'kitchen-shutter', 'kitchen-must', 'exp-look', 'limewash', 'limeplaster', 'venetian', 'microcement', 'clay', 'metallic', 'quartzite', 'glass', 'laminate-types', 'veneer', 'designer-veneer', 'plywood'].indexOf(id) >= 0;
 
         var stGridHtml = '';
         if (id === 'sidetable') {
@@ -5809,7 +6428,7 @@ window.addEventListener(
           if (hasParts) {
             if (!isFurniture) {
               tr += '<div class="item-meta">' + (cost ? '<span class="meta-cost">' + cost + '</span>' : '') + (thick ? ' <span class="meta-lbl">Thickness:</span> ' + thick : '') + '</div>';
-              if (id === 'granite' || id === 'quartz' || id === 'quartzite') {
+              if (id === 'quartzite') {
                 var details = (install || '').split('|||');
                 tr += '<div class="item-detail">';
                 details.forEach(function (detail) {
@@ -6164,10 +6783,19 @@ window.addEventListener(
         if (row.some(c => String(c).toLowerCase().includes(qL)))
           hits.push({ type: 'table', title: d.title, cols: d.cols, row });
       }));
-      Object.values(listData).forEach(d => d.items.forEach(item => {
-        if (item.toLowerCase().includes(qL))
-          hits.push({ type: 'list', title: d.title, item });
-      }));
+      Object.values(listData).forEach(d => {
+        var searchItems = d.items || (d.tableItems || []).concat(d.detailItems || []);
+        searchItems.forEach(function(item) {
+          if (typeof item === 'string') {
+            if (item.toLowerCase().includes(qL))
+              hits.push({ type: 'list', title: d.title, item: item });
+          } else if (item && item.title) {
+            var matched = item.title.toLowerCase().includes(qL) || item.rows.some(function(r) { return (r.value || r[1] || '').toLowerCase().includes(qL); });
+            if (matched)
+              hits.push({ type: 'list', title: d.title, item: item.title + ' \u2013 ' + (item.rows[0] ? item.rows[0].value : '') });
+          }
+        });
+      });
 
       document.getElementById('searchMeta').textContent = `${hits.length} result${hits.length !== 1 ? 's' : ''} for "${q}"`;
 
@@ -6459,7 +7087,8 @@ window.addEventListener(
     function renderTop10New(el, opts) {
       var data = opts && opts.data;
       var isAdmin = opts && opts.isAdmin;
-      var items = [];
+      var tableItems = [];
+      var detailItems = [];
 
       if (isAdmin && data && data.top10Data && data.top10Columns) {
         var cols = data.top10Columns;
@@ -6469,7 +7098,12 @@ window.addEventListener(
           var imageUrl = entry.image || '';
           var title = entry.title || '';
           var fields = entry.fields || {};
-          items.push({
+          tableItems.push({
+            name: title, image: imageUrl, isAdmin: true,
+            cost: fields[cols[1]] || '', thick: fields[cols[2]] || '',
+            bestuse: fields[cols[7]] || '', brands: fields[cols[8]] || ''
+          });
+          detailItems.push({
             name: title, image: imageUrl, isAdmin: true,
             cost: fields[cols[1]] || '', thick: fields[cols[2]] || '',
             install: fields[cols[3]] || '', maint: fields[cols[4]] || '',
@@ -6477,14 +7111,26 @@ window.addEventListener(
             bestuse: fields[cols[7]] || '', brands: fields[cols[8]] || ''
           });
         }
-      } else if (data && data.items) {
-        for (var fi = 0; fi < data.items.length; fi++) {
-          var parts = data.items[fi].split('||');
-          items.push({
-            name: parts[0] || '', cost: parts[1] || '', thick: parts[2] || '',
-            install: parts[3] || '', maint: parts[4] || '', pros: parts[5] || '',
-            cons: parts[6] || '', bestuse: parts[7] || '',
-            brands: parts[8] || '', image: '', isAdmin: false
+      } else if (data) {
+        var hasExplicitTable = !!data.tableItems;
+        var tableSrc = data.tableItems || data.items || [];
+        var detailSrc = data.detailItems || data.items || [];
+        for (var ti = 0; ti < tableSrc.length; ti++) {
+          var tp = tableSrc[ti].split('||');
+          tableItems.push({
+            name: tp[0] || '', cost: tp[1] || '', thick: tp[2] || '',
+            bestuse: hasExplicitTable ? (tp[3] || '') : (tp[7] || ''),
+            brands: hasExplicitTable ? (tp[4] || '') : (tp[8] || ''),
+            image: '', isAdmin: false
+          });
+        }
+        for (var di = 0; di < detailSrc.length; di++) {
+          var dp = detailSrc[di].split('||');
+          detailItems.push({
+            name: dp[0] || '', cost: dp[1] || '', thick: dp[2] || '',
+            install: dp[3] || '', maint: dp[4] || '', pros: dp[5] || '',
+            cons: dp[6] || '', bestuse: dp[7] || '', brands: dp[8] || '',
+            image: '', isAdmin: false
           });
         }
       }
@@ -6496,10 +7142,10 @@ window.addEventListener(
         'Artistic Acoustic Panels': 'assets/3. Top 10 Materials/Artistic Acoustic Panels.jpg',
         'Textured Lime Plaster': 'assets/3. Top 10 Materials/Textured Lime Plaster.jpg',
         '3D Artwork': 'assets/3. Top 10 Materials/3D ARTWORK.jpg',
-        'Optical Fibre Fabric (Luminous Textile)': 'assets/3. Top 10 Materials/OPTICAL FIBRE FABRIC (LUMINOUS TEXTILE).jpg',
-        'Venetian Plaster (Polished Plaster Finish)': 'assets/3. Top 10 Materials/VENETIAN PLASTER (POLISHED PLASTER FINISH).jpg',
+        'Optical Fibre Fabric': 'assets/3. Top 10 Materials/OPTICAL FIBRE FABRIC (LUMINOUS TEXTILE).jpg',
+        'Venetian Plaster': 'assets/3. Top 10 Materials/VENETIAN PLASTER (POLISHED PLASTER FINISH).jpg',
         'Flexible MDF Curves': 'assets/3. Top 10 Materials/FLEXIBLE MDF CURVES.jpg',
-        'Sound Proof Wall Acoustic Fluted Panels': 'assets/3. Top 10 Materials/Sound Proof Wall Acoustic Fluted Panels.jpg'
+        'WALL ACCOUSTIC FLUTED PANELS': 'assets/3. Top 10 Materials/Sound Proof Wall Acoustic Fluted Panels.jpg'
       };
       function top10Img(name) { return top10ImgMap[name] || ''; }
 
@@ -6511,7 +7157,7 @@ window.addEventListener(
       html += '<div class="section-title">';
       html += 'Top 10 <span>Materials</span> 2026';
       html += '</div>';
-      html += '<div class="top-label">' + items.length + ' Materials</div>';
+      html += '<div class="top-label">' + tableItems.length + ' Materials</div>';
       html += '</div>';
       html += '<div class="table-wrapper">';
       html += '<table>';
@@ -6537,8 +7183,8 @@ window.addEventListener(
       html += '</thead>';
       html += '<tbody>';
 
-      for (var si = 0; si < items.length; si++) {
-        var it = items[si];
+      for (var si = 0; si < tableItems.length; si++) {
+        var it = tableItems[si];
         var imgSrc = it.image || top10Img(it.name);
         html += '<tr>';
         html += '<td class="img-cell">';
@@ -6562,11 +7208,11 @@ window.addEventListener(
       html += '<div class="section detail-section">';
       html += '<div class="detail-section-header">';
       html += '<div class="detail-section-title">Material Detail Specification</div>';
-      html += '<div class="detail-section-count">' + items.length + ' Materials</div>';
+      html += '<div class="detail-section-count">' + detailItems.length + ' Materials</div>';
       html += '</div>';
 
-      for (var di = 0; di < items.length; di++) {
-        var ci = items[di];
+      for (var di = 0; di < detailItems.length; di++) {
+        var ci = detailItems[di];
         var detImg = ci.image || top10Img(ci.name);
 
         html += '<div class="spec-card">';
@@ -6598,6 +7244,102 @@ window.addEventListener(
       html += '</div>';
       html += '</div>';
 
+      el.innerHTML = html;
+      window.scrollTo(0, 0);
+    }
+
+    function renderDataDrivenSection(el, config) {
+      var hasExplicitTable = !!config.tableItems;
+      var tableSrc = config.tableItems || config.items || [];
+      var detailSrc = config.detailItems || config.items || [];
+      var imgMap = config.imgMap || {};
+      var count = config.count || (tableSrc.length + ' Materials');
+      function getImg(name) { return imgMap[name] || ''; }
+      var tableRaw = [];
+      for (var ti = 0; ti < tableSrc.length; ti++) {
+        var tp = tableSrc[ti].split('||');
+        tableRaw.push({
+          name: tp[0] || '', cost: tp[1] || '', thick: tp[2] || '',
+          bestuse: hasExplicitTable ? (tp[3] || '') : (tp[7] || ''),
+          brands: hasExplicitTable ? (tp[4] || '') : (tp[8] || '')
+        });
+      }
+      var isDetailObject = detailSrc.length > 0 && typeof detailSrc[0] === 'object';
+      var detailItems = [];
+      if (isDetailObject) {
+        detailItems = detailSrc;
+      } else {
+        for (var dgi = 0; dgi < detailSrc.length; dgi++) {
+          var dp = detailSrc[dgi].split('||');
+          detailItems.push({
+            name: dp[0] || '', cost: dp[1] || '', thick: dp[2] || '',
+            install: dp[3] || '', maint: dp[4] || '', pros: dp[5] || '',
+            cons: dp[6] || '', bestuse: dp[7] || '', brands: dp[8] || ''
+          });
+        }
+      }
+      var html = '<div class="exp-look-new">';
+      html += '<div class="section">';
+      html += '<div class="section-header">';
+      html += '<div class="section-title">' + config.title + '</div>';
+      html += '<div class="top-label">' + count + '</div>';
+      html += '</div>';
+      html += '<div class="table-wrapper"><table>';
+      html += '<colgroup><col class="col-image"><col class="col-sno"><col class="col-material"><col class="col-cost"><col class="col-thk"><col class="col-places"><col class="col-brands"></colgroup>';
+      html += '<thead><tr><th>Image</th><th>#</th><th>Material</th><th>Cost (Sq.Ft)</th><th>Thk<br><span style="text-transform:none;letter-spacing:0.5px;white-space:nowrap">(mm)</span></th><th>Best Places to Use</th><th>Brands</th></tr></thead><tbody>';
+      for (var si = 0; si < tableRaw.length; si++) {
+        var it = tableRaw[si];
+        var imgSrc = getImg(it.name);
+        html += '<tr>';
+        html += '<td class="img-cell"><img src="' + imgSrc + '" alt="' + it.name + '" loading="lazy" onclick="expNewZoom(this.src)" onerror="this.style.display=\'none\'"></td>';
+        html += '<td class="sno-cell">' + (si + 1) + '</td>';
+        html += '<td class="material-cell">' + it.name + '</td>';
+        html += '<td class="cost-cell">' + it.cost + '</td>';
+        html += '<td class="thk-cell">' + it.thick + '</td>';
+        html += '<td class="places-cell">' + it.bestuse + '</td>';
+        html += '<td class="brands-cell">' + it.brands + '</td>';
+        html += '</tr>';
+      }
+      html += '</tbody></table></div></div>';
+      html += '<div class="section detail-section">';
+      html += '<div class="detail-section-header">';
+      html += '<div class="detail-section-title">Material Detail Specification</div>';
+      html += '<div class="detail-section-count">' + detailItems.length + ' Materials</div>';
+      html += '</div>';
+      for (var di = 0; di < detailItems.length; di++) {
+        var detItem = detailItems[di];
+        var name = isDetailObject ? detItem.title : detItem.name;
+        var detImg = getImg(name);
+        html += '<div class="spec-card">';
+        html += '<div class="spec-image-col"><div class="spec-image-label">Image</div><img src="' + detImg + '" alt="' + name + '" loading="lazy" onclick="expNewZoom(this.src)" onerror="this.style.display=\'none\'"></div>';
+        html += '<div class="spec-table-col">';
+        html += '<div class="spec-title-bar"><h2>' + name + '</h2></div>';
+        html += '<div class="spec-rows">';
+        if (isDetailObject) {
+          for (var ri = 0; ri < detItem.rows.length; ri++) {
+            var r = detItem.rows[ri];
+            var label, value, cls;
+            if (Array.isArray(r)) { label = r[0]; value = r[1]; }
+            else { label = r.label; value = r.value; cls = r.cls; }
+            html += '<div class="spec-row"><div class="spec-label">' + label + '</div><div class="spec-value">' + (cls ? '<span class="' + cls + '">' + value + '</span>' : value) + '</div></div>';
+          }
+        } else {
+          html += '<div class="spec-row"><div class="spec-label">Raw Material Cost</div><div class="spec-value">' + detItem.cost + '</div></div>';
+          html += '<div class="spec-row"><div class="spec-label">Thickness Required</div><div class="spec-value">' + detItem.thick + '</div></div>';
+          html += '<div class="spec-row"><div class="spec-label">Installation Process</div><div class="spec-value">' + detItem.install + '</div></div>';
+          html += '<div class="spec-row"><div class="spec-label">Maintenance</div><div class="spec-value">' + detItem.maint + '</div></div>';
+          html += '<div class="spec-row"><div class="spec-label">Best Places to Use</div><div class="spec-value">' + detItem.bestuse + '</div></div>';
+          html += '<div class="spec-row"><div class="spec-label">\u2713 Pros</div><div class="spec-value"><span class="pros">' + detItem.pros + '</span></div></div>';
+          html += '<div class="spec-row"><div class="spec-label">\u2715 Cons</div><div class="spec-value"><span class="cons">' + detItem.cons + '</span></div></div>';
+          html += '<div class="spec-row"><div class="spec-label">Recommended Brands</div><div class="spec-value">' + detItem.brands + '</div></div>';
+        }
+        html += '</div></div></div>';
+      }
+      html += '</div>';
+      html += '<div class="exp-lb" id="expNewLightbox" onclick="this.classList.remove(\'active\')">';
+      html += '<img id="expNewLightboxImg" src="" alt="zoom">';
+      html += '</div>';
+      html += '</div>';
       el.innerHTML = html;
       window.scrollTo(0, 0);
     }
