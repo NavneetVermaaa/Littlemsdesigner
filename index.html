@@ -498,15 +498,12 @@
       margin-left: auto;
       margin-right: auto;
       background: var(--white);
+      scrollbar-width: none;
+      -ms-overflow-style: none;
     }
 
     .table-wrap::-webkit-scrollbar {
       display: none;
-    }
-
-    .table-wrap {
-      scrollbar-width: none;
-      -ms-overflow-style: none;
     }
 
     /* =========================================
@@ -898,37 +895,6 @@
     }
 
     thead th {
-      padding: 5px 6px;
-      font-size: 9px;
-      letter-spacing: 0.03em;
-    }
-
-    tbody tr {
-      border-bottom: 0.5px solid #f0f0f0;
-    }
-
-    tbody td {
-      padding: 5px 6px;
-      font-size: 12px;
-      line-height: 1.2;
-    }
-
-    td.t-name {
-      font-size: 12px;
-    }
-
-    /* Hide some content on very small screens for PHOTO column */
-    thead th:first-child {
-      padding: 5px 3px;
-    }
-
-    tbody td:first-child {
-      padding: 5px 3px;
-    }
-
-
-
-    thead th {
       background: var(--navy);
       color: var(--white);
       padding: 12px 16px;
@@ -970,6 +936,7 @@
     td.t-name {
       font-weight: 700;
       color: var(--navy);
+      font-size: 12px;
     }
 
     td.t-cat {
@@ -989,6 +956,15 @@
     td.t-brand {
       font-size: 11px;
       color: var(--text-light);
+    }
+
+    /* Hide some content on very small screens for PHOTO column */
+    thead th:first-child {
+      padding: 5px 3px;
+    }
+
+    tbody td:first-child {
+      padding: 5px 3px;
     }
 
     .badge {
@@ -2229,8 +2205,7 @@
       line-height: 1.5;
     }
 
-    /* Top 10 Materials & Expensive Look Tables - Text Colors */
-    .top10-table td,
+    /* Expensive Look Tables - Text Colors */
     .exp-look-table td {
       color: #5f6b7a;
       white-space: normal;
@@ -2239,7 +2214,6 @@
 
     /* Global Table Cell Full Content Display */
     .detail-tbl td,
-    .top10-table td,
     .exp-look-table td,
     .compare-table td,
     .table-wrap table td {
@@ -2248,7 +2222,6 @@
       word-break: break-word;
     }
 
-    .top10-table td.t-name,
     .exp-look-table td.t-name {
       color: #1f2f46;
       font-weight: 700;
@@ -2262,20 +2235,10 @@
       margin-top: 4px;
     }
 
-    .top10-table td:nth-child(8),
     .exp-look-table td:nth-child(6) {
       color: #5f6b7a;
     }
 
-    .top10-table td:nth-child(9) {
-      color: #c62828 !important;
-      min-width: 250px;
-      max-width: 350px;
-    }
-
-
-
-    .top10-table td:nth-child(4),
     .exp-look-table td:nth-child(4) {
       color: #1f2f46;
       font-weight: 500;
@@ -2528,41 +2491,6 @@
     }
 
     /* Bootstrap-specific styles for responsive tables */
-    .bootstrap-test {
-      overflow-x: auto !important;
-      -webkit-overflow-scrolling: touch;
-      border-radius: 8px;
-      border: 1.5px solid var(--border);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-      background: var(--white);
-    }
-
-    .bootstrap-test table {
-      font-size: 12px !important;
-      table-layout: auto !important;
-      width: 100% !important;
-      border-collapse: collapse;
-    }
-
-    .bootstrap-test th,
-    .bootstrap-test td {
-      padding: 8px 6px !important;
-      font-size: 11px !important;
-      white-space: nowrap !important;
-      word-break: keep-all !important;
-      border: 1px solid #dee2e6;
-    }
-
-    .bootstrap-test thead th {
-      background: var(--navy) !important;
-      color: var(--white) !important;
-      font-weight: 700;
-      font-size: 10px !important;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      padding: 8px 6px !important;
-    }
-
     .bootstrap-exp {
       overflow-x: auto !important;
       -webkit-overflow-scrolling: touch;
@@ -2659,15 +2587,12 @@
     @media (min-width: 1200px) {
 
       .bootstrap-exp table,
-      .bootstrap-test table,
       .custom-table-inner {
         font-size: 12px !important;
       }
 
       .bootstrap-exp th,
       .bootstrap-exp td,
-      .bootstrap-test th,
-      .bootstrap-test td,
       .custom-table-inner th,
       .custom-table-inner td {
         padding: 8px 6px !important;
@@ -2678,22 +2603,18 @@
     /* Tablet & Large Mobile */
     @media (max-width: 1199px) {
 
-      .bootstrap-exp,
-      .bootstrap-test {
+      .bootstrap-exp {
         overflow-x: auto !important;
         -webkit-overflow-scrolling: touch;
       }
 
       .bootstrap-exp table,
-      .bootstrap-test table,
       .custom-table-inner {
         font-size: 10px !important;
       }
 
       .bootstrap-exp th,
       .bootstrap-exp td,
-      .bootstrap-test th,
-      .bootstrap-test td,
       .custom-table-inner th,
       .custom-table-inner td {
         padding: 6px 4px !important;
@@ -2701,7 +2622,6 @@
       }
 
       .bootstrap-exp thead th,
-      .bootstrap-test thead th,
       .custom-table-inner thead th {
         font-size: 8px !important;
       }
@@ -2719,21 +2639,17 @@
         font-size: 8px !important;
       }
 
-      .bootstrap-exp,
-      .bootstrap-test {
+      .bootstrap-exp {
         overflow-x: auto !important;
         -webkit-overflow-scrolling: touch;
       }
 
-      .bootstrap-exp table,
-      .bootstrap-test table {
+      .bootstrap-exp table {
         font-size: 9px !important;
       }
 
       .bootstrap-exp th,
-      .bootstrap-exp td,
-      .bootstrap-test th,
-      .bootstrap-test td {
+      .bootstrap-exp td {
         padding: 4px 3px !important;
         font-size: 8px !important;
       }
@@ -2751,59 +2667,14 @@
         font-size: 7px !important;
       }
 
-      .bootstrap-exp table,
-      .bootstrap-test table {
+      .bootstrap-exp table {
         font-size: 8px !important;
       }
 
       .bootstrap-exp th,
-      .bootstrap-exp td,
-      .bootstrap-test th,
-      .bootstrap-test td {
+      .bootstrap-exp td {
         padding: 2px 2px !important;
         font-size: 7px !important;
-      }
-    }
-
-    /* Top 10 Materials table mobile */
-    @media (max-width: 768px) {
-      .top10-table {
-        overflow-x: auto !important;
-        -webkit-overflow-scrolling: touch;
-      }
-
-      .top10-table th,
-      .top10-table td {
-        font-size: 9px !important;
-        padding: 4px 3px !important;
-        white-space: normal !important;
-        word-break: break-word !important;
-        overflow: visible !important;
-      }
-
-      .top10-table .list-num {
-        font-size: 10px !important;
-      }
-
-      .top10-table .t-name {
-        font-size: 10px !important;
-      }
-    }
-
-    @media (max-width: 440px) {
-
-      .top10-table th,
-      .top10-table td {
-        font-size: 7px !important;
-        padding: 2px 2px !important;
-      }
-
-      .top10-table .list-num {
-        font-size: 8px !important;
-      }
-
-      .top10-table .t-name {
-        font-size: 8px !important;
       }
     }
 
@@ -3004,180 +2875,7 @@
       }
     }
 
-    /* ================================================================
-       [COMMENTED OUT - OLD "Materials That Look Expensive" section CSS]
-       Restore by uncommenting the block below if needed.
-       ================================================================ */
-    /*
-    // ===== BEGIN OLD EXP-LOOK CSS =====
-
-    // MOBILE FONT SIZE OPTIMIZATION FOR MATERIALS THAT LOOK EXPENSIVE SECTION
-    @media (max-width: 768px) {
-      .exp-section .sec-title,
-      .exp-section h1,
-      .exp-section h2 {
-        font-size: 18px !important;
-        line-height: 1.2 !important;
-      }
-      .exp-section table thead th {
-        font-size: 7px !important;
-        padding: 4px 3px !important;
-        white-space: nowrap !important;
-      }
-      .exp-section table tbody td {
-        font-size: 9px !important;
-        padding: 4px 3px !important;
-        white-space: nowrap !important;
-      }
-    }
-
-    // COLOR FIXES FOR EXP-LOOK SECTION
-    .exp-section .mat-cost { color: #e6eaf2; font-weight: 600; }
-    .exp-section .mat-pros-label { color: #6ea8ff; font-weight: 600; }
-    .exp-section .mat-cons-label { color: #cbd3df; font-weight: 600; }
-    .exp-section .mat-brand-label { color: #8ab4ff; }
-    .exp-section .mat-brand-value { color: #8ab4ff; font-weight: 600; }
-    .exp-section .d-value { color: #e6eaf2; }
-    .exp-section .detail-card h3 { color: #2f5eff; }
-    .exp-section .d-label { color: #6ea8ff; }
-
-    // Smaller mobiles
-    @media (max-width: 480px) {
-      .exp-section .sec-title,
-      .exp-section h1,
-      .exp-section h2 { font-size: 16px !important; }
-      .exp-section table thead th { font-size: 6px !important; padding: 3px 2px !important; }
-      .exp-section table tbody td { font-size: 8px !important; padding: 3px 2px !important; }
-    }
-
-    // Extra small screens
-    @media (max-width: 380px) {
-      .exp-section table thead th { font-size: 5.5px !important; }
-      .exp-section table tbody td { font-size: 7px !important; }
-    }
-
-    // HIDE SCROLLBAR ON MOBILE & TABLET - TABLE FITS SCREEN
-    @media (max-width: 768px) {
-      .exp-section .table-wrap { overflow-x: hidden !important; -webkit-overflow-scrolling: auto !important; }
-      .exp-section .table-wrap table { min-width: auto !important; width: 100% !important; table-layout: auto !important; }
-      .exp-section table thead th,
-      .exp-section table tbody td { white-space: normal !important; word-wrap: break-word !important; word-break: break-word !important; }
-      .exp-look-static { margin-bottom: 30px; }
-      .exp-responsive { margin-bottom: 30px; }
-      .exp-img-wrap { border: 1.5px solid #ccc; border-radius: 10px; overflow: hidden; transition: transform 0.25s ease, box-shadow 0.25s ease; }
-      .exp-img-wrap:hover { transform: scale(1.04); box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12); }
-      .exp-img-wrap img { cursor: zoom-in; transition: transform 0.25s ease; }
-      .exp-img-wrap:hover img { transform: scale(1.03); }
-      .exp-section .detail-card,
-      .exp-section .mat-detail-card { background: var(--white); border: 1.5px solid var(--border); border-radius: 8px; overflow: hidden; max-width: 720px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); }
-      .exp-section .detail-card-head h3,
-      .exp-section .mat-card-title { background: var(--navy); color: var(--white); padding: 20px 24px; }
-      .exp-section .detail-card-body>.d-row,
-      .exp-section .mat-card-body>div { display: flex; border-bottom: 1px solid var(--border); }
-      .exp-section .detail-card-body .d-label,
-      .exp-section .mat-card-body strong,
-      .exp-section .mat-card-body .label { width: 160px; flex-shrink: 0; background: var(--light); padding: 14px 16px; font-size: 9px; font-weight: 700; text-transform: uppercase; color: var(--navy); display: flex; align-items: center; box-sizing: border-box; }
-      .exp-section .detail-card-body .d-value,
-      .exp-section .mat-card-body p,
-      .exp-section .mat-card-body span,
-      .exp-section .mat-card-body li { flex: 1; padding: 14px 16px; color: var(--text-mid); box-sizing: border-box; }
-      .dark-mode .exp-section .detail-card,
-      .dark-mode .exp-section .mat-detail-card { background: var(--card-bg); }
-      .dark-mode .exp-section .detail-card-body .d-value,
-      .dark-mode .exp-section .mat-card-body p,
-      .dark-mode .exp-section .mat-card-body span,
-      .dark-mode .exp-section .mat-card-body li { color: var(--text); }
-      .exp-card-img-col { background: #f5f5f5; }
-      .exp-card-img-label { background: #f0f0f0; color: #1e2d4a; }
-      .dark-mode .exp-card-img-col { background: #1a1a1a; }
-      .dark-mode .exp-card-img-label { background: #111111; color: #6ea8ff; }
-
-      // Tablet: 768px - 1024px
-      @media (max-width: 1024px) {
-        .exp-section .detail-card { flex-direction: row !important; }
-        .exp-section .exp-card-img-col { width: 180px !important; min-width: 180px !important; }
-        .exp-section .exp-card-img-col img { max-height: 180px !important; }
-        .exp-section .material-cards-section .d-label { width: 100px !important; font-size: 7px !important; padding: 8px 8px !important; }
-        .exp-section .material-cards-section .d-value { font-size: 11px !important; padding: 8px 8px !important; }
-        .exp-section .material-cards-section .detail-card-head h3 { font-size: 14px !important; }
-      }
-
-      // Large Mobile: 600px - 767px
-      @media (max-width: 767px) {
-        .exp-section .detail-card { flex-direction: row !important; transform: scale(0.82); transform-origin: top left; width: 122% !important; margin-bottom: 0px !important; }
-        .exp-section .exp-card-img-col { width: 130px !important; min-width: 130px !important; }
-        .exp-section .exp-card-img-col img { max-height: 150px !important; padding: 0 !important; }
-        .exp-section .exp-card-img-col>div:last-child { padding: 8px !important; }
-        .exp-section .exp-card-img-label { font-size: 7px !important; padding: 6px 8px 4px !important; }
-        .exp-section .material-cards-section .d-label { width: 80px !important; font-size: 6px !important; padding: 6px 6px !important; letter-spacing: 0.04em !important; }
-        .exp-section .material-cards-section .d-value { font-size: 10px !important; padding: 6px 6px !important; line-height: 1.4 !important; }
-        .exp-section .material-cards-section .detail-card-head { padding: 10px 10px 6px !important; }
-        .exp-section .material-cards-section .detail-card-head h3 { font-size: 12px !important; }
-      }
-
-      // Small Mobile: 480px - 599px
-      @media (max-width: 599px) {
-        .exp-section .detail-card { flex-direction: row !important; transform: scale(0.75); transform-origin: top left; width: 133% !important; margin-bottom: -20px !important; }
-        .exp-section .exp-card-img-col { width: 100px !important; min-width: 100px !important; }
-        .exp-section .exp-card-img-col img { max-height: 120px !important; }
-        .exp-section .exp-card-img-col>div:last-child { padding: 6px !important; }
-        .exp-section .exp-card-img-label { font-size: 6px !important; padding: 4px 6px 3px !important; }
-        .exp-section .material-cards-section .d-label { width: 68px !important; font-size: 5.5px !important; padding: 5px 4px !important; letter-spacing: 0.02em !important; }
-        .exp-section .material-cards-section .d-value { font-size: 9px !important; padding: 5px 5px !important; line-height: 1.3 !important; }
-        .exp-section .material-cards-section .detail-card-head h3 { font-size: 11px !important; }
-      }
-
-      // Extra Small: below 480px
-      @media (max-width: 479px) {
-        .exp-section .detail-card { flex-direction: row !important; transform: scale(0.68); transform-origin: top left; width: 147% !important; margin-bottom: -30px !important; }
-        .exp-section .exp-card-img-col { width: 80px !important; min-width: 80px !important; }
-        .exp-section .exp-card-img-col img { max-height: 100px !important; }
-        .exp-section .exp-card-img-col>div:last-child { padding: 4px !important; }
-        .exp-section .exp-card-img-label { font-size: 5px !important; padding: 3px 4px !important; }
-        .exp-section .material-cards-section .d-label { width: 58px !important; font-size: 5px !important; padding: 4px 3px !important; }
-        .exp-section .material-cards-section .d-value { font-size: 8px !important; padding: 4px 4px !important; line-height: 1.2 !important; }
-        .exp-section .material-cards-section .detail-card-head h3 { font-size: 10px !important; }
-      }
-
-      // LIGHT MODE COLOR FIX
-      body:not(.dark-mode) .exp-section .detail-card .detail-card-head h3 { color: #ffffff !important; }
-      body:not(.dark-mode) .exp-section .detail-card .d-label { color: #1e2d4a !important; background: #f0f0f0 !important; opacity: 1 !important; }
-      body:not(.dark-mode) .exp-section .detail-card .d-value { color: #2d2d2d !important; opacity: 1 !important; }
-      body:not(.dark-mode) .exp-section .detail-card .d-row { border-bottom: 1px solid #ddd !important; }
-
-      // Dark mode
-      .dark-mode .exp-section .detail-card .d-label { color: #6ea8ff !important; opacity: 1 !important; }
-      .dark-mode .exp-section .detail-card .d-value { color: #e0e0e0 !important; opacity: 1 !important; }
-      .dark-mode .exp-section .detail-card .exp-img-wrap { border-color: #444 !important; }
-      .dark-mode .exp-section .detail-card [style*="display:table-cell"][style*="#f5f5f5"] { background: #1e1e1e !important; border-right-color: #444 !important; }
-      .dark-mode .exp-section .detail-card .exp-img-wrap>div[style*="#2e5d9e"] { color: #6ea8ff !important; background: #2a2a2a !important; border-bottom-color: #444 !important; }
-
-      // FIX 1
-      @media (max-width: 1024px) {
-        .exp-section .exp-responsive tbody td { white-space: nowrap !important; word-break: keep-all !important; hyphens: none !important; }
-        .exp-section .exp-responsive th:nth-child(6),
-        .exp-section .exp-responsive td:nth-child(6) { max-width: 90px !important; overflow: hidden !important; text-overflow: ellipsis !important; }
-      }
-
-      // FIX 2
-      @media (max-width: 1024px) {
-        .exp-section .detail-card .d-value.mat-cost { font-weight: 400 !important; }
-      }
-
-      // FIX 3
-      @media (max-width: 767px) {
-        .exp-section .detail-card { transform: none !important; width: 100% !important; margin-bottom: 12px !important; }
-        .exp-section .detail-card .detail-card-head { padding: 12px !important; }
-        .exp-section .detail-card .detail-card-head h3 { font-size: 13px !important; }
-        .exp-section .detail-card .d-label { width: 85px !important; font-size: 7px !important; padding: 8px 6px !important; }
-        .exp-section .detail-card .d-value { font-size: 11px !important; padding: 8px !important; }
-        .exp-section .exp-card-img-col { width: 90px !important; min-width: 90px !important; }
-        .exp-section .exp-card-img-col img { max-height: 110px !important; }
-      }
-    }
-
-    // ===== END OLD EXP-LOOK CSS =====
-    */
+    /* ===== OLD EXP-LOOK CSS DELETED (was dead code) ===== */
 
     /* ================================================================
        NEW "Materials That Look Expensive" section CSS (fully independent)
@@ -3707,11 +3405,6 @@
         max-height: 80vh !important;
         min-height: 65vh;
       }
-    }
-
-        .dark-mode .exp-look-new .spec-label,
-    .dark-mode .exp-look-new .material-cell {
-      color: var(--title-bar-text);
     }
 
     .dark-mode .exp-look-new .spec-label,
@@ -4251,11 +3944,6 @@
     .dark-mode .top10-new .material-cell {
       color: var(--title-bar-text);
     }
-
-    .dark-mode .top10-new .spec-label,
-    .dark-mode .top10-new .material-cell {
-      color: var(--title-bar-text);
-    }
   </style>
 </head>
 
@@ -4545,6 +4233,17 @@
       if (!folder) return 'https://source.unsplash.com/random/100x100?material,' + encodeURIComponent(materialName);
       // Construct path: assets/[Folder]/[Index].[Name].jpg
       return `assets/${folder}/${materialName.trim()}.jpg`; // Adjusted per user feedback to match material names directly
+    }
+
+    /**
+     * Centralized image path resolver for material images.
+     * Builds path as: assets/[FOLDER]/[Name].jpg
+     * For non-standard mappings, use imgOverrides in the section config.
+     */
+    function getImagePath(section, name) {
+      var folder = IMAGE_SETTINGS.FOLDER_MAP[section];
+      if (!folder) return '';
+      return 'assets/' + folder + '/' + name.trim() + '.jpg';
     }
 
     const PIMG = {};
@@ -5088,17 +4787,150 @@ window.addEventListener(
       },
       */
       glass: {
-        title: 'Types of Glass', items: [
-          'Clear Glass||₹40 – ₹150 / sq.ft||4–12 mm||Installed in aluminium, wood, or metal frames||Clean regularly with glass cleaner and soft cloth||High transparency, affordable, widely available||Breaks into sharp shards if not tempered||Windows, partitions, doors, tabletops',
-          'Toughened Glass||₹180 – ₹400 / sq.ft||8–15 mm||Installed with glass fittings, clamps, or patch fittings||Clean with glass cleaner||High strength, safer breakage||Cannot be cut after tempering||Shower enclosures, railings, partitions, glass doors',
-          'Laminated Glass||₹250 – ₹500 / sq.ft||6–12 mm||Installed in structural frames||Regular glass cleaning||High safety, sound insulation||Expensive compared to regular glass||Skylights, glass floors, railings, safety glazing',
-          'Frosted Glass||₹150 – ₹350 / sq.ft||4–12 mm||Installed in frames or partitions||Clean with mild glass cleaner||Provides privacy while allowing light||Fingerprints can be visible||Bathroom partitions, office partitions, doors',
-          'Tinted Glass||₹120 – ₹300 / sq.ft||5–12 mm||Installed in frames or curtain wall systems||Regular cleaning with glass cleaner||Reduces glare and sunlight||Slightly reduces visibility||Facades, windows, decorative panels',
-          'Lacquered/Back Painted Glass||₹200 – ₹450 / sq.ft||5–8 mm||Fixed with adhesive or silicone on boards||Clean with soft cloth||Smooth glossy finish, easy to clean||Scratches can be visible||Kitchen backsplashes, wardrobes, wall panels',
-          'Fluted Glass||₹350 – ₹900 / sq.ft||5–10 mm||Installed in aluminium, wooden, or metal frames with glass fittings||Clean with glass cleaner and soft brush for grooves||Modern aesthetic, provides privacy while allowing light||Grooves collect dust, slightly difficult to clean||Cabinet shutters, partitions, wardrobe shutters, sliding doors',
-          'Smoked Glass||₹200 – ₹500 / sq.ft||5–12 mm||Installed in frames or fixed with clamps and glass fittings||Regular cleaning with glass cleaner to avoid smudges||Stylish modern look, reduces glare||Dark tint reduces transparency||Cabinet shutters, partitions, office interiors, tabletops',
-          'Sandwiched Glass||₹250 – ₹800 / sq.ft||10–16 mm||Installed using aluminium channels, glass clamps, or patch fittings with silicone sealant||Clean using glass cleaner or mild soap solution||Safety glass, sound insulation, UV protection||More expensive, edges must be sealed properly||Facades, partitions, balcony railings, skylights',
-          'Smart Glass||₹2,500 – ₹8,000 / sq.ft||8–12 mm||Installed as laminated panels with electrical wiring to switch/remote||Clean with mild glass cleaner, avoid water on electrical connections||Instant privacy control, modern technology||Expensive, requires electrical connection||Office meeting rooms, bathroom partitions, luxury homes'
+        title: 'Types of Glass',
+        tableItems: [
+          'Clear Glass||₹40 – ₹150||4–12||Windows, partitions, doors, tabletops||Saint-Gobain',
+          'Toughened Glass||₹180 – ₹400||8–15||Shower enclosures, glass doors, railings, partitions||Saint-Gobain, AIS Glass',
+          'Laminated Glass||₹250 – ₹700||6–13.5||Skylights, glass floors, railings, safety glazing||Saint-Gobain, AIS Glass',
+          'Frosted Glass||₹150 – ₹350||4–12||Bathroom partitions, office partitions, doors||Saint-Gobain, AIS Glass',
+          'Tinted Glass||₹120 – ₹300||5–12||Facades, windows, decorative panels||Saint-Gobain, AIS Glass',
+          'Lacquered Glass||₹200 – ₹450||5–8||Kitchen backsplashes, wardrobes, wall panels||Saint-Gobain, AIS Glass',
+          'Fluted Glass||₹350 – ₹900||5–10||Cabinet shutters, partitions, wardrobe shutters, sliding doors, decorative panels||Saint-Gobain, AIS Glass',
+          'Smoked Glass||₹200 – ₹500||5–12||Cabinet shutters, partitions, offices, wardrobe shutters, tabletops||Saint-Gobain, AIS Glass',
+          'Sandwiched Glass||₹250 – ₹800||10–16||Facades, Glass partitions, Shower enclosures, Railings, Office cabins||Saint-Gobain, AIS Glass',
+          'Smart Glass||₹2500 – ₹8000||8–12||Office meeting rooms, bathroom partitions, luxury homes, smart windows||Saint-Gobain, AIS Glass'
+        ],
+        detailItems: [
+          {title: 'Clear Glass', rows: [
+            {label: 'Material', value: 'Transparent glass with high light transmission, unobstructed visibility and natural light.'},
+            {label: 'Types', value: 'Clear Float Glass, Ultra Clear Glass'},
+            ['Sizes', 'Custom sizes'],
+            ['Thk (mm)', '4, 5, 6, 8, 10, 12'],
+            ['Cost (sq.ft)', '₹40 – ₹150'],
+            ['Brands', 'Saint-Gobain'],
+            ['Best Places to Use', 'Windows, partitions, doors, tabletops'],
+            {label: '✓ Pros', value: 'High transparency, affordable, widely available', cls: 'pros'},
+            {label: '✕ Cons', value: 'Breaks into sharp shards if not tempered', cls: 'cons'},
+            ['Installation Method', 'Installed in aluminium, wood, or metal frames'],
+            ['Maintenance', 'Clean regularly with glass cleaner and soft cloth']
+          ]},
+          {title: 'Toughened Glass', rows: [
+            {label: 'Material', value: 'A heat-treated safety glass that is 4–5 times stronger than normal glass and breaks into small blunt pieces instead of sharp shards.'},
+            {label: 'Types', value: 'Clear Toughened Glass, Frosted Toughened Glass, Tinted Toughened Glass'},
+            ['Sizes', 'Custom sizes'],
+            ['Thk (mm)', '8, 10, 12, 15'],
+            ['Cost (sq.ft)', '₹180 – ₹400'],
+            ['Brands', 'Saint-Gobain, AIS Glass'],
+            ['Best Places to Use', 'Shower enclosures, glass doors, railings, partitions'],
+            {label: '✓ Pros', value: 'High strength, safer breakage', cls: 'pros'},
+            {label: '✕ Cons', value: 'Cannot be cut after tempering', cls: 'cons'},
+            ['Installation Method', 'Installed with glass fittings, clamps, or patch fittings'],
+            ['Maintenance', 'Clean with glass cleaner']
+          ]},
+          {title: 'Laminated Glass', rows: [
+            {label: 'Material', value: 'Made by bonding two or more layers of glass with a plastic interlayer, which holds the glass together when broken.'},
+            {label: 'Types', value: 'Clear Laminated Glass, Colored Laminated Glass'},
+            ['Sizes', 'Custom sizes'],
+            ['Thk (mm)', '6–12'],
+            ['Cost (sq.ft)', '₹250 – ₹500'],
+            ['Brands', 'Saint-Gobain, AIS Glass'],
+            ['Best Places to Use', 'Skylights, glass floors, railings, safety glazing'],
+            {label: '✓ Pros', value: 'High safety, sound insulation', cls: 'pros'},
+            {label: '✕ Cons', value: 'Expensive compared to regular glass', cls: 'cons'},
+            ['Installation Method', 'Installed in structural frames'],
+            ['Maintenance', 'Regular glass cleaning']
+          ]},
+          {title: 'Frosted Glass', rows: [
+            {label: 'Material', value: 'Glass that has been acid-etched or sandblasted to create a translucent surface that allows light while providing privacy.'},
+            {label: 'Types', value: 'Acid Etched Glass, Sandblasted Glass'},
+            ['Sizes', 'Custom sizes'],
+            ['Thk (mm)', '4–12'],
+            ['Cost (sq.ft)', '₹150 – ₹350'],
+            ['Brands', 'Saint-Gobain, AIS Glass'],
+            ['Best Places to Use', 'Bathroom partitions, office partitions, doors'],
+            {label: '✓ Pros', value: 'Provides privacy while allowing light', cls: 'pros'},
+            {label: '✕ Cons', value: 'Fingerprints can be visible', cls: 'cons'},
+            ['Installation Method', 'Installed in frames or partitions'],
+            ['Maintenance', 'Clean with mild glass cleaner']
+          ]},
+          {title: 'Tinted Glass', rows: [
+            {label: 'Material', value: 'Colored glass produced by adding metal oxides during manufacturing to reduce glare and solar heat gain.'},
+            {label: 'Types', value: 'Grey Glass, Bronze Glass, Blue Glass, Green Glass'},
+            ['Sizes', 'Custom sizes'],
+            ['Thk (mm)', '5–12'],
+            ['Cost (sq.ft)', '₹120 – ₹300'],
+            ['Brands', 'Saint-Gobain, AIS Glass'],
+            ['Best Places to Use', 'Facades, windows, decorative panels'],
+            {label: '✓ Pros', value: 'Reduces glare and sunlight', cls: 'pros'},
+            {label: '✕ Cons', value: 'Slightly reduces visibility', cls: 'cons'},
+            ['Installation Method', 'Installed in frames or curtain wall systems'],
+            ['Maintenance', 'Regular cleaning with glass cleaner']
+          ]},
+          {title: 'Lacquered/Back Painted Glass', rows: [
+            {label: 'Material', value: 'Clear float glass coated with colored paint on one side to create a decorative and glossy finish.'},
+            {label: 'Types', value: 'White Lacquered Glass, Colored Lacquered Glass'},
+            ['Sizes', 'Custom sizes'],
+            ['Thk (mm)', '5–8'],
+            ['Cost (sq.ft)', '₹200 – ₹450'],
+            ['Brands', 'Saint-Gobain, AIS Glass'],
+            ['Best Places to Use', 'Kitchen backsplashes, wardrobes, wall panels'],
+            {label: '✓ Pros', value: 'Smooth glossy finish, easy to clean', cls: 'pros'},
+            {label: '✕ Cons', value: 'Scratches can be visible', cls: 'cons'},
+            ['Installation Method', 'Fixed with adhesive or silicone on boards'],
+            ['Maintenance', 'Clean with soft cloth']
+          ]},
+          {title: 'Fluted Glass', rows: [
+            {label: 'Material', value: 'Decorative textured glass with vertical grooves or ribbed patterns on its surface, allowing partial light to pass through.'},
+            {label: 'Types', value: 'Clear Fluted Glass, Frosted Fluted Glass, Tinted Fluted Glass'},
+            ['Sizes', 'Custom sizes'],
+            ['Thk (mm)', '5, 6, 8, 10'],
+            ['Cost (sq.ft)', '₹350 – ₹900'],
+            ['Brands', 'Saint-Gobain, AIS Glass'],
+            ['Best Places to Use', 'Cabinet shutters, partitions, wardrobe shutters, sliding doors, shower enclosures, decorative panels'],
+            {label: '✓ Pros', value: 'Modern aesthetic, provides privacy while allowing light, decorative texture', cls: 'pros'},
+            {label: '✕ Cons', value: 'Grooves collect dust, slightly difficult to clean', cls: 'cons'},
+            ['Installation Method', 'Installed in aluminium, wooden, or metal frames or fixed using glass fittings'],
+            ['Maintenance', 'Clean carefully using glass cleaner and soft brush for grooves']
+          ]},
+          {title: 'Smoked Glass', rows: [
+            {label: 'Material', value: 'Tinted glass with a dark grey or brown tone that reduces glare and creates a sleek, modern look.'},
+            {label: 'Types', value: 'Grey Smoked Glass, Bronze Smoked Glass'},
+            ['Sizes', 'Custom sizes'],
+            ['Thk (mm)', '5, 6, 8, 10, 12'],
+            ['Cost (sq.ft)', '₹200 – ₹500'],
+            ['Brands', 'Saint-Gobain, AIS Glass'],
+            ['Best Places to Use', 'Cabinet shutters, partitions, offices, wardrobe shutters, tabletops'],
+            {label: '✓ Pros', value: 'Stylish modern look, reduces glare, hides clutter slightly', cls: 'pros'},
+            {label: '✕ Cons', value: 'Dark tint reduces transparency', cls: 'cons'},
+            ['Installation Method', 'Installed in frames or fixed with clamps and glass fittings'],
+            ['Maintenance', 'Regular cleaning with glass cleaner to avoid smudges']
+          ]},
+          {title: 'Sandwiched Glass', rows: [
+            {label: 'Material', value: 'Consists of two or more layers of glass bonded together with a plastic interlayer. Safer than regular glass.'},
+            {label: 'Types', value: 'Clear Laminated Glass, Frosted Laminated Glass, Colored Laminated Glass, Fabric Laminated Glass, Acoustic Laminated Glass'},
+            ['Sizes', 'Custom sizes'],
+            ['Thk (mm)', '10, 12, 16'],
+            ['Cost (sq.ft)', '₹250 – ₹800'],
+            ['Brands', 'Saint-Gobain, AIS Glass'],
+            ['Best Places to Use', 'Facades, Glass partitions, Shower enclosures, Railings, Office cabins'],
+            {label: '✓ Pros', value: 'Safety glass, Sound insulation properties, UV protection, Strong and durable', cls: 'pros'},
+            {label: '✕ Cons', value: 'More expensive, Edges must be sealed properly, Slightly heavier', cls: 'cons'},
+            ['Installation Method', 'Installed using aluminium channels, glass clamps, or patch fittings. Silicone sealant is used to seal the edges.'],
+            ['Maintenance', 'Clean using glass cleaner or mild soap solution']
+          ]},
+          {title: 'Smart Glass', rows: [
+            {label: 'Material', value: 'Also known as switchable glass. It changes from transparent to opaque when an electric current is applied.'},
+            {label: 'Types', value: 'Electrochromic Glass, Suspended Particle Device (SPD) Glass'},
+            ['Sizes', 'Custom sizes'],
+            ['Thk (mm)', '8–12'],
+            ['Cost (sq.ft)', '₹2500 – ₹8000'],
+            ['Brands', 'AIS Smart Glass, Smartglass International, Gauzy'],
+            ['Best Places to Use', 'Office meeting rooms, bathroom partitions, luxury homes, smart windows'],
+            {label: '✓ Pros', value: 'Instant privacy control, modern technology, eliminates need for curtains or blinds', cls: 'pros'},
+            {label: '✕ Cons', value: 'Expensive, requires electrical connection', cls: 'cons'},
+            ['Installation Method', 'Installed as laminated glass panels with electrical wiring connected to a switch or remote control'],
+            ['Maintenance', 'Clean with mild glass cleaner and avoid water contact with electrical connections']
+          ]}
         ]
       },
       limewash: {
@@ -5287,185 +5119,196 @@ window.addEventListener(
       tiles: {
         title: 'Types of Tiles',
         tableItems: [
-          'Vitrified Tiles||₹60 – ₹250 per sq ft||8–10 mm||Flooring, living rooms, bedrooms, commercial spaces||Kajaria, Somany, Nitco',
-          'Ceramic Tiles||₹30 – ₹120 per sq ft||6–8 mm||Bathroom walls, kitchen backsplashes||Kajaria, Johnson',
-          'Porcelain Tiles||₹80 – ₹300 per sq ft||8–12 mm||Flooring, outdoor areas, bathrooms, facades||Simpolo, Kajaria, RAK Ceramics',
-          'Natural Stone Tiles||₹150 – ₹800+ per sq ft||10–20 mm||Flooring, walls, feature areas||Galaxy',
-          'Cement Concrete Tiles||₹150 – ₹400 per sq ft||15–20 mm||Accent flooring, bathrooms, cafes||Bharat Floorings',
-          'Mosaic Tiles||₹200 – ₹800 per sq ft||4–8 mm||Backsplashes, bathrooms, pools||'
+          'Vitrified Tiles||₹60 – ₹250||8–10||Flooring, living rooms, bedrooms, commercial spaces||Kajaria, Somany, Nitco',
+          'Ceramic Tiles||₹30 – ₹120||6–8||Bathroom walls, kitchen backsplashes||Kajaria, Johnson',
+          'Porcelain Tiles||₹80 – ₹300||8–12||Flooring, outdoor areas, bathrooms, facades||Simpolo, Kajaria, RAK Ceramics',
+          'Natural Stone Tiles||₹150 – ₹800||10–20||Flooring, walls, feature areas||Galaxy',
+          'Cement Concrete Tiles||₹150 – ₹400||15–20||Accent flooring, bathrooms, cafes||Bharat Floorings',
+          'Mosaic Tiles||₹200 – ₹800||4–8||Backsplashes, bathrooms, pools||Galaxy'
         ],
         detailItems: [
           {title: 'Vitrified Tiles', rows: [
-            ['Cost (sq.ft)', '₹60 – ₹250 per sq ft'],
-            ['Thickness', '8–10 mm'],
-            ['Installation', 'Tile adhesive + spacers'],
-            ['Maintenance', 'Easy cleaning, no sealing required'],
-            ['Types', 'Double Charged, Full Body, Glazed Vitrified (GVT), Polished Glazed Vitrified (PGVT)'],
-            ['Sizes', '600×600 mm, 600×1200 mm, 800×1600 mm'],
-            ['Description', 'Highly durable tiles made from clay and silica, fired at high temperatures for low porosity and high strength.'],
-            {label: '\u2713 Pros', value: 'Durable, low maintenance, stain-resistant', cls: 'pros'},
-            {label: '\u2715 Cons', value: 'Can be slippery (polished), less natural look', cls: 'cons'},
-            ['Best Places to Use', 'Flooring, living rooms, bedrooms, commercial spaces']
+            {label: 'Material', value: 'Highly durable tiles made from clay and silica'},
+            {label: 'Types', value: 'Double Charged, Full Body, Glazed Vitrified (GVT), Polished Glazed Vitrified (PGVT)'},
+            ['Sizes (mm)', '600×600, 600×1200, 800×1600'],
+            ['Thk (mm)', '8–10'],
+            ['Slab Cost (sq.ft)', '₹60 – ₹250'],
+            ['Brands', 'Kajaria, Somany, Nitco'],
+            ['Best Places to Use', 'Flooring, living rooms, bedrooms, commercial spaces'],
+            {label: '✓ Pros', value: 'Durable, low maintenance, stain-resistant', cls: 'pros'},
+            {label: '✕ Cons', value: 'Can be slippery, less natural look', cls: 'cons'},
+            ['Installation Method', 'Tile adhesive + spacers'],
+            ['Maintenance', 'Easy cleaning, no sealing required']
           ]},
           {title: 'Ceramic Tiles', rows: [
-            ['Cost (sq.ft)', '₹30 – ₹120 per sq ft'],
-            ['Thickness', '6–8 mm'],
-            ['Installation', 'Tile adhesive'],
-            ['Maintenance', 'Easy cleaning'],
-            ['Types', 'Glazed, Unglazed, Digital Printed'],
-            ['Sizes', '300×300 mm, 300×600 mm'],
-            ['Description', 'Lightweight tiles made from natural clay, commonly used for walls.'],
-            {label: '\u2713 Pros', value: 'Affordable, wide designs, easy installation', cls: 'pros'},
-            {label: '\u2715 Cons', value: 'Less durable for heavy flooring', cls: 'cons'},
-            ['Best Places to Use', 'Bathroom walls, kitchen backsplashes']
+            {label: 'Material', value: 'Lightweight tiles made from natural clay'},
+            {label: 'Types', value: 'Glazed, Unglazed, Digital Printed'},
+            ['Sizes (mm)', '300×300, 300×600'],
+            ['Thk (mm)', '6–8'],
+            ['Slab Cost (sq.ft)', '₹30 – ₹120'],
+            ['Brands', 'Kajaria, Johnson'],
+            ['Best Places to Use', 'Bathroom walls, kitchen backsplashes'],
+            {label: '✓ Pros', value: 'Affordable, wide designs, easy installation', cls: 'pros'},
+            {label: '✕ Cons', value: 'Less durable for heavy flooring', cls: 'cons'},
+            ['Installation Method', 'Tile adhesive'],
+            ['Maintenance', 'Easy cleaning']
           ]},
           {title: 'Porcelain Tiles', rows: [
-            ['Cost (sq.ft)', '₹80 – ₹300 per sq ft'],
-            ['Thickness', '8–12 mm'],
-            ['Installation', 'Tile adhesive (heavy-duty for large slabs)'],
-            ['Maintenance', 'Low maintenance'],
-            ['Types', 'Full Body, Glazed, Matte, Polished'],
-            ['Sizes', '600×600 mm, 600×1200 mm, large slabs up to 1200×2400 mm'],
-            ['Description', 'Dense, high-strength tiles with very low water absorption, ideal for heavy-duty use.'],
-            {label: '\u2713 Pros', value: 'Highly durable, water-resistant, versatile', cls: 'pros'},
-            {label: '\u2715 Cons', value: 'Costlier than ceramic', cls: 'cons'},
-            ['Best Places to Use', 'Flooring, outdoor areas, bathrooms, facades']
+            {label: 'Material', value: 'Dense, high-strength tiles with very low water absorption, ideal for heavy-duty use.'},
+            {label: 'Types', value: 'Full Body, Glazed, Matte, Polished'},
+            ['Sizes (mm)', '600×600, 600×1200, 1200×2400'],
+            ['Thk (mm)', '8–12'],
+            ['Slab Cost (sq.ft)', '₹80 – ₹300'],
+            ['Brands', 'Simpolo, Kajaria, RAK Ceramics'],
+            ['Best Places to Use', 'Flooring, outdoor areas, bathrooms, facades'],
+            {label: '✓ Pros', value: 'Highly durable, water-resistant, versatile', cls: 'pros'},
+            {label: '✕ Cons', value: 'Costlier than ceramic', cls: 'cons'},
+            ['Installation Method', 'Tile adhesive for heavy-duty for large slabs'],
+            ['Maintenance', 'Low maintenance']
           ]},
           {title: 'Natural Stone Tiles', rows: [
-            ['Cost (sq.ft)', '₹150 – ₹800+ per sq ft'],
-            ['Thickness', '10–20 mm'],
-            ['Installation', 'Cement bedding or stone adhesive'],
-            ['Maintenance', 'Sealing required'],
-            ['Types', 'Marble, Granite, Slate, Travertine'],
-            ['Sizes', '300×300 mm, 600×600 mm (custom sizes available)'],
-            ['Description', 'Tiles made from natural stones like marble, granite, slate, or travertine.'],
-            {label: '\u2713 Pros', value: 'Natural beauty, premium finish', cls: 'pros'},
-            {label: '\u2715 Cons', value: 'Requires maintenance, can stain', cls: 'cons'},
-            ['Best Places to Use', 'Flooring, walls, feature areas']
+            {label: 'Material', value: 'Tiles made from natural stones like marble, granite, slate, or travertine.'},
+            {label: 'Types', value: 'Marble, Granite, Slate, Travertine'},
+            ['Sizes (mm)', '300×300, 600×600'],
+            ['Thk (mm)', '10–20'],
+            ['Slab Cost (sq.ft)', '₹150 – ₹800'],
+            ['Brands', 'Galaxy'],
+            ['Best Places to Use', 'Flooring, walls, feature areas'],
+            {label: '✓ Pros', value: 'Natural beauty, premium finish', cls: 'pros'},
+            {label: '✕ Cons', value: 'Requires maintenance, can stain', cls: 'cons'},
+            ['Installation Method', 'Cement bedding or stone adhesive'],
+            ['Maintenance', 'Sealing required']
           ]},
           {title: 'Cement Concrete Tiles', rows: [
-            ['Cost (sq.ft)', '₹150 – ₹400 per sq ft'],
-            ['Thickness', '15–20 mm'],
-            ['Installation', 'Cement bedding'],
-            ['Maintenance', 'Regular sealing required'],
-            ['Types', 'Encaustic Tiles, Plain Cement Tiles'],
-            ['Sizes', '200×200 mm, 300×300 mm'],
-            ['Description', 'Handmade tiles with pigmented cement, known for bold patterns and matte finish.'],
-            {label: '\u2713 Pros', value: 'Unique patterns, artisanal look', cls: 'pros'},
-            {label: '\u2715 Cons', value: 'Porous, needs sealing', cls: 'cons'},
-            ['Best Places to Use', 'Accent flooring, bathrooms, cafes']
+            {label: 'Material', value: 'Handmade tiles with pigmented cement, with bold patterns and matte finish.'},
+            {label: 'Types', value: 'Encaustic Tiles, Plain Cement Tiles'},
+            ['Sizes (mm)', '200×200, 300×300'],
+            ['Thk (mm)', '15–20'],
+            ['Slab Cost (sq.ft)', '₹150 – ₹400'],
+            ['Brands', 'Bharat Floorings'],
+            ['Best Places to Use', 'Accent flooring, bathrooms, cafes'],
+            {label: '✓ Pros', value: 'Unique patterns, artisanal look', cls: 'pros'},
+            {label: '✕ Cons', value: 'Porous, needs sealing', cls: 'cons'},
+            ['Installation Method', 'Cement bedding'],
+            ['Maintenance', 'Regular sealing required']
           ]},
           {title: 'Mosaic Tiles', rows: [
-            ['Cost (sq.ft)', '₹200 – ₹800 per sq ft'],
-            ['Thickness', '4–8 mm'],
-            ['Installation', 'Tile adhesive'],
-            ['Maintenance', 'Regular grout cleaning'],
-            ['Types', 'Glass, Ceramic, Stone Mosaic'],
-            ['Sizes', 'Sheets (300\u00d7300 mm typical)'],
-            ['Description', 'Small tiles arranged in patterns, often mounted on mesh sheets.'],
-            {label: '\u2713 Pros', value: 'Decorative, flexible for curved surfaces', cls: 'pros'},
-            {label: '\u2715 Cons', value: 'Expensive, grout-heavy maintenance', cls: 'cons'},
-            ['Best Places to Use', 'Backsplashes, bathrooms, pools']
+            {label: 'Material', value: 'Small tiles arranged in patterns, mounted on mesh sheets.'},
+            {label: 'Types', value: 'Glass, Ceramic, Stone Mosaic'},
+            ['Sizes (mm)', '300×300 sheets'],
+            ['Thk (mm)', '4–8'],
+            ['Slab Cost (sq.ft)', '₹200 – ₹800'],
+            ['Brands', 'Galaxy'],
+            ['Best Places to Use', 'Backsplashes, bathrooms, pools'],
+            {label: '✓ Pros', value: 'Decorative, flexible for curved surfaces', cls: 'pros'},
+            {label: '✕ Cons', value: 'Expensive, grout-heavy maintenance', cls: 'cons'},
+            ['Installation Method', 'Tile adhesive'],
+            ['Maintenance', 'Regular grout cleaning']
           ]}
         ]
       },
       quartz: {
         title: 'Quartz',
         tableItems: [
-          'Calacatta Quartz||₹300 – ₹800 / sq.ft||15–20||Kitchen countertops, islands, backsplashes, bathrooms||Caesarstone, KalingaStone, Specta, AGL Quartz',
-          'Carrara Quartz||₹250 – ₹600 / sq.ft||15–20||Countertops, bathrooms, wall cladding||KalingaStone, Caesarstone',
-          'Solid White Quartz||₹200 – ₹500 / sq.ft||15–20||Kitchen countertops, lab counters, modern interiors||AGL Quartz, KalingaStone',
-          'Black Quartz||₹250 – ₹700 / sq.ft||15–20||Countertops, vanities, feature walls||Caesarstone, KalingaStone',
-          'Grey Quartz||₹220 – ₹600 / sq.ft||15–20||Kitchens, bathrooms, commercial spaces||AGL Quartz, KalingaStone',
-          'Terrazzo Quartz||₹300 – ₹700 / sq.ft||15–18||Countertops, feature walls, cafes, retail||AGL Quartz',
-          'Brown Quartz||₹250 – ₹700 / sq.ft||15–20||Kitchen countertops, bar units, vanities, feature counters||KalingaStone, Caesarstone, AGL Quartz'
+          'Calacatta Quartz||₹300 – ₹800||15–20||Kitchen countertops, islands, backsplashes, bathrooms||Caesarstone, KalingaStone, Specta, AGL Quartz',
+          'Carrara Quartz||₹250 – ₹600||15–20||Countertops, bathrooms, wall cladding||KalingaStone, Caesarstone',
+          'Solid White Quartz||₹200 – ₹500||15–20||Kitchen countertops, lab counters, modern interiors||AGL Quartz, KalingaStone',
+          'Black Quartz||₹250 – ₹700||15–20||Countertops, vanities, feature walls||Caesarstone, KalingaStone',
+          'Grey Quartz||₹220 – ₹600||15–20||Kitchens, bathrooms, commercial spaces||AGL Quartz, KalingaStone',
+          'Terrazzo Quartz||₹300 – ₹700||15–18||Countertops, feature walls, cafes, retail||AGL Quartz',
+          'Brown Quartz||₹250 – ₹700||15–20||Kitchen countertops, bar units, vanities, feature counters||KalingaStone, Caesarstone, AGL Quartz'
         ],
         detailItems: [
           {title: 'Calacatta Quartz', rows: [
-            ['Cost (sq.ft)', '₹300 – ₹800 / sq.ft'],
-            ['Thickness', '15–20 mm'],
-            ['Description', 'Engineered quartz with bright white base and bold grey veining.'],
-            ['Types', 'Calacatta Gold, Classic, Oro'],
-            ['Sizes', 'Slabs (8\u00d710 ft), jumbo slabs'],
-            ['Installation', 'Adhesive on base'],
-            ['Maintenance', 'Low maintenance; no sealing'],
-            {label: '\u2713 Pros', value: 'Marble-like look, non-porous, stain-resistant, premium', cls: 'pros'},
-            {label: '\u2715 Cons', value: 'Expensive, visible seams', cls: 'cons'},
+            {label: 'Material', value: 'Engineered quartz with a bright white base and bold grey veining'},
+            {label: 'Types', value: 'Calacatta Gold, Calacatta Classic, Calacatta Oro'},
+            ['Sizes', 'Slabs (8–10 ft length, 4–5 ft width)'],
+            ['Thk (mm)', '15, 18, 20'],
+            ['Cost (sq.ft)', '₹300 – ₹800'],
+            ['Brands', 'Caesarstone, KalingaStone, Specta, AGL Quartz'],
             ['Best Places to Use', 'Kitchen countertops, islands, backsplashes, bathrooms'],
-            ['Brands', 'Caesarstone, KalingaStone, Specta, AGL Quartz']
+            {label: '✓ Pros', value: 'Marble-like aesthetic, non-porous, stain-resistant, premium look', cls: 'pros'},
+            {label: '✕ Cons', value: 'Expensive, visible seams in large areas', cls: 'cons'},
+            ['Installation Method', 'Installed using adhesive on plywood/stone base'],
+            ['Maintenance', 'Very low maintenance; no sealing required']
           ]},
           {title: 'Carrara Quartz', rows: [
-            ['Cost (sq.ft)', '₹250 – ₹600 / sq.ft'],
-            ['Thickness', '15–20 mm'],
-            ['Description', 'Engineered quartz with white base and soft subtle grey veins.'],
-            ['Types', 'Carrara Classic, Carrara Mix'],
-            ['Sizes', 'Standard and jumbo slabs'],
-            ['Installation', 'Adhesive on base'],
-            ['Maintenance', 'Easy cleaning; no sealing required'],
-            {label: '\u2713 Pros', value: 'Elegant and versatile, stain-resistant, low maintenance', cls: 'pros'},
-            {label: '\u2715 Cons', value: 'Premium pricing compared to other options', cls: 'cons'},
+            {label: 'Material', value: 'Subtle white quartz with soft grey veining'},
+            {label: 'Types', value: 'Carrara White, Carrara Mist'},
+            ['Sizes', 'Slabs 8–10 ft'],
+            ['Thk (mm)', '15, 18, 20'],
+            ['Cost (sq.ft)', '₹250 – ₹600'],
+            ['Brands', 'KalingaStone, Caesarstone'],
             ['Best Places to Use', 'Countertops, bathrooms, wall cladding'],
-            ['Brands', 'KalingaStone, Caesarstone']
+            {label: '✓ Pros', value: 'Elegant, consistent pattern, budget-friendly vs Calacatta', cls: 'pros'},
+            {label: '✕ Cons', value: 'Less dramatic appearance', cls: 'cons'},
+            ['Installation Method', 'Adhesive on base substrate'],
+            ['Maintenance', 'Low maintenance; no sealing']
           ]},
           {title: 'Solid White Quartz', rows: [
-            ['Cost (sq.ft)', '₹200 – ₹500 / sq.ft'],
-            ['Thickness', '15–20 mm'],
-            ['Description', 'Uniform bright white quartz with no veining.'],
-            ['Types', 'Pure White, Snow White, Polar White'],
-            ['Installation', 'Adhesive on base'],
-            ['Maintenance', 'Simple cleaning; no sealing needed'],
-            {label: '\u2713 Pros', value: 'Minimal and clean look, versatile, affordable', cls: 'pros'},
-            {label: '\u2715 Cons', value: 'Can look plain, may show seams', cls: 'cons'},
+            {label: 'Material', value: 'Plain white engineered quartz with a clean, uniform appearance'},
+            {label: 'Types', value: 'Pure White, Super White, Arctic White'},
+            ['Sizes', 'Slabs 8–10 ft'],
+            ['Thk (mm)', '15, 18, 20'],
+            ['Cost (sq.ft)', '₹200 – ₹500'],
+            ['Brands', 'AGL Quartz, KalingaStone'],
             ['Best Places to Use', 'Kitchen countertops, lab counters, modern interiors'],
-            ['Brands', 'AGL Quartz, KalingaStone']
+            {label: '✓ Pros', value: 'Clean look, consistent color, easy to match', cls: 'pros'},
+            {label: '✕ Cons', value: 'Shows stains/dirt if not cleaned regularly', cls: 'cons'},
+            ['Installation Method', 'Adhesive on base'],
+            ['Maintenance', 'Easy cleaning; no sealing']
           ]},
           {title: 'Black Quartz', rows: [
-            ['Cost (sq.ft)', '₹250 – ₹700 / sq.ft'],
-            ['Thickness', '15–20 mm'],
-            ['Description', 'Deep black quartz with subtle patterns.'],
-            ['Types', 'Nero Marquina, Absolute Black, Midnight Black'],
-            ['Installation', 'Adhesive on base'],
-            ['Maintenance', 'Easy maintenance; no sealing'],
-            {label: '\u2713 Pros', value: 'Dramatic and bold, modern aesthetic, non-porous', cls: 'pros'},
-            {label: '\u2715 Cons', value: 'Shows fingerprints, limited pairing options', cls: 'cons'},
+            {label: 'Material', value: 'Deep black quartz available in plain or speckled finishes'},
+            {label: 'Types', value: 'Absolute Black Quartz, Black Mirror Quartz'},
+            ['Sizes', 'Slabs 8–10 ft'],
+            ['Thk (mm)', '15, 18, 20'],
+            ['Cost (sq.ft)', '₹250 – ₹700'],
+            ['Brands', 'Caesarstone, KalingaStone'],
             ['Best Places to Use', 'Countertops, vanities, feature walls'],
-            ['Brands', 'Caesarstone, KalingaStone']
+            {label: '✓ Pros', value: 'Premium look, non-porous, stain-resistant', cls: 'pros'},
+            {label: '✕ Cons', value: 'Shows fingerprints and dust', cls: 'cons'},
+            ['Installation Method', 'Adhesive installation'],
+            ['Maintenance', 'Easy cleaning']
           ]},
           {title: 'Grey Quartz', rows: [
-            ['Cost (sq.ft)', '₹220 – ₹600 / sq.ft'],
-            ['Thickness', '15–20 mm'],
-            ['Description', 'Mid-grey quartz with contemporary look.'],
-            ['Types', 'Grigio, Concrete Grey, Silver Grey'],
-            ['Installation', 'Adhesive on base'],
-            ['Maintenance', 'Low maintenance; wipe clean'],
-            {label: '\u2713 Pros', value: 'Modern and neutral, hides wear, versatile', cls: 'pros'},
-            {label: '\u2715 Cons', value: 'Can look cold in some settings', cls: 'cons'},
+            {label: 'Material', value: 'Neutral grey quartz with uniform or textured finishes'},
+            {label: 'Types', value: 'Concrete Grey, Ash Grey, Cement Quartz'},
+            ['Sizes', 'Slabs 8–10 ft'],
+            ['Thk (mm)', '15, 18, 20'],
+            ['Cost (sq.ft)', '₹220 – ₹600'],
+            ['Brands', 'AGL Quartz, KalingaStone'],
             ['Best Places to Use', 'Kitchens, bathrooms, commercial spaces'],
-            ['Brands', 'AGL Quartz, KalingaStone']
+            {label: '✓ Pros', value: 'Modern look, versatile, hides stains better than white', cls: 'pros'},
+            {label: '✕ Cons', value: 'Can look flat if not paired well', cls: 'cons'},
+            ['Installation Method', 'Adhesive on substrate'],
+            ['Maintenance', 'Low maintenance']
           ]},
           {title: 'Terrazzo Quartz', rows: [
-            ['Cost (sq.ft)', '₹300 – ₹700 / sq.ft'],
-            ['Thickness', '15–18 mm'],
-            ['Description', 'Multi-colour chip quartz for fun modern look.'],
-            ['Types', 'Classic Terrazzo, Colourful Terrazzo'],
-            ['Installation', 'Adhesive on base'],
-            ['Maintenance', 'Easy cleaning; no sealing'],
-            {label: '\u2713 Pros', value: 'Unique and modern, variety of colours, durable', cls: 'pros'},
-            {label: '\u2715 Cons', value: 'Busy pattern may not suit all styles', cls: 'cons'},
+            {label: 'Material', value: 'Quartz designed with chip-like patterns to mimic terrazzo, adding texture and visual interest.'},
+            {label: 'Types', value: 'Fine Chip, Large Chip Terrazzo Quartz'},
+            ['Sizes', 'Slabs 8–10 ft'],
+            ['Thk (mm)', '15, 18'],
+            ['Cost (sq.ft)', '₹300 – ₹700'],
+            ['Brands', 'AGL Quartz'],
             ['Best Places to Use', 'Countertops, feature walls, cafes, retail'],
-            ['Brands', 'AGL Quartz']
+            {label: '✓ Pros', value: 'Unique design, trendy, hides stains well', cls: 'pros'},
+            {label: '✕ Cons', value: 'Not suitable for minimal aesthetics', cls: 'cons'},
+            ['Installation Method', 'Adhesive installation'],
+            ['Maintenance', 'Easy cleaning']
           ]},
           {title: 'Brown Quartz', rows: [
-            ['Cost (sq.ft)', '₹250 – ₹700 / sq.ft'],
-            ['Thickness', '15–20 mm'],
-            ['Description', 'Warm brown engineered quartz with subtle speckled patterns.'],
-            ['Types', 'Brown Classic, Chocolate Brown, Cappuccino'],
-            ['Installation', 'Adhesive on base'],
-            ['Maintenance', 'Easy cleaning; no sealing needed'],
-            {label: '\u2713 Pros', value: 'Warm earthy tone, non-porous, durable, versatile', cls: 'pros'},
-            {label: '\u2715 Cons', value: 'Limited colour pairing, less popular', cls: 'cons'},
+            {label: 'Material', value: 'Engineered quartz in warm brown tones ranging from light beige to deep chocolate'},
+            {label: 'Types', value: 'Caramel Brown, Cappuccino, Coffee Brown, Espresso Brown, Veined Brown Quartz'},
+            ['Sizes', 'Slabs (8–10 ft length, 4–5 ft width)'],
+            ['Thk (mm)', '15, 18, 20'],
+            ['Cost (sq.ft)', '₹250 – ₹700'],
+            ['Brands', 'KalingaStone, Caesarstone, AGL Quartz'],
             ['Best Places to Use', 'Kitchen countertops, bar units, vanities, feature counters'],
-            ['Brands', 'KalingaStone, Caesarstone, AGL Quartz']
+            {label: '✓ Pros', value: 'Warm aesthetic, hides stains better than white, non-porous, durable', cls: 'pros'},
+            {label: '✕ Cons', value: 'Can make small spaces look darker, less commonly used than white/grey', cls: 'cons'},
+            ['Installation Method', 'Installed using adhesive on plywood/stone base'],
+            ['Maintenance', 'Very low maintenance; no sealing required']
           ]}
         ]
       },
@@ -5543,105 +5386,105 @@ window.addEventListener(
       'granite': {
         title: 'Types of Granite (Detailed)',
         tableItems: [
-          'Black Granite||₹180 – ₹700 per sq ft||16–20 mm (standard), 20–30 mm (countertops)||Kitchen countertops, flooring, staircases, wall cladding||RK Marble, Classic Marble Company',
-          'Black Galaxy Granite||₹250 – ₹800 per sq ft||16–20 mm, 20–30 mm||Kitchen countertops, feature walls, tabletops||RK Marble, Classic Marble Company',
-          'Steel Grey Granite||₹150 – ₹400 per sq ft||16–20 mm, 20–30 mm (countertops)||Kitchen countertops, flooring, outdoor areas||RK Marble, Classic Marble Company',
-          'Tan Brown Granite||₹140 – ₹350 per sq ft||16–20 mm, 20–30 mm||Countertops, flooring, staircases||RK Marble, Classic Marble Company',
-          'Viscount White Granite||₹180 – ₹450 per sq ft||16–20 mm (standard), 20–30 mm (countertops)||Flooring, kitchen countertops, wall cladding, staircases||RK Marble, Classic Marble Company',
-          'Alaska White Granite||₹250 – ₹700 per sq ft||16–20 mm (standard), 20–30 mm (countertops)||Kitchen countertops, islands, feature walls, bathrooms||RK Marble, Classic Marble Company',
-          'Imperial Red Granite||₹140 – ₹350 per sq ft||16–20 mm (standard), 20–30 mm (countertops & heavy-duty use)||Flooring, staircases, exterior cladding, kitchen countertops, commercial spaces||RK Marble, Classic Marble Company'
+          'Black Granite||₹180 – ₹700||16–20, 20–30||Kitchen countertops, flooring, staircases, wall cladding||RK Marble, Classic Marble Company',
+          'Black Galaxy Granite||₹250 – ₹800||16–20, 20–30||Kitchen countertops, feature walls, tabletops||RK Marble, Classic Marble Company',
+          'Steel Grey Granite||₹150 – ₹400||16–20, 20–30||Kitchen countertops, flooring, outdoor areas||RK Marble, Classic Marble Company',
+          'Tan Brown Granite||₹140 – ₹350||16–20, 20–30||Countertops, flooring, staircases||RK Marble, Classic Marble Company',
+          'Viscount White Granite||₹180 – ₹450||16–20, 20–30||Flooring, kitchen countertops, wall cladding, staircases||RK Marble, Classic Marble Company',
+          'Alaska White Granite||₹250 – ₹700||16–20, 20–30||Kitchen countertops, islands, feature walls, bathrooms||RK Marble, Classic Marble Company',
+          'Imperial Red Granite||₹140 – ₹350||16–20, 20–30||Flooring, staircases, exterior cladding, kitchen countertops, commercial spaces||RK Marble, Classic Marble Company'
         ],
         detailItems: [
           {title: 'Black Granite', rows: [
-            ['Cost (sq.ft)', '₹180 – ₹700 per sq ft'],
-            ['Thickness', '16–20 mm (standard), 20–30 mm (countertops)'],
-            ['Description', 'Deep black, uniform granite with a sleek and modern appearance, widely used in premium interiors.'],
+            {label: 'Material', value: 'Deep black, uniform granite with a sleek and modern appearance.'},
             ['Types', 'Absolute Black, Premium Black, Jet Black'],
             ['Sizes', 'Slabs (8–10 ft), Cut sizes (2×2 ft, 2×4 ft)'],
-            ['Installation Method', 'Cement mortar or stone adhesive'],
-            ['Maintenance', 'Easy cleaning; occasional sealing recommended'],
+            ['Thk (mm)', '16–20, 20–30'],
+            ['Cost (sq.ft)', '₹180 – ₹700'],
+            ['Brands', 'RK Marble, Classic Marble Company'],
+            ['Best Places to Use', 'Kitchen countertops, flooring, staircases, wall cladding'],
             {label: '\u2713 Pros', value: 'Highly durable, stain-resistant, premium look, easy to maintain', cls: 'pros'},
             {label: '\u2715 Cons', value: 'Shows dust and fingerprints, limited pattern variation', cls: 'cons'},
-            ['Best Places to Use', 'Kitchen countertops, flooring, staircases, wall cladding'],
-            ['Brands', 'RK Marble, Classic Marble Company']
+            ['Installation Method', 'Cement mortar or stone adhesive'],
+            ['Maintenance', 'Easy cleaning; occasional sealing recommended']
           ]},
           {title: 'Black Galaxy Granite', rows: [
-            ['Cost (sq.ft)', '₹250 – ₹800 per sq ft'],
-            ['Thickness', '16–20 mm, 20–30 mm'],
-            ['Description', 'Black granite with gold or white specks resembling a starry sky, creating a luxurious appearance.'],
+            {label: 'Material', value: 'Black granite with gold or white specks.'},
             ['Types', 'Small Galaxy, Medium Galaxy, Premium Galaxy'],
-            ['Sizes', 'Slabs (8–10 ft), Cut tiles'],
-            ['Installation Method', 'Cement mortar or stone adhesive'],
-            ['Maintenance', 'Easy cleaning; periodic sealing'],
+            ['Sizes', 'Slabs 8–10 ft'],
+            ['Thk (mm)', '16–20, 20–30'],
+            ['Cost (sq.ft)', '₹250 – ₹800'],
+            ['Brands', 'RK Marble, Classic Marble Company'],
+            ['Best Places to Use', 'Kitchen countertops, feature walls, tabletops'],
             {label: '\u2713 Pros', value: 'Luxurious look, durable, unique pattern', cls: 'pros'},
             {label: '\u2715 Cons', value: 'Costlier than other granites', cls: 'cons'},
-            ['Best Places to Use', 'Kitchen countertops, feature walls, tabletops'],
-            ['Brands', 'RK Marble, Classic Marble Company']
+            ['Installation Method', 'Cement mortar or stone adhesive'],
+            ['Maintenance', 'Easy cleaning; periodic sealing']
           ]},
           {title: 'Steel Grey Granite', rows: [
-            ['Cost (sq.ft)', '₹150 – ₹400 per sq ft'],
-            ['Thickness', '16–20 mm, 20–30 mm (countertops)'],
-            ['Description', 'Grey granite with subtle speckled patterns, offering a contemporary and neutral aesthetic.'],
+            {label: 'Material', value: 'Grey granite with subtle speckled patterns.'},
             ['Types', 'Steel Grey Polished, Steel Grey Leather Finish'],
-            ['Sizes', 'Slabs (8–10 ft), Cut sizes'],
-            ['Installation Method', 'Cement mortar or stone adhesive'],
-            ['Maintenance', 'Low maintenance; periodic sealing'],
+            ['Sizes', 'Slabs 8–10 ft'],
+            ['Thk (mm)', '16–20, 20–30'],
+            ['Cost (sq.ft)', '₹150 – ₹400'],
+            ['Brands', 'RK Marble, Classic Marble Company'],
+            ['Best Places to Use', 'Kitchen countertops, flooring, outdoor areas'],
             {label: '\u2713 Pros', value: 'Durable, budget-friendly, hides dust well', cls: 'pros'},
             {label: '\u2715 Cons', value: 'Less luxurious compared to marble, limited veining', cls: 'cons'},
-            ['Best Places to Use', 'Kitchen countertops, flooring, outdoor areas'],
-            ['Brands', 'RK Marble, Classic Marble Company']
+            ['Installation Method', 'Cement mortar or stone adhesive'],
+            ['Maintenance', 'Low maintenance; periodic sealing']
           ]},
           {title: 'Tan Brown Granite', rows: [
-            ['Cost (sq.ft)', '₹140 – ₹350 per sq ft'],
-            ['Thickness', '16–20 mm, 20–30 mm'],
-            ['Description', 'Dark brown granite with black and reddish specks, giving a warm and rich appearance.'],
+            {label: 'Material', value: 'Dark brown granite with black and reddish specks.'},
             ['Types', 'Tan Brown Classic, Tan Brown Dark'],
-            ['Sizes', 'Slabs (8–10 ft), Cut tiles'],
-            ['Installation Method', 'Cement mortar or stone adhesive'],
-            ['Maintenance', 'Easy cleaning; occasional sealing'],
+            ['Sizes', 'Slabs 8–10 ft'],
+            ['Thk (mm)', '16–20, 20–30'],
+            ['Cost (sq.ft)', '₹140 – ₹350'],
+            ['Brands', 'RK Marble, Classic Marble Company'],
+            ['Best Places to Use', 'Countertops, flooring, staircases'],
             {label: '\u2713 Pros', value: 'Affordable, durable, warm tones', cls: 'pros'},
             {label: '\u2715 Cons', value: 'Busy pattern may not suit minimal interiors', cls: 'cons'},
-            ['Best Places to Use', 'Countertops, flooring, staircases'],
-            ['Brands', 'RK Marble, Classic Marble Company']
+            ['Installation Method', 'Cement mortar or stone adhesive'],
+            ['Maintenance', 'Easy cleaning; occasional sealing']
           ]},
           {title: 'Viscount White Granite', rows: [
-            ['Cost (sq.ft)', '₹180 – ₹450 per sq ft'],
-            ['Thickness', '16–20 mm (standard), 20–30 mm (countertops)'],
-            ['Description', 'A white to light grey granite with flowing linear black and grey veins, closely resembling marble and ideal for modern interiors.'],
+            {label: 'Material', value: 'A white to light grey granite with flowing linear black and grey veins.'},
             ['Types', 'Viscount White Classic, Viscount White Premium'],
-            ['Sizes', 'Slabs (8–10 ft length, 4–6 ft width), Cut sizes'],
-            ['Installation Method', 'Cement mortar or stone adhesive'],
-            ['Maintenance', 'Easy maintenance; periodic sealing recommended'],
+            ['Sizes', 'Slabs (8–10 ft length, 4–6 ft width)'],
+            ['Thk (mm)', '16–20, 20–30'],
+            ['Cost (sq.ft)', '₹180 – ₹450'],
+            ['Brands', 'RK Marble, Classic Marble Company'],
+            ['Best Places to Use', 'Flooring, kitchen countertops, wall cladding, staircases'],
             {label: '\u2713 Pros', value: 'Marble-like look, durable, cost-effective, widely available', cls: 'pros'},
             {label: '\u2715 Cons', value: 'Pattern variation between slabs, may require careful selection', cls: 'cons'},
-            ['Best Places to Use', 'Flooring, kitchen countertops, wall cladding, staircases'],
-            ['Brands', 'RK Marble, Classic Marble Company']
+            ['Installation Method', 'Cement mortar or stone adhesive'],
+            ['Maintenance', 'Easy maintenance; periodic sealing recommended']
           ]},
           {title: 'Alaska White Granite', rows: [
-            ['Cost (sq.ft)', '₹250 – ₹700 per sq ft'],
-            ['Thickness', '16–20 mm (standard), 20–30 mm (countertops)'],
-            ['Description', 'A premium white granite with dramatic grey, black, and beige patterns, offering a luxurious and high-end marble-like appearance.'],
+            {label: 'Material', value: 'A premium white granite with dramatic grey, black, and beige patterns.'},
             ['Types', 'Alaska White Standard, Alaska White Premium'],
-            ['Sizes', 'Slabs (8–10 ft length, 4–6 ft width), Cut sizes'],
-            ['Installation Method', 'Cement mortar or stone adhesive'],
-            ['Maintenance', 'Periodic sealing recommended; easy cleaning'],
+            ['Sizes', 'Slabs (8–10 ft length, 4–6 ft width)'],
+            ['Thk (mm)', '16–20, 20–30'],
+            ['Cost (sq.ft)', '₹250 – ₹700'],
+            ['Brands', 'RK Marble, Classic Marble Company'],
+            ['Best Places to Use', 'Kitchen countertops, islands, feature walls, bathrooms'],
             {label: '\u2713 Pros', value: 'Premium aesthetic, unique patterns, durable, enhances luxury appeal', cls: 'pros'},
             {label: '\u2715 Cons', value: 'Higher cost, high variation in patterns, requires selection from slabs', cls: 'cons'},
-            ['Best Places to Use', 'Kitchen countertops, islands, feature walls, bathrooms'],
-            ['Brands', 'RK Marble, Classic Marble Company']
+            ['Installation Method', 'Cement mortar or stone adhesive'],
+            ['Maintenance', 'Periodic sealing recommended; easy cleaning']
           ]},
           {title: 'Imperial Red Granite', rows: [
-            ['Cost (sq.ft)', '₹140 – ₹350 per sq ft'],
-            ['Thickness', '16–20 mm (standard), 20–30 mm (countertops & heavy-duty use)'],
-            ['Description', 'A rich, deep red granite with black and grey crystalline specks, known for its bold appearance and high durability.'],
+            {label: 'Material', value: 'A rich, deep red granite with black and grey crystalline specks.'},
             ['Types', 'Imperial Red, New Imperial Red, Ruby Red, Jhansi Red'],
             ['Sizes', 'Slabs (8–10 ft length, 4–6 ft width), Cut tiles (2×2 ft, 2×4 ft)'],
-            ['Installation Method', 'Cement mortar or stone adhesive'],
-            ['Maintenance', 'Easy maintenance; periodic sealing recommended'],
+            ['Thk (mm)', '16–20, 20–30'],
+            ['Cost (sq.ft)', '₹140 – ₹350'],
+            ['Brands', 'RK Marble, Classic Marble Company'],
+            ['Best Places to Use', 'Flooring, staircases, exterior cladding, kitchen countertops, commercial spaces'],
             {label: '\u2713 Pros', value: 'Extremely durable, weather-resistant, bold color, low maintenance, widely available', cls: 'pros'},
             {label: '\u2715 Cons', value: 'Strong color may not suit modern minimal interiors, busy pattern', cls: 'cons'},
-            ['Best Places to Use', 'Flooring, staircases, exterior cladding, kitchen countertops, commercial spaces'],
-            ['Brands', 'RK Marble, Classic Marble Company']
+            ['Installation Method', 'Cement mortar or stone adhesive'],
+            ['Maintenance', 'Easy maintenance; periodic sealing recommended']
           ]}
         ]
       },
@@ -5674,6 +5517,139 @@ window.addEventListener(
           '08 Stone Finish Laminate||₹120 – ₹350 / sq.ft||1 mm||Stone-like look||Repetitive patterns||TV units, kitchens'
         ]
       },
+      laminates: {
+        title: 'Types of Laminates',
+        tableItems: [
+          'Regular Laminate||₹70 – ₹250||0.8, 1||Wardrobes, kitchen shutters, TV units, furniture||Greenlam, Merino, CenturyPly, Royale Touche',
+          'PVC Laminate||₹50 – ₹200||0.3 – 1||Modular kitchens, wardrobes, curved furniture||Greenlam, Merino',
+          'High Pressure Laminate||₹80 – ₹400||0.8 – 1.5||Furniture, wardrobes, kitchen shutters||Greenlam, Merino, CenturyPly, Royale Touche',
+          'Prelam Board||₹60 – ₹150||18||Budget furniture, wardrobes, office furniture||Greenpanel',
+          'Core Laminate||₹300 – ₹1200||6 – 12||Toilet cubicles, partitions, outdoor furniture||Greenlam Compact, Merino, Signature',
+          'Acrylic Laminate||₹250 – ₹700||1 – 2||Kitchen shutters, wardrobes||Greenlam, Advance Laminates',
+          'Anti-Fingerprint Laminate||₹200 – ₹500||1||Kitchens, wardrobes, offices||Greenlam, Royale Touche',
+          'Textured Decorative Laminate||₹100 – ₹350||0.8 – 1||Furniture, wall panels, wardrobes||Merino, CenturyPly, Greenlam',
+          'Exterior Grade Laminate||₹300 – ₹1000||6 – 12||Facades, balconies, outdoor cladding||Greenlam Exterior'
+        ],
+        detailItems: [
+          {title: 'Regular Laminate', rows: [
+            ['Material', 'Standard decorative laminate made under high pressure'],
+            ['Types', 'Matte, Gloss, Suede, Textured, Wood Grain'],
+            ['Sizes', '8 ft × 4 ft, 10 ft × 4 ft'],
+            ['Thk (mm)', '0.8, 1'],
+            ['Cost (sq.ft)', '₹70 – ₹250'],
+            ['Brands', 'Greenlam, Merino, CenturyPly, Royale Touche'],
+            ['Best Places to Use', 'Wardrobes, kitchen shutters, TV units, furniture'],
+            {label: '✓ Pros', value: 'Affordable, durable, wide variety of designs, easily available', cls: 'pros'},
+            {label: '✕ Cons', value: 'Cannot be repaired if chipped, visible joints, not as premium as acrylic/PU', cls: 'cons'},
+            ['Installation Method', 'Adhesive pasting on plywood/MDF'],
+            ['Maintenance', 'Easy cleaning with damp cloth, low maintenance']
+          ]},
+          {title: 'PVC Laminate', rows: [
+            ['Material', 'Flexible laminate made from polyvinyl chloride (PVC), used for curved surfaces and moisture-prone areas.'],
+            ['Types', 'Matte PVC, Gloss PVC, Membrane Finish'],
+            ['Sizes', 'Rolls or sheets'],
+            ['Thk (mm)', '0.3 – 1'],
+            ['Cost (sq.ft)', '₹50 – ₹200'],
+            ['Brands', 'Greenlam, Merino'],
+            ['Best Places to Use', 'Modular kitchens, wardrobes, curved furniture'],
+            {label: '✓ Pros', value: 'Flexible, moisture-resistant, cost-effective', cls: 'pros'},
+            {label: '✕ Cons', value: 'Less durable than HPL, can peel over time', cls: 'cons'},
+            ['Installation Method', 'Heat pressing / adhesive pasting'],
+            ['Maintenance', 'Easy cleaning; avoid heat exposure']
+          ]},
+          {title: 'High Pressure Laminate', rows: [
+            ['Material', 'Durable laminate made under high pressure'],
+            ['Types', 'Matte, Gloss, Textured HPL'],
+            ['Sizes', '8 ft × 4 ft, 10 ft × 4 ft'],
+            ['Thk (mm)', '0.8 – 1.5'],
+            ['Cost (sq.ft)', '₹80 – ₹400'],
+            ['Brands', 'Greenlam, Merino, CenturyPly, Royale Touche'],
+            ['Best Places to Use', 'Furniture, wardrobes, kitchen shutters'],
+            {label: '✓ Pros', value: 'Durable, scratch-resistant, widely available', cls: 'pros'},
+            {label: '✕ Cons', value: 'Limited flexibility for curves', cls: 'cons'},
+            ['Installation Method', 'Adhesive pasting on plywood/MDF'],
+            ['Maintenance', 'Low maintenance']
+          ]},
+          {title: 'Prelam Board', rows: [
+            ['Material', 'Factory-laminated boards. Laminate is bonded to particle board or MDF under low pressure.'],
+            ['Types', 'Prelam MDF, Prelam Particle Board'],
+            ['Sizes', '8 ft × 4 ft boards'],
+            ['Thk (mm)', '18'],
+            ['Cost (sq.ft)', '₹60 – ₹150'],
+            ['Brands', 'Greenpanel'],
+            ['Best Places to Use', 'Budget furniture, wardrobes, office furniture'],
+            {label: '✓ Pros', value: 'Cost-effective, ready-to-use', cls: 'pros'},
+            {label: '✕ Cons', value: 'Lower durability, limited finish options', cls: 'cons'},
+            ['Installation Method', 'Direct cutting and edge banding'],
+            ['Maintenance', 'Basic cleaning']
+          ]},
+          {title: 'Core Laminate', rows: [
+            ['Material', 'Thick, self-supporting laminate sheets with a solid core, no substrate required.'],
+            ['Types', 'Interior Compact, Exterior Compact'],
+            ['Sizes', '8 ft × 4 ft, 10 ft × 4 ft'],
+            ['Thk (mm)', '6 – 12'],
+            ['Cost (sq.ft)', '₹300 – ₹1200'],
+            ['Brands', 'Greenlam Compact, Merino, Signature'],
+            ['Best Places to Use', 'Toilet cubicles, partitions, outdoor furniture'],
+            {label: '✓ Pros', value: 'Waterproof, strong, self-supporting', cls: 'pros'},
+            {label: '✕ Cons', value: 'Expensive, heavy', cls: 'cons'},
+            ['Installation Method', 'Mechanical fixing with screws'],
+            ['Maintenance', 'Very low maintenance']
+          ]},
+          {title: 'Acrylic Laminate', rows: [
+            ['Material', 'High-gloss laminate with acrylic surface for a mirror-like premium finish.'],
+            ['Types', 'Solid Acrylic, Metallic Acrylic'],
+            ['Sizes', '8 ft × 4 ft'],
+            ['Thk (mm)', '1 – 2'],
+            ['Cost (sq.ft)', '₹250 – ₹700'],
+            ['Brands', 'Greenlam, Advance Laminates'],
+            ['Best Places to Use', 'Kitchen shutters, wardrobes'],
+            {label: '✓ Pros', value: 'High gloss, scratch-resistant, premium look', cls: 'pros'},
+            {label: '✕ Cons', value: 'Expensive, shows fingerprints', cls: 'cons'},
+            ['Installation Method', 'Adhesive pasting on MDF'],
+            ['Maintenance', 'Clean with microfiber cloth']
+          ]},
+          {title: 'Anti-Fingerprint Laminate', rows: [
+            ['Material', 'Advanced nano-tech laminates designed to resist fingerprints and smudges.'],
+            ['Types', 'Super Matte, Nano-Tech Laminates'],
+            ['Sizes', '8 ft × 4 ft'],
+            ['Thk (mm)', '1'],
+            ['Cost (sq.ft)', '₹200 – ₹500'],
+            ['Brands', 'Greenlam, Royale Touche'],
+            ['Best Places to Use', 'Kitchens, wardrobes, offices'],
+            {label: '✓ Pros', value: 'Smudge-proof, premium matte finish', cls: 'pros'},
+            {label: '✕ Cons', value: 'Costlier than regular laminates', cls: 'cons'},
+            ['Installation Method', 'Adhesive pasting'],
+            ['Maintenance', 'Very low maintenance']
+          ]},
+          {title: 'Textured Decorative Laminate', rows: [
+            ['Material', 'Laminates with surface textures like wood grain, stone, fabric, or abstract finishes.'],
+            ['Types', 'Wood Grain, Stone Finish, Fabric Finish'],
+            ['Sizes', '8 ft × 4 ft'],
+            ['Thk (mm)', '0.8 – 1'],
+            ['Cost (sq.ft)', '₹100 – ₹350'],
+            ['Brands', 'Merino, CenturyPly, Greenlam'],
+            ['Best Places to Use', 'Furniture, wall panels, wardrobes'],
+            {label: '✓ Pros', value: 'Realistic look, design variety', cls: 'pros'},
+            {label: '✕ Cons', value: 'Slightly harder to clean', cls: 'cons'},
+            ['Installation Method', 'Adhesive pasting'],
+            ['Maintenance', 'Wipe with damp cloth']
+          ]},
+          {title: 'Exterior Grade Laminate', rows: [
+            ['Material', 'Laminates designed for outdoor use'],
+            ['Types', 'Exterior HPL, UV Resistant Laminates'],
+            ['Sizes', '8 ft × 4 ft, 10 ft × 4 ft'],
+            ['Thk (mm)', '6 – 12'],
+            ['Cost (sq.ft)', '₹300 – ₹1000'],
+            ['Brands', 'Greenlam Exterior'],
+            ['Best Places to Use', 'Facades, balconies, outdoor cladding'],
+            {label: '✓ Pros', value: 'Weatherproof, durable, high resistance to UV, moisture, weather conditions.', cls: 'pros'},
+            {label: '✕ Cons', value: 'Expensive, needs proper installation', cls: 'cons'},
+            ['Installation Method', 'Mechanical fixing system'],
+            ['Maintenance', 'Low maintenance']
+          ]}
+        ]
+      },
       'types-of-plywood': {
         title: 'Types of Plywood (Detailed)',
         items: [
@@ -5689,13 +5665,22 @@ window.addEventListener(
         ]
       },
       veneer: {
-        title: 'Types of Veneer', items: [
-          'Natural Wood Veneer||₹120 – ₹500 / sq.ft||0.5–1 mm||Sand surface → apply adhesive → press veneer → sand edges → apply PU/melamine polish||Dry cloth; periodic polishing; avoid moisture and harsh cleaners||Authentic wood grain, warm natural look, premium feel, can be sanded and refinished||Moisture-sensitive, requires polishing, expensive compared to laminate||Premium wardrobes, TV panels, luxury furniture, wall panels||Thin slices of real wood applied on plywood/MDF to achieve a natural wood finish with authentic grains and textures||Teak, Walnut, Oak, Ash, Maple||8 ft × 4 ft (standard sheets), also in flitches||Century Veneers, Su Veneers, Sanghvi Suppliers',
-          'Recon / Engineered Veneer||₹80 – ₹300 / sq.ft||0.5–1 mm||Same as natural veneer; consistent thickness allows uniform application||||Uniform look, affordable, eco-friendly (uses fast-growing wood), consistent quality||Less premium feel than natural veneer, repetitive grain pattern||Budget premium furniture, wardrobes, office furniture||Man-made veneer created by reassembling wood fibers to achieve uniform grain patterns and consistent color||Straight Grain, Exotic Patterns||8 ft × 4 ft||Century Veneers, Su Veneers, Sanghvi Suppliers',
-          'Teak Veneer||₹250 – ₹800 / sq.ft||0.6–1 mm||Adhesive + PU polish||||Highly durable, rich appearance, long-lasting||Expensive, requires polishing||Luxury furniture, doors, paneling||Premium natural veneer made from teak wood, known for its durability, rich grain, and timeless appeal||Burma Teak, African Teak||8 ft × 4 ft||Century Veneers, Su Veneers, Sanghvi Suppliers',
-          'Walnut Veneer||₹200 – ₹600 / sq.ft||0.5–1 mm||Adhesive + polish||||Elegant dark finish, premium appeal||Expensive, needs polishing||Wall panels, furniture, offices||Dark-toned veneer with rich grain patterns, widely used in modern luxury interiors||American Walnut, European Walnut||8 ft × 4 ft||Century Veneers, Su Veneers, Sanghvi Suppliers',
-          'Oak Veneer||₹150 – ₹400 / sq.ft||0.5–1 mm||Adhesive + polish||||Light aesthetic, versatile design||Needs polishing, can stain||Furniture, wall panels, wardrobes||Light-colored veneer with subtle grain, ideal for Scandinavian and minimal interiors||White Oak, Red Oak||8 ft × 4 ft||Century Veneers, Su Veneers, Sanghvi Suppliers',
-          'Dyed / Smoked Veneer||₹180 – ₹500 / sq.ft||0.5–1 mm||||Unique colors with natural texture||Expensive, requires finishing||Feature walls, luxury interiors||Veneers treated with dyes or smoke to achieve darker or custom tones while retaining natural grain||Smoked Oak, Dyed Ash||8 ft × 4 ft||Venzo'
+        title: 'Types of Veneer',
+        tableItems: [
+          'Natural Wood Veneer||₹120 – ₹500 / sq.ft||0.5–1 mm||Premium wardrobes, TV panels, luxury furniture, wall panels||Century Veneers, Su Veneers, Sanghvi Suppliers',
+          'Recon / Engineered Veneer||₹80 – ₹300 / sq.ft||0.5–1 mm||Budget premium furniture, wardrobes, office furniture||Century Veneers, Su Veneers, Sanghvi Suppliers',
+          'Teak Veneer||₹250 – ₹800 / sq.ft||0.6–1 mm||Luxury furniture, doors, paneling||Century Veneers, Su Veneers, Sanghvi Suppliers',
+          'Walnut Veneer||₹200 – ₹600 / sq.ft||0.5–1 mm||Wall panels, furniture, offices||Century Veneers, Su Veneers, Sanghvi Suppliers',
+          'Oak Veneer||₹150 – ₹400 / sq.ft||0.5–1 mm||Furniture, wall panels, wardrobes||Century Veneers, Su Veneers, Sanghvi Suppliers',
+          'Dyed / Smoked Veneer||₹180 – ₹500 / sq.ft||0.5–1 mm||Feature walls, luxury interiors||Venzo'
+        ],
+        detailItems: [
+          {title: 'Natural Wood Veneer', rows: [['Cost (sq.ft)', '₹120 – ₹500 / sq.ft'],['Thickness', '0.5–1 mm'],['Description', 'Thin slices of real wood applied on plywood/MDF to achieve a natural wood finish with authentic grains and textures'],['Types', 'Teak, Walnut, Oak, Ash, Maple'],['Sizes', '8 ft × 4 ft (standard sheets), also in flitches'],['Installation', 'Sand surface → apply adhesive → press veneer → sand edges → apply PU/melamine polish'],['Maintenance', 'Dry cloth; periodic polishing; avoid moisture and harsh cleaners'],{label: '✓ Pros', value: 'Authentic wood grain, warm natural look, premium feel, can be sanded and refinished', cls: 'pros'},{label: '✕ Cons', value: 'Moisture-sensitive, requires polishing, expensive compared to laminate', cls: 'cons'},['Brands', 'Century Veneers, Su Veneers, Sanghvi Suppliers']]},
+          {title: 'Recon / Engineered Veneer', rows: [['Cost (sq.ft)', '₹80 – ₹300 / sq.ft'],['Thickness', '0.5–1 mm'],['Description', 'Man-made veneer created by reassembling wood fibers to achieve uniform grain patterns and consistent color'],['Types', 'Straight Grain, Exotic Patterns'],['Sizes', '8 ft × 4 ft'],['Installation', 'Same as natural veneer; consistent thickness allows uniform application'],['Maintenance', ''],{label: '✓ Pros', value: 'Uniform look, affordable, eco-friendly (uses fast-growing wood), consistent quality', cls: 'pros'},{label: '✕ Cons', value: 'Less premium feel than natural veneer, repetitive grain pattern', cls: 'cons'},['Brands', 'Century Veneers, Su Veneers, Sanghvi Suppliers']]},
+          {title: 'Teak Veneer', rows: [['Cost (sq.ft)', '₹250 – ₹800 / sq.ft'],['Thickness', '0.6–1 mm'],['Description', 'Premium natural veneer made from teak wood, known for its durability, rich grain, and timeless appeal'],['Types', 'Burma Teak, African Teak'],['Sizes', '8 ft × 4 ft'],['Installation', 'Adhesive + PU polish'],['Maintenance', ''],{label: '✓ Pros', value: 'Highly durable, rich appearance, long-lasting', cls: 'pros'},{label: '✕ Cons', value: 'Expensive, requires polishing', cls: 'cons'},['Brands', 'Century Veneers, Su Veneers, Sanghvi Suppliers']]},
+          {title: 'Walnut Veneer', rows: [['Cost (sq.ft)', '₹200 – ₹600 / sq.ft'],['Thickness', '0.5–1 mm'],['Description', 'Dark-toned veneer with rich grain patterns, widely used in modern luxury interiors'],['Types', 'American Walnut, European Walnut'],['Sizes', '8 ft × 4 ft'],['Installation', 'Adhesive + polish'],['Maintenance', ''],{label: '✓ Pros', value: 'Elegant dark finish, premium appeal', cls: 'pros'},{label: '✕ Cons', value: 'Expensive, needs polishing', cls: 'cons'},['Brands', 'Century Veneers, Su Veneers, Sanghvi Suppliers']]},
+          {title: 'Oak Veneer', rows: [['Cost (sq.ft)', '₹150 – ₹400 / sq.ft'],['Thickness', '0.5–1 mm'],['Description', 'Light-colored veneer with subtle grain, ideal for Scandinavian and minimal interiors'],['Types', 'White Oak, Red Oak'],['Sizes', '8 ft × 4 ft'],['Installation', 'Adhesive + polish'],['Maintenance', ''],{label: '✓ Pros', value: 'Light aesthetic, versatile design', cls: 'pros'},{label: '✕ Cons', value: 'Needs polishing, can stain', cls: 'cons'},['Brands', 'Century Veneers, Su Veneers, Sanghvi Suppliers']]},
+          {title: 'Dyed / Smoked Veneer', rows: [['Cost (sq.ft)', '₹180 – ₹500 / sq.ft'],['Thickness', '0.5–1 mm'],['Description', 'Veneers treated with dyes or smoke to achieve darker or custom tones while retaining natural grain'],['Types', 'Smoked Oak, Dyed Ash'],['Sizes', '8 ft × 4 ft'],['Installation', ''],['Maintenance', ''],{label: '✓ Pros', value: 'Unique colors with natural texture', cls: 'pros'},{label: '✕ Cons', value: 'Expensive, requires finishing', cls: 'cons'},['Brands', 'Venzo']]}
         ]
       },
       'designer-veneer': {
@@ -5713,16 +5698,136 @@ window.addEventListener(
         ]
       },
       plywood: {
-        title: 'Types of Plywood', items: [
-          'MR Plywood||₹70 – ₹130 / sq.ft||6, 9, 12, 16, 18 mm||8 × 4 ft||Commercial Grade / MR Grade||Cut and fix to framework with screws or nails||Depends on finish (laminate or veneer)||Affordable, easily available, good for interior use||Not waterproof, not suitable for wet areas||Wardrobes, beds, study tables, TV units, indoor furniture',
-          'BWR Plywood||₹100 – ₹180 / sq.ft||6, 9, 12, 16, 18 mm||8 × 4 ft||Exterior Grade BWR||Cut and fix to framework with screws or nails||Laminates or veneer finish recommended||Good water resistance, strong and durable||Costlier than MR plywood||Kitchen cabinets, utility furniture, wash area storage',
-          'BWP / Marine Plywood||₹140 – ₹250 / sq.ft||6, 9, 12, 16, 18 mm||8 × 4 ft||Marine Grade||Screw fixing onto structural frame||Protect surface with laminate or paint||Highly water resistant, very durable||Expensive compared to other grades||Kitchen carcass, bathroom vanities, sink units, high-moisture areas',
-          'Flexible Plywood||₹130 – ₹250 / sq.ft||4, 6, 8 mm||8 × 4 ft||Long grain, Short grain||Fixed over curved framework and laminated||Basic cleaning||Easily bends to create curved shapes||Lower structural strength, not load bearing||Curved furniture, arches, curved wall panels, reception desks',
-          'Fire Retardant Plywood||₹180 – ₹350 / sq.ft||6, 9, 12, 16, 18 mm||8 × 4 ft||Fire Retardant Interior||Installed like regular plywood with screws||Regular surface finish maintenance||Improves fire safety, slows flame spread||Expensive, limited availability||Commercial interiors, hospitals, theatres, public buildings',
-          'Blockboard||₹90 – ₹160 / sq.ft||16, 18, 19 mm||8 × 4 ft||Interior Grade, BWR Grade||Fixed onto framework using screws or nails||Surface should be finished with laminate, veneer, or paint||Lightweight, good screw holding, stable for long panels||Lower moisture resistance than plywood||Doors, long shelves, partitions, tables, wall panels',
-          'MDF||₹50 – ₹120 / sq.ft||6, 9, 12, 16, 18 mm||8 × 4 ft||Interior, MR MDF, Exterior Grade||Cut and fixed to framework using screws or adhesive||Requires protective surface finish||Smooth surface, ideal for paint finishes, good for CNC cutting||Poor moisture resistance, weaker screw holding than plywood||Wall panels, wardrobe shutters, decorative CNC panels, furniture shutters',
-          'HDHMR Board||₹120 – ₹220 / sq.ft||6, 9, 12, 16, 18 mm||8 × 4 ft||Interior Grade HDHMR||Fixed to furniture framework using screws||Surface should be finished with laminate, veneer, or paint||High strength, moisture resistant, smooth surface||Costlier than MDF||Wardrobe shutters, kitchen shutters, furniture panels',
-          'Particle Board||₹40 – ₹90 / sq.ft||12, 16, 18 mm||8 × 4 ft||Interior, Pre-laminated||Fixed to framework using screws and connectors||Protect surface with laminate or veneer||Economical, lightweight, smooth surface for laminate||Low durability, weak screw holding, poor moisture resistance||Budget furniture, modular kitchens, office furniture'
+        title: 'Types of Plywood',
+        tableItems: [
+          'MR Plywood||₹70 – ₹130||6, 9, 12, 16, 18||Wardrobes, beds, study tables, TV units, indoor furniture||CenturyPly, Greenply',
+          'BWR Plywood||₹100 – ₹180 / sq ft||6, 9, 12, 16, 18||Kitchen cabinets, utility furniture, wash area storage||CenturyPly, Greenply',
+          'BWP (Boiling Water Proof)||₹140 – ₹250||6, 9, 12, 16, 18||Kitchen carcass, bathroom vanities, sink units, high-moisture areas||CenturyPly Marine, Greenply Gold',
+          'Flexible Plywood||₹130 – ₹250||4, 6, 8||Curved furniture, arches, curved wall panels, reception desks||Greenply Flexiply, CenturyPly Flexi',
+          'Fire Retardant Plywood||₹180 – ₹350||6, 9, 12, 16, 18||Commercial interiors, hospitals, theatres, public buildings||CenturyPly Firewall, Greenply FR',
+          'Blockboard||₹90 – ₹160||16, 18, 19||Doors, long shelves, partitions, tables, wall panels||CenturyPly, Greenply',
+          'MDF (Medium Density Fiberboard)||₹50 – ₹120||6, 9, 12, 16, 18||Wall panels, wardrobe shutters, decorative CNC panels, furniture shutters||Greenpanel, CenturyPly',
+          'HDHMR Board||₹120 – ₹220||6, 9, 12, 16, 18||Wardrobe shutters, kitchen shutters, furniture panels||Action Tesa HDHMR, Greenpanel HDHMR, CenturyPly Club Prime',
+          'Particle Board||₹40 – ₹90||12, 16, 18||Budget furniture, modular kitchens, office furniture||Greenply, CenturyPly'
+        ],
+        detailItems: [
+          {title: 'MR Plywood', rows: [
+            {label: 'Material', value: 'MR plywood (Moisture Resistant), commonly called commercial plywood, is an interior-grade plywood made using urea formaldehyde resin. It can resist humidity and mild moisture but is not waterproof.'},
+            {label: 'Types', value: 'Commercial Grade / MR Grade Plywood'},
+            ['Sizes', '8 ft × 4 ft'],
+            ['Thk (mm)', '6, 9, 12, 16, 18'],
+            ['Cost (sq.ft)', '₹70 – ₹130'],
+            ['Brands', 'CenturyPly, Greenply'],
+            ['Best Places to Use', 'Wardrobes, beds, study tables, TV units, indoor furniture'],
+            {label: '✓ Pros', value: 'Affordable, easily available, good for interior use', cls: 'pros'},
+            {label: '✕ Cons', value: 'Not waterproof, not suitable for wet areas', cls: 'cons'},
+            ['Installation Method', 'Fixed with screws or nails onto wooden or metal framework'],
+            ['Maintenance', 'Depends on finish like laminate or veneer']
+          ]},
+          {title: 'BWR Plywood', rows: [
+            {label: 'Material', value: 'BWR plywood (Boiling Water Resistant) is highly resistant to water and humidity compared to MR plywood.'},
+            {label: 'Types', value: 'Exterior Grade BWR Plywood'},
+            ['Sizes', '8 ft × 4 ft'],
+            ['Thk (mm)', '6, 9, 12, 16, 18'],
+            ['Cost (sq.ft)', '₹100 – ₹180 / sq ft'],
+            ['Brands', 'CenturyPly, Greenply'],
+            ['Best Places to Use', 'Kitchen cabinets, utility furniture, wash area storage'],
+            {label: '✓ Pros', value: 'Good water resistance, strong and durable', cls: 'pros'},
+            {label: '✕ Cons', value: 'Costlier than MR plywood', cls: 'cons'},
+            ['Installation Method', 'Cut and fixed to framework using screws or nails'],
+            ['Maintenance', 'Laminates or veneer finish recommended']
+          ]},
+          {title: 'BWP (Boiling Water Proof)', rows: [
+            {label: 'Material', value: 'Marine plywood is the highest grade of plywood made with waterproof phenol formaldehyde resin. It is boil-proof and can withstand extreme weather and moisture conditions.'},
+            {label: 'Types', value: 'Marine Grade BWP'},
+            ['Sizes', '8 ft × 4 ft'],
+            ['Thk (mm)', '6, 9, 12, 16, 18'],
+            ['Cost (sq.ft)', '₹140 – ₹250'],
+            ['Brands', 'CenturyPly Marine, Greenply Gold'],
+            ['Best Places to Use', 'Kitchen carcass, bathroom vanities, sink units, high-moisture areas'],
+            {label: '✓ Pros', value: 'Highly water resistant, very durable, boil proof', cls: 'pros'},
+            {label: '✕ Cons', value: 'Very expensive compared to other grades', cls: 'cons'},
+            ['Installation Method', 'Cut and fixed to framework with waterproof glue and screws'],
+            ['Maintenance', 'Use with waterproof laminate or tile finish']
+          ]},
+          {title: 'Flexible Plywood', rows: [
+            {label: 'Material', value: 'Flexible plywood is designed to bend and curve into various shapes. It is made with a unique construction of thin veneers that allow bending.'},
+            {label: 'Types', value: 'Long grain, Short grain'},
+            ['Sizes', '8 ft × 4 ft'],
+            ['Thk (mm)', '4, 6, 8'],
+            ['Cost (sq.ft)', '₹130 – ₹250'],
+            ['Brands', 'Greenply Flexiply, CenturyPly Flexi'],
+            ['Best Places to Use', 'Curved furniture, arches, curved wall panels, reception desks'],
+            {label: '✓ Pros', value: 'Easily bends to create curved shapes', cls: 'pros'},
+            {label: '✕ Cons', value: 'Lower structural strength, not load bearing', cls: 'cons'},
+            ['Installation Method', 'Fixed over curved framework and laminated'],
+            ['Maintenance', 'Regular cleaning']
+          ]},
+          {title: 'Fire Retardant Plywood', rows: [
+            {label: 'Material', value: 'Fire retardant plywood is specially treated with fire-resistant chemicals to slow down the spread of flames, reducing fire damage.'},
+            {label: 'Types', value: 'Fire Retardant Interior'},
+            ['Sizes', '8 ft × 4 ft'],
+            ['Thk (mm)', '6, 9, 12, 16, 18'],
+            ['Cost (sq.ft)', '₹180 – ₹350'],
+            ['Brands', 'CenturyPly Firewall, Greenply FR'],
+            ['Best Places to Use', 'Commercial interiors, hospitals, theatres, public buildings'],
+            {label: '✓ Pros', value: 'Improves fire safety, slows flame spread', cls: 'pros'},
+            {label: '✕ Cons', value: 'Expensive, limited availability', cls: 'cons'},
+            ['Installation Method', 'Installed like regular plywood with screws'],
+            ['Maintenance', 'Regular surface finish maintenance']
+          ]},
+          {title: 'Blockboard', rows: [
+            {label: 'Material', value: 'Blockboard is not a solid plywood but a panel made with a core of softwood strips between two layers of veneer. It is lightweight and stable for long spans.'},
+            {label: 'Types', value: 'Interior Grade, BWR Grade'},
+            ['Sizes', '8 ft × 4 ft'],
+            ['Thk (mm)', '16, 18, 19'],
+            ['Cost (sq.ft)', '₹90 – ₹160'],
+            ['Brands', 'CenturyPly, Greenply'],
+            ['Best Places to Use', 'Doors, long shelves, partitions, tables, wall panels'],
+            {label: '✓ Pros', value: 'Lightweight, good screw holding, stable for long panels', cls: 'pros'},
+            {label: '✕ Cons', value: 'Lower moisture resistance than plywood', cls: 'cons'},
+            ['Installation Method', 'Fixed onto framework using screws or nails'],
+            ['Maintenance', 'Surface should be finished with laminate, veneer, or paint']
+          ]},
+          {title: 'MDF (Medium Density Fiberboard)', rows: [
+            {label: 'Material', value: 'MDF (Medium Density Fiberboard) is an engineered wood product made by breaking down hardwood or softwood residuals into fine wood fibers and combining them with wax and resin under high temperature and pressure.'},
+            {label: 'Types', value: 'Interior, MR MDF, Exterior Grade'},
+            ['Sizes', '8 ft × 4 ft'],
+            ['Thk (mm)', '6, 9, 12, 16, 18'],
+            ['Cost (sq.ft)', '₹50 – ₹120'],
+            ['Brands', 'Greenpanel, CenturyPly'],
+            ['Best Places to Use', 'Wall panels, wardrobe shutters, decorative CNC panels, furniture shutters'],
+            {label: '✓ Pros', value: 'Smooth surface, ideal for paint finishes, good for CNC cutting', cls: 'pros'},
+            {label: '✕ Cons', value: 'Poor moisture resistance, weaker screw holding than plywood', cls: 'cons'},
+            ['Installation Method', 'Cut and fixed to framework using screws or adhesive'],
+            ['Maintenance', 'Requires protective surface finish']
+          ]},
+          {title: 'HDHMR Board', rows: [
+            {label: 'Material', value: 'HDHMR (High Density High Moisture Resistant) board is a high-performance engineered wood panel that offers superior strength and moisture resistance compared to standard MDF.'},
+            {label: 'Types', value: 'Interior Grade HDHMR'},
+            ['Sizes', '8 ft × 4 ft'],
+            ['Thk (mm)', '6, 9, 12, 16, 18'],
+            ['Cost (sq.ft)', '₹120 – ₹220'],
+            ['Brands', 'Action Tesa HDHMR, Greenpanel HDHMR, CenturyPly Club Prime'],
+            ['Best Places to Use', 'Wardrobe shutters, kitchen shutters, furniture panels'],
+            {label: '✓ Pros', value: 'High strength, moisture resistant, smooth surface', cls: 'pros'},
+            {label: '✕ Cons', value: 'Costlier than MDF', cls: 'cons'},
+            ['Installation Method', 'Fixed to furniture framework using screws'],
+            ['Maintenance', 'Surface should be finished with laminate, veneer, or paint']
+          ]},
+          {title: 'Particle Board', rows: [
+            {label: 'Material', value: 'Particle board is an engineered wood product made from wood chips, sawdust, and resin compressed under heat and pressure. It is the most economical option.'},
+            {label: 'Types', value: 'Interior, Pre-laminated'},
+            ['Sizes', '8 ft × 4 ft'],
+            ['Thk (mm)', '12, 16, 18'],
+            ['Cost (sq.ft)', '₹40 – ₹90'],
+            ['Brands', 'Greenply, CenturyPly'],
+            ['Best Places to Use', 'Budget furniture, modular kitchens, office furniture'],
+            {label: '✓ Pros', value: 'Economical, lightweight, smooth surface for laminate', cls: 'pros'},
+            {label: '✕ Cons', value: 'Low durability, weak screw holding, poor moisture resistance', cls: 'cons'},
+            ['Installation Method', 'Fixed to framework using screws and connectors'],
+            ['Maintenance', 'Protect surface with laminate or veneer']
+          ]}
         ]
       },
       'wood-types': { title: 'Types of Wood', items: ['Teak Wood – Premium hardwood, natural oils, moisture and termite resistant. Best for furniture and flooring.', 'Sheesham (Rosewood) – Dense, durable Indian hardwood with rich grain. Popular for dining and bedroom furniture.', 'Mango Wood – Eco-friendly, light weight, attractive grain. Budget-friendly option for furniture.', 'Walnut Wood – Premium, dark chocolate colour. Used in luxury furniture and flooring.', 'Oak Wood – Hard, durable, light brown. Popular for European-style furniture.', 'Pine Wood – Light weight, affordable. Used for rustic and Scandinavian-style furniture.', 'Bamboo – Sustainable, fast-growing. Used for flooring and furniture panels.', 'Deodar (Cedar) – Fragrant, insect-repellent. Used traditionally in wardrobes and linen closets.'] },
@@ -6185,13 +6290,7 @@ window.addEventListener(
 
       // -- Route merged categories --
       // 'marbles'   = merged marble-summary table + marbles list
-      // 'laminates' = merged designer-laminates + laminate lists
-      // 'veneer'    = merged veneer + designer-veneer lists
-      // 'plywood'   = merged plywood-summary table + plywood list
       if (id === 'marbles') { renderMerged(el, 'Marbles', tableData['marble-summary'], listData['marbles'], 'marble-summary'); return; }
-      if (id === 'laminates') { renderLaminatesFull(el); return; }
-
-      if (id === 'plywood') { renderPlywoodFull(el); return; }
       if (id === 'italian-marbles' || id === 'indian-marbles' || id === 'kitchen-counter') {
         var imgMap = {};
         var renderOpts = { title: listData[id].title };
@@ -6237,6 +6336,7 @@ window.addEventListener(
           renderOpts.detailItems = listData[id].detailItems;
         }
         renderOpts.imgMap = imgMap;
+        renderOpts.section = id;
         renderDataDrivenSection(el, renderOpts);
         return;
       }
@@ -6291,6 +6391,7 @@ window.addEventListener(
         }
         renderDataDrivenSection(el, {
           title: listData[id].title,
+          section: id,
           tableItems: listData[id].tableItems,
           detailItems: listData[id].detailItems,
           imgMap: imgMap
@@ -6298,62 +6399,49 @@ window.addEventListener(
         return;
       }
 
-      if (id === 'veneer') {
-        const d = listData[id];
-        el.innerHTML = `
-        <div class="sec-head">
-          <span class="sec-title">${d.title}</span>
-          <span class="sec-count">${d.items.length} types</span>
-        </div>
-        ${imgRow('veneer')}
-        <div class="table-wrap exp-look-table table-responsive bootstrap-exp exp-responsive"><table class="table table-bordered table-striped">
-          <thead><tr>
-            <th style="width:60px">Photo</th>
-            <th style="width:40px">#</th>
-            <th style="min-width:150px">MATERIAL / FINISH</th>
-            <th style="min-width:180px">DESCRIPTION</th>
-            <th style="min-width:150px">TYPES</th>
-            <th style="min-width:150px">SIZES</th>
-            <th style="min-width:100px">THICKNESS</th>
-            <th style="min-width:180px">PRICE RANGE</th>
-            <th style="min-width:180px">BRANDS / SUPPLIERS</th>
-            <th style="min-width:180px">APPLICATIONS</th>
-            <th style="min-width:250px">PROS</th>
-            <th style="min-width:250px">CONS</th>
-            <th style="min-width:180px">INSTALLATION METHOD</th>
-            <th style="min-width:140px">MAINTENANCE</th>
-          </tr></thead>
-            <tbody>${d.items.map((it, i) => {
-          var parts = it.split('||');
-          var name = parts[0] || it;
-          var cost = parts[1] || "";
-          var thick = parts[2] || "";
-          var install = parts[3] || "";
-          var maint = parts[4] || "";
-          var pros = parts[5] || "";
-          var cons = parts[6] || "";
-          var apps = parts[7] || "";
-          var desc = parts[8] || "";
-          var types = parts[9] || "";
-          var sizes = parts[10] || "";
-          var brands = parts[11] || "";
-          return `<tr>
-              ${thumbTD('veneer', i, name)}
-              <td><span class="list-num">${String(i + 1).padStart(2, '0')}</span></td>
-              <td class="t-name">${name}<span class="material-desc">${desc}</span></td>
-              <td>${types}</td>
-              <td>${sizes}</td>
-              <td>${thick}</td>
-              <td>${cost}</td>
-              <td>${brands}</td>
-              <td>${apps}</td>
-              <td style="color:#2e7d32 !important">${pros}</td>
-              <td style="color:#c62828 !important">${cons}</td>
-              <td>${install}</td>
-              <td>${maint}</td>
-            </tr>`;
-        }).join('')}</tbody>
-        </table></div>`;
+      if (id === 'glass' || id === 'laminates' || id === 'veneer' || id === 'plywood') {
+        var imgMap = {};
+        if (id === 'glass') {
+          imgMap = {
+            'Clear Glass': 'assets/23. Glass/Clear glass.jpg',
+            'Toughened Glass': 'assets/23. Glass/Toughened glass.jpg',
+            'Laminated Glass': 'assets/23. Glass/Laminated glass.jpg',
+            'Frosted Glass': 'assets/23. Glass/Frosted glass.jpg',
+            'Tinted Glass': 'assets/23. Glass/Tinted glass.jpg',
+            'Lacquered Glass': 'assets/23. Glass/Lacquered-Back Painted Glass.jpg',
+            'Lacquered/Back Painted Glass': 'assets/23. Glass/Lacquered-Back Painted Glass.jpg',
+            'Fluted Glass': 'assets/23. Glass/Fluted glass.jpg',
+            'Smoked Glass': 'assets/23. Glass/Smoked glass.jpg',
+            'Sandwiched Glass': 'assets/23. Glass/Sandwiched glass.jpg',
+            'Smart Glass': 'assets/23. Glass/Smart glass.jpg'
+          };
+        } else if (id === 'laminates') {
+          imgMap = {
+            'Regular Laminate': 'assets/24. Laminates/Wood Grain Laminate.jpg',
+            'PVC Laminate': 'assets/24. Laminates/Solid Color Laminate.jpg',
+            'High Pressure Laminate': 'assets/24. Laminates/Stone Finish Laminate.jpg',
+            'Prelam Board': 'assets/24. Laminates/Marble Finish Laminate.jpg',
+            'Core Laminate': 'assets/24. Laminates/Metallic Finish Laminate.jpg',
+            'Acrylic Laminate': 'assets/24. Laminates/Digital Printed Laminate.jpg',
+            'Anti-Fingerprint Laminate': 'assets/24. Laminates/Fabric Finish Laminate.jpg',
+            'Textured Decorative Laminate': 'assets/24. Laminates/Cane Finish Laminate.jpg',
+            'Exterior Grade Laminate': 'assets/24. Laminates/Stone Finish Laminate.jpg'
+          };
+        } else if (id === 'veneer') {
+          imgMap = {
+            'Natural Wood Veneer': 'assets/25. Veneer/Natural Wood Veneer.jpg',
+            'Recon / Engineered Veneer': 'assets/25. Veneer/Recon.jpg',
+            'Teak Veneer': 'assets/25. Veneer/Teak Veneer.jpg',
+            'Dyed / Smoked Veneer': 'assets/25. Veneer/Dyed  Smoked Veneer.jpg'
+          };
+        }
+        renderDataDrivenSection(el, {
+          title: listData[id].title,
+          section: id,
+          tableItems: listData[id].tableItems,
+          detailItems: listData[id].detailItems,
+          imgMap: imgMap
+        });
         return;
       }
 
@@ -6393,8 +6481,8 @@ window.addEventListener(
         return;
       } else if (listData[id]) {
         const d = listData[id];
-        const isFurniture = ['bed', 'door', 'headboard', 'sidetable', 'study', 'dresser', 'wardrobe', 'wardrobe-must', 'tvunit', 'kitchen-shutter', 'kitchen-must', 'limewash', 'limeplaster', 'venetian', 'microcement', 'clay', 'metallic', 'quartzite', 'glass', 'laminate-types', 'veneer', 'designer-veneer', 'plywood'].indexOf(id) >= 0;
-        const needThumb = ['bed', 'door', 'headboard', 'sidetable', 'study', 'dresser', 'tvunit', 'wardrobe', 'wardrobe-must', 'kitchen-shutter', 'kitchen-must', 'exp-look', 'limewash', 'limeplaster', 'venetian', 'microcement', 'clay', 'metallic', 'quartzite', 'glass', 'laminate-types', 'veneer', 'designer-veneer', 'plywood'].indexOf(id) >= 0;
+        const isFurniture = ['bed', 'door', 'headboard', 'sidetable', 'study', 'dresser', 'wardrobe', 'wardrobe-must', 'tvunit', 'kitchen-shutter', 'kitchen-must', 'limewash', 'limeplaster', 'venetian', 'microcement', 'clay', 'metallic', 'quartzite'].indexOf(id) >= 0;
+        const needThumb = ['bed', 'door', 'headboard', 'sidetable', 'study', 'dresser', 'tvunit', 'wardrobe', 'wardrobe-must', 'kitchen-shutter', 'kitchen-must', 'exp-look', 'limewash', 'limeplaster', 'venetian', 'microcement', 'clay', 'metallic', 'quartzite'].indexOf(id) >= 0;
 
         var stGridHtml = '';
         if (id === 'sidetable') {
@@ -6561,105 +6649,7 @@ window.addEventListener(
     }
 
     // -- Render Laminates page with detailed tables only --
-    function renderLaminatesFull(el) {
-      const detail1 = listData['types-of-laminates'];
-      const detail2 = listData['designer-laminates-detail'];
 
-      // Helper function for detailed table rows with pros/cons colors
-      function renderDetailRow(it, i, tableId) {
-        var parts = it.split('||');
-        var name = parts[0] || it;
-        var cost = parts[1] || '';
-        var thick = parts[2] || '';
-        var pros = parts[3] || '';
-        var cons = parts[4] || '';
-        var bestuse = parts[5] || '';
-        var tr = '<tr>';
-        tr += '<td><span class="list-num">' + String(i + 1).padStart(2, '0') + '</span></td>';
-        tr += thumbTD(tableId, i, name);
-        tr += '<td class="td-name">' + name + '</td>';
-        tr += '<td class="td-cost">' + cost + '</td>';
-        tr += '<td style="font-size:11px;color:#555">' + thick + '</td>';
-        tr += '<td class="td-pros">' + pros + '</td>';
-        tr += '<td class="td-cons">' + cons + '</td>';
-        tr += '<td class="td-use">' + bestuse + '</td>';
-        tr += '</tr>';
-        return tr;
-      }
-
-      var detailRows1 = detail1.items.map(function (it, i) { return renderDetailRow(it, i, 'types-of-laminates'); }).join('');
-      var detailRows2 = detail2.items.map(function (it, i) { return renderDetailRow(it, i, 'designer-laminates-detail'); }).join('');
-
-      el.innerHTML = `
-      <div class="sec-head">
-        <span class="sec-title">Types of Laminates (Detailed)</span>
-        <span class="sec-count">${detail1.items.length} types</span>
-      </div>
-      <div class="table-wrap" style="margin-bottom:28px"><table class="detail-tbl">
-        <thead><tr><th style="width:36px">#</th><th style="width:50px;font-size:9px">Photo</th><th>Material / Type</th><th>Cost</th><th>Thickness</th><th>Pros</th><th>Cons</th><th>Best Use</th></tr></thead>
-        <tbody>${detailRows1}</tbody>
-      </table></div>
-      <div class="sec-head" style="margin-top:28px">
-        <span class="sec-title">Types of Designer Laminates (Detailed)</span>
-        <span class="sec-count">${detail2.items.length} types</span>
-      </div>
-      <div class="table-wrap table-responsive custom-table"><table class="table custom-table-inner detail-tbl">
-        <thead><tr><th style="width:36px">#</th><th style="width:50px;font-size:9px">Photo</th><th>Material / Type</th><th>Cost</th><th>Thickness</th><th>Pros</th><th>Cons</th><th>Best Use</th></tr></thead>
-        <tbody>${detailRows2}</tbody>
-      </table></div>`;
-    }
-
-    // -- Render Plywood page with summary table + detailed table --
-    function renderPlywoodFull(el) {
-      const summaryData = tableData['plywood-summary'];
-      const detail1 = listData['types-of-plywood'];
-
-      // Helper function for detailed table rows with pros/cons colors
-      function renderDetailRow(it, i, tableId) {
-        var parts = it.split('||');
-        var name = parts[0] || it;
-        var cost = parts[1] || '';
-        var thick = parts[2] || '';
-        var pros = parts[3] || '';
-        var cons = parts[4] || '';
-        var bestuse = parts[5] || '';
-        var tr = '<tr>';
-        tr += '<td><span class="list-num">' + String(i + 1).padStart(2, '0') + '</span></td>';
-        tr += thumbTD(tableId, i, name);
-        tr += '<td class="td-name">' + name + '</td>';
-        tr += '<td class="td-cost">' + cost + '</td>';
-        tr += '<td style="font-size:11px;color:#555">' + thick + '</td>';
-        tr += '<td class="td-pros">' + pros + '</td>';
-        tr += '<td class="td-cons">' + cons + '</td>';
-        tr += '<td class="td-use">' + bestuse + '</td>';
-        tr += '</tr>';
-        return tr;
-      }
-
-      var detailRows1 = detail1.items.map(function (it, i) { return renderDetailRow(it, i, 'types-of-plywood'); }).join('');
-
-      el.innerHTML = `
-      <div class="sec-head">
-        <span class="sec-title">Types of Plywood</span>
-        <span class="sec-count">${summaryData.rows.length} types</span>
-      </div>
-      ${imgRow('plywood-summary')}
-      <div class="table-wrap" style="margin-bottom:28px"><table>
-        <thead><tr><th style="width:50px;font-size:9px">Photo</th>${summaryData.cols.map(c => '<th>' + c + '</th>').join('')}</tr></thead>
-        <tbody>${summaryData.rows.map((r, ri) => '<tr>' + thumbTD('plywood-summary', ri, r[0] || '') + r.map((cell, i) => {
-        if (i === 4) return '<td class="t-price">' + cell + '</td>';
-        return '<td>' + cell + '</td>';
-      }).join('') + '</tr>').join('')}</tbody>
-      </table></div>
-      <div class="sec-head" style="margin-top:28px">
-        <span class="sec-title">Types of Plywood (Detailed)</span>
-        <span class="sec-count">${detail1.items.length} types</span>
-      </div>
-      <div class="table-wrap table-responsive custom-table"><table class="table custom-table-inner detail-tbl">
-        <thead><tr><th style="width:36px">#</th><th style="width:50px;font-size:9px">Photo</th><th>Material / Type</th><th>Cost</th><th>Thickness</th><th>Pros</th><th>Cons</th><th>Best Use</th></tr></thead>
-        <tbody>${detailRows1}</tbody>
-      </table></div>`;
-    }
 
     function openDynamicCard(card) {
       document.getElementById('homeView').style.display = 'none';
@@ -7253,8 +7243,9 @@ window.addEventListener(
       var tableSrc = config.tableItems || config.items || [];
       var detailSrc = config.detailItems || config.items || [];
       var imgMap = config.imgMap || {};
+      var section = config.section || '';
       var count = config.count || (tableSrc.length + ' Materials');
-      function getImg(name) { return imgMap[name] || ''; }
+      function getImg(name) { return imgMap[name] || getImagePath(section, name); }
       var tableRaw = [];
       for (var ti = 0; ti < tableSrc.length; ti++) {
         var tp = tableSrc[ti].split('||');
