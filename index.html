@@ -3367,6 +3367,195 @@
       .exp-look-new .spec-value { padding: 3px 7px; font-size: 9px; line-height: 1.5; }
     }
 
+    /* ================================================================
+       PREMIUM MATERIAL SPEC SHEET (natural finishes detail boards)
+       ================================================================ */
+    .material-spec-new {
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto;
+    }
+    .material-spec-new .mat-board {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 6px;
+      overflow: hidden;
+      transition: background-color 0.3s, border-color 0.3s, box-shadow 0.35s ease;
+    }
+    @media (min-width: 901px) {
+      .material-spec-new .mat-board:hover {
+        box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06), 0 12px 40px rgba(0, 0, 0, 0.35);
+      }
+    }
+    .material-spec-new .mat-board-cover {
+      position: relative;
+      width: 100%;
+      max-height: min(42vh, 400px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-radius: 6px 6px 0 0;
+      background: var(--spec-image-bg);
+    }
+    .material-spec-new .mat-board-cover img {
+      display: block;
+      max-width: 100%;
+      max-height: min(42vh, 400px);
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      object-position: center;
+      margin: 0 auto;
+      cursor: pointer;
+    }
+    .material-spec-new .mat-board-intro {
+      text-align: left;
+      padding: 28px 32px 20px;
+      border-bottom: 1px solid var(--spec-row-border);
+      transition: border-color 0.3s;
+    }
+    .material-spec-new .mat-board-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.25;
+      margin: 0 0 12px;
+      letter-spacing: 0.2px;
+      transition: color 0.3s;
+    }
+    .material-spec-new .mat-board-subtitle {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--text-mid);
+      line-height: 1.7;
+      max-width: 720px;
+      margin: 0;
+      transition: color 0.3s;
+    }
+    .material-spec-new .mat-board-spec {
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .material-spec-new .mat-spec-row {
+      display: flex;
+      align-items: flex-start;
+      border-bottom: 1px solid var(--spec-row-border);
+      padding: 16px 32px;
+      transition: background-color 0.2s ease, border-color 0.3s;
+    }
+    @media (min-width: 901px) {
+      .material-spec-new .mat-spec-row:hover {
+        background: rgba(255, 255, 255, 0.02);
+      }
+    }
+    .dark-mode .material-spec-new .mat-spec-row:hover {
+      background: rgba(255, 255, 255, 0.03);
+    }
+    .material-spec-new .mat-spec-row:last-child {
+      border-bottom: none;
+    }
+    .material-spec-new .mat-spec-label {
+      flex-shrink: 0;
+      width: 168px;
+      min-width: 168px;
+      padding-right: 20px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0.65;
+      color: var(--spec-label-text);
+      line-height: 1.5;
+      transition: color 0.3s;
+    }
+    .material-spec-new .mat-spec-value {
+      flex: 1;
+      min-width: 0;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 1.8;
+      color: var(--spec-value-text);
+      overflow-wrap: break-word;
+      word-break: break-word;
+      transition: color 0.3s;
+    }
+
+    @media (max-width: 900px) {
+      .material-spec-new .mat-board-cover,
+      .material-spec-new .mat-board-cover img {
+        max-height: min(36vh, 320px);
+      }
+      .material-spec-new .mat-board-intro {
+        padding: 22px 24px 16px;
+      }
+      .material-spec-new .mat-board-title {
+        font-size: 22px;
+      }
+      .material-spec-new .mat-spec-row {
+        padding: 14px 24px;
+      }
+      .material-spec-new .mat-spec-label {
+        width: 130px;
+        min-width: 130px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .material-spec-new .mat-board-cover,
+      .material-spec-new .mat-board-cover img {
+        max-height: min(30vh, 240px);
+      }
+      .material-spec-new .mat-board-cover {
+        border-radius: 4px 4px 0 0;
+      }
+      .material-spec-new .mat-board {
+        border-radius: 4px;
+      }
+      .material-spec-new .mat-board-intro {
+        padding: 18px 16px 14px;
+      }
+      .material-spec-new .mat-board-title {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+      .material-spec-new .mat-board-subtitle {
+        font-size: 12px;
+        line-height: 1.65;
+      }
+      .material-spec-new .mat-spec-row {
+        padding: 12px 16px;
+      }
+      .material-spec-new .mat-spec-label {
+        width: 100px;
+        min-width: 100px;
+        padding-right: 12px;
+        font-size: 9px;
+        letter-spacing: 1.5px;
+      }
+      .material-spec-new .mat-spec-value {
+        font-size: 12px;
+        line-height: 1.75;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .material-spec-new .mat-spec-row {
+        flex-direction: column;
+        gap: 6px;
+        padding: 14px 16px;
+      }
+      .material-spec-new .mat-spec-label {
+        width: 100%;
+        min-width: 0;
+        padding-right: 0;
+      }
+    }
+
     .exp-look-new .exp-lb {
       display: none;
       position: fixed;
@@ -6258,6 +6447,69 @@ window.addEventListener(
       return `assets/${folder}/Detail.${label.trim()}.jpg`;
     }
 
+    const MATERIAL_SPEC_IDS = ['limewash', 'limeplaster', 'venetian', 'microcement', 'clay', 'metallic'];
+    const MATERIAL_COVER_SRC = {
+      limewash: 'assets/1.Cover Images/16. Limewash.jpg',
+      limeplaster: 'assets/1.Cover Images/17. Lime Plaster.jpg',
+      venetian: 'assets/1.Cover Images/18. Venetian Plaster.jpg',
+      microcement: 'assets/1.Cover Images/19. Micro Concrete.jpg',
+      clay: 'assets/1.Cover Images/20. Clay Cladding.jpg',
+      metallic: 'assets/1.Cover Images/21.Liquid Mettalic Ombres.jpg'
+    };
+    const MATERIAL_COVER_LABELS = {
+      limewash: 'Lime Wash',
+      limeplaster: 'Lime Plaster',
+      venetian: 'Venetian Plaster',
+      microcement: 'Microcement',
+      clay: 'Clay Cladding',
+      metallic: 'Liquid Metallic Ombres'
+    };
+
+    function getMaterialSpecCoverSrc(id) {
+      if (MATERIAL_COVER_SRC[id]) return MATERIAL_COVER_SRC[id];
+      const coverLabel = MATERIAL_COVER_LABELS[id];
+      if (coverLabel) {
+        const coverPath = getCoverPath(coverLabel);
+        if (coverPath && coverPath.indexOf('unsplash.com') === -1) return coverPath;
+      }
+      const labels = detailImages[id];
+      const name = labels && labels[0] ? labels[0] : '';
+      if (name) {
+        const folderPath = getImagePath(id, name);
+        if (folderPath) return folderPath;
+        return getDetailPath(id, name);
+      }
+      return '';
+    }
+
+    function renderMaterialSpecSheet(el, id) {
+      const d = detailData[id];
+      if (!d) return;
+      const coverSrc = getMaterialSpecCoverSrc(id);
+      const finishProp = d.props.find(function (p) { return p.l && p.l.indexOf('Finish') !== -1; });
+      const subtitle = finishProp ? finishProp.v : '';
+      const titleEsc = d.title.replace(/'/g, "\\'");
+      let html = '<div class="material-spec-new"><div class="mat-board">';
+      if (coverSrc) {
+        html += '<figure class="mat-board-cover">';
+        html += '<img src="' + coverSrc + '" alt="' + d.title + '" loading="lazy" onclick="lbOpen(this.src,\'' + titleEsc + '\')" onerror="this.parentElement.style.display=\'none\'">';
+        html += '</figure>';
+      }
+      html += '<header class="mat-board-intro">';
+      html += '<h1 class="mat-board-title">' + d.title + '</h1>';
+      if (subtitle) html += '<p class="mat-board-subtitle">' + subtitle + '</p>';
+      html += '</header>';
+      html += '<div class="mat-board-spec">';
+      d.props.forEach(function (p) {
+        html += '<div class="mat-spec-row">';
+        html += '<div class="mat-spec-label">' + p.l + '</div>';
+        html += '<div class="mat-spec-value">' + p.v + '</div>';
+        html += '</div>';
+      });
+      html += '</div></div></div>';
+      el.innerHTML = html;
+    }
+
     function imgRow(id) {
       const labels = detailImages[id];
       if (!labels || !labels.length) return '';
@@ -6287,6 +6539,11 @@ window.addEventListener(
       window.scrollTo(0, 0);
 
       const el = document.getElementById('detailContent');
+
+      if (detailData[id] && MATERIAL_SPEC_IDS.indexOf(id) >= 0) {
+        renderMaterialSpecSheet(el, id);
+        return;
+      }
 
       // -- Route merged categories --
       // 'marbles'   = merged marble-summary table + marbles list
@@ -6467,19 +6724,7 @@ window.addEventListener(
         }).join('')}
           </tr>`).join('')}</tbody>
         </table></div>`;
-      } else if (id === 'limewash' || id === 'limeplaster' || id === 'venetian' || id === 'clay' || id === 'metallic') {
-        const d = detailData[id];
-        el.innerHTML = `
-        <div class="sec-head"><span class="sec-title">${d.title}</span></div>
-        ${imgRow(id)}
-        <div class="detail-card">
-          <div class="detail-card-head"><h3>${d.title}</h3></div>
-          <div class="detail-card-body">
-            ${d.props.map(p => `<div class="d-row"><div class="d-label">${p.l}</div><div class="d-value">${p.v}</div></div>`).join('')}
-          </div>
-        </div>`;
-        return;
-      } else if (listData[id]) {
+            } else if (listData[id]) {
         const d = listData[id];
         const isFurniture = ['bed', 'door', 'headboard', 'sidetable', 'study', 'dresser', 'wardrobe', 'wardrobe-must', 'tvunit', 'kitchen-shutter', 'kitchen-must', 'limewash', 'limeplaster', 'venetian', 'microcement', 'clay', 'metallic', 'quartzite'].indexOf(id) >= 0;
         const needThumb = ['bed', 'door', 'headboard', 'sidetable', 'study', 'dresser', 'tvunit', 'wardrobe', 'wardrobe-must', 'kitchen-shutter', 'kitchen-must', 'exp-look', 'limewash', 'limeplaster', 'venetian', 'microcement', 'clay', 'metallic', 'quartzite'].indexOf(id) >= 0;
@@ -6558,17 +6803,6 @@ window.addEventListener(
         el.innerHTML = '<div class="sec-head"><span class="sec-title">' + d.title + '</span><span class="sec-count">' + d.items.length + ' finishes</span></div>'
           + (id === 'sidetable' || id === 'dresser' ? '' : imgRow(id)) + stGridHtml
           + '<div class="table-wrap table-responsive custom-table"><table class="table custom-table-inner ' + (isFurniture ? 'detail-tbl' : '') + '"><thead><tr>' + thCols + '</tr></thead><tbody>' + rows + '</tbody></table></div>';
-      } else if (detailData[id]) {
-        const d = detailData[id];
-        el.innerHTML = `
-        <div class="sec-head"><span class="sec-title">${d.title}</span></div>
-        ${imgRow(id)}
-        <div class="detail-card">
-          <div class="detail-card-head"><h3>${d.title}</h3></div>
-          <div class="detail-card-body">
-            ${d.props.map(p => `<div class="d-row"><div class="d-label">${p.l}</div><div class="d-value">${p.v}</div></div>`).join('')}
-          </div>
-        </div>`;
       } else if (compareData[id]) {
         const d = compareData[id];
         el.innerHTML = `
