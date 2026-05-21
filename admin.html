@@ -1,953 +1,1943 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel</title>
-
+    <title>Admin Panel – Template CMS</title>
     <style>
-        body {
-            background: #050505;
-            color: white;
-            font-family: Inter, sans-serif;
-            padding: 40px;
-        }
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{background:#050505;color:#e2e8f0;font-family:Inter,'Segoe UI',sans-serif;padding:32px}
+        h1{font-size:36px;font-weight:700;margin-bottom:4px;letter-spacing:-0.02em}
+        .sub{color:#94a3b8;font-size:14px;margin-bottom:32px}
+        form{max-width:1400px}
+        .form-section{background:#111827;border:1px solid rgba(255,255,255,0.06);padding:28px;border-radius:20px;margin-bottom:24px}
+        .section-title{font-size:20px;font-weight:600;color:#60a5fa;margin-bottom:20px;display:flex;align-items:center;justify-content:space-between}
+        .form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+        .form-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+        .form-grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+        input,textarea,select{width:100%;background:#0f172a;border:1px solid rgba(255,255,255,0.08);color:#e2e8f0;padding:14px;border-radius:12px;font-size:14px;outline:none;box-sizing:border-box;font-family:inherit;transition:border 0.2s}
+        input:focus,textarea:focus,select:focus{border-color:#3b82f6}
+        textarea{min-height:100px;resize:vertical;font-size:13px}
+        select{cursor:pointer}
+        label{font-size:12px;font-weight:600;color:#94a3b8;text-transform:uppercase;letter-spacing:0.06em;display:block;margin-bottom:4px}
+        .help-text{font-size:11px;color:#64748b;margin-top:3px}
+        .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border:none;border-radius:12px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:all 0.2s}
+        .btn-primary{background:#2563eb;color:white}.btn-primary:hover{background:#1d4ed8}
+        .btn-danger{background:#dc2626;color:white}.btn-danger:hover{background:#b91c1c}
+        .btn-success{background:#16a34a;color:white}.btn-success:hover{background:#15803d}
+        .btn-secondary{background:#1e293b;color:#94a3b8;border:1px solid rgba(255,255,255,0.08)}.btn-secondary:hover{background:#334155}
+        .btn-sm{padding:8px 14px;font-size:12px;border-radius:8px}
+        .btn-xs{padding:4px 10px;font-size:11px;border-radius:6px}
+        .btn-group{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+        .w-full{width:100%;justify-content:center;margin-top:16px}
+        .mt-12{margin-top:12px}.mt-20{margin-top:20px}.mt-24{margin-top:24px}.mb-12{margin-bottom:12px}.mb-20{margin-bottom:20px}
 
-        h1 {
-            font-size: 48px;
-            margin-bottom: 10px;
-        }
+        .row-repeater{border:1px solid rgba(255,255,255,0.06);border-radius:14px;overflow:hidden;background:#0c1322}
+        .row-repeater-header{display:grid;gap:8px;padding:10px 12px;background:#1e293b;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:#64748b}
+        .row-repeater-body{}
+        .row-repeater-row{display:grid;gap:8px;padding:10px 12px;border-bottom:1px solid rgba(255,255,255,0.04);align-items:start;transition:background 0.15s}
+        .row-repeater-row:hover{background:rgba(255,255,255,0.02)}
+        .row-repeater-row:last-child{border-bottom:none}
+        .row-repeater-row input,.row-repeater-row textarea,.row-repeater-row select{background:#0f172a;padding:10px;border-radius:8px;font-size:13px;min-height:36px;border:1px solid rgba(255,255,255,0.05)}
+        .row-repeater-row textarea{min-height:36px}
+        .row-repeater-row .rb-img{width:44px;height:44px;object-fit:cover;border-radius:6px;display:block;margin-top:6px;border:1px solid rgba(255,255,255,0.08)}
+        .row-repeater-row .rb-file-input{font-size:11px;padding:4px;background:transparent;border:none;color:#94a3b8;width:auto}
+        .row-repeater-row .delete-btn{background:#dc2626;border:none;color:white;padding:6px 10px;border-radius:6px;cursor:pointer;font-size:13px;align-self:center;line-height:1}
+        .row-repeater-empty{padding:24px;text-align:center;color:#64748b;font-size:13px}
 
-        form {
-            max-width: 1400px;
-        }
+        .badge-pill{display:inline-flex;align-items:center;gap:6px;background:#1e293b;color:#94a3b8;padding:6px 12px;border-radius:20px;font-size:12px}
+        .badge-pill button{background:#dc2626;border:none;color:white;border-radius:50%;width:18px;height:18px;font-size:12px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;line-height:1}
 
-        .form-section {
-            background: #111827;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 30px;
-            border-radius: 24px;
-            margin-bottom: 25px;
-        }
+        .preview{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:20px;margin-top:20px}
+        .card{background:#111827;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,0.06)}
+        .card img{width:100%;height:180px;object-fit:cover}
+        .card-body{padding:16px}
+        .card h3{font-size:16px;font-weight:600;margin-bottom:6px}
+        .card .meta{color:#94a3b8;font-size:12px;margin-bottom:10px}
+        .card .desc{color:#94a3b8;font-size:13px;line-height:1.5;margin-bottom:12px}
+        .card-actions{display:flex;gap:8px}
+        .card-actions button{flex:1;padding:10px;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit}
+        .card-actions .edit-btn{background:#2563eb;color:white}.card-actions .delete-btn{background:#dc2626;color:white}
 
-        .form-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
+        .preview-table-wrap{overflow-x:auto;border:1px solid rgba(255,255,255,0.06);border-radius:12px;margin-bottom:12px}
+        .preview-table-wrap table{width:100%;border-collapse:collapse;font-size:12px}
+        .preview-table-wrap th{background:#1e293b;color:#94a3b8;padding:10px 12px;font-size:10px;font-weight:600;text-align:left;text-transform:uppercase;letter-spacing:0.05em;border-bottom:1px solid rgba(255,255,255,0.06)}
+        .preview-table-wrap td{padding:10px 12px;border-bottom:1px solid rgba(255,255,255,0.04);color:#c8c6c2;vertical-align:middle}
+        .preview-table-wrap tr:last-child td{border-bottom:none}
+        .preview-table-wrap .row-img{width:44px;height:44px;object-fit:cover;border-radius:6px;display:block}
+        .preview-table-wrap .t-name{font-weight:600;color:#e8e6e3}
+        .preview-table-wrap .t-cat{font-size:10px;color:#60a5fa;text-transform:uppercase}
+        .preview-table-wrap .t-price{font-weight:700;color:#fbbf24}
+        .preview-table-wrap .td-pros{color:#4ade80}.preview-table-wrap .td-cons{color:#f87171}
+        .preview-table-wrap .td-use{font-style:italic;color:#94a3b8}
 
-        .form-grid-3 {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
+        .tab-bar{display:flex;gap:0;margin-bottom:24px;border-bottom:1px solid rgba(255,255,255,0.06);overflow-x:auto}
+        .tab-btn{padding:12px 20px;font-size:12px;font-weight:600;background:transparent;border:none;border-bottom:2px solid transparent;color:#64748b;cursor:pointer;white-space:nowrap;font-family:inherit;transition:all 0.2s}
+        .tab-btn:hover{color:#e2e8f0}
+        .tab-btn.active{color:#60a5fa;border-bottom-color:#60a5fa}
 
-        input,
-        textarea,
-        select {
-            width: 100%;
-            background: #0f172a;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            color: white;
-            padding: 16px;
-            border-radius: 14px;
-            font-size: 15px;
-            outline: none;
-            box-sizing: border-box;
-        }
+        .spec-row-preview{display:flex;gap:8px;margin-bottom:6px}
+        .spec-row-preview .spec-label{font-size:10px;font-weight:600;color:#94a3b8;text-transform:uppercase;width:120px;flex-shrink:0;padding:4px 0}
+        .spec-row-preview .spec-value{font-size:12px;color:#c8c6c2}
 
-        textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
+        .json-output{background:#0c1322;border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:20px;font-family:'Fira Code',monospace;font-size:12px;color:#94a3b8;white-space:pre-wrap;overflow-x:auto;max-height:400px;margin-top:16px}
+        .inline-flex{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+        .flex-1{flex:1}
+        .text-center{text-align:center}
+        .hidden{display:none!important}
+        .status-msg{padding:12px 16px;border-radius:10px;font-size:13px;margin-bottom:16px}
+        .status-success{background:#064e3b;border:1px solid #10b981;color:#6ee7b7}
+        .status-error{background:#450a0a;border:1px solid #ef4444;color:#fca5a5}
 
-        button {
-            width: 100%;
-            padding: 18px;
-            border: none;
-            border-radius: 16px;
-            background: #2563eb;
-            color: white;
-            font-size: 18px;
-            font-weight: 600;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-
-        button:hover {
-            background: #1d4ed8;
-        }
-
-        .section-title {
-            font-size: 22px;
-            margin-bottom: 25px;
-            color: #60a5fa;
-        }
-
-        .preview {
-            margin-top: 40px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-        }
-
-        .card {
-            background: #111827;
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.06);
-        }
-
-        .card img {
-            width: 100%;
-            height: 240px;
-            object-fit: cover;
-        }
-
-        .card-body {
-            padding: 20px;
-        }
-
-        .card h3 {
-            margin-bottom: 10px;
-        }
-
-        .delete-btn {
-            background: #dc2626;
-            margin-top: 15px;
-        }
-
-        .delete-btn:hover {
-            background: #b91c1c;
-        }
-
-        .preview-table-wrap {
-            overflow-x: auto;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 12px;
-            background: #0f172a;
-            margin: 20px 0;
-        }
-
-        .preview-table-wrap table {
-            width: 100%;
-            border-collapse: collapse;
-            table-layout: auto;
-        }
-
-        .preview-table-wrap th {
-            background: #1e293b;
-            color: #94a3b8;
-            padding: 10px 12px;
-            font-size: 11px;
-            font-weight: 600;
-            text-align: left;
-            letter-spacing: 0.05em;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            text-transform: uppercase;
-        }
-
-        .preview-table-wrap td {
-            padding: 10px 12px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            color: #c8c6c2;
-            font-size: 12px;
-            vertical-align: middle;
-        }
-
-        .preview-table-wrap .row-img {
-            width: 50px;
-            height: 50px;
-            object-fit: cover;
-            border-radius: 8px;
-            display: block;
-        }
-
-        .preview-table-wrap .t-name {
-            font-weight: 600;
-            color: #e8e6e3;
-        }
-
-        .preview-table-wrap tr:last-child td {
-            border-bottom: none;
-        }
-
-        @media (max-width: 900px) {
-
-            .form-grid,
-            .form-grid-3 {
-                grid-template-columns: 1fr;
-            }
-
-            body {
-                padding: 20px;
-            }
-
-        }
-
-        .rb-table {
-            width: 100%;
-            border-collapse: collapse;
-            min-width: 600px;
-        }
-
-        .rb-table th {
-            padding: 12px 10px;
-            background: #1e293b;
-            color: #94a3b8;
-            font-size: 12px;
-            font-weight: 600;
-            text-align: left;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .rb-table th:last-child {
-            text-align: center;
-        }
-
-        .rb-table td {
-            padding: 8px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            vertical-align: middle;
-        }
-
-        .rb-table td:last-child {
-            text-align: center;
-        }
-
-        .rb-input {
-            width: 100%;
-            padding: 10px 12px;
-            font-size: 13px;
-            background: #0f172a;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 8px;
-            color: white;
-            box-sizing: border-box;
-        }
-
-        .rb-file-input {
-            padding: 6px;
-            font-size: 12px;
-            background: transparent;
-            border: none;
-            width: auto;
-            color: white;
-        }
-
-        .rb-img {
-            width: 50px;
-            height: 50px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-top: 6px;
-            display: block;
-        }
-
-        .rb-delete-btn {
-            width: auto;
-            padding: 8px 14px;
-            margin: 0;
-            background: #dc2626;
-            border-radius: 8px;
-            font-size: 13px;
-            cursor: pointer;
-            border: none;
-            color: white;
-        }
-
-        .rb-add-btn {
-            width: auto;
-            padding: 12px 24px;
-            margin-top: 10px;
-            background: #1d4ed8;
-            border-radius: 12px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            border: none;
-            color: white;
-        }
-
-        .rb-empty {
-            color: #94a3b8;
-            padding: 10px;
-        }
-
-        .rb-wrap {
-            overflow-x: auto;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 12px;
-            background: #0f172a;
-        }
+        @media(max-width:900px){.form-grid,.form-grid-3,.form-grid-4{grid-template-columns:1fr}body{padding:16px}.row-repeater-header{display:none}.row-repeater-row{grid-template-columns:1fr!important}}
     </style>
-
 </head>
-
 <body>
 
-    <div class="admin-container">
+<div style="margin-bottom:32px">
+    <h1>Template CMS</h1>
+    <p class="sub">Create and manage structured content for every layout type on your site.</p>
+</div>
 
-        <div class="top-head">
+<div class="tab-bar" id="tabBar">
+    <button class="tab-btn active" data-tab="create" onclick="switchTab('create')">+ Create New</button>
+    <button class="tab-btn" data-tab="manage" onclick="switchTab('manage')">Preview Cards</button>
+    <button class="tab-btn" data-tab="sitecontent" onclick="switchTab('sitecontent')">Site Content</button>
+    <button class="tab-btn" data-tab="export" onclick="switchTab('export')">Export / Import</button>
+</div>
 
-            <div>
-                <h1>Admin Panel</h1>
-                <p class="sub">
-                    Create and manage content for your website
-                </p>
-            </div>
-
+<!-- ============ TAB: CREATE ============ -->
+<div id="tab-create" class="tab-content">
+    <form id="contentForm" autocomplete="off">
+        <div class="form-section">
+            <div class="section-title">Choose Template</div>
+            <select id="templateSelect" onchange="renderTemplateForm()">
+                <option value="">— Select a template type —</option>
+                <option value="category-grid">Category Grid (Eg. Browse by Category)</option>
+                <option value="data-table">Data Table with Thumbnails (Eg. Flooring Finishes)</option>
+                <option value="ranked-table">Premium Ranked Table (Eg. Materials That Look Expensive)</option>
+                <option value="spec-card">Detail Specification Card (Eg. Venetian Plaster Finish)</option>
+                <option value="spec-board">Premium Material Spec Board (Eg. Microcement)</option>
+                <option value="comparison">Comparison Table (Eg. Marble vs Tiles)</option>
+                <option value="furniture-list">Furniture Finish List (Eg. Wardrobe Finishes)</option>
+                <option value="image-row">Image Row Grid (Eg. Marble Collections)</option>
+                <option value="side-grid">Side-by-Side Grid (Eg. Side Table Finishes)</option>
+                <option value="top10">Top 10 Materials (Eg. Top 10 Materials 2026)</option>
+                <option value="split-cover">Split Cover Card (Eg. Marble vs Tiles Cover)</option>
+                <option value="detail-card">Simple Detail Card (Eg. Admin Material Card)</option>
+                <option value="detail-card-image">Enhanced Detail Card w/ Image (Eg. Material Feature Card)</option>
+                <option value="merged-view">Merged Table + List View (Eg. Marble Guide)</option>
+            </select>
         </div>
 
-        <form id="cardForm">
-
-            <!-- BASIC INFO -->
-
-            <div class="form-section">
-
-                <div class="section-title">
-                    Basic Information
-                </div>
-
-                <div class="form-grid">
-
-                    <input type="text" id="id" placeholder="Enter unique ID">
-
-                    <input type="text" id="name" placeholder="Enter name">
-
-                    <input type="text" id="tag" placeholder="Enter tag">
-
-                    <input type="text" id="cnt" placeholder="Enter count">
-
-                </div>
-
-                <div style="margin-top:20px">
-
-                    <textarea id="desc" placeholder="Enter description"></textarea>
-
-                </div>
-
-                <div style="margin-top:20px">
-
-                    <input type="file" id="imgFile" accept="image/*">
-
-                    <img id="imgPreview" style="
-width:220px;
-margin-top:20px;
-border-radius:16px;
-display:none;
-">
-
-                </div>
-
-                <div class="form-grid" style="margin-top:20px">
-
-                    <select id="type">
-
-                        <option value="detail">Detail Page</option>
-
-                        <option value="table">Table Page</option>
-
+        <div class="form-section">
+            <div class="section-title">Category Assignment</div>
+            <div class="form-grid">
+                <div>
+                    <label>Category</label>
+                    <select id="contentCategory">
+                        <option value="">— Select a category —</option>
+                        <option value="Trendy Materials">Trendy Materials</option>
+                        <option value="Furniture">Furniture</option>
+                        <option value="Kitchen">Kitchen</option>
+                        <option value="Bathroom">Bathroom</option>
+                        <option value="Flooring">Flooring</option>
+                        <option value="Wall Finishes">Wall Finishes</option>
+                        <option value="Outdoor &amp; Facade">Outdoor &amp; Facade</option>
+                        <option value="Glass &amp; Mirror">Glass &amp; Mirror</option>
+                        <option value="Laminates &amp; Veneer">Laminates &amp; Veneer</option>
+                        <option value="Stone &amp; Quartz">Stone &amp; Quartz</option>
                     </select>
-
-                    <select id="template">
-
-                        <option value="detail">Detail Layout</option>
-
-                        <option value="table">Table Layout</option>
-
-                        <option value="comparison">Comparison Layout</option>
-
-                        <option value="top10">
-                            Top 10 Materials
-                        </option>
-
-                        <option value="grid">Simple Grid</option>
-
-                    </select>
-
                 </div>
-
             </div>
-
-            <!-- DYNAMIC FIELDS -->
-
-            <div class="form-section">
-
-                <div class="section-title">
-                    Template Fields
-                </div>
-
-                <div id="dynamicFields"></div>
-
-                <div id="tableBuilder" style="display:none;margin-top:30px">
-
-                    <div class="section-title">
-                        Dynamic Table Builder
-                    </div>
-
-                    <div class="form-grid">
-
-                        <input type="text" id="columnInput" placeholder="Enter column name">
-
-                        <button type="button" id="addColumnBtn">
-                            Add Column
-                        </button>
-
-                    </div>
-
-                    <div id="columnsPreview" style="
-            display:flex;
-            gap:10px;
-            flex-wrap:wrap;
-            margin-top:20px;
-        "></div>
-
-                </div>
-
-                <div id="rowBuilder" style="display:none;margin-top:30px">
-
-                    <div class="section-title">
-                        Dynamic Row Builder
-                    </div>
-
-                    <div id="rowBuilderContainer"></div>
-
-                    <button type="button" id="addRowBtn" class="rb-add-btn">
-                        + Add Row
-                    </button>
-
-                </div>
-
-            </div>
-
-            <button type="submit">
-                Add Card
-            </button>
-
-        </form>
-
-        <!-- PREVIEW -->
-
-        <div class="form-section" style="margin-top:30px">
-
-            <div class="section-title">
-                Existing Cards (Preview)
-            </div>
-
-            <div class="preview" id="preview"></div>
-
         </div>
 
+        <div class="form-section">
+            <div class="section-title">Section Cover Image</div>
+            <div class="form-grid">
+                <div>
+                    <label>Cover Image</label>
+                    <input type="file" id="coverImageInput" accept="image/*" onchange="previewImg(this,'coverImagePreview')">
+                    <img id="coverImagePreview" class="hidden" style="width:120px;height:120px;object-fit:cover;border-radius:10px;margin-top:8px;border:1px solid rgba(255,255,255,0.08)">
+                </div>
+            </div>
+        </div>
+
+        <div id="templateFormContainer"></div>
+
+        <div id="formActions" class="hidden" style="margin-top:24px;display:flex;gap:12px">
+            <button type="submit" class="btn btn-primary w-full">Save Content</button>
+        </div>
+    </form>
+</div>
+
+<!-- ============ TAB: MANAGE ============ -->
+<div id="tab-manage" class="tab-content hidden">
+    <div class="form-section">
+        <div class="section-title">
+            <span>Manage Content <span id="manageCount" style="font-size:14px;color:#64748b;font-weight:400"></span></span>
+            <span style="display:flex;gap:8px;align-items:center">
+                <select id="manageCategoryFilter" onchange="renderManage()" style="width:auto;padding:6px 10px;font-size:12px">
+                    <option value="">All Categories</option>
+                </select>
+            </span>
+        </div>
+        <div id="manageContent"></div>
     </div>
+</div>
 
-
-
-    <script>
-
-        const form = document.getElementById('cardForm');
-
-        const preview = document.getElementById('preview');
-
-        const imgFile =
-            document.getElementById('imgFile');
-
-        const imgPreview =
-            document.getElementById('imgPreview');
-
-        let uploadedImage = '';
-
-        imgFile.addEventListener('change', function () {
-
-            const file = this.files[0];
-
-            if (!file) return;
-
-            const reader =
-                new FileReader();
-
-            reader.onload = function (e) {
-
-                uploadedImage =
-                    e.target.result;
-
-                imgPreview.src =
-                    uploadedImage;
-
-                imgPreview.style.display =
-                    'block';
-            };
-
-            reader.readAsDataURL(file);
-
-        });
-
-        let cards = JSON.parse(localStorage.getItem('cards')) || [];
-
-        form.addEventListener('submit', function (e) {
-
-            e.preventDefault();
-
-            const card = {
-
-                id: document.getElementById('id').value,
-
-                img: uploadedImage,
-
-                name: document.getElementById('name').value,
-
-                desc: document.getElementById('desc').value,
-
-                tag: document.getElementById('tag').value,
-
-                cnt: document.getElementById('cnt').value,
-
-                template: document.getElementById('template').value,
-
-                type: document.getElementById('type').value,
-
-                material: document.getElementById('material')?.value || '',
-
-                thickness: document.getElementById('thickness')?.value || '',
-
-                brands: document.getElementById('brands')?.value || '',
-
-                pros: document.getElementById('pros')?.value || '',
-
-                cons: document.getElementById('cons')?.value || '',
-
-                columns:
-                    document.getElementById('columns')?.value || '',
-
-                rows:
-                    document.getElementById('rows')?.value || '',
-
-                top10Columns:
-                    document.getElementById('template').value === 'top10'
-                        ? JSON.stringify(dynamicColumns) : '',
-
-                top10Data:
-                    document.getElementById('template').value === 'top10'
-                        ? JSON.stringify(dynamicRows) : ''
-
-            };
-
-            cards.push(card);
-
-            localStorage.setItem('cards', JSON.stringify(cards));
-
-            renderCards();
-
-            form.reset();
-
-        });
-
-        function renderCards() {
-
-            preview.innerHTML = cards.map(card => {
-
-                if (card.template === 'top10') {
-                    const cols = JSON.parse(card.top10Columns || '[]');
-                    const rows = JSON.parse(card.top10Data || '[]');
-                    let tableHtml = `<div style="margin-bottom:20px">
-                        <h3 style="margin:0 0 6px">${card.name}</h3>
-                        <small style="color:#94a3b8">${card.desc}</small>
-                    </div>
-                    <div class="preview-table-wrap"><table><thead><tr>`;
-                    tableHtml += '<th>Image</th><th>Title</th>';
-                    cols.forEach(c => { tableHtml += `<th>${c}</th>`; });
-                    tableHtml += '<th>Action</th></tr></thead><tbody>';
-                    rows.forEach((row, i) => {
-                        tableHtml += '<tr>';
-                        tableHtml += `<td>${row.image ? `<img src="${row.image}" class="row-img">` : '<span style="color:#666">—</span>'}</td>`;
-                        tableHtml += `<td class="t-name">${row.title || '—'}</td>`;
-                        cols.forEach(c => {
-                            tableHtml += `<td>${(row.fields && row.fields[c]) || '—'}</td>`;
-                        });
-                        tableHtml += `<td>
-                            <button type="button" onclick="editCard('${card.id}')" style="width:auto;padding:6px 12px;margin:0 4px 0 0;background:#2563eb;border-radius:6px;font-size:11px">Edit</button>
-                            <button type="button" onclick="deleteCard('${card.id}')" style="width:auto;padding:6px 12px;margin:0;background:#dc2626;border-radius:6px;font-size:11px">Delete</button>
-                        </td></tr>`;
-                    });
-                    tableHtml += '</tbody></table></div>';
-                    return tableHtml;
-                }
-
-                return `
-
-        <div class="card">
-
-          <img src="${card.img}" alt="${card.name}">
-
-          <div class="card-body">
-
-            <h3>${card.name}</h3>
-
-            <p>${card.desc}</p>
-
-            <small>${card.cnt}</small>
-
-            <button type="button" onclick="editCard('${card.id}')">
-                Edit
-            </button>
-            <button type="button" onclick="deleteCard('${card.id}')">Delete</button>
-
-          </div>
-
+<!-- ============ TAB: SITE CONTENT ============ -->
+<div id="tab-sitecontent" class="tab-content hidden">
+    <div class="form-section">
+        <div class="section-title">
+            Existing Website Sections
+            <span style="font-size:14px;color:#64748b;font-weight:400;display:flex;gap:8px;align-items:center">
+                <input type="text" id="siteContentSearch" placeholder="Search sections..." oninput="renderSiteContent()" style="width:200px;padding:6px 10px;font-size:12px">
+                <select id="siteContentFilter" onchange="renderSiteContent()" style="width:auto;padding:6px 10px;font-size:12px">
+                    <option value="">All Types</option>
+                </select>
+            </span>
         </div>
+        <div id="siteContentContainer"></div>
+    </div>
+</div>
 
-      `;
+<!-- ============ TAB: EXPORT ============ -->
+<div id="tab-export" class="tab-content hidden">
+    <div class="form-section">
+        <div class="section-title">Export All Data</div>
+        <p style="color:#94a3b8;font-size:13px;margin-bottom:16px">Copy this JSON to transfer data to another system or create a backup.</p>
+        <button class="btn btn-secondary btn-sm" onclick="copyExport()">Copy to Clipboard</button>
+        <button class="btn btn-secondary btn-sm" onclick="downloadExport()">Download .json</button>
+        <div id="exportOutput" class="json-output"></div>
+    </div>
+    <div class="form-section">
+        <div class="section-title">Import Data</div>
+        <p style="color:#94a3b8;font-size:13px;margin-bottom:12px">Paste JSON data to restore or bulk-import content.</p>
+        <textarea id="importTextarea" style="min-height:200px;font-family:'Fira Code',monospace;font-size:12px" placeholder="Paste JSON here..."></textarea>
+        <div class="btn-group">
+            <button class="btn btn-primary btn-sm" onclick="importData()">Import</button>
+            <button class="btn btn-danger btn-sm" onclick="clearAllData()">Clear All Data</button>
+        </div>
+        <div id="importStatus" class="mt-12"></div>
+    </div>
+</div>
 
-            }).join('');
+<script>
+// ============================================================
+// DATA LAYER
+// ============================================================
+const DATA_KEY = 'template_cms_data';
 
-        }
+function getAllData() {
+    try { return JSON.parse(localStorage.getItem(DATA_KEY)) || {}; } catch(e) { return {}; }
+}
 
-        renderCards();
+function saveAllData(data) {
+    localStorage.setItem(DATA_KEY, JSON.stringify(data));
+}
 
-        function deleteCard(id) {
-            cards = cards.filter(card => card.id !== id);
-            localStorage.setItem('cards', JSON.stringify(cards));
-            renderCards();
-        }
+function getItems(templateType) {
+    const data = getAllData();
+    return data[templateType] || [];
+}
 
-        function editCard(id) {
+function setItems(templateType, items) {
+    const data = getAllData();
+    data[templateType] = items;
+    saveAllData(data);
+}
 
-            const card =
-                cards.find(card => card.id === id);
+function addItem(templateType, item) {
+    const items = getItems(templateType);
+    item._id = Date.now() + '_' + Math.random().toString(36).substr(2, 4);
+    item._template = templateType;
+    items.push(item);
+    setItems(templateType, items);
+    return item;
+}
 
-            if (!card) return;
+function updateItem(templateType, id, updated) {
+    const items = getItems(templateType);
+    const idx = items.findIndex(i => i._id === id);
+    if (idx === -1) return;
+    updated._id = id;
+    updated._template = templateType;
+    items[idx] = updated;
+    setItems(templateType, items);
+}
 
-            document.getElementById('id').value =
-                card.id;
+function deleteItem(templateType, id) {
+    const items = getItems(templateType);
+    setItems(templateType, items.filter(i => i._id !== id));
+}
 
-            uploadedImage = card.img;
+// Editing state
+let editingId = null;
+let editingTemplate = null;
 
-            imgPreview.src = card.img;
+// ============================================================
+// TAB SWITCHING
+// ============================================================
+function switchTab(name) {
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.add('hidden'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + name).classList.remove('hidden');
+    document.querySelector('.tab-btn[data-tab="' + name + '"]').classList.add('active');
+    if (name === 'manage') renderManage();
+    if (name === 'sitecontent') renderSiteContent();
+    if (name === 'export') renderExport();
+}
 
-            imgPreview.style.display = 'block';
+// ============================================================
+// TEMPLATE FORM RENDERER
+// ============================================================
+function renderTemplateForm() {
+    const type = document.getElementById('templateSelect').value;
+    const container = document.getElementById('templateFormContainer');
+    const formActions = document.getElementById('formActions');
+    formActions.classList.remove('hidden');
+    resetFormState();
 
-            document.getElementById('name').value =
-                card.name;
+    if (!type) {
+        container.innerHTML = '<div class="form-section"><p style="color:#64748b;text-align:center;padding:20px">Select a template type above to begin building content.</p></div>';
+        formActions.classList.add('hidden');
+        return;
+    }
 
-            document.getElementById('desc').value =
-                card.desc;
+    const formTemplates = {
+        'category-grid': renderCategoryGridForm,
+        'data-table': renderDataTableForm,
+        'ranked-table': renderRankedTableForm,
+        'spec-card': renderSpecCardForm,
+        'spec-board': renderSpecBoardForm,
+        'comparison': renderComparisonForm,
+        'furniture-list': renderFurnitureListForm,
+        'image-row': renderImageRowForm,
+        'side-grid': renderSideGridForm,
+        'top10': renderTop10Form,
+        'split-cover': renderSplitCoverForm,
+        'detail-card': renderDetailCardForm,
+        'detail-card-image': renderDetailCardImageForm,
+        'merged-view': renderMergedViewForm
+    };
 
-            document.getElementById('tag').value =
-                card.tag;
+    if (formTemplates[type]) formTemplates[type]();
+}
 
-            document.getElementById('cnt').value =
-                card.cnt;
+function resetFormState() {
+    window.dtRows = []; window.dtGallery = [];
+    window.rankedItems = []; window.specRows = []; window.specBoardRows = [];
+    window.cmpRows = []; window.furnitureItems = [];
+    window.imageRowItems = []; window.sideGridItems = [];
+    window.top10Items = []; window.dciRows = [];
+    window.mvTableRows = []; window.mvListItems = [];
+}
 
-            document.getElementById('type').value =
-                card.type;
+// ----- Category Grid Form -----
+function renderCategoryGridForm() {
+    document.getElementById('templateFormContainer').innerHTML =
+        '<div class="form-section"><div class="section-title">Category Grid</div><div class="form-grid">'
+        + '<div><label>Category ID</label><input type="text" id="cg_id" placeholder="e.g. flooring"></div>'
+        + '<div><label>Category Name</label><input type="text" id="cg_name" placeholder="e.g. Flooring Finishes"></div>'
+        + '<div><label>Tag</label><input type="text" id="cg_tag" placeholder="e.g. natural, finishes">&nbsp;</div>'
+        + '<div><label>Count</label><input type="text" id="cg_cnt" placeholder="e.g. 12"></div>'
+        + '<div style="grid-column:1/-1"><label>Description</label><textarea id="cg_desc" placeholder="Brief description..."></textarea></div>'
+        + '<div><label>Image</label><input type="file" accept="image/*" onchange="previewImg(this,\'cg_preview\')"><img id="cg_preview" class="hidden" style="width:80px;height:80px;object-fit:cover;border-radius:8px;margin-top:8px;border:1px solid rgba(255,255,255,0.08)"></div>'
+        + '</div></div>';
+}
 
-            document.getElementById('template').value =
-                card.template;
+// ----- Data Table Form -----
+function renderDataTableForm() {
+    let html = '<div class="form-section"><div class="section-title">Data Table with Thumbnails</div><div class="form-grid">'
+        + '<div><label>Table Title</label><input type="text" id="dt_title" placeholder="e.g. Flooring Finishes"></div>'
+        + '<div><label>Item Count</label><input type="text" id="dt_count" placeholder="e.g. 8">&nbsp;</div>'
+        + '<div style="grid-column:1/-1"><label>Columns (comma separated)</label><input type="text" id="dt_cols" placeholder="e.g. #,Material,Cost,Brands" onchange="window.dtCols=this.value.split(\',\');renderDtRows()"></div>'
+        + '</div>';
+    html += '<div style="margin-top:16px"><label>Data Rows</label><div id="dtRowContainer"></div></div>';
+    html += '<div class="btn-group" style="margin-top:12px"><button type="button" class="btn btn-secondary btn-sm" onclick="addDtRow()">+ Add Row</button></div>';
+    html += '<div style="margin-top:20px"><label>Gallery Images</label><div id="dtGalleryContainer"></div></div>';
+    html += '<div class="btn-group" style="margin-top:12px"><button type="button" class="btn btn-secondary btn-sm" onclick="addDtGalleryItem()">+ Add Gallery Image</button></div>';
+    html += '</div>';
+    document.getElementById('templateFormContainer').innerHTML = html;
+    renderDtRows();
+    renderDtGallery();
+}
 
-            renderDynamicFields();
-
-            if (card.template === 'top10') {
-                dynamicColumns = JSON.parse(card.top10Columns || '[]');
-                dynamicRows = JSON.parse(card.top10Data || '[]');
-                renderColumns();
-                renderRowBuilder();
-            }
-
-            if (document.getElementById('material')) {
-                document.getElementById('material').value =
-                    card.material || '';
-            }
-
-            if (document.getElementById('thickness')) {
-                document.getElementById('thickness').value =
-                    card.thickness || '';
-            }
-
-            if (document.getElementById('brands')) {
-                document.getElementById('brands').value =
-                    card.brands || '';
-            }
-
-            if (document.getElementById('pros')) {
-                document.getElementById('pros').value =
-                    card.pros || '';
-            }
-
-            if (document.getElementById('cons')) {
-                document.getElementById('cons').value =
-                    card.cons || '';
-            }
-
-            if (document.getElementById('thickness')) {
-                document.getElementById('thickness').value =
-                    card.thickness || '';
-            }
-
-            if (document.getElementById('brands')) {
-                document.getElementById('brands').value =
-                    card.brands || '';
-            }
-
-            if (document.getElementById('pros')) {
-                document.getElementById('pros').value =
-                    card.pros || '';
-            }
-
-            if (document.getElementById('cons')) {
-                document.getElementById('cons').value =
-                    card.cons || '';
-            }
-
-            deleteCard(id);
-
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-
-        }
-
-        window.editCard = editCard;
-        window.deleteCard = deleteCard;
-    </script>
-
-    <script>
-        const password = prompt("Enter Admin Password");
-
-        if (password !== "admin1234") {
-
-            document.body.innerHTML = `
-        <h1 style="
-            color:white;
-            text-align:center;
-            margin-top:100px;
-        ">
-            Access Denied
-        </h1>
-    `;
-        }
-
-
-
-
-
-
-
-
-        const templateSelect = document.getElementById('template');
-        const dynamicFields = document.getElementById('dynamicFields');
-
-        templateSelect.addEventListener('change', renderDynamicFields);
-
-        let dynamicColumns = [];
-        let dynamicRows = [];
-        const rowBuilder = document.getElementById('rowBuilder');
-        const addRowBtn = document.getElementById('addRowBtn');
-
-        function renderDynamicFields() {
-            const value = templateSelect.value;
-            const tableBuilder =
-                document.getElementById('tableBuilder');
-
-            if (value === 'detail') {
-                tableBuilder.style.display = 'none';
-                rowBuilder.style.display = 'none';
-                dynamicFields.innerHTML = `
-                    <input type="text" id="material" placeholder="Material">
-                    <input type="text" id="thickness" placeholder="Thickness">
-                    <input type="text" id="brands" placeholder="Brands">
-                    <textarea id="pros" placeholder="Pros"></textarea>
-                    <textarea id="cons" placeholder="Cons"></textarea>
-                `;
-            } else if (value === 'table') {
-                tableBuilder.style.display = 'block';
-                rowBuilder.style.display = 'none';
-                dynamicFields.innerHTML = `
-                    <textarea id="columns" placeholder="Columns separated by comma"></textarea>
-                    <textarea id="rows" placeholder="Rows"></textarea>
-                `;
-            } else if (value === 'comparison') {
-                tableBuilder.style.display = 'none';
-                rowBuilder.style.display = 'none';
-                dynamicFields.innerHTML = `
-                    <input type="text" placeholder="Left Item">
-                    <input type="text" placeholder="Right Item">
-                `;
-            } else if (value === 'top10') {
-                tableBuilder.style.display = 'block';
-                rowBuilder.style.display = 'block';
-                dynamicFields.innerHTML = '';
-                renderRowBuilder();
-            } else {
-                tableBuilder.style.display = 'none';
-                rowBuilder.style.display = 'none';
-                dynamicFields.innerHTML = '';
-            }
-        }
-
-        renderDynamicFields();
-        const addColumnBtn =
-            document.getElementById('addColumnBtn');
-
-        const columnsPreview =
-            document.getElementById('columnsPreview');
-
-        addColumnBtn.addEventListener('click', () => {
-
-            const input =
-                document.getElementById('columnInput');
-
-            const value =
-                input.value.trim();
-
-            if (!value) return;
-
-            dynamicColumns.push(value);
-
-            renderColumns();
-
-            input.value = '';
-
+function addDtRow() {
+    window.dtRows.push({});
+    renderDtRows();
+}
+function removeDtRow(idx) {
+    window.dtRows.splice(idx, 1);
+    renderDtRows();
+}
+function updateDtRow(idx, field, val) {
+    if (!window.dtRows[idx]) window.dtRows[idx] = {};
+    window.dtRows[idx][field] = val;
+}
+function renderDtRows() {
+    const container = document.getElementById('dtRowContainer');
+    if (!container) return;
+    const cols = (document.getElementById('dt_cols') && document.getElementById('dt_cols').value) ? document.getElementById('dt_cols').value.split(',') : ['#','Material','Cost','Brands'];
+    if (!window.dtRows.length) {
+        container.innerHTML = '<div class="row-repeater-empty">No rows yet. Add one above.</div>';
+        return;
+    }
+    let html = '<div class="row-repeater"><div class="row-repeater-header" style="grid-template-columns:' + cols.map(()=>'1fr').join(' ') + ' 50px">';
+    cols.forEach(c => html += '<span>' + c.trim() + '</span>');
+    html += '<span style="text-align:center">Del</span></div><div class="row-repeater-body">';
+    window.dtRows.forEach((row, i) => {
+        html += '<div class="row-repeater-row" style="grid-template-columns:' + cols.map(()=>'1fr').join(' ') + ' 50px">';
+        cols.forEach(c => {
+            const val = row[c.trim()] || '';
+            html += '<input type="text" value="' + val.replace(/"/g,'&quot;') + '" onchange="updateDtRow(' + i + ',\'' + c.trim() + '\',this.value)" placeholder="' + c.trim() + '">';
         });
+        html += '<div><button type="button" class="delete-btn" onclick="removeDtRow(' + i + ')">×</button></div></div>';
+    });
+    html += '</div></div>';
+    container.innerHTML = html;
+}
 
-        function renderColumns() {
+function addDtGalleryItem() {
+    window.dtGallery.push('');
+    renderDtGallery();
+}
+function removeDtGalleryItem(idx) {
+    window.dtGallery.splice(idx, 1);
+    renderDtGallery();
+}
+function updateDtGalleryImg(idx, src) {
+    window.dtGallery[idx] = src;
+}
+function renderDtGallery() {
+    const container = document.getElementById('dtGalleryContainer');
+    if (!container) return;
+    if (!window.dtGallery.length) {
+        container.innerHTML = '<div class="row-repeater-empty">No gallery images yet.</div>';
+        return;
+    }
+    let html = '<div class="row-repeater">';
+    window.dtGallery.forEach((img, i) => {
+        html += '<div class="row-repeater-row" style="grid-template-columns:1fr 100px 50px;align-items:center">';
+        html += '<input type="file" accept="image/*" onchange="previewImg(this,\'dt_gallery_' + i + '\')" style="padding:8px;font-size:12px">';
+        html += '<img id="dt_gallery_' + i + '" class="' + (img ? '' : 'hidden') + '" style="width:60px;height:60px;object-fit:cover;border-radius:6px;border:1px solid rgba(255,255,255,0.08)" src="' + img + '">';
+        html += '<div><button type="button" class="delete-btn" onclick="removeDtGalleryItem(' + i + ')">×</button></div></div>';
+    });
+    html += '</div>';
+    container.innerHTML = html;
+}
 
-            columnsPreview.innerHTML =
-                dynamicColumns.map((col, index) => {
+// ----- Ranked Table Form -----
+function renderRankedTableForm() {
+    document.getElementById('templateFormContainer').innerHTML =
+        '<div class="form-section"><div class="section-title">Premium Ranked Table</div><div class="form-grid">'
+        + '<div><label>Section Title</label><input type="text" id="rt_title" placeholder="e.g. Top Materials"></div>'
+        + '<div><label>Item Count</label><input type="text" id="rt_count" placeholder="e.g. 8"></div>'
+        + '</div><div style="margin-top:16px"><label>Ranked Items</label><div id="rtRowContainer"></div></div>'
+        + '<div class="btn-group" style="margin-top:12px"><button type="button" class="btn btn-secondary btn-sm" onclick="addRankedItem()">+ Add Item</button></div></div>';
+    renderRankedItems();
+}
 
-                    return `
-                <div
-                    style="
-                        background:#1d4ed8;
-                        padding:10px 16px;
-                        border-radius:12px;
-                        display:flex;
-                        align-items:center;
-                        gap:10px;
-                    "
-                >
-                    <span>${col}</span>
+function addRankedItem() {
+    window.rankedItems.push({name:'',cost:'',thick:'',install:'',maint:'',pros:'',cons:'',best:'',brands:'',image:''});
+    renderRankedItems();
+}
+function updateRankedItemImg(idx, input) {
+    const file = input.files[0];
+    if (!file || !window.rankedItems[idx]) return;
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        window.rankedItems[idx].image = e.target.result;
+        const img = document.getElementById('rt_img_' + idx);
+        if (img) { img.src = e.target.result; img.classList.remove('hidden'); }
+    };
+    reader.readAsDataURL(file);
+}
+function removeRankedItem(idx) {
+    window.rankedItems.splice(idx, 1);
+    renderRankedItems();
+}
+function updateRankedItem(idx, field, val) {
+    if (!window.rankedItems[idx]) return;
+    window.rankedItems[idx][field] = val;
+}
+function renderRankedItems() {
+    const container = document.getElementById('rtRowContainer');
+    if (!container) return;
+    const headers = ['Image','Name','Cost','Thk','Install','Maint','Pros','Cons','Best Use','Brands'];
+    const keys = ['image','name','cost','thick','install','maint','pros','cons','best','brands'];
+    if (!window.rankedItems.length) {
+        container.innerHTML = '<div class="row-repeater-empty">No items yet.</div>';
+        return;
+    }
+    let html = '<div class="row-repeater"><div class="row-repeater-header" style="grid-template-columns:80px repeat(9,1fr) 50px">';
+    headers.forEach(h => html += '<span>' + h + '</span>');
+    html += '<span style="text-align:center">Del</span></div><div class="row-repeater-body">';
+    window.rankedItems.forEach((item, i) => {
+        html += '<div class="row-repeater-row" style="grid-template-columns:80px repeat(9,1fr) 50px;align-items:start">';
+        html += '<div><input type="file" accept="image/*" onchange="updateRankedItemImg(' + i + ',this)" style="font-size:10px;padding:4px;width:72px">'
+            + '<img id="rt_img_' + i + '" class="' + (item.image?'':'hidden') + '" style="width:60px;height:60px;object-fit:cover;border-radius:6px;margin-top:4px;border:1px solid rgba(255,255,255,0.08)" src="' + (item.image||'') + '"></div>';
+        keys.forEach(k => {
+            if (k === 'image') return;
+            const v = item[k] || '';
+            html += '<input type="text" value="' + v.replace(/"/g,'&quot;') + '" onchange="updateRankedItem(' + i + ',\'' + k + '\',this.value)" placeholder="' + k + '">';
+        });
+        html += '<div><button type="button" class="delete-btn" onclick="removeRankedItem(' + i + ')">×</button></div></div>';
+    });
+    html += '</div></div>';
+    container.innerHTML = html;
+}
 
-                    <button
-                        type="button"
-                        onclick="removeColumn(${index})"
-                        style="
-                            width:auto;
-                            padding:4px 10px;
-                            margin:0;
-                            background:#dc2626;
-                            border-radius:8px;
-                        "
-                    >
-                        ×
-                    </button>
-                </div>
-            `;
+// ----- Spec Card Form -----
+function renderSpecCardForm() {
+    document.getElementById('templateFormContainer').innerHTML =
+        '<div class="form-section"><div class="section-title">Detail Specification Card</div><div class="form-grid">'
+        + '<div><label>Card Title</label><input type="text" id="sc_title" placeholder="e.g. Premium Marble"></div>'
+        + '<div><label>Section Title</label><input type="text" id="sc_section_title" placeholder="e.g. Premium Materials">&nbsp;</div>'
+        + '<div style="grid-column:1/-1"><label>Card Image</label><input type="file" accept="image/*" onchange="previewImg(this,\'sc_preview\')"><img id="sc_preview" class="hidden" style="width:80px;height:80px;object-fit:cover;border-radius:8px;margin-top:8px;border:1px solid rgba(255,255,255,0.08)"></div>'
+        + '</div><div style="margin-top:16px"><label>Specification Rows</label><div id="scRowContainer"></div></div>'
+        + '<div class="btn-group" style="margin-top:12px"><button type="button" class="btn btn-secondary btn-sm" onclick="addSpecRow()">+ Add Row</button></div></div>';
+    renderSpecRows();
+}
 
-                }).join('');
+function addSpecRow() {
+    window.specRows.push({label:'',value:''});
+    renderSpecRows();
+}
+function removeSpecRow(idx) {
+    window.specRows.splice(idx, 1);
+    renderSpecRows();
+}
+function updateSpecRow(idx, field, val) {
+    if (!window.specRows[idx]) return;
+    window.specRows[idx][field] = val;
+}
+function renderSpecRows() {
+    const container = document.getElementById('scRowContainer');
+    if (!container) return;
+    if (!window.specRows.length) {
+        container.innerHTML = '<div class="row-repeater-empty">No rows yet.</div>';
+        return;
+    }
+    let html = '<div class="row-repeater"><div class="row-repeater-header" style="grid-template-columns:1fr 2fr 50px">'
+        + '<span>Label</span><span>Value</span><span style="text-align:center">Del</span></div><div class="row-repeater-body">';
+    window.specRows.forEach((row, i) => {
+        html += '<div class="row-repeater-row" style="grid-template-columns:1fr 2fr 50px">';
+        html += '<input type="text" value="' + (row.label||'').replace(/"/g,'&quot;') + '" onchange="updateSpecRow(' + i + ',\'label\',this.value)" placeholder="e.g. Material">';
+        html += '<textarea rows="2" onchange="updateSpecRow(' + i + ',\'value\',this.value)" placeholder="Value">' + (row.value||'').replace(/"/g,'&quot;') + '</textarea>';
+        html += '<div><button type="button" class="delete-btn" onclick="removeSpecRow(' + i + ')">×</button></div></div>';
+    });
+    html += '</div></div>';
+    container.innerHTML = html;
+}
 
-            if (templateSelect.value === 'top10') {
-                renderRowBuilder();
-            }
+// ----- Spec Board Form -----
+function renderSpecBoardForm() {
+    document.getElementById('templateFormContainer').innerHTML =
+        '<div class="form-section"><div class="section-title">Premium Material Spec Board</div><div class="form-grid">'
+        + '<div><label>Board Title</label><input type="text" id="sb_title" placeholder="e.g. Microcement Finish"></div>'
+        + '<div><label>Item Count</label><input type="text" id="sb_count" placeholder="e.g. 10"></div>'
+        + '<div style="grid-column:1/-1"><label>Subtitle</label><input type="text" id="sb_subtitle" placeholder="e.g. Key features & specifications"></div>'
+        + '<div style="grid-column:1/-1"><label>Cover Image</label><input type="file" accept="image/*" onchange="previewImg(this,\'sb_preview\')"><img id="sb_preview" class="hidden" style="width:80px;height:80px;object-fit:cover;border-radius:8px;margin-top:8px;border:1px solid rgba(255,255,255,0.08)"></div>'
+        + '</div><div style="margin-top:16px"><label>Specification Props</label><div id="sbRowContainer"></div></div>'
+        + '<div class="btn-group" style="margin-top:12px"><button type="button" class="btn btn-secondary btn-sm" onclick="addSpecBoardRow()">+ Add Prop</button></div></div>';
+    renderSpecBoardRows();
+}
 
-        }
+function addSpecBoardRow() {
+    window.specBoardRows.push({label:'',value:''});
+    renderSpecBoardRows();
+}
+function removeSpecBoardRow(idx) {
+    window.specBoardRows.splice(idx, 1);
+    renderSpecBoardRows();
+}
+function updateSpecBoardRow(idx, field, val) {
+    if (!window.specBoardRows[idx]) return;
+    window.specBoardRows[idx][field] = val;
+}
+function renderSpecBoardRows() {
+    const container = document.getElementById('sbRowContainer');
+    if (!container) return;
+    if (!window.specBoardRows.length) {
+        container.innerHTML = '<div class="row-repeater-empty">No specification props yet.</div>';
+        return;
+    }
+    let html = '<div class="row-repeater"><div class="row-repeater-header" style="grid-template-columns:1fr 2fr 50px">'
+        + '<span>Label</span><span>Value</span><span style="text-align:center">Del</span></div><div class="row-repeater-body">';
+    window.specBoardRows.forEach((row, i) => {
+        html += '<div class="row-repeater-row" style="grid-template-columns:1fr 2fr 50px">';
+        html += '<input type="text" value="' + (row.label||'').replace(/"/g,'&quot;') + '" onchange="updateSpecBoardRow(' + i + ',\'label\',this.value)" placeholder="e.g. Cost">';
+        html += '<textarea rows="2" onchange="updateSpecBoardRow(' + i + ',\'value\',this.value)" placeholder="Value">' + (row.value||'').replace(/"/g,'&quot;') + '</textarea>';
+        html += '<div><button type="button" class="delete-btn" onclick="removeSpecBoardRow(' + i + ')">×</button></div></div>';
+    });
+    html += '</div></div>';
+    container.innerHTML = html;
+}
 
-        function removeColumn(index) {
+// ----- Comparison Form -----
+function renderComparisonForm() {
+    document.getElementById('templateFormContainer').innerHTML =
+        '<div class="form-section"><div class="section-title">Comparison Table</div><div class="form-grid">'
+        + '<div style="grid-column:1/-1"><label>Table Title</label><input type="text" id="cmp_title" placeholder="e.g. Marble vs Tiles"></div>'
+        + '<div style="grid-column:1/-1"><label>Column Names (comma separated)</label><input type="text" id="cmp_cols" placeholder="e.g. Category,Marble,Tiles" onchange="renderCmpRows()"></div>'
+        + '</div><div style="margin-top:16px"><label>Comparison Rows</label><div id="cmpRowContainer"></div></div>'
+        + '<div class="btn-group" style="margin-top:12px"><button type="button" class="btn btn-secondary btn-sm" onclick="addCmpRow()">+ Add Row</button></div></div>';
+    renderCmpRows();
+}
 
-            dynamicColumns.splice(index, 1);
+function addCmpRow() {
+    window.cmpRows.push([]);
+    renderCmpRows();
+}
+function removeCmpRow(idx) {
+    window.cmpRows.splice(idx, 1);
+    renderCmpRows();
+}
+function updateCmpRow(idx, colIdx, val) {
+    if (!window.cmpRows[idx]) return;
+    window.cmpRows[idx][colIdx] = val;
+}
+function renderCmpRows() {
+    const container = document.getElementById('cmpRowContainer');
+    if (!container) return;
+    const cols = (document.getElementById('cmp_cols') && document.getElementById('cmp_cols').value) ? document.getElementById('cmp_cols').value.split(',') : ['Category','Item A','Item B'];
+    if (!window.cmpRows.length) {
+        container.innerHTML = '<div class="row-repeater-empty">No rows yet.</div>';
+        return;
+    }
+    let html = '<div class="row-repeater"><div class="row-repeater-header" style="grid-template-columns:' + cols.map(()=>'1fr').join(' ') + ' 50px">';
+    cols.forEach(c => html += '<span>' + c.trim() + '</span>');
+    html += '<span style="text-align:center">Del</span></div><div class="row-repeater-body">';
+    window.cmpRows.forEach((row, i) => {
+        html += '<div class="row-repeater-row" style="grid-template-columns:' + cols.map(()=>'1fr').join(' ') + ' 50px">';
+        cols.forEach((c, ci) => {
+            const v = row[ci] || '';
+            html += '<input type="text" value="' + v.replace(/"/g,'&quot;') + '" onchange="updateCmpRow(' + i + ',' + ci + ',this.value)" placeholder="' + c.trim() + '">';
+        });
+        html += '<div><button type="button" class="delete-btn" onclick="removeCmpRow(' + i + ')">×</button></div></div>';
+    });
+    html += '</div></div>';
+    container.innerHTML = html;
+}
 
-            renderColumns();
+// ----- Furniture List Form -----
+function renderFurnitureListForm() {
+    document.getElementById('templateFormContainer').innerHTML =
+        '<div class="form-section"><div class="section-title">Furniture Finish List</div><div class="form-grid">'
+        + '<div><label>List Title</label><input type="text" id="fl_title" placeholder="e.g. Bed Finishes"></div>'
+        + '<div><label>Item Count</label><input type="text" id="fl_count" placeholder="e.g. 6"></div>'
+        + '</div><div style="margin-top:16px"><label>Items</label><div id="flRowContainer"></div></div>'
+        + '<div class="btn-group" style="margin-top:12px"><button type="button" class="btn btn-secondary btn-sm" onclick="addFurnitureItem()">+ Add Item</button></div></div>';
+    renderFurnitureItems();
+}
 
-            if (templateSelect.value === 'top10') {
-                renderRowBuilder();
-            }
+function addFurnitureItem() {
+    window.furnitureItems.push({name:'',cost:'',thk:'',install:'',maint:'',pros:'',cons:'',bestuse:'',image:''});
+    renderFurnitureItems();
+}
+function removeFurnitureItem(idx) {
+    window.furnitureItems.splice(idx, 1);
+    renderFurnitureItems();
+}
+function updateFurnitureItem(idx, field, val) {
+    if (!window.furnitureItems[idx]) return;
+    window.furnitureItems[idx][field] = val;
+}
+function updateFurnitureItemImg(idx, input) {
+    const file = input.files[0];
+    if (!file || !window.furnitureItems[idx]) return;
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        window.furnitureItems[idx].image = e.target.result;
+        const img = document.getElementById('fl_img_' + idx);
+        if (img) { img.src = e.target.result; img.classList.remove('hidden'); }
+    };
+    reader.readAsDataURL(file);
+}
+function renderFurnitureItems() {
+    const container = document.getElementById('flRowContainer');
+    if (!container) return;
+    const headers = ['Image','Name','Cost','Thk','Install','Maint','Pros','Cons','Best Use'];
+    const keys = ['image','name','cost','thk','install','maint','pros','cons','bestuse'];
+    if (!window.furnitureItems.length) {
+        container.innerHTML = '<div class="row-repeater-empty">No items yet.</div>';
+        return;
+    }
+    let html = '<div class="row-repeater"><div class="row-repeater-header" style="grid-template-columns:80px repeat(8,1fr) 50px">';
+    headers.forEach(h => html += '<span>' + h + '</span>');
+    html += '<span style="text-align:center">Del</span></div><div class="row-repeater-body">';
+    window.furnitureItems.forEach((item, i) => {
+        html += '<div class="row-repeater-row" style="grid-template-columns:80px repeat(8,1fr) 50px;align-items:start">';
+        html += '<div><input type="file" accept="image/*" onchange="updateFurnitureItemImg(' + i + ',this)" style="font-size:10px;padding:4px;width:72px">'
+            + '<img id="fl_img_' + i + '" class="' + (item.image?'':'hidden') + '" style="width:60px;height:60px;object-fit:cover;border-radius:6px;margin-top:4px;border:1px solid rgba(255,255,255,0.08)" src="' + (item.image||'') + '"></div>';
+        keys.forEach(k => {
+            if (k === 'image') return;
+            const v = item[k] || '';
+            html += '<input type="text" value="' + v.replace(/"/g,'&quot;') + '" onchange="updateFurnitureItem(' + i + ',\'' + k + '\',this.value)" placeholder="' + k + '">';
+        });
+        html += '<div><button type="button" class="delete-btn" onclick="removeFurnitureItem(' + i + ')">×</button></div></div>';
+    });
+    html += '</div></div>';
+    container.innerHTML = html;
+}
 
-        }
+// ----- Image Row Form -----
+function renderImageRowForm() {
+    document.getElementById('templateFormContainer').innerHTML =
+        '<div class="form-section"><div class="section-title">Image Row Grid</div>'
+        + '<div style="margin-top:16px"><label>Images</label><div id="irRowContainer"></div></div>'
+        + '<div class="btn-group" style="margin-top:12px"><button type="button" class="btn btn-secondary btn-sm" onclick="addImageRowItem()">+ Add Image</button></div></div>';
+    renderImageRowItems();
+}
 
-        window.removeColumn =
-            removeColumn;
+function addImageRowItem() {
+    window.imageRowItems.push({img:'',label:''});
+    renderImageRowItems();
+}
+function removeImageRowItem(idx) {
+    window.imageRowItems.splice(idx, 1);
+    renderImageRowItems();
+}
+function updateImageRowItem(idx, field, val) {
+    if (!window.imageRowItems[idx]) return;
+    window.imageRowItems[idx][field] = val;
+}
+function updateImageRowItemImg(idx, input) {
+    const file = input.files[0];
+    if (!file || !window.imageRowItems[idx]) return;
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        window.imageRowItems[idx].img = e.target.result;
+        const img = document.getElementById('ir_preview_' + idx);
+        if (img) { img.src = e.target.result; img.classList.remove('hidden'); }
+    };
+    reader.readAsDataURL(file);
+}
+function renderImageRowItems() {
+    const container = document.getElementById('irRowContainer');
+    if (!container) return;
+    if (!window.imageRowItems.length) {
+        container.innerHTML = '<div class="row-repeater-empty">No images yet.</div>';
+        return;
+    }
+    let html = '<div class="row-repeater">';
+    window.imageRowItems.forEach((item, i) => {
+        html += '<div class="row-repeater-row" style="grid-template-columns:1fr 1fr 80px 50px">';
+        html += '<input type="text" value="' + (item.label||'').replace(/"/g,'&quot;') + '" onchange="updateImageRowItem(' + i + ',\'label\',this.value)" placeholder="Label">';
+        html += '<input type="file" accept="image/*" onchange="updateImageRowItemImg(' + i + ',this)" style="padding:8px;font-size:12px">';
+        html += '<img id="ir_preview_' + i + '" class="' + (item.img?'':'hidden') + '" style="width:60px;height:60px;object-fit:cover;border-radius:6px" src="' + item.img + '">';
+        html += '<div><button type="button" class="delete-btn" onclick="removeImageRowItem(' + i + ')">×</button></div></div>';
+    });
+    html += '</div>';
+    container.innerHTML = html;
+}
 
-        function renderRowBuilder() {
-            const container = document.getElementById('rowBuilderContainer');
-            if (!dynamicColumns.length) {
-                container.innerHTML = '<div class="rb-empty">Add columns first using the column builder above.</div>';
-                return;
-            }
-            let html = '<div class="rb-wrap"><table class="rb-table"><thead><tr>';
-            html += '<th>Image</th>';
-            html += '<th>Title</th>';
-            dynamicColumns.forEach(col => {
-                html += `<th>${col}</th>`;
-            });
-            html += '<th>Action</th></tr></thead><tbody>';
-            dynamicRows.forEach((row, index) => {
-                html += '<tr>';
-                html += `<td>
-                    <input type="file" accept="image/*" class="rb-file-input" onchange="uploadRowImage(${index}, this)">
-                    ${row.image ? `<img src="${row.image}" class="rb-img">` : ''}
-                </td>`;
-                html += `<td>
-                    <input type="text" class="rb-input" value="${row.title || ''}" oninput="updateRowTitle(${index}, this.value)">
-                </td>`;
-                dynamicColumns.forEach((col) => {
-                    const val = (row.fields && row.fields[col]) || '';
-                    html += `<td>
-                        <input type="text" class="rb-input" value="${val}" oninput="updateRowField(${index}, ${dynamicColumns.indexOf(col)}, this.value)">
-                    </td>`;
-                });
-                html += `<td>
-                    <button type="button" class="rb-delete-btn" onclick="deleteRow(${index})">Delete</button>
-                </td></tr>`;
-            });
-            html += '</tbody></table></div>';
-            container.innerHTML = html;
-        }
+// ----- Side Grid Form -----
+function renderSideGridForm() {
+    document.getElementById('templateFormContainer').innerHTML =
+        '<div class="form-section"><div class="section-title">Side-by-Side Grid</div>'
+        + '<div style="margin-top:16px"><label>Images</label><div id="sgRowContainer"></div></div>'
+        + '<div class="btn-group" style="margin-top:12px"><button type="button" class="btn btn-secondary btn-sm" onclick="addSideGridItem()">+ Add Image</button></div></div>';
+    renderSideGridItems();
+}
 
-        function addRow() {
-            dynamicRows.push({ image: '', title: '', fields: {} });
-            renderRowBuilder();
-        }
+function addSideGridItem() {
+    window.sideGridItems.push({img:'',label:''});
+    renderSideGridItems();
+}
+function removeSideGridItem(idx) {
+    window.sideGridItems.splice(idx, 1);
+    renderSideGridItems();
+}
+function updateSideGridItem(idx, field, val) {
+    if (!window.sideGridItems[idx]) return;
+    window.sideGridItems[idx][field] = val;
+}
+function updateSideGridItemImg(idx, input) {
+    const file = input.files[0];
+    if (!file || !window.sideGridItems[idx]) return;
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        window.sideGridItems[idx].img = e.target.result;
+        const img = document.getElementById('sg_preview_' + idx);
+        if (img) { img.src = e.target.result; img.classList.remove('hidden'); }
+    };
+    reader.readAsDataURL(file);
+}
+function renderSideGridItems() {
+    const container = document.getElementById('sgRowContainer');
+    if (!container) return;
+    if (!window.sideGridItems.length) {
+        container.innerHTML = '<div class="row-repeater-empty">No images yet.</div>';
+        return;
+    }
+    let html = '<div class="row-repeater">';
+    window.sideGridItems.forEach((item, i) => {
+        html += '<div class="row-repeater-row" style="grid-template-columns:1fr 1fr 80px 50px">';
+        html += '<input type="text" value="' + (item.label||'').replace(/"/g,'&quot;') + '" onchange="updateSideGridItem(' + i + ',\'label\',this.value)" placeholder="Label">';
+        html += '<input type="file" accept="image/*" onchange="updateSideGridItemImg(' + i + ',this)" style="padding:8px;font-size:12px">';
+        html += '<img id="sg_preview_' + i + '" class="' + (item.img?'':'hidden') + '" style="width:60px;height:60px;object-fit:cover;border-radius:6px" src="' + item.img + '">';
+        html += '<div><button type="button" class="delete-btn" onclick="removeSideGridItem(' + i + ')">×</button></div></div>';
+    });
+    html += '</div>';
+    container.innerHTML = html;
+}
 
-        function deleteRow(index) {
-            dynamicRows.splice(index, 1);
-            renderRowBuilder();
-        }
+// ----- Top 10 Form -----
+function renderTop10Form() {
+    document.getElementById('templateFormContainer').innerHTML =
+        '<div class="form-section"><div class="section-title">Top 10 Materials</div><div class="form-grid">'
+        + '<div><label>Section Title</label><input type="text" id="t10_title" placeholder="Top 10 Materials 2026"></div>'
+        + '<div><label>Item Count</label><input type="text" id="t10_count" placeholder="10"></div>'
+        + '</div><div style="margin-top:16px"><div class="section-title" style="font-size:14px">Column Headers</div><div class="form-grid-4">'
+        + '<div><label>Cost</label><input type="text" id="t10_col_cost" placeholder="Cost (Sq.Ft)"></div>'
+        + '<div><label>Thk</label><input type="text" id="t10_col_thk" placeholder="Thk (mm)"></div>'
+        + '<div><label>Install</label><input type="text" id="t10_col_install" placeholder="Installation Process"></div>'
+        + '<div><label>Maint</label><input type="text" id="t10_col_maint" placeholder="Maintenance"></div>'
+        + '<div><label>Pros</label><input type="text" id="t10_col_pros" placeholder="✓ Pros"></div>'
+        + '<div><label>Cons</label><input type="text" id="t10_col_cons" placeholder="✕ Cons"></div>'
+        + '<div><label>Best Use</label><input type="text" id="t10_col_best" placeholder="Best Places to Use"></div>'
+        + '<div><label>Brands</label><input type="text" id="t10_col_brands" placeholder="Brands"></div>'
+        + '</div></div><div style="margin-top:16px"><label>Items</label><div id="t10RowContainer"></div></div>'
+        + '<div class="btn-group" style="margin-top:12px"><button type="button" class="btn btn-secondary btn-sm" onclick="addTop10Item()">+ Add Item</button></div></div>';
+    renderTop10Items();
+}
 
-        function updateRowTitle(index, value) {
-            if (!dynamicRows[index]) return;
-            dynamicRows[index].title = value;
-        }
+function addTop10Item() {
+    window.top10Items.push({name:'',cost:'',thick:'',install:'',maint:'',pros:'',cons:'',best:'',brands:'',image:''});
+    renderTop10Items();
+}
+function removeTop10Item(idx) {
+    window.top10Items.splice(idx, 1);
+    renderTop10Items();
+}
+function updateTop10Item(idx, field, val) {
+    if (!window.top10Items[idx]) return;
+    window.top10Items[idx][field] = val;
+}
+function updateTop10ItemImg(idx, input) {
+    const file = input.files[0];
+    if (!file || !window.top10Items[idx]) return;
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        window.top10Items[idx].image = e.target.result;
+        const img = document.getElementById('t10_img_' + idx);
+        if (img) { img.src = e.target.result; img.classList.remove('hidden'); }
+    };
+    reader.readAsDataURL(file);
+}
+function renderTop10Items() {
+    const container = document.getElementById('t10RowContainer');
+    if (!container) return;
+    const headers = ['Image','Name','Cost','Thick','Install','Maint','Pros','Cons','Best','Brands'];
+    const keys = ['image','name','cost','thick','install','maint','pros','cons','best','brands'];
+    if (!window.top10Items.length) {
+        container.innerHTML = '<div class="row-repeater-empty">No items yet.</div>';
+        return;
+    }
+    let html = '<div class="row-repeater"><div class="row-repeater-header" style="grid-template-columns:80px repeat(9,1fr) 50px">';
+    headers.forEach(h => html += '<span>' + h + '</span>');
+    html += '<span style="text-align:center">Del</span></div><div class="row-repeater-body">';
+    window.top10Items.forEach((item, i) => {
+        html += '<div class="row-repeater-row" style="grid-template-columns:80px repeat(9,1fr) 50px;align-items:start">';
+        html += '<div><input type="file" accept="image/*" onchange="updateTop10ItemImg(' + i + ',this)" style="font-size:10px;padding:4px;width:72px">'
+            + '<img id="t10_img_' + i + '" class="' + (item.image?'':'hidden') + '" style="width:60px;height:60px;object-fit:cover;border-radius:6px;margin-top:4px;border:1px solid rgba(255,255,255,0.08)" src="' + (item.image||'') + '"></div>';
+        keys.forEach(k => {
+            if (k === 'image') return;
+            const v = item[k] || '';
+            html += '<input type="text" value="' + v.replace(/"/g,'&quot;') + '" onchange="updateTop10Item(' + i + ',\'' + k + '\',this.value)" placeholder="' + k + '">';
+        });
+        html += '<div><button type="button" class="delete-btn" onclick="removeTop10Item(' + i + ')">×</button></div></div>';
+    });
+    html += '</div></div>';
+    container.innerHTML = html;
+}
 
-        function updateRowField(index, colIndex, value) {
-            if (!dynamicRows[index]) return;
-            const colName = dynamicColumns[colIndex];
-            if (!colName) return;
-            if (!dynamicRows[index].fields) dynamicRows[index].fields = {};
-            dynamicRows[index].fields[colName] = value;
-        }
+// ----- Split Cover Form -----
+function renderSplitCoverForm() {
+    document.getElementById('templateFormContainer').innerHTML =
+        '<div class="form-section"><div class="section-title">Split Cover Card</div><div class="form-grid">'
+        + '<div><label>Left Label</label><input type="text" id="sp_left_label" placeholder="e.g. Before"></div>'
+        + '<div><label>Right Label</label><input type="text" id="sp_right_label" placeholder="e.g. After"></div>'
+        + '<div><label>Left Image</label><input type="file" accept="image/*" onchange="previewImg(this,\'sp_left_preview\')"><img id="sp_left_preview" class="hidden" style="width:80px;height:80px;object-fit:cover;border-radius:8px;margin-top:8px;border:1px solid rgba(255,255,255,0.08)"></div>'
+        + '<div><label>Right Image</label><input type="file" accept="image/*" onchange="previewImg(this,\'sp_right_preview\')"><img id="sp_right_preview" class="hidden" style="width:80px;height:80px;object-fit:cover;border-radius:8px;margin-top:8px;border:1px solid rgba(255,255,255,0.08)"></div>'
+        + '</div></div>';
+}
 
-        function uploadRowImage(index, input) {
-            const file = input.files[0];
-            if (!file) return;
-            const reader = new FileReader();
-            reader.onload = function (e) {
-                if (!dynamicRows[index]) return;
-                dynamicRows[index].image = e.target.result;
-                renderRowBuilder();
+// ----- Detail Card Form -----
+function renderDetailCardForm() {
+    document.getElementById('templateFormContainer').innerHTML =
+        '<div class="form-section"><div class="section-title">Simple Detail Card</div><div class="form-grid">'
+        + '<div><label>Card Title</label><input type="text" id="dc_title" placeholder="e.g. Material Name"></div>'
+        + '<div><label>Material</label><input type="text" id="dc_material" placeholder="e.g. Natural Stone"></div>'
+        + '<div><label>Thickness</label><input type="text" id="dc_thickness" placeholder="e.g. 10–20 mm"></div>'
+        + '<div><label>Brands</label><input type="text" id="dc_brands" placeholder="e.g. RK Marble"></div>'
+        + '<div style="grid-column:1/-1"><label>Pros</label><textarea id="dc_pros" placeholder="List pros..."></textarea></div>'
+        + '<div style="grid-column:1/-1"><label>Cons</label><textarea id="dc_cons" placeholder="List cons..."></textarea></div>'
+        + '</div></div>';
+}
+
+// ----- Detail Card Image Form -----
+function renderDetailCardImageForm() {
+    document.getElementById('templateFormContainer').innerHTML =
+        '<div class="form-section"><div class="section-title">Enhanced Detail Card w/ Image</div><div class="form-grid">'
+        + '<div style="grid-column:1/-1"><label>Card Title</label><input type="text" id="dci_title" placeholder="e.g. Vitrified Tiles"></div>'
+        + '<div style="grid-column:1/-1"><label>Card Image</label><input type="file" accept="image/*" onchange="previewImg(this,\'dci_preview\')"><img id="dci_preview" class="hidden" style="width:80px;height:80px;object-fit:cover;border-radius:8px;margin-top:8px;border:1px solid rgba(255,255,255,0.08)"></div>'
+        + '</div><div style="margin-top:16px"><label>Specification Rows</label><div id="dciRowContainer"></div></div>'
+        + '<div class="btn-group" style="margin-top:12px"><button type="button" class="btn btn-secondary btn-sm" onclick="addDciRow()">+ Add Row</button></div></div>';
+    renderDciRows();
+}
+
+function addDciRow() {
+    window.dciRows.push({label:'',value:''});
+    renderDciRows();
+}
+function removeDciRow(idx) {
+    window.dciRows.splice(idx, 1);
+    renderDciRows();
+}
+function updateDciRow(idx, field, val) {
+    if (!window.dciRows[idx]) return;
+    window.dciRows[idx][field] = val;
+}
+function renderDciRows() {
+    const container = document.getElementById('dciRowContainer');
+    if (!container) return;
+    if (!window.dciRows.length) {
+        container.innerHTML = '<div class="row-repeater-empty">No rows yet.</div>';
+        return;
+    }
+    let html = '<div class="row-repeater"><div class="row-repeater-header" style="grid-template-columns:1fr 2fr 50px">'
+        + '<span>Label</span><span>Value</span><span style="text-align:center">Del</span></div><div class="row-repeater-body">';
+    window.dciRows.forEach((row, i) => {
+        html += '<div class="row-repeater-row" style="grid-template-columns:1fr 2fr 50px">';
+        html += '<input type="text" value="' + (row.label||'').replace(/"/g,'&quot;') + '" onchange="updateDciRow(' + i + ',\'label\',this.value)" placeholder="e.g. Material">';
+        html += '<textarea rows="2" onchange="updateDciRow(' + i + ',\'value\',this.value)" placeholder="Value">' + (row.value||'').replace(/"/g,'&quot;') + '</textarea>';
+        html += '<div><button type="button" class="delete-btn" onclick="removeDciRow(' + i + ')">×</button></div></div>';
+    });
+    html += '</div></div>';
+    container.innerHTML = html;
+}
+
+// ----- Merged View Form -----
+function renderMergedViewForm() {
+    document.getElementById('templateFormContainer').innerHTML =
+        '<div class="form-section"><div class="section-title">Merged Table + List View</div><div class="form-grid">'
+        + '<div><label>Section Title</label><input type="text" id="mv_title" placeholder="e.g. Marbles – Detailed Guide"></div>'
+        + '<div><label>Table Count</label><input type="text" id="mv_table_count" placeholder="e.g. 10"></div>'
+        + '<div style="grid-column:1/-1"><label>Column Names (comma separated)</label><input type="text" id="mv_cols" placeholder="e.g. Origin,#,Marble Name" onchange="renderMvTableRows()"></div>'
+        + '</div><div style="margin-top:16px"><label>Table Rows</label><div id="mvTableRowContainer"></div></div>'
+        + '<div class="btn-group" style="margin-top:12px"><button type="button" class="btn btn-secondary btn-sm" onclick="addMvTableRow()">+ Add Row</button></div>'
+        + '<div style="margin-top:20px"><label>List Items</label><div id="mvListRowContainer"></div></div>'
+        + '<div class="btn-group" style="margin-top:12px"><button type="button" class="btn btn-secondary btn-sm" onclick="addMvListItem()">+ Add Item</button></div></div>';
+    renderMvTableRows();
+    renderMvListItems();
+}
+
+function addMvTableRow() {
+    window.mvTableRows.push([]);
+    renderMvTableRows();
+}
+function removeMvTableRow(idx) {
+    window.mvTableRows.splice(idx, 1);
+    renderMvTableRows();
+}
+function updateMvTableRow(idx, colIdx, val) {
+    if (!window.mvTableRows[idx]) return;
+    window.mvTableRows[idx][colIdx] = val;
+}
+function renderMvTableRows() {
+    const container = document.getElementById('mvTableRowContainer');
+    if (!container) return;
+    const cols = (document.getElementById('mv_cols') && document.getElementById('mv_cols').value) ? document.getElementById('mv_cols').value.split(',') : ['#','Name','Description'];
+    if (!window.mvTableRows.length) {
+        container.innerHTML = '<div class="row-repeater-empty">No table rows yet.</div>';
+        return;
+    }
+    let html = '<div class="row-repeater"><div class="row-repeater-header" style="grid-template-columns:' + cols.map(()=>'1fr').join(' ') + ' 50px">';
+    cols.forEach(c => html += '<span>' + c.trim() + '</span>');
+    html += '<span style="text-align:center">Del</span></div><div class="row-repeater-body">';
+    window.mvTableRows.forEach((row, i) => {
+        html += '<div class="row-repeater-row" style="grid-template-columns:' + cols.map(()=>'1fr').join(' ') + ' 50px">';
+        cols.forEach((c, ci) => {
+            const v = row[ci] || '';
+            html += '<input type="text" value="' + v.replace(/"/g,'&quot;') + '" onchange="updateMvTableRow(' + i + ',' + ci + ',this.value)" placeholder="' + c.trim() + '">';
+        });
+        html += '<div><button type="button" class="delete-btn" onclick="removeMvTableRow(' + i + ')">×</button></div></div>';
+    });
+    html += '</div></div>';
+    container.innerHTML = html;
+}
+
+function addMvListItem() {
+    window.mvListItems.push({text:''});
+    renderMvListItems();
+}
+function removeMvListItem(idx) {
+    window.mvListItems.splice(idx, 1);
+    renderMvListItems();
+}
+function updateMvListItem(idx, val) {
+    if (!window.mvListItems[idx]) return;
+    window.mvListItems[idx].text = val;
+}
+function renderMvListItems() {
+    const container = document.getElementById('mvListRowContainer');
+    if (!container) return;
+    if (!window.mvListItems.length) {
+        container.innerHTML = '<div class="row-repeater-empty">No list items yet.</div>';
+        return;
+    }
+    let html = '<div class="row-repeater">';
+    window.mvListItems.forEach((item, i) => {
+        html += '<div class="row-repeater-row" style="grid-template-columns:1fr 40px">';
+        html += '<textarea rows="2" onchange="updateMvListItem(' + i + ',this.value)" placeholder="Item text...">' + (item.text||'').replace(/"/g,'&quot;') + '</textarea>';
+        html += '<div><button type="button" class="delete-btn" onclick="removeMvListItem(' + i + ')">×</button></div></div>';
+    });
+    html += '</div>';
+    container.innerHTML = html;
+}
+
+// ============================================================
+// UTILITY: Image Preview
+// ============================================================
+function previewImg(input, previewId) {
+    const file = input.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        const img = document.getElementById(previewId);
+        img.src = e.target.result;
+        img.classList.remove('hidden');
+    };
+    reader.readAsDataURL(file);
+}
+
+function getBase64FromInput(inputId) {
+    const img = document.getElementById(inputId);
+    return img && img.src && img.classList.contains('hidden') === false ? img.src : '';
+}
+
+// ============================================================
+// FORM SUBMISSION
+// ============================================================
+document.getElementById('contentForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const type = document.getElementById('templateSelect').value;
+    if (!type) { alert('Please select a template type.'); return; }
+
+    const data = collectFormData(type);
+    if (!data) return;
+    data.category = document.getElementById('contentCategory').value;
+    data.coverImage = getBase64FromInput('coverImagePreview');
+    data.template = type;
+
+    if (siteContentEditingId) {
+        saveSiteContentFromForm(siteContentEditingId, type, data);
+        return;
+    }
+
+    if (editingId && editingTemplate === type) {
+        updateItem(type, editingId, data);
+    } else {
+        addItem(type, data);
+    }
+
+    // Clear form
+    document.getElementById('contentForm').reset();
+    document.getElementById('templateSelect').value = '';
+    document.getElementById('templateFormContainer').innerHTML = '';
+    document.getElementById('formActions').classList.add('hidden');
+    resetFormState();
+
+    showStatus('Content saved successfully!', 'success');
+    switchTab('manage');
+});
+
+function collectFormData(type) {
+    const g = (id) => { const el = document.getElementById(id); return el ? el.value : ''; };
+    const gImg = (id) => { const el = document.getElementById(id); return el && el.src && !el.classList.contains('hidden') ? el.src : ''; };
+
+    switch(type) {
+        case 'category-grid':
+            return {
+                id: g('cg_id'), name: g('cg_name'), tag: g('cg_tag'),
+                cnt: g('cg_cnt'), desc: g('cg_desc'), img: gImg('cg_preview')
             };
-            reader.readAsDataURL(file);
+
+        case 'data-table':
+            return {
+                title: g('dt_title'), count: g('dt_count'), cols: g('dt_cols'),
+                rows: window.dtRows || [],
+                gallery: window.dtGallery || []
+            };
+
+        case 'ranked-table':
+            return {
+                title: g('rt_title'), count: g('rt_count'),
+                items: window.rankedItems || []
+            };
+
+        case 'spec-card':
+            return {
+                title: g('sc_title'), sectionTitle: g('sc_section_title'),
+                image: gImg('sc_preview'),
+                rows: window.specRows || []
+            };
+
+        case 'spec-board':
+            return {
+                title: g('sb_title'), count: g('sb_count'), subtitle: g('sb_subtitle'),
+                cover: gImg('sb_preview'),
+                props: window.specBoardRows || []
+            };
+
+        case 'comparison':
+            return {
+                title: g('cmp_title'), cols: g('cmp_cols'),
+                rows: window.cmpRows || []
+            };
+
+        case 'furniture-list':
+            return {
+                title: g('fl_title'), count: g('fl_count'),
+                items: window.furnitureItems || []
+            };
+
+        case 'image-row':
+            return { items: window.imageRowItems || [] };
+
+        case 'side-grid':
+            return { images: window.sideGridItems || [] };
+
+        case 'top10':
+            return {
+                title: g('t10_title'), count: g('t10_count'),
+                columns: {
+                    cost: g('t10_col_cost'), thick: g('t10_col_thk'),
+                    install: g('t10_col_install'), maint: g('t10_col_maint'),
+                    pros: g('t10_col_pros'), cons: g('t10_col_cons'),
+                    best: g('t10_col_best'), brands: g('t10_col_brands')
+                },
+                items: window.top10Items || []
+            };
+
+        case 'split-cover':
+            return {
+                leftImage: getBase64FromInput('sp_left_preview'),
+                leftLabel: g('sp_left_label'),
+                rightImage: getBase64FromInput('sp_right_preview'),
+                rightLabel: g('sp_right_label')
+            };
+
+        case 'detail-card':
+            return {
+                title: g('dc_title'), material: g('dc_material'),
+                thickness: g('dc_thickness'), brands: g('dc_brands'),
+                pros: g('dc_pros'), cons: g('dc_cons')
+            };
+
+        case 'detail-card-image':
+            return {
+                title: g('dci_title'),
+                image: gImg('dci_preview'),
+                rows: window.dciRows || []
+            };
+
+        case 'merged-view':
+            return {
+                title: g('mv_title'), tableCount: g('mv_table_count'), cols: g('mv_cols'),
+                tableRows: window.mvTableRows || [],
+                listItems: window.mvListItems || []
+            };
+
+        default:
+            return null;
+    }
+}
+
+// ============================================================
+// MANAGE CONTENT
+// ============================================================
+function renderManage() {
+    const data = getAllData();
+    const types = Object.keys(data).filter(t => data[t] && data[t].length > 0);
+    const container = document.getElementById('manageContent');
+    const filterEl = document.getElementById('manageCategoryFilter');
+    const selectedCat = filterEl ? filterEl.value : '';
+
+    // Collect all items with categories
+    const allItems = [];
+    const catSet = {};
+    types.forEach(type => {
+        (data[type] || []).forEach(item => {
+            allItems.push({ type: type, item: item });
+            if (item.category) catSet[item.category] = true;
+        });
+    });
+    const total = allItems.length;
+    document.getElementById('manageCount').textContent = '(' + total + ' items)';
+
+    // Populate category filter dropdown
+    if (filterEl && filterEl.options.length <= 1) {
+        Object.keys(catSet).sort().forEach(function(c) {
+            var opt = document.createElement('option');
+            opt.value = c;
+            opt.textContent = c;
+            filterEl.appendChild(opt);
+        });
+    }
+
+    // Filter by category
+    const filtered = selectedCat ? allItems.filter(function(x) { return x.item.category === selectedCat; }) : allItems;
+
+    if (!filtered.length) {
+        container.innerHTML = '<p style="color:#64748b;text-align:center;padding:20px">No content matches the selected category.</p>';
+        return;
+    }
+
+    // Group filtered items by type for display
+    const groups = {};
+    filtered.forEach(function(x) {
+        if (!groups[x.type]) groups[x.type] = [];
+        groups[x.type].push(x.item);
+    });
+
+    let html = '';
+    Object.keys(groups).forEach(function(type) {
+        html += '<div style="margin-bottom:24px"><h3 style="font-size:16px;color:#94a3b8;margin-bottom:12px">' + type + ' (' + groups[type].length + ')</h3><div class="preview">';
+        groups[type].forEach(function(item) {
+            html += '<div class="card"><div class="card-body">';
+            if (item.img) html += '<img src="' + item.img + '">';
+            if (item.category) html += '<div><span class="badge-pill" style="background:#1e3a5f;color:#60a5fa;font-size:10px;margin-bottom:8px;display:inline-block">' + item.category + '</span></div>';
+            html += '<h3>' + (item.name || item.title || 'Unnamed') + '</h3>';
+            if (item.desc) html += '<div class="desc">' + item.desc.substring(0, 100) + '</div>';
+            html += '<div class="card-actions">'
+                + '<button class="edit-btn" onclick="editCardItem(\'' + type + '\',\'' + item._id + '\')">Edit</button>'
+                + '<button class="delete-btn" onclick="deleteCardItem(\'' + type + '\',\'' + item._id + '\')">Delete</button>'
+                + '</div></div></div>';
+        });
+        html += '</div></div>';
+    });
+    container.innerHTML = html;
+}
+
+function deleteCardItem(type, id) {
+    if (!confirm('Delete this item?')) return;
+    deleteItem(type, id);
+    renderManage();
+}
+
+function editCardItem(type, id) {
+    const items = getItems(type);
+    const item = items.find(i => i._id === id);
+    if (!item) return;
+    switchTab('create');
+    document.getElementById('templateSelect').value = type;
+    renderTemplateForm();
+
+    setTimeout(() => {
+        populateForm(type, item);
+        editingId = id;
+        editingTemplate = type;
+        const btn = document.querySelector('#formActions button');
+        if (btn) btn.textContent = 'Update Content';
+    }, 100);
+}
+
+// ============================================================
+// POPULATE FORM (for editing)
+// ============================================================
+function populateForm(type, item) {
+    const sf = (id, val) => { const el = document.getElementById(id); if (el) el.value = val || ''; };
+
+    switch(type) {
+        case 'category-grid':
+            sf('cg_id', item.id); sf('cg_name', item.name); sf('cg_tag', item.tag);
+            sf('cg_cnt', item.cnt); sf('cg_desc', item.desc);
+            if (item.img) sf('cg_preview', '');
+            break;
+
+        case 'data-table':
+            sf('dt_title', item.title); sf('dt_count', item.count); sf('dt_cols', item.cols);
+            window.dtRows = item.rows || [];
+            window.dtGallery = item.gallery || [];
+            renderDtRows(); renderDtGallery();
+            break;
+
+        case 'ranked-table':
+            sf('rt_title', item.title); sf('rt_count', item.count);
+            window.rankedItems = item.items || [];
+            renderRankedItems();
+            break;
+
+        case 'spec-card':
+            sf('sc_title', item.title); sf('sc_section_title', item.sectionTitle);
+            window.specRows = item.rows || [];
+            renderSpecRows();
+            break;
+
+        case 'spec-board':
+            sf('sb_title', item.title); sf('sb_count', item.count); sf('sb_subtitle', item.subtitle);
+            window.specBoardRows = item.props || [];
+            renderSpecBoardRows();
+            break;
+
+        case 'comparison':
+            sf('cmp_title', item.title); sf('cmp_cols', item.cols);
+            window.cmpRows = item.rows || [];
+            renderCmpRows();
+            break;
+
+        case 'furniture-list':
+            sf('fl_title', item.title); sf('fl_count', item.count);
+            window.furnitureItems = item.items || [];
+            renderFurnitureItems();
+            break;
+
+        case 'image-row':
+            window.imageRowItems = item.items || [];
+            renderImageRowItems();
+            break;
+
+        case 'side-grid':
+            window.sideGridItems = item.images || [];
+            renderSideGridItems();
+            break;
+
+        case 'top10':
+            sf('t10_title', item.title); sf('t10_count', item.count);
+            if (item.columns) {
+                sf('t10_col_cost', item.columns.cost);
+                sf('t10_col_thk', item.columns.thick);
+                sf('t10_col_install', item.columns.install);
+                sf('t10_col_maint', item.columns.maint);
+                sf('t10_col_pros', item.columns.pros);
+                sf('t10_col_cons', item.columns.cons);
+                sf('t10_col_best', item.columns.best);
+                sf('t10_col_brands', item.columns.brands);
+            }
+            window.top10Items = item.items || [];
+            renderTop10Items();
+            break;
+
+        case 'split-cover':
+            sf('sp_left_label', item.leftLabel); sf('sp_right_label', item.rightLabel);
+            break;
+
+        case 'detail-card':
+            sf('dc_title', item.title); sf('dc_material', item.material);
+            sf('dc_thickness', item.thickness); sf('dc_brands', item.brands);
+            sf('dc_pros', item.pros); sf('dc_cons', item.cons);
+            break;
+
+        case 'detail-card-image':
+            sf('dci_title', item.title);
+            window.dciRows = item.rows || [];
+            renderDciRows();
+            break;
+
+        case 'merged-view':
+            sf('mv_title', item.title); sf('mv_table_count', item.tableCount);
+            sf('mv_cols', item.cols);
+            window.mvTableRows = item.tableRows || [];
+            window.mvListItems = item.listItems || [];
+            renderMvTableRows(); renderMvListItems();
+            break;
+    }
+    sf('contentCategory', item.category);
+    if (item.coverImage) {
+        var ci = document.getElementById('coverImagePreview');
+        if (ci) { ci.src = item.coverImage; ci.classList.remove('hidden'); }
+    }
+}
+
+// ============================================================
+// EXPORT / IMPORT
+// ============================================================
+function renderExport() {
+    const data = getAllData();
+    document.getElementById('exportOutput').textContent = JSON.stringify(data, null, 2);
+}
+
+function copyExport() {
+    const text = document.getElementById('exportOutput').textContent;
+    navigator.clipboard.writeText(text).then(() => {
+        showStatus('Copied to clipboard!', 'success');
+    }).catch(() => {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        ta.remove();
+        showStatus('Copied to clipboard!', 'success');
+    });
+}
+
+function downloadExport() {
+    const data = getAllData();
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'template_cms_export.json';
+    a.click();
+    URL.revokeObjectURL(url);
+}
+
+function importData() {
+    const text = document.getElementById('importTextarea').value.trim();
+    if (!text) { showStatus('Paste JSON data first.', 'error'); return; }
+    try {
+        const data = JSON.parse(text);
+        if (typeof data !== 'object' || Array.isArray(data)) {
+            throw new Error('Root must be an object with template type keys.');
         }
+        saveAllData(data);
+        document.getElementById('importTextarea').value = '';
+        showStatus('Data imported successfully! (' + Object.keys(data).reduce((s, t) => s + data[t].length, 0) + ' items)', 'success');
+        renderExport();
+    } catch(e) {
+        showStatus('Invalid JSON: ' + e.message, 'error');
+    }
+}
 
-        addRowBtn.addEventListener('click', addRow);
+function clearAllData() {
+    if (!confirm('Delete ALL content data? This cannot be undone.')) return;
+    if (!confirm('Are you sure? All templates and items will be permanently deleted.')) return;
+    saveAllData({});
+    renderExport();
+    showStatus('All data cleared.', 'success');
+}
 
-        window.addRow = addRow;
-        window.deleteRow = deleteRow;
-        window.updateRowTitle = updateRowTitle;
-        window.updateRowField = updateRowField;
-        window.uploadRowImage = uploadRowImage;
-        window.renderRowBuilder = renderRowBuilder;
-    </script>
+// ============================================================
+// STATUS MESSAGES
+// ============================================================
+function showStatus(msg, type) {
+    const existing = document.querySelector('.status-msg');
+    if (existing) existing.remove();
+    const div = document.createElement('div');
+    div.className = 'status-msg status-' + type;
+    div.textContent = msg;
+    document.getElementById('contentForm').insertBefore(div, document.getElementById('templateFormContainer'));
+    setTimeout(() => div.remove(), 3000);
+}
+
+// ============================================================
+// SITE CONTENT MANAGEMENT SYSTEM
+// ============================================================
+const CMS_PREFIX = 'cms_override_';
+let siteContentEditingId = null;
+
+// --- Override CRUD ---
+function getSectionOverride(sectionId) {
+    try { return JSON.parse(localStorage.getItem(CMS_PREFIX + sectionId)); } catch(e) { return null; }
+}
+function setSectionOverride(sectionId, data) {
+    localStorage.setItem(CMS_PREFIX + sectionId, JSON.stringify(data));
+}
+function removeSectionOverride(sectionId) {
+    localStorage.removeItem(CMS_PREFIX + sectionId);
+}
+function hasSectionOverride(sectionId) {
+    return localStorage.getItem(CMS_PREFIX + sectionId) !== null;
+}
+
+// --- Content Registry ---
+const SITE_SECTIONS = [
+    {
+        id: 'exp-look', title: 'Materials That Look Expensive', template: 'ranked-table', category: 'Premium Ranked Tables',
+        getDefault: function() {
+            return {
+                title: 'Materials That Look ₹50L+ But Cost Under ₹50K',
+                count: '3',
+                items: [
+                    {name:'Venetian Plaster Paint',cost:'₹180 – ₹350',thick:'1–3',install:'Prep wall → apply base coat → apply texture/Venetian layers → seal',maint:'Wipe dust lightly; reseal every few years',pros:'Luxurious depth and dimension like stone; customizable',cons:'Requires skilled applicator; not ideal for high-moisture areas',best:'Living room accent walls, hotel lobbies, foyer',brands:'Vasari India'},
+                    {name:'Marble-Finish Tiles',cost:'₹90+',thick:'8–10',install:'Lay tiles on screed with adhesive → grout → seal if matte',maint:'Mop with mild detergent; avoid harsh acids',pros:'Realistic marble aesthetic at fraction of stone cost; durable',cons:'Can feel cold; grout lines visible unless large format',best:'Living room floors, bathroom walls, kitchen backsplash',brands:'Kajaria, Somany, Nitco'},
+                    {name:'Premium Finish Laminates',cost:'₹200+',thick:'0.8–1.5',install:'Laminate sheets bonded to substrates with adhesive; edges banded',maint:'Wipe with soft damp cloth; avoid abrasive cleaners',pros:'Wide range of textures; durable scratch-resistant surfaces',cons:'Less rich than real wood/lacquer up close; thin laminates can peel',best:'TV units, wardrobes, kitchen cabinets, accent panels',brands:'Royale Touche Luxury Laminates'}
+                ]
+            };
+        }
+    },
+    {
+        id: 'tiles', title: 'Tiles', template: 'detail-card-image', category: 'Premium Ranked Tables',
+        getDefault: function() {
+            return {
+                title: 'Types of Tiles',
+                tableItems: [
+                    'Vitrified Tiles||₹60 – ₹250||8–10||Flooring, living rooms, bedrooms, commercial spaces||Kajaria, Somany, Nitco',
+                    'Ceramic Tiles||₹30 – ₹120||6–8||Bathroom walls, kitchen backsplashes||Kajaria, Johnson',
+                    'Porcelain Tiles||₹80 – ₹300||8–12||Flooring, outdoor areas, bathrooms, facades||Simpolo, Kajaria, RAK Ceramics',
+                    'Natural Stone Tiles||₹150 – ₹800||10–20||Flooring, walls, feature areas||Galaxy',
+                    'Cement Concrete Tiles||₹150 – ₹400||15–20||Accent flooring, bathrooms, cafes||Bharat Floorings',
+                    'Mosaic Tiles||₹200 – ₹800||4–8||Backsplashes, bathrooms, pools||Galaxy'
+                ],
+                detailItems: [
+                    {title:'Vitrified Tiles',rows:[{l:'Material',v:'Highly durable tiles made from clay and silica'},{l:'Types',v:'Double Charged, Full Body, Glazed Vitrified'},{l:'Sizes',v:'600×600, 600×1200, 800×1600'},{l:'Thk',v:'8–10'},{l:'Cost',v:'₹60 – ₹250'},{l:'Brands',v:'Kajaria, Somany, Nitco'},{l:'Best Places',v:'Flooring, living rooms, bedrooms, commercial'},{l:'Pros',v:'Durable, low maintenance, stain-resistant'},{l:'Cons',v:'Can be slippery, less natural look'},{l:'Installation',v:'Tile adhesive + spacers'},{l:'Maintenance',v:'Easy cleaning, no sealing required'}]},
+                    {title:'Ceramic Tiles',rows:[{l:'Material',v:'Lightweight tiles made from natural clay'},{l:'Types',v:'Glazed, Unglazed, Digital Printed'},{l:'Sizes',v:'300×300, 300×600'},{l:'Thk',v:'6–8'},{l:'Cost',v:'₹30 – ₹120'},{l:'Brands',v:'Kajaria, Johnson'},{l:'Best Places',v:'Bathroom walls, kitchen backsplashes'},{l:'Pros',v:'Affordable, wide designs, easy installation'},{l:'Cons',v:'Less durable for heavy flooring'},{l:'Installation',v:'Tile adhesive'},{l:'Maintenance',v:'Easy cleaning'}]},
+                    {title:'Porcelain Tiles',rows:[{l:'Material',v:'Dense, high-strength tiles with very low water absorption'},{l:'Types',v:'Full Body, Glazed, Matte, Polished'},{l:'Sizes',v:'600×600, 600×1200, 1200×2400'},{l:'Thk',v:'8–12'},{l:'Cost',v:'₹80 – ₹300'},{l:'Brands',v:'Simpolo, Kajaria, RAK Ceramics'},{l:'Best Places',v:'Flooring, outdoor areas, bathrooms, facades'},{l:'Pros',v:'Highly durable, water-resistant, versatile'},{l:'Cons',v:'Costlier than ceramic'},{l:'Installation',v:'Tile adhesive for heavy-duty'},{l:'Maintenance',v:'Low maintenance'}]},
+                    {title:'Natural Stone Tiles',rows:[{l:'Material',v:'Tiles from marble, granite, slate, or travertine'},{l:'Types',v:'Marble, Granite, Slate, Travertine'},{l:'Sizes',v:'300×300, 600×600'},{l:'Thk',v:'10–20'},{l:'Cost',v:'₹150 – ₹800'},{l:'Brands',v:'Galaxy'},{l:'Best Places',v:'Flooring, walls, feature areas'},{l:'Pros',v:'Natural beauty, premium finish'},{l:'Cons',v:'Requires maintenance, can stain'},{l:'Installation',v:'Cement bedding or stone adhesive'},{l:'Maintenance',v:'Sealing required'}]},
+                    {title:'Cement Concrete Tiles',rows:[{l:'Material',v:'Handmade tiles with pigmented cement, bold patterns'},{l:'Types',v:'Encaustic Tiles, Plain Cement Tiles'},{l:'Sizes',v:'200×200, 300×300'},{l:'Thk',v:'15–20'},{l:'Cost',v:'₹150 – ₹400'},{l:'Brands',v:'Bharat Floorings'},{l:'Best Places',v:'Accent flooring, bathrooms, cafes'},{l:'Pros',v:'Unique patterns, artisanal look'},{l:'Cons',v:'Porous, needs sealing'},{l:'Installation',v:'Cement bedding'},{l:'Maintenance',v:'Regular sealing required'}]},
+                    {title:'Mosaic Tiles',rows:[{l:'Material',v:'Small tiles arranged in patterns on mesh sheets'},{l:'Types',v:'Glass, Ceramic, Stone Mosaic'},{l:'Sizes',v:'300×300 sheets'},{l:'Thk',v:'4–8'},{l:'Cost',v:'₹200 – ₹800'},{l:'Brands',v:'Galaxy'},{l:'Best Places',v:'Backsplashes, bathrooms, pools'},{l:'Pros',v:'Decorative, flexible for curved surfaces'},{l:'Cons',v:'Expensive, grout-heavy maintenance'},{l:'Installation',v:'Tile adhesive'},{l:'Maintenance',v:'Regular grout cleaning'}]}
+                ]
+            };
+        }
+    },
+    {
+        id: 'granite', title: 'Granite', template: 'detail-card-image', category: 'Premium Ranked Tables',
+        getDefault: function() {
+            return {
+                title: 'Granites',
+                tableItems: [
+                    'Black Granite||₹180 – ₹700||16-30||Kitchen countertops, flooring, staircases, wall cladding||RK Marble, Classic Marble Company',
+                    'Black Galaxy Granite||₹250 – ₹800||16-30||Kitchen countertops, feature walls, tabletops||RK Marble, Classic Marble Company',
+                    'Steel Grey Granite||₹250 – ₹800||16-30||Kitchen countertops, feature walls, tabletops||RK Marble, Classic Marble Company',
+                    'Tan Brown Granite||₹140 – ₹350||16-30||Countertops, flooring, staircases||RK Marble, Classic Marble Company',
+                    'Viscount White Granite||₹180 – ₹450||16-30||Flooring, kitchen countertops, wall cladding, staircases||RK Marble, Classic Marble Company',
+                    'Alaska White Granite||₹250 – ₹700||16-30||Kitchen countertops, islands, feature walls, bathrooms||RK Marble, Classic Marble Company',
+                    'Imperial Red Granite||₹140 – ₹350||15–20||Flooring, staircases, exterior cladding, kitchen countertop||RK Marble, Classic Marble Company'
+                ],
+                detailItems: [
+                    {title:'Black Granite',rows:[{l:'Material',v:'Deep black, uniform granite'},{l:'Types',v:'Absolute Black, Premium Black, Jet Black'},{l:'Sizes',v:'Slabs (8–10 ft), Cut sizes (2×2 ft, 2×4 ft)'},{l:'Thk',v:'16–20, 20–30'},{l:'Cost',v:'₹180 – ₹700'},{l:'Brands',v:'RK Marble, Classic Marble'},{l:'Best Places',v:'Kitchen countertops, flooring, staircases, wall cladding'},{l:'Pros',v:'Highly durable, stain-resistant, premium look'},{l:'Cons',v:'Shows dust and fingerprints, limited pattern variation'},{l:'Installation',v:'Cement mortar or stone adhesive'},{l:'Maintenance',v:'Easy cleaning; occasional sealing'}]},
+                    {title:'Black Galaxy Granite',rows:[{l:'Material',v:'Deep black with golden and white speckles'},{l:'Types',v:'Small Galaxy, Medium Galaxy, Premium Galaxy'},{l:'Sizes',v:'Slabs (8–10 ft)'},{l:'Thk',v:'16–20, 20–30'},{l:'Cost',v:'₹250 – ₹800'},{l:'Brands',v:'RK Marble, Classic Marble'},{l:'Best Places',v:'Kitchen countertops, feature walls, tabletops'},{l:'Pros',v:'Luxurious look, durable, unique pattern'},{l:'Cons',v:'Costlier than most granites'},{l:'Installation',v:'Cement mortar or stone adhesive'},{l:'Maintenance',v:'Easy cleaning; periodic sealing'}]},
+                    {title:'Steel Grey Granite',rows:[{l:'Material',v:'Grey granite with subtle speckled patterns'},{l:'Types',v:'Steel Grey Polished, Steel Grey Leather Finish'},{l:'Sizes',v:'Slabs (8–10 ft)'},{l:'Thk',v:'16–20, 20–30'},{l:'Cost',v:'₹150 – ₹400'},{l:'Brands',v:'RK Marble, Classic Marble'},{l:'Best Places',v:'Kitchen countertops, feature walls, tabletops'},{l:'Pros',v:'Durable, budget-friendly, hides dust well'},{l:'Cons',v:'Less luxurious than marble, limited pattern variation'},{l:'Installation',v:'Cement mortar or stone adhesive'},{l:'Maintenance',v:'Low maintenance; periodic sealing'}]},
+                    {title:'Tan Brown Granite',rows:[{l:'Material',v:'Dark brown with black and reddish speckles'},{l:'Types',v:'Tan Brown Classic, Tan Brown Dark'},{l:'Sizes',v:'Slabs (8–10 ft)'},{l:'Thk',v:'16–20, 20–30'},{l:'Cost',v:'₹140 – ₹350'},{l:'Brands',v:'RK Marble, Classic Marble'},{l:'Best Places',v:'Countertops, flooring, staircases'},{l:'Pros',v:'Affordable, durable, warm tones'},{l:'Cons',v:'Busy pattern may not suit modern interiors'},{l:'Installation',v:'Cement mortar or stone adhesive'},{l:'Maintenance',v:'Easy cleaning; periodic sealing'}]},
+                    {title:'Viscount White Granite',rows:[{l:'Material',v:'White to light grey with flowing linear black/grey veins'},{l:'Types',v:'Viscount White Classic, Viscount White Premium'},{l:'Sizes',v:'Slabs (8–10 ft, 4–6 ft wide)'},{l:'Thk',v:'16–20, 20–30'},{l:'Cost',v:'₹180 – ₹450'},{l:'Brands',v:'RK Marble, Classic Marble'},{l:'Best Places',v:'Flooring, kitchen countertops, wall cladding, staircases'},{l:'Pros',v:'Marble-like look, durable, cost-effective'},{l:'Cons',v:'Pattern variation between slabs'},{l:'Installation',v:'Cement mortar or stone adhesive'},{l:'Maintenance',v:'Easy maintenance; periodic sealing'}]},
+                    {title:'Alaska White Granite',rows:[{l:'Material',v:'Premium white with dramatic grey, black, beige veining'},{l:'Types',v:'Alaska White Standard, Alaska White Premium'},{l:'Sizes',v:'Slabs (8–10 ft, 4–6 ft wide)'},{l:'Thk',v:'16–20, 20–30'},{l:'Cost',v:'₹250 – ₹700'},{l:'Brands',v:'RK Marble, Classic Marble'},{l:'Best Places',v:'Kitchen countertops, islands, feature walls, bathrooms'},{l:'Pros',v:'Premium aesthetic, unique patterns, durable'},{l:'Cons',v:'Higher cost, pattern variation between slabs'},{l:'Installation',v:'Cement mortar or stone adhesive'},{l:'Maintenance',v:'Periodic sealing; easy to clean'}]},
+                    {title:'Imperial Red Granite',rows:[{l:'Material',v:'Rich deep red with black and grey crystalline specks'},{l:'Types',v:'Imperial Red, New Imperial Red, Ruby Red'},{l:'Sizes',v:'Slabs (8–10 ft), Cut tiles (2×2 ft, 2×4 ft)'},{l:'Thk',v:'16–20, 20–30'},{l:'Cost',v:'₹140 – ₹350'},{l:'Brands',v:'RK Marble, Classic Marble'},{l:'Best Places',v:'Flooring, staircases, exterior cladding, countertops'},{l:'Pros',v:'Extremely durable, weather-resistant, bold color'},{l:'Cons',v:'Strong color may not suit modern interiors'},{l:'Installation',v:'Cement mortar or stone adhesive'},{l:'Maintenance',v:'Easy maintenance; periodic sealing'}]}
+                ]
+            };
+        }
+    },
+    {
+        id: 'marble-vs-tiles', title: 'Marble vs Tiles', template: 'comparison', category: 'Comparison Tables',
+        getDefault: function() {
+            return {
+                title: 'Comparison: Marble vs Tiles',
+                cols: 'Category,Marble,Tiles',
+                rows: [
+                    ['Material & Make','Natural stone (Italian & Indian marbles)','Manufactured materials (ceramic, vitrified, porcelain, etc.)'],
+                    ['Aesthetic','Natural grains, rich veining, luxurious, unique slabs','Printed/textured designs (marble, wood, concrete look)'],
+                    ['Size & Thickness','15–22 mm thick; large slabs up to 2m × 3m','3–10 mm thick; modular sizes up to 3m × 3m'],
+                    ['Cost','₹200/sqft upwards; premium marbles are expensive','₹60/sqft upwards; more budget-friendly'],
+                    ['Applications','Flooring, walls, bathrooms, countertops, feature walls','Flooring, walls, kitchens, bathrooms, outdoor areas'],
+                    ['Durability & Water Resistance','Durable but porous; needs sealing','Highly durable, water-resistant, stain-proof'],
+                    ['Maintenance & Repairability','Needs polishing; can be repaired','Low maintenance; cannot be repaired'],
+                    ['Installation & Speed','Slow; requires skilled labour','Fast; easy installation'],
+                    ['Finish & Surface Options','Polished, honed, leather, brushed','Glossy, matte, textured, anti-skid'],
+                    ['Joints & Finish Look','Seamless, minimal joints','Visible grout lines'],
+                    ['Feel & Consistency','Natural, rich feel; unique','Uniform, consistent'],
+                    ['Safety (Slip & Heat)','Heat-resistant; can be slippery','Heat-resistant; anti-skid options available'],
+                    ['Best Use Case','Luxury homes, premium spaces','Budget homes, high-traffic areas']
+                ]
+            };
+        }
+    },
+    {
+        id: 'top10', title: 'Top 10 Materials 2026', template: 'top10', category: 'Top 10',
+        getDefault: function() {
+            return {
+                title: 'Top 10 Materials 2026', count: '10',
+                tableItems: [
+                    'Liquid Metallic Ombre||₹800-₹2500||0.5–1||Feature walls, entry foyers, dining accent walls, bars, powder rooms||Colortale',
+                    'Microcement||₹200–₹500||2–3||Floors, walls, bathrooms, furniture||Colortale',
+                    'Alabaster Lights||₹12,000 – ₹40,000 / light||5–20||Dining rooms, bedrooms, table lamps, Luxury lounges||World of abner, Mugen Design Lab',
+                    'Artistic Acoustic Panels||₹7,000 – ₹14,000||20–50||Home offices, studios, media rooms, living rooms.||Unidus Accoustics',
+                    'Textured Lime Plaster||₹40–₹120||8–15||Feature walls, living rooms, hallway||Limocoat',
+                    '3D Artwork||₹55,000 +||4–5"||Living room feature wall, Bedroom statement wall||Godai Arts',
+                    'Optical Fibre Fabric||varies on request||—||Feature walls in bedrooms, Dining Table Tops||DreamLux',
+                    'Venetian Plaster||₹180- ₹400||2–5||Foyer, Dining room, Master bedroom walls||Vasari India',
+                    'Flexible MDF Curves||2400 /sheet||4–12||TV units & feature walls||Element Décor',
+                    'WALL ACCOUSTIC FLUTED PANELS||₹60+||9–24||Home theatres, Study rooms, Bedrooms, Conference rooms||Unidus Acoustics'
+                ],
+                detailItems: [
+                    'Liquid Metallic Ombre||₹800-₹2500||0.5–1||Prep → primer → base → metallic layers → seal with clear coat||Wipe soft damp microfiber; avoid abrasives||High visual impact; custom gradient effects; seamless finish||Skilled application needed; can show imperfections if not prepped well||Feature walls, entry foyers, dining accent walls, bars, powder rooms||Colortale',
+                    'Microcement||₹200–₹500||2–3||Clean → primer → 2-3 base coats → top finish → sealing||Mop neutral pH cleaner; avoid harsh chemicals||Seamless waterproof finish; ultra-thin||Must be applied by experienced skills; can crack if substrate moves||Floors, walls, bathrooms, furniture||Colortale',
+                    'Alabaster Lights||₹12,000 – ₹40,000 / light||5–20||Electrical planning → mounting → LED integration & testing||Dust gently with dry or damp cloth||Soft warm glow; strong visual centerpiece||Premium pricing; delicate stone||Dining, bedrooms, table lamps, lounges||World of abner, Mugen Design Lab',
+                    'Artistic Acoustic Panels||₹7,000 – ₹14,000||20–50||Mark layout → mount clips → fix panels → seal gaps||Vacuum or gentle brush dusting||Reduces echo; visual design element||Higher cost; needs correct placement for acoustic impact||Home offices, studios, media rooms, living rooms||Unidus Accoustics',
+                    'Textured Lime Plaster||₹40–₹120||8–15||Substrate prep → scratch coat → intermediate → final finish → curing||Wipe lightly; avoid harsh solvents||Breathable, sustainable; reduces mould risk||Longer install; requires skilled plasterer||Feature walls, living rooms, hallway||Limocoat',
+                    '3D Artwork||₹55,000 +||4–5"||Mounted on prepared wall using heavy-duty anchors & adhesives||Dust gently with soft dry cloth; avoid water||One-of-a-kind luxury focal point; fully customizable||Requires professional installation||Living room, Bedroom, Hotel & reception areas||Godai Arts',
+                    'Optical Fibre Fabric||varies on request||—||Stretched or panel-mounted over LED source||Gentle vacuum; dry cloth cleaning||Soft ambient light; futuristic luxury feel||High cost; specialized installation||Bedrooms, Dining Table Tops||DreamLux',
+                    'Venetian Plaster||₹180- ₹400||2–5||Wall leveling → primer → 2–3 plaster coats → trowel → burnishing||Damp cloth; avoid abrasives||Luxury stone-like finish without joints; durable breathable||Requires skilled applicators; costlier than paint||Foyer, Dining, Master bedroom walls||Vasari India',
+                    'Flexible MDF Curves||2400 /sheet||4–12||Fixed onto curved framework using Marine Fevicol||Dry or lightly damp cloth; protect from moisture||Seamless curves impossible with regular MDF; lightweight||Needs precise surface prep; must be sealed||TV units & feature walls||Element Décor',
+                    'WALL ACCOUSTIC FLUTED PANELS||₹60+||9–24||Fixed on wall/battens with adhesive/screws||Vacuum flutes periodically||Enhances sound absorption; modern linear texture||Grooves need regular cleaning||Home theatres, Study, Bedrooms, Conference rooms||Unidus Acoustics'
+                ]
+            };
+        }
+    },
+    {
+        id: 'bed', title: 'Bed Finishes', template: 'furniture-list', category: 'Furniture Finish Tables',
+        getDefault: function() {
+            return {
+                title: 'Bed Finishes', count: '6',
+                items: [
+                    {name:'PU (Polyurethane) Finish',cost:'₹40 – ₹120 / sq.ft',thk:'0.2–0.5 mm',install:'Spray application in controlled booth',maint:'Wipe with soft dry cloth',pros:'Durable, high-gloss options',cons:'Expensive, professional application needed',bestuse:'Modern bedroom sets, headboards'},
+                    {name:'Melamine Finish',cost:'₹30 – ₹80 / sq.ft',thk:'0.1–0.2 mm',install:'Pre-laminated board application',maint:'Wipe with damp cloth',pros:'Affordable, scratch-resistant',cons:'Cannot be repaired, limited finish depth',bestuse:'Kids beds, budget furniture'},
+                    {name:'Veneer Finish',cost:'₹80 – ₹300 / sq.ft',thk:'0.5–0.6 mm',install:'Adhesive bonding with pressed finish',maint:'Dust regularly, occasional polish',pros:'Natural wood look, can be refinished',cons:'Requires careful maintenance, costly',bestuse:'Premium beds, master bedrooms'},
+                    {name:'Laminate Finish',cost:'₹50 – ₹150 / sq.ft',thk:'0.8–1.5 mm',install:'Bonded to substrate with adhesive',maint:'Wipe with mild cleaner',pros:'Durable, wide design options',cons:'Cannot be repaired, visible seams',bestuse:'Bed frames, side tables'},
+                    {name:'Duco Paint',cost:'₹80 – ₹200 / sq.ft',thk:'0.3–0.5 mm',install:'Multiple spray coats with sanding',maint:'Avoid scratches, polish periodically',pros:'Smooth glossy finish, unlimited colors',cons:'Easily scratched, expensive',bestuse:'Designer beds, luxury headboards'},
+                    {name:'Fabric Upholstered',cost:'₹150 – ₹500 / sq.ft',thk:'10–50 mm',install:'Padding + fabric stretched over frame',maint:'Vacuum regularly, professional cleaning',pros:'Luxurious look, comfortable headboard',cons:'Stains easily, needs professional cleaning',bestuse:'Master bedrooms, luxury suites'}
+                ]
+            };
+        }
+    }
+];
+
+// --- Site Content UI ---
+function renderSiteContent() {
+    const container = document.getElementById('siteContentContainer');
+    const search = (document.getElementById('siteContentSearch').value || '').toLowerCase();
+    const filter = document.getElementById('siteContentFilter').value;
+
+    const filterEl = document.getElementById('siteContentFilter');
+    if (filterEl.options.length <= 1) {
+        const cats = {};
+        SITE_SECTIONS.forEach(function(s) { cats[s.category] = true; });
+        Object.keys(cats).sort().forEach(function(c) {
+            var opt = document.createElement('option');
+            opt.value = c;
+            opt.textContent = c;
+            filterEl.appendChild(opt);
+        });
+    }
+
+    var filtered = SITE_SECTIONS.filter(function(s) {
+        if (search && s.title.toLowerCase().indexOf(search) === -1) return false;
+        if (filter && s.category !== filter) return false;
+        return true;
+    });
+
+    if (!filtered.length) {
+        container.innerHTML = '<div class="row-repeater-empty">No sections found matching your criteria.</div>';
+        return;
+    }
+
+    var html = '<div class="preview-table-wrap"><table><thead><tr><th>Section</th><th>Template</th><th>Status</th><th>Actions</th></tr></thead><tbody>';
+    filtered.forEach(function(s) {
+        var hasOvr = hasSectionOverride(s.id);
+        var statusHtml = hasOvr ? '<span class="badge-pill" style="background:#064e3b;color:#6ee7b7">● Override Active</span>' : '<span class="badge-pill" style="background:#1e293b;color:#94a3b8">Default</span>';
+        var resetBtn = hasOvr ? '<button class="btn btn-danger btn-xs" onclick="resetSiteSection(\'' + s.id + '\')">Reset</button>' : '';
+        html += '<tr>'
+            + '<td><strong>' + s.title + '</strong></td>'
+            + '<td><span class="badge-pill" style="background:#1e3a5f;color:#60a5fa;font-size:10px">' + s.template + '</span></td>'
+            + '<td>' + statusHtml + '</td>'
+            + '<td style="display:flex;gap:6px">'
+            + '<button class="btn btn-primary btn-xs" onclick="editSiteSection(\'' + s.id + '\')">Edit</button>'
+            + resetBtn
+            + '</td>'
+            + '</tr>';
+    });
+    html += '</tbody></table></div>';
+    container.innerHTML = html;
+}
+
+// --- Edit Site Section ---
+function editSiteSection(sectionId) {
+    var section = SITE_SECTIONS.find(function(s) { return s.id === sectionId; });
+    if (!section) return;
+
+    siteContentEditingId = sectionId;
+    var data = getSectionOverride(sectionId) || JSON.parse(JSON.stringify(section.getDefault()));
+
+    switchTab('create');
+    document.getElementById('templateSelect').value = section.template;
+    renderTemplateForm();
+
+    // Clear CMS card editing state
+    editingId = null;
+    editingTemplate = null;
+
+    setTimeout(function() {
+        populateSiteSectionForm(section, data);
+    }, 150);
+}
+
+function populateSiteSectionForm(section, data) {
+    switch (section.template) {
+        case 'ranked-table':
+            populateRankedTableSection(data);
+            break;
+        case 'top10':
+            populateTop10Section(data);
+            break;
+        case 'comparison':
+            populateComparisonSection(data);
+            break;
+        case 'detail-card-image':
+            populateDetailCardImageSection(section, data);
+            break;
+        case 'furniture-list':
+            populateFurnitureListSection(data);
+            break;
+        default:
+            showStatus('Editor for "' + section.template + '" not yet implemented.', 'error');
+    }
+
+    var btn = document.querySelector('#formActions button');
+    if (btn) btn.textContent = 'Save Section Override';
+}
+
+function saveSiteContentFromForm(sectionId, type, formData) {
+    var section = SITE_SECTIONS.find(function(s) { return s.id === sectionId; });
+    if (!section) { showStatus('Section not found.', 'error'); return; }
+
+    var overrideData;
+    switch (type) {
+        case 'ranked-table':
+        case 'comparison':
+            overrideData = formData;
+            break;
+        case 'top10':
+            overrideData = convertTop10FormToSection(formData);
+            break;
+        case 'furniture-list':
+            overrideData = formData;
+            break;
+        default:
+            overrideData = formData;
+    }
+
+    overrideData._edited = new Date().toISOString();
+    setSectionOverride(sectionId, overrideData);
+
+    siteContentEditingId = null;
+    editingId = null;
+    editingTemplate = null;
+    document.getElementById('contentForm').reset();
+    document.getElementById('templateSelect').value = '';
+    document.getElementById('templateFormContainer').innerHTML = '';
+    document.getElementById('formActions').classList.add('hidden');
+    resetFormState();
+
+    showStatus('"' + section.title + '" override saved!', 'success');
+    switchTab('sitecontent');
+    renderSiteContent();
+}
+
+function convertTop10FormToSection(formData) {
+    var tableItems = [];
+    var detailItems = [];
+    (formData.items || []).forEach(function(item) {
+        tableItems.push((item.name||'') + '||' + (item.cost||'') + '||' + (item.thick||'') + '||' + (item.best||'') + '||' + (item.brands||''));
+        detailItems.push((item.name||'') + '||' + (item.cost||'') + '||' + (item.thick||'') + '||' + (item.install||'') + '||' + (item.maint||'') + '||' + (item.pros||'') + '||' + (item.cons||'') + '||' + (item.best||'') + '||' + (item.brands||''));
+    });
+    return {
+        title: formData.title,
+        count: formData.count,
+        columns: formData.columns || {},
+        tableItems: tableItems,
+        detailItems: detailItems
+    };
+}
+
+// --- Populate functions for each template ---
+function populateRankedTableSection(data) {
+    var sf = function(id, val) { var el = document.getElementById(id); if (el) el.value = val || ''; };
+    sf('rt_title', data.title);
+    sf('rt_count', data.count || String((data.items || []).length));
+    window.rankedItems = (data.items || []).map(function(item) {
+        return {
+            name: item.name || '', cost: item.cost || '', thick: item.thick || '',
+            install: item.install || '', maint: item.maint || '',
+            pros: item.pros || '', cons: item.cons || '',
+            best: item.best || '', brands: item.brands || ''
+        };
+    });
+    renderRankedItems();
+}
+
+function populateTop10Section(data) {
+    var sf = function(id, val) { var el = document.getElementById(id); if (el) el.value = val || ''; };
+    sf('t10_title', data.title || 'Top 10 Materials 2026');
+    sf('t10_count', data.count || '10');
+    sf('t10_col_cost', (data.columns && data.columns.cost) || '');
+    sf('t10_col_thk', (data.columns && data.columns.thick) || '');
+    sf('t10_col_install', (data.columns && data.columns.install) || '');
+    sf('t10_col_maint', (data.columns && data.columns.maint) || '');
+    sf('t10_col_pros', (data.columns && data.columns.pros) || '');
+    sf('t10_col_cons', (data.columns && data.columns.cons) || '');
+    sf('t10_col_best', (data.columns && data.columns.best) || '');
+    sf('t10_col_brands', (data.columns && data.columns.brands) || '');
+    window.top10Items = (data.detailItems || []).map(function(item) {
+        if (typeof item === 'string') {
+            var parts = item.split('||');
+            return {name:parts[0]||'',cost:parts[1]||'',thick:parts[2]||'',install:parts[3]||'',maint:parts[4]||'',pros:parts[5]||'',cons:parts[6]||'',best:parts[7]||'',brands:parts[8]||''};
+        }
+        return item;
+    });
+    renderTop10Items();
+}
+
+function populateComparisonSection(data) {
+    var sf = function(id, val) { var el = document.getElementById(id); if (el) el.value = val || ''; };
+    sf('cmp_title', data.title || '');
+    sf('cmp_cols', data.cols || '');
+    window.cmpRows = (data.rows || []).map(function(r) { return r.slice(); });
+    renderCmpRows();
+}
+
+function populateFurnitureListSection(data) {
+    var sf = function(id, val) { var el = document.getElementById(id); if (el) el.value = val || ''; };
+    sf('fl_title', data.title || '');
+    sf('fl_count', data.count || String((data.items || []).length));
+    window.furnitureItems = (data.items || []).map(function(item) {
+        if (typeof item === 'string') {
+            var parts = item.split('||');
+            return {name:parts[0]||'',cost:parts[1]||'',thk:parts[2]||'',install:parts[3]||'',maint:parts[4]||'',pros:parts[5]||'',cons:parts[6]||'',bestuse:parts[7]||''};
+        }
+        return {name:item.name||'',cost:item.cost||'',thk:item.thk||item.thick||'',install:item.install||'',maint:item.maint||'',pros:item.pros||'',cons:item.cons||'',bestuse:item.bestuse||item.best||''};
+    });
+    renderFurnitureItems();
+}
+
+function populateDetailCardImageSection(section, data) {
+    var container = document.getElementById('templateFormContainer');
+    var sectionTitle = data.title || section.title;
+    var items = (data.tableItems || []).map(function(ti, idx) {
+        var parts = ti.split('||');
+        var di = (data.detailItems || [])[idx] || {title:'',rows:[]};
+        return {name:parts[0]||'',cost:parts[1]||'',thick:parts[2]||'',places:parts[3]||'',brands:parts[4]||'',detailTitle:di.title||'',detailRows:di.rows||[]};
+    });
+
+    window._dciSectionItems = items;
+    window._dciSectionTitle = sectionTitle;
+    window._dciSectionId = section.id;
+    document.getElementById('formActions').classList.add('hidden');
+
+    renderDciSectionEditor();
+}
+
+function escHtml(str) {
+    return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+
+function renderDciSectionEditor() {
+    var container = document.getElementById('templateFormContainer');
+    var items = window._dciSectionItems || [];
+    var sectionTitle = window._dciSectionTitle || '';
+
+    var html = '<div class="form-section">';
+    html += '<div class="section-title">' + escHtml(sectionTitle) + '</div>';
+    html += '<div class="form-grid">';
+    html += '<div><label>Section Title</label><input type="text" id="dciSec_title" value="' + escHtml(sectionTitle) + '"></div>';
+    html += '<div><label>Item Count</label><input type="text" value="' + items.length + '" readonly style="color:#64748b"></div>';
+    html += '</div>';
+    html += '<div style="margin-top:16px"><button type="button" class="btn btn-secondary btn-sm" onclick="addDciSectionItem()">+ Add Item</button></div>';
+    html += '</div>';
+
+    items.forEach(function(item, i) {
+        html += '<div class="form-section" style="border-left:3px solid #3b82f6">';
+        html += '<div class="section-title">Item #' + (i+1) + ' <button type="button" class="btn btn-danger btn-xs" onclick="removeDciSectionItem(' + i + ')" style="margin-left:auto">Remove</button></div>';
+        html += '<div class="form-grid">';
+        html += '<div><label>Material Name</label><input type="text" id="dciSec_name_' + i + '" value="' + escHtml(item.name) + '"></div>';
+        html += '<div><label>Cost (Sq.Ft)</label><input type="text" id="dciSec_cost_' + i + '" value="' + escHtml(item.cost) + '"></div>';
+        html += '<div><label>Thk (mm)</label><input type="text" id="dciSec_thk_' + i + '" value="' + escHtml(item.thick) + '"></div>';
+        html += '<div><label>Best Places</label><input type="text" id="dciSec_places_' + i + '" value="' + escHtml(item.places) + '"></div>';
+        html += '<div><label>Brands</label><input type="text" id="dciSec_brands_' + i + '" value="' + escHtml(item.brands) + '"></div>';
+        html += '</div>';
+
+        html += '<div style="margin-top:16px"><label>Specification Details</label>';
+        html += '<div class="row-repeater" id="dciSec_detailRows_' + i + '">';
+        var rows = item.detailRows || [];
+        if (!rows.length) {
+            html += '<div class="row-repeater-empty">No spec rows yet.</div>';
+        } else {
+            rows.forEach(function(row, ri) {
+                html += '<div class="row-repeater-row" style="grid-template-columns:1fr 2fr 40px">';
+                html += '<input type="text" value="' + escHtml(row.l||'') + '" onchange="updateDciSecRow(' + i + ',' + ri + ',\'l\',this.value)" placeholder="Label">';
+                html += '<input type="text" value="' + escHtml(row.v||'') + '" onchange="updateDciSecRow(' + i + ',' + ri + ',\'v\',this.value)" placeholder="Value">';
+                html += '<button type="button" class="delete-btn" onclick="removeDciSecRow(' + i + ',' + ri + ')">×</button></div>';
+            });
+        }
+        html += '<div style="padding:8px 12px;border-top:1px solid rgba(255,255,255,0.04)">';
+        html += '<button type="button" class="btn btn-secondary btn-xs" onclick="addDciSecRow(' + i + ')">+ Add Row</button>';
+        html += '</div></div></div></div>';
+    });
+
+    html += '<div class="form-section"><div class="section-title">Actions</div><div class="btn-group">';
+    html += '<button type="button" class="btn btn-primary" onclick="saveDciSection()">Save Section Override</button>';
+    html += '<button type="button" class="btn btn-secondary" onclick="cancelSiteEditing()">Cancel</button>';
+    html += '</div></div>';
+
+    container.innerHTML = html;
+}
+
+function updateDciSecRow(itemIdx, rowIdx, field, val) {
+    var items = window._dciSectionItems;
+    if (items[itemIdx] && items[itemIdx].detailRows[rowIdx]) items[itemIdx].detailRows[rowIdx][field] = val;
+}
+
+function addDciSecRow(itemIdx) {
+    if (!window._dciSectionItems[itemIdx]) return;
+    if (!window._dciSectionItems[itemIdx].detailRows) window._dciSectionItems[itemIdx].detailRows = [];
+    window._dciSectionItems[itemIdx].detailRows.push({l:'',v:''});
+    renderDciSectionEditor();
+}
+
+function removeDciSecRow(itemIdx, rowIdx) {
+    if (window._dciSectionItems[itemIdx]) window._dciSectionItems[itemIdx].detailRows.splice(rowIdx, 1);
+    renderDciSectionEditor();
+}
+
+function addDciSectionItem() {
+    window._dciSectionItems.push({name:'',cost:'',thick:'',places:'',brands:'',detailTitle:'',detailRows:[]});
+    renderDciSectionEditor();
+}
+
+function removeDciSectionItem(idx) {
+    window._dciSectionItems.splice(idx, 1);
+    renderDciSectionEditor();
+}
+
+function saveDciSection() {
+    var items = window._dciSectionItems || [];
+    var sectionTitle = document.getElementById('dciSec_title') ? document.getElementById('dciSec_title').value : '';
+    var tableItems = [];
+    var detailItems = [];
+
+    items.forEach(function(item) {
+        tableItems.push((item.name||'') + '||' + (item.cost||'') + '||' + (item.thick||'') + '||' + (item.places||'') + '||' + (item.brands||''));
+        detailItems.push({title: item.name || '', rows: (item.detailRows || []).map(function(r) { return {l:r.l||'',v:r.v||''}; })});
+    });
+
+    var overrideData = { title: sectionTitle, tableItems: tableItems, detailItems: detailItems };
+    setSectionOverride(window._dciSectionId, overrideData);
+    showStatus('"' + sectionTitle + '" override saved!', 'success');
+
+    siteContentEditingId = null;
+    window._dciSectionItems = null;
+    window._dciSectionTitle = null;
+    window._dciSectionId = null;
+    switchTab('sitecontent');
+    renderSiteContent();
+}
+
+function cancelSiteEditing() {
+    siteContentEditingId = null;
+    window._dciSectionItems = null;
+    window._dciSectionTitle = null;
+    window._dciSectionId = null;
+    switchTab('sitecontent');
+}
+
+function resetSiteSection(sectionId) {
+    var section = SITE_SECTIONS.find(function(s) { return s.id === sectionId; });
+    if (!section) return;
+    if (!confirm('Reset "' + section.title + '" to its original default content?')) return;
+    if (!confirm('This will delete the override and restore the original hardcoded content. Continue?')) return;
+    removeSectionOverride(sectionId);
+    showStatus('"' + section.title + '" has been reset to default.', 'success');
+    renderSiteContent();
+}
+
+// ============================================================
+// INIT
+// ============================================================
+renderTemplateForm();
+</script>
+
 </body>
-
 </html>
