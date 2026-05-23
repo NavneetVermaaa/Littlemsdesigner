@@ -176,6 +176,14 @@
     "cnt": "18 types"
   },
   {
+    "id": "designer-veneer",
+    "img": "assets/1.Cover Images/34.Designer Veneer.jpg",
+    "name": "Designer Veneer",
+    "desc": "Sucupira, Wenge, Ebony, Zebrano, Burl – premium exotic veneers",
+    "tag": "carpentry",
+    "cnt": "5 types"
+  },
+  {
     "id": "lam-vs-veneer",
     "img": "assets/1.Cover Images/laminate vs vaneer.png",
     "name": "Laminate vs Veneer",
@@ -195,9 +203,9 @@
     "id": "wood-types",
     "img": "assets/1.Cover Images/36.Wood.jpg",
     "name": "Wood",
-    "desc": "Teak, sheesham, mango, walnut, oak, pine, bamboo – full guide",
+    "desc": "Teak, sheesham, oak, walnut, pine, ash – full guide",
     "tag": "carpentry",
-    "cnt": "8 types"
+    "cnt": "6 types"
   },
   {
     "id": "glass",
@@ -224,12 +232,20 @@
     "cnt": "Coming Soon"
   },
   {
+    "id": "laminates-finish",
+    "img": "assets/1.Cover Images/coming soon.jpg",
+    "name": "Laminates Finishes",
+    "desc": "Solid color, wood grain, marble, metallic, digital printed laminates \u2013 full specs",
+    "tag": "carpentry",
+    "cnt": "8 types"
+  },
+  {
     "id": "door",
     "img": "assets/1.Cover Images/4.Door Finishes.jpg",
     "name": "Door Finishes",
     "desc": "Laminate, veneer, glass, duco, WPC and more",
     "tag": "furniture",
-    "cnt": "8 finishes"
+    "cnt": "7 finishes"
   },
   {
     "id": "bed",
@@ -237,7 +253,7 @@
     "name": "Bed Finishes",
     "desc": "Laminate, upholstered, veneer, solid wood and more",
     "tag": "furniture",
-    "cnt": "6 finishes"
+    "cnt": "10 finishes"
   },
   {
     "id": "headboard",
@@ -245,7 +261,7 @@
     "name": "Headboard Finishes",
     "desc": "Fabric, cane, laminate, lime plaster, fluted panels",
     "tag": "furniture",
-    "cnt": "7 finishes"
+    "cnt": "8 finishes"
   },
   {
     "id": "sidetable",
@@ -253,7 +269,7 @@
     "name": "Side Table Finishes",
     "desc": "Laminate, marble, glass, duco, veneer",
     "tag": "furniture",
-    "cnt": "5 finishes"
+    "cnt": "15 finishes"
   },
   {
     "id": "study",

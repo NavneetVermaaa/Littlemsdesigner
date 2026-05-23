@@ -2736,6 +2736,336 @@
       padding: 7px 5px !important;
     }
 
+    /* Room finishes tables: fully scoped, no effect on other tables */
+    .room-finishes-wrap {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: auto;
+      overflow-y: visible;
+      -webkit-overflow-scrolling: touch;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      background: var(--white);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .room-finishes-wrap::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .room-finishes-wrap::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.05);
+      border-radius: 8px;
+    }
+
+    .room-finishes-wrap::-webkit-scrollbar-thumb {
+      background: rgba(31, 47, 70, 0.28);
+      border-radius: 8px;
+    }
+
+    .room-finishes-table {
+      width: 100%;
+      table-layout: fixed;
+      border-collapse: collapse;
+      background: var(--white);
+    }
+
+    .room-finishes-table thead {
+      display: table-header-group;
+    }
+
+    .room-finishes-table tbody {
+      display: table-row-group;
+    }
+
+    .room-finishes-table tr {
+      display: table-row;
+      height: auto;
+      border-bottom: 1px solid #f0f0f0;
+      transition: background 0.15s;
+    }
+
+    .room-finishes-table tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    .room-finishes-table tbody tr:hover {
+      background: var(--blue-light);
+    }
+
+    .room-finishes-table th,
+    .room-finishes-table td {
+      display: table-cell;
+      min-width: 0;
+      height: auto;
+      overflow: visible;
+      text-overflow: clip;
+      white-space: normal;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+      word-wrap: break-word;
+      hyphens: auto;
+      box-sizing: border-box;
+    }
+
+    /* -- Column widths (sum = 100%) -- */
+    .room-finishes-table .photo-th { width: 5%; }
+    .room-finishes-table td:first-child { width: 62px; text-align: center; }
+    .room-finishes-table th:nth-child(2),
+    .room-finishes-table td:nth-child(2) { width: 4%; text-align: center; }
+    .room-finishes-table th:nth-child(3),
+    .room-finishes-table td:nth-child(3) { width: 12%; }
+    .room-finishes-table th:nth-child(4),
+    .room-finishes-table td:nth-child(4) { width: 20%; }
+    .room-finishes-table th:nth-child(5),
+    .room-finishes-table td:nth-child(5) { width: 10%; }
+    .room-finishes-table th:nth-child(6),
+    .room-finishes-table td:nth-child(6) { width: 15%; }
+    .room-finishes-table th:nth-child(7),
+    .room-finishes-table td:nth-child(7) { width: 17%; }
+    .room-finishes-table th:nth-child(8),
+    .room-finishes-table td:nth-child(8) { width: 17%; }
+
+    .room-finishes-table td.t-th {
+      width: 62px;
+      padding: 8px;
+    }
+
+    .room-finishes-table thead th {
+      background: var(--navy);
+      color: var(--white);
+      padding: 11px 10px;
+      text-align: left;
+      vertical-align: middle;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      line-height: 1.35;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .room-finishes-table tbody td {
+      padding: 11px 10px;
+      color: var(--text-mid);
+      font-size: 12px;
+      line-height: 1.5;
+      vertical-align: top;
+      text-align: left;
+      border: 1px solid #edf0f4;
+    }
+
+    .room-finishes-table td.t-th .thumb-wrap {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      margin: 0 auto;
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      background: var(--light);
+    }
+
+    .room-finishes-table .row-img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      border: none;
+      border-radius: 4px;
+    }
+
+    .room-finishes-table td.t-name {
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .room-finishes-table td.t-cat {
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .room-finishes-table td.t-price {
+      font-weight: 700;
+      color: var(--navy);
+      white-space: normal;
+    }
+
+    .room-finishes-table td.t-brand {
+      font-size: 11px;
+      color: var(--text-light);
+    }
+
+    .room-finishes-table .badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 28px;
+      padding: 4px 7px;
+      border-radius: 999px;
+      background: var(--blue-light);
+      color: var(--navy);
+      font-size: 11px;
+      line-height: 1;
+      font-weight: 700;
+    }
+
+    @media (max-width: 992px) {
+      .room-finishes-table .photo-th { width: 48px; }
+      .room-finishes-table td:first-child { width: 54px; }
+      .room-finishes-table td.t-th { width: 54px; padding: 7px; }
+      .room-finishes-table td.t-th .thumb-wrap { width: 44px; height: 44px; }
+      .room-finishes-table th:nth-child(2),
+      .room-finishes-table td:nth-child(2) { width: 36px; }
+      .room-finishes-table th:nth-child(3),
+      .room-finishes-table td:nth-child(3) { width: 11%; }
+      .room-finishes-table th:nth-child(4),
+      .room-finishes-table td:nth-child(4) { width: 20%; }
+      .room-finishes-table th:nth-child(5),
+      .room-finishes-table td:nth-child(5) { width: 9%; }
+      .room-finishes-table th:nth-child(6),
+      .room-finishes-table td:nth-child(6) { width: 15%; }
+      .room-finishes-table th:nth-child(7),
+      .room-finishes-table td:nth-child(7) { width: 17%; }
+      .room-finishes-table th:nth-child(8),
+      .room-finishes-table td:nth-child(8) { width: 17%; }
+      .room-finishes-table thead th { padding: 9px 7px; font-size: 9px; letter-spacing: 0.06em; }
+      .room-finishes-table tbody td { padding: 9px 7px; font-size: 11px; line-height: 1.45; }
+      .room-finishes-table .badge { min-width: 24px; padding: 3px 6px; font-size: 10px; }
+    }
+
+    @media (max-width: 768px) {
+      .room-finishes-wrap { border-radius: 7px; }
+      .room-finishes-table .photo-th { width: 40px; }
+      .room-finishes-table td:first-child { width: 46px; }
+      .room-finishes-table td.t-th { width: 46px; padding: 6px; }
+      .room-finishes-table td.t-th .thumb-wrap { width: 36px; height: 36px; }
+      .room-finishes-table th:nth-child(2),
+      .room-finishes-table td:nth-child(2) { width: 30px; }
+      .room-finishes-table th:nth-child(3),
+      .room-finishes-table td:nth-child(3) { width: 10%; }
+      .room-finishes-table th:nth-child(4),
+      .room-finishes-table td:nth-child(4) { width: 21%; }
+      .room-finishes-table th:nth-child(5),
+      .room-finishes-table td:nth-child(5) { width: 8%; }
+      .room-finishes-table th:nth-child(6),
+      .room-finishes-table td:nth-child(6) { width: 14%; }
+      .room-finishes-table th:nth-child(7),
+      .room-finishes-table td:nth-child(7) { width: 16%; }
+      .room-finishes-table th:nth-child(8),
+      .room-finishes-table td:nth-child(8) { width: 16%; }
+      .room-finishes-table thead th { padding: 8px 6px; font-size: 8px; letter-spacing: 0.04em; line-height: 1.3; }
+      .room-finishes-table tbody td { padding: 8px 6px; font-size: 10px; line-height: 1.4; }
+      .room-finishes-table .badge { min-width: 20px; padding: 2px 5px; font-size: 9px; }
+    }
+
+    @media (max-width: 600px) {
+      .room-finishes-table .photo-th { width: 34px; }
+      .room-finishes-table td:first-child { width: 38px; }
+      .room-finishes-table td.t-th { width: 38px; padding: 5px; }
+      .room-finishes-table td.t-th .thumb-wrap { width: 30px; height: 30px; }
+      .room-finishes-table th:nth-child(2),
+      .room-finishes-table td:nth-child(2) { width: 24px; }
+      .room-finishes-table th:nth-child(3),
+      .room-finishes-table td:nth-child(3) { width: 10%; }
+      .room-finishes-table th:nth-child(4),
+      .room-finishes-table td:nth-child(4) { width: 22%; }
+      .room-finishes-table th:nth-child(5),
+      .room-finishes-table td:nth-child(5) { width: 8%; }
+      .room-finishes-table th:nth-child(6),
+      .room-finishes-table td:nth-child(6) { width: 14%; }
+      .room-finishes-table th:nth-child(7),
+      .room-finishes-table td:nth-child(7) { width: 15%; }
+      .room-finishes-table th:nth-child(8),
+      .room-finishes-table td:nth-child(8) { width: 14%; }
+      .room-finishes-table thead th { padding: 6px 5px; font-size: 7.5px; letter-spacing: 0.03em; }
+      .room-finishes-table tbody td { padding: 6px 5px; font-size: 9px; line-height: 1.35; }
+      .room-finishes-table td.t-cat { font-size: 8px; }
+      .room-finishes-table td.t-price { font-size: 8.5px; }
+      .room-finishes-table td.t-brand { font-size: 8.5px; }
+      .room-finishes-table .badge { min-width: 18px; padding: 2px 4px; font-size: 8px; }
+    }
+
+    @media (max-width: 480px) {
+      .room-finishes-table .photo-th { width: 30px; }
+      .room-finishes-table td:first-child { width: 32px; }
+      .room-finishes-table td.t-th { width: 32px; padding: 4px; }
+      .room-finishes-table td.t-th .thumb-wrap { width: 26px; height: 26px; border-radius: 3px; }
+      .room-finishes-table th:nth-child(2),
+      .room-finishes-table td:nth-child(2) { width: 20px; }
+      .room-finishes-table th:nth-child(3),
+      .room-finishes-table td:nth-child(3) { width: 9%; }
+      .room-finishes-table th:nth-child(4),
+      .room-finishes-table td:nth-child(4) { width: 23%; }
+      .room-finishes-table th:nth-child(5),
+      .room-finishes-table td:nth-child(5) { width: 7%; }
+      .room-finishes-table th:nth-child(6),
+      .room-finishes-table td:nth-child(6) { width: 13%; }
+      .room-finishes-table th:nth-child(7),
+      .room-finishes-table td:nth-child(7) { width: 14%; }
+      .room-finishes-table th:nth-child(8),
+      .room-finishes-table td:nth-child(8) { width: 13%; }
+      .room-finishes-table thead th { padding: 5px 4px; font-size: 6.5px; letter-spacing: 0.02em; line-height: 1.2; }
+      .room-finishes-table tbody td { padding: 5px 4px; font-size: 8px; line-height: 1.3; }
+      .room-finishes-table td.t-cat { font-size: 7px; }
+      .room-finishes-table td.t-price { font-size: 7.5px; }
+      .room-finishes-table td.t-brand { font-size: 7px; }
+      .room-finishes-table .badge { min-width: 16px; padding: 1px 3px; font-size: 7px; }
+    }
+
+    @media (max-width: 400px) {
+      .room-finishes-table .photo-th { width: 26px; }
+      .room-finishes-table td:first-child { width: 28px; }
+      .room-finishes-table td.t-th { width: 28px; padding: 3px; }
+      .room-finishes-table td.t-th .thumb-wrap { width: 22px; height: 22px; }
+      .room-finishes-table th:nth-child(2),
+      .room-finishes-table td:nth-child(2) { width: 18px; }
+      .room-finishes-table th:nth-child(3),
+      .room-finishes-table td:nth-child(3) { width: 9%; }
+      .room-finishes-table th:nth-child(4),
+      .room-finishes-table td:nth-child(4) { width: 24%; }
+      .room-finishes-table th:nth-child(5),
+      .room-finishes-table td:nth-child(5) { width: 7%; }
+      .room-finishes-table th:nth-child(6),
+      .room-finishes-table td:nth-child(6) { width: 12%; }
+      .room-finishes-table th:nth-child(7),
+      .room-finishes-table td:nth-child(7) { width: 13%; }
+      .room-finishes-table th:nth-child(8),
+      .room-finishes-table td:nth-child(8) { width: 12%; }
+      .room-finishes-table thead th { padding: 4px 3px; font-size: 6px; letter-spacing: 0; }
+      .room-finishes-table tbody td { padding: 4px 3px; font-size: 7px; line-height: 1.25; }
+      .room-finishes-table .badge { min-width: 14px; padding: 1px 2px; font-size: 6px; }
+    }
+
+    @media (max-width: 360px) {
+      .room-finishes-table .photo-th { width: 24px; }
+      .room-finishes-table td:first-child { width: 26px; }
+      .room-finishes-table td.t-th { width: 26px; padding: 2px; }
+      .room-finishes-table td.t-th .thumb-wrap { width: 20px; height: 20px; }
+      .room-finishes-table th:nth-child(2),
+      .room-finishes-table td:nth-child(2) { width: 16px; }
+      .room-finishes-table th:nth-child(3),
+      .room-finishes-table td:nth-child(3) { width: 8%; }
+      .room-finishes-table th:nth-child(4),
+      .room-finishes-table td:nth-child(4) { width: 25%; }
+      .room-finishes-table th:nth-child(5),
+      .room-finishes-table td:nth-child(5) { width: 7%; }
+      .room-finishes-table th:nth-child(6),
+      .room-finishes-table td:nth-child(6) { width: 12%; }
+      .room-finishes-table th:nth-child(7),
+      .room-finishes-table td:nth-child(7) { width: 12%; }
+      .room-finishes-table th:nth-child(8),
+      .room-finishes-table td:nth-child(8) { width: 12%; }
+      .room-finishes-table thead th { padding: 3px 2px; font-size: 5.5px; }
+      .room-finishes-table tbody td { padding: 3px 2px; font-size: 6.5px; line-height: 1.2; }
+      .room-finishes-table .badge { min-width: 12px; padding: 1px 2px; font-size: 5.5px; }
+    }
+
     /* Desktop - 1200px and up */
     @media (min-width: 1200px) {
       .exp-responsive table {
@@ -3365,6 +3695,496 @@
         font-size: 6px;
       }
       .exp-look-new .spec-value { padding: 3px 7px; font-size: 9px; line-height: 1.5; }
+    }
+
+    /* ================================================================
+       FURNITURE FIGMA GRID — responsive overrides (study, dresser,
+       wardrobe, tvunit, wardrobe-must, kitchen-shutter, kitchen-must)
+       ================================================================ */
+
+    .furniture-premium .sec-title {
+      white-space: normal !important;
+      overflow-wrap: anywhere;
+    }
+    .furniture-premium .furniture-figma-title,
+    .furniture-premium .kitchen-figma-title {
+      white-space: normal;
+      overflow-wrap: anywhere;
+    }
+    .furniture-premium .furniture-figma-value,
+    .furniture-premium .kitchen-figma-value {
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      white-space: normal;
+    }
+    .furniture-premium .furniture-figma-label,
+    .furniture-premium .kitchen-figma-label {
+      white-space: normal;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 768px) {
+      .furniture-premium .furniture-figma-grid,
+      .furniture-premium .kitchen-figma-grid { gap: 14px; }
+      .furniture-premium .furniture-figma-title,
+      .furniture-premium .kitchen-figma-title { font-size: 14px; padding: 12px 14px 6px; }
+      .furniture-premium .furniture-figma-details,
+      .furniture-premium .kitchen-figma-details { padding: 0 14px 14px; }
+      .furniture-premium .furniture-figma-row,
+      .furniture-premium .kitchen-figma-row { font-size: 11px; padding: 4px 0; }
+      .furniture-premium .furniture-figma-label,
+      .furniture-premium .kitchen-figma-label { width: 80px; font-size: 8px; }
+    }
+    @media (max-width: 600px) {
+      .furniture-premium .furniture-figma-grid,
+      .furniture-premium .kitchen-figma-grid { gap: 12px; }
+      .furniture-premium .furniture-figma-title,
+      .furniture-premium .kitchen-figma-title { font-size: 13px; padding: 10px 12px 5px; }
+      .furniture-premium .furniture-figma-details,
+      .furniture-premium .kitchen-figma-details { padding: 0 12px 12px; }
+      .furniture-premium .furniture-figma-row,
+      .furniture-premium .kitchen-figma-row { font-size: 10px; padding: 3px 0; }
+      .furniture-premium .furniture-figma-label,
+      .furniture-premium .kitchen-figma-label { width: 70px; font-size: 7.5px; }
+    }
+    @media (max-width: 480px) {
+      .furniture-premium .furniture-figma-grid,
+      .furniture-premium .kitchen-figma-grid { gap: 10px; }
+      .furniture-premium .furniture-figma-title,
+      .furniture-premium .kitchen-figma-title { font-size: 12px; padding: 8px 10px 4px; }
+      .furniture-premium .furniture-figma-details,
+      .furniture-premium .kitchen-figma-details { padding: 0 10px 10px; }
+      .furniture-premium .furniture-figma-row,
+      .furniture-premium .kitchen-figma-row { font-size: 9px; padding: 3px 0; }
+      .furniture-premium .furniture-figma-label,
+      .furniture-premium .kitchen-figma-label { width: 60px; font-size: 7px; }
+    }
+    @media (max-width: 400px) {
+      .furniture-premium .furniture-figma-grid,
+      .furniture-premium .kitchen-figma-grid { gap: 8px; }
+      .furniture-premium .furniture-figma-title,
+      .furniture-premium .kitchen-figma-title { font-size: 11px; padding: 6px 8px 3px; }
+      .furniture-premium .furniture-figma-details,
+      .furniture-premium .kitchen-figma-details { padding: 0 8px 8px; }
+      .furniture-premium .furniture-figma-row,
+      .furniture-premium .kitchen-figma-row { font-size: 8px; padding: 2px 0; }
+      .furniture-premium .furniture-figma-label,
+      .furniture-premium .kitchen-figma-label { width: 50px; font-size: 6.5px; }
+    }
+
+    /* ================================================================
+       FURNITURE SINGLE TABLE — isolated premium card system
+       Door / Bed / Headboard / Side Table
+       ================================================================ */
+    .furniture-single-table {
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .furniture-section-header {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px 16px;
+      padding: 18px 0 14px;
+      margin-bottom: 20px;
+    }
+    .furniture-section-title {
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: 0.5px;
+      white-space: normal;
+      overflow-wrap: anywhere;
+    }
+    .furniture-section-count {
+      font-size: 8px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-light);
+      background: var(--card-bg);
+      border: 1px solid rgba(128,128,128,0.15);
+      padding: 3px 12px;
+      border-radius: 3px;
+      white-space: nowrap;
+    }
+    .furniture-card {
+      display: flex;
+      margin-bottom: 24px;
+      border-radius: 6px;
+      overflow: hidden;
+      background: var(--card-bg);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      transition: background-color 0.3s, box-shadow 0.3s;
+    }
+    .furniture-card-img {
+      width: 200px;
+      min-width: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 16px;
+      background: var(--card-bg);
+      position: relative;
+    }
+    .furniture-card-img img {
+      width: 100%;
+      max-width: 140px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: transform 0.3s, filter 0.3s;
+      filter: brightness(0.92);
+    }
+    .furniture-card-img img:hover {
+      transform: scale(1.03);
+      filter: brightness(1);
+    }
+    .furniture-card-detail {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    .furniture-card-title {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--title-bar-text);
+      letter-spacing: 0.3px;
+      line-height: 1.2;
+      padding: 10px 16px;
+      white-space: normal;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+    .furniture-rows {
+      display: flex;
+      flex-direction: column;
+    }
+    .furniture-row {
+      display: flex;
+      border-top: 1px solid rgba(128,128,128,0.08);
+    }
+    .furniture-row:first-child {
+      border-top: none;
+    }
+    .furniture-label {
+      width: 150px;
+      min-width: 150px;
+      background: var(--spec-label-bg);
+      padding: 7px 14px;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      line-height: 1.3;
+      color: var(--spec-label-text);
+      display: flex;
+      align-items: flex-start;
+      border-right: 1px solid var(--spec-label-border);
+      transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+      white-space: normal;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+    .furniture-value {
+      flex: 1;
+      padding: 7px 16px;
+      font-size: 11px;
+      color: var(--spec-value-text);
+      line-height: 1.45;
+      min-width: 0;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      white-space: normal;
+      transition: color 0.3s;
+    }
+    .furniture-value .pros { color: inherit; }
+    .furniture-value .cons { color: inherit; }
+
+    @media (max-width: 768px) {
+      .furniture-card-img { width: 160px; min-width: 160px; padding: 12px; }
+      .furniture-card-img img { max-width: 110px; }
+      .furniture-card-title { font-size: 11px; padding: 8px 14px; }
+      .furniture-label { width: 110px; min-width: 110px; padding: 5px 10px; font-size: 9px; }
+      .furniture-value { padding: 5px 12px; font-size: 10px; line-height: 1.4; }
+      .furniture-section-title { font-size: 18px; }
+    }
+    @media (max-width: 600px) {
+      .furniture-single-table { padding: 0 16px; }
+      .furniture-card-img { width: 120px; min-width: 120px; padding: 10px; }
+      .furniture-card-img img { max-width: 80px; }
+      .furniture-card-title { font-size: 9px; padding: 6px 12px; }
+      .furniture-label { width: 80px; min-width: 80px; padding: 4px 8px; font-size: 7.5px; }
+      .furniture-value { padding: 4px 10px; font-size: 9px; line-height: 1.45; }
+      .furniture-section-title { font-size: 15px; }
+      .furniture-section-count { font-size: 7px; }
+      .furniture-card { margin-bottom: 18px; border-radius: 4px; }
+    }
+    @media (max-width: 480px) {
+      .furniture-card-img { width: 90px; min-width: 90px; padding: 8px; }
+      .furniture-card-img img { max-width: 60px; }
+      .furniture-card-title { font-size: 8px; padding: 5px 10px; }
+      .furniture-label { width: 70px; min-width: 70px; padding: 3px 6px; font-size: 6.5px; }
+      .furniture-value { padding: 3px 8px; font-size: 8px; line-height: 1.4; }
+      .furniture-section-title { font-size: 13px; }
+      .furniture-section-count { font-size: 6px; padding: 2px 8px; }
+    }
+    @media (max-width: 400px) {
+      .furniture-single-table { padding: 0 8px; }
+      .furniture-card-img { width: 70px; min-width: 70px; padding: 6px; }
+      .furniture-card-img img { max-width: 45px; border-radius: 3px; }
+      .furniture-card-title { font-size: 7px; padding: 4px 8px; }
+      .furniture-label { width: 55px; min-width: 55px; padding: 2px 5px; font-size: 6px; }
+      .furniture-value { padding: 2px 7px; font-size: 7px; line-height: 1.35; }
+      .furniture-section-title { font-size: 11px; }
+      .furniture-section-count { font-size: 5px; padding: 2px 6px; }
+      .furniture-card { margin-bottom: 14px; border-radius: 3px; }
+    }
+
+    /* ================================================================
+       FURNITURE LIGHTBOX — isolated fullscreen zoom
+       ================================================================ */
+    .furniture-lb {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.88);
+      z-index: 99999;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      padding: 20px;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+    .furniture-lb.active {
+      display: flex;
+      opacity: 1;
+    }
+    #furnitureLbImg {
+      width: auto !important;
+      height: auto !important;
+      max-width: 92vw !important;
+      max-height: 92vh !important;
+      object-fit: contain !important;
+      border-radius: 6px;
+      display: block;
+      transform: scale(0.92);
+      transition: transform 0.25s ease;
+      image-rendering: auto;
+    }
+    .furniture-lb.active #furnitureLbImg {
+      transform: scale(1);
+    }
+
+    /* ================================================================
+       KITCHEN SINGLE TABLE — isolated premium card system
+       Kitchen Shutters / Kitchen Must Haves
+       ================================================================ */
+    .kitchen-single-table {
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .kitchen-section-header {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px 16px;
+      padding: 18px 0 14px;
+      margin-bottom: 20px;
+    }
+    .kitchen-section-title {
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: 0.5px;
+      white-space: normal;
+      overflow-wrap: anywhere;
+    }
+    .kitchen-section-count {
+      font-size: 8px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-light);
+      background: var(--card-bg);
+      border: 1px solid rgba(128,128,128,0.15);
+      padding: 3px 12px;
+      border-radius: 3px;
+      white-space: nowrap;
+    }
+    .kitchen-card {
+      display: flex;
+      margin-bottom: 24px;
+      border-radius: 6px;
+      overflow: hidden;
+      background: var(--card-bg);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      transition: background-color 0.3s, box-shadow 0.3s;
+    }
+    .kitchen-card-img {
+      width: 200px;
+      min-width: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 16px;
+      background: var(--card-bg);
+      position: relative;
+    }
+    .kitchen-card-img img {
+      width: 100%;
+      max-width: 140px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: transform 0.3s, filter 0.3s;
+      filter: brightness(0.92);
+    }
+    .kitchen-card-img img:hover {
+      transform: scale(1.03);
+      filter: brightness(1);
+    }
+    .kitchen-card-detail {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    .kitchen-card-title {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--title-bar-text);
+      letter-spacing: 0.3px;
+      line-height: 1.2;
+      padding: 10px 16px;
+      white-space: normal;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+    .kitchen-rows {
+      display: flex;
+      flex-direction: column;
+    }
+    .kitchen-row {
+      display: flex;
+      border-top: 1px solid rgba(128,128,128,0.08);
+    }
+    .kitchen-row:first-child {
+      border-top: none;
+    }
+    .kitchen-label {
+      width: 150px;
+      min-width: 150px;
+      background: var(--spec-label-bg);
+      padding: 7px 14px;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      line-height: 1.3;
+      color: var(--spec-label-text);
+      display: flex;
+      align-items: flex-start;
+      border-right: 1px solid var(--spec-label-border);
+      transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+      white-space: normal;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+    .kitchen-value {
+      flex: 1;
+      padding: 7px 16px;
+      font-size: 11px;
+      color: var(--spec-value-text);
+      line-height: 1.45;
+      min-width: 0;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      white-space: pre-line;
+      transition: color 0.3s;
+    }
+    .kitchen-value .pros { color: inherit; }
+    .kitchen-value .cons { color: inherit; }
+
+    .kitchen-lb {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.88);
+      z-index: 99999;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      padding: 20px;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+    .kitchen-lb.active {
+      display: flex;
+      opacity: 1;
+    }
+    #kitchenLbImg {
+      width: auto !important;
+      height: auto !important;
+      max-width: 92vw !important;
+      max-height: 92vh !important;
+      object-fit: contain !important;
+      border-radius: 6px;
+      display: block;
+      transform: scale(0.92);
+      transition: transform 0.25s ease;
+      image-rendering: auto;
+    }
+    .kitchen-lb.active #kitchenLbImg {
+      transform: scale(1);
+    }
+
+    @media (max-width: 768px) {
+      .kitchen-card-img { width: 160px; min-width: 160px; padding: 12px; }
+      .kitchen-card-img img { max-width: 110px; }
+      .kitchen-card-title { font-size: 11px; padding: 8px 14px; }
+      .kitchen-label { width: 110px; min-width: 110px; padding: 5px 10px; font-size: 9px; }
+      .kitchen-value { padding: 5px 12px; font-size: 10px; line-height: 1.4; }
+      .kitchen-section-title { font-size: 18px; }
+    }
+    @media (max-width: 600px) {
+      .kitchen-single-table { padding: 0 16px; }
+      .kitchen-card-img { width: 120px; min-width: 120px; padding: 10px; }
+      .kitchen-card-img img { max-width: 80px; }
+      .kitchen-card-title { font-size: 9px; padding: 6px 12px; }
+      .kitchen-label { width: 80px; min-width: 80px; padding: 4px 8px; font-size: 7.5px; }
+      .kitchen-value { padding: 4px 10px; font-size: 9px; line-height: 1.45; }
+      .kitchen-section-title { font-size: 15px; }
+      .kitchen-section-count { font-size: 7px; }
+      .kitchen-card { margin-bottom: 18px; border-radius: 4px; }
+    }
+    @media (max-width: 480px) {
+      .kitchen-card-img { width: 90px; min-width: 90px; padding: 8px; }
+      .kitchen-card-img img { max-width: 60px; }
+      .kitchen-card-title { font-size: 8px; padding: 5px 10px; }
+      .kitchen-label { width: 70px; min-width: 70px; padding: 3px 6px; font-size: 6.5px; }
+      .kitchen-value { padding: 3px 8px; font-size: 8px; line-height: 1.4; }
+      .kitchen-section-title { font-size: 13px; }
+      .kitchen-section-count { font-size: 6px; padding: 2px 8px; }
+    }
+    @media (max-width: 400px) {
+      .kitchen-single-table { padding: 0 8px; }
+      .kitchen-card-img { width: 70px; min-width: 70px; padding: 6px; }
+      .kitchen-card-img img { max-width: 45px; border-radius: 3px; }
+      .kitchen-card-title { font-size: 7px; padding: 4px 8px; }
+      .kitchen-label { width: 55px; min-width: 55px; padding: 2px 5px; font-size: 6px; }
+      .kitchen-value { padding: 2px 7px; font-size: 7px; line-height: 1.35; }
+      .kitchen-section-title { font-size: 11px; }
+      .kitchen-section-count { font-size: 5px; padding: 2px 6px; }
+      .kitchen-card { margin-bottom: 14px; border-radius: 3px; }
     }
 
     /* ================================================================
@@ -4182,6 +5002,307 @@
     .dark-mode .top10-new .material-cell {
       color: var(--title-bar-text);
     }
+
+    /* === COLOR COMBINATION GRID === */
+    .color-combo-section .sec-head {
+      margin-bottom: 28px;
+    }
+    .color-combo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      padding: 4px;
+    }
+    .color-combo-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .color-combo-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+    }
+    .color-combo-img-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: var(--card-bg);
+    }
+    .color-combo-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+      cursor: pointer;
+    }
+    .color-combo-card:hover .color-combo-img-wrap img {
+      transform: scale(1.04);
+    }
+    .color-combo-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.35) 100%);
+      pointer-events: none;
+    }
+    .color-combo-title {
+      padding: 16px 18px 20px;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-primary);
+      line-height: 1.45;
+      letter-spacing: 0.01em;
+    }
+    .color-combo-srno {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      background: var(--border-color);
+      padding: 2px 10px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+      letter-spacing: 0.06em;
+    }
+    .dark-mode .color-combo-card {
+      background: var(--card-bg);
+      border-color: var(--border-color);
+    }
+
+    /* Color combo lightbox */
+    .color-combo-lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 99999;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+    .color-combo-lightbox.active {
+      display: flex;
+    }
+    .color-combo-lightbox img {
+      max-width: 90vw;
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: 10px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+    .color-combo-lightbox .color-combo-lb-close {
+      position: fixed;
+      top: 20px;
+      right: 28px;
+      color: #fff;
+      font-size: 38px;
+      font-weight: 300;
+      cursor: pointer;
+      line-height: 1;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+      z-index: 2;
+    }
+    .color-combo-lightbox .color-combo-lb-close:hover {
+      opacity: 1;
+    }
+    .color-combo-lightbox .color-combo-lb-cap {
+      position: fixed;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #fff;
+      font-size: 17px;
+      font-weight: 500;
+      text-align: center;
+      max-width: 80%;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+
+    @media (max-width: 992px) {
+      .color-combo-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    }
+    @media (max-width: 600px) {
+      .color-combo-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .color-combo-title { padding: 14px 14px 16px; font-size: 14px; }
+    }
+    @media (max-width: 480px) {
+      .color-combo-grid { grid-template-columns: 1fr; gap: 16px; }
+    }
+    @media (max-width: 400px) {
+      .color-combo-title { padding: 12px 12px 14px; font-size: 13px; }
+    }
+
+    /* === FURNITURE FIGMA GRID === */
+    .furniture-figma-grid,
+    .kitchen-figma-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      padding: 4px;
+    }
+    .furniture-figma-card,
+    .kitchen-figma-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .furniture-figma-card:hover,
+    .kitchen-figma-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+    }
+    .furniture-figma-img-wrap,
+    .kitchen-figma-img-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: var(--card-bg);
+    }
+    .furniture-figma-img-wrap img,
+    .kitchen-figma-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+      cursor: pointer;
+    }
+    .furniture-figma-card:hover .furniture-figma-img-wrap img,
+    .kitchen-figma-card:hover .kitchen-figma-img-wrap img {
+      transform: scale(1.04);
+    }
+    .furniture-figma-overlay,
+    .kitchen-figma-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.35) 100%);
+      pointer-events: none;
+    }
+    .furniture-figma-title,
+    .kitchen-figma-title {
+      padding: 16px 18px 8px;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.4;
+    }
+    .furniture-figma-details,
+    .kitchen-figma-details {
+      padding: 0 18px 18px;
+    }
+    .furniture-figma-row,
+    .kitchen-figma-row {
+      display: flex;
+      padding: 6px 0;
+      border-bottom: 1px solid var(--border-color);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+    .furniture-figma-row:last-child,
+    .kitchen-figma-row:last-child {
+      border-bottom: none;
+    }
+    .furniture-figma-label,
+    .kitchen-figma-label {
+      flex-shrink: 0;
+      width: 100px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      padding-right: 12px;
+    }
+    .furniture-figma-value,
+    .kitchen-figma-value {
+      flex: 1;
+      color: var(--text-primary);
+    }
+    .furniture-figma-value.pros,
+    .kitchen-figma-value.pros {
+      color: var(--pros-color, #2d7a2d);
+    }
+    .furniture-figma-value.cons,
+    .kitchen-figma-value.cons {
+      color: var(--cons-color, #b94a4a);
+    }
+    .dark-mode .furniture-figma-card,
+    .dark-mode .kitchen-figma-card {
+      background: var(--card-bg);
+      border-color: var(--border-color);
+    }
+
+    /* Furniture & Kitchen figma lightbox (shared structure) */
+    .figma-lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 99999;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+    .figma-lightbox.active {
+      display: flex;
+    }
+    .figma-lightbox img {
+      max-width: 90vw;
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: 10px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+    .figma-lightbox .figma-lb-close {
+      position: fixed;
+      top: 20px;
+      right: 28px;
+      color: #fff;
+      font-size: 38px;
+      font-weight: 300;
+      cursor: pointer;
+      line-height: 1;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+      z-index: 2;
+    }
+    .figma-lightbox .figma-lb-close:hover {
+      opacity: 1;
+    }
+    .figma-lightbox .figma-lb-cap {
+      position: fixed;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #fff;
+      font-size: 17px;
+      font-weight: 500;
+      text-align: center;
+      max-width: 80%;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+
+    @media (max-width: 768px) {
+      .furniture-figma-grid,
+      .kitchen-figma-grid { grid-template-columns: 1fr; gap: 18px; }
+      .furniture-figma-title,
+      .kitchen-figma-title { font-size: 15px; }
+    }
+    @media (max-width: 480px) {
+      .furniture-figma-title,
+      .kitchen-figma-title { padding: 14px 14px 6px; font-size: 14px; }
+      .furniture-figma-details,
+      .kitchen-figma-details { padding: 0 14px 14px; }
+      .furniture-figma-row,
+      .kitchen-figma-row { font-size: 11px; }
+    }
   </style>
 </head>
 
@@ -4896,33 +6017,34 @@ window.addEventListener(
         title: 'Comparison: Lime Wash vs Lime Plaster vs Venetian Plaster vs Clay Cladding',
         cols: ['Category', 'Lime Wash', 'Lime Plaster', 'Venetian Plaster', 'Clay Cladding'],
         rows: [
-          ['Material Type', 'Mineral paint', 'Natural plaster', 'Decorative polished plaster', 'Cladding system'],
-          ['Finish', 'Chalky, matte, brushstroke texture', 'Smooth to rough matte', 'Glossy to satin, marble-like', 'Matte, textured, earthy'],
-          ['Skill Level', 'Moderate', 'High', 'Very High', 'Moderate–High'],
-          ['Durability', '5–10 years', '20–50 years', '15–30 years', '25+ years'],
-          ['Water Resistant?', 'No (breathable)', 'Low–Moderate', 'Yes (when sealed)', 'Moderate'],
-          ['Best For', 'Bedrooms, feature walls', 'Living rooms, villas', 'Luxury spaces, hotel lobbies', 'Feature walls, exteriors'],
-          ['Price Range', '₹50–₹200/sq.ft', '₹150–₹500/sq.ft', '₹250–₹600/sq.ft', '₹120–₹450/sq.ft'],
-          ['Eco-Friendly?', 'Yes', 'Yes', 'Mostly yes', 'Yes'],
+          ['Material', 'Mineral paint', 'Natural plaster', 'Decorative plaster', 'Cladding system'],
+          ['Composition', 'Slaked lime + water + pigments', 'Lime + sand, marble dust', 'Lime + marble dust + pigments', 'Kiln-fired natural clay'],
+          ['Finish Look', 'Soft, cloudy, matte', 'Smooth to textured, earthy', 'Glossy,satin, marble-like', 'Rustic to modern, earthy panels'],
+          ['Aesthetic Positioning', 'Subtle, rustic', 'Premium natural', 'Luxury statement', 'Curves, façades'],
+          ['Thickness', '0.2 – 0.5 mm', '2 – 5 mm', '1 – 3 mm', '10 – 25 mm'],
+          ['Cost (₹/sq.ft)', '₹20 – ₹38', '₹80 – ₹250', '₹250 – ₹800', '₹150 – ₹500'],
+          ['Application Type', 'Brush layered coats', 'Trowel multi-layer plaster', 'Trowel + burnishing', 'Mechanical tiling'],
+          ['Skill Level Required', 'Medium', 'High', 'Very high', 'High'],
+          ['Durability', 'Medium (3–5 yrs)', 'High (8–15 yrs)', 'High (10–15+ yrs)', 'High (20–50 yrs)'],
+          ['Maintenance', 'Periodic recoating', 'Low maintenance', 'Low', 'Very low'],
+          ['Seamlessness', 'Seamless', 'Seamless', 'Seamless', 'Jointed system'],
         ]
       },
       'marble-vs-tiles': {
         title: 'Comparison: Marble vs Tiles',
         cols: ['Category', 'Marble', 'Tiles'],
         rows: [
-          ['Material & Make', 'Natural stone (Italian & Indian marbles)', 'Manufactured materials (ceramic, vitrified, porcelain, etc.)'],
-          ['Aesthetic', 'Natural grains, rich veining, luxurious, unique slabs', 'Printed/textured designs (marble, wood, concrete look)'],
-          ['Size & Thickness', '15–22 mm thick; large slabs (up to 2m × 3m) → minimal joints', '3–10 mm thick; modular sizes up to 3m × 3m'],
-          ['Cost', '₹200/sqft upwards; premium marbles are expensive', '₹60/sqft upwards; more budget-friendly'],
-          ['Applications', 'Flooring, walls, bathrooms, countertops, feature walls', 'Flooring, walls, kitchens, bathrooms, outdoor areas'],
-          ['Durability & Water Resistance', 'Durable but porous; needs sealing', 'Highly durable, water-resistant, stain-proof'],
-          ['Maintenance & Repairability', 'Needs polishing; can be repaired', 'Low maintenance; cannot be repaired'],
-          ['Installation & Speed', 'Slow; requires skilled labour', 'Fast; easy installation'],
-          ['Finish & Surface Options', 'Polished, honed, leather, brushed', 'Glossy, matte, textured, anti-skid'],
-          ['Joints & Finish Look', 'Seamless, minimal joints', 'Visible grout lines'],
-          ['Feel & Consistency', 'Natural, rich feel; unique', 'Uniform, consistent'],
-          ['Safety (Slip & Heat)', 'Heat-resistant; can be slippery', 'Heat-resistant; anti-skid options available'],
-          ['Best Use Case', 'Luxury homes, premium spaces', 'Budget homes, high-traffic areas'],
+          ['Material', 'Natural stone', 'Manufactured materials like ceramic, vitrified, porcelain, etc.'],
+          ['Aesthetic', 'Natural grains, rich veining, extremely luxurious. Every slab is unique', 'Artificial, Printed, textured designs with marble, wood, concrete look'],
+          ['Thickness', '15–22 mm thick; slabs up to 2m × 3m → seamless, minimal joints', '3–10 mm thick; tiles up to 3m × 3m + modular sizes'],
+          ['Cost (₹/sq.ft)', '₹200+', '₹60 +'],
+          ['Best Places to Use', 'Flooring, wall cladding, bathrooms, countertops, feature walls, staircases', 'Flooring, walls, kitchens, bathrooms, outdoor areas, commercial spaces'],
+          ['Durability', 'Durable but porous; can stain if not sealed properly', 'Highly durable, stain-proof, water-resistant; minor chipping possible'],
+          ['Maintenance', 'Requires sealing & polishing.', 'Low maintenance. It cannot be repaired. Damaged tiles must be replaced'],
+          ['Installation Process', 'Slow process. Needs skilled labour, polishing, finishing', 'Fast installation using tile adhesive; ideal for quick projects'],
+          ['Finish', 'Polished, honed, leather, brushed', 'Glossy, matte, textured, anti-skid'],
+          ['Joints', 'Minimal joints with seamless, high-end finish', 'Visible grout lines'],
+          ['Safety', 'Heat-resistant; polished finish can be slippery', 'Heat-resistant; anti-skid options available'],
         ]
       },
       'compare-stone': {
@@ -4930,12 +6052,16 @@ window.addEventListener(
         cols: ['Category', 'Granite', 'Quartz', 'Quartzite'],
         rows: [
           ['Material', 'Natural igneous stone', 'Engineered stone (quartz + resin)', 'Natural metamorphic stone'],
-          ['Appearance', 'Speckled, varied patterns', 'Uniform, consistent veining options', 'Marble-like, natural veining'],
-          ['Hardness (Mohs)', '6–7', '7 (engineered)', '7–8 (harder than granite)'],
-          ['Heat Resistant?', 'Yes', 'Moderate (can discolour)', 'Yes'],
-          ['Stain Resistant?', 'Needs sealing', 'Excellent (non-porous)', 'Needs sealing'],
-          ['Price Range', '₹120 – ₹400 / sq.ft', '₹350 – ₹800 / sq.ft', '₹300 – ₹1,200 / sq.ft'],
-          ['Best For', 'Counters, staircases, exterior flooring', 'Kitchen counters, bathrooms', 'Premium counters, feature walls'],
+          ['Aesthetic', 'Natural speckled or uniform patterns', 'Uniform, controlled designs (plain to marble-like veins)', 'Marble-like veining with natural variation'],
+          ['Look', 'Limited to natural colors and patterns', 'Wide variety like white, grey, black, terrazzo', 'Exotic, unique patterns'],
+          ['Natural Feel', 'Feels natural and slightly textured', 'Slightly artificial but consistent', 'Very natural, luxurious, closest to marble'],
+          ['Thickness Range', '16–30 mm', '15–20 mm', '15–30 mm'],
+          ['Available Sizes', 'Slabs (8–10 ft) +cut sizes', 'Slabs + jumbo slabs', 'Large slabs up to 2m × 3m or more'],
+          ['Cost', '₹140 – ₹800/sq ft', '₹200 – ₹1000/sq ft', '₹400 – ₹3000/sq ft'],
+          ['Durability', 'Very durable, scratch-resistant', 'Highly durable, non-porous', 'Extremely durable, harder than granite'],
+          ['Heat Resistance', 'Excellent', 'Moderate. Resin can get damaged', 'Excellent .Best among all three.'],
+          ['Water/Stain Resistance', 'Moderate (porous)', 'Excellent (non-porous)', 'Good but requires sealing'],
+          ['Repairability', 'Can be polished and repaired', 'Cannot be repaired if chipped', 'Limited repair depends on damage'],
         ]
       },
       'lam-vs-veneer': {
@@ -5210,59 +6336,431 @@ window.addEventListener(
         ]
       },
       door: {
-        title: 'Door Finishes', items: [
-          'Door Skins||₹1,500–₹5,000/door||1–2 mm||Skin glued onto flush door using adhesive + roller pressing; edges trimmed and polished||Wipe with damp microfiber cloth weekly||Premium look at affordable cost; huge variety of textures and finishes||Not as durable as veneer; can peel if exposed to moisture||Main doors, bedroom doors, passage doors, low-use interior doors',
-          'Flute Panel Doors||₹250–₹600 / sq.ft||12–18 mm MDF panel||Fluted sheets cut to size, glued/nailed on door, edges finished with beading||Dust with soft brush; clean grooves using vacuum brush||Adds modern, textured look; works well for large statement doors||Takes more time to clean grooves; paint can chip||Main doors, bedroom doors, bathroom dry-area doors',
-          'Veneer Doors||₹100–₹350 / sq.ft||0.5–1 mm veneer on 30–35 mm door||Veneer sheet glued + pressed, sanded, finished with melamine/PU polish||Wipe with dry cloth; avoid water spills||Rich, natural, luxurious wood look; customizable with stains and polishes||Requires skilled polishing; susceptible to scratches and moisture||Bedrooms, living room doors, home office doors',
-          'Laminate Doors||₹80–₹250 / sq.ft||0.8–1 mm laminate on 30–35 mm flush door||Laminate sheets glued and pressed; edges finished with matching PVC edge banding||Clean with mild soap solution; easy to maintain||Budget-friendly and very durable; wide variety of textures and colours||Looks less premium than veneer; edge banding may loosen if low-quality glue used||Bathrooms (dry areas), bedrooms, passage doors, rental homes',
-          'Metal Doors (SS/Brass/MS)||₹500–₹2,000 / sq.ft||1–2 mm metal sheet||Metal sheets CNC cut, stuck with high-strength adhesive, screwed at corners; powder coating done after||Soft cloth + metal-safe cleaner; avoid harsh chemical polishes||Extremely strong, premium, and impactful; perfect for modern luxury interiors||Expensive + heavy; fingerprints and scratches show easily||Main entrance doors, statement doors, office doors',
-          'PU Painted Doors||₹150–₹350 / sq.ft||30–35 mm door + 2–3 coats of PU||Surface sanded, primed, sprayed with PU coats, polished to matte/gloss finish||Wipe with soft microfiber cloth; avoid abrasives||Seamless, smooth, premium finish; any shade possible—fully customizable||Can chip if hit strongly; slightly expensive due to labour & polish||Bedrooms, kids rooms, minimalist design homes',
-          'Glass Doors (Clear/Fluted/Tinted/Smoked)||₹250–₹800 / sq.ft||8–12 mm toughened glass||Glass toughened, polished, fitted in wooden/metal frame or installed frameless with floor spring + hardware||Clean with glass cleaner; avoid watermarks||Opens up space and increases natural light; modern, sleek, and elegant||Needs regular cleaning; privacy limited unless frosted/tinted||Walk-in closets, bathrooms, partitions, study rooms'
+        title: 'Door Finishes',
+        tableItems: [
+          'Door Skins||₹1,500–₹5,000/door||1–2 mm||Main doors, bedroom doors, passage doors, low-use interior doors||',
+          'Flute Panel Doors||₹250–₹600 / sq.ft||12–18 mm MDF panel||Main doors, bedroom doors, bathroom dry-area doors||',
+          'Veneer Doors||₹100–₹350 / sq.ft||0.5–1 mm veneer on 30–35 mm door||Bedrooms, living room doors, home office doors||',
+          'Laminate Doors||₹80–₹250 / sq.ft||0.8–1 mm laminate on 30–35 mm flush door||Bathrooms (dry areas), bedrooms, passage doors, rental homes||',
+          'Metal Doors (SS/Brass/MS)||₹500–₹2,000 / sq.ft||1–2 mm metal sheet||Main entrance doors, statement doors, office doors||',
+          'PU Painted Doors||₹150–₹350 / sq.ft||30–35 mm door + 2–3 coats of PU||Bedrooms, kids rooms, minimalist design homes||',
+          'Glass Doors (Clear/Fluted/Tinted/Smoked)||₹250–₹800 / sq.ft||8–12 mm toughened glass||Walk-in closets, bathrooms, partitions, study rooms||'
+        ],
+        detailItems: [
+          {title: 'Door Skins', rows: [
+            ['Raw Material Cost', '₹1,500–₹5,000/door'],
+            ['Thickness Required', '1–2 mm'],
+            ['Installation Process', 'Skin glued onto flush door using adhesive + roller pressing; edges trimmed and polished'],
+            ['Maintenance', 'Wipe with damp microfiber cloth weekly'],
+            ['Best Places to Use', 'Main doors, bedroom doors, passage doors, low-use interior doors'],
+            {label: '\u2713 Pros', value: 'Premium look at affordable cost; huge variety of textures and finishes', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Not as durable as veneer; can peel if exposed to moisture', cls: 'cons'}
+          ]},
+          {title: 'Flute Panel Doors', rows: [
+            ['Raw Material Cost', '₹250–₹600 / sq.ft'],
+            ['Thickness Required', '12–18 mm MDF panel'],
+            ['Installation Process', 'Fluted sheets cut to size, glued/nailed on door, edges finished with beading'],
+            ['Maintenance', 'Dust with soft brush; clean grooves using vacuum brush'],
+            ['Best Places to Use', 'Main doors, bedroom doors, bathroom dry-area doors'],
+            {label: '\u2713 Pros', value: 'Adds modern, textured look; works well for large statement doors', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Takes more time to clean grooves; paint can chip', cls: 'cons'}
+          ]},
+          {title: 'Veneer Doors', rows: [
+            ['Raw Material Cost', '₹100–₹350 / sq.ft'],
+            ['Thickness Required', '0.5–1 mm veneer on 30–35 mm door'],
+            ['Installation Process', 'Veneer sheet glued + pressed, sanded, finished with melamine/PU polish'],
+            ['Maintenance', 'Wipe with dry cloth; avoid water spills'],
+            ['Best Places to Use', 'Bedrooms, living room doors, home office doors'],
+            {label: '\u2713 Pros', value: 'Rich, natural, luxurious wood look; customizable with stains and polishes', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Requires skilled polishing; susceptible to scratches and moisture', cls: 'cons'}
+          ]},
+          {title: 'Laminate Doors', rows: [
+            ['Raw Material Cost', '₹80–₹250 / sq.ft'],
+            ['Thickness Required', '0.8–1 mm laminate on 30–35 mm flush door'],
+            ['Installation Process', 'Laminate sheets glued and pressed; edges finished with matching PVC edge banding'],
+            ['Maintenance', 'Clean with mild soap solution; easy to maintain'],
+            ['Best Places to Use', 'Bathrooms (dry areas), bedrooms, passage doors, rental homes'],
+            {label: '\u2713 Pros', value: 'Budget-friendly and very durable; wide variety of textures and colours', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Looks less premium than veneer; edge banding may loosen if low-quality glue used', cls: 'cons'}
+          ]},
+          {title: 'Metal Doors (SS/Brass/MS)', rows: [
+            ['Raw Material Cost', '₹500–₹2,000 / sq.ft'],
+            ['Thickness Required', '1–2 mm metal sheet'],
+            ['Installation Process', 'Metal sheets CNC cut, stuck with high-strength adhesive, screwed at corners; powder coating done after'],
+            ['Maintenance', 'Soft cloth + metal-safe cleaner; avoid harsh chemical polishes'],
+            ['Best Places to Use', 'Main entrance doors, statement doors, office doors'],
+            {label: '\u2713 Pros', value: 'Extremely strong, premium, and impactful; perfect for modern luxury interiors', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Expensive + heavy; fingerprints and scratches show easily', cls: 'cons'}
+          ]},
+          {title: 'PU Painted Doors', rows: [
+            ['Raw Material Cost', '₹150–₹350 / sq.ft'],
+            ['Thickness Required', '30–35 mm door + 2–3 coats of PU'],
+            ['Installation Process', 'Surface sanded, primed, sprayed with PU coats, polished to matte/gloss finish'],
+            ['Maintenance', 'Wipe with soft microfiber cloth; avoid abrasives'],
+            ['Best Places to Use', 'Bedrooms, kids rooms, minimalist design homes'],
+            {label: '\u2713 Pros', value: 'Seamless, smooth, premium finish; any shade possible—fully customizable', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Can chip if hit strongly; slightly expensive due to labour & polish', cls: 'cons'}
+          ]},
+          {title: 'Glass Doors (Clear/Fluted/Tinted/Smoked)', rows: [
+            ['Raw Material Cost', '₹250–₹800 / sq.ft'],
+            ['Thickness Required', '8–12 mm toughened glass'],
+            ['Installation Process', 'Glass toughened, polished, fitted in wooden/metal frame or installed frameless with floor spring + hardware'],
+            ['Maintenance', 'Clean with glass cleaner; avoid watermarks'],
+            ['Best Places to Use', 'Walk-in closets, bathrooms, partitions, study rooms'],
+            {label: '\u2713 Pros', value: 'Opens up space and increases natural light; modern, sleek, and elegant', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Needs regular cleaning; privacy limited unless frosted/tinted', cls: 'cons'}
+          ]}
         ]
       },
       bed: {
-        title: 'Bed Finishes', items: [
-          'Laminate Finish||₹80–₹300 / sq.ft||18 mm ply + 0.8–1 mm laminate||Plywood bed structure made (box/storage), laminate sheets glued & edge-banded||Easy—wipe with damp cloth||Budget-friendly, durable, wide design options||Less premium than veneer/solid wood||Budgeted homes, rental properties, functional storage beds',
-          'Veneer Finish||₹120–₹400 / sq.ft||18 mm ply + 0.5–1 mm veneer||Veneer applied on ply structure, polished with melamine/PU||Dry cloth; avoid moisture||Natural wood look, premium finish||Expensive; requires skilled polish||Master bedrooms, premium homes',
-          'PU Paint Finish||₹180–₹450 / sq.ft||MDF/ply base + multiple PU coats||Surface prepared, spray painted, and polished||Soft cloth cleaning||Seamless finish, any colour possible||Chips on impact; higher labour cost||Modern minimal beds',
-          'Solid Wood Finish (Teak/Sheesham)||₹1,500–₹5,000+ / sq.ft||25–75 mm sections||Fully carpentered or factory-made bed with joinery; polished or coated||Regular polishing; avoid moisture||Extremely durable, timeless, premium feel||Expensive; heavy; may expand/shrink||Luxury homes, long-term investment beds',
-          'Upholstered Finish (Fabric/Leather)||₹150 – ₹600 / sq.ft||Ply base + foam + fabric/leather||Frame built, foam layered, fabric/leather stretched and upholstered||Vacuum regularly; stain care||Soft, cozy, wide fabric options, premium look||Absorbs dust/stains; higher maintenance||Luxury bedrooms, hotel-style interiors',
-          'Metal Finish (MS/SS Frame)||₹250 – ₹800 / sq.ft||1–3 mm metal sections||Welded metal frame; powder-coated or painted||Low; occasional cleaning||Strong, lightweight, modern/industrial look||Limited storage options; can feel less premium||Minimal homes, guest rooms, studio apartments',
-          'Pre-Lam Particle Board Finish||₹70 – ₹200 / sq.ft||15–18 mm boards||Modular panels assembled using connectors||Dry cloth cleaning; avoid water||Affordable, factory-finished, quick installation||Less durable than ply; moisture sensitive||Budget homes, rental furniture',
-          'Acrylic Finish||₹250 – ₹600 / sq.ft||~1 mm acrylic sheet on MDF/ply||Acrylic sheets pressed onto panels||Microfiber cloth; avoid scratches||High-gloss, modern, reflective finish||Scratches & fingerprints visible||Contemporary bedrooms',
-          'Rattan Cane Finish||₹150 – ₹500 / sq.ft||Cane weave + wood frame||Cane woven into wooden frame panels||Dry cleaning; avoid moisture||Lightweight, breathable, natural aesthetic||Not very durable under heavy impact; can sag||Boho, tropical, airy bedrooms',
-          'Bamboo Finish||₹200 – ₹600 / sq.ft||15–30 mm panels/sections||Bamboo treated, cut, and assembled like wood furniture||Occasional polishing; avoid excess moisture||Sustainable, lightweight, unique aesthetic||Limited availability; not as strong as hardwood||Eco-conscious homes, minimalist interiors'
+        title: 'Bed Finishes',
+        tableItems: [
+          'Upholstered Bed (Fabric)||₹25,000–₹80,000||18–25 mm||Master bedrooms, guest bedrooms, premium interiors||',
+          'Upholstered Bed (Leather/Faux Leather)||₹35,000–₹1,20,000||18–25 mm||Master bedrooms, luxury projects, hotel-style rooms||',
+          'Solid Wood Bed (Sheesham/Mango/Teak)||₹20,000–₹1,00,000||Engineered wood frame + solid wood headboard||Master bedrooms, permanent homes, traditional interiors||',
+          'Wooden Storage Bed (Hydraulic/Box Storage)||₹28,000–₹90,000||18–25 mm engineered wood + hydraulic mechanism||Small bedrooms, kids rooms, maximising storage||',
+          'Metal Bed (Iron/Steel)||₹8,000–₹35,000||Mild steel / iron frame||Budget projects, kids rooms, secondary bedrooms||',
+          'Rope Bed / Bohemian Bed||₹30,000–₹80,000||Solid wood frame + natural rope weaving||Guest rooms, vacation homes, resort-style bedrooms||',
+          'Platform Bed (Low-Profile Modern)||₹15,000–₹50,000||18–25 mm engineered wood||Guest rooms, small apartments, minimalist interiors||',
+          'Sleigh Bed (Curved/Traditional)||₹30,000–₹1,00,000||Solid wood + MDF with curved edges||Master bedrooms, large bedrooms, classic interiors||',
+          'Poster Bed (Cane / Wooden)||₹40,000–₹1,50,000||Solid wood + cane weaving||Master bedrooms, large interiors, luxury projects||',
+          'Corner Bed / L-Shaped Bed||₹35,000–₹90,000||18–25 mm engineered wood / solid wood||Small bedrooms, studio apartments, kids shared rooms||'
+        ],
+        detailItems: [
+          {title: 'Upholstered Bed (Fabric)', rows: [
+            ['Raw Material Cost', '₹25,000–₹80,000'],
+            ['Thickness Required', '18–25 mm engineered wood + foam + fabric'],
+            ['Installation Process', 'Frame assembled on-site; headboard fixed to wall or frame'],
+            ['Maintenance', 'Vacuum fabric monthly; professional clean yearly'],
+            ['Best Places to Use', 'Master bedrooms, guest bedrooms, premium interiors'],
+            {label: '\u2713 Pros', value: 'Luxurious, comfortable, wide variety of fabric options', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Stains easily; fabric wears over time; not pet-friendly', cls: 'cons'}
+          ]},
+          {title: 'Upholstered Bed (Leather/Faux Leather)', rows: [
+            ['Raw Material Cost', '₹35,000–₹1,20,000'],
+            ['Thickness Required', '18–25 mm engineered wood + PU/leather'],
+            ['Installation Process', 'Frame assembly + headboard mounting'],
+            ['Maintenance', 'Wipe with leather cleaner; condition occasionally'],
+            ['Best Places to Use', 'Master bedrooms, luxury projects, hotel-style rooms'],
+            {label: '\u2713 Pros', value: 'Premium look; easy to clean; durable', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Expensive; can peel in non-genuine leather', cls: 'cons'}
+          ]},
+          {title: 'Solid Wood Bed (Sheesham/Mango/Teak)', rows: [
+            ['Raw Material Cost', '₹20,000–₹1,00,000'],
+            ['Thickness Required', 'Engineered wood frame + solid wood headboard'],
+            ['Installation Process', 'Bed frame assembled on-site; slats placed for mattress support'],
+            ['Maintenance', 'Polish every 6–12 months; keep away from moisture'],
+            ['Best Places to Use', 'Master bedrooms, permanent homes, traditional interiors'],
+            {label: '\u2713 Pros', value: 'Timeless, durable, repairable; works with any décor', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Heavy; can warp in humid conditions; colour varies', cls: 'cons'}
+          ]},
+          {title: 'Wooden Storage Bed (Hydraulic/Box Storage)', rows: [
+            ['Raw Material Cost', '₹28,000–₹90,000'],
+            ['Thickness Required', '18–25 mm engineered wood + hydraulic mechanism'],
+            ['Installation Process', 'Bed assembled; hydraulic storage compartment fitted'],
+            ['Maintenance', 'Check hydraulics annually; vacuum storage area'],
+            ['Best Places to Use', 'Small bedrooms, kids rooms, maximising storage'],
+            {label: '\u2713 Pros', value: 'Space-saving, perfect for small bedrooms, very practical', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Heavy to lift every day; mechanism can wear over time', cls: 'cons'}
+          ]},
+          {title: 'Metal Bed (Iron/Steel)', rows: [
+            ['Raw Material Cost', '₹8,000–₹35,000'],
+            ['Thickness Required', 'Mild steel / iron frame'],
+            ['Installation Process', 'Frame assembled with bolts; no special tools needed'],
+            ['Maintenance', 'Tighten bolts yearly; repaint if rust appears'],
+            ['Best Places to Use', 'Budget projects, kids rooms, secondary bedrooms'],
+            {label: '\u2713 Pros', value: 'Affordable, lightweight, airy look', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Can squeak over time; not very premium', cls: 'cons'}
+          ]},
+          {title: 'Rope Bed / Bohemian Bed', rows: [
+            ['Raw Material Cost', '₹30,000–₹80,000'],
+            ['Thickness Required', 'Solid wood frame + natural rope weaving'],
+            ['Installation Process', 'Frame set; rope weaving done manually on-site'],
+            ['Maintenance', 'Wipe rope with damp cloth; avoid moisture buildup'],
+            ['Best Places to Use', 'Guest rooms, vacation homes, resort-style bedrooms'],
+            {label: '\u2713 Pros', value: 'Unique, handcrafted look; great for themed interiors', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Rope may sag; not ideal for heavy daily use', cls: 'cons'}
+          ]},
+          {title: 'Platform Bed (Low-Profile Modern)', rows: [
+            ['Raw Material Cost', '₹15,000–₹50,000'],
+            ['Thickness Required', '18–25 mm engineered wood'],
+            ['Installation Process', 'Simple assembly; mattress placed directly on platform'],
+            ['Maintenance', 'Wipe with dry cloth; check for squeaks'],
+            ['Best Places to Use', 'Guest rooms, small apartments, minimalist interiors'],
+            {label: '\u2713 Pros', value: 'Minimalist; affordable; easy to setup', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Less storage; no headboard; basic look', cls: 'cons'}
+          ]},
+          {title: 'Sleigh Bed (Curved/Traditional)', rows: [
+            ['Raw Material Cost', '₹30,000–₹1,00,000'],
+            ['Thickness Required', 'Solid wood + MDF with curved edges'],
+            ['Installation Process', 'On-site assembly of curved headboard + footboard'],
+            ['Maintenance', 'Polish regularly; protect edges from chipping'],
+            ['Best Places to Use', 'Master bedrooms, large bedrooms, classic interiors'],
+            {label: '\u2713 Pros', value: 'Bold, elegant statement piece', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Takes significant floor space; expensive', cls: 'cons'}
+          ]},
+          {title: 'Poster Bed (Cane / Wooden)', rows: [
+            ['Raw Material Cost', '₹40,000–₹1,50,000'],
+            ['Thickness Required', 'Solid wood + cane weaving'],
+            ['Installation Process', 'Poster framework assembled; canopy optional'],
+            ['Maintenance', 'Dust posts and canopy regularly; cane may wear'],
+            ['Best Places to Use', 'Master bedrooms, large interiors, luxury projects'],
+            {label: '\u2713 Pros', value: 'Very grand and premium; works in high-ceiling rooms', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Expensive; requires large room', cls: 'cons'}
+          ]},
+          {title: 'Corner Bed / L-Shaped Bed', rows: [
+            ['Raw Material Cost', '₹35,000–₹90,000'],
+            ['Thickness Required', '18–25 mm engineered wood / solid wood'],
+            ['Installation Process', 'L-shaped framework assembled; custom alignment done'],
+            ['Maintenance', 'Dust corners; check joint stability'],
+            ['Best Places to Use', 'Small bedrooms, studio apartments, kids shared rooms'],
+            {label: '\u2713 Pros', value: 'Saves floor space; modern and functional', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Not easy to move; custom bedding required', cls: 'cons'}
+          ]}
         ]
       },
       headboard: {
-        title: 'Headboard Finishes', items: [
-          'Fabric Upholstered||₹250 – ₹800 / sq.ft||25–75 mm (ply + foam + fabric)||Ply base fixed to wall, foam layered, fabric stretched and upholstered||Vacuum cleaning; stain removal required||Soft, cozy, wide fabric options, breathable||Absorbs dust/stains; higher maintenance||Comfortable, cozy bedrooms, family homes',
-          'Leatherite||₹400 – ₹1200 / sq.ft||25–75 mm (ply + foam + leatherette)||Foam added over base and leatherette tightly upholstered||Easy—wipe with damp cloth||Premium look, easy maintenance, stain-resistant||Less breathable; may crack over time||Luxury bedrooms, hotel-style interiors',
-          'Rattan Cane||₹150 – ₹500 / sq.ft||Cane weave + wooden frame||Cane woven into wooden/MDF frame panels and fixed to wall/bed||Dry cleaning; avoid moisture||Natural, breathable, lightweight, trendy||Can sag over time; not very impact-resistant||Boho, tropical, airy bedrooms',
-          'Charcoal Panel||₹150 – ₹400 / sq.ft||8–25 mm panels||Panels fixed on framework or directly on wall using adhesive/screws||Easy—dusting or wiping||Waterproof, termite-resistant, modern fluted look||Limited colour options; slightly artificial finish||Modern, low-maintenance bedrooms',
-          'Acrylic||₹300 – ₹800 / sq.ft||1–1.5 mm acrylic on MDF||Acrylic sheets machine-pressed on boards and fixed||Microfiber cleaning; avoid scratches||Ultra-glossy, modern, reflective||Scratch-prone; fingerprints visible||Contemporary, high-gloss interiors',
-          'CNC Cut / Jaali Design||₹300 – ₹900 / sq.ft||8–18 mm MDF||CNC-cut panels fixed and painted/polished||Easy cleaning||Custom patterns, designer look||Costly; design-specific||Statement bedrooms',
-          'PU Paint Finish||₹180 – ₹450 / sq.ft||MDF/ply base + PU coating||Spray painted and polished||Soft cloth cleaning||Seamless finish, customizable colours||Prone to scratches/chips||Modern, minimal interiors',
-          'Veneer Finish||₹120 – ₹400 / sq.ft||16–18 mm ply + veneer||Veneer pasted and polished (melamine/PU)||Dry cloth; avoid moisture||Natural wood feel, premium finish||Expensive; requires polishing||Premium bedrooms'
+        title: 'Headboard Finishes',
+        tableItems: [
+          'Upholstered Headboard (Fabric)||₹3,000–₹15,000||12–18 mm plywood + foam + fabric||Master bedrooms, guest bedrooms, premium interiors||',
+          'Upholstered Headboard (Leather/Faux Leather)||₹5,000–₹25,000||12–18 mm plywood + PU/leather||Luxury bedrooms, hotel-style rooms||',
+          'Solid Wood Headboard||₹4,000–₹20,000||18–25 mm solid wood (Sheesham/Mango/Teak)||Master bedrooms, traditional interiors||',
+          'Cane Headboard||₹2,500–₹8,000||6–12 mm cane weaving on wooden frame||Guest rooms, vacation homes, budget projects||',
+          'Wooden Panel Headboard (Slatted/Plywood/MDF)||₹2,000–₹10,000||12–18 mm MDF/plywood||Bedrooms, rental homes, budget interiors||',
+          'LED Headboard||₹8,000–₹30,000||12–18 mm plywood + LED strip||Master bedrooms, modern interiors, statement rooms||',
+          'Mirror Headboard||₹4,000–₹15,000||6–8 mm mirror on 12 mm MDF||Small bedrooms, modern interiors, luxury bathrooms||',
+          'Fluted Headboard||₹5,000–₹20,000||12–18 mm MDF with fluted grooves||Master bedrooms, modern minimalist interiors||'
+        ],
+        detailItems: [
+          {title: 'Upholstered Headboard (Fabric)', rows: [
+            ['Raw Material Cost', '₹3,000–₹15,000'],
+            ['Thickness Required', '12–18 mm plywood + foam + fabric'],
+            ['Installation Process', 'Plywood cut, foam wrapped, fabric stretched & stapled; mounted to wall or bed frame'],
+            ['Maintenance', 'Vacuum fabric monthly; professional steam cleaning yearly'],
+            ['Best Places to Use', 'Master bedrooms, guest bedrooms, premium interiors'],
+            {label: '\u2713 Pros', value: 'Soft, comfortable, huge variety of colours and textures', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Fabric stains easily; not pet-friendly', cls: 'cons'}
+          ]},
+          {title: 'Upholstered Headboard (Leather/Faux Leather)', rows: [
+            ['Raw Material Cost', '₹5,000–₹25,000'],
+            ['Thickness Required', '12–18 mm plywood + PU/leather'],
+            ['Installation Process', 'Same as fabric but using leather/PU; stitched paneled look'],
+            ['Maintenance', 'Wipe with leather cleaner; condition every 6 months'],
+            ['Best Places to Use', 'Luxury bedrooms, hotel-style rooms'],
+            {label: '\u2713 Pros', value: 'Premium, easy to clean, very durable', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Can peel if non-genuine; expensive', cls: 'cons'}
+          ]},
+          {title: 'Solid Wood Headboard', rows: [
+            ['Raw Material Cost', '₹4,000–₹20,000'],
+            ['Thickness Required', '18–25 mm solid wood (Sheesham/Mango/Teak)'],
+            ['Installation Process', 'Wood CNC cut, sanded, polished, mounted to wall or frame'],
+            ['Maintenance', 'Polish every 6–12 months; keep away from moisture'],
+            ['Best Places to Use', 'Master bedrooms, traditional interiors'],
+            {label: '\u2713 Pros', value: 'Timeless, strong, can be carved or shaped', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Heavy and expensive; colour variation natural', cls: 'cons'}
+          ]},
+          {title: 'Cane Headboard', rows: [
+            ['Raw Material Cost', '₹2,500–₹8,000'],
+            ['Thickness Required', '6–12 mm cane weaving on wooden frame'],
+            ['Installation Process', 'Cane woven over wooden frame, fixed to wall or bed'],
+            ['Maintenance', 'Dust regularly; avoid moisture; cane treatment yearly'],
+            ['Best Places to Use', 'Guest rooms, vacation homes, budget projects'],
+            {label: '\u2713 Pros', value: 'Natural, breathable, affordable, light and airy', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Not very durable; can tear or sag', cls: 'cons'}
+          ]},
+          {title: 'Wooden Panel Headboard (Slatted/Plywood/MDF)', rows: [
+            ['Raw Material Cost', '₹2,000–₹10,000'],
+            ['Thickness Required', '12–18 mm MDF/plywood'],
+            ['Installation Process', 'Wooden panels cut and mounted; slats arranged in vertical pattern'],
+            ['Maintenance', 'Wipe with damp cloth; repaint if needed'],
+            ['Best Places to Use', 'Bedrooms, rental homes, budget interiors'],
+            {label: '\u2713 Pros', value: 'Budget-friendly; customizable with paint/laminate', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Less premium; slats may loosen over time', cls: 'cons'}
+          ]},
+          {title: 'LED Headboard', rows: [
+            ['Raw Material Cost', '₹8,000–₹30,000'],
+            ['Thickness Required', '12–18 mm plywood + LED strip'],
+            ['Installation Process', 'Plywood panel made with LED groove; strips installed behind diffuser; wiring hidden'],
+            ['Maintenance', 'Replace LED strips if they fail; dust diffuser'],
+            ['Best Places to Use', 'Master bedrooms, modern interiors, statement rooms'],
+            {label: '\u2713 Pros', value: 'Very luxurious, modern, Instagram-worthy', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'LEDs can fail; wiring needs planning', cls: 'cons'}
+          ]},
+          {title: 'Mirror Headboard', rows: [
+            ['Raw Material Cost', '₹4,000–₹15,000'],
+            ['Thickness Required', '6–8 mm mirror on 12 mm MDF'],
+            ['Installation Process', 'Mirror cut to size, polished edges, glued on MDF, mounted on wall'],
+            ['Maintenance', 'Clean with glass cleaner; avoid watermarks'],
+            ['Best Places to Use', 'Small bedrooms, modern interiors, luxury bathrooms'],
+            {label: '\u2713 Pros', value: 'Makes room look bigger; stylish and reflective', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Shows dust and smudges; breakable', cls: 'cons'}
+          ]},
+          {title: 'Fluted Headboard', rows: [
+            ['Raw Material Cost', '₹5,000–₹20,000'],
+            ['Thickness Required', '12–18 mm MDF with fluted grooves'],
+            ['Installation Process', 'MDF CNC routed with fluted pattern, sanded, painted/laminated, mounted'],
+            ['Maintenance', 'Dust grooves with soft brush; avoid moisture'],
+            ['Best Places to Use', 'Master bedrooms, modern minimalist interiors'],
+            {label: '\u2713 Pros', value: 'Unique, premium, on-trend design element', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Grooves collect dust; harder to clean', cls: 'cons'}
+          ]}
         ]
       },
       sidetable: {
-        title: 'Side Table Finishes', items: [
-          'Laminate Finish||₹80 – ₹300 / sq.ft||16–18 mm ply/MDF + 0.8–1 mm laminate||Laminate sheets glued and edge-banded on structure||Wipe with damp cloth||Budget-friendly, durable, wide variety||Less premium look||Budget homes, rental furniture',
-          'Veneer Finish||₹120 – ₹400 / sq.ft||0.5–1 mm veneer on ply||Veneer applied and polished||Dry cloth; avoid water||Natural wood look, premium finish||Expensive; needs polishing||Master bedrooms, premium interiors',
-          'PU Paint Finish||₹180 – ₹450 / sq.ft||MDF/ply base + PU coating||Spray painted and polished (matte/gloss)||Soft cloth cleaning||Seamless, customizable colours||Chips on impact||Modern, minimal interiors',
-          'Solid Wood Table (Teak/Sheesham)||₹1500 – ₹5000+ / sq.ft||18–40 mm sections||Fully carpentered or factory-made, polished||Periodic polishing||Durable, timeless, premium||Expensive, heavy||Luxury bedrooms, long-term furniture',
-          'Fabric Finish||₹300 – ₹1200 / sq.ft||Ply base + foam + fabric/leather||Upholstery fixed over structure||Vacuum; stain care||Soft, luxurious look||High maintenance||Luxury bedrooms',
-          'Metal Finish (MS/SS Frame)||₹150 – ₹600 / sq.ft||1–3 mm metal sections||Welded frame; powder-coated/painted||Low maintenance||Lightweight, modern, durable||Limited storage||Minimal, industrial homes',
-          'Pre-Lam Particle Finish||₹60 – ₹150 / sq.ft||15–18 mm pre-laminated board||Boards factory-finished; cut and edge-banded, assembled using connectors||Very easy—wipe with damp cloth||Cost-effective, quick installation, uniform finish, no polishing required||Limited design options; visible joints; lower durability than plywood||Budget homes, rental furniture, quick projects',
-          'Acrylic Finish||₹300 – ₹800 / sq.ft||1–1.5 mm acrylic sheet on MDF/HDHMR||Acrylic sheets machine-pressed onto boards; edges finished with edge band||Clean with microfiber cloth; avoid scratches||Ultra-glossy, premium look, highly reflective, modern appeal||Scratch-prone; fingerprints visible; higher cost than laminate||Modern luxury bedrooms, high-gloss interiors',
-          'Mirror Finish||₹300 – ₹900 / sq.ft||5–6 mm mirror panels||Mirror panels fixed on structure||Frequent cleaning required||Makes space look bigger; adds glamour||High maintenance; fragile||Small bedrooms, glam interiors',
-          'Fluted Panel Finish||₹250 – ₹700 / sq.ft||12–18 mm MDF/HDHMR with grooves||CNC-cut grooves or ready fluted panels fixed on structure||Dust collects in grooves—regular cleaning needed||Trendy, adds texture and depth||Slightly high maintenance||Modern luxury bedrooms',
-          'Leatherite Finish||₹400 – ₹1500 / sq.ft||Ply base + foam + leather||Leather wrapped and stitched over panels||Requires careful cleaning; avoid stains||Premium, hotel-like luxury feel||Expensive; high maintenance||Luxury bedrooms',
-          'Terrazzo Finish||₹300 – ₹1000 / sq.ft||15–20 mm slab/coating||Precast slab fixed or terrazzo cast in mold||Easy cleaning; polishing occasionally||Unique patterns, very trendy||Heavy; slightly expensive||Designer, contemporary homes',
-          'Corian Finish||₹800 – ₹2500 / sq.ft||6–12 mm sheets||Thermoformed and seamlessly joined||Easy; scratches can be buffed||Seamless, premium, hygienic||Very expensive||Ultra-luxury interiors',
-          'Metal Inlay / Brass||₹500 – ₹2000 / sq.ft||Thin metal strips (1–3 mm)||Metal inlays embedded into wood panels||Occasional polishing||Adds luxury detailing, designer appeal||Expensive; skilled work needed||Premium and bespoke furniture',
-          'Marble Finish||₹400 – ₹2000+ per sq.ft||15–20 mm marble slab (top); 18 mm ply/MDF base for structure (if not full marble)||Marble slab cut and polished, fixed over plywood/metal base OR fully carved marble structure (in luxury cases); edges finished and sealed.||Regular cleaning with mild solution; periodic polishing; sealing recommended to avoid stains||Extremely premium, timeless look; heat-resistant; adds high perceived value||Heavy; expensive; prone to staining (especially lighter marbles); requires skilled handling||Luxury bedrooms, hotel-style interiors, statement side tables'
+        title: 'Side Table Finishes',
+        tableItems: [
+          'Engineered Wood Side Table (MDF/Plywood + Laminate)||₹2,500–₹8,000||15–18 mm MDF/plywood||Budget projects, rental homes||',
+          'Solid Wood Side Table (Sheesham/Mango/Teak)||₹5,000–₹20,000||18–25 mm solid wood||Master bedrooms, luxury interiors||',
+          'Cane Side Table||₹3,000–₹10,000||Solid wood frame + cane webbing||Boho/vacation homes, guest rooms||',
+          'Fluted Panel Side Table||₹4,000–₹15,000||15–18 mm MDF with fluting||Modern minimalist bedrooms||',
+          'Glass Top Side Table||₹3,000–₹12,000||6–8 mm tempered glass + metal/wood base||Small modern bedrooms, living rooms||',
+          'Marble / Stone Top Side Table||₹6,000–₹25,000||15–18 mm marble on MDF/wood base||Luxury interiors, premium hotels||',
+          'Metal / Brass Side Table||₹3,000–₹15,000||Mild steel/brass sheet||Industrial homes, lofts||',
+          'Nested Side Tables (Set of 2–3)||₹5,000–₹18,000||15–18 mm MDF/solid wood||Living rooms, small spaces||',
+          'Acrylic / Transparent Side Table||₹4,000–₹15,000||8–12 mm acrylic sheet||Minimalist homes, small rooms||',
+          'Corner Side Table (Triangular/Curved)||₹3,000–₹10,000||15–18 mm MDF/wood||Small bedrooms, corners||',
+          'Drawer Side Table (With Storage)||₹4,000–₹14,000||15–18 mm MDF/plywood + drawer||Master bedrooms, family rooms||',
+          'Shelf Side Table (Open Shelving)||₹3,500–₹12,000||15–18 mm MDF/wood+metal||Living rooms, reading corners||',
+          'C-Round / C-Table (Sofa Side Table)||₹4,000–₹14,000||15–18 mm MDF/metal frame||Sofas, lounge areas||',
+          'Floating / Wall-Mounted Side Table||₹2,500–₹8,000||15–18 mm MDF/wood||Tiny bedrooms, entryways||',
+          'Convertible / Lift-Top Side Table||₹6,000–₹20,000||15–18 mm MDF with gas lift mechanism||Small apartments, bedrooms||'
+        ],
+        detailItems: [
+          {title: 'Engineered Wood Side Table', rows: [
+            ['Raw Material Cost', '₹2,500–₹8,000'],
+            ['Thickness Required', '15–18 mm MDF/plywood'],
+            ['Installation Process', 'Prefabricated parts assembled with cam locks and dowels'],
+            ['Maintenance', 'Wipe with damp cloth; avoid moisture'],
+            ['Best Places to Use', 'Budget projects, rental homes'],
+            {label: '\u2713 Pros', value: 'Budget-friendly with laminate variety; lightweight', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Less premium; edges may chip', cls: 'cons'}
+          ]},
+          {title: 'Solid Wood Side Table', rows: [
+            ['Raw Material Cost', '₹5,000–₹20,000'],
+            ['Thickness Required', '18–25 mm solid wood'],
+            ['Installation Process', 'Solid wood pieces joined, sanded, polished; assembled on-site'],
+            ['Maintenance', 'Polish every 6–12 months'],
+            ['Best Places to Use', 'Master bedrooms, luxury interiors'],
+            {label: '\u2713 Pros', value: 'Durable premium look; can be carved', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Heavy cost; colour variation', cls: 'cons'}
+          ]},
+          {title: 'Cane Side Table', rows: [
+            ['Raw Material Cost', '₹3,000–₹10,000'],
+            ['Thickness Required', 'Solid wood frame + cane webbing'],
+            ['Installation Process', 'Cane webbing stretched over wooden frame; stapled and trimmed'],
+            ['Maintenance', 'Dust regularly; keep away from moisture'],
+            ['Best Places to Use', 'Boho/vacation homes, guest rooms'],
+            {label: '\u2713 Pros', value: 'Natural look; lightweight; airy', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Cane can wear over time', cls: 'cons'}
+          ]},
+          {title: 'Fluted Panel Side Table', rows: [
+            ['Raw Material Cost', '₹4,000–₹15,000'],
+            ['Thickness Required', '15–18 mm MDF with fluting'],
+            ['Installation Process', 'MDF CNC routed with fluted pattern, sanded, painted/laminated'],
+            ['Maintenance', 'Dust grooves with soft brush'],
+            ['Best Places to Use', 'Modern minimalist bedrooms'],
+            {label: '\u2713 Pros', value: 'Unique on-trend premium look', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Grooves collect dust', cls: 'cons'}
+          ]},
+          {title: 'Glass Top Side Table', rows: [
+            ['Raw Material Cost', '₹3,000–₹12,000'],
+            ['Thickness Required', '6–8 mm tempered glass + metal/wood base'],
+            ['Installation Process', 'Glass top placed on base; silicone bumpers for grip'],
+            ['Maintenance', 'Clean with glass cleaner'],
+            ['Best Places to Use', 'Small modern bedrooms, living rooms'],
+            {label: '\u2713 Pros', value: 'Sleek and modern; space-enhancing', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Glass smudges; fragile', cls: 'cons'}
+          ]},
+          {title: 'Marble/Stone Top Side Table', rows: [
+            ['Raw Material Cost', '₹6,000–₹25,000'],
+            ['Thickness Required', '15–18 mm marble on MDF/wood base'],
+            ['Installation Process', 'Marble slab cut, polished, mounted on MDF/wood base with adhesive'],
+            ['Maintenance', 'Seal marble yearly; wipe with soft cloth'],
+            ['Best Places to Use', 'Luxury interiors, premium hotels'],
+            {label: '\u2713 Pros', value: 'Luxurious premium look; heat-resistant', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Heavy expensive; stains easily', cls: 'cons'}
+          ]},
+          {title: 'Metal/Brass Side Table', rows: [
+            ['Raw Material Cost', '₹3,000–₹15,000'],
+            ['Thickness Required', 'Mild steel/brass sheet'],
+            ['Installation Process', 'Metal cut, welded, polished, powder-coated'],
+            ['Maintenance', 'Wipe with metal-safe cleaner; avoid harsh chemicals'],
+            ['Best Places to Use', 'Industrial homes, lofts'],
+            {label: '\u2713 Pros', value: 'Modern, sturdy, unique metallic look', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Scratches; heavy; not warm feel', cls: 'cons'}
+          ]},
+          {title: 'Nested Side Tables (Set of 2–3)', rows: [
+            ['Raw Material Cost', '₹5,000–₹18,000'],
+            ['Thickness Required', '15–18 mm MDF/solid wood'],
+            ['Installation Process', 'Each table assembled; arranged in nested order'],
+            ['Maintenance', 'Wipe with damp cloth'],
+            ['Best Places to Use', 'Living rooms, small spaces'],
+            {label: '\u2713 Pros', value: 'Versatile space-saving great', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Can look cluttered; less stable', cls: 'cons'}
+          ]},
+          {title: 'Acrylic/Transparent Side Table', rows: [
+            ['Raw Material Cost', '₹4,000–₹15,000'],
+            ['Thickness Required', '8–12 mm acrylic sheet'],
+            ['Installation Process', 'Acrylic sheets laser-cut, edges polished, assembled with acrylic adhesive'],
+            ['Maintenance', 'Clean with acrylic polish; avoid scratches'],
+            ['Best Places to Use', 'Minimalist homes, small rooms'],
+            {label: '\u2713 Pros', value: 'Completely invisible; modern', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Scratches easily; expensive', cls: 'cons'}
+          ]},
+          {title: 'Corner Side Table', rows: [
+            ['Raw Material Cost', '₹3,000–₹10,000'],
+            ['Thickness Required', '15–18 mm MDF/wood'],
+            ['Installation Process', 'Prefabricated corner-shaped table assembled'],
+            ['Maintenance', 'Wipe with damp cloth'],
+            ['Best Places to Use', 'Small bedrooms, corners'],
+            {label: '\u2713 Pros', value: 'Perfect for unused corners; compact', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Limited utility; small surface', cls: 'cons'}
+          ]},
+          {title: 'Drawer Side Table (With Storage)', rows: [
+            ['Raw Material Cost', '₹4,000–₹14,000'],
+            ['Thickness Required', '15–18 mm MDF/plywood + drawer'],
+            ['Installation Process', 'Body assembled; drawer runners + handle fitted'],
+            ['Maintenance', 'Check drawer runners; dust inside'],
+            ['Best Places to Use', 'Master bedrooms, family rooms'],
+            {label: '\u2713 Pros', value: 'Practical storage; organised look', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Drawer hardware can fail', cls: 'cons'}
+          ]},
+          {title: 'Shelf Side Table (Open Shelving)', rows: [
+            ['Raw Material Cost', '₹3,500–₹12,000'],
+            ['Thickness Required', '15–18 mm MDF/wood+metal'],
+            ['Installation Process', 'Open frame assembled; shelves fixed'],
+            ['Maintenance', 'Dust shelves regularly'],
+            ['Best Places to Use', 'Living rooms, reading corners'],
+            {label: '\u2713 Pros', value: 'Extra display/storage space', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Can look cluttered', cls: 'cons'}
+          ]},
+          {title: 'C-Round / C-Table (Sofa Side Table)', rows: [
+            ['Raw Material Cost', '₹4,000–₹14,000'],
+            ['Thickness Required', '15–18 mm MDF/metal frame'],
+            ['Installation Process', 'C-shaped frame slides over sofa; top surface fixed'],
+            ['Maintenance', 'Wipe with damp cloth'],
+            ['Best Places to Use', 'Sofas, lounge areas'],
+            {label: '\u2713 Pros', value: 'Fits over sofa; very practical', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Limited style options; simple', cls: 'cons'}
+          ]},
+          {title: 'Floating / Wall-Mounted Side Table', rows: [
+            ['Raw Material Cost', '₹2,500–₹8,000'],
+            ['Thickness Required', '15–18 mm MDF/wood'],
+            ['Installation Process', 'Wall bracket fixed; table top mounted on bracket'],
+            ['Maintenance', 'Check wall anchors; wipe clean'],
+            ['Best Places to Use', 'Tiny bedrooms, entryways'],
+            {label: '\u2713 Pros', value: 'Space-saving modern look', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'No storage; wall damage risk', cls: 'cons'}
+          ]},
+          {title: 'Convertible / Lift-Top Side Table', rows: [
+            ['Raw Material Cost', '₹6,000–₹20,000'],
+            ['Thickness Required', '15–18 mm MDF with gas lift mechanism'],
+            ['Installation Process', 'Base + top assembled; gas lift mechanism fitted'],
+            ['Maintenance', 'Check gas lift mechanism; keep mechanism clean'],
+            ['Best Places to Use', 'Small apartments, bedrooms'],
+            {label: '\u2713 Pros', value: 'Fun extra desk/breakfast space', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Mechanism adds weight and cost', cls: 'cons'}
+          ]}
         ]
       },
       study: {
@@ -5334,23 +6832,135 @@ window.addEventListener(
         ]
       },
       'kitchen-shutter': {
-        title: 'Kitchen Shutter Finishes', items: [
-          'Laminate||₹80 – ₹300 per sq.ft||0.8–1 mm laminate on ply/MDF||Laminate sheets are cut, glued, and pressed on plywood/MDF; edges finished with PVC edge banding.||Easy—clean with damp cloth or mild soap solution.||Budget-friendly, durable, scratch-resistant, huge variety of colours & textures.||Less premium look compared to veneer/PU. Edge banding may peel if poor quality.||Budget homes, rental properties, kids\' rooms',
-          'Veneer||₹120 – ₹400 per sq.ft||0.5–1 mm veneer on ply||Veneer is glued, pressed, sanded, then polished (melamine/PU).||Dry cloth only; avoid water exposure.||Rich, natural wood look; high-end finish.||Expensive; needs skilled labour; prone to scratches/moisture.||Living rooms, luxury TV units, statement walls',
-          'PU Paint||₹180 – ₹450 per sq.ft||MDF/ply base + multiple PU coats||Surface is sanded, primed, spray-painted, and polished (matte/gloss).||Soft cloth cleaning; avoid abrasives.||Seamless, smooth, premium look; any colour possible.||Expensive; chips on impact; high labour cost.||Modern, minimal, high-end interiors',
-          'Acrylic||₹250 – ₹600 per sq.ft||1 mm acrylic sheet on MDF||Acrylic sheets are machine-pressed onto boards; edges laser-finished.||Clean with microfiber cloth; avoid scratches.||High gloss, mirror-like finish; very modern.||Scratches easily; fingerprints visible.||Contemporary homes, sleek TV units',
-          'Glass||₹250 – ₹900 per sq.ft||5–12 mm toughened glass||Glass panels fixed with adhesive or framing; can be back-painted or fluted.||Glass cleaner required; frequent cleaning needed.||Reflective, makes space look bigger; modern aesthetic.|Fingerprints, fragile if mishandled.||Small living rooms, modern luxury spaces',
-          'Natural Stone||₹250 – ₹800 per sq.ft||10–25 mm||Stone slabs fixed using adhesive + cement backing; joints may be visible or dry-stacked.||Occasional dusting; sealing recommended.||Natural textured look, adds depth & warmth.||Uneven surface collects dust; requires sealing.||Rustic interiors, accent TV walls',
-          'Charcoal Panel||₹180 – ₹400 per sq.ft||8–25 mm panels||Panels fixed on plywood/MDF using adhesive or screws.||Easy dusting; occasional wipe.||Modern matte finish, termite & moisture resistant.||Limited colour options; can look repetitive.||Contemporary feature walls, fluted designs'
+        title: 'Kitchen Shutter Finishes',
+        tableItems: [
+          'ACM (Aluminium Composite Material) Shutters||₹450–₹800 / sq.ft||8–12 mm ACM sheet||Modern waterproof termite-proof look; lightweight||Dents easily; not very warm feel||Modular kitchens, modern kitchens',
+          'Acrylic Shutters (Gloss/Matt)||₹600–₹1,200 / sq.ft||16–18 mm MDF + 0.5–1 mm acrylic layer||Smooth, seamless glossy/matt; premium waterproof||Scratches can show; costly||Luxury modular kitchens, modern homes',
+          'Laminate Shutters (MDF/Plywood + Laminate)||₹400–₹900 / sq.ft||16–18 mm MDF/plywood + 0.8–1 mm laminate||Budget-friendly, durable, variety of finishes||Less premium; edge banding may peel||Budget kitchens, rental apartments',
+          'PU Finish Shutters||₹550–₹1,100 / sq.ft||16–18 mm MDF + 2–3 coats PU||Seamless, premium, any RAL colour possible||Expensive; can chip on impact||Premium modular kitchens, luxury homes',
+          'Stainless Steel Shutters||₹800–₹2,000 / sq.ft||1–2 mm SS sheet||Very modern industrial strong look||Expensive heavy; fingerprints show||Industrial kitchens, luxury lofts',
+          'Glass Shutters (Clear/Frosted/Tinted)||₹600–₹1,500 / sq.ft||5–8 mm toughened glass + frame||Opens up kitchen; modern elegant||Needs regular cleaning; fragile||Display kitchens, open kitchens, luxury pantries',
+          'Wooden Shutters (Plywood/HDF + Veneer)||₹500–₹1,000 / sq.ft||16–18 mm plywood + veneer||Natural warm premium look||Susceptible to moisture; needs polish||Traditional kitchens, dry kitchens'
+        ],
+        detailItems: [
+          {title: 'ACM Shutters', rows: [
+            ['Raw Material Cost', '₹450–₹800 / sq.ft'],
+            ['Thickness Required', '8–12 mm ACM sheet'],
+            ['Installation Process', 'ACM cut to size, routed for edges, fixed to frame with adhesive + screws'],
+            ['Maintenance', 'Wipe with mild soap water; easy to maintain'],
+            ['Best Places to Use', 'Modular kitchens, modern kitchens'],
+            {label: '\u2713 Pros', value: 'Modern waterproof termite-proof look; lightweight', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Dents easily; not very warm feel', cls: 'cons'}
+          ]},
+          {title: 'Acrylic Shutters', rows: [
+            ['Raw Material Cost', '₹600–₹1,200 / sq.ft'],
+            ['Thickness Required', '16–18 mm MDF + 0.5–1 mm acrylic layer'],
+            ['Installation Process', 'MDF CNC cut, acrylic sheet vacuum-pressed on top; edges polished'],
+            ['Maintenance', 'Clean with soft damp cloth; avoid abrasive cleaners'],
+            ['Best Places to Use', 'Luxury modular kitchens, modern homes'],
+            {label: '\u2713 Pros', value: 'Smooth, seamless glossy/matt; premium waterproof', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Scratches can show; costly', cls: 'cons'}
+          ]},
+          {title: 'Laminate Shutters', rows: [
+            ['Raw Material Cost', '₹400–₹900 / sq.ft'],
+            ['Thickness Required', '16–18 mm MDF/plywood + 0.8–1 mm laminate'],
+            ['Installation Process', 'Laminate glued and pressed; edges finished with PVC edge banding'],
+            ['Maintenance', 'Clean with mild soap solution'],
+            ['Best Places to Use', 'Budget kitchens, rental apartments'],
+            {label: '\u2713 Pros', value: 'Budget-friendly, durable, variety of finishes', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Less premium; edge banding may peel', cls: 'cons'}
+          ]},
+          {title: 'PU Finish Shutters', rows: [
+            ['Raw Material Cost', '₹550–₹1,100 / sq.ft'],
+            ['Thickness Required', '16–18 mm MDF + 2–3 coats PU'],
+            ['Installation Process', 'Surface sanded, primed, sprayed with PU coats, polished to desired finish'],
+            ['Maintenance', 'Wipe with soft microfiber cloth'],
+            ['Best Places to Use', 'Premium modular kitchens, luxury homes'],
+            {label: '\u2713 Pros', value: 'Seamless, premium, any RAL colour possible', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Expensive; can chip on impact', cls: 'cons'}
+          ]},
+          {title: 'Stainless Steel Shutters', rows: [
+            ['Raw Material Cost', '₹800–₹2,000 / sq.ft'],
+            ['Thickness Required', '1–2 mm SS sheet'],
+            ['Installation Process', 'SS sheets CNC cut, formed, welded or screwed on frame; brushed finish applied'],
+            ['Maintenance', 'Wipe with SS cleaner; avoid scratches'],
+            ['Best Places to Use', 'Industrial kitchens, luxury lofts'],
+            {label: '\u2713 Pros', value: 'Very modern industrial strong look', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Expensive heavy; fingerprints show', cls: 'cons'}
+          ]},
+          {title: 'Glass Shutters', rows: [
+            ['Raw Material Cost', '₹600–₹1,500 / sq.ft'],
+            ['Thickness Required', '5–8 mm toughened glass + frame'],
+            ['Installation Process', 'Glass cut, toughened, fitted in aluminum or wooden frame with hinges'],
+            ['Maintenance', 'Clean with glass cleaner; avoid watermarks'],
+            ['Best Places to Use', 'Display kitchens, open kitchens, luxury pantries'],
+            {label: '\u2713 Pros', value: 'Opens up kitchen; modern elegant', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Needs regular cleaning; fragile', cls: 'cons'}
+          ]},
+          {title: 'Wooden Shutters', rows: [
+            ['Raw Material Cost', '₹500–₹1,000 / sq.ft'],
+            ['Thickness Required', '16–18 mm plywood + veneer'],
+            ['Installation Process', 'Plywood cut, veneer glued + pressed, polished with melamine/PU'],
+            ['Maintenance', 'Polish every 6–12 months; keep dry'],
+            ['Best Places to Use', 'Traditional kitchens, dry kitchens'],
+            {label: '\u2713 Pros', value: 'Natural warm premium look', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Susceptible to moisture; needs polish', cls: 'cons'}
+          ]}
         ]
       },
       'kitchen-must': {
-        title: '5 Must Have Kitchen Internals', items: [
-          'Corner Drawers||₹4,000 – ₹12,000 per unit||Drawer front & box: 18–22 mm + heavy duty runners||Install cabinet carcass → fit heavy-duty runners → assemble and attach corner drawer panels → adjust for smooth glide.||Wipe runners and drawer boxes regularly; avoid overloading.||Makes full use of awkward corner space; easy access compared to blind corner shelves.||Slightly higher cost than regular drawers; needs accurate planning & measurement.||Kitchen base cabinet corners for pots, pans, mixers',
-          'Multi Functional Sink||₹6,000 – ₹25,000||Sink gauge 0.8–1.2 mm||Cut countertop opening → drop-in or under-mount sink → seal edges → connect drain & faucet.||Clean and dry after use; avoid harsh acids.||Combines prep, wash & drain zones; saves counter space.||Higher upfront cost; accessories need storage.||Main kitchen counter near prep area',
-          'Tall Utility Unit||₹12,000 – ₹40,000||Panels 18–22 mm; shelves 18 mm||Construct carcass → install tall unit → fit shelves & doors → align hardware.||Wipe monthly; check shelf clips.||Maximizes vertical storage; organizes items well.||Hard to access top shelves; occupies vertical space.||Pantry walls, near fridge/oven',
-          'Drawer Internals||₹500 – ₹4,000||Dividers 5–10 mm; drawer sides ~18 mm||Place organisers in drawers → adjust compartments.||Clean weekly; remove crumbs.||Keeps utensils organized; budget-friendly.||Plastic may wear; needs proper sizing.||All kitchen drawers',
-          'Shutter Storages||Varies by finish||18–22 mm panels||Build cabinets → mount shutters → align hinges.||Wipe weekly; avoid excess water.||Conceals clutter; many style options.||Hinges may loosen; premium finishes cost more.||Upper & lower kitchen cabinets'
+        title: '5 Kitchen Must Haves',
+        detailItems: [
+          {title: 'Corner Drawers', rows: [
+            ['Materials', 'Laminated MDF/ply with heavy-duty runners'],
+            ['Approx Cost', '₹4,000 – ₹12,000 per unit'],
+            ['Thickness Required', 'Drawer front & box: 18 – 22 mm. heavy duty runners.'],
+            ['Installation Process', 'Install cabinet carcass → fit heavy-duty runners → assemble and attach corner drawer panels → adjust for smooth glide.'],
+            ['Maintenance', 'Wipe runners and drawer boxes regularly. avoid overloading.'],
+            ['Best Places to Use', 'Kitchen base cabinets corners for pots, pans, mixes.'],
+            {label: '\u2713 Pros', value: '• Makes full use of awkward corner space.\n• Easy access compared to blind corner shelves.', cls: 'pros'},
+            {label: '\u2715 Cons', value: '• Slightly higher cost than regular drawers.\n• Needs accurate planning & measurement.', cls: 'cons'}
+          ]},
+          {title: 'Multi Functional Sink', rows: [
+            ['Materials', 'SS 304/316 kitchen sink with accessories'],
+            ['Approx Cost', '₹6,000 – ₹25,000 depending on size'],
+            ['Thickness Required', 'Sink gauge 0.8 – 1.2 mm for stainless steel. countertop cutout accordingly'],
+            ['Installation Process', 'Cut countertop opening → drop-in or under-mount sink → seal edges with silicone → connect drain & faucet.'],
+            ['Maintenance', 'Clean and dry after use. avoid harsh acids to protect finish.'],
+            ['Best Places to Use', 'Main kitchen counter near dishwasher or prep area'],
+            {label: '\u2713 Pros', value: '• Combines prep, wash & drain zones in one unit.\n• Saves counter space and improves workflow.', cls: 'pros'},
+            {label: '\u2715 Cons', value: '• Higher upfront cost than standard single sink.\n• Accessories may require storage space.', cls: 'cons'}
+          ]},
+          {title: 'Tall Utility Unit', rows: [
+            ['Materials', 'Laminated MDF/ply with adjustable shelves & hardware'],
+            ['Approx Cost', '₹12,000 – ₹40,000 depending on height & fittings'],
+            ['Thickness Required', 'Panels 18 – 22 mm. shelves 18 mm'],
+            ['Installation Process', 'Construct carcass → install vertical tall unit → fit shelves & doors → align hardware.'],
+            ['Maintenance', 'Wipe inside/outside monthly. check shelf clips.'],
+            ['Best Places to Use', 'Pantry wall, kitchen tall storage zones, near ovens/fridge'],
+            {label: '\u2713 Pros', value: '• Maximizes vertical storage for oils, grains & appliances.\n• Keeps tall items organized and easy to reach.', cls: 'pros'},
+            {label: '\u2715 Cons', value: '• Needs careful planning to access top shelves.\n• Occupies vertical wall space.', cls: 'cons'}
+          ]},
+          {title: 'Drawer Internals', rows: [
+            ['Materials', 'Acrylic/wood/plastic dividers'],
+            ['Approx Cost', '₹500 – ₹4,000 per drawer set'],
+            ['Thickness Required', 'Dividers 5 – 10 mm. drawer sides usually 18 mm'],
+            ['Installation Process', 'Slot or place organisers in drawers → adjust compartments based on utensils/plates.'],
+            ['Maintenance', 'Clean weekly; remove crumbs & wipe dry.'],
+            ['Best Places to Use', 'All kitchen drawers for cutlery, tools, wraps, spices'],
+            {label: '\u2713 Pros', value: '• Keeps utensils, cutlery & tools neatly sorted.\n• Budget-friendly and customizable.', cls: 'pros'},
+            {label: '\u2715 Cons', value: '• Plastic organisers may wear or crack.\n• Needs precise sizing per drawer.', cls: 'cons'}
+          ]},
+          {title: 'Shutter Storages (Upper and Lower)', rows: [
+            ['Materials', 'Laminated MDF/ply or membrane/veneer finishes'],
+            ['Approx Cost', '₹12,000 – ₹40,000 depending on height & fittings'],
+            ['Thickness Required', 'Shutter panels 18 – 22 mm'],
+            ['Installation Process', 'Build cabinets → fix top/bottom frames → mount shutters with hinges → align & adjust.'],
+            ['Maintenance', 'Wipe shutters weekly and avoid excess water on surfaces.'],
+            ['Best Places to Use', 'Upper & lower kitchen cabinets across the kitchen'],
+            {label: '\u2713 Pros', value: '• Conceals clutter elegantly and protects items from dust.\n• Wide style & finish options to suit kitchen theme.', cls: 'pros'},
+            {label: '\u2715 Cons', value: '• Frequent use hinges may loosen over time.\n• Higher cost for premium finishes.', cls: 'cons'}
+          ]}
         ]
       },
       marbles: { title: 'Marbles – Detailed Guide', items: ['Carrara Marble (Italian) – White, soft grey veins. Classic, versatile. ₹500 – ₹1,500 / sq.ft', 'Calacatta Marble (Italian) – Bright white, bold veins. Ultra-luxury. ₹2,000 – ₹6,000 / sq.ft', 'Statuario Marble (Italian) – Pure white, strong grey veining. Premium. ₹1,500 – ₹5,000 / sq.ft', 'Crema Marfil (Italian) – Beige, subtle veins. Warm and elegant. ₹600 – ₹1,500 / sq.ft', 'Onyx Marble (Italian) – Translucent, dramatic. Luxury feature walls. ₹2,000 – ₹7,000 / sq.ft', 'Armani Brown (Italian) – Dark brown, linear veins. Modern luxury. ₹700 – ₹2,000 / sq.ft', 'White Portoro (Italian) – Black with gold veins. Ultra premium. ₹2,500 – ₹8,000 / sq.ft', 'Michelangelo (Italian) – White with grey/beige veins. Classic. ₹900 – ₹2,500 / sq.ft', 'Bianco Lasa (Italian) – Bright white, fine grey veins. Minimal. ₹1,500 – ₹4,000 / sq.ft', 'Travertine (Italian) – Beige cream, natural holes. Mediterranean look. ₹250 – ₹800 / sq.ft', 'Makrana Marble (Indian) – Pure white, minimal veins. Iconic Indian marble. ₹150 – ₹600 / sq.ft', 'Banswara Marble (Indian) – White with purple/grey veins. ₹120 – ₹400 / sq.ft', 'Katni Marble (Indian) – Beige to cream with soft veins. ₹90 – ₹250 / sq.ft', 'Ambaji Marble (Indian) – Milky white, very light patterns. ₹100 – ₹350 / sq.ft', 'Morwad Marble (Indian) – White with soft grey patterns. ₹90 – ₹250 / sq.ft'] },
@@ -5551,74 +7161,213 @@ window.addEventListener(
         ]
       },
       mirror: {
-        title: 'Mirror & Reflective Glass',
+        title: 'Types Of Mirror',
         tableItems: [
-          'Plain Mirror||₹80 – ₹200 per sq.ft||4–6 mm||Dressing rooms, bathrooms, wardrobe shutters||Saint-Gobain, Modiguard',
-          'Antique Mirror||₹250 – ₹400 per sq.ft||4–6 mm||Feature walls, luxury interiors, furniture panels||Saint-Gobain, Modiguard',
-          'Tinted Mirror||₹150 – ₹350 per sq.ft||4–6 mm||Bathrooms, feature walls, modern interiors||Saint-Gobain, Gold Plus Glass',
-          'Back-painted Glass||₹200 – ₹400 per sq.ft||5–8 mm||Kitchen backsplashes, wardrobes, wall panels||Saint-Gobain, Modiguard',
-          'One-way Mirror||₹400 – ₹800 per sq.ft||5–8 mm||Office meeting rooms, security rooms, modern partitions||Saint-Gobain'
+          'Clear Mirror||₹80 – ₹200||4–6||Wardrobes,Bathrooms, Dressing areas,Gyms||Saint-Gobain',
+          'Tinted Mirror||₹150 – ₹400||5–6||Wardrobes, Bar units, Feature walls||Saint-Gobain, AIS Glass',
+          'Antique Mirror||₹400 – ₹1200||4–6||Feature walls, Backsplashes, Decorative panels||AIS Glass',
+          'Bevelled Mirror||₹250 – ₹600||5–6||Wall panels, Dressing areas, Feature walls||AIS Glass',
+          'Mirror Tiles||₹200 – ₹800||4–6||Feature walls, Foyers, Living rooms||AIS Glass',
+          'Fluted Mirror||₹500 – ₹1500||5–8||Wardrobes, Partitions, Feature panels||AIS Glass',
+          'Etched Mirror||₹250 – ₹600||4–6||Bathrooms, Partitions, Decorative panels||Saint-Gobain, AIS Glass',
+          'Back-Painted Mirror||₹200 – ₹500||5–6||Panels, Furniture, Decorative surfaces||AIS Glass',
+          'LED Mirror||₹2000 – ₹10,000+ per piece||5||Bathrooms, Vanity areas||Jaquar, Kohler, Hindware'
         ],
         detailItems: [
-          {title: 'Plain Mirror', rows: [
-            ['Cost (sq.ft)', '₹80 – ₹200 per sq.ft'],
-            ['Thickness', '4–6 mm'],
-            ['Description', 'Standard silver-coated glass mirror with high reflectivity. The most common mirror type used in homes and commercial spaces.'],
-            ['Maintenance', 'Clean with glass cleaner and soft cloth; avoid harsh abrasives'],
-            {label: '\u2713 Pros', value: 'High clarity, affordable, widely available, easy to install', cls: 'pros'},
-            {label: '\u2715 Cons', value: 'Can fog in high humidity, fragile, shows smudges easily', cls: 'cons'},
-            ['Best Places to Use', 'Dressing rooms, bathrooms, wardrobe shutters'],
-            ['Brands', 'Saint-Gobain, Modiguard']
-          ]},
-          {title: 'Antique Mirror', rows: [
-            ['Cost (sq.ft)', '₹250 – ₹400 per sq.ft'],
-            ['Thickness', '4–6 mm'],
-            ['Description', 'Mirror with an aged, distressed patina finish created by chemical treatment. Adds vintage character and warmth to interiors.'],
-            ['Maintenance', 'Wipe gently with a dry or slightly damp cloth; avoid harsh cleaners'],
-            {label: '\u2713 Pros', value: 'Unique vintage aesthetic, warm tones, hides smudges well', cls: 'pros'},
-            {label: '\u2715 Cons', value: 'Expensive, limited availability, delicate finish can scratch', cls: 'cons'},
-            ['Best Places to Use', 'Feature walls, luxury interiors, furniture panels'],
-            ['Brands', 'Saint-Gobain, Modiguard']
+          {title: 'Clear Mirror', rows: [
+            {label: 'Material', value: 'Standard silver-backed mirror that provides a clear and accurate reflection.'},
+            ['Types', 'Float Glass Mirror, Ultra Clear Mirror'],
+            ['Sizes', 'Custom sizes'],
+            ['Thk (mm)', '4–6'],
+            ['Cost (sq.ft)', '₹80 – ₹200'],
+            ['Brands', 'Saint-Gobain'],
+            ['Best Places to Use', 'Wardrobes,Bathrooms, Dressing areas,Gyms'],
+            {label: '\u2713 Pros', value: 'True reflection,Budget-friendly,Easily available', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Scratches visible over time, Can look basic if overused', cls: 'cons'},
+            ['Installation Method', 'Fixed with adhesive + screws,Back panel (ply/board)'],
+            ['Maintenance', 'Clean with glass cleaner, Avoid harsh chemicals']
           ]},
           {title: 'Tinted Mirror', rows: [
-            ['Cost (sq.ft)', '₹150 – ₹350 per sq.ft'],
-            ['Thickness', '4–6 mm'],
-            ['Description', 'Mirror with a coloured coating that adds a tint (bronze, grey, or black). Provides a unique look while maintaining reflectivity.'],
-            ['Maintenance', 'Regular glass cleaning; avoid ammonia-based cleaners on tinted surface'],
-            {label: '\u2713 Pros', value: 'Modern aesthetic, reduces glare, coordinates with interior palette', cls: 'pros'},
-            {label: '\u2715 Cons', value: 'Limited colour options, darker reflection, higher cost than plain mirror', cls: 'cons'},
-            ['Best Places to Use', 'Bathrooms, feature walls, modern interiors'],
-            ['Brands', 'Saint-Gobain, Gold Plus Glass']
+            {label: 'Material', value: 'Mirror with a coloured base that gives a premium reflection.'},
+            ['Types', 'Bronze Mirror, Grey Mirror, Blue/Green Tinted Mirror'],
+            ['Sizes', 'Custom sizes'],
+            ['Thk (mm)', '5–6'],
+            ['Cost (sq.ft)', '₹150 – ₹400'],
+            ['Brands', 'Saint-Gobain, AIS Glass'],
+            ['Best Places to Use', 'Wardrobes, Bar units, Feature walls'],
+            {label: '\u2713 Pros', value: 'Premium look, Reduces glare, Adds warmth', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Darkens space, Less clear reflection', cls: 'cons'},
+            ['Installation Method', 'Fixed with adhesive + screws, Back panel support'],
+            ['Maintenance', 'Clean with glass cleaner, Avoid scratches']
           ]},
-          {title: 'Back-painted Glass', rows: [
-            ['Cost (sq.ft)', '₹200 – ₹400 per sq.ft'],
-            ['Thickness', '5–8 mm'],
-            ['Description', 'Toughened glass with a painted back layer. Provides a glossy, vibrant, and seamless coloured surface without losing durability.'],
-            ['Maintenance', 'Clean with mild soap solution and soft cloth; avoid abrasive cleaners'],
-            {label: '\u2713 Pros', value: 'Glossy and vibrant finish, durable, moisture-resistant, custom colours', cls: 'pros'},
-            {label: '\u2715 Cons', value: 'Fingerprints show easily, chips at edges if mishandled, expensive', cls: 'cons'},
-            ['Best Places to Use', 'Kitchen backsplashes, wardrobes, wall panels'],
-            ['Brands', 'Saint-Gobain, Modiguard']
+          {title: 'Antique Mirror', rows: [
+            {label: 'Material', value: 'Distressed mirror with a vintage textured appearance'},
+            ['Types', 'Foxed Mirror, Patterned Antique Mirror'],
+            ['Sizes', 'Custom sizes'],
+            ['Thk (mm)', '4–6'],
+            ['Cost (sq.ft)', '₹400 – ₹1200'],
+            ['Brands', 'AIS Glass'],
+            ['Best Places to Use', 'Feature walls, Backsplashes, Decorative panels'],
+            {label: '\u2713 Pros', value: 'Unique luxury finish, Hides fingerprints', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Expensive, Not functional for reflection', cls: 'cons'},
+            ['Installation Method', 'Panel-based fixing on backing board'],
+            ['Maintenance', 'Dry cloth cleaning, Avoid harsh chemicals']
           ]},
-          {title: 'One-way Mirror', rows: [
-            ['Cost (sq.ft)', '₹400 – ₹800 per sq.ft'],
-            ['Thickness', '5–8 mm'],
-            ['Description', 'Special mirror coating that is reflective on one side and transparent on the other under proper lighting conditions.'],
-            ['Maintenance', 'Gentle cleaning with recommended glass cleaner; avoid scratching the coating'],
-            {label: '\u2713 Pros', value: 'Privacy control, modern and sleek, creates separation while allowing visibility', cls: 'pros'},
-            {label: '\u2715 Cons', value: 'Very expensive, requires specific lighting setup, limited applications', cls: 'cons'},
-            ['Best Places to Use', 'Office meeting rooms, security rooms, modern partitions'],
-            ['Brands', 'Saint-Gobain']
+          {title: 'Bevelled Mirror', rows: [
+            {label: 'Material', value: 'Mirror with angled edges that create a framed reflective effect without using an actual frame.'},
+            ['Types', 'Single Bevel, Double Bevel, Bevelled Tiles'],
+            ['Sizes', 'Custom sizes'],
+            ['Thk (mm)', '5–6'],
+            ['Cost (sq.ft)', '₹250 – ₹600'],
+            ['Brands', 'AIS Glass'],
+            ['Best Places to Use', 'Wall panels, Dressing areas, Feature walls'],
+            {label: '\u2713 Pros', value: 'Elegant detailing, Reflects light well', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Dust collects in joints, Can look dated if overused', cls: 'cons'},
+            ['Installation Method', 'Grid/panel installation with adhesive'],
+            ['Maintenance', 'Regular cleaning, Extra care at edges']
+          ]},
+          {title: 'Mirror Tiles', rows: [
+            {label: 'Material', value: 'Mirrors cut into geometric shapes or grids'},
+            ['Types', 'Square Panels, Rectangular Panels, Geometric Designs'],
+            ['Sizes', '1x1 ft, 2x2 ft'],
+            ['Thk (mm)', '4–6'],
+            ['Cost (sq.ft)', '₹200 – ₹800'],
+            ['Brands', 'AIS Glass'],
+            ['Best Places to Use', 'Feature walls, Foyers, Living rooms'],
+            {label: '\u2713 Pros', value: 'Customizable design, Visually striking', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Alignment issues, Can look cluttered', cls: 'cons'},
+            ['Installation Method', 'Grid-based installation with proper spacing'],
+            ['Maintenance', 'Clean panels individually, Maintain joints']
+          ]},
+          {title: 'Fluted Mirror', rows: [
+            {label: 'Material', value: 'Textured mirror with vertical grooves that create a distorted reflection.'},
+            ['Types', 'Fine Ribbed, Wide Fluted'],
+            ['Sizes', 'Custom sizes'],
+            ['Thk (mm)', '5–8'],
+            ['Cost (sq.ft)', '₹500 – ₹1500'],
+            ['Brands', 'AIS Glass'],
+            ['Best Places to Use', 'Wardrobes, Partitions, Feature panels'],
+            {label: '\u2713 Pros', value: 'Trendy, Adds texture, Soft reflection', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Expensive, Not functional as clear mirror', cls: 'cons'},
+            ['Installation Method', 'Panel fixing with backing support'],
+            ['Maintenance', 'Cleaning required, Dust in grooves']
+          ]},
+          {title: 'Etched Mirror', rows: [
+            {label: 'Material', value: 'Mirror with a matte finish that diffuses reflection.'},
+            ['Types', 'Full Frosted, Pattern Frosted'],
+            ['Sizes', 'Custom sizes'],
+            ['Thk (mm)', '4–6'],
+            ['Cost (sq.ft)', '₹250 – ₹600'],
+            ['Brands', 'AIS Glass, Saint-Gobain'],
+            ['Best Places to Use', 'Bathrooms, Partitions, Decorative panels'],
+            {label: '\u2713 Pros', value: 'Privacy, Soft aesthetic', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Not reflective, Can stain if not maintained', cls: 'cons'},
+            ['Installation Method', 'Fixed with adhesive on backing'],
+            ['Maintenance', 'Gentle cleaning, Avoid stains']
+          ]},
+          {title: 'Back-Painted Mirror', rows: [
+            {label: 'Material', value: 'Mirror with coloured paint applied at the back for a glossy decorative finish.'},
+            ['Types', 'Solid Colours, Custom Colours'],
+            ['Sizes', 'Custom sizes'],
+            ['Thk (mm)', '5–6'],
+            ['Cost (sq.ft)', '₹200 – ₹500'],
+            ['Brands', 'AIS Glass'],
+            ['Best Places to Use', 'Panels, Furniture, Decorative surfaces'],
+            {label: '\u2713 Pros', value: 'Sleek finish, Adds colour', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Scratches visible, Not reflective', cls: 'cons'},
+            ['Installation Method', 'Panel installation with adhesive'],
+            ['Maintenance', 'Clean gently, Avoid scratches']
+          ]},
+          {title: 'LED Mirror', rows: [
+            {label: 'Material', value: 'Mirror with integrated lighting that has anti-fog features'},
+            ['Types', 'Backlit LED, Front-lit LED, Smart Mirror'],
+            ['Sizes', 'Custom sizes'],
+            ['Thk (mm)', '5mm mirror with frame'],
+            ['Cost (sq.ft)', '₹2000 – ₹10,000+ per piece'],
+            ['Brands', 'Jaquar, Kohler, Hindware'],
+            ['Best Places to Use', 'Bathrooms, Vanity areas'],
+            {label: '\u2713 Pros', value: 'Premium look, Functional lighting, Modern design', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Requires electricity, Higher cost', cls: 'cons'},
+            ['Installation Method', 'Wall-mounted with concealed wiring'],
+            ['Maintenance', 'Clean mirror, Check electricals periodically']
           ]}
         ]
       },
       quartzite: {
-        title: 'Quartzite', items: [
-          'Taj Mahal Quartzite||₹400 – ₹1200 per sq.ft||15–20 mm, 20–30 mm||Creamy beige quartzite with soft gold-grey veining, marble-like appearance. Types: Taj Mahal Classic, Premium. Sizes: Slabs (8×10 ft), jumbo slabs. Installation: Stone adhesive / cement base||Periodic sealing. Brands: Classic Marble Company||Luxurious, durable, heat-resistant, timeless||Expensive, requires sealing||Kitchen countertops, islands, bathrooms, wall cladding',
-          'Patagonia Quartzite||₹500 – ₹1500 per sq.ft||18–20 mm||Unique blue-grey tones with dramatic veining. Types: Patagonia Blue, Patagonia Grey. Installation: Stone adhesive or cement mortar||Regular sealing recommended||Rare and exotic, unique patterns, durable||Premium pricing, limited availability||Feature walls, statement countertops, luxury interiors',
-          'White Macaubas Quartzite||₹350 – ₹1000 per sq.ft||15–20 mm||White with dramatic gold/grey veining, marble-like but harder. Types: White Macaubas Classic, Gold. Installation: Standard stone installation||Easy maintenance; seal occasionally||Marble-like beauty, harder than marble, versatile||Requires sealing||Kitchen countertops, flooring, wall cladding',
-          'Cristallo Quartzite||₹400 – ₹1100 per sq.ft||15–20 mm||Translucent quartzite with crystal-like patterns. Types: Cristallo Gold, Cristallo Silver. Installation: Stone adhesive||Periodic sealing||Unique crystalline appearance, luxurious||Expensive, delicate appearance||Feature walls, luxury countertops, decorative panels',
-          'Blue Roma Quartzite||₹450 – ₹1300 per sq.ft||18–20 mm||Blue-grey quartzite with elegant veining. Types: Blue Roma Classic, Premium. Installation: Stone adhesive or cement mortar||Regular cleaning; seal for protection||Elegant and unique, durable, heat-resistant||Premium pricing, limited availability||Luxury kitchens, bathrooms, statement walls'
+        title: 'Quartzite',
+        tableItems: [
+          'Taj Mahal Quartzite||₹400 – ₹1200 per sq.ft||15–20 mm, 20–30 mm||Kitchen countertops, islands, bathrooms, wall cladding||Classic Marble Company',
+          'Patagonia Quartzite||₹500 – ₹1500 per sq.ft||18–20 mm||Feature walls, statement countertops, luxury interiors||',
+          'White Macaubas Quartzite||₹350 – ₹1000 per sq.ft||15–20 mm||Kitchen countertops, flooring, wall cladding||',
+          'Cristallo Quartzite||₹400 – ₹1100 per sq.ft||15–20 mm||Feature walls, luxury countertops, decorative panels||',
+          'Blue Roma Quartzite||₹450 – ₹1300 per sq.ft||18–20 mm||Luxury kitchens, bathrooms, statement walls||'
+        ],
+        detailItems: [
+          {title: 'Taj Mahal Quartzite', rows: [
+            {label: 'Material', value: 'Creamy beige quartzite with soft gold-grey veining, marble-like appearance.'},
+            ['Types', 'Taj Mahal Classic, Premium'],
+            ['Sizes', 'Slabs (8×10 ft), jumbo slabs'],
+            ['Thk (mm)', '15–20 mm, 20–30 mm'],
+            ['Cost (sq.ft)', '₹400 – ₹1200 per sq.ft'],
+            ['Brands', 'Classic Marble Company'],
+            ['Best Places to Use', 'Kitchen countertops, islands, bathrooms, wall cladding'],
+            {label: '\u2713 Pros', value: 'Luxurious, durable, heat-resistant, timeless', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Expensive, requires sealing', cls: 'cons'},
+            ['Installation Method', 'Stone adhesive / cement base'],
+            ['Maintenance', 'Periodic sealing']
+          ]},
+          {title: 'Patagonia Quartzite', rows: [
+            {label: 'Material', value: 'Unique blue-grey tones with dramatic veining.'},
+            ['Types', 'Patagonia Blue, Patagonia Grey'],
+            ['Sizes', 'Standard slabs'],
+            ['Thk (mm)', '18–20 mm'],
+            ['Cost (sq.ft)', '₹500 – ₹1500 per sq.ft'],
+            ['Brands', ''],
+            ['Best Places to Use', 'Feature walls, statement countertops, luxury interiors'],
+            {label: '\u2713 Pros', value: 'Rare and exotic, unique patterns, durable', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Premium pricing, limited availability', cls: 'cons'},
+            ['Installation Method', 'Stone adhesive or cement mortar'],
+            ['Maintenance', 'Regular sealing recommended']
+          ]},
+          {title: 'White Macaubas Quartzite', rows: [
+            {label: 'Material', value: 'White with dramatic gold/grey veining, marble-like but harder.'},
+            ['Types', 'White Macaubas Classic, Gold'],
+            ['Sizes', 'Standard slabs'],
+            ['Thk (mm)', '15–20 mm'],
+            ['Cost (sq.ft)', '₹350 – ₹1000 per sq.ft'],
+            ['Brands', ''],
+            ['Best Places to Use', 'Kitchen countertops, flooring, wall cladding'],
+            {label: '\u2713 Pros', value: 'Marble-like beauty, harder than marble, versatile', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Requires sealing', cls: 'cons'},
+            ['Installation Method', 'Standard stone installation'],
+            ['Maintenance', 'Easy maintenance; seal occasionally']
+          ]},
+          {title: 'Cristallo Quartzite', rows: [
+            {label: 'Material', value: 'Translucent quartzite with crystal-like patterns.'},
+            ['Types', 'Cristallo Gold, Cristallo Silver'],
+            ['Sizes', 'Standard slabs'],
+            ['Thk (mm)', '15–20 mm'],
+            ['Cost (sq.ft)', '₹400 – ₹1100 per sq.ft'],
+            ['Brands', ''],
+            ['Best Places to Use', 'Feature walls, luxury countertops, decorative panels'],
+            {label: '\u2713 Pros', value: 'Unique crystalline appearance, luxurious', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Expensive, delicate appearance', cls: 'cons'},
+            ['Installation Method', 'Stone adhesive'],
+            ['Maintenance', 'Periodic sealing']
+          ]},
+          {title: 'Blue Roma Quartzite', rows: [
+            {label: 'Material', value: 'Blue-grey quartzite with elegant veining.'},
+            ['Types', 'Blue Roma Classic, Premium'],
+            ['Sizes', 'Standard slabs'],
+            ['Thk (mm)', '18–20 mm'],
+            ['Cost (sq.ft)', '₹450 – ₹1300 per sq.ft'],
+            ['Brands', ''],
+            ['Best Places to Use', 'Luxury kitchens, bathrooms, statement walls'],
+            {label: '\u2713 Pros', value: 'Elegant and unique, durable, heat-resistant', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Premium pricing, limited availability', cls: 'cons'},
+            ['Installation Method', 'Stone adhesive or cement mortar'],
+            ['Maintenance', 'Regular cleaning; seal for protection']
+          ]}
         ]
       },
       'granite': {
@@ -5922,17 +7671,80 @@ window.addEventListener(
         ]
       },
       'designer-veneer': {
-        title: 'Types of Designer Veneers', items: [
-          'Sucupira Veneer||₹300 – ₹600 / sq.ft||0.5–1 mm||Standard application; rich brown tones need color-matched polishing||Dust and polish; avoid direct sunlight||Deep brown with lighter streaks, luxurious appearance, South American exotic wood||Premium pricing, heavy material||Statement furniture, luxury interiors, feature walls',
-          'Smoked Oak Veneer||₹250 – ₹500 / sq.ft||0.5–1 mm||Standard application; grey-brown fumed finish pre-applied||Easy maintenance; soft cloth cleaning||Contemporary grey-brown finish, European trend, modern aesthetic||Fumed color may vary, requires consistent selection||Modern living rooms, Scandinavian interiors, contemporary offices',
-          'Walnut Veneer||₹200 – ₹500 / sq.ft||0.5–1 mm||Standard application; dark chocolate color enhances with polish||Dust regularly; periodic oil polish||Dark chocolate brown, timeless classic, most popular premium veneer||Expensive, needs regular maintenance||Premium bedrooms, luxury furniture, executive offices',
-          'Teak Veneer||₹250 – ₹600 / sq.ft||0.5–1.5 mm||Standard application; natural oils provide some protection||Easy maintenance; natural oils require occasional treatment||Golden brown, natural oils, durable, traditional Indian premium choice||Premium pricing, may darken over time||Traditional luxury interiors, fine furniture, heirloom pieces',
-          'Zebrano Veneer||₹300 – ₹700 / sq.ft||0.5–1 mm||Standard application; bold stripe pattern requires pattern matching||Dust and polish; avoid direct sunlight||Bold zebra-stripe grain, very dramatic, statement piece appearance||Limited availability, premium pricing||Statement furniture, luxury boutiques, designer interiors',
-          'Ebony Veneer||₹400 – ₹1000+ / sq.ft||0.5–1 mm||Expert application required; dark color shows imperfections||Careful dusting; avoid abrasive cleaners||Very dark to black, ultra premium, exotic luxury||Very expensive, limited availability, requires expert handling||Ultra luxury interiors, collector pieces, museum-quality furniture',
-          'Maple Veneer||₹150 – ₹350 / sq.ft||0.5–1 mm||Standard application; light color requires smooth substrate||Easy cleaning; avoid staining||Light cream color, modern Scandinavian/Japandi aesthetic, clean look||Can stain easily, light color shows marks||Modern bedrooms, minimalist interiors, Scandinavian design',
-          'Wenge Veneer||₹280 – ₹550 / sq.ft||0.5–1 mm||Standard application; dark wood requires precise finishing||Dust regularly; periodic polishing||Dark chocolate/black, dramatic, African exotic, bold statement||Heavy material, premium pricing||Feature walls, statement furniture, luxury interiors',
-          'Rosewood Veneer||₹200 – ₹450 / sq.ft||0.5–1 mm||Standard application; reddish tones enhance with polishing||Dust and polish; maintain finish||Deep reddish brown, traditional luxury, classic Indian wood||Premium pricing, may crack if not maintained||Traditional luxury interiors, premium furniture, classic settings',
-          'Paldao Veneer||₹250 – ₹500 / sq.ft||0.5–1 mm||Standard application; unique grey-black pattern requires matching||Easy maintenance; soft cloth||Grey with black streaks, unique contemporary appearance||Limited availability, premium pricing||Modern interiors, contemporary furniture, designer spaces'
+        title: 'Designer Veneers',
+        tableItems: [
+          'Sucupira Veneer||₹120 – ₹500||0.5 – 1||Wall panels, luxury furniture, doors||Century Veneers, Su Veneers, Sanghvi Suppliers',
+          'Wenge Veneer||₹400 – ₹1200||0.5 – 1||Luxury furniture, statement panels||Century Veneers, Su Veneers, Sanghvi Suppliers',
+          'Ebony Veneer||₹500 – ₹1200||1||Luxury furniture, wardrobes, wall panels, executive spaces||Century Veneers, Su Veneers, Sanghvi Suppliers',
+          'Zebrano Veneer||₹300 – ₹900||0.5 – 1||Feature walls, furniture, panels||Century Veneers, Su Veneers, Sanghvi Suppliers',
+          'Burl Veneer||₹400 – ₹1200||0.5 – 1||Luxury furniture, feature panels||Century Veneers, Su Veneers, Sanghvi Suppliers'
+        ],
+        detailItems: [
+          {title: 'Sucupira Veneer', rows: [
+            {label: 'Material', value: 'Exotic South American veneer with deep brown tones and subtle lighter streaks'},
+            ['Types', 'Flat Cut, Quarter Cut, Recon Sucupira'],
+            ['Sizes', '8 ft × 4 ft'],
+            ['Thk (mm)', '0.5 – 1'],
+            ['Cost (sq.ft)', '₹250 – ₹800'],
+            ['Brands', 'Century Veneers, Su Veneers, Sanghvi Suppliers'],
+            ['Best Places to Use', 'Wall panels, luxury furniture, doors'],
+            {label: '\u2713 Pros', value: 'Rich tone, premium feel, durable', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Expensive, requires polishing', cls: 'cons'},
+            ['Installation Method', 'Adhesive pasting + PU polish'],
+            ['Maintenance', 'Moderate to high maintenance']
+          ]},
+          {title: 'Wenge Veneer', rows: [
+            {label: 'Material', value: 'Premium dark veneer with deep black to dark brown tones'},
+            ['Types', 'Natural Ebony, Recon Ebony'],
+            ['Sizes', '8 ft × 4 ft'],
+            ['Thk (mm)', '0.5 – 1'],
+            ['Cost (sq.ft)', '₹400 – ₹1200'],
+            ['Brands', 'Century Veneers, Su Veneers, Sanghvi Suppliers'],
+            ['Best Places to Use', 'Luxury furniture, statement panels'],
+            {label: '\u2713 Pros', value: 'Ultra-premium look, rare material', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Very expensive, limited availability', cls: 'cons'},
+            ['Installation Method', 'Adhesive + high-gloss polish'],
+            ['Maintenance', 'High maintenance']
+          ]},
+          {title: 'Ebony Veneer', rows: [
+            {label: 'Material', value: 'Dark, luxurious veneer with deep black to dark brown tones, with subtle grain patterns'},
+            ['Types', 'Crown Cut, Quarter Cut'],
+            ['Sizes', '8 ft × 4 ft'],
+            ['Thk (mm)', '0.5 – 1'],
+            ['Cost (sq.ft)', '₹500 – ₹1500'],
+            ['Brands', 'Century Veneers, Greenply, Sanghvi Suppliers'],
+            ['Best Places to Use', 'Luxury furniture, wardrobes, wall panels, executive spaces'],
+            {label: '\u2713 Pros', value: 'Rich premium look, adds depth and elegance, timeless appeal', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Expensive, can make spaces look smaller if overused, requires skilled polishing', cls: 'cons'},
+            ['Installation Method', 'Adhesive + polish'],
+            ['Maintenance', 'Moderate to high maintenance (needs regular polishing to retain finish)']
+          ]},
+          {title: 'Zebrano Veneer', rows: [
+            {label: 'Material', value: 'Striking veneer with bold striped patterns resembling zebra lines'},
+            ['Types', 'Crown Cut, Quarter Cut'],
+            ['Sizes', '8 ft × 4 ft'],
+            ['Thk (mm)', '0.5 – 1'],
+            ['Cost (sq.ft)', '₹300 – ₹900'],
+            ['Brands', 'Century Veneers, Su Veneers, Sanghvi Suppliers'],
+            ['Best Places to Use', 'Feature walls, furniture, panels'],
+            {label: '\u2713 Pros', value: 'Unique pattern, eye-catching design', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Can overpower space if overused', cls: 'cons'},
+            ['Installation Method', 'Adhesive + polish'],
+            ['Maintenance', 'Moderate maintenance']
+          ]},
+          {title: 'Burl Veneer', rows: [
+            {label: 'Material', value: 'Highly decorative veneer with intricate swirling grain patterns formed from tree burls'},
+            ['Types', 'Walnut Burl, Elm Burl, Oak Burl'],
+            ['Sizes', '8 ft × 4 ft'],
+            ['Thk (mm)', '0.5– 1'],
+            ['Cost (sq.ft)', '₹400 – ₹1200'],
+            ['Brands', 'Century Veneers, Su Veneers, Sanghvi Suppliers'],
+            ['Best Places to Use', 'Luxury furniture, feature panels'],
+            {label: '\u2713 Pros', value: 'Extremely unique, high-end appeal', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Expensive, limited stock', cls: 'cons'},
+            ['Installation Method', 'Adhesive + high-gloss polish'],
+            ['Maintenance', 'High maintenance']
+          ]}
         ]
       },
       plywood: {
@@ -6068,7 +7880,97 @@ window.addEventListener(
           ]}
         ]
       },
-      'wood-types': { title: 'Types of Wood', items: ['Teak Wood – Premium hardwood, natural oils, moisture and termite resistant. Best for furniture and flooring.', 'Sheesham (Rosewood) – Dense, durable Indian hardwood with rich grain. Popular for dining and bedroom furniture.', 'Mango Wood – Eco-friendly, light weight, attractive grain. Budget-friendly option for furniture.', 'Walnut Wood – Premium, dark chocolate colour. Used in luxury furniture and flooring.', 'Oak Wood – Hard, durable, light brown. Popular for European-style furniture.', 'Pine Wood – Light weight, affordable. Used for rustic and Scandinavian-style furniture.', 'Bamboo – Sustainable, fast-growing. Used for flooring and furniture panels.', 'Deodar (Cedar) – Fragrant, insect-repellent. Used traditionally in wardrobes and linen closets.'] },
+      'wood-types': {
+        title: 'Types Of Wood',
+        tableItems: [
+          'Teak Wood||₹2500 – ₹8000||15 – 50||Doors, furniture, outdoor furniture||Local timber suppliers',
+          'Sheesham Wood||₹1500 – ₹3500||15 – 40||Furniture, beds, cabinets||Local timber markets',
+          'Oak Wood||₹3000 – ₹7000||15 – 40||Furniture, flooring, paneling||Imported timber suppliers',
+          'Walnut Wood||₹4000 – ₹9000||15 – 40||Luxury furniture, wall panels||Imported timber suppliers',
+          'Pine Wood||₹800 – ₹2000||15 – 35||Furniture, paneling||Local suppliers',
+          'Ash Wood||₹2500 – ₹5000||15 – 40||Furniture, paneling||Imported timber suppliers'
+        ],
+        detailItems: [
+          {title: 'Teak Wood', rows: [
+            {label: 'Material', value: 'Premium hardwood that is durabie and resistance to moisture and termites.'},
+            ['Types', 'Burma Teak, African Teak'],
+            ['Sizes', 'Custom sizes'],
+            ['Thk (mm)', '15 – 50'],
+            ['Cost (sq.ft)', '₹2500 – ₹8000'],
+            ['Brands', 'Local timber suppliers'],
+            ['Best Places to Use', 'Doors, furniture, outdoor furniture'],
+            {label: '\u2713 Pros', value: 'Highly durable, termite-resistant, long-lasting', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Expensive, heavy', cls: 'cons'},
+            ['Installation Method', 'Carpentry joinery + polishing'],
+            ['Maintenance', 'Low to moderate ,periodic polishing']
+          ]},
+          {title: 'Sheesham Wood', rows: [
+            {label: 'Material', value: 'Strong hardwood with rich grain patterns'},
+            ['Types', 'North Indian Sheesham'],
+            ['Sizes', 'Custom sizes'],
+            ['Thk (mm)', '15 – 40'],
+            ['Cost (sq.ft)', '₹1500 – ₹3500'],
+            ['Brands', 'Local timber markets'],
+            ['Best Places to Use', 'Furniture, beds, cabinets'],
+            {label: '\u2713 Pros', value: 'Durable, attractive grain, cost-effective', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Can develop cracks if not seasoned properly', cls: 'cons'},
+            ['Installation Method', 'Carpentry joinery'],
+            ['Maintenance', 'Moderate maintenance']
+          ]},
+          {title: 'Oak Wood', rows: [
+            {label: 'Material', value: 'Imported hardwood with a light tone and subtle grain'},
+            ['Types', 'White Oak, Red Oak'],
+            ['Sizes', 'Imported planks'],
+            ['Thk (mm)', '15 – 40'],
+            ['Cost (sq.ft)', '₹3000 – ₹7000'],
+            ['Brands', 'Imported timber suppliers'],
+            ['Best Places to Use', 'Furniture, flooring, paneling'],
+            {label: '\u2713 Pros', value: 'Strong, elegant, versatile', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Expensive, not locally available', cls: 'cons'},
+            ['Installation Method', 'Carpentry + polishing'],
+            ['Maintenance', 'Moderate maintenance']
+          ]},
+          {title: 'Walnut Wood', rows: [
+            {label: 'Material', value: 'Premium dark hardwood with rich brown tones'},
+            ['Types', 'American Walnut, European Walnut'],
+            ['Sizes', 'Custom sizes'],
+            ['Thk (mm)', '15 – 40'],
+            ['Cost (sq.ft)', '₹4000 – ₹9000'],
+            ['Brands', 'Imported timber suppliers'],
+            ['Best Places to Use', 'Luxury furniture, wall panels'],
+            {label: '\u2713 Pros', value: 'Rich color, premium appeal', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Expensive', cls: 'cons'},
+            ['Installation Method', 'Carpentry + polish'],
+            ['Maintenance', 'Moderate maintenance']
+          ]},
+          {title: 'Pine Wood', rows: [
+            {label: 'Material', value: 'Softwood with a light color and visible knots'},
+            ['Types', 'Natural Pine'],
+            ['Sizes', 'Custom sizes'],
+            ['Thk (mm)', '15 – 35'],
+            ['Cost (sq.ft)', '₹800 – ₹2000'],
+            ['Brands', 'Local suppliers'],
+            ['Best Places to Use', 'Furniture, paneling'],
+            {label: '\u2713 Pros', value: 'Affordable, lightweight', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Soft, prone to dents and scratches', cls: 'cons'},
+            ['Installation Method', 'Carpentry'],
+            ['Maintenance', 'Moderate']
+          ]},
+          {title: 'Ash Wood', rows: [
+            {label: 'Material', value: 'Light-colored hardwood with straight grain'},
+            ['Types', 'White Ash'],
+            ['Sizes', 'Custom sizes'],
+            ['Thk (mm)', '15 – 40'],
+            ['Cost (sq.ft)', '₹2500 – ₹5000'],
+            ['Brands', 'Imported timber suppliers'],
+            ['Best Places to Use', 'Furniture, paneling'],
+            {label: '\u2713 Pros', value: 'Strong, flexible, light aesthetic', cls: 'pros'},
+            {label: '\u2715 Cons', value: 'Needs polishing, not very moisture-resistant', cls: 'cons'},
+            ['Installation Method', 'Carpentry + polish'],
+            ['Maintenance', 'Moderate']
+          ]}
+        ]
+      },
       'kitchen-counter': {
         title: 'Kitchen Counter Top Finishes',
         tableItems: [
@@ -6365,6 +8267,87 @@ window.addEventListener(
           }
         ]
       },
+      'kitchen-colors-2': {
+        title: 'Kitchen Colour Combinations',
+        items: [
+          'White Countertop + Mint Green Shutters',
+          'White Marble Countertop + Beige Shutters',
+          'Light Cream Countertop + Light Terracotta Shutters',
+          'White Countertop + Pastel Blue Shutters + Light Wooden Handles',
+          'Greige Overhead Storage + Sea Green Under-Counter Shutters + White Countertop',
+          'Pastel Blue + White Satuario Marble',
+          'White Marble Countertop + Beige Shutters',
+          'Plain Burgundy + Textures Burgundy',
+          'Beige Marble + Lavender + Light Lavender',
+          'Light Pink Overhead + Beige Countertop + Light Pink Undercounter',
+          'Light Plum Overhead + Light Green Countertop + Greyish-Green Undercounter',
+          'Plumish-Brown Overhead + Light Cream Countertop + Light Beige Undercounter'
+        ]
+      },
+      'kitchen-colors': {
+        title: 'Kitchen Colour Combinations',
+        items: [
+          'White Countertop + Mint Green Shutters',
+          'White Marble Countertop + Beige Shutters',
+          'Light Cream Countertop + Light Terracotta Shutters',
+          'White Countertop + Pastel Blue Shutters + Light Wooden Handles',
+          'Greige Overhead Storage + Sea Green Under-Counter Shutters + White Countertop',
+          'Pastel Blue + White Satuario Marble',
+          'White Marble Countertop + Beige Shutters',
+          'Plain Burgundy + Textures Burgundy',
+          'Beige Marble + Lavender + Light Lavender',
+          'Light Pink Overhead + Beige Countertop + Light Pink Undercounter',
+          'Light Plum Overhead + Light Green Countertop + Greyish-Green Undercounter',
+          'Plumish-Brown Overhead + Light Cream Countertop + Light Beige Undercounter'
+        ]
+      },
+      'bathroom-colors': {
+        title: 'Bathroom Colour Combinations',
+        items: [
+          'Taupe + Beige',
+          'Light Plum + White',
+          'Blue + White + Black',
+          'Lavender + White',
+          'Greige + Black',
+          'Pastel Blue + Gold Fittings',
+          'Light Plum Counter Shutter & Basin + Off White',
+          'Lime Plaster + Walnut Wood Door',
+          'Pink Accent Stripe Tiles + Beige Floor & Wall Tiles + Gold Fittings',
+          'Terracotta Accent Tiles + Black Fittings + Terrazzo Tile Backsplash',
+          'Light Cream Wall & Flooring Tiles + Blue Wall Tiles',
+          'Light Plum Wall Tiles + Beige Wall & Floor Tiles',
+          'Lime Plaster Floor & Walls + Cane Lights',
+          'Light Pink Overhead + Beige Countertop + Light Pink Undercounter',
+          'Light Plum Overhead + Light Green Countertop + Greyish-Green Undercounter',
+          'Plumish-Brown Overhead + Light Cream Countertop + Light Beige Undercounter'
+        ]
+      },
+      'bedroom-colors': {
+        title: 'Bedroom Colour Combinations',
+        items: [
+          'Taupe and Dark wood',
+          'Blue + Light Wood',
+          'Plum + White',
+          'Lavender + White',
+          'Greige + Light Wood',
+          'Lime Green + Walnut Wood',
+          'Tan + Green',
+          'Cream + Off white',
+          'Light Grey + White',
+          'Green + Brown',
+          'Plum + Grey'
+        ]
+      },
+      'living-colors': {
+        title: 'Living Room Colour Combinations',
+        items: [
+          'Greige + Green',
+          'Taupe + Cane',
+          'Moccha Mouse + Light Wood',
+          'Light Grey + Mushroom',
+          'Beige + Wine'
+        ]
+      },
     };
 
 
@@ -6380,6 +8363,40 @@ window.addEventListener(
       document.body.style.overflow = '';
     }
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') lbClose(); });
+
+    /* -- COLOR COMBINATION LIGHTBOX -- */
+    function colorComboZoomOpen(src, lbl) {
+      document.getElementById('colorComboLbImg').src = src;
+      document.getElementById('colorComboLbCap').textContent = lbl || '';
+      document.getElementById('colorComboLightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function colorComboZoomClose() {
+      document.getElementById('colorComboLightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    /* -- FURNITURE & KITCHEN FIGMA LIGHTBOX -- */
+    function furnitureFigmaZoom(src, lbl) {
+      document.getElementById('furnitureFigmaLbImg').src = src;
+      document.getElementById('furnitureFigmaLbCap').textContent = lbl || '';
+      document.getElementById('furnitureFigmaLightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function furnitureFigmaZoomClose() {
+      document.getElementById('furnitureFigmaLightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    function kitchenFigmaZoom(src, lbl) {
+      document.getElementById('kitchenFigmaLbImg').src = src;
+      document.getElementById('kitchenFigmaLbCap').textContent = lbl || '';
+      document.getElementById('kitchenFigmaLightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function kitchenFigmaZoomClose() {
+      document.getElementById('kitchenFigmaLightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
 
     /* -- THUMBNAIL DATA --
       source.unsplash.com keyword URLs - always load, free, no hotlinking issues */
@@ -6594,6 +8611,59 @@ window.addEventListener(
         return;
       }
 
+      // -- Route Kitchen Colour Combination (real images) --
+      if (id === 'kitchen-colors' || id === 'kitchen-colors-2') {
+        var kitchenColorImages = [
+          'assets/26.Kitchen Colour Combinations/1.White Countertop + Mint Green Shutters.png',
+          'assets/26.Kitchen Colour Combinations/2.Beige Shutters + White.jpg',
+          'assets/26.Kitchen Colour Combinations/3.Light Cream +Light Terracotta.jpg',
+          'assets/26.Kitchen Colour Combinations/4.White Countertop + Pastel Blue Shutters.jpg',
+          'assets/26.Kitchen Colour Combinations/5. Greige Overhead Storage + Sea Green Under-Counter Shutters + White Countertop.jpg',
+          'assets/26.Kitchen Colour Combinations/6.PASTEL BLUE + WHITE STATUARIO MARBLE.png',
+          'assets/26.Kitchen Colour Combinations/7.White Marble Countertop + Beige Shutters.png',
+          'assets/26.Kitchen Colour Combinations/8.Plain Burgundy + Textures Burgundy.png',
+          'assets/26.Kitchen Colour Combinations/9.BEIGE MARBLE + LAVENDER + LIGHT LAVENDER.png',
+          'assets/26.Kitchen Colour Combinations/10.Light Pink Overhead + Beige Countertop + Light Pink Undercounter.png',
+          'assets/26.Kitchen Colour Combinations/11.Light Plum Overhead + Light Green Countertop + Greyish-Green Undercounter.png',
+          'assets/26.Kitchen Colour Combinations/12.Plumish-Brown Overhead + Light Cream Countertop + Light Beige Undercounter.png'
+        ];
+        renderColorComboGrid(el, id, kitchenColorImages); return;
+      }
+
+      // -- Route Bedroom Colour Combination (real images) --
+      if (id === 'bedroom-colors') {
+        var bedroomColorImages = [
+          'assets/27.Bedroom Colour Combinations/1. Taupe and Dark wood.jpg',
+          'assets/27.Bedroom Colour Combinations/2. Blue + Light Wood.jpg',
+          'assets/27.Bedroom Colour Combinations/3. Plum + White.jpg',
+          'assets/27.Bedroom Colour Combinations/4.Lavender+ White.jpg',
+          'assets/27.Bedroom Colour Combinations/5. Greige + Light Wood.jpg',
+          'assets/27.Bedroom Colour Combinations/6. Lime Green + Walnut Wood.jpg',
+          'assets/27.Bedroom Colour Combinations/7.Tan + Green.jpg',
+          'assets/27.Bedroom Colour Combinations/8.Cream + Off white.jpg',
+          'assets/27.Bedroom Colour Combinations/9.Light Grey + White.jpg',
+          'assets/27.Bedroom Colour Combinations/10. Green + Brown.jpg',
+          'assets/27.Bedroom Colour Combinations/11. Plum + Grey.jpg'
+        ];
+        renderColorComboGrid(el, id, bedroomColorImages); return;
+      }
+
+      // -- Route Living Room Colour Combination (real images) --
+      if (id === 'living-colors') {
+        var livingColorImages = [
+          'assets/28. Living Room Colour Combinations/1. Greige + Green.jpg',
+          'assets/28. Living Room Colour Combinations/2. Taupe + Cane.jpg',
+          'assets/28. Living Room Colour Combinations/3. Moccha Mouse + Light Wood.jpg',
+          'assets/28. Living Room Colour Combinations/4. Light Grey +Mushroom.jpg',
+          'assets/28. Living Room Colour Combinations/5. Beige +Wine.jpg'
+        ];
+        renderColorComboGrid(el, id, livingColorImages); return;
+      }
+
+      // -- Route colour combination cards (image + title only) --
+      var comboIds = ['bathroom-colors'];
+      if (comboIds.indexOf(id) >= 0) { renderColorComboGrid(el, id); return; }
+
       // -- Route merged categories --
       // 'marbles'   = merged marble-summary table + marbles list
       if (id === 'marbles') { renderMerged(el, 'Marbles', tableData['marble-summary'], listData['marbles'], 'marble-summary'); return; }
@@ -6657,7 +8727,7 @@ window.addEventListener(
       */
       if (id === 'exp-look') { renderNewExpLook(el); return; }
 
-      if (id === 'tiles' || id === 'granite' || id === 'quartz' || id === 'mirror') {
+      if (id === 'tiles' || id === 'granite' || id === 'quartz' || id === 'mirror' || id === 'quartzite') {
         var imgMap = {};
         if (id === 'tiles') {
           imgMap = {
@@ -6690,9 +8760,23 @@ window.addEventListener(
           };
         } else if (id === 'mirror') {
           imgMap = {
-            'Plain Mirror': 'assets/23. Glass/Clear glass.jpg',
-            'Tinted Mirror': 'assets/23. Glass/Tinted glass.jpg',
-            'Back-painted Glass': 'assets/23. Glass/Lacquered-Back Painted Glass.jpg'
+            'Clear Mirror': 'assets/1.Cover Images/coming soon.jpg',
+            'Tinted Mirror': 'assets/1.Cover Images/coming soon.jpg',
+            'Antique Mirror': 'assets/1.Cover Images/coming soon.jpg',
+            'Bevelled Mirror': 'assets/1.Cover Images/coming soon.jpg',
+            'Mirror Tiles': 'assets/1.Cover Images/coming soon.jpg',
+            'Fluted Mirror': 'assets/1.Cover Images/coming soon.jpg',
+            'Etched Mirror': 'assets/1.Cover Images/coming soon.jpg',
+            'Back-Painted Mirror': 'assets/1.Cover Images/coming soon.jpg',
+            'LED Mirror': 'assets/1.Cover Images/coming soon.jpg'
+          };
+        } else if (id === 'quartzite') {
+          imgMap = {
+            'Taj Mahal Quartzite': 'assets/22.Quartzite/Taj Mahal Quartzite.jpg',
+            'Patagonia Quartzite': 'assets/22.Quartzite/Patagonia Quartzite.jpg',
+            'White Macaubas Quartzite': 'assets/22.Quartzite/White Macaubas Quartzite.jpg',
+            'Cristallo Quartzite': 'assets/22.Quartzite/Cristallo Quartzite.jpg',
+            'Blue Roma Quartzite': 'assets/22.Quartzite/Blue Roma Quartzite.jpg'
           };
         }
         renderDataDrivenSection(el, {
@@ -6751,16 +8835,232 @@ window.addEventListener(
         return;
       }
 
+      // Kitchen — single-card layout with real images
+      if (id === 'kitchen-shutter' || id === 'kitchen-must') {
+        var kitData = listData[id];
+        var kitImgMap = {};
+        if (id === 'kitchen-shutter') {
+          kitImgMap = {
+            'ACM Shutters': 'assets/14. Kitchen Shutters/Natural Stone.jpg',
+            'Acrylic Shutters': 'assets/14. Kitchen Shutters/acrylic.jpg',
+            'Laminate Shutters': 'assets/14. Kitchen Shutters/laminate.jpg',
+            'PU Finish Shutters': 'assets/14. Kitchen Shutters/PU Paint.jpg',
+            'Stainless Steel Shutters': 'assets/14. Kitchen Shutters/Charcoal Panel.jpg',
+            'Glass Shutters': 'assets/14. Kitchen Shutters/glass.jpg',
+            'Wooden Shutters': 'assets/14. Kitchen Shutters/veneer.jpg'
+          };
+        } else if (id === 'kitchen-must') {
+          kitImgMap = {
+            'Corner Drawers': 'assets/16.5 Kitchen Must Haves/Corner Drawers.jpg',
+            'Multi Functional Sink': 'assets/16.5 Kitchen Must Haves/Multi Functional Sink.jpg',
+            'Tall Utility Unit': 'assets/16.5 Kitchen Must Haves/Tall Utility Unit.jpg',
+            'Drawer Internals': 'assets/16.5 Kitchen Must Haves/Drawer Internals.jpg',
+            'Shutter Storages (Upper and Lower)': 'assets/16.5 Kitchen Must Haves/Shutter Storages.jpg'
+          };
+        }
+        renderKitchenSingleTable(el, {
+          title: kitData.title,
+          detailItems: kitData.detailItems,
+          imgMap: kitImgMap
+        });
+        return;
+      }
+
+      // Furniture — single-card layout for all 9 premium cards
+      if (id === 'door' || id === 'bed' || id === 'headboard' || id === 'sidetable' ||
+          id === 'study' || id === 'dresser' || id === 'wardrobe' || id === 'wardrobe-must' || id === 'tvunit') {
+        var furnData = listData[id];
+        var imgMap = {};
+        if (id === 'door') {
+          imgMap = {
+            'Door Skins': 'assets/6.Door Finishes/Door Skins.jpg',
+            'Flute Panel Doors': 'assets/6.Door Finishes/Flute Panel Doors.jpg',
+            'Veneer Doors': 'assets/6.Door Finishes/Veneer Doors.jpg',
+            'Laminate Doors': 'assets/6.Door Finishes/Laminate Doors.jpg',
+            'Metal Doors (SS/Brass/MS)': 'assets/6.Door Finishes/Metal Doors (SS-Brass-MS).jpg',
+            'PU Painted Doors': 'assets/6.Door Finishes/PU Painted Doors.jpg',
+            'Glass Doors (Clear/Fluted/Tinted/Smoked)': 'assets/6.Door Finishes/Glass Doors (Clear-Fluted-Tinted-Smoked).jpg'
+          };
+        } else if (id === 'bed') {
+          imgMap = {
+            'Upholstered Bed (Fabric)': 'assets/5.Bed Finishes/Upholstered Finish (Fabric-Leather).jpg',
+            'Upholstered Bed (Leather/Faux Leather)': 'assets/5.Bed Finishes/Upholstered Finish (Fabric-Leather).jpg',
+            'Solid Wood Bed (Sheesham/Mango/Teak)': 'assets/5.Bed Finishes/Solid Wood Finish (Teak-Sheesham).jpg',
+            'Wooden Storage Bed (Hydraulic/Box Storage)': 'assets/5.Bed Finishes/Pre-Lam Particle Board Finish.jpg',
+            'Metal Bed (Iron/Steel)': 'assets/5.Bed Finishes/Metal Finish (MS-SS Frame).jpg',
+            'Rope Bed / Bohemian Bed': 'assets/5.Bed Finishes/Rattan Cane Finish.jpg',
+            'Platform Bed (Low-Profile Modern)': 'assets/5.Bed Finishes/Pu Paint Finish.jpg',
+            'Sleigh Bed (Curved/Traditional)': 'assets/5.Bed Finishes/Veneer Finish.jpg',
+            'Poster Bed (Cane / Wooden)': 'assets/5.Bed Finishes/Bamboo Finish.jpg',
+            'Corner Bed / L-Shaped Bed': 'assets/5.Bed Finishes/Acrylic Finish.jpg'
+          };
+        } else if (id === 'headboard') {
+          imgMap = {
+            'Upholstered Headboard (Fabric)': 'assets/7.Headboard Finishes/Fabric Upholstered.jpg',
+            'Upholstered Headboard (Leather/Faux Leather)': 'assets/7.Headboard Finishes/Leatherite.jpg',
+            'Solid Wood Headboard': 'assets/7.Headboard Finishes/Veneer Finish.jpg',
+            'Cane Headboard': 'assets/7.Headboard Finishes/Rattan Cane.jpg',
+            'Wooden Panel Headboard (Slatted/Plywood/MDF)': 'assets/7.Headboard Finishes/Pu Paint Finish.jpg',
+            'LED Headboard': 'assets/7.Headboard Finishes/Charcoal Panel.jpg',
+            'Mirror Headboard': 'assets/7.Headboard Finishes/Acrylic.jpg',
+            'Fluted Headboard': 'assets/7.Headboard Finishes/CNC Cut - Jaali Design.jpg'
+          };
+        } else if (id === 'sidetable') {
+          imgMap = {
+            'Engineered Wood Side Table': 'assets/8.Side Table Finishes/Laminate Finish.jpg',
+            'Solid Wood Side Table': 'assets/8.Side Table Finishes/Solid Wood Table (Teak-Sheesham).jpg',
+            'Cane Side Table': 'assets/8.Side Table Finishes/Metal Inlay - Brass.jpg',
+            'Fluted Panel Side Table': 'assets/8.Side Table Finishes/Fluted Panel Finish.jpg',
+            'Glass Top Side Table': 'assets/8.Side Table Finishes/Mirror Finish.jpg',
+            'Marble/Stone Top Side Table': 'assets/8.Side Table Finishes/Marble Finish.jpg',
+            'Metal/Brass Side Table': 'assets/8.Side Table Finishes/Metal Finish (MS-SS Frame).jpg',
+            'Nested Side Tables (Set of 2–3)': 'assets/8.Side Table Finishes/Terrazzo Finish.jpg',
+            'Acrylic/Transparent Side Table': 'assets/8.Side Table Finishes/Acrylic Finish.jpg',
+            'Corner Side Table': 'assets/8.Side Table Finishes/Veneer Finish.jpg',
+            'Drawer Side Table (With Storage)': 'assets/8.Side Table Finishes/Pre-Lam Particle Finish.jpg',
+            'Shelf Side Table (Open Shelving)': 'assets/8.Side Table Finishes/Corian Finish.jpg',
+            'C-Round / C-Table (Sofa Side Table)': 'assets/8.Side Table Finishes/Pu Paint Finish.jpg',
+            'Floating / Wall-Mounted Side Table': 'assets/8.Side Table Finishes/Fabric Finish.jpg',
+            'Convertible / Lift-Top Side Table': 'assets/8.Side Table Finishes/Leatherite Finish.jpg'
+          };
+        } else if (id === 'study') {
+          imgMap = {
+            'Laminate Finish': 'assets/9.Study Table Finishes/Laminate Finish.jpg',
+            'Pre-Laminated Board': 'assets/9.Study Table Finishes/Pre-Laminated Board.jpg',
+            'Veneer Finish': 'assets/9.Study Table Finishes/Veneer Finish.jpg',
+            'PU Paint': 'assets/9.Study Table Finishes/PU Paint.jpg',
+            'Solid Wood': 'assets/9.Study Table Finishes/Solid Wood.jpg',
+            'Metal Finish': 'assets/9.Study Table Finishes/Metal Finish.jpg',
+            'Acrylic': 'assets/9.Study Table Finishes/Acrylic.jpg',
+            'Leatherette Finish': 'assets/9.Study Table Finishes/Leatherette Finish.jpg'
+          };
+        } else if (id === 'dresser') {
+          imgMap = {
+            'Laminate Finish': 'assets/10.Dresser Table Finishes/Laminate Finish.jpg',
+            'Pre-Laminated Board': 'assets/10.Dresser Table Finishes/Pre-Laminated Board.jpg',
+            'Veneer Finish': 'assets/10.Dresser Table Finishes/Veneer Finish.jpg',
+            'PU Paint Finish': 'assets/10.Dresser Table Finishes/PU Paint Finish.jpg',
+            'Mirror Finish': 'assets/10.Dresser Table Finishes/Mirror Finish.jpg',
+            'Marble Finish': 'assets/10.Dresser Table Finishes/Marble Finish.jpg',
+            'Leatherette Finish': 'assets/10.Dresser Table Finishes/Leatherette Finish.jpg',
+            'Fluted Panel Finish': 'assets/10.Dresser Table Finishes/Fluted Panel Finish.jpg',
+            'Rattan Cane Finish': 'assets/10.Dresser Table Finishes/Rattan Cane Finish.jpg',
+            'PU Paint (Multi-coat)': 'assets/10.Dresser Table Finishes/PU Paint (Multi-coat).jpg'
+          };
+        } else if (id === 'wardrobe') {
+          imgMap = {
+            'Fluted Glass': 'assets/11.Wardrobe Shutter Finishes/Fluted Glass.jpg',
+            'PU Paint': 'assets/11.Wardrobe Shutter Finishes/PU Paint.jpg',
+            'Rattan Cane': 'assets/11.Wardrobe Shutter Finishes/Rattan Cane.jpg',
+            'Leather / Leatherette': 'assets/11.Wardrobe Shutter Finishes/Leather.jpg',
+            'Acrylic Matte': 'assets/11.Wardrobe Shutter Finishes/Acrylic Matte.jpg',
+            'Wallpaper': 'assets/11.Wardrobe Shutter Finishes/Wallpaper.jpg',
+            'Metallic Laminate': 'assets/11.Wardrobe Shutter Finishes/Metallic Laminate.jpg',
+            'Back-Painted Glass': 'assets/11.Wardrobe Shutter Finishes/Back-Painted Glass.jpg',
+            'Veneer': 'assets/11.Wardrobe Shutter Finishes/Veneer.jpg',
+            'Fluted Panel (MDF/WPC/Wood)': 'assets/11.Wardrobe Shutter Finishes/Fluted Panel.jpg',
+            'Fabric Panels': 'assets/11.Wardrobe Shutter Finishes/Fabric Panels.jpg'
+          };
+        } else if (id === 'wardrobe-must') {
+          imgMap = {
+            'Shoe Revolving Rack': 'assets/12.5 Must Wardrobe Haves/Shoe Revolving Rack.jpg',
+            'Hidden Watch Pull Down': 'assets/12.5 Must Wardrobe Haves/Hidden Watch Pull Down.jpg',
+            'Fingerprint Lock': 'assets/12.5 Must Wardrobe Haves/Fingerprint Lock.jpg',
+            'Drawer Organisers': 'assets/12.5 Must Wardrobe Haves/Drawer Organisers.jpg',
+            'Seamless Handles': 'assets/12.5 Must Wardrobe Haves/Seamless Handles.jpg'
+          };
+        } else if (id === 'tvunit') {
+          imgMap = {
+            'Laminate Finish': 'assets/13. TV Unit Finishes/Laminate Finish.jpg',
+            'Veneer Finish': 'assets/13. TV Unit Finishes/Veneer Finish.jpg',
+            'PU Paint Finish': 'assets/13. TV Unit Finishes/Pu Paint Finish.jpg',
+            'Acrylic Finish': 'assets/13. TV Unit Finishes/Acrylic Finish.jpg',
+            'Glass Finish (Back-Painted/Fluted/Tinted)': 'assets/13. TV Unit Finishes/Glass Finish (Back-Painted-Fluted-Tinted).png',
+            'Natural Stone Cladding (Slate/Sandstone)': 'assets/13. TV Unit Finishes/Natural Stone Cladding (Slate-Sandstone).jpg',
+            'Marble Cladding': 'assets/13. TV Unit Finishes/Marble Cladding.jpg',
+            'Granite Cladding': 'assets/13. TV Unit Finishes/Granite Cladding.jpg',
+            'Charcoal Panels': 'assets/13. TV Unit Finishes/Charcoal Panels.jpg',
+            'WPC Panels (Wood Plastic Composite)': 'assets/13. TV Unit Finishes/WPC Panels (Wood Plastic Composite).jpg',
+            'Fluted / Grooved Panels': 'assets/13. TV Unit Finishes/Fluted - Grooved Panels.jpg',
+            'Metal Accents (SS/Brass/MS)': 'assets/13. TV Unit Finishes/Metal Accents (SS-Brass-MS).jpg',
+            'Wallpaper Finish': 'assets/13. TV Unit Finishes/Wallpaper Finish.jpg',
+            'Textured Paint Finish': 'assets/13. TV Unit Finishes/Textured Paint Finish.jpg'
+          };
+        }
+        // Convert pipe-delimited items to rich detailItems if needed
+        var rawItems = furnData.detailItems || furnData.items || [];
+        var detailItems = [];
+        if (rawItems.length && typeof rawItems[0] === 'string') {
+          for (var si = 0; si < rawItems.length; si++) {
+            var p = rawItems[si].split('||');
+            detailItems.push({
+              title: p[0] || '',
+              rows: [
+                ['Raw Material Cost', p[1] || ''],
+                ['Thickness Required', p[2] || ''],
+                ['Installation Process', p[3] || ''],
+                ['Maintenance', p[4] || ''],
+                ['Best Places to Use', p[7] || ''],
+                {label: '\u2713 Pros', value: p[5] || '', cls: 'pros'},
+                {label: '\u2715 Cons', value: p[6] || '', cls: 'cons'}
+              ]
+            });
+          }
+        } else {
+          detailItems = rawItems;
+        }
+        renderFurnitureSingleTable(el, {
+          title: furnData.title,
+          section: id,
+          detailItems: detailItems,
+          imgMap: imgMap
+        });
+        return;
+      }
+
+      // Designer Veneer premium routing
+      if (id === 'designer-veneer') {
+        renderDataDrivenSection(el, {
+          title: listData[id].title,
+          section: id,
+          tableItems: listData[id].tableItems,
+          detailItems: listData[id].detailItems,
+          imgMap: {
+            'Sucupira Veneer': 'assets/25. Veneer/25. designer/1.Sucupira Veneer.jpg',
+            'Wenge Veneer': 'assets/25. Veneer/25. designer/2. Wenge Veneer.jpg',
+            'Ebony Veneer': 'assets/25. Veneer/25. designer/3.Ebony Veneer.jpg',
+            'Zebrano Veneer': 'assets/25. Veneer/25. designer/4. Zebrano Veneer.jpg',
+            'Burl Veneer': 'assets/25. Veneer/25. designer/5.Burl Veneer.jpg'
+          }
+        });
+        return;
+      }
+
+      // Wood Types premium routing
+      if (id === 'wood-types') {
+        renderDataDrivenSection(el, {
+          title: listData[id].title,
+          section: id,
+          tableItems: listData[id].tableItems,
+          detailItems: listData[id].detailItems,
+          imgMap: {}
+        });
+        return;
+      }
+
       if (tableData[id]) {
         const d = tableData[id];
+        const isRoomFinishesTable = ['flooring', 'wall', 'ceiling'].indexOf(id) >= 0;
+        const tableWrapClass = isRoomFinishesTable ? 'room-finishes-wrap' : 'table-wrap table-responsive custom-table';
+        const tableClass = isRoomFinishesTable ? 'room-finishes-table' : 'table custom-table-inner detail-tbl';
         el.innerHTML = `
         <div class="sec-head">
           <span class="sec-title">${d.title}</span>
           <span class="sec-count">${d.rows.length} materials</span>
         </div>
         ${imgRow(id)}
-        <div class="table-wrap table-responsive custom-table"><table class="table custom-table-inner detail-tbl">
-          <thead><tr><th style="width:50px;font-size:9px">Photo</th>${d.cols.map(c => `<th>${c}</th>`).join('')}</tr></thead>
+        <div class="${tableWrapClass}"><table class="${tableClass}">
+          <thead><tr><th class="photo-th">Photo</th>${d.cols.map(c => `<th>${c}</th>`).join('')}</tr></thead>
           <tbody>${d.rows.map((r, ri) => `<tr>
             ${thumbTD(id, ri, r[2] || r[1] || '')}
             ${r.map((cell, i) => {
@@ -6775,8 +9075,8 @@ window.addEventListener(
         </table></div>`;
             } else if (listData[id]) {
         const d = listData[id];
-        const isFurniture = ['bed', 'door', 'headboard', 'sidetable', 'study', 'dresser', 'wardrobe', 'wardrobe-must', 'tvunit', 'kitchen-shutter', 'kitchen-must', 'limewash', 'limeplaster', 'venetian', 'microcement', 'clay', 'metallic', 'quartzite'].indexOf(id) >= 0;
-        const needThumb = ['bed', 'door', 'headboard', 'sidetable', 'study', 'dresser', 'tvunit', 'wardrobe', 'wardrobe-must', 'kitchen-shutter', 'kitchen-must', 'exp-look', 'limewash', 'limeplaster', 'venetian', 'microcement', 'clay', 'metallic', 'quartzite'].indexOf(id) >= 0;
+        const isFurniture = ['study', 'dresser', 'wardrobe', 'wardrobe-must', 'tvunit', 'limewash', 'limeplaster', 'venetian', 'microcement', 'clay', 'metallic'].indexOf(id) >= 0;
+        const needThumb = ['study', 'dresser', 'tvunit', 'wardrobe', 'wardrobe-must', 'exp-look', 'limewash', 'limeplaster', 'venetian', 'microcement', 'clay', 'metallic'].indexOf(id) >= 0;
 
         var stGridHtml = '';
         if (id === 'sidetable') {
@@ -6810,29 +9110,7 @@ window.addEventListener(
           if (hasParts) {
             if (!isFurniture) {
               tr += '<div class="item-meta">' + (cost ? '<span class="meta-cost">' + cost + '</span>' : '') + (thick ? ' <span class="meta-lbl">Thickness:</span> ' + thick : '') + '</div>';
-              if (id === 'quartzite') {
-                var details = (install || '').split('|||');
-                tr += '<div class="item-detail">';
-                details.forEach(function (detail) {
-                  if (detail.trim()) {
-                    var labelMatch = detail.match(/^([^:]+):\s*(.*)$/);
-                    if (labelMatch) {
-                      tr += '<div><span style="color:#007bff;font-weight:600">' + labelMatch[1] + ':</span> ' + labelMatch[2] + '</div>';
-                    } else {
-                      tr += '<div>' + detail + '</div>';
-                    }
-                  }
-                });
-                tr += (maint ? '<div><span style="color:#007bff;font-weight:600">Maintenance:</span> ' + maint + '</div>' : '');
-                // parts[5]=Brands, parts[6]=Pros, parts[7]=Cons, parts[8]=Applications
-                if (parts[5]) tr += '<div><span style="color:#007bff;font-weight:600">Brands / Suppliers:</span> ' + parts[5] + '</div>';
-                if (parts[6]) tr += '<div><span style="color:#007bff;font-weight:600">Pros:</span> ' + parts[6] + '</div>';
-                if (parts[7]) tr += '<div><span style="color:#007bff;font-weight:600">Cons:</span> ' + parts[7] + '</div>';
-                if (parts[8]) tr += '<div><span style="color:#007bff;font-weight:600">Applications:</span> ' + parts[8] + '</div>';
-                tr += '</div>';
-              } else {
-                tr += '<div class="item-detail">' + (install ? '<div><b>Install:</b> ' + install + '</div>' : '') + (maint ? '<div><b>Maintenance:</b> ' + maint + '</div>' : '') + (pros ? '<div><b>Pros:</b> ' + pros + '</div>' : '') + (cons ? '<div><b>Cons:</b> ' + cons + '</div>' : '') + (bestuse ? '<div><b>Best Use:</b> ' + bestuse + '</div>' : '') + '</div>';
-              }
+              tr += '<div class="item-detail">' + (install ? '<div><b>Install:</b> ' + install + '</div>' : '') + (maint ? '<div><b>Maintenance:</b> ' + maint + '</div>' : '') + (pros ? '<div><b>Pros:</b> ' + pros + '</div>' : '') + (cons ? '<div><b>Cons:</b> ' + cons + '</div>' : '') + (bestuse ? '<div><b>Best Use:</b> ' + bestuse + '</div>' : '') + '</div>';
             } else {
               if (install || maint) tr += '<div class="item-detail" style="font-size:11px;color:#666;margin-top:4px">' + (install ? '<b>Install:</b> ' + install + '<br>' : '') + (maint ? '<b>Maintenance:</b> ' + maint : '') + '</div>';
             }
@@ -6933,6 +9211,121 @@ window.addEventListener(
 
     // -- Render Laminates page with detailed tables only --
 
+
+    // -- Render Colour Combination grid (image + title cards) --
+    function renderColorComboGrid(el, id, images) {
+      var d = listData[id];
+      if (!d) return;
+      var items = d.items || [];
+      var title = d.title;
+      var html = '<div class="sec-head"><span class="sec-title">' + title + '</span><span class="sec-count">' + items.length + ' combinations</span></div>';
+      html += '<div class="color-combo-grid">';
+      for (var i = 0; i < items.length; i++) {
+        var name = items[i];
+        var num = String(i + 1).padStart(2, '0');
+        var imgSrc = (images && images[i]) || 'assets/1.Cover Images/coming soon.jpg';
+        html += '<div class="color-combo-card">';
+        html += '<div class="color-combo-img-wrap">';
+        html += '<img src="' + imgSrc + '" alt="' + name.replace(/'/g, '') + '" loading="lazy" onclick="colorComboZoomOpen(this.src,\'' + name.replace(/'/g, '') + '\')">';
+        html += '<div class="color-combo-overlay"></div>';
+        html += '</div>';
+        html += '<div class="color-combo-title">';
+        html += '<span class="color-combo-srno">' + num + '</span>';
+        html += name;
+        html += '</div>';
+        html += '</div>';
+      }
+      html += '</div>';
+      html += '<div class="color-combo-lightbox" id="colorComboLightbox" onclick="colorComboZoomClose()">';
+      html += '<span class="color-combo-lb-close">&times;</span>';
+      html += '<img id="colorComboLbImg" src="" alt="">';
+      html += '<div class="color-combo-lb-cap" id="colorComboLbCap"></div>';
+      html += '</div>';
+      el.innerHTML = html;
+    }
+
+    /* -- Render Furniture figma grid cards -- */
+    function renderFurnitureFigmaGrid(el, id) {
+      var d = listData[id];
+      if (!d) return;
+      var items = d.items || [];
+      var title = d.title;
+      var html = '<div class="furniture-premium"><div class="sec-head"><span class="sec-title">' + title + '</span><span class="sec-count">' + items.length + ' finishes</span></div>';
+      html += '<div class="furniture-figma-grid">';
+      for (var i = 0; i < items.length; i++) {
+        var parts = items[i].split('||');
+        var name = parts[0] || items[i];
+        var cost = parts[1] || '';
+        var thick = parts[2] || '';
+        var install = parts[3] || '';
+        var maint = parts[4] || '';
+        var pros = parts[5] || '';
+        var cons = parts[6] || '';
+        var bestuse = parts[7] || '';
+        html += '<div class="furniture-figma-card">';
+        html += '<div class="furniture-figma-img-wrap">';
+        html += '<img src="assets/1.Cover Images/coming soon.jpg" alt="' + name.replace(/'/g, '') + '" loading="lazy" onclick="furnitureFigmaZoom(this.src,\'' + name.replace(/'/g, '') + '\')">';
+        html += '<div class="furniture-figma-overlay"></div>';
+        html += '</div>';
+        html += '<div class="furniture-figma-title">' + name + '</div>';
+        html += '<div class="furniture-figma-details">';
+        if (cost) html += '<div class="furniture-figma-row"><span class="furniture-figma-label">Cost</span><span class="furniture-figma-value">' + cost + '</span></div>';
+        if (thick) html += '<div class="furniture-figma-row"><span class="furniture-figma-label">Thickness</span><span class="furniture-figma-value">' + thick + '</span></div>';
+        if (install) html += '<div class="furniture-figma-row"><span class="furniture-figma-label">Install</span><span class="furniture-figma-value">' + install + '</span></div>';
+        if (maint) html += '<div class="furniture-figma-row"><span class="furniture-figma-label">Maintenance</span><span class="furniture-figma-value">' + maint + '</span></div>';
+        if (pros) html += '<div class="furniture-figma-row"><span class="furniture-figma-label">Pros</span><span class="furniture-figma-value pros">' + pros + '</span></div>';
+        if (cons) html += '<div class="furniture-figma-row"><span class="furniture-figma-label">Cons</span><span class="furniture-figma-value cons">' + cons + '</span></div>';
+        if (bestuse) html += '<div class="furniture-figma-row"><span class="furniture-figma-label">Best Use</span><span class="furniture-figma-value">' + bestuse + '</span></div>';
+        html += '</div></div>';
+      }
+      html += '</div>';
+      html += '<div class="figma-lightbox" id="furnitureFigmaLightbox" onclick="furnitureFigmaZoomClose()">';
+      html += '<span class="figma-lb-close">&times;</span>';
+      html += '<img id="furnitureFigmaLbImg" src="" alt="">';
+      html += '<div class="figma-lb-cap" id="furnitureFigmaLbCap"></div>';
+      html += '</div></div>';
+      el.innerHTML = html;
+    }
+
+    /* -- Render Kitchen figma grid cards -- */
+    function renderKitchenFigmaGrid(el, id) {
+      var d = listData[id];
+      if (!d) return;
+      var items = d.detailItems || [];
+      if (!items.length) items = d.items || [];
+      var title = d.title;
+      var count = items.length;
+      var html = '<div class="furniture-premium"><div class="sec-head"><span class="sec-title">' + title + '</span><span class="sec-count">' + count + ' options</span></div>';
+      html += '<div class="kitchen-figma-grid">';
+      for (var i = 0; i < items.length; i++) {
+        var det = items[i];
+        var name = det.title || (typeof det === 'string' ? det.split('||')[0] : ('Option ' + (i + 1)));
+        html += '<div class="kitchen-figma-card">';
+        html += '<div class="kitchen-figma-img-wrap">';
+        html += '<img src="assets/1.Cover Images/coming soon.jpg" alt="' + name.replace(/'/g, '') + '" loading="lazy" onclick="kitchenFigmaZoom(this.src,\'' + name.replace(/'/g, '') + '\')">';
+        html += '<div class="kitchen-figma-overlay"></div>';
+        html += '</div>';
+        html += '<div class="kitchen-figma-title">' + name + '</div>';
+        html += '<div class="kitchen-figma-details">';
+        var rows = det.rows || [];
+        for (var ri = 0; ri < rows.length; ri++) {
+          var r = rows[ri];
+          var label, value, cls;
+          if (Array.isArray(r)) { label = r[0]; value = r[1]; }
+          else { label = r.label; value = r.value; cls = r.cls; }
+          var valClass = cls ? ' class="' + cls + '"' : '';
+          html += '<div class="kitchen-figma-row"><span class="kitchen-figma-label">' + label + '</span><span class="kitchen-figma-value"' + valClass + '>' + value + '</span></div>';
+        }
+        html += '</div></div>';
+      }
+      html += '</div>';
+      html += '<div class="figma-lightbox" id="kitchenFigmaLightbox" onclick="kitchenFigmaZoomClose()">';
+      html += '<span class="figma-lb-close">&times;</span>';
+      html += '<img id="kitchenFigmaLbImg" src="" alt="">';
+      html += '<div class="figma-lb-cap" id="kitchenFigmaLbCap"></div>';
+      html += '</div></div>';
+      el.innerHTML = html;
+    }
 
     function openDynamicCard(card) {
       document.getElementById('homeView').style.display = 'none';
@@ -7126,6 +9519,95 @@ window.addEventListener(
 
       // Run animation after a short delay for better visual effect
       setTimeout(animateCounters, 800);
+    }
+
+    /* ================================================================
+       FURNITURE SINGLE TABLE — renders one premium card per item
+       (door, bed, headboard, sidetable)
+       ================================================================ */
+    function renderFurnitureSingleTable(el, config) {
+      var items = config.detailItems || [];
+      var imgMap = config.imgMap || {};
+      var section = config.section || '';
+
+      function getImg(name) { return imgMap[name] || ''; }
+
+      var html = '<div class="furniture-single-table">';
+      html += '<div class="furniture-section-header">';
+      html += '<div class="furniture-section-title">' + config.title + '</div>';
+      html += '<div class="furniture-section-count">' + items.length + ' Materials</div>';
+      html += '</div>';
+
+      for (var i = 0; i < items.length; i++) {
+        var item = items[i];
+        var name = item.title;
+        var imgSrc = getImg(name);
+        html += '<div class="furniture-card">';
+        html += '<div class="furniture-card-img"><img src="' + imgSrc + '" alt="' + name + '" loading="lazy" onclick="furnitureOpenZoom(this.src)" onerror="this.style.display=\'none\'"></div>';
+        html += '<div class="furniture-card-detail">';
+        html += '<div class="furniture-card-title">' + name + '</div>';
+        html += '<div class="furniture-rows">';
+        for (var ri = 0; ri < item.rows.length; ri++) {
+          var r = item.rows[ri];
+          var label, value, cls;
+          if (Array.isArray(r)) { label = r[0]; value = r[1]; }
+          else { label = r.label; value = r.value; cls = r.cls; }
+          var valClass = cls ? ' class="' + cls + '"' : '';
+          html += '<div class="furniture-row"><span class="furniture-label">' + label + '</span><span class="furniture-value"' + valClass + '>' + value + '</span></div>';
+        }
+        html += '</div></div></div>';
+      }
+
+      html += '</div>';
+      html += '<div class="furniture-lb" id="furnitureLb" onclick="furnitureCloseZoom()">';
+      html += '<img id="furnitureLbImg" src="" alt="zoom">';
+      html += '</div>';
+      el.innerHTML = html;
+      window.scrollTo(0, 0);
+    }
+
+    /* ================================================================
+       KITCHEN SINGLE TABLE — renders one premium card per item
+       (kitchen-shutter, kitchen-must)
+       ================================================================ */
+    function renderKitchenSingleTable(el, config) {
+      var items = config.detailItems || [];
+      var imgMap = config.imgMap || {};
+
+      function getImg(name) { return imgMap[name] || ''; }
+
+      var html = '<div class="kitchen-single-table">';
+      html += '<div class="kitchen-section-header">';
+      html += '<div class="kitchen-section-title">' + config.title + '</div>';
+      html += '<div class="kitchen-section-count">' + items.length + ' Materials</div>';
+      html += '</div>';
+
+      for (var i = 0; i < items.length; i++) {
+        var item = items[i];
+        var name = item.title;
+        var imgSrc = getImg(name);
+        html += '<div class="kitchen-card">';
+        html += '<div class="kitchen-card-img"><img src="' + imgSrc + '" alt="' + name + '" loading="lazy" onclick="kitchenOpenZoom(this.src)" onerror="this.style.display=\'none\'"></div>';
+        html += '<div class="kitchen-card-detail">';
+        html += '<div class="kitchen-card-title">' + name + '</div>';
+        html += '<div class="kitchen-rows">';
+        for (var ri = 0; ri < item.rows.length; ri++) {
+          var r = item.rows[ri];
+          var label, value, cls;
+          if (Array.isArray(r)) { label = r[0]; value = r[1]; }
+          else { label = r.label; value = r.value; cls = r.cls; }
+          var valClass = cls ? ' class="' + cls + '"' : '';
+          html += '<div class="kitchen-row"><span class="kitchen-label">' + label + '</span><span class="kitchen-value"' + valClass + '>' + value + '</span></div>';
+        }
+        html += '</div></div></div>';
+      }
+
+      html += '</div>';
+      html += '<div class="kitchen-lb" id="kitchenLb" onclick="kitchenCloseZoom()">';
+      html += '<img id="kitchenLbImg" src="" alt="zoom">';
+      html += '</div>';
+      el.innerHTML = html;
+      window.scrollTo(0, 0);
     }
 
     /* ================================================================
@@ -7552,7 +10034,8 @@ window.addEventListener(
           });
         }
       }
-      var html = '<div class="exp-look-new">';
+      var wrapClass = config.wrapperClass || '';
+      var html = '<div class="exp-look-new' + (wrapClass ? ' ' + wrapClass : '') + '">';
       html += '<div class="section">';
       html += '<div class="section-header">';
       html += '<div class="section-title">' + config.title + '</div>';
@@ -7635,9 +10118,33 @@ window.addEventListener(
         lb.classList.add('active');
       }
     }
+    function furnitureOpenZoom(src) {
+      var lb = document.getElementById('furnitureLb');
+      var img = document.getElementById('furnitureLbImg');
+      if (lb && img) {
+        img.src = src;
+        lb.classList.add('active');
+      }
+    }
+    function furnitureCloseZoom() {
+      var lb = document.getElementById('furnitureLb');
+      if (lb) lb.classList.remove('active');
+    }
+    function kitchenOpenZoom(src) {
+      var lb = document.getElementById('kitchenLb');
+      var img = document.getElementById('kitchenLbImg');
+      if (lb && img) {
+        img.src = src;
+        lb.classList.add('active');
+      }
+    }
+    function kitchenCloseZoom() {
+      var lb = document.getElementById('kitchenLb');
+      if (lb) lb.classList.remove('active');
+    }
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') {
-        document.querySelectorAll('.exp-lb.active, .spec-lb.active, .top10-lb.active').forEach(function(el) {
+        document.querySelectorAll('.exp-lb.active, .spec-lb.active, .top10-lb.active, .furniture-lb.active, .kitchen-lb.active').forEach(function(el) {
           el.classList.remove('active');
         });
       }
