@@ -8307,7 +8307,7 @@ window.addEventListener(
         items: [
           'Taupe + Beige',
           'Light Plum + White',
-          'Blue + White + Black',
+          'White + Dark wood',
           'Lavender + White',
           'Greige + Black',
           'Pastel Blue + Gold Fittings',
@@ -8781,8 +8781,27 @@ window.addEventListener(
       }
 
       // -- Route colour combination cards (image + title only) --
-      var comboIds = ['bathroom-colors'];
-      if (comboIds.indexOf(id) >= 0) { renderColorComboGrid(el, id); return; }
+      if (id === 'bathroom-colors') {
+        renderColorComboGrid(el, id, [
+          'assets/29.Bathroom Colour Combinations/1.Taupe + Beige.png',
+          'assets/29.Bathroom Colour Combinations/2.Light Plum + White.png',
+          'assets/29.Bathroom Colour Combinations/3.White + Dark wood.png',
+          'assets/29.Bathroom Colour Combinations/4. Lavender + White.png',
+          'assets/29.Bathroom Colour Combinations/5.Greige + Black.png',
+          'assets/29.Bathroom Colour Combinations/6.Pastel Blue + Gold Fittings.png',
+          'assets/29.Bathroom Colour Combinations/7.Light Plum Counter Shutter & Basin + Off White.png',
+          'assets/29.Bathroom Colour Combinations/8.Lime Plaster + Walnut Wood Door.png',
+          'assets/29.Bathroom Colour Combinations/9.Pink Accent Stripe Tiles + Beige Floor & Wall Tiles + Gold Fittings.png',
+          'assets/29.Bathroom Colour Combinations/10.Terracotta Accent Tiles + Black Fittings + Terrazzo Tile Backsplash.png',
+          'assets/29.Bathroom Colour Combinations/11.Light Cream Wall & Flooring Tiles + Blue Wall Tiles.png',
+          'assets/29.Bathroom Colour Combinations/12.Light Plum Wall Tiles + Beige Wall & Floor Tiles.png',
+          'assets/29.Bathroom Colour Combinations/13.Lime Plaster Floor & Walls + Cane Lights.png',
+          'assets/29.Bathroom Colour Combinations/14.Light Pink Overhead + Beige Countertop + Light Pink Undercounter.png',
+          'assets/29.Bathroom Colour Combinations/15.Light Plum Overhead + Light Green Countertop + Greyish-Green Undercounter.png',
+          'assets/29.Bathroom Colour Combinations/16.Plumish-Brown Overhead + Light Cream Countertop + Light Beige Undercounter.png'
+        ]);
+        return;
+      }
 
       // -- Route merged categories --
       // 'marbles'   = merged marble-summary table + marbles list
