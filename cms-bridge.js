@@ -8,7 +8,10 @@
     function toPipe(arr) {
         if (!arr || !arr.items) return arr;
         return { title: arr.title, items: arr.items.map(function(i) {
-            return [i.name,i.cost,i.thk,i.install,i.maint,i.pros,i.cons,i.bestuse].join('||');
+            var thick = i.thick || i.thk || '';
+            var best = i.best || i.bestuse || '';
+            var image = i.image || '';
+            return [i.name,i.cost,thick,i.install,i.maint,i.pros,i.cons,best,i.brands||'',image].join('||');
         })};
     }
 
@@ -77,15 +80,25 @@
         h += '<div class="exp-look-header"><h2 class="section-title">' + escape(data.title || 'Materials That Look Expensive') + '</h2></div>';
         h += '<div class="exp-look-table-wrap"><table class="exp-look-table"><thead><tr><th>S.No</th><th>Material</th><th>Cost</th><th>Thk</th><th>Best Places</th><th>Brands</th></tr></thead><tbody>';
         items.forEach(function(item, i) {
-            h += '<tr><td>' + (i+1) + '</td><td class="material-name">' + escape(item.name) + '</td><td class="cost">' + escape(item.cost) + '</td><td>' + escape(item.thick) + '</td><td class="best-use">' + escape(item.best) + '</td><td class="brands">' + escape(item.brands) + '</td></tr>';
+            var thick = item.thick || item.thk || '';
+            var best = item.best || item.bestuse || '';
+            h += '<tr><td>' + (i+1) + '</td><td class="material-name">' + escape(item.name) + '</td><td class="cost">' + escape(item.cost) + '</td><td>' + escape(thick) + '</td><td class="best-use">' + escape(best) + '</td><td class="brands">' + escape(item.brands) + '</td></tr>';
         });
         h += '</tbody></table></div><div class="spec-card-section">';
         items.forEach(function(item) {
+            var thick = item.thick || item.thk || '';
+            var install = item.install || '';
+            var maint = item.maint || '';
+            var pros = item.pros || '';
+            var cons = item.cons || '';
+            var best = item.best || item.bestuse || '';
+            var brands = item.brands || '';
             h += '<div class="spec-main-card"><div class="spec-card-inner"><div class="spec-card-detail-col">';
             h += '<h3 class="spec-card-title">' + escape(item.name) + '</h3><div class="spec-rows">';
-            [['Raw Material Cost',item.cost],['Thickness Required',item.thick],['Installation Process',item.install],
-             ['Maintenance',item.maint],['Best Places to Use',item.best],['Pros',item.pros],['Cons',item.cons],
-             ['Recommended Brands',item.brands]].forEach(function(f) {
+            [['Raw Material Cost',item.cost],['Thickness Required',thick],['Installation Process',install],
+             ['Maintenance',maint],['Pros',pros],['Cons',cons],
+             ['Best Places to Use',best],
+             ['Recommended Brands',brands]].forEach(function(f) {
                 if (f[1]) h += '<div class="spec-row"><span class="spec-label">' + f[0] + '</span><span class="spec-value">' + escape(f[1]) + '</span></div>';
             });
             h += '</div></div></div></div>';

@@ -16,6 +16,28 @@
     return '<img src="' + esc(src) + '" alt="' + esc(alt || '') + '" loading="lazy" class="' + (cls || '') + '" onerror="this.style.display=\'none\'">';
   }
 
+  function normalizeRow(r) {
+    if (!r || typeof r !== 'object') return r;
+    return {
+      name: r.name || '',
+      cost: r.cost || '',
+      thick: r.thick || r.thk || '',
+      install: r.install || '',
+      maint: r.maint || '',
+      pros: r.pros || '',
+      cons: r.cons || '',
+      best: r.best || r.bestuse || '',
+      brands: r.brands || '',
+      image: r.image || r.img || '',
+      label: r.label || '',
+      value: r.value || r.v || ''
+    };
+  }
+
+  function normalizeRowArray(arr) {
+    return (arr || []).map(function(r) { return normalizeRow(r); });
+  }
+
   window.CMS = {
     // ============================================================
     // CATEGORY GRID (Template 1) - .cat-grid, .cat-card
@@ -117,14 +139,15 @@
         html += '<colgroup><col class="col-image"><col class="col-sno"><col class="col-material"><col class="col-cost"><col class="col-thk"><col class="col-places"><col class="col-brands"></colgroup>';
         html += '<thead><tr><th>Image</th><th>#</th><th>Material</th><th>Cost (Sq.Ft)</th><th>Thk<br><span style="text-transform:none;letter-spacing:0.5px;white-space:nowrap">(mm)</span></th><th>Best Places to Use</th><th>Brands</th></tr></thead><tbody>';
         rows.forEach(function (r, i) {
+          var nr = normalizeRow(r);
           html += '<tr>';
-          html += '<td class="img-cell">' + (r.image ? imgTag(r.image, r.name, '') : '') + '</td>';
+          html += '<td class="img-cell">' + (nr.image ? imgTag(nr.image, nr.name, '') : '') + '</td>';
           html += '<td class="sno-cell">' + (i + 1) + '</td>';
-          html += '<td class="material-cell">' + esc(r.name) + '</td>';
-          html += '<td class="cost-cell">' + esc(r.cost) + '</td>';
-          html += '<td class="thk-cell">' + esc(r.thick) + '</td>';
-          html += '<td class="places-cell">' + esc(r.bestuse) + '</td>';
-          html += '<td class="brands-cell">' + esc(r.brands) + '</td>';
+          html += '<td class="material-cell">' + esc(nr.name) + '</td>';
+          html += '<td class="cost-cell">' + esc(nr.cost) + '</td>';
+          html += '<td class="thk-cell">' + esc(nr.thick) + '</td>';
+          html += '<td class="places-cell">' + esc(nr.best) + '</td>';
+          html += '<td class="brands-cell">' + esc(nr.brands) + '</td>';
           html += '</tr>';
         });
         html += '</tbody></table></div></div>';
@@ -193,8 +216,8 @@
         html += '<div class="mat-board-spec">';
         props.forEach(function (p) {
           html += '<div class="mat-spec-row">';
-          html += '<div class="mat-spec-label">' + esc(p.l || '') + '</div>';
-          html += '<div class="mat-spec-value">' + esc(p.v || '') + '</div>';
+          html += '<div class="mat-spec-label">' + esc(p.label || p.l || '') + '</div>';
+          html += '<div class="mat-spec-value">' + esc(p.value || p.v || '') + '</div>';
           html += '</div>';
         });
         html += '</div></div></div>';
@@ -237,7 +260,8 @@
       if (!items.length) return '<div class="no-results"><p>No items.</p></div>';
       var html = '';
       items.forEach(function (item) {
-        var rows = item.items || [];
+        var rawRows = item.items || [];
+        var rows = normalizeRowArray(rawRows);
         html += '<div class="sec-head"><span class="sec-title">' + esc(item.title || 'Furniture List') + '</span>';
         html += '<span class="sec-count">' + esc(item.count || rows.length + ' items') + '</span></div>';
         html += '<div class="table-wrap table-responsive custom-table"><table class="table custom-table-inner detail-tbl">';
@@ -251,7 +275,7 @@
           html += '<td style="font-size:11px;color:#555">' + esc(r.thick) + '</td>';
           html += '<td class="td-pros">' + esc(r.pros) + '</td>';
           html += '<td class="td-cons">' + esc(r.cons) + '</td>';
-          html += '<td class="td-use">' + esc(r.bestuse) + '</td>';
+          html += '<td class="td-use">' + esc(r.best) + '</td>';
           html += '</tr>';
         });
         html += '</tbody></table></div>';
@@ -307,7 +331,8 @@
       if (!items.length) return '<div class="no-results"><p>No items.</p></div>';
       var html = '<div class="top10-new">';
       items.forEach(function (item) {
-        var rows = item.items || [];
+        var rawRows = item.items || [];
+        var rows = normalizeRowArray(rawRows);
         var cols = item.columns || {};
         var label = item.count || rows.length + ' Materials';
 
@@ -332,7 +357,7 @@
           html += '<td class="material-cell">' + esc(r.name) + '</td>';
           html += '<td class="cost-cell">' + esc(r.cost) + '</td>';
           html += '<td class="thk-cell">' + esc(r.thick) + '</td>';
-          html += '<td class="places-cell">' + esc(r.bestuse) + '</td>';
+          html += '<td class="places-cell">' + esc(r.best) + '</td>';
           html += '<td class="brands-cell">' + esc(r.brands) + '</td>';
           html += '</tr>';
         });
@@ -358,9 +383,9 @@
           html += '<div class="spec-row"><div class="spec-label">Thickness Required</div><div class="spec-value">' + esc(r.thick) + '</div></div>';
           html += '<div class="spec-row"><div class="spec-label">Installation Process</div><div class="spec-value">' + esc(r.install) + '</div></div>';
           html += '<div class="spec-row"><div class="spec-label">Maintenance</div><div class="spec-value">' + esc(r.maint) + '</div></div>';
-          html += '<div class="spec-row"><div class="spec-label">Best Places to Use</div><div class="spec-value">' + esc(r.bestuse) + '</div></div>';
           html += '<div class="spec-row"><div class="spec-label">\u2713 Pros</div><div class="spec-value"><span class="pros">' + esc(r.pros) + '</span></div></div>';
           html += '<div class="spec-row"><div class="spec-label">\u2715 Cons</div><div class="spec-value"><span class="cons">' + esc(r.cons) + '</span></div></div>';
+          html += '<div class="spec-row"><div class="spec-label">Best Places to Use</div><div class="spec-value">' + esc(r.best) + '</div></div>';
           html += '<div class="spec-row"><div class="spec-label">Recommended Brands</div><div class="spec-value">' + esc(r.brands) + '</div></div>';
           html += '</div></div></div>';
         });

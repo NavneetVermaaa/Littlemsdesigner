@@ -334,6 +334,54 @@ function resetFormState() {
     window.mvTableRows = []; window.mvListItems = [];
 }
 
+// ============================================================
+// CANONICAL SCHEMAS
+// ============================================================
+const SCHEMAS = {
+    'category-grid': { itemKeys: ['id','name','tag','cnt','desc','img'] },
+    'data-table': { itemKeys: ['title','count','cols','rows','gallery'], rowKeys: ['img','cells'] },
+    'ranked-table': { itemKeys: ['title','count','items'], itemEntryKeys: ['name','cost','thick','install','maint','pros','cons','best','brands','image'] },
+    'spec-card': { itemKeys: ['title','sectionTitle','image','rows'], rowKeys: ['label','value'] },
+    'spec-board': { itemKeys: ['title','count','subtitle','cover','props'], rowKeys: ['label','value'] },
+    'comparison': { itemKeys: ['title','cols','rows'], rowKeys: ['cells'] },
+    'furniture-list': { itemKeys: ['title','count','items'], itemEntryKeys: ['name','cost','thick','install','maint','pros','cons','best','brands','image'] },
+    'image-row': { itemKeys: ['items'], itemEntryKeys: ['img','label'] },
+    'side-grid': { itemKeys: ['images','items'], itemEntryKeys: ['img','label'] },
+    'top10': { itemKeys: ['title','count','columns','items'], itemEntryKeys: ['name','cost','thick','install','maint','pros','cons','best','brands','image'] },
+    'split-cover': { itemKeys: ['leftImage','leftLabel','rightImage','rightLabel'] },
+    'detail-card': { itemKeys: ['title','material','thickness','brands','pros','cons'] },
+    'detail-card-image': { itemKeys: ['title','image','rows'], rowKeys: ['label','value'] },
+    'merged-view': { itemKeys: ['title','tableCount','cols','tableRows','listItems'], rowKeys: ['img','cells'], listItemKeys: ['text'] }
+};
+
+// Normalize item entry to canonical keys (handles legacy aliases)
+function normalizeItemEntry(entry) {
+    if (!entry || typeof entry !== 'object') return entry;
+    var n = {};
+    if (entry.name !== undefined) n.name = entry.name;
+    if (entry.cost !== undefined) n.cost = entry.cost;
+    n.thick = entry.thick || entry.thk || '';
+    n.install = entry.install || '';
+    n.maint = entry.maint || '';
+    n.pros = entry.pros || '';
+    n.cons = entry.cons || '';
+    n.best = entry.best || entry.bestuse || '';
+    n.brands = entry.brands || '';
+    n.image = entry.image || entry.img || '';
+    n.img = entry.img || entry.image || '';
+    n.label = entry.label || '';
+    if (entry.value !== undefined || entry.v !== undefined) n.value = entry.value || entry.v || '';
+    if (entry.l !== undefined && entry.label === undefined) n.label = entry.l || '';
+    return n;
+}
+
+// Normalize row entry (spec rows: {l,v} <=> {label,value})
+function normalizeRowEntry(row) {
+    if (!row || typeof row !== 'object') return row;
+    if (row.label !== undefined || row.value !== undefined) return { label: row.label||'', value: row.value||'' };
+    return { label: row.l||'', value: row.v||'' };
+}
+
 // ----- Category Grid Form -----
 function renderCategoryGridForm() {
     document.getElementById('templateFormContainer').innerHTML =
@@ -634,7 +682,7 @@ function renderFurnitureListForm() {
 }
 
 function addFurnitureItem() {
-    window.furnitureItems.push({name:'',cost:'',thk:'',install:'',maint:'',pros:'',cons:'',bestuse:'',image:''});
+    window.furnitureItems.push({name:'',cost:'',thick:'',install:'',maint:'',pros:'',cons:'',best:'',brands:'',image:''});
     renderFurnitureItems();
 }
 function removeFurnitureItem(idx) {
@@ -659,17 +707,17 @@ function updateFurnitureItemImg(idx, input) {
 function renderFurnitureItems() {
     const container = document.getElementById('flRowContainer');
     if (!container) return;
-    const headers = ['Image','Name','Cost','Thk','Install','Maint','Pros','Cons','Best Use'];
-    const keys = ['image','name','cost','thk','install','maint','pros','cons','bestuse'];
+    const headers = ['Image','Name','Cost','Thk','Install','Maint','Pros','Cons','Best Use','Brands'];
+    const keys = ['image','name','cost','thick','install','maint','pros','cons','best','brands'];
     if (!window.furnitureItems.length) {
         container.innerHTML = '<div class="row-repeater-empty">No items yet.</div>';
         return;
     }
-    let html = '<div class="row-repeater"><div class="row-repeater-header" style="grid-template-columns:80px repeat(8,1fr) 50px">';
+    let html = '<div class="row-repeater"><div class="row-repeater-header" style="grid-template-columns:80px repeat(9,1fr) 50px">';
     headers.forEach(h => html += '<span>' + h + '</span>');
     html += '<span style="text-align:center">Del</span></div><div class="row-repeater-body">';
     window.furnitureItems.forEach((item, i) => {
-        html += '<div class="row-repeater-row" style="grid-template-columns:80px repeat(8,1fr) 50px;align-items:start">';
+        html += '<div class="row-repeater-row" style="grid-template-columns:80px repeat(9,1fr) 50px;align-items:start">';
         html += '<div><input type="file" accept="image/*" onchange="updateFurnitureItemImg(' + i + ',this)" style="font-size:10px;padding:4px;width:72px">'
             + '<img id="fl_img_' + i + '" class="' + (item.image?'':'hidden') + '" style="width:60px;height:60px;object-fit:cover;border-radius:6px;margin-top:4px;border:1px solid rgba(255,255,255,0.08)" src="' + (item.image||'') + '"></div>';
         keys.forEach(k => {
@@ -1091,7 +1139,7 @@ function collectFormData(type) {
             return {
                 title: g('sb_title'), count: g('sb_count'), subtitle: g('sb_subtitle'),
                 cover: gImg('sb_preview'),
-                props: window.specBoardRows || []
+                props: (window.specBoardRows || []).map(function(r) { return {label:r.label||r.l||'',value:r.value||r.v||''}; })
             };
 
         case 'comparison':
@@ -1110,7 +1158,7 @@ function collectFormData(type) {
             return { items: window.imageRowItems || [] };
 
         case 'side-grid':
-            return { images: window.sideGridItems || [] };
+            return { items: window.sideGridItems || [] };
 
         case 'top10':
             return {
@@ -1281,7 +1329,9 @@ function populateForm(type, item) {
 
         case 'spec-board':
             sf('sb_title', item.title); sf('sb_count', item.count); sf('sb_subtitle', item.subtitle);
-            window.specBoardRows = item.props || [];
+            window.specBoardRows = (item.props || []).map(function(r) {
+                return {label:r.label||r.l||'',value:r.value||r.v||''};
+            });
             renderSpecBoardRows();
             break;
 
@@ -1293,7 +1343,9 @@ function populateForm(type, item) {
 
         case 'furniture-list':
             sf('fl_title', item.title); sf('fl_count', item.count);
-            window.furnitureItems = item.items || [];
+            window.furnitureItems = (item.items || []).map(function(it) {
+                return normalizeItemEntry(it);
+            });
             renderFurnitureItems();
             break;
 
@@ -1303,7 +1355,7 @@ function populateForm(type, item) {
             break;
 
         case 'side-grid':
-            window.sideGridItems = item.images || [];
+            window.sideGridItems = item.items || item.images || [];
             renderSideGridItems();
             break;
 
@@ -1396,6 +1448,21 @@ function importData() {
         if (typeof data !== 'object' || Array.isArray(data)) {
             throw new Error('Root must be an object with template type keys.');
         }
+        // Validate data before import
+        var validationResult = runFullValidationOnData(data);
+        if (!validationResult.valid) {
+            var msg = 'Data has validation issues:\n';
+            if (validationResult.cardErrors.length) {
+                msg += '- Card errors: ' + validationResult.cardErrors.length + '\n';
+            }
+            if (validationResult.tableErrors.length) {
+                msg += '- Table errors: ' + validationResult.tableErrors.length + '\n';
+            }
+            if (validationResult.imageIssues.length) {
+                msg += '- Image issues: ' + validationResult.imageIssues.length + '\n';
+            }
+            if (!confirm(msg + 'Import anyway?')) return;
+        }
         saveAllData(data);
         document.getElementById('importTextarea').value = '';
         showStatus('Data imported successfully! (' + Object.keys(data).reduce((s, t) => s + data[t].length, 0) + ' items)', 'success');
@@ -1476,12 +1543,12 @@ const SITE_SECTIONS = [
                     'Mosaic Tiles||₹200 – ₹800||4–8||Backsplashes, bathrooms, pools||Galaxy'
                 ],
                 detailItems: [
-                    {title:'Vitrified Tiles',rows:[{l:'Material',v:'Highly durable tiles made from clay and silica'},{l:'Types',v:'Double Charged, Full Body, Glazed Vitrified'},{l:'Sizes',v:'600×600, 600×1200, 800×1600'},{l:'Thk',v:'8–10'},{l:'Cost',v:'₹60 – ₹250'},{l:'Brands',v:'Kajaria, Somany, Nitco'},{l:'Best Places',v:'Flooring, living rooms, bedrooms, commercial'},{l:'Pros',v:'Durable, low maintenance, stain-resistant'},{l:'Cons',v:'Can be slippery, less natural look'},{l:'Installation',v:'Tile adhesive + spacers'},{l:'Maintenance',v:'Easy cleaning, no sealing required'}]},
-                    {title:'Ceramic Tiles',rows:[{l:'Material',v:'Lightweight tiles made from natural clay'},{l:'Types',v:'Glazed, Unglazed, Digital Printed'},{l:'Sizes',v:'300×300, 300×600'},{l:'Thk',v:'6–8'},{l:'Cost',v:'₹30 – ₹120'},{l:'Brands',v:'Kajaria, Johnson'},{l:'Best Places',v:'Bathroom walls, kitchen backsplashes'},{l:'Pros',v:'Affordable, wide designs, easy installation'},{l:'Cons',v:'Less durable for heavy flooring'},{l:'Installation',v:'Tile adhesive'},{l:'Maintenance',v:'Easy cleaning'}]},
-                    {title:'Porcelain Tiles',rows:[{l:'Material',v:'Dense, high-strength tiles with very low water absorption'},{l:'Types',v:'Full Body, Glazed, Matte, Polished'},{l:'Sizes',v:'600×600, 600×1200, 1200×2400'},{l:'Thk',v:'8–12'},{l:'Cost',v:'₹80 – ₹300'},{l:'Brands',v:'Simpolo, Kajaria, RAK Ceramics'},{l:'Best Places',v:'Flooring, outdoor areas, bathrooms, facades'},{l:'Pros',v:'Highly durable, water-resistant, versatile'},{l:'Cons',v:'Costlier than ceramic'},{l:'Installation',v:'Tile adhesive for heavy-duty'},{l:'Maintenance',v:'Low maintenance'}]},
-                    {title:'Natural Stone Tiles',rows:[{l:'Material',v:'Tiles from marble, granite, slate, or travertine'},{l:'Types',v:'Marble, Granite, Slate, Travertine'},{l:'Sizes',v:'300×300, 600×600'},{l:'Thk',v:'10–20'},{l:'Cost',v:'₹150 – ₹800'},{l:'Brands',v:'Galaxy'},{l:'Best Places',v:'Flooring, walls, feature areas'},{l:'Pros',v:'Natural beauty, premium finish'},{l:'Cons',v:'Requires maintenance, can stain'},{l:'Installation',v:'Cement bedding or stone adhesive'},{l:'Maintenance',v:'Sealing required'}]},
-                    {title:'Cement Concrete Tiles',rows:[{l:'Material',v:'Handmade tiles with pigmented cement, bold patterns'},{l:'Types',v:'Encaustic Tiles, Plain Cement Tiles'},{l:'Sizes',v:'200×200, 300×300'},{l:'Thk',v:'15–20'},{l:'Cost',v:'₹150 – ₹400'},{l:'Brands',v:'Bharat Floorings'},{l:'Best Places',v:'Accent flooring, bathrooms, cafes'},{l:'Pros',v:'Unique patterns, artisanal look'},{l:'Cons',v:'Porous, needs sealing'},{l:'Installation',v:'Cement bedding'},{l:'Maintenance',v:'Regular sealing required'}]},
-                    {title:'Mosaic Tiles',rows:[{l:'Material',v:'Small tiles arranged in patterns on mesh sheets'},{l:'Types',v:'Glass, Ceramic, Stone Mosaic'},{l:'Sizes',v:'300×300 sheets'},{l:'Thk',v:'4–8'},{l:'Cost',v:'₹200 – ₹800'},{l:'Brands',v:'Galaxy'},{l:'Best Places',v:'Backsplashes, bathrooms, pools'},{l:'Pros',v:'Decorative, flexible for curved surfaces'},{l:'Cons',v:'Expensive, grout-heavy maintenance'},{l:'Installation',v:'Tile adhesive'},{l:'Maintenance',v:'Regular grout cleaning'}]}
+                    {title:'Vitrified Tiles',rows:[{l:'Material',v:'Highly durable tiles made from clay and silica'},{l:'Types',v:'Double Charged, Full Body, Glazed Vitrified'},{l:'Sizes',v:'600×600, 600×1200, 800×1600'},{l:'Thk',v:'8–10'},{l:'Cost',v:'₹60 – ₹250'},{l:'Installation',v:'Tile adhesive + spacers'},{l:'Maintenance',v:'Easy cleaning, no sealing required'},{l:'Pros',v:'Durable, low maintenance, stain-resistant'},{l:'Cons',v:'Can be slippery, less natural look'},{l:'Best Places',v:'Flooring, living rooms, bedrooms, commercial'},{l:'Brands',v:'Kajaria, Somany, Nitco'}]},
+                    {title:'Ceramic Tiles',rows:[{l:'Material',v:'Lightweight tiles made from natural clay'},{l:'Types',v:'Glazed, Unglazed, Digital Printed'},{l:'Sizes',v:'300×300, 300×600'},{l:'Thk',v:'6–8'},{l:'Cost',v:'₹30 – ₹120'},{l:'Installation',v:'Tile adhesive'},{l:'Maintenance',v:'Easy cleaning'},{l:'Pros',v:'Affordable, wide designs, easy installation'},{l:'Cons',v:'Less durable for heavy flooring'},{l:'Best Places',v:'Bathroom walls, kitchen backsplashes'},{l:'Brands',v:'Kajaria, Johnson'}]},
+                    {title:'Porcelain Tiles',rows:[{l:'Material',v:'Dense, high-strength tiles with very low water absorption'},{l:'Types',v:'Full Body, Glazed, Matte, Polished'},{l:'Sizes',v:'600×600, 600×1200, 1200×2400'},{l:'Thk',v:'8–12'},{l:'Cost',v:'₹80 – ₹300'},{l:'Installation',v:'Tile adhesive for heavy-duty'},{l:'Maintenance',v:'Low maintenance'},{l:'Pros',v:'Highly durable, water-resistant, versatile'},{l:'Cons',v:'Costlier than ceramic'},{l:'Best Places',v:'Flooring, outdoor areas, bathrooms, facades'},{l:'Brands',v:'Simpolo, Kajaria, RAK Ceramics'}]},
+                    {title:'Natural Stone Tiles',rows:[{l:'Material',v:'Tiles from marble, granite, slate, or travertine'},{l:'Types',v:'Marble, Granite, Slate, Travertine'},{l:'Sizes',v:'300×300, 600×600'},{l:'Thk',v:'10–20'},{l:'Cost',v:'₹150 – ₹800'},{l:'Installation',v:'Cement bedding or stone adhesive'},{l:'Maintenance',v:'Sealing required'},{l:'Pros',v:'Natural beauty, premium finish'},{l:'Cons',v:'Requires maintenance, can stain'},{l:'Best Places',v:'Flooring, walls, feature areas'},{l:'Brands',v:'Galaxy'}]},
+                    {title:'Cement Concrete Tiles',rows:[{l:'Material',v:'Handmade tiles with pigmented cement, bold patterns'},{l:'Types',v:'Encaustic Tiles, Plain Cement Tiles'},{l:'Sizes',v:'200×200, 300×300'},{l:'Thk',v:'15–20'},{l:'Cost',v:'₹150 – ₹400'},{l:'Installation',v:'Cement bedding'},{l:'Maintenance',v:'Regular sealing required'},{l:'Pros',v:'Unique patterns, artisanal look'},{l:'Cons',v:'Porous, needs sealing'},{l:'Best Places',v:'Accent flooring, bathrooms, cafes'},{l:'Brands',v:'Bharat Floorings'}]},
+                    {title:'Mosaic Tiles',rows:[{l:'Material',v:'Small tiles arranged in patterns on mesh sheets'},{l:'Types',v:'Glass, Ceramic, Stone Mosaic'},{l:'Sizes',v:'300×300 sheets'},{l:'Thk',v:'4–8'},{l:'Cost',v:'₹200 – ₹800'},{l:'Installation',v:'Tile adhesive'},{l:'Maintenance',v:'Regular grout cleaning'},{l:'Pros',v:'Decorative, flexible for curved surfaces'},{l:'Cons',v:'Expensive, grout-heavy maintenance'},{l:'Best Places',v:'Backsplashes, bathrooms, pools'},{l:'Brands',v:'Galaxy'}]}
                 ]
             };
         }
@@ -1501,13 +1568,13 @@ const SITE_SECTIONS = [
                     'Imperial Red Granite||₹140 – ₹350||15–20||Flooring, staircases, exterior cladding, kitchen countertop||RK Marble, Classic Marble Company'
                 ],
                 detailItems: [
-                    {title:'Black Granite',rows:[{l:'Material',v:'Deep black, uniform granite'},{l:'Types',v:'Absolute Black, Premium Black, Jet Black'},{l:'Sizes',v:'Slabs (8–10 ft), Cut sizes (2×2 ft, 2×4 ft)'},{l:'Thk',v:'16–20, 20–30'},{l:'Cost',v:'₹180 – ₹700'},{l:'Brands',v:'RK Marble, Classic Marble'},{l:'Best Places',v:'Kitchen countertops, flooring, staircases, wall cladding'},{l:'Pros',v:'Highly durable, stain-resistant, premium look'},{l:'Cons',v:'Shows dust and fingerprints, limited pattern variation'},{l:'Installation',v:'Cement mortar or stone adhesive'},{l:'Maintenance',v:'Easy cleaning; occasional sealing'}]},
-                    {title:'Black Galaxy Granite',rows:[{l:'Material',v:'Deep black with golden and white speckles'},{l:'Types',v:'Small Galaxy, Medium Galaxy, Premium Galaxy'},{l:'Sizes',v:'Slabs (8–10 ft)'},{l:'Thk',v:'16–20, 20–30'},{l:'Cost',v:'₹250 – ₹800'},{l:'Brands',v:'RK Marble, Classic Marble'},{l:'Best Places',v:'Kitchen countertops, feature walls, tabletops'},{l:'Pros',v:'Luxurious look, durable, unique pattern'},{l:'Cons',v:'Costlier than most granites'},{l:'Installation',v:'Cement mortar or stone adhesive'},{l:'Maintenance',v:'Easy cleaning; periodic sealing'}]},
-                    {title:'Steel Grey Granite',rows:[{l:'Material',v:'Grey granite with subtle speckled patterns'},{l:'Types',v:'Steel Grey Polished, Steel Grey Leather Finish'},{l:'Sizes',v:'Slabs (8–10 ft)'},{l:'Thk',v:'16–20, 20–30'},{l:'Cost',v:'₹150 – ₹400'},{l:'Brands',v:'RK Marble, Classic Marble'},{l:'Best Places',v:'Kitchen countertops, feature walls, tabletops'},{l:'Pros',v:'Durable, budget-friendly, hides dust well'},{l:'Cons',v:'Less luxurious than marble, limited pattern variation'},{l:'Installation',v:'Cement mortar or stone adhesive'},{l:'Maintenance',v:'Low maintenance; periodic sealing'}]},
-                    {title:'Tan Brown Granite',rows:[{l:'Material',v:'Dark brown with black and reddish speckles'},{l:'Types',v:'Tan Brown Classic, Tan Brown Dark'},{l:'Sizes',v:'Slabs (8–10 ft)'},{l:'Thk',v:'16–20, 20–30'},{l:'Cost',v:'₹140 – ₹350'},{l:'Brands',v:'RK Marble, Classic Marble'},{l:'Best Places',v:'Countertops, flooring, staircases'},{l:'Pros',v:'Affordable, durable, warm tones'},{l:'Cons',v:'Busy pattern may not suit modern interiors'},{l:'Installation',v:'Cement mortar or stone adhesive'},{l:'Maintenance',v:'Easy cleaning; periodic sealing'}]},
-                    {title:'Viscount White Granite',rows:[{l:'Material',v:'White to light grey with flowing linear black/grey veins'},{l:'Types',v:'Viscount White Classic, Viscount White Premium'},{l:'Sizes',v:'Slabs (8–10 ft, 4–6 ft wide)'},{l:'Thk',v:'16–20, 20–30'},{l:'Cost',v:'₹180 – ₹450'},{l:'Brands',v:'RK Marble, Classic Marble'},{l:'Best Places',v:'Flooring, kitchen countertops, wall cladding, staircases'},{l:'Pros',v:'Marble-like look, durable, cost-effective'},{l:'Cons',v:'Pattern variation between slabs'},{l:'Installation',v:'Cement mortar or stone adhesive'},{l:'Maintenance',v:'Easy maintenance; periodic sealing'}]},
-                    {title:'Alaska White Granite',rows:[{l:'Material',v:'Premium white with dramatic grey, black, beige veining'},{l:'Types',v:'Alaska White Standard, Alaska White Premium'},{l:'Sizes',v:'Slabs (8–10 ft, 4–6 ft wide)'},{l:'Thk',v:'16–20, 20–30'},{l:'Cost',v:'₹250 – ₹700'},{l:'Brands',v:'RK Marble, Classic Marble'},{l:'Best Places',v:'Kitchen countertops, islands, feature walls, bathrooms'},{l:'Pros',v:'Premium aesthetic, unique patterns, durable'},{l:'Cons',v:'Higher cost, pattern variation between slabs'},{l:'Installation',v:'Cement mortar or stone adhesive'},{l:'Maintenance',v:'Periodic sealing; easy to clean'}]},
-                    {title:'Imperial Red Granite',rows:[{l:'Material',v:'Rich deep red with black and grey crystalline specks'},{l:'Types',v:'Imperial Red, New Imperial Red, Ruby Red'},{l:'Sizes',v:'Slabs (8–10 ft), Cut tiles (2×2 ft, 2×4 ft)'},{l:'Thk',v:'16–20, 20–30'},{l:'Cost',v:'₹140 – ₹350'},{l:'Brands',v:'RK Marble, Classic Marble'},{l:'Best Places',v:'Flooring, staircases, exterior cladding, countertops'},{l:'Pros',v:'Extremely durable, weather-resistant, bold color'},{l:'Cons',v:'Strong color may not suit modern interiors'},{l:'Installation',v:'Cement mortar or stone adhesive'},{l:'Maintenance',v:'Easy maintenance; periodic sealing'}]}
+                    {title:'Black Granite',rows:[{l:'Material',v:'Deep black, uniform granite'},{l:'Types',v:'Absolute Black, Premium Black, Jet Black'},{l:'Sizes',v:'Slabs (8–10 ft), Cut sizes (2×2 ft, 2×4 ft)'},{l:'Thk',v:'16–20, 20–30'},{l:'Cost',v:'₹180 – ₹700'},{l:'Installation',v:'Cement mortar or stone adhesive'},{l:'Maintenance',v:'Easy cleaning; occasional sealing'},{l:'Pros',v:'Highly durable, stain-resistant, premium look'},{l:'Cons',v:'Shows dust and fingerprints, limited pattern variation'},{l:'Best Places',v:'Kitchen countertops, flooring, staircases, wall cladding'},{l:'Brands',v:'RK Marble, Classic Marble'}]},
+                    {title:'Black Galaxy Granite',rows:[{l:'Material',v:'Deep black with golden and white speckles'},{l:'Types',v:'Small Galaxy, Medium Galaxy, Premium Galaxy'},{l:'Sizes',v:'Slabs (8–10 ft)'},{l:'Thk',v:'16–20, 20–30'},{l:'Cost',v:'₹250 – ₹800'},{l:'Installation',v:'Cement mortar or stone adhesive'},{l:'Maintenance',v:'Easy cleaning; periodic sealing'},{l:'Pros',v:'Luxurious look, durable, unique pattern'},{l:'Cons',v:'Costlier than most granites'},{l:'Best Places',v:'Kitchen countertops, feature walls, tabletops'},{l:'Brands',v:'RK Marble, Classic Marble'}]},
+                    {title:'Steel Grey Granite',rows:[{l:'Material',v:'Grey granite with subtle speckled patterns'},{l:'Types',v:'Steel Grey Polished, Steel Grey Leather Finish'},{l:'Sizes',v:'Slabs (8–10 ft)'},{l:'Thk',v:'16–20, 20–30'},{l:'Cost',v:'₹150 – ₹400'},{l:'Installation',v:'Cement mortar or stone adhesive'},{l:'Maintenance',v:'Low maintenance; periodic sealing'},{l:'Pros',v:'Durable, budget-friendly, hides dust well'},{l:'Cons',v:'Less luxurious than marble, limited pattern variation'},{l:'Best Places',v:'Kitchen countertops, feature walls, tabletops'},{l:'Brands',v:'RK Marble, Classic Marble'}]},
+                    {title:'Tan Brown Granite',rows:[{l:'Material',v:'Dark brown with black and reddish speckles'},{l:'Types',v:'Tan Brown Classic, Tan Brown Dark'},{l:'Sizes',v:'Slabs (8–10 ft)'},{l:'Thk',v:'16–20, 20–30'},{l:'Cost',v:'₹140 – ₹350'},{l:'Installation',v:'Cement mortar or stone adhesive'},{l:'Maintenance',v:'Easy cleaning; periodic sealing'},{l:'Pros',v:'Affordable, durable, warm tones'},{l:'Cons',v:'Busy pattern may not suit modern interiors'},{l:'Best Places',v:'Countertops, flooring, staircases'},{l:'Brands',v:'RK Marble, Classic Marble'}]},
+                    {title:'Viscount White Granite',rows:[{l:'Material',v:'White to light grey with flowing linear black/grey veins'},{l:'Types',v:'Viscount White Classic, Viscount White Premium'},{l:'Sizes',v:'Slabs (8–10 ft, 4–6 ft wide)'},{l:'Thk',v:'16–20, 20–30'},{l:'Cost',v:'₹180 – ₹450'},{l:'Installation',v:'Cement mortar or stone adhesive'},{l:'Maintenance',v:'Easy maintenance; periodic sealing'},{l:'Pros',v:'Marble-like look, durable, cost-effective'},{l:'Cons',v:'Pattern variation between slabs'},{l:'Best Places',v:'Flooring, kitchen countertops, wall cladding, staircases'},{l:'Brands',v:'RK Marble, Classic Marble'}]},
+                    {title:'Alaska White Granite',rows:[{l:'Material',v:'Premium white with dramatic grey, black, beige veining'},{l:'Types',v:'Alaska White Standard, Alaska White Premium'},{l:'Sizes',v:'Slabs (8–10 ft, 4–6 ft wide)'},{l:'Thk',v:'16–20, 20–30'},{l:'Cost',v:'₹250 – ₹700'},{l:'Installation',v:'Cement mortar or stone adhesive'},{l:'Maintenance',v:'Periodic sealing; easy to clean'},{l:'Pros',v:'Premium aesthetic, unique patterns, durable'},{l:'Cons',v:'Higher cost, pattern variation between slabs'},{l:'Best Places',v:'Kitchen countertops, islands, feature walls, bathrooms'},{l:'Brands',v:'RK Marble, Classic Marble'}]},
+                    {title:'Imperial Red Granite',rows:[{l:'Material',v:'Rich deep red with black and grey crystalline specks'},{l:'Types',v:'Imperial Red, New Imperial Red, Ruby Red'},{l:'Sizes',v:'Slabs (8–10 ft), Cut tiles (2×2 ft, 2×4 ft)'},{l:'Thk',v:'16–20, 20–30'},{l:'Cost',v:'₹140 – ₹350'},{l:'Installation',v:'Cement mortar or stone adhesive'},{l:'Maintenance',v:'Easy maintenance; periodic sealing'},{l:'Pros',v:'Extremely durable, weather-resistant, bold color'},{l:'Cons',v:'Strong color may not suit modern interiors'},{l:'Best Places',v:'Flooring, staircases, exterior cladding, countertops'},{l:'Brands',v:'RK Marble, Classic Marble'}]}
                 ]
             };
         }
@@ -1786,9 +1853,9 @@ function populateFurnitureListSection(data) {
     window.furnitureItems = (data.items || []).map(function(item) {
         if (typeof item === 'string') {
             var parts = item.split('||');
-            return {name:parts[0]||'',cost:parts[1]||'',thk:parts[2]||'',install:parts[3]||'',maint:parts[4]||'',pros:parts[5]||'',cons:parts[6]||'',bestuse:parts[7]||''};
+            return {name:parts[0]||'',cost:parts[1]||'',thick:parts[2]||'',install:parts[3]||'',maint:parts[4]||'',pros:parts[5]||'',cons:parts[6]||'',best:parts[7]||'',brands:parts[8]||'',image:''};
         }
-        return {name:item.name||'',cost:item.cost||'',thk:item.thk||item.thick||'',install:item.install||'',maint:item.maint||'',pros:item.pros||'',cons:item.cons||'',bestuse:item.bestuse||item.best||''};
+        return normalizeItemEntry(item);
     });
     renderFurnitureItems();
 }
@@ -1846,9 +1913,11 @@ function renderDciSectionEditor() {
             html += '<div class="row-repeater-empty">No spec rows yet.</div>';
         } else {
             rows.forEach(function(row, ri) {
+                var lbl = row.label || row.l || '';
+                var val = row.value || row.v || '';
                 html += '<div class="row-repeater-row" style="grid-template-columns:1fr 2fr 40px">';
-                html += '<input type="text" value="' + escHtml(row.l||'') + '" onchange="updateDciSecRow(' + i + ',' + ri + ',\'l\',this.value)" placeholder="Label">';
-                html += '<input type="text" value="' + escHtml(row.v||'') + '" onchange="updateDciSecRow(' + i + ',' + ri + ',\'v\',this.value)" placeholder="Value">';
+                html += '<input type="text" value="' + escHtml(lbl) + '" onchange="updateDciSecRow(' + i + ',' + ri + ',\'label\',this.value)" placeholder="Label">';
+                html += '<input type="text" value="' + escHtml(val) + '" onchange="updateDciSecRow(' + i + ',' + ri + ',\'value\',this.value)" placeholder="Value">';
                 html += '<button type="button" class="delete-btn" onclick="removeDciSecRow(' + i + ',' + ri + ')">×</button></div>';
             });
         }
@@ -1867,13 +1936,15 @@ function renderDciSectionEditor() {
 
 function updateDciSecRow(itemIdx, rowIdx, field, val) {
     var items = window._dciSectionItems;
-    if (items[itemIdx] && items[itemIdx].detailRows[rowIdx]) items[itemIdx].detailRows[rowIdx][field] = val;
+    if (!items[itemIdx] || !items[itemIdx].detailRows[rowIdx]) return;
+    // Normalize field names: 'label' stays 'label', 'value' stays 'value'
+    items[itemIdx].detailRows[rowIdx][field] = val;
 }
 
 function addDciSecRow(itemIdx) {
     if (!window._dciSectionItems[itemIdx]) return;
     if (!window._dciSectionItems[itemIdx].detailRows) window._dciSectionItems[itemIdx].detailRows = [];
-    window._dciSectionItems[itemIdx].detailRows.push({l:'',v:''});
+    window._dciSectionItems[itemIdx].detailRows.push({label:'',value:''});
     renderDciSectionEditor();
 }
 
@@ -1900,7 +1971,7 @@ function saveDciSection() {
 
     items.forEach(function(item) {
         tableItems.push((item.name||'') + '||' + (item.cost||'') + '||' + (item.thick||'') + '||' + (item.places||'') + '||' + (item.brands||''));
-        detailItems.push({title: item.name || '', rows: (item.detailRows || []).map(function(r) { return {l:r.l||'',v:r.v||''}; })});
+        detailItems.push({title: item.name || '', rows: (item.detailRows || []).map(function(r) { return {l:r.label||r.l||'',v:r.value||r.v||''}; })});
     });
 
     var overrideData = { title: sectionTitle, tableItems: tableItems, detailItems: detailItems };
@@ -1932,6 +2003,260 @@ function resetSiteSection(sectionId) {
     showStatus('"' + section.title + '" has been reset to default.', 'success');
     renderSiteContent();
 }
+
+// ============================================================
+// VALIDATION FUNCTIONS
+// ============================================================
+
+// Validate a single card item against its template schema
+function validateCardData(item, templateType) {
+    var errors = [];
+    if (!item || typeof item !== 'object') return { valid: false, errors: ['Item is null or not an object'] };
+
+    var schema = SCHEMAS[templateType];
+    if (!schema) return { valid: false, errors: ['Unknown template type: ' + templateType] };
+
+    var knownKeys = schema.itemKeys || [];
+    var entryKeys = schema.itemEntryKeys || [];
+    if (entryKeys.length) knownKeys = knownKeys.concat(entryKeys);
+    var rowKeys = schema.rowKeys || [];
+    if (rowKeys.length) knownKeys = knownKeys.concat(rowKeys);
+
+    // Check for missing required fields
+    if (templateType === 'category-grid' && !item.name) errors.push('Missing required field: name');
+    if (templateType === 'ranked-table' && !item.title) errors.push('Missing required field: title');
+    if (templateType === 'furniture-list' && !item.title) errors.push('Missing required field: title');
+    if (templateType === 'data-table' && !item.cols) errors.push('Missing required field: cols');
+    if (templateType === 'comparison' && !item.cols) errors.push('Missing required field: cols');
+    if (templateType === 'top10' && !item.title) errors.push('Missing required field: title');
+    if (templateType === 'detail-card' && !item.title) errors.push('Missing required field: title');
+
+    // Check items array if expected
+    if (entryKeys.length && item.items !== undefined) {
+        if (!Array.isArray(item.items)) {
+            errors.push('items should be an array');
+        } else if (item.items.length) {
+            item.items.forEach(function(entry, i) {
+                if (!entry || typeof entry !== 'object') {
+                    errors.push('items[' + i + '] is not an object');
+                    return;
+                }
+                if (entryKeys.indexOf('name') >= 0 && !entry.name) {
+                    errors.push('items[' + i + '] missing name');
+                }
+                if (entryKeys.indexOf('cost') >= 0 && !entry.cost) {
+                    errors.push('items[' + i + '] missing cost');
+                }
+            });
+        }
+    }
+
+    // Check rows if expected
+    if (rowKeys.length && item.rows !== undefined) {
+        if (!Array.isArray(item.rows)) {
+            errors.push('rows should be an array');
+        } else {
+            item.rows.forEach(function(row, i) {
+                if (!row || typeof row !== 'object') {
+                    errors.push('rows[' + i + '] is not an object');
+                    return;
+                }
+                rowKeys.forEach(function(k) {
+                    if (k === 'img' && !row.img && !row.image) {
+                        errors.push('rows[' + i + '] missing image');
+                    }
+                    if (k === 'cells' && (!row.cells || !Array.isArray(row.cells))) {
+                        errors.push('rows[' + i + '] cells is not an array');
+                    }
+                    if (k === 'label' && row.label === undefined && row.l === undefined) {
+                        errors.push('rows[' + i + '] missing label');
+                    }
+                    if (k === 'value' && row.value === undefined && row.v === undefined) {
+                        errors.push('rows[' + i + '] missing value');
+                    }
+                });
+            });
+        }
+    }
+
+    return { valid: errors.length === 0, errors: errors };
+}
+
+// Validate image paths in all data for consistent category-appropriate paths
+function validateImagePaths(allData) {
+    var issues = [];
+    if (!allData || typeof allData !== 'object') return { valid: false, issues: ['No data provided'] };
+
+    var validExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg', '.avif'];
+
+    function checkPath(path, context) {
+        if (!path) return;
+        if (path.indexOf('data:image/') === 0) {
+            // Base64 image - check it has valid data
+            if (path.length < 100) issues.push(context + ': Base64 image appears truncated (' + path.length + ' chars)');
+            return;
+        }
+        if (path.indexOf('assets/') !== 0) {
+            issues.push(context + ': Path does not start with assets/: ' + path);
+            return;
+        }
+        var ext = path.substring(path.lastIndexOf('.')).toLowerCase();
+        if (validExtensions.indexOf(ext) < 0) {
+            issues.push(context + ': Unknown file extension: ' + ext + ' in ' + path);
+        }
+    }
+
+    Object.keys(allData).forEach(function(type) {
+        var items = allData[type] || [];
+        items.forEach(function(item, idx) {
+            var prefix = type + '[' + idx + ']';
+            // Check cover image
+            if (item.cover) checkPath(item.cover, prefix + '.cover');
+            if (item.image) checkPath(item.image, prefix + '.image');
+            if (item.img) checkPath(item.img, prefix + '.img');
+            if (item.leftImage) checkPath(item.leftImage, prefix + '.leftImage');
+            if (item.rightImage) checkPath(item.rightImage, prefix + '.rightImage');
+
+            // Check items array
+            (item.items || []).forEach(function(entry, ei) {
+                if (entry.image) checkPath(entry.image, prefix + '.items[' + ei + '].image');
+                if (entry.img) checkPath(entry.img, prefix + '.items[' + ei + '].img');
+            });
+
+            // Check gallery/images
+            (item.gallery || []).forEach(function(g, gi) {
+                if (g.img) checkPath(g.img, prefix + '.gallery[' + gi + '].img');
+            });
+            (item.images || []).forEach(function(g, gi) {
+                if (g.img) checkPath(g.img, prefix + '.images[' + gi + '].img');
+            });
+
+            // Check rows image
+            (item.rows || []).forEach(function(row, ri) {
+                if (row.img) checkPath(row.img, prefix + '.rows[' + ri + '].img');
+                if (row.image) checkPath(row.image, prefix + '.rows[' + ri + '].image');
+            });
+        });
+    });
+
+    return { valid: issues.length === 0, issues: issues };
+}
+
+// Validate table structure (row order, column consistency)
+function validateTableStructure(items, templateType) {
+    var errors = [];
+    if (!items || !Array.isArray(items)) return { valid: false, errors: ['items must be an array'] };
+
+    items.forEach(function(item, idx) {
+        var prefix = '[' + idx + ']';
+
+        // Check cols string is consistent with rows
+        if (item.cols && item.rows) {
+            var colCount = item.cols.split(',').filter(Boolean).length;
+            item.rows.forEach(function(row, ri) {
+                var cells = row.cells || row;
+                if (Array.isArray(cells) && cells.length !== colCount) {
+                    errors.push(prefix + '.rows[' + ri + '] has ' + cells.length + ' cells, expected ' + colCount);
+                }
+                if (Array.isArray(cells) && cells.length > 3 && cells[2] && cells[5] !== undefined) {
+                    // Check row order: pros (index 5) should come before cons (index 6)
+                    // This is a 7+ column table with pros/cons/bestuse
+                    if (cells[5] && cells[6] && cells[7] !== undefined) {
+                        var prosIdx = -1, consIdx = -1, bestIdx = -1;
+                        var colLabels = item.cols.split(',').map(function(c) { return c.trim().toLowerCase(); });
+                        colLabels.forEach(function(cl, ci) {
+                            if (cl.indexOf('pros') >= 0 || cl.indexOf('pro') >= 0) prosIdx = ci;
+                            if (cl.indexOf('cons') >= 0 || cl.indexOf('con') >= 0) consIdx = ci;
+                            if (cl.indexOf('best') >= 0 || cl.indexOf('use') >= 0) bestIdx = ci;
+                        });
+                        if (prosIdx >= 0 && consIdx >= 0 && bestIdx >= 0) {
+                            if (prosIdx > consIdx) errors.push(prefix + ': Pros column (' + prosIdx + ') must come before Cons column (' + consIdx + ')');
+                            if (consIdx > bestIdx) errors.push(prefix + ': Cons column (' + consIdx + ') must come before Best Use column (' + bestIdx + ')');
+                            if (prosIdx > bestIdx) errors.push(prefix + ': Pros must come before Best Use');
+                        }
+                    }
+                }
+            });
+        }
+
+        // Check items array row order (pros before cons before best)
+        if (item.items && Array.isArray(item.items)) {
+            item.items.forEach(function(row, ri) {
+                if (row.pros === undefined && row.cons === undefined && row.best === undefined && row.bestuse === undefined) {
+                    return; // Not a pros/cons table row
+                }
+                // Check that fields use canonical names
+                if (row.thk !== undefined && row.thick === undefined) {
+                    errors.push(prefix + '.items[' + ri + '] uses legacy "thk" instead of "thick"');
+                }
+                if (row.bestuse !== undefined && row.best === undefined) {
+                    errors.push(prefix + '.items[' + ri + '] uses legacy "bestuse" instead of "best"');
+                }
+                // Check best/bestuse order (just warn if before pros/cons)
+                // The actual rendering order is determined by the renderer, not the field position
+            });
+        }
+
+        // Check gallery/images key consistency
+        if (item.images !== undefined && item.items === undefined) {
+            errors.push(prefix + ' uses legacy "images" key instead of "items"');
+        }
+
+        // Check props use {label,value} instead of {l,v}
+        if (item.props && Array.isArray(item.props)) {
+            item.props.forEach(function(p, pi) {
+                if (p.l !== undefined && p.label === undefined) {
+                    errors.push(prefix + '.props[' + pi + '] uses legacy "l" instead of "label"');
+                }
+                if (p.v !== undefined && p.value === undefined) {
+                    errors.push(prefix + '.props[' + pi + '] uses legacy "v" instead of "value"');
+                }
+            });
+        }
+    });
+
+    return { valid: errors.length === 0, errors: errors };
+}
+
+// Run validation across all stored data
+function runFullValidation() {
+    return runFullValidationOnData(getAllData());
+}
+
+// Run validation on a given data object
+function runFullValidationOnData(data) {
+    var report = { valid: true, cardErrors: [], tableErrors: [], imageIssues: [] };
+
+    Object.keys(data).forEach(function(type) {
+        var items = data[type] || [];
+        items.forEach(function(item, idx) {
+            var cardResult = validateCardData(item, type);
+            if (!cardResult.valid) {
+                report.valid = false;
+                report.cardErrors.push({ type: type, index: idx, errors: cardResult.errors });
+            }
+        });
+
+        var tableResult = validateTableStructure(items, type);
+        if (!tableResult.valid) {
+            report.valid = false;
+            report.tableErrors.push({ type: type, errors: tableResult.errors });
+        }
+    });
+
+    var imgResult = validateImagePaths(data);
+    if (!imgResult.valid) {
+        report.imageIssues = imgResult.issues;
+    }
+
+    return report;
+}
+
+// Expose validation functions globally
+window.validateCardData = validateCardData;
+window.validateImagePaths = validateImagePaths;
+window.validateTableStructure = validateTableStructure;
+window.runFullValidation = runFullValidation;
 
 // ============================================================
 // INIT
