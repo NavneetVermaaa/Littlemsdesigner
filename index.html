@@ -2012,18 +2012,31 @@
 
     #lmd-lb.on {
       display: flex;
+      animation: lbFadeIn 0.2s ease;
+    }
+    @keyframes lbFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     #lmd-lb img {
       width: auto;
       height: auto;
       max-width: 90vw;
-      max-height: 88vh;
+      max-height: 85vh;
       object-fit: contain;
       border-radius: 8px;
       box-shadow: 0 8px 60px rgba(0, 0, 0, .7);
       cursor: default;
       display: block;
+      image-rendering: auto;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: high-quality;
+      transform: scale(0.97);
+      transition: transform 0.2s ease;
+    }
+    #lmd-lb.on img {
+      transform: scale(1);
     }
 
     #lmd-lb-cap {
@@ -4384,7 +4397,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(0, 0, 0, 0.88);
+      background: rgba(0, 0, 0, 0.92);
       z-index: 99999;
       align-items: center;
       justify-content: center;
@@ -4397,19 +4410,22 @@
     .furniture-lb.active {
       display: flex;
       opacity: 1;
+      animation: lbFadeIn 0.2s ease;
     }
 
     #furnitureLbImg {
       width: auto !important;
       height: auto !important;
-      max-width: 92vw !important;
-      max-height: 92vh !important;
+      max-width: 90vw !important;
+      max-height: 85vh !important;
       object-fit: contain !important;
       border-radius: 6px;
       display: block;
-      transform: scale(0.92);
-      transition: transform 0.25s ease;
+      transform: scale(0.97);
+      transition: transform 0.2s ease;
       image-rendering: auto;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: high-quality;
     }
 
     .furniture-lb.active #furnitureLbImg {
@@ -4576,7 +4592,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(0, 0, 0, 0.88);
+      background: rgba(0, 0, 0, 0.92);
       z-index: 99999;
       align-items: center;
       justify-content: center;
@@ -4589,19 +4605,22 @@
     .kitchen-lb.active {
       display: flex;
       opacity: 1;
+      animation: lbFadeIn 0.2s ease;
     }
 
     #kitchenLbImg {
       width: auto !important;
       height: auto !important;
-      max-width: 92vw !important;
-      max-height: 92vh !important;
+      max-width: 90vw !important;
+      max-height: 85vh !important;
       object-fit: contain !important;
       border-radius: 6px;
       display: block;
-      transform: scale(0.92);
-      transition: transform 0.25s ease;
+      transform: scale(0.97);
+      transition: transform 0.2s ease;
       image-rendering: auto;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: high-quality;
     }
 
     .kitchen-lb.active #kitchenLbImg {
@@ -5070,18 +5089,22 @@
     .exp-look-new .exp-lb.active {
       display: flex;
       opacity: 1;
+      animation: lbFadeIn 0.2s ease;
     }
 
     #expNewLightboxImg {
       width: auto !important;
       height: auto !important;
-      max-width: 95vw !important;
-      max-height: 80vh !important;
+      max-width: 90vw !important;
+      max-height: 85vh !important;
       object-fit: contain !important;
       border-radius: 10px;
       display: block;
-      transform: scale(0.92);
-      transition: transform 0.25s ease;
+      transform: scale(0.97);
+      transition: transform 0.2s ease;
+      image-rendering: auto;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: high-quality;
     }
 
     .exp-look-new .exp-lb.active #expNewLightboxImg {
@@ -5090,8 +5113,8 @@
 
     @media (max-width: 768px) {
       #expNewLightboxImg {
-        max-width: 96vw !important;
-        max-height: 80vh !important;
+        max-width: 92vw !important;
+        max-height: 85vh !important;
       }
     }
 
@@ -5842,18 +5865,22 @@
     .top10-new .top10-lb.active {
       display: flex;
       opacity: 1;
+      animation: lbFadeIn 0.2s ease;
     }
 
     #top10LightboxImg {
       width: auto !important;
       height: auto !important;
-      max-width: 95vw !important;
-      max-height: 80vh !important;
+      max-width: 90vw !important;
+      max-height: 85vh !important;
       object-fit: contain !important;
       border-radius: 10px;
       display: block;
-      transform: scale(0.92);
-      transition: transform 0.25s ease;
+      transform: scale(0.97);
+      transition: transform 0.2s ease;
+      image-rendering: auto;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: high-quality;
     }
 
     .top10-new .top10-lb.active #top10LightboxImg {
@@ -5862,8 +5889,8 @@
 
     @media (max-width: 768px) {
       #top10LightboxImg {
-        max-width: 96vw !important;
-        max-height: 80vh !important;
+        max-width: 92vw !important;
+        max-height: 85vh !important;
       }
     }
 
@@ -5971,6 +5998,7 @@
 
     .color-combo-lightbox.active {
       display: flex;
+      animation: lbFadeIn 0.2s ease;
     }
 
     .color-combo-lightbox img {
@@ -5979,6 +6007,14 @@
       object-fit: contain;
       border-radius: 10px;
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      image-rendering: auto;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: high-quality;
+      transform: scale(0.97);
+      transition: transform 0.2s ease;
+    }
+    .color-combo-lightbox.active img {
+      transform: scale(1);
     }
 
     .color-combo-lightbox .color-combo-lb-close {
@@ -6183,6 +6219,7 @@
 
     .figma-lightbox.active {
       display: flex;
+      animation: lbFadeIn 0.2s ease;
     }
 
     .figma-lightbox img {
@@ -6191,6 +6228,14 @@
       object-fit: contain;
       border-radius: 10px;
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      image-rendering: auto;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: high-quality;
+      transform: scale(0.97);
+      transition: transform 0.2s ease;
+    }
+    .figma-lightbox.active img {
+      transform: scale(1);
     }
 
     .figma-lightbox .figma-lb-close {
@@ -6860,92 +6905,80 @@
 
       microcement: {
         title: 'Microcement', props: [
-          { l: 'Material & Composition', v: 'A cement-based decorative coating made from cement, fine aggregates, polymers, resins, and pigments. Modified with additives for flexibility, adhesion, and water resistance.' },
-          { l: 'Finish, Look & Variety', v: 'Seamless, modern finish ranging from matte to satin. Slight natural texture with subtle movement. Available in industrial, minimal, and contemporary looks. Can mimic concrete, stone, or smooth plaster finishes.' },
-          { l: 'Thickness & Form', v: 'Typically 2–4 mm overall thickness applied in multiple layers. Supplied as powder + liquid polymer mix system.' },
-          { l: 'Cost', v: '₹180 – ₹450 per sq.ft (including material & labour), depending on brand, finish, and application complexity.' },
-          { l: 'Installation Process', v: '1. Surface Prep: Clean, stable base (tiles, cement, gypsum, MDF possible)<br>2. Primer: Apply bonding primer for adhesion<br>3. Base Coat: Apply microcement base layer with trowel<br>4. Additional Coats: 2–3 thin layers with sanding between coats<br>5. Sealing: Apply protective sealer (PU/acrylic) for waterproofing and durability' },
-          { l: 'Durability & Maintenance', v: 'High durability. Interior lifespan: 10–15 years. Highly resistant to wear when sealed. Easy maintenance—clean with mild detergent; avoid abrasive scrubbing. Resealing may be required over time.' },
-          { l: 'Recommended Brands', v: 'Topciment, Ideal Work, Terraco, Asian Paints (SmartCare / Nilaya finishes), JSW Paints, and specialized microcement applicators.' },
-          { l: 'Pros', v: 'Seamless (no joints), modern aesthetic, highly versatile (walls, floors, bathrooms, furniture), waterproof when sealed, can be applied over existing surfaces, space-enhancing minimal look.' },
+          { l: 'Material & Composition', v: 'A decorative coating made from cement, fine aggregates, polymers, resins, and pigments. Modified with additives for flexibility and water resistance.' },
+          { l: 'Raw Material Cost', v: '₹180 – ₹450 per sq.ft (including material & labour), depending on brand, finish, and application complexity.' },
+          { l: 'Thickness', v: '2 – 4 mm thickness applied in multiple layers. Supplied as powder + liquid polymer mix system.' },
+          { l: 'Installation Process', v: 'Surface Prep → multiple thin coats with steel trowel → burnish → optional sealing/waxing' },
+          { l: 'Maintenance', v: 'High durability. 10–15 years. Highly resistant to wear when sealed. Easy maintenance—clean with mild detergent; avoid abrasive scrubbing. Resealing may be required over time.' },
+          { l: 'Pros', v: 'Seamless with no joints, highly versatile (walls, floors, bathrooms, furniture), waterproof when sealed, can be applied over existing surfaces.' },
           { l: 'Cons', v: 'Requires highly skilled application, risk of cracks if substrate moves, expensive compared to tiles/paint, repair can be tricky, proper sealing is critical.' },
-          { l: 'Best Use Areas', v: 'Bathrooms, kitchens, living rooms, feature walls, floors, staircases, furniture surfaces, modern and industrial interiors.' },
-          { l: 'Avoid Using In', v: 'Areas with major structural movement, poorly prepared substrates, or where budget is limited.' },
+          { l: 'Best Place To Use', v: 'Bathrooms, kitchens, living rooms, feature walls, floors, staircases, furniture surfaces, modern and industrial interiors.' },
+          { l: 'Recommended Brands', v: 'Colortale' },
         ]
       },
       limewash: {
         title: 'Limewash Finish', props: [
-          { l: 'Material & Composition', v: 'Natural mineral-based paint made from hydrated lime (calcium hydroxide), water, and natural pigments. Chalky, breathable finish.' },
-          { l: 'Finish, Look & Variety', v: 'Soft chalky matte finish with subtle brushstroke texture. Available in earth tones, whites, and custom colors. Creates organic, handcrafted aesthetic.' },
-          { l: 'Thickness & Form', v: '0.2–0.5 mm per coat (multi-layer application)' },
-          { l: 'Cost', v: '₹20 – ₹38 per sq.ft' },
+          { l: 'Material', v: 'Natural mineral-based paint made from hydrated lime (calcium hydroxide), water, and natural pigments. Chalky, breathable finish.' },
+          { l: 'Raw Material Cost', v: '₹20 – ₹38 / sq.ft' },
+          { l: 'Thickness', v: '0.2 – 0.5 mm per coat, built up in multiple layers. Supplied in liquid form in 5L, 10L, 20L buckets' },
           { l: 'Installation Process', v: 'Surface prep → dilute lime → apply 2–3 coats with brush → allow drying between coats' },
-          { l: 'Durability & Maintenance', v: 'Clean with dry/damp cloth; may need touch-ups over time. Breathable, allows moisture evaporation.' },
-          { l: 'Recommended Brands', v: 'Birla White, Limecraft, EcoAid, Natural Paint India' },
-          { l: 'Pros', v: 'Cost-effective, natural breathable, antibacterial, unique handcrafted look, eco-friendly' },
-          { l: 'Cons', v: 'Less durable in high-traffic areas, uneven if poorly applied, not water-resistant' },
-          { l: 'Best Use Areas', v: 'Living rooms, bedrooms, feature walls, boutique hotels, rustic interiors' },
-          { l: 'Avoid Using In', v: 'Bathrooms, kitchens, high-humidity areas, high-traffic zones' }
+          { l: 'Maintenance', v: 'Medium durability of 2–5 years. Requires occasional touch-ups and recoating over time. Clean with dry or damp cloth; avoid harsh chemicals.' },
+          { l: 'Pros', v: 'Cost-effective, natural finish, breathable walls, unique handcrafted aesthetic, antibacterial properties, soft earthy tones.' },
+          { l: 'Cons', v: 'Less durable in high-traffic areas, may appear uneven if poorly applied, limited colour range, slower application due to multiple coats, requires periodic maintenance.' },
+          { l: 'Best Place To Use', v: 'Living rooms, bedrooms, feature walls, boutique hotels, rustic interiors' },
+          { l: 'Recommended Brands', v: 'Limecoat, Vasari India' }
         ]
       },
       limeplaster: {
-        title: 'Lime Plaster Finish', props: [
-          { l: 'Material & Composition', v: 'Natural hydraulic lime putty mixed with sand and aggregates. Mineral-based traditional plaster.' },
-          { l: 'Finish, Look & Variety', v: 'Smooth to textured matte finish. Can be polished (tadelakt-style) or left natural. Warm, organic appearance.' },
-          { l: 'Thickness & Form', v: '2–5 mm (multi-layer)' },
-          { l: 'Cost', v: '₹80 – ₹250 per sq.ft' },
+        title: 'Lime Plaster', props: [
+          { l: 'Material', v: 'A natural wall finish made from slaked lime (lime putty), fine sand and water. It may include natural additives. Completely mineral-based and free from synthetic chemicals.' },
+          { l: 'Raw Material Cost', v: '₹80 – ₹250 per sq.ft depending on finish type, material quality, and applicator expertise.' },
+          { l: 'Thickness', v: '2 – 5 mm. Applied in multiple layers (base + finish coats). Supplied as paste or dry mix.' },
           { l: 'Installation Process', v: 'Surface prep → base coat → second coat → smoothing/burnishing → curing' },
-          { l: 'Durability & Maintenance', v: 'High durability; low maintenance; occasional cleaning and sealing' },
-          { l: 'Recommended Brands', v: 'Vasari India, Granotone, Pratta India, Limebase' },
-          { l: 'Pros', v: 'Highly durable, breathable, eco-friendly, premium aesthetic, regulates humidity' },
-          { l: 'Cons', v: 'Higher cost, needs skilled labour, longer application time' },
-          { l: 'Best Use Areas', v: 'Feature walls, living rooms, bedrooms, luxury interiors, villas' },
-          { l: 'Avoid Using In', v: 'Budget projects, areas requiring quick installation' }
+          { l: 'Maintenance', v: 'High durability: 8–15 years. Low maintenance; can be cleaned gently and may require occasional sealing in high-use areas.' },
+          { l: 'Pros', v: 'Highly durable<br>Breathable<br>Natural and eco-friendly<br>Versatile textures<br>Crack-resistant<br>Long lifespan' },
+          { l: 'Cons', v: 'Higher cost than lime wash<br>Requires skilled labour<br>Longer application time<br>Limited bright colour options<br>Surface cracks possible if improperly cured' },
+          { l: 'Best Place To Use', v: 'Feature walls, living rooms, bedrooms, luxury residences, boutique hotels, villas, Mediterranean and wabi-sabi interiors.' },
+          { l: 'Recommended Brands', v: 'Limecoat, Vasari India and Colortale' }
         ]
       },
       venetian: {
-        title: 'Venetian Plaster Finish', props: [
-          { l: 'Material & Composition', v: 'Made from slaked lime (calcium hydroxide), fine marble dust, and natural pigments.' },
-          { l: 'Finish, Look & Variety', v: 'Smooth glossy or satin surface, marble-like appearance. Deep, rich luminosity with subtle variations.' },
-          { l: 'Thickness & Form', v: '1–3 mm (multi-layer)' },
-          { l: 'Cost', v: '₹250 – ₹800+ per sq.ft' },
+        title: 'Venetian Plaster', props: [
+          { l: 'Material', v: 'A premium decorative plaster made from slaked lime (lime putty) with very fine marble dust and natural pigments. Mineral-based with a polished stone-like finish.' },
+          { l: 'Raw Material Cost', v: '₹250 – ₹800/ sq.ft, depending on finish complexity, brand, and applicator expertise' },
+          { l: 'Thickness', v: '1 – 3 mm overall thickness applied in multiple thin layers.' },
           { l: 'Installation Process', v: 'Base → multiple thin coats with steel trowel → burnish → optional sealing/waxing' },
-          { l: 'Durability & Maintenance', v: 'Wipe with damp cloth; avoid harsh chemicals; occasional waxing for longevity' },
-          { l: 'Recommended Brands', v: 'Vasari India, Granotone, Pratta India, San Marco' },
-          { l: 'Pros', v: 'Luxurious marble-like finish, seamless surface, highly durable, breathable, premium appearance' },
-          { l: 'Cons', v: 'Expensive, requires skilled labour, time-intensive, difficult to repair' },
-          { l: 'Best Use Areas', v: 'Feature walls, living rooms, master bedrooms, luxury homes, hotel lobbies' },
-          { l: 'Avoid Using In', v: 'Budget projects, high-moisture areas without proper sealing' }
+          { l: 'Maintenance', v: 'High durability when sealed. Interior lifespan: 10–15+ years. Low maintenance; wipe with soft damp cloth. Avoid harsh chemicals. Periodic waxing may be required to maintain sheen.' },
+          { l: 'Pros', v: 'Luxurious marble-like finish<br>Seamless surface<br>Highly durable<br>Breathable<br>Wide range of finishes like gloss, satin' },
+          { l: 'Cons', v: 'Expensive<br>Requires highly skilled labour<br>Time-intensive application<br>Difficult to repair seamlessly<br>Surface imperfections highly visible if base is not perfect' },
+          { l: 'Best Place To Use', v: 'Feature walls, living rooms, master bedrooms, luxury residences, hotel lobbies, reception areas, high-end retail spaces.' },
+          { l: 'Recommended Brands', v: 'Vasari India' }
         ]
       },
       clay: {
         title: 'Clay Cladding Finish', props: [
-          { l: 'Material & Composition', v: 'Natural clay, kiln-fired into tiles, panels, or bricks. Earth-based mineral cladding system.' },
-          { l: 'Finish, Look & Variety', v: 'Earthy matte textured finish with warm tones. Available in various textures from smooth to rugged.' },
-          { l: 'Thickness & Form', v: '10–25 mm (depending on system)' },
-          { l: 'Cost', v: '₹150 – ₹500+ per sq.ft' },
-          { l: 'Installation Process', v: 'Base → metal framework → fix panels using clips or adhesive' },
-          { l: 'Durability & Maintenance', v: 'Low maintenance; occasional water cleaning; weather-resistant' },
-          { l: 'Recommended Brands', v: 'MCM Flexi, Articlad, Terraum, Clayterra' },
-          { l: 'Pros', v: 'Natural material, highly durable, weather-resistant, breathable, excellent insulation' },
-          { l: 'Cons', v: 'Higher cost, heavy material, requires proper installation, limited colour options' },
-          { l: 'Best Use Areas', v: 'Building facades, exterior walls, balconies, feature walls, villas' },
-          { l: 'Avoid Using In', v: 'Interior areas (unless design intent), areas with limited structural support' }
+          { l: 'Material & Composition', v: 'Made from natural clay that is shaped and kiln-fired into panels, tiles, or bricks. May include terracotta, baked clay, or extruded clay elements. Completely natural and mineral-based.' },
+          { l: 'Raw Material Cost', v: '₹150 – ₹500 per sq.ft. depending on profile, brand, and installation system.' },
+          { l: 'Thickness', v: '10 – 25 mm thickness. Available as tiles, panels, hollow blocks, or baguette systems.' },
+          { l: 'Installation Process', v: 'Surface prep → substructure framing preparation → fixing (mechanical or adhesive) → alignment & joint leveling → finishing (grouting/edge detailing)' },
+          { l: 'Maintenance', v: 'Very high durability. 0–50 years. Resistant to weather, UV, and fading. Low maintenance; occasional cleaning with water recommended.' },
+          { l: 'Pros', v: 'Natural material, highly durable, weather-resistant, excellent thermal insulation, breathable, timeless aesthetic, ideal for façades and feature walls.' },
+          { l: 'Cons', v: 'Higher initial cost, requires proper installation system, heavier than paint/plaster finishes, limited colour palette (earth tones), skilled labour required.' },
+          { l: 'Best Place To Use', v: 'Building façades, exterior walls, balconies, feature walls, commercial buildings, villas, earthy modern interiors.' },
+          { l: 'Recommended Brands', v: 'MCM Flexi, and Articlad' }
         ]
       },
       metallic: {
         title: 'Liquid Metallic Ombre Finish', props: [
-          { l: 'Material & Composition', v: 'Metallic paints with mica pigments, combined with premium binders and reflective additives. Water-based or solvent-based formulas.' },
-          { l: 'Finish, Look & Variety', v: 'Luxurious gradient ombre effect with reflective sheen. Available in gold, silver, copper, bronze, and custom metallic shades. Creates depth and movement.' },
-          { l: 'Thickness & Form', v: '0.5–1 mm (thin layered coating)' },
-          { l: 'Cost', v: '₹180 – ₹500+ per sq.ft' },
-          { l: 'Installation Process', v: 'Base → base coat → metallic layers → blend tones → optional protective topcoat' },
-          { l: 'Durability & Maintenance', v: 'Clean with soft cloth; avoid abrasives; protective coating improves lifespan' },
-          { l: 'Recommended Brands', v: 'Asian Paints, Berger, Dulux, Jotun, Tikkurila' },
-          { l: 'Pros', v: 'High visual impact, luxurious metallic finish, customizable gradients, enhances lighting, modern aesthetic' },
-          { l: 'Cons', v: 'Requires skilled labour, expensive vs regular paint, difficult to repair, needs proper surface prep' },
-          { l: 'Best Use Areas', v: 'Feature walls, living rooms, dining areas, bedrooms, hotel lobbies, luxury retail' },
-          { l: 'Avoid Using In', v: 'High-humidity areas without proper sealing, budget projects, areas prone to scratches' }
+          { l: 'Material', v: 'Decorative coating made from water-based or solvent-based metallic paints containing metallic pigments, binders, and additives. Applied in layers to create gradient effects with reflective sheen.' },
+          { l: 'Raw Material Cost', v: '₹180 – ₹500+ per sq.ft (including material & labour), depending on brand, metallic quality, and application complexity.' },
+          { l: 'Thickness', v: 'Very thin coating of 0.5 – 1 mm overall across layer. Supplied as liquid paint system.' },
+          { l: 'Installation Process', v: 'Surface prep → base coat → metallic layer application → ombre blending → optional protective topcoat' },
+          { l: 'Maintenance', v: 'Medium durability. 5–8 years. Requires gentle cleaning with soft cloth; avoid abrasive cleaners. Protective coating improves longevity.' },
+          { l: 'Pros', v: 'High visual impact, luxurious metallic sheen, customizable designs, wide colour options, perfect for statement walls, enhances lighting reflection.' },
+          { l: 'Cons', v: 'Requires highly skilled application, expensive compared to regular paints, difficult to repair seamlessly, base surface imperfections highly visible, not suitable for rough use areas.' },
+          { l: 'Best Place To Use', v: 'Feature walls, living rooms, dining areas, bedrooms, hotel lobbies, reception areas, salons, luxury retail spaces.' },
+          { l: 'Recommended Brands', v: 'Colortale' }
         ]
       },
       /* [COMMENTED OUT - OLD exp-look detailData]
@@ -7081,24 +7114,24 @@
           'Wall Acoustic Fluted Panels||₹60 / sq.ft onwards||9 mm–24 mm||Home theatres, study rooms, bedrooms, conference & meeting rooms||Unidus Acoustics'
         ],
         detailItems: [
-          'Liquid Metallic Ombre||₹800–₹2500 / sq ft<br>Metallic epoxy base paint + metallic pigments||0.5–1 mm thin liquid coats epoxy layers, build up by multiple thin layers||Prep surface → primer → base colour → metallic layers → seal with clear coat → level & cure.||Wipe with a soft, damp microfiber, avoid abrasive cleaners.||• High visual impact & custom gradient effects with ultra-modern look.<br>• Seamless, continuous finish with minimal joints.||• Skilled application needed for smooth blends & avoiding streaks.<br>• Can show imperfections if surface not prepped perfectly.||Feature walls, entry foyers, dining accent walls, bars, powder rooms||Colortale',
-          'Microcement||As premium finish ₹200–₹500 / sq ft||2–3 mm total on walls/floors||Clean & prep → primer → base coats (2–3 coats) → top finish coats → sealing.||Mop with neutral pH cleaner; avoid harsh chemicals.||• Seamless & waterproof finish with minimal look.<br>• Ultra-thin so no change to floor/door levels.||• Must be applied by experienced skills for good adhesion.<br>• Can show cracks/chips if substrate moves.||Floors, walls, bathrooms, furniture||Colortale',
-          'Alabaster Lights||₹12,000 – ₹40,000 / light fixture||5–20 mm solid alabaster stone or cast alabaster used in fixtures.||Electrical point planning → ceiling hook / mounting plate → fixture installation → LED integration & testing||Dust regularly and wipe gently with a dry or slightly damp cloth; avoid harsh cleaners.||• Creates a soft, warm glow and works as a strong visual centerpiece.<br>• Pairs beautifully with modern interiors.||• Premium pricing.<br>• Requires careful handling due to the stone\'s delicate nature.||Dining rooms, bedrooms, bedside lamps, luxury lounges||Visual of above:<br>Musa Design Lab',
-          'Artistic Acoustic Panels||₹7,000 – ₹14,000 / panel unit||20–50 mm||Mark panel layout → mount clips/framing → fix panels → seal gaps.||Vacuum or gentle fabric brushing dusting.||• Reduces echo & improves room acoustics.<br>• Visual design element.||• Higher cost than plain wall finishes.<br>• Needs correct placement for real acoustic impact.||Home offices, studios, media rooms, living rooms.||Unidus Acoustics',
-          'Textured Lime Plaster||Lime plaster material ₹40–₹120 / sq ft||8–15 mm typical multi-coat||Prep substrate → scratch coat → intermediary coat → final finish coat → curing.||Wipe lightly & avoid harsh solvents.||• Breathable, sustainable & timeless finish.<br>• Reduces mould risk & regulates humidity.||• Longer install & requires skilled plasterer.<br>• Slightly higher cost and time than gypsum plaster.||Feature walls, living rooms, hallway||Limocoat',
-          '3D Artwork||₹55,000 onwards.||4–5 inches||Artwork mounted on prepared wall using heavy-duty anchors & adhesives||Dust gently with a soft dry cloth; avoid water or harsh cleaners.||• Creates a one-of-a-kind luxury focal point that cannot be replicated.<br>• Fully customizable in design, size, texture, and colour.||• Longer install & requires skilled plasterer.<br>• Slightly higher cost and time than gypsum plaster.<br>• Requires professional installation.||Living room feature wall, bedroom statement wall, luxury hotel & reception areas||Godai Arts',
-          'Optical Fibre Fabric||Varies on request.||2–5 mm applied in multiple thin coats||Fabric stretched or panel-mounted over LED light source, with concealed wiring and power supply.<br>Executed with fabricator + electrician.||Gentle vacuuming and dry cloth cleaning keeps lighting components dust-free.||• Creates soft ambient lighting with a futuristic luxury feel.<br>• Highly custom and experiential material.||• High cost.<br>• Requires specialized installation expertise.||Feature walls in bedrooms, dining table tops||DreamLux (Italy)',
-          'Venetian Plaster||₹180 – ₹400 / sq.ft||2–5 mm applied in multiple thin coats||Wall leveling → primer → 2–3 plaster coats applied with steel trowel → burnishing → optional sealer.||Clean with a slightly damp cloth.<br>Avoid abrasive cleaners.||• Gives a luxury stone-like finish without joints.<br>• Durable, breathable, and visually rich.||• Requires skilled applicators for best results.<br>• Costlier than regular paint finishes.||Foyer & entry walls, dining room feature walls, master bedroom walls||Vasari India',
-          'Flexible MDF Curves||₹2,400 / sheet||4 mm, 6 mm, 8 mm, 12 mm||Fixed onto curved surface or framework using Marine Fevicol.<br>Clear silicone used at joints for flexibility and neat finish.||Wipe with a dry or lightly damp cloth, protect from moisture.||• Enables seamless curves impossible with regular MDF.<br>• Lightweight and ideal for contemporary designs.||• Needs precise surface preparation.<br>• Must be properly sealed to prevent moisture damage.||TV units & feature walls||Element Décor',
-          'Wall Acoustic Fluted Panels||₹60 / sq.ft onwards depending on acoustic core & finish||9 mm–24 mm thick||Panels fixed on wall or battens using adhesives/screws, with optional acoustic insulation backing.||Vacuum flutes periodically to avoid dust accumulation.||• Enhances sound absorption and speech clarity.<br>• Adds modern linear texture to interiors.||• Grooves require regular cleaning.<br>• Performance depends on correct backing and installation.||Home theatres, study rooms, bedrooms, conference & meeting rooms||Unidus Acoustics'
+          'Liquid Metallic Ombre||||₹800–₹2500 / sq ft<br>Metallic epoxy base paint + metallic pigments||0.5–1 mm thin liquid coats epoxy layers, build up by multiple thin layers||Prep surface → primer → base colour → metallic layers → seal with clear coat → level & cure.||Wipe with a soft, damp microfiber, avoid abrasive cleaners.||• High visual impact & custom gradient effects with ultra-modern look.<br>• Seamless, continuous finish with minimal joints.||• Skilled application needed for smooth blends & avoiding streaks.<br>• Can show imperfections if surface not prepped perfectly.||Feature walls, entry foyers, dining accent walls, bars, powder rooms||Colortale',
+          'Microcement||||As premium finish ₹200–₹500 / sq ft||2–3 mm total on walls/floors||Clean & prep → primer → base coats (2–3 coats) → top finish coats → sealing.||Mop with neutral pH cleaner; avoid harsh chemicals.||• Seamless & waterproof finish with minimal look.<br>• Ultra-thin so no change to floor/door levels.||• Must be applied by experienced skills for good adhesion.<br>• Can show cracks/chips if substrate moves.||Floors, walls, bathrooms, furniture||Colortale',
+          'Alabaster Lights||||₹12,000 – ₹40,000 / light fixture||5–20 mm solid alabaster stone or cast alabaster used in fixtures.||Electrical point planning → ceiling hook / mounting plate → fixture installation → LED integration & testing||Dust regularly and wipe gently with a dry or slightly damp cloth; avoid harsh cleaners.||• Creates a soft, warm glow and works as a strong visual centerpiece.<br>• Pairs beautifully with modern interiors.||• Premium pricing.<br>• Requires careful handling due to the stone\'s delicate nature.||Dining rooms, bedrooms, bedside lamps, luxury lounges||Visual of above:<br>Musa Design Lab',
+          'Artistic Acoustic Panels||||₹7,000 – ₹14,000 / panel unit||20–50 mm||Mark panel layout → mount clips/framing → fix panels → seal gaps.||Vacuum or gentle fabric brushing dusting.||• Reduces echo & improves room acoustics.<br>• Visual design element.||• Higher cost than plain wall finishes.<br>• Needs correct placement for real acoustic impact.||Home offices, studios, media rooms, living rooms.||Unidus Acoustics',
+          'Textured Lime Plaster||||Lime plaster material ₹40–₹120 / sq ft||8–15 mm typical multi-coat||Prep substrate → scratch coat → intermediary coat → final finish coat → curing.||Wipe lightly & avoid harsh solvents.||• Breathable, sustainable & timeless finish.<br>• Reduces mould risk & regulates humidity.||• Longer install & requires skilled plasterer.<br>• Slightly higher cost and time than gypsum plaster.||Feature walls, living rooms, hallway||Limocoat',
+          '3D Artwork||||₹55,000 onwards.||4–5 inches||Artwork mounted on prepared wall using heavy-duty anchors & adhesives||Dust gently with a soft dry cloth; avoid water or harsh cleaners.||• Creates a one-of-a-kind luxury focal point that cannot be replicated.<br>• Fully customizable in design, size, texture, and colour.||• Longer install & requires skilled plasterer.<br>• Slightly higher cost and time than gypsum plaster.<br>• Requires professional installation.||Living room feature wall, bedroom statement wall, luxury hotel & reception areas||Godai Arts',
+          'Optical Fibre Fabric||||Varies on request.||2–5 mm applied in multiple thin coats||Fabric stretched or panel-mounted over LED light source, with concealed wiring and power supply.<br>Executed with fabricator + electrician.||Gentle vacuuming and dry cloth cleaning keeps lighting components dust-free.||• Creates soft ambient lighting with a futuristic luxury feel.<br>• Highly custom and experiential material.||• High cost.<br>• Requires specialized installation expertise.||Feature walls in bedrooms, dining table tops||DreamLux (Italy)',
+          'Venetian Plaster||||₹180 – ₹400 / sq.ft||2–5 mm applied in multiple thin coats||Wall leveling → primer → 2–3 plaster coats applied with steel trowel → burnishing → optional sealer.||Clean with a slightly damp cloth.<br>Avoid abrasive cleaners.||• Gives a luxury stone-like finish without joints.<br>• Durable, breathable, and visually rich.||• Requires skilled applicators for best results.<br>• Costlier than regular paint finishes.||Foyer & entry walls, dining room feature walls, master bedroom walls||Vasari India',
+          'Flexible MDF Curves||||₹2,400 / sheet||4 mm, 6 mm, 8 mm, 12 mm||Fixed onto curved surface or framework using Marine Fevicol.<br>Clear silicone used at joints for flexibility and neat finish.||Wipe with a dry or lightly damp cloth, protect from moisture.||• Enables seamless curves impossible with regular MDF.<br>• Lightweight and ideal for contemporary designs.||• Needs precise surface preparation.<br>• Must be properly sealed to prevent moisture damage.||TV units & feature walls||Element Décor',
+          'Wall Acoustic Fluted Panels||Decorative fluted panels that improve acoustics while adding aesthetic look to walls.||₹60 / sq.ft onwards depending on acoustic core & finish||9 mm–24 mm thick||Panels fixed on wall or battens using adhesives/screws, with optional acoustic insulation backing.||Vacuum flutes periodically to avoid dust accumulation.||• Enhances sound absorption and speech clarity.<br>• Adds modern linear texture to interiors.||• Grooves require regular cleaning.<br>• Performance depends on correct backing and installation.||Home theatres, study rooms, bedrooms, conference & meeting rooms||Unidus Acoustics'
         ]
       },
       /* [COMMENTED OUT - OLD exp-look listData]
       'exp-look': {
         title: 'Materials That Look ₹50L+ But Cost Under ₹50K', items: [
-          'Textured Decorative & Venetian Plaster Paint|||₹80 / sq.ft onwards for textured coats; Venetian Plaster marble-look additives ~₹180 – ₹350 / sq.ft material-only.|||1–3 mm finished texture coat on prepared wall.|||Prep wall (repair/primer) → apply base coat → apply texture/Venetian layers → seal with protective finish.|||Wipe dust lightly; reseal every few years to preserve sheen.|||Creates luxurious depth and dimension like stone or polished plaster, elevating feature walls.Can be customized with color, sheen, and vein patterns to mimic high-end finishes.|||Requires skilled applicator for premium finish. DIY often looks uneven. Not ideal for high-moisture areas without proper sealing.|||Living room feature wall, bedroom accent wall, foyer, hotel lobbies. Living room feature walls, bedroom accent walls, hotel lobbies, luxury bathrooms, reception areas.|||Vasari India',
-          'Marble-Finish Tiles|||₹90 / sq.ft onwards for decent marble-look tiles.|||Typically 8–10 mm tile thickness.|||Lay tiles on pre-prepared screed with adhesive → grout joints → seal if matte finish.|||Mop with mild detergent; avoid harsh acids on polished surfaces.|||Realistic marble aesthetic at a fraction of stone cost and no upkeep of real stone. Durable for floors/walls and available in many vein styles.|||Can feel cold/echoey without rugs or soft materials. Grout lines still visible unless large format used.|||Living room floors, bathroom walls, kitchen backsplash.|||Kajaria, Somany, Nitco',
-          'Premium Finish Laminates|||₹200 / sq.ft onwards for high-finish decorative laminates|||0.8 mm – 1.5 mm based on quality.|||Laminate sheets are bonded to substrates (ply/MDF) with adhesive; edges banded for finish.|||Wipe with a soft damp cloth; avoid abrasive cleaners.|||Wide range of textures— stone, wood, gloss, matte. Durable, scratch-resistant surfaces with easy cleaning.|||Looks less rich than real wood or lacquer if viewed closely. Thin laminates can peel if bonded poorly or exposed to moisture.|||TV units, wardrobes, kitchen cabinets, accent panels.|||Royale Touche Luxury Laminates'
+          'Textured Decorative & Venetian Plaster Paint|||||₹80 / sq.ft onwards for textured coats; Venetian Plaster marble-look additives ~₹180 – ₹350 / sq.ft material-only.|||1–3 mm finished texture coat on prepared wall.|||Prep wall (repair/primer) → apply base coat → apply texture/Venetian layers → seal with protective finish.|||Wipe dust lightly; reseal every few years to preserve sheen.|||Creates luxurious depth and dimension like stone or polished plaster, elevating feature walls.Can be customized with color, sheen, and vein patterns to mimic high-end finishes.|||Requires skilled applicator for premium finish. DIY often looks uneven. Not ideal for high-moisture areas without proper sealing.|||Living room feature wall, bedroom accent wall, foyer, hotel lobbies. Living room feature walls, bedroom accent walls, hotel lobbies, luxury bathrooms, reception areas.|||Vasari India',
+          'Marble-Finish Tiles|||||₹90 / sq.ft onwards for decent marble-look tiles.|||Typically 8–10 mm tile thickness.|||Lay tiles on pre-prepared screed with adhesive → grout joints → seal if matte finish.|||Mop with mild detergent; avoid harsh acids on polished surfaces.|||Realistic marble aesthetic at a fraction of stone cost and no upkeep of real stone. Durable for floors/walls and available in many vein styles.|||Can feel cold/echoey without rugs or soft materials. Grout lines still visible unless large format used.|||Living room floors, bathroom walls, kitchen backsplash.|||Kajaria, Somany, Nitco',
+          'Premium Finish Laminates|||||₹200 / sq.ft onwards for high-finish decorative laminates|||0.8 mm – 1.5 mm based on quality.|||Laminate sheets are bonded to substrates (ply/MDF) with adhesive; edges banded for finish.|||Wipe with a soft damp cloth; avoid abrasive cleaners.|||Wide range of textures— stone, wood, gloss, matte. Durable, scratch-resistant surfaces with easy cleaning.|||Looks less rich than real wood or lacquer if viewed closely. Thin laminates can peel if bonded poorly or exposed to moisture.|||TV units, wardrobes, kitchen cabinets, accent panels.|||Royale Touche Luxury Laminates'
         ]
       },
       */
@@ -9353,161 +9386,161 @@
           {
             title: 'Carrara Marble',
             rows: [
-              { label: 'Material', value: 'Popular Italian marble with a light grey or white background and soft grey veining, widely used in contemporary interiors.' },
+              { label: 'Material', value: 'Light grey or white background with soft grey veining' },
               { label: 'Types', value: 'Bianco Carrara, Carrara Venato' },
               { label: 'Sizes', value: 'Slabs 8\u201310 ft length, 4\u20136 ft width' },
-              { label: 'Thk (mm)', value: '16\u201318 mm (standard), 18\u201320 mm (premium slabs)' },
-              { label: 'Slab Cost (sq.ft)', value: '\u20b9500 \u2013 \u20b91,500' },
-              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' },
-              { label: 'Best Places to Use', value: 'Flooring, wall panels, bathrooms, countertops' },
+              { label: 'Thk (mm)', value: '16\u201318\u201320' },
+              { label: 'Slab Cost (sq.ft)', value: '\u20b9500 \u2013 \u20b91500' },
+              { label: 'Installation Method', value: 'Cement bedding or stone adhesive' },
+              { label: 'Maintenance', value: 'Sealing recommended' },
               { label: '\u2713 Pros', value: 'Elegant look, relatively affordable for Italian marble', cls: 'pros' },
               { label: '\u2715 Cons', value: 'Can stain easily', cls: 'cons' },
-              { label: 'Installation Method', value: 'Cement bedding or stone adhesive' },
-              { label: 'Maintenance', value: 'Sealing recommended' }
+              { label: 'Best Places to Use', value: 'Flooring, wall panels, bathrooms, countertops' },
+              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' }
             ]
           },
           {
             title: 'Calacatta Marble',
             rows: [
-              { label: 'Material', value: 'Luxurious Italian marble featuring a white base with dramatic thick gold or grey veining.' },
+              { label: 'Material', value: 'Luxurious Italian marble with a white base and dramatic thick gold or grey veining.' },
               { label: 'Types', value: 'Calacatta Gold, Calacatta Borghini, Calacatta Oro' },
-              { label: 'Sizes', value: 'Large random slabs 8\u201310 ft length' },
-              { label: 'Thk (mm)', value: '18\u201320 mm' },
-              { label: 'Slab Cost (sq.ft)', value: '\u20b92,000 \u2013 \u20b96,000' },
-              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' },
-              { label: 'Best Places to Use', value: 'Luxury flooring, statement walls, countertops' },
-              { label: '\u2713 Pros', value: 'Highly luxurious aesthetic, Bold dramatic veining', cls: 'pros' },
-              { label: '\u2715 Cons', value: 'Very expensive, Porous', cls: 'cons' },
+              { label: 'Sizes', value: '8\u201310 ft length' },
+              { label: 'Thk (mm)', value: '18mm \u2013 20mm' },
+              { label: 'Slab Cost (sq.ft)', value: '\u20b92000 \u2013 \u20b95000' },
               { label: 'Installation Method', value: 'Installed using marble adhesive' },
-              { label: 'Maintenance', value: 'Requires sealing' }
+              { label: 'Maintenance', value: 'Requires sealing' },
+              { label: '\u2713 Pros', value: 'Highly luxurious aesthetic, bold dramatic veining', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Very expensive, porous', cls: 'cons' },
+              { label: 'Best Places to Use', value: 'Luxury flooring, statement walls, countertops' },
+              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' }
             ]
           },
           {
             title: 'Statuario Marble',
             rows: [
-              { label: 'Material', value: 'Premium Italian marble known for its bright white background with bold grey veins.' },
+              { label: 'Material', value: 'Bright white background with bold grey veins.' },
               { label: 'Types', value: 'Statuario Classic, Statuario Extra, Statuario Venato' },
-              { label: 'Sizes', value: '8\u201310 ft length Slabs' },
-              { label: 'Thk (mm)', value: '16\u201318 mm, 18\u201320 mm premium slabs' },
-              { label: 'Slab Cost (sq.ft)', value: '\u20b91,500 \u2013 \u20b95,000' },
-              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' },
-              { label: 'Best Places to Use', value: 'Luxury flooring, wall cladding, bathrooms, tabletops' },
+              { label: 'Sizes', value: '8\u201310 ft length' },
+              { label: 'Thk (mm)', value: '16\u201318\u201320' },
+              { label: 'Slab Cost (sq.ft)', value: '\u20b91500 \u2013 \u20b95000' },
+              { label: 'Installation Method', value: 'Installed using cement mortar or stone adhesive' },
+              { label: 'Maintenance', value: 'Requires sealing' },
               { label: '\u2713 Pros', value: 'Premium appearance, elegant veining', cls: 'pros' },
               { label: '\u2715 Cons', value: 'Expensive, porous', cls: 'cons' },
-              { label: 'Installation Method', value: 'Installed using cement mortar or stone adhesive' },
-              { label: 'Maintenance', value: 'Requires sealing' }
+              { label: 'Best Places to Use', value: 'Luxury flooring, wall cladding, bathrooms, tabletops' },
+              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' }
             ]
           },
           {
             title: 'Crema Marfil',
             rows: [
-              { label: 'Material', value: 'Beige marble with subtle veining, commonly used for elegant flooring and wall finishes.' },
+              { label: 'Material', value: 'Beige marble from Spain with subtle veining.' },
               { label: 'Types', value: 'Crema Marfil Classic, Crema Marfil Select, Crema Marfil Coto' },
-              { label: 'Sizes', value: 'Random slabs (7\u20139 ft typical)' },
-              { label: 'Thk (mm)', value: '18\u201320 mm' },
-              { label: 'Slab Cost (sq.ft)', value: '\u20b9600 \u2013 \u20b91,500' },
-              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' },
-              { label: 'Best Places to Use', value: 'Flooring, staircases, wall panels' },
-              { label: '\u2713 Pros', value: 'Warm neutral tone, very versatile', cls: 'pros' },
-              { label: '\u2715 Cons', value: 'Porous stone', cls: 'cons' },
+              { label: 'Sizes', value: '7\u20139 ft' },
+              { label: 'Thk (mm)', value: '18\u201320' },
+              { label: 'Slab Cost (sq.ft)', value: '\u20b9600 \u2013 \u20b91500' },
               { label: 'Installation Method', value: 'Cement mortar bedding' },
-              { label: 'Maintenance', value: 'Requires sealing' }
+              { label: 'Maintenance', value: 'Requires sealing' },
+              { label: '\u2713 Pros', value: 'Warm neutral tone suitable for many interiors, Very versatile', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Porous stone', cls: 'cons' },
+              { label: 'Best Places to Use', value: 'Flooring, staircases, wall panels' },
+              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' }
             ]
           },
           {
             title: 'Onyx Marble',
             rows: [
-              { label: 'Material', value: 'Translucent natural stone with dramatic patterns and vibrant colors, often backlit for decorative walls.' },
+              { label: 'Material', value: 'Translucent natural stone with dramatic patterns and vibrant colors.' },
               { label: 'Types', value: 'Honey Onyx, Green Onyx, White Onyx, Pink Onyx' },
-              { label: 'Sizes', value: 'Random slabs (6\u20139 ft typical)' },
-              { label: 'Thk (mm)', value: '16\u201320 mm' },
-              { label: 'Slab Cost (sq.ft)', value: '\u20b92,000 \u2013 \u20b97,000' },
-              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' },
-              { label: 'Best Places to Use', value: 'Feature walls, bar counters, luxury interiors' },
+              { label: 'Sizes', value: '6\u20139 ft' },
+              { label: 'Thk (mm)', value: '16\u201320' },
+              { label: 'Slab Cost (sq.ft)', value: '\u20b92000 \u2013 \u20b97000' },
+              { label: 'Installation Method', value: 'Special stone adhesive with back support' },
+              { label: 'Maintenance', value: 'Careful cleaning and sealing' },
               { label: '\u2713 Pros', value: 'Translucent, unique patterns', cls: 'pros' },
               { label: '\u2715 Cons', value: 'Fragile and expensive', cls: 'cons' },
-              { label: 'Installation Method', value: 'Special stone adhesive with back support' },
-              { label: 'Maintenance', value: 'Careful cleaning and sealing' }
+              { label: 'Best Places to Use', value: 'Feature walls, bar counters, luxury interiors' },
+              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' }
             ]
           },
           {
             title: 'Armani Brown Marble',
             rows: [
-              { label: 'Material', value: 'Luxurious dark brown marble known for its fine linear veins and elegant texture.' },
+              { label: 'Material', value: 'Dark brown marble with fine linear veins and elegant texture.' },
               { label: 'Types', value: 'Armani Brown Classic, Armani Grey, Armani Bronze' },
-              { label: 'Sizes', value: '8\u201310 ft length Slabs' },
-              { label: 'Thk (mm)', value: '16\u201320 mm' },
-              { label: 'Slab Cost (sq.ft)', value: '\u20b9700 \u2013 \u20b92,000' },
-              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' },
-              { label: 'Best Places to Use', value: 'Luxury flooring, wall cladding, bathroom walls, feature walls, countertops' },
+              { label: 'Sizes', value: '8\u201310 ft length' },
+              { label: 'Thk (mm)', value: '16\u201320' },
+              { label: 'Slab Cost (sq.ft)', value: '\u20b9700 \u2013 \u20b92000' },
+              { label: 'Installation Method', value: 'Installed with cement mortar or stone adhesive with proper leveling' },
+              { label: 'Maintenance', value: 'Periodic polishing and sealing recommended' },
               { label: '\u2713 Pros', value: 'Rich elegant colour, luxurious appearance, suitable for modern interiors', cls: 'pros' },
               { label: '\u2715 Cons', value: 'Requires sealing, darker colour may show dust', cls: 'cons' },
-              { label: 'Installation Method', value: 'Installed with cement mortar or stone adhesive with proper leveling' },
-              { label: 'Maintenance', value: 'Periodic polishing and sealing recommended' }
+              { label: 'Best Places to Use', value: 'Luxury flooring, wall cladding, bathrooms, feature walls' },
+              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' }
             ]
           },
           {
             title: 'White Portoro Marble',
             rows: [
-              { label: 'Material', value: 'Rare and luxurious Italian marble characterized by a deep black base with dramatic gold and white veins.' },
+              { label: 'Material', value: 'Characterized by a deep black base with dramatic gold and white veins.' },
               { label: 'Types', value: 'Portoro Gold, Portoro Black' },
-              { label: 'Sizes', value: 'Random slabs (6\u20138 ft typical)' },
-              { label: 'Thk (mm)', value: '18\u201320 mm' },
-              { label: 'Slab Cost (sq.ft)', value: '\u20b92,500 \u2013 \u20b98,000' },
-              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' },
-              { label: 'Best Places to Use', value: 'Feature walls, luxury bathrooms, decorative panels, tabletops' },
+              { label: 'Sizes', value: '6\u20138 ft' },
+              { label: 'Thk (mm)', value: '18\u201320' },
+              { label: 'Slab Cost (sq.ft)', value: '\u20b92500 \u2013 \u20b98000' },
+              { label: 'Installation Method', value: 'Installed using stone adhesive with skilled stone installation' },
+              { label: 'Maintenance', value: 'Regular sealing and careful cleaning recommended' },
               { label: '\u2713 Pros', value: 'Highly luxurious appearance, unique veining pattern', cls: 'pros' },
               { label: '\u2715 Cons', value: 'Very expensive, limited availability', cls: 'cons' },
-              { label: 'Installation Method', value: 'Installed using stone adhesive with skilled stone installation' },
-              { label: 'Maintenance', value: 'Regular sealing and careful cleaning recommended' }
+              { label: 'Best Places to Use', value: 'Feature walls, luxury bathrooms, decorative panels' },
+              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' }
             ]
           },
           {
             title: 'Michelangelo Marble',
             rows: [
-              { label: 'Material', value: 'Premium Italian marble featuring a soft white background with elegant grey and beige veining.' },
+              { label: 'Material', value: 'Soft white background with elegant grey and beige veining' },
               { label: 'Types', value: 'Michelangelo White, Michelangelo Grey' },
-              { label: 'Sizes', value: '8\u201310 ft length Slabs' },
-              { label: 'Thk (mm)', value: '18\u201320 mm' },
-              { label: 'Slab Cost (sq.ft)', value: '\u20b9900 \u2013 \u20b92,500' },
-              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' },
-              { label: 'Best Places to Use', value: 'Luxury flooring, wall cladding, bathrooms, countertops, decorative wall panels' },
+              { label: 'Sizes', value: '8\u201310 ft length' },
+              { label: 'Thk (mm)', value: '18\u201320' },
+              { label: 'Slab Cost (sq.ft)', value: '\u20b9900 \u2013 \u20b92500' },
+              { label: 'Installation Method', value: 'Installed using cement mortar bedding or stone adhesive by skilled marble installers' },
+              { label: 'Maintenance', value: 'Periodic sealing and polishing recommended' },
               { label: '\u2713 Pros', value: 'Elegant veining, premium aesthetic, versatile for modern and classic interiors', cls: 'pros' },
               { label: '\u2715 Cons', value: 'Porous material, requires sealing', cls: 'cons' },
-              { label: 'Installation Method', value: 'Installed using cement mortar bedding or stone adhesive by skilled marble installers' },
-              { label: 'Maintenance', value: 'Periodic sealing and polishing recommended' }
+              { label: 'Best Places to Use', value: 'Luxury flooring, wall cladding, bathrooms, countertops, decorative wall panels' },
+              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' }
             ]
           },
           {
             title: 'Bianco Lasa Marble',
             rows: [
-              { label: 'Material', value: 'High-quality Italian marble known for its bright white background with fine grey veining.' },
+              { label: 'Material', value: 'Bright white appearance, with fine grey veining' },
               { label: 'Types', value: 'Bianco Lasa Classic, Bianco Lasa Venato' },
-              { label: 'Sizes', value: 'Random slabs (7\u20139 ft typical)' },
-              { label: 'Thk (mm)', value: '16\u201320 mm' },
-              { label: 'Slab Cost (sq.ft)', value: '\u20b91,500 \u2013 \u20b94,000' },
-              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' },
-              { label: 'Best Places to Use', value: 'Premium flooring, wall cladding, bathrooms, luxury feature walls' },
+              { label: 'Sizes', value: '7\u20139 ft' },
+              { label: 'Thk (mm)', value: '16\u201320' },
+              { label: 'Slab Cost (sq.ft)', value: '\u20b91500 \u2013 \u20b94000' },
+              { label: 'Installation Method', value: 'Installed with cement mortar or marble adhesive with professional stone fixing' },
+              { label: 'Maintenance', value: 'Sealing and periodic polishing required to maintain shine' },
               { label: '\u2713 Pros', value: 'Bright white appearance, elegant and timeless design', cls: 'pros' },
               { label: '\u2715 Cons', value: 'Expensive and requires regular maintenance', cls: 'cons' },
-              { label: 'Installation Method', value: 'Installed with cement mortar or marble adhesive with professional stone fixing' },
-              { label: 'Maintenance', value: 'Sealing and periodic polishing required to maintain shine' }
+              { label: 'Best Places to Use', value: 'Premium flooring, wall cladding, bathrooms, luxury feature walls' },
+              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' }
             ]
           },
           {
             title: 'Travertine Marble',
             rows: [
-              { label: 'Material', value: 'Natural limestone formed by mineral deposits from hot springs, known for its warm earthy tones and naturally occurring holes and linear patterns.' },
+              { label: 'Material', value: 'Natural limestone in warm earthy tones with naturally occurring holes and linear patterns.' },
               { label: 'Types', value: 'Classic Travertine, Silver Travertine, Walnut Travertine, Ivory Travertine' },
-              { label: 'Sizes', value: 'Random slabs (approx. 7\u201310 ft length), Tiles 2\u00d72 ft, 2\u00d74 ft also available' },
-              { label: 'Thk (mm)', value: '16\u201320 mm (flooring), 12\u201316 mm (wall cladding)' },
+              { label: 'Sizes', value: '7\u201310 ft length' },
+              { label: 'Thk (mm)', value: '15 \u2013 20 mm (flooring), 12 \u2013 16 mm (wall cladding)' },
               { label: 'Slab Cost (sq.ft)', value: '\u20b9250 \u2013 \u20b9800' },
-              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' },
-              { label: 'Best Places to Use', value: 'Living room flooring, bathroom walls, outdoor flooring and patios, staircases' },
-              { label: '\u2713 Pros', value: 'Elegant natural texture, unique patterns, cool temperature, durable', cls: 'pros' },
-              { label: '\u2715 Cons', value: 'Porous material, natural holes may require filling, can stain, softer', cls: 'cons' },
               { label: 'Installation Method', value: 'Installed using cement mortar or stone adhesive on a prepared base' },
-              { label: 'Maintenance', value: 'Seal the stone. Clean with mild pH-neutral stone cleaner. Avoid acidic cleaners.' }
+              { label: 'Maintenance', value: 'Seal the stone. Clean with mild pH-neutral stone cleaner. Avoid acidic cleaners.' },
+              { label: '\u2713 Pros', value: 'Elegant natural texture, unique patterns, Cool Temperature, Durable', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Porous material, Natural holes may require filling, Can stain, Softer', cls: 'cons' },
+              { label: 'Best Places to Use', value: 'Living room flooring, Bathroom walls, Outdoor flooring and patios, Staircases' },
+              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' }
             ]
           }
         ]
@@ -9852,12 +9885,12 @@
 
     const MATERIAL_SPEC_IDS = ['limewash', 'limeplaster', 'venetian', 'microcement', 'clay', 'metallic'];
     const MATERIAL_COVER_SRC = {
-      limewash: 'assets/1.Cover Images/16. Limewash.jpg',
-      limeplaster: 'assets/1.Cover Images/17. Lime Plaster.jpg',
-      venetian: 'assets/1.Cover Images/18. Venetian Plaster.jpg',
-      microcement: 'assets/1.Cover Images/19. Micro Concrete.jpg',
-      clay: 'assets/1.Cover Images/20. Clay Cladding.jpg',
-      metallic: 'assets/1.Cover Images/21.Liquid Mettalic Ombres.jpg'
+      limewash: 'assets/17.Natural Materials/Limewash.jpg',
+      limeplaster: 'assets/17.Natural Materials/Lime Plaster.jpg',
+      venetian: 'assets/17.Natural Materials/Venetian Plaster.jpg',
+      microcement: 'assets/17.Natural Materials/Microcement.jpg',
+      clay: 'assets/17.Natural Materials/Clay cadding.jpg',
+      metallic: 'assets/17.Natural Materials/Liquid Metallic Ombres.jpg'
     };
     const MATERIAL_COVER_LABELS = {
       limewash: 'Lime Wash',
@@ -10434,7 +10467,7 @@
         </div>
         ${imgRow(id)}
         <div class="${tableWrapClass}"><table class="${tableClass}">
-          <thead><tr><th style="width:50px;font-size:9px">Photo</th>${d.cols.map(c => `<th>${c}</th>`).join('')}</tr></thead>
+          <thead><tr><th style="width:50px">Photo</th>${d.cols.map(c => `<th>${c}</th>`).join('')}</tr></thead>
           <tbody>${d.rows.map((r, ri) => `<tr>
             ${thumbTD(id, ri, r[2] || r[1] || '')}
             ${r.map((cell, i) => {
@@ -10540,7 +10573,7 @@
       </div>
       ${typeof tableId === 'string' ? '' : tableId}
       <div class="table-wrap" style="margin-bottom:28px"><table>
-        <thead><tr><th style="width:50px;font-size:9px">Photo</th>${tableD.cols.map(c => `<th>${c}</th>`).join('')}</tr></thead>
+        <thead><tr><th style="width:50px">Photo</th>${tableD.cols.map(c => `<th>${c}</th>`).join('')}</tr></thead>
         <tbody>${tableD.rows.map((r, ri) => `<tr>
           ${thumbTD(tableId, ri, r[2] || r[1] || '')}
           ${r.map((cell, i) => {
@@ -11076,6 +11109,10 @@
               </div>
               <div class="spec-rows">
                 <div class="spec-row">
+                  <div class="spec-label">Description</div>
+                  <div class="spec-value">Luxurious textured marble-like wall finish</div>
+                </div>
+                <div class="spec-row">
                   <div class="spec-label">Raw Material Cost</div>
                   <div class="spec-value">₹180 – ₹350 / sq.ft</div>
                 </div>
@@ -11122,6 +11159,10 @@
               </div>
               <div class="spec-rows">
                 <div class="spec-row">
+                  <div class="spec-label">Description</div>
+                  <div class="spec-value">Elegant marble-look durable floor tiles</div>
+                </div>
+                <div class="spec-row">
                   <div class="spec-label">Raw Material Cost</div>
                   <div class="spec-value">₹90 / sq.ft onwards</div>
                 </div>
@@ -11167,6 +11208,10 @@
                 <h2>Premium Laminate Finish</h2>
               </div>
               <div class="spec-rows">
+                <div class="spec-row">
+                  <div class="spec-label">Description</div>
+                  <div class="spec-value">Sleek, durable surface finish that enhances aesthetics, easy maintenance and long-lasting performance.</div>
+                </div>
                 <div class="spec-row">
                   <div class="spec-label">Raw Material Cost</div>
                   <div class="spec-value">₹200 / sq.ft onwards for high-finish decorative laminates</div>
@@ -11257,9 +11302,9 @@
         for (var di = 0; di < detailSrc.length; di++) {
           var dp = detailSrc[di].split('||');
           detailItems.push({
-            name: dp[0] || '', cost: dp[1] || '', thick: dp[2] || '',
-            install: dp[3] || '', maint: dp[4] || '', pros: dp[5] || '',
-            cons: dp[6] || '', bestuse: dp[7] || '', brands: dp[8] || '',
+            name: dp[0] || '', desc: dp[1] || '', cost: dp[2] || '', thick: dp[3] || '',
+            install: dp[4] || '', maint: dp[5] || '', pros: dp[6] || '',
+            cons: dp[7] || '', bestuse: dp[8] || '', brands: dp[9] || '',
             image: '', isAdmin: false
           });
         }
@@ -11275,7 +11320,7 @@
         'Optical Fibre Fabric': 'assets/3. Top 10 Materials/OPTICAL FIBRE FABRIC (LUMINOUS TEXTILE).jpg',
         'Venetian Plaster': 'assets/3. Top 10 Materials/VENETIAN PLASTER (POLISHED PLASTER FINISH).jpg',
         'Flexible MDF Curves': 'assets/3. Top 10 Materials/FLEXIBLE MDF CURVES.jpg',
-        'WALL ACCOUSTIC FLUTED PANELS': 'assets/3. Top 10 Materials/Sound Proof Wall Acoustic Fluted Panels.jpg'
+        'Wall Acoustic Fluted Panels': 'assets/3. Top 10 Materials/Sound Proof Wall Acoustic Fluted Panels.jpg'
       };
       function top10Img(name) { return top10ImgMap[name] || ''; }
 
@@ -11355,6 +11400,7 @@
         html += '<h2>' + ci.name + '</h2>';
         html += '</div>';
         html += '<div class="spec-rows">';
+        html += '<div class="spec-row"><div class="spec-label">Description</div><div class="spec-value">' + ci.desc + '</div></div>';
         html += '<div class="spec-row"><div class="spec-label">Raw Material Cost</div><div class="spec-value">' + ci.cost + '</div></div>';
         html += '<div class="spec-row"><div class="spec-label">Thickness Required</div><div class="spec-value">' + ci.thick + '</div></div>';
         html += '<div class="spec-row"><div class="spec-label">Installation Process</div><div class="spec-value">' + ci.install + '</div></div>';
