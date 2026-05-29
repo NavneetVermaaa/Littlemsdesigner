@@ -11,7 +11,8 @@
             var thick = i.thick || i.thk || '';
             var best = i.best || i.bestuse || '';
             var image = i.image || '';
-            return [i.name,i.cost,thick,i.install,i.maint,i.pros,i.cons,best,i.brands||'',image].join('||');
+            var desc = i.desc || i.description || '';
+            return [i.name,desc,i.cost,thick,i.install,i.maint,i.pros,i.cons,best,i.brands||'',image].join('||');
         })};
     }
 
