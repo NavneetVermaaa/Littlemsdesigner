@@ -168,6 +168,14 @@
     "cnt": "16 types"
   },
   {
+    "id": "laminates-finish",
+    "img": "assets/1.Cover Images/coming soon.jpg",
+    "name": "Laminates Finishes",
+    "desc": "Solid color, wood grain, marble, metallic, digital printed laminates \u2013 full specs",
+    "tag": "carpentry",
+    "cnt": "8 types"
+  },
+  {
     "id": "veneer",
     "img": "assets/1.Cover Images/33.Veneer.jpg",
     "name": "Veneer",
@@ -230,14 +238,6 @@
     "desc": "Hinges, channels, handles and more",
     "tag": "carpentry",
     "cnt": "Coming Soon"
-  },
-  {
-    "id": "laminates-finish",
-    "img": "assets/1.Cover Images/coming soon.jpg",
-    "name": "Laminates Finishes",
-    "desc": "Solid color, wood grain, marble, metallic, digital printed laminates \u2013 full specs",
-    "tag": "carpentry",
-    "cnt": "8 types"
   },
   {
     "id": "door",
