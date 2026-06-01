@@ -7048,18 +7048,18 @@
         title: 'Comparison: Laminate vs Veneer',
         cols: ['Category', 'Laminate', 'Veneer'],
         rows: [
-          ['Material & Composition', 'Artificial surface made from kraft paper + resins', 'Thin slices of real wood or engineered wood applied on plywood/MDF'],
-          ['Types', 'HPL, PVC, LPL, Compact, Acrylic; solid colors, wood, stone, textured, metallic', 'Natural veneer, engineered veneer, teak, walnut, oak, smoked/dyed veneer'],
-          ['Look & Feel', 'Uniform patterns; matte, gloss, textured, anti-fingerprint', 'Natural grains, unique patterns; polished matte or gloss finish'],
-          ['Thickness & Sizes', '0.8–1 mm up to 12 mm; sizes: 8×4 ft, 10×4 ft', '0.5–1 mm; size: 8×4 ft (also flitches available)'],
-          ['Cost Range', '₹70 – ₹600+ / sq.ft', '₹80 – ₹800+ / sq.ft (higher for premium types like teak)'],
-          ['Installation & Time', 'Adhesive pasting; quick and easy installation', 'Adhesive + polishing (PU/melamine); slow, requires skilled labour'],
-          ['Durability & Resistance', 'Scratch-resistant, water-resistant (PVC/compact), high-use areas', 'Durable but moisture-sensitive; depends on polish & maintenance'],
-          ['Repairability', 'Cannot be repaired; lifespan 5–10 years', 'Can be sanded & repolished; lifespan 10–20+ years'],
-          ['Maintenance', 'Very low; easy cleaning', 'Moderate to high; requires polishing and careful use'],
-          ['Design Flexibility', 'Very high — wide variety of colors, textures, patterns, finishes', 'Limited to wood aesthetics but offers premium natural richness'],
-          ['Applications', 'Kitchens, wardrobes, furniture, offices, rentals', 'Wall panels, luxury furniture, doors, wardrobes, feature walls'],
-          ['Budget', 'Budget to mid-range', 'Mid to premium to luxury (depends on type)'],
+          ['Material', 'Artificial surface made from kraft paper + resins', 'Thin slice of natural wood applied on plywood and MDF'],
+          ['Types', 'Technical: HPL (regular), PVC, LPL, Compact, Acrylic\nDesign: Solid colors, wood, stone, textured, metallic, digital, cane', 'Technical: Natural veneer, Engineered (recon veneer)\nDesign: Teak, Walnut, Oak, Sucupira, Wenge, Burl'],
+          ['Finish', 'Uniform designs, repeat patterns; available in matte, gloss, textured, anti-fingerprint finishes', 'Natural grains, unique patterns; polish (matte, gloss)'],
+          ['Thickness & Sizes', '0.8–1 mm up to 12 mm\nSizes: 8×4 ft, 10×4 ft', '0.5–1 mm\nSizes: 8×4 ft'],
+          ['Cost Range', '₹70 – ₹600+ per sq ft', '₹120 – ₹1200+ per sq ft'],
+          ['Installation & Time', 'Adhesive pasting; quick and easy installation', 'Adhesive + polishing; slow and requires skilled labor'],
+          ['Durability & Resistance', 'Scratch-resistant, water-resistant, good for high-use areas', 'Durable but porous; sensitive to moisture, depends on polish'],
+          ['Repairability & Longevity', '❌ Cannot be repaired; replacement required if damaged\nLifespan: 5–10 years', '✅ Can be sanded & repolished multiple times\nLifespan: 10–20+ years'],
+          ['Maintenance', 'Very low; simple cleaning', 'High; requires polishing and careful use'],
+          ['Design Flexibility', 'Very high — wide variety of colors, textures, patterns, finishes', 'Limited to wood aesthetics but offers unmatched natural richness'],
+          ['Applications', 'Kitchens, wardrobes, furniture, offices, rentals', 'Wall panels, luxury furniture, doors, premium interiors'],
+          ['Budget', 'Budget to mid-range', 'Premium to luxury'],
         ]
       },
       'plywood-guide': {
@@ -10386,7 +10386,7 @@
             'CONCRETE FINISH': 'assets/13. TV Unit Finishes/Concrete Finish.png',
             'WALL MOULDING + PAINT': 'assets/13. TV Unit Finishes/Wall Moulding.jpg',
             '3D WALL PANELS (PVC / GYPSUM)': 'assets/13. TV Unit Finishes/3D Wall Panel.jpg',
-            'TILE CLADDING (VITRIFIED)': 'assets/13. TV Unit Finishes/Granite Finish.jpg',
+            'TILE CLADDING (VITRIFIED)': 'assets/13. TV Unit Finishes/Tile Cladding.jpg',
             'BACKLIT PANELS': 'assets/13. TV Unit Finishes/Backlit Panel.jpg',
             'STONE VENEER (FLEXIBLE STONE)': 'assets/13. TV Unit Finishes/Stone Veneer Finish.jpg'
           };
@@ -10559,7 +10559,7 @@
         ${imgRow(id)}
         <div class="table-wrap table-responsive custom-table"><table class="table custom-table-inner compare-table">
           <thead><tr>${d.cols.map(c => `<th>${c}</th>`).join('')}</tr></thead>
-          <tbody>${d.rows.map(r => `<tr>${r.map(c => `<td>${c}</td>`).join('')}</tr>`).join('')}</tbody>
+          <tbody>${d.rows.map(r => `<tr>${r.map(c => `<td>${c.replace(/\n/g, '<br>')}</td>`).join('')}</tr>`).join('')}</tbody>
         </table></div>`;
       } else {
         el.innerHTML = `<div class="no-results"><h3>Coming Soon</h3><p>This section is being updated.</p></div>`;
