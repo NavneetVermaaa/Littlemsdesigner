@@ -2014,9 +2014,15 @@
       display: flex;
       animation: lbFadeIn 0.2s ease;
     }
+
     @keyframes lbFadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
     }
 
     #lmd-lb img {
@@ -2035,6 +2041,7 @@
       transform: scale(0.97);
       transition: transform 0.2s ease;
     }
+
     #lmd-lb.on img {
       transform: scale(1);
     }
@@ -6007,6 +6014,7 @@
       transform: scale(0.97);
       transition: transform 0.2s ease;
     }
+
     .color-combo-lightbox.active img {
       transform: scale(1);
     }
@@ -6228,6 +6236,7 @@
       transform: scale(0.97);
       transition: transform 0.2s ease;
     }
+
     .figma-lightbox.active img {
       transform: scale(1);
     }
@@ -7063,21 +7072,21 @@
         ]
       },
       'plywood-guide': {
-        title: 'Plywood Selection Guide',
-        cols: ['Area / Application', 'Recommended Plywood'],
+        title: 'Recommended Plywood by Area',
+        cols: ['Area', 'Recommended Ply'],
         rows: [
-          ['Wardrobes', 'MR Plywood'],
-          ['TV Units', 'MR Plywood'],
-          ['Bed Frames', 'MR Plywood'],
-          ['Kitchen Carcass', 'BWR / BWP Plywood'],
-          ['Sink Unit', 'BWP / Marine Plywood'],
-          ['Bathroom Vanity', 'BWP / Marine Plywood'],
-          ['Curved Panels', 'Flexible Plywood'],
-          ['Commercial Interiors', 'Fire Retardant Plywood'],
+          ['Wardrobes', 'MR'],
+          ['TV Unit', 'MR'],
+          ['Bed', 'MR'],
+          ['Kitchen Carcass', 'BWR'],
+          ['Sink Unit', 'BWP'],
+          ['Bathroom Vanity', 'BWP'],
+          ['Curved Panels', 'Flexible Ply'],
+          ['Commercial Interiors', 'Fire Retardant'],
         ]
       },
       'plywood-materials': {
-        title: 'Board Materials for Furniture',
+        title: 'Best Material by Furniture Element',
         cols: ['Furniture Element', 'Best Material'],
         rows: [
           ['Wardrobe Carcass', 'MR / BWR Plywood'],
@@ -7087,7 +7096,7 @@
           ['Curved Panels', 'Flexible Plywood'],
           ['Long Shelves', 'Blockboard'],
           ['Painted Panels', 'MDF'],
-          ['Budget Modular', 'Particle Board'],
+          ['Budget Modular Furniture', 'Particle Board'],
         ]
       },
     };
@@ -7349,7 +7358,7 @@
         detailItems: [
           {
             title: 'Door Skins', rows: [
-              ['Raw Material Cost', '₹1,500–₹5,000/door'],
+              ['Raw Material Cost', '₹1,500–₹5,000/door skin'],
               ['Thickness Required', '1–2 mm'],
               ['Installation Process', 'Skin glued onto flush door using adhesive + roller pressing; edges trimmed and polished'],
               ['Maintenance', 'Wipe with damp microfiber cloth weekly'],
@@ -7360,18 +7369,18 @@
           },
           {
             title: 'Flute Panel Doors', rows: [
-              ['Raw Material Cost', '₹250–₹600 / sq.ft'],
-              ['Thickness Required', '12–18 mm MDF panel'],
-              ['Installation Process', 'Fluted sheets cut to size, glued/nailed on door, edges finished with beading'],
-              ['Maintenance', 'Dust with soft brush; clean grooves using vacuum brush'],
+              ['Raw Material Cost', '₹250–₹600 / sq.ft (MDF Fluting)'],
+              ['Thickness Required', '12–18 mm MDF panel over door'],
+              ['Installation Process', 'Fluted sheets cut to size, glued/nailed on door, edges finished with beading,then painted or polished'],
+              ['Maintenance', 'Dust with soft brush; clean grooves using vacuum brush attachment'],
               { label: '\u2713 Pros', value: 'Adds modern, textured look; works well for large statement doors', cls: 'pros' },
-              { label: '\u2715 Cons', value: 'Takes more time to clean grooves; paint can chip', cls: 'cons' },
+              { label: '\u2715 Cons', value: 'Takes more time to clean grooves; paint can chip if hit by heavy objects', cls: 'cons' },
               ['Best Places to Use', 'Main doors, bedroom doors, bathroom dry-area doors'],
             ]
           },
           {
             title: 'Veneer Doors', rows: [
-              ['Raw Material Cost', '₹100–₹350 / sq.ft'],
+              ['Raw Material Cost', '₹100–₹350 per sq ft (veneers); door cost varies'],
               ['Thickness Required', '0.5–1 mm veneer on 30–35 mm door'],
               ['Installation Process', 'Veneer sheet glued + pressed, sanded, finished with melamine/PU polish'],
               ['Maintenance', 'Wipe with dry cloth; avoid water spills'],
@@ -7393,12 +7402,12 @@
           },
           {
             title: 'Metal Doors (SS/Brass/MS)', rows: [
-              ['Raw Material Cost', '₹500–₹2,000 / sq.ft'],
-              ['Thickness Required', '1–2 mm metal sheet'],
+              ['Raw Material Cost', '₹500–₹2,000 per sq ft (SS, brass, MS sheets)'],
+              ['Thickness Required', '1–2 mm metal sheet over door panel'],
               ['Installation Process', 'Metal sheets CNC cut, stuck with high-strength adhesive, screwed at corners; powder coating done after'],
               ['Maintenance', 'Soft cloth + metal-safe cleaner; avoid harsh chemical polishes'],
               { label: '\u2713 Pros', value: 'Extremely strong, premium, and impactful; perfect for modern luxury interiors', cls: 'pros' },
-              { label: '\u2715 Cons', value: 'Expensive + heavy; fingerprints and scratches show easily', cls: 'cons' },
+              { label: '\u2715 Cons', value: 'Expensive + heavy; fingerprints and scratches show easily on some finishes', cls: 'cons' },
               ['Best Places to Use', 'Main entrance doors, statement doors, office doors'],
             ]
           },
@@ -7415,7 +7424,7 @@
           },
           {
             title: 'Glass Doors (Clear/Fluted/Tinted/Smoked)', rows: [
-              ['Raw Material Cost', '₹250–₹800 / sq.ft'],
+              ['Raw Material Cost', '₹250–₹800 / sq.ft (painting cost)'],
               ['Thickness Required', '8–12 mm toughened glass'],
               ['Installation Process', 'Glass toughened, polished, fitted in wooden/metal frame or installed frameless with floor spring + hardware'],
               ['Maintenance', 'Clean with glass cleaner; avoid watermarks'],
@@ -7886,11 +7895,11 @@
       },
       'wardrobe-must': {
         title: '5 Wardrobe Must-Have Internals', items: [
-          'Shoe Revolving Rack||₹4,000 – ₹15,000||Steel rods (12–16 mm dia) + 18 mm shelf boards||Fix top & bottom plates inside wardrobe, insert revolving pole and attach shelves; ensure smooth rotation||Wipe rods & shelves monthly; avoid water to prevent rust/stains||Maximizes vertical shoe space neatly; easy access & reduced clutter||Can be heavy if overloaded; takes up dedicated width in a compact wardrobe||Walk-in wardrobe, shoe zone near bedroom entrance',
-          'Hidden Watch Pull Down||₹3,000 – ₹9,000 / module||18–25 mm panel thickness||Fix guided slide/pull-down mechanism inside wardrobe, attach watch tray; ensure secure mounting||Dust tray and mechanism gently; avoid spilling liquids on watches||Keeps watches organized & protected; adds a premium, hidden feature||Limited capacity per module; mechanism needs precise fitting or may misalign||Walk-in wardrobe or bedroom wardrobe',
-          'Fingerprint Lock||₹1,500 – ₹6,000||Lock panel cutout 18–25 mm door thickness||Drill cutout in door, insert lock body; connect batteries & test multiple fingerprints||Wipe sensor area weekly; replace batteries as needed||Quick access with high security; no keys to lose or misplace||Needs battery changes; may misread if sensor gets dirty||Master bedroom wardrobe for valuables',
-          'Drawer Organisers||₹500 – ₹4,000 / set||Divider thickness 5–10 mm; fits existing drawer 18 mm sides||Place or slot inside drawers; customize sections as needed||Wipe weekly and remove dust||Keeps small items sorted & visible; budget-friendly wardrobe upgrade||Less effective if drawer sizes vary widely; plastic options may crack||All wardrobe drawers—clothes, accessories, socks, belts etc.',
-          'Seamless Handles||₹200 – ₹1,200 / linear ft||Groove depth 8–12 mm in panel; panel thickness 18 mm||Cut groove/recess in door, fix recessed profile; ensure smooth finger grip finish||Dust grooves weekly; wipe with dry cloth||Sleek, modern look with no protruding hardware; easy to clean & ergonomic||More installation precision needed; recessed grooves collect dust if not maintained||All wardrobe doors for a minimalist finish'
+          'Shoe Revolving Rack||₹4,000 – ₹15,000 depending on size & finish||Steel/rod diameter 12–16 mm; shelf board thickness 18 mm||Fix top & bottom plates inside wardrobe, insert revolving pole and attach shelves; ensure smooth rotation.||Wipe rods & shelves monthly and avoid water to prevent rust/stains.||• Maximizes vertical shoe space neatly.<br>• Easy access & reduced clutter.||• Can be heavy if overloaded with shoes.<br>• Takes up dedicated width in a compact wardrobe.||Walk-in wardrobe, shoe zone near bedroom entrance||Powder-coated steel / SS rods + laminated wood shelves',
+          'Hidden Watch Pull Down||₹3,000 – ₹9,000 per module||Panel thickness 18–25 mm||Fix guided slide/pull-down mechanism inside wardrobe, attach watch tray, ensure secure mounting.||Dust tray and mechanism gently; avoid spilling liquids on watches.||• Keeps watches organized & protected.<br>• Adds a premium, hidden feature.||• Limited capacity per module.<br>• Mechanism needs precise fitting or may misalign.||Walk-in wardrobe or bedroom wardrobe||Laminated wood or veneer + smooth pull mechanism',
+          'Fingerprint Lock||₹1,500 – ₹6,000 depending on brand & features||Lock panel cutout; 18–25 mm door thickness||Drill cutout in door, insert lock body, connect batteries and test multiple fingerprints.||Wipe sensor area weekly; replace batteries as needed.||• Quick access with high security.<br>• No keys to lose or misplace.||• Needs battery changes.<br>• May misread if sensor gets dirty.||Master bedroom wardrobe for valuables||Metal lock body, electronic sensor unit',
+          'Drawer Organisers||₹500 – ₹4,000 per set||Divider thickness 5–10 mm; fits existing drawer with 18 mm sides||Place or slot inside drawers; customize sections as needed.||Wipe weekly and remove dust.||• Keeps small items sorted and visible.<br>• Budget-friendly wardrobe upgrade.||• Less effective if drawer sizes vary widely.<br>• Plastic options may crack over time.||All wardrobe drawers, clothes, accessories, socks, belts, etc.||Plastic, acrylic, MDF dividers',
+          'Seamless Handles||₹200 – ₹1,200 per linear foot / handle type||Groove depth 8–12 mm in panel; panel thickness 18 mm||Cut groove/recess in door, fix recessed profile, ensure smooth finger grip finish.||Dust grooves weekly; wipe with dry cloth.||• Sleek, modern look with no protruding hardware.<br>• Easy to clean and ergonomic.||• More installation precision needed.<br>• Recessed grooves collect dust if not maintained.||All wardrobe doors for a minimalist finish||Aluminium/SS recessed pulls or groove channels'
         ]
       },
       tvunit: {
@@ -9765,7 +9774,7 @@
         items: [
           'Taupe + Beige',
           'Light Plum + White',
-           'White + Dark wood',
+          'White + Dark wood',
           'Lavender + White',
           'Greige + Black',
           'Pastel Blue + Gold Fittings',
@@ -10267,7 +10276,7 @@
         return;
       }
 
-      if (id === 'glass' || id === 'laminates' || id === 'veneer' || id === 'plywood') {
+      if (id === 'glass' || id === 'laminates' || id === 'veneer') {
         var imgMap = {};
         if (id === 'glass') {
           imgMap = {
@@ -10312,6 +10321,28 @@
           detailItems: listData[id].detailItems,
           imgMap: imgMap
         });
+        return;
+      }
+
+      if (id === 'plywood') {
+        renderDataDrivenSection(el, {
+          title: listData[id].title,
+          section: id,
+          tableItems: listData[id].tableItems,
+          detailItems: listData[id].detailItems,
+          imgMap: {}
+        });
+        var plyExtra = '';
+        ['plywood-guide', 'plywood-materials'].forEach(function (k) {
+          var d = compareData[k];
+          if (!d) return;
+          plyExtra += '<div class="sec-head" style="margin-top:36px"><span class="sec-title">' + d.title + '</span></div>';
+          plyExtra += '<div class="table-wrap table-responsive custom-table"><table class="table custom-table-inner compare-table">';
+          plyExtra += '<thead><tr>' + d.cols.map(function (c) { return '<th>' + c + '</th>'; }).join('') + '</tr></thead>';
+          plyExtra += '<tbody>' + d.rows.map(function (r) { return '<tr>' + r.map(function (c) { return '<td>' + String(c).replace(/\n/g, '<br>') + '</td>'; }).join('') + '</tr>'; }).join('') + '</tbody>';
+          plyExtra += '</table></div>';
+        });
+        el.innerHTML += plyExtra;
         return;
       }
 
@@ -10499,6 +10530,15 @@
           }
         } else {
           detailItems = rawItems;
+        }
+        // Insert Material as the first row for wardrobe-must cards
+        if (id === 'wardrobe-must') {
+          for (var wmi = 0; wmi < detailItems.length; wmi++) {
+            var wp = furnData.items[wmi].split('||');
+            if (wp.length > 8 && wp[8]) {
+              detailItems[wmi].rows.unshift(['Material', wp[8]]);
+            }
+          }
         }
         renderFurnitureSingleTable(el, {
           title: furnData.title,
