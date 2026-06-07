@@ -4160,9 +4160,12 @@
       letter-spacing: 0.3px;
       line-height: 1.2;
       padding: 10px 16px;
-      white-space: normal;
-      overflow-wrap: anywhere;
-      word-break: break-word;
+      display: flex;
+      align-items: center;
+      height: 35px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .furniture-card-img .spec-image-label {
@@ -4236,6 +4239,26 @@
       color: inherit;
     }
 
+    /* — Vertical divider at image column boundary — */
+    .furniture-card-img {
+      border-right: 1px solid var(--spec-label-border);
+    }
+
+    /* — Vertical divider aligning with body label/value border — */
+    .furniture-card-title {
+      position: relative;
+    }
+
+    .furniture-card-title::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 150px;
+      width: 1px;
+      background: var(--spec-label-border);
+    }
+
     @media (max-width: 768px) {
       .furniture-card-img {
         width: 160px;
@@ -4257,6 +4280,7 @@
       .furniture-card-title {
         font-size: 11px;
         padding: 8px 14px;
+        height: 30px;
       }
 
       .furniture-label {
@@ -4270,6 +4294,10 @@
         padding: 5px 12px;
         font-size: 10px;
         line-height: 1.4;
+      }
+
+      .furniture-card-title::before {
+        left: 110px;
       }
 
       .furniture-section-title {
@@ -4302,6 +4330,7 @@
       .furniture-card-title {
         font-size: 9px;
         padding: 6px 12px;
+        height: 26px;
       }
 
       .furniture-label {
@@ -4315,6 +4344,10 @@
         padding: 4px 10px;
         font-size: 9px;
         line-height: 1.45;
+      }
+
+      .furniture-card-title::before {
+        left: 80px;
       }
 
       .furniture-section-title {
@@ -4352,6 +4385,7 @@
       .furniture-card-title {
         font-size: 8px;
         padding: 5px 10px;
+        height: 22px;
       }
 
       .furniture-label {
@@ -4365,6 +4399,10 @@
         padding: 3px 8px;
         font-size: 8px;
         line-height: 1.4;
+      }
+
+      .furniture-card-title::before {
+        left: 70px;
       }
 
       .furniture-section-title {
@@ -4403,6 +4441,7 @@
       .furniture-card-title {
         font-size: 7px;
         padding: 4px 8px;
+        height: 18px;
       }
 
       .furniture-label {
@@ -4416,6 +4455,10 @@
         padding: 2px 7px;
         font-size: 7px;
         line-height: 1.35;
+      }
+
+      .furniture-card-title::before {
+        left: 55px;
       }
 
       .furniture-section-title {
@@ -4573,9 +4616,12 @@
       letter-spacing: 0.3px;
       line-height: 1.2;
       padding: 10px 16px;
-      white-space: normal;
-      overflow-wrap: anywhere;
-      word-break: break-word;
+      display: flex;
+      align-items: center;
+      height: 35px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .kitchen-card-img .spec-image-label {
@@ -4649,6 +4695,26 @@
       color: inherit;
     }
 
+    /* — Vertical divider at image column boundary — */
+    .kitchen-card-img {
+      border-right: 1px solid var(--spec-label-border);
+    }
+
+    /* — Vertical divider aligning with body label/value border — */
+    .kitchen-card-title {
+      position: relative;
+    }
+
+    .kitchen-card-title::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 150px;
+      width: 1px;
+      background: var(--spec-label-border);
+    }
+
     .kitchen-lb {
       display: none;
       position: fixed;
@@ -4712,6 +4778,7 @@
       .kitchen-card-title {
         font-size: 11px;
         padding: 8px 14px;
+        height: 30px;
       }
 
       .kitchen-label {
@@ -4725,6 +4792,10 @@
         padding: 5px 12px;
         font-size: 10px;
         line-height: 1.4;
+      }
+
+      .kitchen-card-title::before {
+        left: 110px;
       }
 
       .kitchen-section-title {
@@ -4757,6 +4828,7 @@
       .kitchen-card-title {
         font-size: 9px;
         padding: 6px 12px;
+        height: 26px;
       }
 
       .kitchen-label {
@@ -4770,6 +4842,10 @@
         padding: 4px 10px;
         font-size: 9px;
         line-height: 1.45;
+      }
+
+      .kitchen-card-title::before {
+        left: 80px;
       }
 
       .kitchen-section-title {
@@ -4807,6 +4883,7 @@
       .kitchen-card-title {
         font-size: 8px;
         padding: 5px 10px;
+        height: 22px;
       }
 
       .kitchen-label {
@@ -4820,6 +4897,10 @@
         padding: 3px 8px;
         font-size: 8px;
         line-height: 1.4;
+      }
+
+      .kitchen-card-title::before {
+        left: 70px;
       }
 
       .kitchen-section-title {
@@ -4858,6 +4939,7 @@
       .kitchen-card-title {
         font-size: 7px;
         padding: 4px 8px;
+        height: 18px;
       }
 
       .kitchen-label {
@@ -4871,6 +4953,10 @@
         padding: 2px 7px;
         font-size: 7px;
         line-height: 1.35;
+      }
+
+      .kitchen-card-title::before {
+        left: 55px;
       }
 
       .kitchen-section-title {
