@@ -2233,11 +2233,17 @@
     /* Global Table Cell Full Content Display */
     .detail-tbl td,
     .exp-look-table td,
-    .compare-table td,
     .table-wrap table td {
       white-space: normal;
       word-wrap: break-word;
       word-break: break-word;
+    }
+
+    .compare-table td {
+      hyphens: none !important;
+      word-break: normal !important;
+      word-wrap: normal !important;
+      overflow-wrap: break-word;
     }
 
     .exp-look-table td.t-name {
@@ -3374,6 +3380,15 @@
     .exp-look-new .brands-cell {
       color: var(--brands-color);
       line-height: 1.35;
+    }
+
+    .exp-look-new.designer-veneer-wrap .places-cell,
+    .exp-look-new.designer-veneer-wrap .brands-cell,
+    .exp-look-new.designer-veneer-wrap .material-cell {
+      overflow-wrap: normal;
+      word-break: normal;
+      hyphens: none;
+      white-space: normal;
     }
 
     @media (max-width: 768px) {
@@ -6872,105 +6887,105 @@
     const tableData = {
       flooring: {
         title: 'Flooring Finishes',
-        cols: ['#', 'Category', 'Material', 'Thickness', 'Price Range', 'Recommended Brands', 'Where to Use'],
+        cols: ['#', 'Material', 'Cost (sq.ft)', 'Thk (mm)', 'Best Place To Use', 'Brands'],
         rows: [
-          [1, 'Outdoor Flooring', 'WPC Deck Flooring', '20–25 mm', '₹350 – ₹900 / sq.ft', 'Inovar Flooring, VOX', 'Balconies, terraces, pool decks'],
-          [2, 'Vinyl Flooring', 'SPC Flooring', '4–8 mm', '₹180 – ₹350 / sq.ft', 'Welspun, Euro Pratik', 'Bedroom flooring, office flooring'],
-          [3, 'Vinyl Flooring', 'PVC Vinyl Flooring', '2–5 mm', '₹120 – ₹300 / sq.ft', 'Welspun, Euro Pratik', 'Bedrooms, office spaces, retail stores'],
-          [4, 'Wood Flooring', 'Laminate Wood', '8–12 mm', '₹120 – ₹350 / sq.ft', 'Pergo, Greenlam', 'Bedrooms, study rooms, offices'],
-          [5, 'Wood Flooring', 'Engineered Wood', '12–18 mm', '₹350 – ₹900 / sq.ft', 'Square Foot, Mikasa, Greenlam', 'Living rooms, bedrooms, luxury apartments'],
-          [6, 'Wood Flooring', 'Solid Wood', '18–20 mm', '₹600 – ₹2,000 / sq.ft', 'Square Foot, Mikasa Floors', 'Luxury living rooms, villas, premium bedrooms'],
-          [7, 'Natural Stone', 'Italian Marble', '16–20 mm', '₹250 – ₹8,000+ / sq.ft', 'Classic Marble Company', 'Living rooms, staircases, luxury bathrooms'],
-          [8, 'Natural Stone', 'Indian Marble', '16–20 mm', '₹90 – ₹600 / sq.ft', 'RK Marble, Bhandari Marble Group', 'Living rooms, bedrooms, staircases'],
-          [9, 'Natural Stone', 'Granite', '18–20 mm', '₹120 – ₹400 / sq.ft', 'RK Marble, Classic Marble Company', 'Staircases, exterior flooring'],
-          [10, 'Natural Stone', 'Kota Stone', '18–25 mm', '₹90 – ₹200 / sq.ft', 'Local quarries', 'Outdoor, staircases, utility areas'],
-          [11, 'Natural Stone', 'Slate Stone', '10–15 mm', '₹150 – ₹400 / sq.ft', 'Classic Marble Company', 'Outdoor flooring, rustic interiors'],
-          [12, 'Natural Stone', 'Limestone', '18–25 mm', '₹120 – ₹350 / sq.ft', 'Stonex India, RK Marble', 'Traditional homes, courtyards'],
-          [13, 'Natural Stone', 'Sandstone', '18–25 mm', '₹80 – ₹250 / sq.ft', 'Array Stone, Tripura Stones', 'Outdoor, pathways'],
-          [14, 'Composite Stone', 'Terrazzo', '15–20 mm', '₹150 – ₹350 / sq.ft', 'Bharat Flooring, NITCO Terrazzo', 'Living rooms, corridors, commercial floors'],
-          [15, 'Cement Flooring', 'Cement IPS', '25–40 mm', '₹80 – ₹180 / sq.ft', 'Local IPS contractors', 'Industrial homes, terraces, balconies'],
-          [16, 'Decorative Cement', 'Microcement', '2–3 mm', '₹300 – ₹700 / sq.ft', 'Ideal Work, Topciment, Terraco', 'Modern homes, bathrooms, seamless flooring'],
-          [17, 'Industrial Flooring', 'Epoxy', '1–3 mm', '₹250 – ₹600 / sq.ft', 'Fosroc, Sika, Flowcrete', 'Parking areas, commercial kitchens, garages'],
-          [18, 'Tiles', 'Ceramic Tiles', '8–10 mm', '₹40 – ₹120 / sq.ft', 'Kajaria, Somany', 'Bathrooms, kitchens, balconies, utility areas'],
-          [19, 'Tiles', 'Vitrified Tiles', '8–10 mm', '₹60 – ₹250 / sq.ft', 'Kajaria, Somany, Johnson', 'Living room, bedroom, commercial floors'],
-          [20, 'Tiles', 'Porcelain Tiles', '8–12 mm', '₹120 – ₹400 / sq.ft', 'Kajaria, RAK Ceramics', 'Luxury floors, high traffic areas'],
-          [21, 'Wood Alternative', 'Bamboo Flooring', '10–15 mm', '₹250 – ₹600 / sq.ft', 'Greenlam, Epitome', 'Sustainable eco friendly homes'],
-          [22, 'Wood Alternative', 'Cork Flooring', '6–12 mm', '₹300 – ₹700 / sq.ft', 'Amorim, Granorte', 'Bedrooms, quiet spaces'],
-          [23, 'Decorative Flooring', 'Concrete Polished', '50–100 mm base', '₹150 – ₹400 / sq.ft', 'Ultratech', 'Industrial interiors'],
-          [24, 'Decorative Flooring', 'Metal Inlay Flooring', 'Custom', '₹800+ / sq.ft', 'Arttd\'inox', 'Accent for homes'],
-          [25, 'Soft Flooring', 'Carpet Tiles', '6–8 mm', '₹150 – ₹400 / sq.ft', 'Venjara Carpets', 'Office workspace, retail stores'],
-          [26, 'Rubber Flooring', 'Rubber Gym Tiles', '8–20 mm', '₹200 – ₹600 / sq.ft', 'Duraflor', 'Commercial gyms, weightlifting areas'],
-          [27, 'Turf Flooring', 'Artificial Turf', '10–20 mm pile', '₹120 – ₹350 / sq.ft', 'Field Turf, TigerTurf', 'Training zones, CrossFit areas, balconies'],
+          [1, 'Outdoor Flooring', 'WPC Deck Flooring', '20–25', '₹350 – ₹900', 'Inovar Flooring, VOX', 'Balconies, terraces, pool decks'],
+          [2, 'Vinyl Flooring', 'SPC Flooring', '4–8', '₹180 – ₹350', 'Welspun, Euro Pratik', 'Bedroom flooring, office flooring'],
+          [3, 'Vinyl Flooring', 'PVC Vinyl Flooring', '2–5', '₹120 – ₹300', 'Welspun, Euro Pratik', 'Bedrooms, office spaces, retail stores'],
+          [4, 'Wood Flooring', 'Laminate Wood', '8–12', '₹120 – ₹350', 'Pergo, Greenlam', 'Bedrooms, study rooms, offices'],
+          [5, 'Wood Flooring', 'Engineered Wood', '12–18', '₹350 – ₹900', 'Square Foot, Mikasa, Greenlam', 'Living rooms, bedrooms, luxury apartments'],
+          [6, 'Wood Flooring', 'Solid Wood', '18–20', '₹600 – ₹2,000', 'Square Foot, Mikasa Floors', 'Luxury living rooms, villas, premium bedrooms'],
+          [7, 'Natural Stone', 'Italian Marble', '16–20', '₹250 – ₹8,000+', 'Classic Marble Company', 'Living rooms, staircases, luxury bathrooms'],
+          [8, 'Natural Stone', 'Indian Marble', '16–20', '₹90 – ₹600', 'RK Marble, Bhandari Marble Group', 'Living rooms, bedrooms, staircases'],
+          [9, 'Natural Stone', 'Granite', '18–20', '₹120 – ₹400', 'RK Marble, Classic Marble Company', 'Staircases, exterior flooring'],
+          [10, 'Natural Stone', 'Kota Stone', '18–25', '₹90 – ₹200', 'Local quarries', 'Outdoor, staircases, utility areas'],
+          [11, 'Natural Stone', 'Slate Stone', '10–15', '₹150 – ₹400', 'Classic Marble Company', 'Outdoor flooring, rustic interiors'],
+          [12, 'Natural Stone', 'Limestone', '18–25', '₹120 – ₹350', 'Stonex India, RK Marble', 'Traditional homes, courtyards'],
+          [13, 'Natural Stone', 'Sandstone', '18–25', '₹80 – ₹250', 'Array Stone, Tripura Stones', 'Outdoor, pathways'],
+          [14, 'Composite Stone', 'Terrazzo', '15–20', '₹150 – ₹350', 'Bharat Flooring, NITCO Terrazzo', 'Living rooms, corridors, commercial floors'],
+          [15, 'Cement Flooring', 'Cement IPS', '25–40', '₹80 – ₹180', 'Local IPS contractors', 'Industrial homes, terraces, balconies'],
+          [16, 'Decorative Cement', 'Microcement', '2–3', '₹300 – ₹700', 'Ideal Work, Topciment, Terraco', 'Modern homes, bathrooms, seamless flooring'],
+          [17, 'Industrial Flooring', 'Epoxy', '1–3', '₹250 – ₹600', 'Fosroc, Sika, Flowcrete', 'Parking areas, commercial kitchens, garages'],
+          [18, 'Tiles', 'Ceramic Tiles', '8–10', '₹40 – ₹120', 'Kajaria, Somany', 'Bathrooms, kitchens, balconies, utility areas'],
+          [19, 'Tiles', 'Vitrified Tiles', '8–10', '₹60 – ₹250', 'Kajaria, Somany, Johnson', 'Living room, bedroom, commercial floors'],
+          [20, 'Tiles', 'Porcelain Tiles', '8–12', '₹120 – ₹400', 'Kajaria, RAK Ceramics', 'Luxury floors, high traffic areas'],
+          [21, 'Wood Alternative', 'Bamboo Flooring', '10–15', '₹250 – ₹600', 'Greenlam, Epitome', 'Sustainable eco friendly homes'],
+          [22, 'Wood Alternative', 'Cork Flooring', '6–12', '₹300 – ₹700', 'Amorim, Granorte', 'Bedrooms, quiet spaces'],
+          [23, 'Decorative Flooring', 'Concrete Polished', '50–100 base', '₹150 – ₹400', 'Ultratech', 'Industrial interiors'],
+          [24, 'Decorative Flooring', 'Metal Inlay Flooring', 'Custom', '₹800+', 'Arttd\'inox', 'Accent for homes'],
+          [25, 'Soft Flooring', 'Carpet Tiles', '6–8', '₹150 – ₹400', 'Venjara Carpets', 'Office workspace, retail stores'],
+          [26, 'Rubber Flooring', 'Rubber Gym Tiles', '8–20', '₹200 – ₹600', 'Duraflor', 'Commercial gyms, weightlifting areas'],
+          [27, 'Turf Flooring', 'Artificial Turf', '10–20 pile', '₹120 – ₹350', 'Field Turf, TigerTurf', 'Training zones, CrossFit areas, balconies'],
         ]
       },
       wall: {
         title: 'Wall Finishes',
-        cols: ['#', 'Category', 'Material', 'Thickness', 'Price Range', 'Recommended Brands', 'Where to Use'],
+        cols: ['#', 'Material', 'Cost (sq.ft)', 'Thk (mm)', 'Best Place To Use', 'Brands'],
         rows: [
-          [1, 'Decorative Paint', 'Texture Paint', '1–3 mm', '₹80 – ₹250 / sq.ft', 'Asian Paints Royale Play, Nerolac Impressions', 'Living room feature walls, bedroom accent walls'],
-          [2, 'Spray Paint Finish', 'PU Paint', '0.06 – 0.12 mm', '₹250 – ₹600 / sq.ft', 'ICA Pidilite, Asian Paints PU', 'Wardrobe shutters, wall panels, furniture finishes'],
-          [3, 'Spray Paint Finish', 'Duco Paint', '0.08 – 0.15 mm', '₹200 – ₹450 / sq.ft', 'Asian Paints, ICA Pidilite', 'MDF panels, furniture, decorative wall panels'],
-          [4, 'Paint Finish', 'Emulsion Paint', '0.04 – 0.08 mm', '₹18 – ₹40 / sq.ft', 'Asian Paints, Berger, Dulux', 'Living rooms, bedrooms, ceilings'],
-          [5, 'Paint Finish', 'Royale Paint', '0.04 – 0.08 mm', '₹40 – ₹80 / sq.ft', 'Asian Paints Royale, Dulux Velvet Touch', 'Living rooms, master bedrooms'],
-          [6, 'Paint Finish', 'Satin Paint', '0.04 – 0.08 mm', '₹25 – ₹60 / sq.ft', 'Asian Paints, Dulux', 'Living rooms, hallways'],
-          [7, 'Paint Finish', 'Matt Paint', '0.04 – 0.08 mm', '₹20 – ₹50 / sq.ft', 'Asian Paints, Berger', 'Bedrooms'],
-          [8, 'Decorative Paint', 'Metallic Paint', '0.1 – 0.3 mm', '₹150 – ₹400 / sq.ft', 'Asian Paints, Royal Play', 'Luxury feature walls'],
-          [9, 'Decorative Paint', 'Stucco Finish', '1 – 3 mm', '₹250 – ₹700 / sq.ft', 'Asian Paints', 'Premium living rooms'],
-          [10, 'Decorative Paint', 'Concrete Finish Paint', '1 – 3 mm', '₹200 – ₹500 / sq.ft', 'Terraco', 'Industrial style interiors'],
-          [11, 'Decorative Paint', 'Limewash Paint', '0.05 – 0.10 mm', 'Basic₹50 – ₹120 / sq.ft Designer ₹150 – ₹200 / sq.ft', 'Limocoat', 'Premium living rooms, bedrooms'],
-          [12, 'Decorative Plaster', 'Lime Plaster', '1 – 2 mm', '₹150 – ₹500 / sq.ft', 'Limocoat', 'Premium living rooms, bedrooms'],
-          [13, 'Decorative Plaster', 'Clay Plaster', '2 – 5 mm', '₹120 – ₹300 / sq.ft', 'Clay works', 'Organic interiors, villas, eco homes'],
-          [14, 'Wooden Panels', 'Veneer Paneling', '4–8 mm veneer\non ply/MDF', '₹250 – ₹700 / sq.ft', 'Century Veneers, Greenply', 'TV walls, luxury bedrooms, living rooms'],
-          [15, 'Engineered Panels', 'HDMR Paneling', '6 – 18 mm', '₹120 – ₹350 / sq.ft', 'Century, Greenply', 'Wall paneling, wardrobes, TV units'],
-          [16, 'Engineered Panels', 'Laminate Wall Paneling', '1 mm laminate on ply/MDF', '₹150 – ₹350 / sq.ft', 'Greenlam, Merino, Century Laminates', 'TV walls, wardrobes, feature walls'],
-          [17, 'Panels', 'MDF Jali Panels', '12–18 mm', '₹200 – ₹500', 'Greenpanel, Century', 'Partitions, feature walls, mandir panels'],
-          [18, 'Panels', 'CNC Cut Panels', '12–18 mm', '₹250 – ₹700', 'Panels', 'Mandir walls, decorative panels'],
-          [19, 'Panels', 'Metal Wall Panels (Brass / SS)', '1–2 mm metal sheet on panel backing', '₹800 – ₹3,000', 'Stonelam Metal, Local fabricators', 'Luxury interiors, hotel lobbies, premium feature walls'],
-          [20, 'PVC Panels', 'PVC Wall Panels', '6–10 mm', '₹120 – ₹300 / sq.ft', 'Alstone, Ecoste, Euro Pratik', 'TV walls, bedrooms, commercial interiors'],
-          [21, 'Decorative Panels', 'WPC Panels', '8–12 mm', '₹180 – ₹400 / sq.ft', 'Alstone, Ecoste', 'Feature walls, exterior cladding'],
-          [22, 'Decorative Tiles', 'Decorative Wall Tiles', '6–10 mm', '₹60 – ₹250 / sq.ft', 'Kajaria, Somany, Johnson', 'Kitchen backsplashes, bathroom walls'],
-          [23, 'Natural Stone', 'Marble Wall Cladding', '16–20 mm', '₹250 – ₹8000+ / sq.ft', 'RK Marble, Classic Marble Company', 'Living room feature walls, bathrooms'],
-          [24, 'Natural Stone', 'Granite Wall Cladding', '18–20 mm', '₹120 – ₹350 / sq.ft', 'RK Marble, Classic Marble Company', 'Exterior walls, staircases'],
-          [25, 'Natural Stone', 'Slate stone', '10–15 mm', '₹250 – ₹600 / sq.ft', 'Stone Depot, EarthStona', 'Exterior walls, rustic interiors, landscape walls'],
-          [26, 'Stone', 'Quartzite Wall Cladding', '12–20 mm', '₹300 – ₹1,200', 'Classic Marble Company', 'Feature walls, luxury interiors'],
-          [27, 'Stone', 'Slate Stone Cladding', '10–15 mm', '₹250 – ₹600', 'EarthStona, Stone Depot', 'Exterior / rustic interiors'],
-          [28, 'Fabric', 'Fabric Wall Panels', '15–40 mm (with\nfoam backing)', '₹400 – ₹1,200', 'D\'Decor, Stanley', 'Bedrooms, acoustic walls'],
-          [29, 'Acoustic', 'Acoustic Panels', '12–25 mm', '₹300 – ₹800', 'Unidus accoustics', 'Home theatres, offices'],
-          [30, 'Decorative Plaster', 'Venetian Plaster', '1–2 mm', '₹250 – ₹600 / sq.ft', 'Asian Paints, Novacolor', 'Luxury living rooms'],
-          [31, 'Decorative Cement', 'Microcement', '2–3 mm', '₹300 – ₹700 / sq.ft', 'Topciment, Ideal Work', 'Bathrooms, modern interiors'],
-          [32, 'Decorative Panels', 'Fluted Panels', '12–18 mm', '₹180 – ₹350 / sq.ft', 'Action Tesa, Greenpanel', 'TV walls, bedroom feature walls'],
-          [33, 'Decorative Panels', 'Charcoal Panels', '8–12 mm', '₹200 – ₹450 / sq.ft', 'Advance Laminates, Alstone', 'TV walls, commercial interiors'],
-          [34, 'Decorative Panels', 'HPL Wall Cladding', '6 – 8 mm', '₹350 – ₹900 / sq.ft', 'Greenlam, Merino', 'Exterior walls, balconies'],
-          [35, 'Decorative Panels', 'Stone Veneer Panels', '2 – 4 mm', '₹250 – ₹700 / sq.ft', 'Flex stone', 'Bedroom accent walls, living rooms'],
-          [36, 'Decorative Panels', '3D Wall Panels (PVC / Gypsum)', '10 – 20 mm', '₹150 – ₹450 / sq.ft\nEuro Pratik', 'Euro Pratik', 'Living room feature wall'],
-          [37, 'Decorative Panels', 'Upholstered Panels', '20 – 40 mm', '₹600 – ₹1,500 / sq.ft', 'D décor', 'Bedroom headboards'],
-          [38, 'Decorative Metal', 'Liquid Metal Finish', '1 – 3 mm', '₹1,200 – ₹4,000 / sq.ft', 'Midas Metal, De Castelli', 'Luxury feature walls, furniture panels'],
-          [39, 'Wall Coverings', 'Wallpaper', '0.20 – 0.50 mm', '₹80 – ₹1,200+ / sq.ft', 'Marshalls, D\'Decor', 'Bedroom accent walls, living rooms'],
+          [1, 'Decorative Paint', 'Texture Paint', '1–3', '₹80 – ₹250', 'Asian Paints Royale Play, Nerolac Impressions', 'Living room feature walls, bedroom accent walls'],
+          [2, 'Spray Paint Finish', 'PU Paint', '0.06 – 0.12', '₹250 – ₹600', 'ICA Pidilite, Asian Paints PU', 'Wardrobe shutters, wall panels, furniture finishes'],
+          [3, 'Spray Paint Finish', 'Duco Paint', '0.08 – 0.15', '₹200 – ₹450', 'Asian Paints, ICA Pidilite', 'MDF panels, furniture, decorative wall panels'],
+          [4, 'Paint Finish', 'Emulsion Paint', '0.04 – 0.08', '₹18 – ₹40', 'Asian Paints, Berger, Dulux', 'Living rooms, bedrooms, ceilings'],
+          [5, 'Paint Finish', 'Royale Paint', '0.04 – 0.08', '₹40 – ₹80', 'Asian Paints Royale, Dulux Velvet Touch', 'Living rooms, master bedrooms'],
+          [6, 'Paint Finish', 'Satin Paint', '0.04 – 0.08', '₹25 – ₹60', 'Asian Paints, Dulux', 'Living rooms, hallways'],
+          [7, 'Paint Finish', 'Matt Paint', '0.04 – 0.08', '₹20 – ₹50', 'Asian Paints, Berger', 'Bedrooms'],
+          [8, 'Decorative Paint', 'Metallic Paint', '0.1 – 0.3', '₹150 – ₹400', 'Asian Paints, Royal Play', 'Luxury feature walls'],
+          [9, 'Decorative Paint', 'Stucco Finish', '1 – 3', '₹250 – ₹700', 'Asian Paints', 'Premium living rooms'],
+          [10, 'Decorative Paint', 'Concrete Finish Paint', '1 – 3', '₹200 – ₹500', 'Terraco', 'Industrial style interiors'],
+          [11, 'Decorative Paint', 'Limewash Paint', '0.05 – 0.10', 'Basic₹50 – ₹120 Designer ₹150 – ₹200', 'Limocoat', 'Premium living rooms, bedrooms'],
+          [12, 'Decorative Plaster', 'Lime Plaster', '1 – 2', '₹150 – ₹500', 'Limocoat', 'Premium living rooms, bedrooms'],
+          [13, 'Decorative Plaster', 'Clay Plaster', '2 – 5', '₹120 – ₹300', 'Clay works', 'Organic interiors, villas, eco homes'],
+          [14, 'Wooden Panels', 'Veneer Paneling', '4–8 veneer\non ply/MDF', '₹250 – ₹700', 'Century Veneers, Greenply', 'TV walls, luxury bedrooms, living rooms'],
+          [15, 'Engineered Panels', 'HDMR Paneling', '6 – 18', '₹120 – ₹350', 'Century, Greenply', 'Wall paneling, wardrobes, TV units'],
+          [16, 'Engineered Panels', 'Laminate Wall Paneling', '1 laminate on ply/MDF', '₹150 – ₹350', 'Greenlam, Merino, Century Laminates', 'TV walls, wardrobes, feature walls'],
+          [17, 'Panels', 'MDF Jali Panels', '12–18', '₹200 – ₹500', 'Greenpanel, Century', 'Partitions, feature walls, mandir panels'],
+          [18, 'Panels', 'CNC Cut Panels', '12–18', '₹250 – ₹700', 'Panels', 'Mandir walls, decorative panels'],
+          [19, 'Panels', 'Metal Wall Panels (Brass / SS)', '1–2 metal sheet on panel backing', '₹800 – ₹3,000', 'Stonelam Metal, Local fabricators', 'Luxury interiors, hotel lobbies, premium feature walls'],
+          [20, 'PVC Panels', 'PVC Wall Panels', '6–10', '₹120 – ₹300', 'Alstone, Ecoste, Euro Pratik', 'TV walls, bedrooms, commercial interiors'],
+          [21, 'Decorative Panels', 'WPC Panels', '8–12', '₹180 – ₹400', 'Alstone, Ecoste', 'Feature walls, exterior cladding'],
+          [22, 'Decorative Tiles', 'Decorative Wall Tiles', '6–10', '₹60 – ₹250', 'Kajaria, Somany, Johnson', 'Kitchen backsplashes, bathroom walls'],
+          [23, 'Natural Stone', 'Marble Wall Cladding', '16–20', '₹250 – ₹8000+', 'RK Marble, Classic Marble Company', 'Living room feature walls, bathrooms'],
+          [24, 'Natural Stone', 'Granite Wall Cladding', '18–20', '₹120 – ₹350', 'RK Marble, Classic Marble Company', 'Exterior walls, staircases'],
+          [25, 'Natural Stone', 'Slate stone', '10–15', '₹250 – ₹600', 'Stone Depot, EarthStona', 'Exterior walls, rustic interiors, landscape walls'],
+          [26, 'Stone', 'Quartzite Wall Cladding', '12–20', '₹300 – ₹1,200', 'Classic Marble Company', 'Feature walls, luxury interiors'],
+          [27, 'Stone', 'Slate Stone Cladding', '10–15', '₹250 – ₹600', 'EarthStona, Stone Depot', 'Exterior / rustic interiors'],
+          [28, 'Fabric', 'Fabric Wall Panels', '15–40 (with\nfoam backing)', '₹400 – ₹1,200', 'D\'Decor, Stanley', 'Bedrooms, acoustic walls'],
+          [29, 'Acoustic', 'Acoustic Panels', '12–25', '₹300 – ₹800', 'Unidus accoustics', 'Home theatres, offices'],
+          [30, 'Decorative Plaster', 'Venetian Plaster', '1–2', '₹250 – ₹600', 'Asian Paints, Novacolor', 'Luxury living rooms'],
+          [31, 'Decorative Cement', 'Microcement', '2–3', '₹300 – ₹700', 'Topciment, Ideal Work', 'Bathrooms, modern interiors'],
+          [32, 'Decorative Panels', 'Fluted Panels', '12–18', '₹180 – ₹350', 'Action Tesa, Greenpanel', 'TV walls, bedroom feature walls'],
+          [33, 'Decorative Panels', 'Charcoal Panels', '8–12', '₹200 – ₹450', 'Advance Laminates, Alstone', 'TV walls, commercial interiors'],
+          [34, 'Decorative Panels', 'HPL Wall Cladding', '6 – 8', '₹350 – ₹900', 'Greenlam, Merino', 'Exterior walls, balconies'],
+          [35, 'Decorative Panels', 'Stone Veneer Panels', '2 – 4', '₹250 – ₹700', 'Flex stone', 'Bedroom accent walls, living rooms'],
+          [36, 'Decorative Panels', '3D Wall Panels (PVC / Gypsum)', '10 – 20', '₹150 – ₹450\nEuro Pratik', 'Euro Pratik', 'Living room feature wall'],
+          [37, 'Decorative Panels', 'Upholstered Panels', '20 – 40', '₹600 – ₹1,500', 'D décor', 'Bedroom headboards'],
+          [38, 'Decorative Metal', 'Liquid Metal Finish', '1 – 3', '₹1,200 – ₹4,000', 'Midas Metal, De Castelli', 'Luxury feature walls, furniture panels'],
+          [39, 'Wall Coverings', 'Wallpaper', '0.20 – 0.50', '₹80 – ₹1,200+', 'Marshalls, D\'Decor', 'Bedroom accent walls, living rooms'],
         ]
       },
       ceiling: {
         title: 'False Ceiling Finishes',
-        cols: ['#', 'Category', 'Material', 'Thickness', 'Price Range', 'Recommended Brands', 'Where to Use'],
+        cols: ['#', 'Material', 'Cost (sq.ft)', 'Thk (mm)', 'Best Place To Use', 'Brands'],
         rows: [
-          [1, 'False Ceiling', 'POP False Ceiling', '10–15 mm', '₹80 – ₹150 / sq.ft', 'Local POP contractors', 'Living rooms, decorative ceilings'],
-          [2, 'False Ceiling', 'Gypsum Board Ceiling', '9–12 mm', '₹80 – ₹150 / sq.ft', 'Gyproc, Saint Gobain', 'Homes, offices'],
-          [3, 'False Ceiling', 'Calcium Silicate Board', '6–12 mm', '₹70 – ₹140 / sq.ft', 'Shera, Hilux', 'Bathrooms, balconies, moisture-prone areas'],
-          [4, 'False Ceiling', 'PVC Ceiling Panels', '6–10 mm', '₹120 – ₹300 / sq.ft', 'Alstone, Ecoste', 'Kitchens, bathrooms, commercial interiors'],
-          [5, 'False Ceiling', 'Metal Ceiling (Aluminium/GI)', '0.5–1 mm', '₹250 – ₹700 / sq.ft', 'Armstrong, Hunter Douglas', 'Offices, airports, commercial buildings'],
-          [6, 'False Ceiling', 'Mineral Fibre Ceiling Tiles', '12–15 mm', '₹120 – ₹250 / sq.ft', 'Armstrong World Industries', 'Offices, commercial spaces'],
-          [7, 'False Ceiling', 'Wooden Ceiling Panels', '12–18 mm', '₹250 – ₹800 / sq.ft', 'Greenpanel, CenturyPly', 'Luxury living rooms, lounges'],
-          [8, 'False Ceiling', 'WPC Ceiling Panels', '8–12 mm', '₹180 – ₹400 / sq.ft', 'Alstone, Ecoste', 'Balconies, semi-outdoor ceilings'],
-          [9, 'False Ceiling', 'Acoustic Panels (Fabric/PET)', '12–25 mm', '₹250 – ₹800 / sq.ft', 'Armstrong, Inque Group', 'Offices, home theatres, studios'],
-          [10, 'False Ceiling', 'Glass Ceiling Panels', '8–12 mm', '₹800+ / sq.ft', 'Saint Gobain', 'Feature ceilings, luxury spaces'],
-          [11, 'False Ceiling', 'Stretch Ceiling', '0.2–0.5 mm', '₹500 – ₹1,500 / sq.ft', 'Barrisol, Clipso', 'Modern homes, backlit ceilings'],
-          [12, 'False Ceiling', 'Veneer', '6–12 mm', '₹200 – ₹600 / sq.ft', 'Greenlam, CenturyPly, Merino', 'Living rooms, feature ceilings'],
-          [13, 'False Ceiling', 'Metal Baffle Ceiling', '0.5–1 mm', '₹400 – ₹1,200 / sq.ft', 'Hunter Douglas, Armstrong', 'Offices, commercial spaces, lobbies'],
-          [14, 'Ceiling Finish', 'Clay Plaster', '3–8 mm', '₹150 – ₹400 / sq.ft', '-', 'Farmhouses, eco homes, rustic interiors'],
-          [15, 'Ceiling Finish', 'Exposed Concrete', '-', '₹80 – ₹250 / sq.ft', '-', 'Industrial interiors, modern homes'],
-          [16, 'Ceiling Finish', 'Texture Paint', '1–2 mm', '₹80 – ₹250 / sq.ft', 'Asian Paints, Nerolac', 'Feature ceilings, living rooms'],
-          [17, 'Ceiling Finish', 'Venetian Plaster', '2–3 mm', '₹400 – ₹1,200 / sq.ft', 'San Marco, Novacolor', 'Luxury homes, feature ceilings'],
-          [18, 'Ceiling Finish', 'Lime Wash', '1–2 mm', '₹60 – ₹150 / sq.ft', 'Limocoat', 'Bedrooms, living rooms, heritage homes'],
-          [19, 'Ceiling Finish', 'Lime Plaster', '2–5 mm', '₹120 – ₹350 / sq.ft', 'Limocoat', 'Villas, luxury homes, textured ceilings'],
+          [1, 'False Ceiling', 'POP False Ceiling', '10–15', '₹80 – ₹150', 'Local POP contractors', 'Living rooms, decorative ceilings'],
+          [2, 'False Ceiling', 'Gypsum Board Ceiling', '9–12', '₹80 – ₹150', 'Gyproc, Saint Gobain', 'Homes, offices'],
+          [3, 'False Ceiling', 'Calcium Silicate Board', '6–12', '₹70 – ₹140', 'Shera, Hilux', 'Bathrooms, balconies, moisture-prone areas'],
+          [4, 'False Ceiling', 'PVC Ceiling Panels', '6–10', '₹120 – ₹300', 'Alstone, Ecoste', 'Kitchens, bathrooms, commercial interiors'],
+          [5, 'False Ceiling', 'Metal Ceiling (Aluminium/GI)', '0.5–1', '₹250 – ₹700', 'Armstrong, Hunter Douglas', 'Offices, airports, commercial buildings'],
+          [6, 'False Ceiling', 'Mineral Fibre Ceiling Tiles', '12–15', '₹120 – ₹250', 'Armstrong World Industries', 'Offices, commercial spaces'],
+          [7, 'False Ceiling', 'Wooden Ceiling Panels', '12–18', '₹250 – ₹800', 'Greenpanel, CenturyPly', 'Luxury living rooms, lounges'],
+          [8, 'False Ceiling', 'WPC Ceiling Panels', '8–12', '₹180 – ₹400', 'Alstone, Ecoste', 'Balconies, semi-outdoor ceilings'],
+          [9, 'False Ceiling', 'Acoustic Panels (Fabric/PET)', '12–25', '₹250 – ₹800', 'Armstrong, Inque Group', 'Offices, home theatres, studios'],
+          [10, 'False Ceiling', 'Glass Ceiling Panels', '8–12', '₹800+', 'Saint Gobain', 'Feature ceilings, luxury spaces'],
+          [11, 'False Ceiling', 'Stretch Ceiling', '0.2–0.5', '₹500 – ₹1,500', 'Barrisol, Clipso', 'Modern homes, backlit ceilings'],
+          [12, 'False Ceiling', 'Veneer', '6–12', '₹200 – ₹600', 'Greenlam, CenturyPly, Merino', 'Living rooms, feature ceilings'],
+          [13, 'False Ceiling', 'Metal Baffle Ceiling', '0.5–1', '₹400 – ₹1,200', 'Hunter Douglas, Armstrong', 'Offices, commercial spaces, lobbies'],
+          [14, 'Ceiling Finish', 'Clay Plaster', '3–8', '₹150 – ₹400', '-', 'Farmhouses, eco homes, rustic interiors'],
+          [15, 'Ceiling Finish', 'Exposed Concrete', '-', '₹80 – ₹250', '-', 'Industrial interiors, modern homes'],
+          [16, 'Ceiling Finish', 'Texture Paint', '1–2', '₹80 – ₹250', 'Asian Paints, Nerolac', 'Feature ceilings, living rooms'],
+          [17, 'Ceiling Finish', 'Venetian Plaster', '2–3', '₹400 – ₹1,200', 'San Marco, Novacolor', 'Luxury homes, feature ceilings'],
+          [18, 'Ceiling Finish', 'Lime Wash', '1–2', '₹60 – ₹150', 'Limocoat', 'Bedrooms, living rooms, heritage homes'],
+          [19, 'Ceiling Finish', 'Lime Plaster', '2–5', '₹120 – ₹350', 'Limocoat', 'Villas, luxury homes, textured ceilings'],
         ]
       },
       'glass-summary': {
@@ -7284,25 +7299,25 @@
       top10: {
         title: 'Top 10 Materials 2026',
         tableItems: [
-          'Liquid Metallic Ombre||₹800–₹2500 / sq ft||0.5–1 mm||Feature walls, entry foyers, dining accent walls, bars, powder rooms||Colortale',
-          'Microcement||As premium finish ₹200–₹500 / sq ft||2–3 mm||Floors, walls, bathrooms, furniture||Colortale',
-          'Alabaster Lights||₹12,000 – ₹40,000 / light fixture||5–20 mm||Dining rooms, bedrooms, bedside lamps, luxury lounges||Visual of above: Musa Design Lab',
-          'Artistic Acoustic Panels||₹7,000 – ₹14,000 / panel unit||20–50 mm||Home offices, studios, media rooms, living rooms.||Unidus Acoustics',
-          'Textured Lime Plaster||Lime plaster material ₹40–₹120 / sq ft||8–15 mm||Feature walls, living rooms, hallway||Limocoat',
+          'Liquid Metallic Ombre||₹800–₹2500||0.5–1||Feature walls, entry foyers, dining accent walls, bars, powder rooms||Colortale',
+          'Microcement||As premium finish ₹200–₹500||2–3||Floors, walls, bathrooms, furniture||Colortale',
+          'Alabaster Lights||₹12,000 – ₹40,000 / light fixture||5–20||Dining rooms, bedrooms, bedside lamps, luxury lounges||Visual of above: Musa Design Lab',
+          'Artistic Acoustic Panels||₹7,000 – ₹14,000 / panel unit||20–50||Home offices, studios, media rooms, living rooms.||Unidus Acoustics',
+          'Textured Lime Plaster||Lime plaster material ₹40–₹120||8–15||Feature walls, living rooms, hallway||Limocoat',
           '3D Artwork||₹55,000 onwards.||4–5 inches||Living room feature wall, bedroom statement wall, luxury hotel & reception areas||Godai Arts',
-          'Optical Fibre Fabric||Varies on request.||2–5 mm applied in multiple thin coats||Feature walls in bedrooms, dining table tops||DreamLux (Italy)',
-          'Venetian Plaster||₹180 – ₹400 / sq.ft||2–5 mm||Foyer & entry walls, dining room feature walls, master bedroom walls||Vasari India',
-          'Flexible MDF Curves||₹2,400 / sheet||4 mm, 6 mm, 8 mm, 12 mm||TV units & feature walls||Element Décor',
-          'Wall Acoustic Fluted Panels||₹60 / sq.ft onwards||9 mm–24 mm||Home theatres, study rooms, bedrooms, conference & meeting rooms||Unidus Acoustics'
+          'Optical Fibre Fabric||Varies on request||—||Feature walls in bedrooms, Dining Table Tops||DreamLux',
+          'Venetian Plaster||₹180 – ₹400||2–5||Foyer & entry walls, dining room feature walls, master bedroom walls||Vasari India',
+          'Flexible MDF Curves||₹2,400 / sheet||4, 6, 8, 12||TV units & feature walls||Element Décor',
+          'Wall Acoustic Fluted Panels||₹60 onwards||9–24||Home theatres, study rooms, bedrooms, conference & meeting rooms||Unidus Acoustics'
         ],
         detailItems: [
-          'Liquid Metallic Ombre||Metallic epoxy base paint + metallic pigments||₹800–₹2500 / sq ft||0.5–1 mm thin liquid coats epoxy layers, build up by multiple thin layers||Prep surface → primer → base colour → metallic layers → seal with clear coat → level & cure.||Wipe with a soft, damp microfiber, avoid abrasive cleaners.||• High visual impact & custom gradient effects with ultra-modern look.<br>• Seamless, continuous finish with minimal joints.||• Skilled application needed for smooth blends & avoiding streaks.<br>• Can show imperfections if surface not prepped perfectly.||Feature walls, entry foyers, dining accent walls, bars, powder rooms||Colortale',
+          'Liquid Metallic Ombre||Glossy gradient metallic fluid wall finish||₹800–₹2500 / sq ft||0.5–1 mm thin liquid coats epoxy layers, build up by multiple thin layers||Prep surface → primer → base colour → metallic layers → seal with clear coat → level & cure.||Wipe with a soft, damp microfiber, avoid abrasive cleaners.||• High visual impact & custom gradient effects with ultra-modern look.<br>• Seamless, continuous finish with minimal joints.||• Skilled application needed for smooth blends & avoiding streaks.<br>• Can show imperfections if surface not prepped perfectly.||Feature walls, entry foyers, dining accent walls, bars, powder rooms||Colortale',
           'Microcement||Cement polymer resins fine aggregates mixture||As premium finish ₹200–₹500 / sq ft||2–3 mm total on walls/floors||Clean & prep → primer → base coats (2–3 coats) → top finish coats → sealing.||Mop with neutral pH cleaner; avoid harsh chemicals.||• Seamless & waterproof finish with minimal look.<br>• Ultra-thin so no change to floor/door levels.||• Must be applied by experienced skills for good adhesion.<br>• Can show cracks/chips if substrate moves.||Floors, walls, bathrooms, furniture||Colortale',
-          'Alabaster Lights||Soft, glowing, sculptural lighting creating warmth and luxury without visual heavines.||₹12,000 – ₹40,000 / light fixture||5–20 mm solid alabaster stone or cast alabaster used in fixtures.||Electrical point planning → ceiling hook / mounting plate → fixture installation → LED integration & testing||Dust regularly and wipe gently with a dry or slightly damp cloth; avoid harsh cleaners.||• Creates a soft, warm glow and works as a strong visual centerpiece.<br>• Pairs beautifully with modern interiors.||• Premium pricing.<br>• Requires careful handling due to the stone\'s delicate nature.||Dining rooms, bedrooms, bedside lamps, luxury lounges||Visual of above:<br>Musa Design Lab',
+          'Alabaster Lights||Soft, glowing, sculptural lighting creating warmth and luxury without visual heavines.||₹12,000 – ₹40,000 / light fixture||5–20 mm solid alabaster stone or cast alabaster used in fixtures.||Electrical point planning → ceiling hook / mounting plate → fixture installation → LED integration & testing||Dust regularly and wipe gently with a dry or slightly damp cloth; avoid harsh cleaners.||• Creates a soft, warm glow and works as a strong visual centerpiece.<br>• Pairs beautifully with modern interiors.||• Premium pricing.<br>• Requires careful handling due to the stone\'s delicate nature.||Dining rooms, bedrooms, bedside lamps, luxury lounges||World of Abner<br>Mugen Design Lab',
           'Artistic Acoustic Panels||Artistic wall panels that improves sound quality||₹7,000 – ₹14,000 / panel unit||20–50 mm||Mark panel layout → mount clips/framing → fix panels → seal gaps.||Vacuum or gentle fabric brushing dusting.||• Reduces echo & improves room acoustics.<br>• Visual design element.||• Higher cost than plain wall finishes.<br>• Needs correct placement for real acoustic impact.||Home offices, studios, media rooms, living rooms.||Unidus Acoustics',
           'Textured Lime Plaster||Traditional lime + sand mixture-Breathable and timeless. Adds depth, softness, and an earthy elegance||Lime plaster material ₹40–₹120 / sq ft||8–15 mm typical multi-coat||Prep substrate → scratch coat → intermediary coat → final finish coat → curing.||Wipe lightly & avoid harsh solvents.||• Breathable, sustainable & timeless finish.<br>• Reduces mould risk & regulates humidity.||• Longer install & requires skilled plasterer.<br>• Slightly higher cost and time than gypsum plaster.||Feature walls, living rooms, hallway||Limocoat',
           '3D Artwork||Handcrafted wall art with strong depth,giving a 3D feel||₹55,000 onwards.||4–5 inches||Artwork mounted on prepared wall using heavy-duty anchors & adhesives||Dust gently with a soft dry cloth; avoid water or harsh cleaners.||• Creates a one-of-a-kind luxury focal point that cannot be replicated.<br>• Fully customizable in design, size, texture, and colour.||• Longer install & requires skilled plasterer.<br>• Slightly higher cost and time than gypsum plaster.<br>• Requires professional installation.||Living room feature wall, bedroom statement wall, luxury hotel & reception areas||Godai Arts',
-          'Optical Fibre Fabric||A high-end luminous fabric that create glowing surfaces with light within. ||Varies on request.||2–5 mm applied in multiple thin coats||Fabric stretched or panel-mounted over LED light source, with concealed wiring and power supply.<br>Executed with fabricator + electrician.||Gentle vacuuming and dry cloth cleaning keeps lighting components dust-free.||• Creates soft ambient lighting with a futuristic luxury feel.<br>• Highly custom and experiential material.||• High cost.<br>• Requires specialized installation expertise.||Feature walls in bedrooms, dining table tops||DreamLux (Italy)',
+          'Optical Fibre Fabric||A high-end luminous fabric that create glowing surfaces with light within.||Varies on request.||—||Fabric stretched or panel-mounted over LED light source, with concealed wiring and power supply. Executed with fabricator + electrician.||Gentle vacuuming and dry cloth cleaning keeps lighting components dust-free.||Creates soft ambient lighting with a futuristic luxury feel.<br>Highly custom and experiential material.||High cost.<br>Requires specialized installation expertise.||Feature walls in bedrooms, Dining Table Tops||DreamLux (Italy)',
           'Venetian Plaster||A premium wall finish that mimics natural stone with depth and subtle sheen.||₹180 – ₹400 / sq.ft||2–5 mm applied in multiple thin coats||Wall leveling → primer → 2–3 plaster coats applied with steel trowel → burnishing → optional sealer.||Clean with a slightly damp cloth.<br>Avoid abrasive cleaners.||• Gives a luxury stone-like finish without joints.<br>• Durable, breathable, and visually rich.||• Requires skilled applicators for best results.<br>• Costlier than regular paint finishes.||Foyer & entry walls, dining room feature walls, master bedroom walls||Vasari India',
           'Flexible MDF Curves||Flexible MDF sheets help give flute panel look, specially for curved or rounded walls.||₹2,400 / sheet||4 mm, 6 mm, 8 mm, 12 mm||Fixed onto curved surface or framework using Marine Fevicol.<br>Clear silicone used at joints for flexibility and neat finish.||Wipe with a dry or lightly damp cloth, protect from moisture.||• Enables seamless curves impossible with regular MDF.<br>• Lightweight and ideal for contemporary designs.||• Needs precise surface preparation.<br>• Must be properly sealed to prevent moisture damage.||TV units & feature walls||Element Décor',
           'Wall Acoustic Fluted Panels||Decorative fluted panels that improve acoustics while adding aesthetic look to walls.||₹60 / sq.ft onwards depending on acoustic core & finish||9 mm–24 mm thick||Panels fixed on wall or battens using adhesives/screws, with optional acoustic insulation backing.||Vacuum flutes periodically to avoid dust accumulation.||• Enhances sound absorption and speech clarity.<br>• Adds modern linear texture to interiors.||• Grooves require regular cleaning.<br>• Performance depends on correct backing and installation.||Home theatres, study rooms, bedrooms, conference & meeting rooms||Unidus Acoustics'
@@ -9647,16 +9662,16 @@
       'italian-marbles': {
         title: 'Italian Marbles',
         tableItems: [
-          'Carrara Marble||₹500 – ₹1,500 / sq.ft||16–18||Flooring, wall panels, bathrooms, countertops||Classic Marble Company, Elegant Marble',
-          'Calacatta Marble||₹2,000 – ₹6,000 / sq.ft||18–20||Luxury flooring, statement walls, countertops||Classic Marble Company, Elegant Marble',
-          'Statuario Marble||₹1,500 – ₹5,000 / sq.ft||16–20||Luxury flooring, wall cladding, bathrooms, tabletops||Classic Marble Company, Elegant Marble',
-          'Crema Marfil||₹600 – ₹1,500 / sq.ft||18–20||Flooring, staircases, wall panels||Classic Marble Company, Elegant Marble',
-          'Onyx Marble||₹2,000 – ₹7,000 / sq.ft||16–20||Feature walls, bar counters, luxury interiors||Classic Marble Company, Elegant Marble',
-          'Armani Brown Marble||₹700 – ₹2,000 / sq.ft||16–20||Luxury flooring, wall cladding, bathroom walls, feature walls, countertops||Classic Marble Company, Elegant Marble',
-          'White Portoro Marble||₹2,500 – ₹8,000 / sq.ft||18–20||Feature walls, luxury bathrooms, decorative panels, tabletops||Classic Marble Company, Elegant Marble',
-          'Michelangelo Marble||₹900 – ₹2,500 / sq.ft||18–20||Luxury flooring, wall cladding, bathrooms, countertops, decorative wall panels||Classic Marble Company, Elegant Marble',
-          'Bianco Lasa Marble||₹1,500 – ₹4,000 / sq.ft||16–20||Premium flooring, wall cladding, bathrooms, luxury feature walls||Classic Marble Company, Elegant Marble',
-          'Travertine Marble||₹250 – ₹800 / sq.ft||16–20||Living room flooring, bathroom walls, outdoor flooring, staircases||Classic Marble Company, Elegant Marble'
+          'Carrara Marble||₹500 – ₹1,500||16–18||Flooring, wall panels, bathrooms, countertops||Classic Marble Company, Elegant Marble',
+          'Calacatta Marble||₹2,000 – ₹6,000||18–20||Luxury flooring, statement walls, countertops||Classic Marble Company, Elegant Marble',
+          'Statuario Marble||₹1,500 – ₹5,000||16–20||Luxury flooring, wall cladding, bathrooms, tabletops||Classic Marble Company, Elegant Marble',
+          'Crema Marfil||₹600 – ₹1,500||18–20||Flooring, staircases, wall panels||Classic Marble Company, Elegant Marble',
+          'Onyx Marble||₹2,000 – ₹7,000||16–20||Feature walls, bar counters, luxury interiors||Classic Marble Company, Elegant Marble',
+          'Armani Brown Marble||₹700 – ₹2,000||16–20||Luxury flooring, wall cladding, bathroom walls, feature walls, countertops||Classic Marble Company, Elegant Marble',
+          'White Portoro Marble||₹2,500 – ₹8,000||18–20||Feature walls, luxury bathrooms, decorative panels, tabletops||Classic Marble Company, Elegant Marble',
+          'Michelangelo Marble||₹900 – ₹2,500||18–20||Luxury flooring, wall cladding, bathrooms, countertops, decorative wall panels||Classic Marble Company, Elegant Marble',
+          'Bianco Lasa Marble||₹1,500 – ₹4,000||16–20||Premium flooring, wall cladding, bathrooms, luxury feature walls||Classic Marble Company, Elegant Marble',
+          'Travertine Marble||₹250 – ₹800||16–20||Living room flooring, bathroom walls, outdoor flooring, staircases||Classic Marble Company, Elegant Marble'
         ],
         detailItems: [
           {
@@ -9824,7 +9839,7 @@
       'indian-marbles': {
         title: 'Indian Marbles',
         tableItems: [
-          'Makrana Marble||₹200 – ₹700 per sq ft||16–20||Flooring, temples, wall cladding||Classic Marble Company, Elegant Marble',
+          'Makrana Marble||₹200 – ₹700||16–20||Flooring, temples, wall cladding||Classic Marble Company, Elegant Marble',
           'Banswara Marble||₹120 – ₹400||16–20||Living room flooring, Staircases, Feature walls||Classic Marble Company, Elegant Marble',
           'Katni Marble||₹90 – ₹250||12–16||Living rooms, Bedrooms, Commercial flooring||Classic Marble Company, Elegant Marble',
           'Ambaji Marble||₹100 – ₹350||12–18||Flooring, staircases, wall panels||RK Marble',
@@ -10734,7 +10749,8 @@
           section: id,
           tableItems: listData[id].tableItems,
           detailItems: listData[id].detailItems,
-          imgMap: {}
+          imgMap: {},
+          wrapperClass: 'designer-veneer-wrap'
         });
         return;
       }
@@ -10789,7 +10805,14 @@
           <thead><tr><th style="width:50px">Photo</th>${d.cols.map(c => `<th>${c}</th>`).join('')}</tr></thead>
           <tbody>${d.rows.map((r, ri) => `<tr>
             ${thumbTD(id, ri, r[2] || r[1] || '')}
-            ${r.map((cell, i) => {
+            ${isRoomFinishesTable ? [
+          `<td><span class="badge">${r[0]}</span></td>`,
+          `<td class="t-name">${r[2]}</td>`,
+          `<td class="t-price">${r[4]}</td>`,
+          `<td>${r[3]}</td>`,
+          `<td>${r[6]}</td>`,
+          `<td class="t-brand">${r[5]}</td>`
+        ].join('') : r.map((cell, i) => {
           if (i === 0) return `<td><span class="badge">${cell}</span></td>`;
           if (i === 1) return `<td class="t-cat">${cell}</td>`;
           if (i === 2) return `<td class="t-name">${cell}</td>`;
