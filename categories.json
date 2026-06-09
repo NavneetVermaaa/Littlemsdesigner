@@ -169,7 +169,7 @@
   },
   {
     "id": "laminates-finish",
-    "img": "assets/1.Cover Images/coming soon.jpg",
+    "img": "assets/1.Cover Images/53.Laminate Finishes.jpg",
     "name": "Laminates Finishes",
     "desc": "Solid color, wood grain, marble, metallic, digital printed laminates \u2013 full specs",
     "tag": "carpentry",
@@ -185,7 +185,7 @@
   },
   {
     "id": "designer-veneer",
-    "img": "assets/1.Cover Images/coming soon.jpg",
+    "img": "assets/1.Cover Images/50.Designer Veneers.jpg",
     "name": "Designer Veneer",
     "desc": "Sucupira, Wenge, Ebony, Zebrano, Burl – premium exotic veneers",
     "tag": "carpentry",
@@ -233,7 +233,7 @@
   },
   {
     "id": "hardware",
-    "img": "assets/1.Cover Images/coming soon.jpg",
+    "img": "assets/1.Cover Images/51.Hardware.jpg",
     "name": "Hardware",
     "desc": "Hinges, channels, handles and more",
     "tag": "carpentry",
@@ -313,7 +313,7 @@
   },
   {
     "id": "lights",
-    "img": "assets/1.Cover Images/coming soon.jpg",
+    "img": "assets/1.Cover Images/40.Lights.jpg",
     "name": "Lights",
     "desc": "All types of lights for interiors",
     "tag": "electrical",
@@ -321,7 +321,7 @@
   },
   {
     "id": "switches",
-    "img": "assets/1.Cover Images/coming soon.jpg",
+    "img": "assets/1.Cover Images/41. Switch Boards.jpg",
     "name": "Switch Boards",
     "desc": "Switch boards and plates",
     "tag": "electrical",
@@ -329,7 +329,7 @@
   },
   {
     "id": "automation",
-    "img": "assets/1.Cover Images/coming soon.jpg",
+    "img": "assets/1.Cover Images/42.Automation.jpg",
     "name": "Automation",
     "desc": "Home automation systems",
     "tag": "electrical",
@@ -337,7 +337,7 @@
   },
   {
     "id": "kitchen-colors",
-    "img": "assets/1.Cover Images/coming soon.jpg",
+    "img": "assets/1.Cover Images/43. Kitchen Colours.jpg",
     "name": "Kitchen Colour Combinations",
     "desc": "Colour combinations for kitchens",
     "tag": "paint",
@@ -345,7 +345,7 @@
   },
   {
     "id": "bathroom-colors",
-    "img": "assets/1.Cover Images/coming soon.jpg",
+    "img": "assets/1.Cover Images/45. Bathroom Colours.jpg",
     "name": "Bathroom Colour Combinations",
     "desc": "Colour combinations for bathrooms",
     "tag": "paint",
@@ -353,7 +353,7 @@
   },
   {
     "id": "bedroom-colors",
-    "img": "assets/1.Cover Images/coming soon.jpg",
+    "img": "assets/1.Cover Images/44. Bedroom Colours.jpg",
     "name": "Bedroom Colour Combinations",
     "desc": "Colour combinations for bedrooms",
     "tag": "paint",
@@ -361,7 +361,7 @@
   },
   {
     "id": "living-colors",
-    "img": "assets/1.Cover Images/coming soon.jpg",
+    "img": "assets/1.Cover Images/46. Living room Colours.jpg",
     "name": "Living Room Colour Combinations",
     "desc": "Colour combinations for living rooms",
     "tag": "paint",
@@ -393,7 +393,7 @@
   },
   {
     "id": "kitchen-colors-2",
-    "img": "assets/1.Cover Images/coming soon.jpg",
+    "img": "assets/1.Cover Images/43. Kitchen Colours.jpg",
     "name": "Kitchen Colour Combinations",
     "desc": "Colour combinations for kitchens",
     "tag": "kitchen",
@@ -401,7 +401,7 @@
   },
   {
     "id": "sanitary",
-    "img": "assets/1.Cover Images/coming soon.jpg",
+    "img": "assets/1.Cover Images/49.Sanitary Fittings.jpg",
     "name": "Sanitary Fittings",
     "desc": "Toilets, basins, faucets and more",
     "tag": "bathroom",
@@ -409,7 +409,7 @@
   },
   {
     "id": "bathroom-colors-2",
-    "img": "assets/1.Cover Images/coming soon.jpg",
+    "img": "assets/1.Cover Images/45. Bathroom Colours.jpg",
     "name": "Bathroom Colour Combinations",
     "desc": "Colour combinations for bathrooms",
     "tag": "bathroom",
