@@ -6741,8 +6741,8 @@
         "kitchen-counter": "14. Kitchen Counter Tops",
         "kitchen-shutter": "14. Kitchen Shutters",
         "kitchen-must": "16.5 Kitchen Must Haves",
-        "flooring": "17.Natural Materials",
-        "wall": "17.Natural Materials",
+        "flooring": "30.Flooring",
+        "wall": "32.Wall",
         "limewash": "17.Natural Materials",
         "limeplaster": "17.Natural Materials",
         "venetian": "17.Natural Materials",
@@ -6759,12 +6759,14 @@
         "quartzite": "22.Quartzite",
         "glass": "23. Glass",
         "glass-summary": "23. Glass",
-        "mirror": "23. Glass",
+        "mirror": "36.Mirrors",
         "laminates": "24. Laminates",
         "designer-laminates": "24. Laminates",
         "veneer": "25. Veneer",
-        "designer-veneer": "25. Veneer",
-        "ceiling": "3.False Ceiling Finishes"
+        "designer-veneer": "34.Designer Veneer",
+        "ceiling": "31. False Ceiling",
+        "wood-types": "35.Wood",
+        "laminates-finish": "33.Laminate Finishes"
       }
     };
 
@@ -6857,9 +6859,9 @@
       ============================================================ */
     const detailImages = {
       marbles: ['Calacatta', 'Carrara', 'Statuario', 'Marble Flooring'],
-      flooring: ['Marble Flooring', 'Wood Flooring', 'Tile Flooring', 'Microcement'],
+      flooring: ['WPC Deck Flooring', 'SPC Flooring', 'Laminate Wood', 'Engineered Wood', 'Solid Wood', 'Italian Marble', 'Vitrified Tiles', 'Microcement'],
       wall: ['Textured Wall', 'Limewash', 'Feature Wall', 'Plaster Finish'],
-      ceiling: ['False Ceiling', 'Wooden Ceiling', 'Gypsum Ceiling'],
+      ceiling: ['POP False Ceiling', 'Gypsum Board Ceiling', 'PVC Ceiling Panels', 'Wooden Ceiling Panels', 'Acoustic Panels', 'Glass Ceiling Panels', 'Stretch Ceiling', 'Veneer'],
       'glass-summary': ['Clear Glass', 'Frosted Glass', 'Fluted Glass'],
       'plywood-summary': ['Plywood', 'MDF Board'],
       laminate: ['Matt Laminate', 'Metallic Laminate', 'Wood Grain'],
@@ -10067,6 +10069,12 @@
     function getThumb(tid, idx) { return rowThumb[tid + ':' + idx] || null; }
 
     function thumbTD(tid, idx, lbl) {
+      // Check for explicit override first
+      var override = rowThumb[tid + ':' + idx];
+      if (override) {
+        var escLbl = (lbl || '').replace(/'/g, '');
+        return '<td class="t-th"><div class="thumb-wrap"><img class="row-img" src="' + override + '" alt="' + escLbl + '" loading="lazy" onclick="event.stopPropagation();lbOpen(this.src,\'' + escLbl + '\')"></div></td>';
+      }
       var label = (lbl || '').replace(/'/g, '').trim();
       var folder = IMAGE_SETTINGS.FOLDER_MAP[tid];
       if (!folder) return '<td class="t-th"><div class="thumb-wrap"><img class="row-img" src="assets/1.Cover Images/coming soon.jpg" alt="' + label + '" loading="lazy"></div></td>';
@@ -10352,16 +10360,16 @@
         var renderOpts = { title: listData[id].title };
         if (id === 'kitchen-counter') {
           imgMap = {
-            'Engineered Quartz': 'assets/14. Kitchen Counter Tops/Engineered Quartz.jpg',
-            'Granite': 'assets/14. Kitchen Counter Tops/Granite.jpg',
-            'Natural Quartzite': 'assets/14. Kitchen Counter Tops/Natural Quartzite.jpg',
-            '15 MM Tiles': 'assets/14. Kitchen Counter Tops/15mm Tiles.jpg',
-            'Corian': 'assets/14. Kitchen Counter Tops/Corian.jpg',
-            'Natural Marble': 'assets/14. Kitchen Counter Tops/Natural Marble.jpg',
-            'Terrazzo Slabs': 'assets/14. Kitchen Counter Tops/Terrazzo Slabs.jpg',
-            'Concrete Microtopping': 'assets/14. Kitchen Counter Tops/Concrete.jpg',
-            'Porcelain Stone': 'assets/14. Kitchen Counter Tops/Porcelain Stone.jpg',
-            'Stainless Steel': 'assets/14. Kitchen Counter Tops/Stainless Steel.jpg'
+      'Engineered Quartz': 'assets/14. Kitchen Counter Tops/Engineered Quartz.jpg',
+      'Granite': 'assets/14. Kitchen Counter Tops/Granite.jpg',
+      'Natural Quartzite': 'assets/14. Kitchen Counter Tops/Natural Quartzite.jpg',
+      '15 MM Tiles': 'assets/14. Kitchen Counter Tops/15 mm Tile.jpg',
+      'Corian': 'assets/14. Kitchen Counter Tops/Corian.jpg',
+      'Natural Marble': 'assets/14. Kitchen Counter Tops/Natural Marble.jpg',
+      'Terrazzo Slabs': 'assets/14. Kitchen Counter Tops/Terrazzo.jpg',
+      'Concrete Microtopping': 'assets/14. Kitchen Counter Tops/Concrete.jpg',
+      'Porcelain Stone': 'assets/14. Kitchen Counter Tops/Porcelain Stone.jpg',
+      'Stainless Steel': 'assets/14. Kitchen Counter Tops/Stainless Steel.jpg'
           };
           renderOpts.tableItems = listData[id].tableItems;
           renderOpts.detailItems = listData[id].detailItems;
@@ -10420,13 +10428,13 @@
           };
         } else if (id === 'granite') {
           imgMap = {
-            'Black Granite': 'assets/20. Granite/Black Granite.jpg',
-            'Black Galaxy Granite': 'assets/20. Granite/Black Galaxy Granite.jpg',
-            'Steel Grey Granite': 'assets/20. Granite/Steel Grey Granite.jpg',
-            'Tan Brown Granite': 'assets/20. Granite/Tan Brown Granite.jpg',
-            'Viscount White Granite': 'assets/20. Granite/Viscount White Granite.jpg',
-            'Alaska White Granite': 'assets/20. Granite/Alaska White Granite.jpg',
-            'Imperial Red Granite': 'assets/20. Granite/Imperial Red Granite.jpg'
+      'Black Granite': 'assets/20. Granite/Black Granite.jpg',
+      'Black Galaxy Granite': 'assets/20. Granite/Black Galaxy Granite.jpg',
+      'Steel Grey Granite': 'assets/20. Granite/Steel grey Granite.jpg',
+      'Tan Brown Granite': 'assets/20. Granite/Tan Brown Granite.jpg',
+      'Viscount White Granite': 'assets/20. Granite/Viscount White Granite.jpg',
+      'Alaska White Granite': 'assets/20. Granite/Alaska White Granite.jpg',
+      'Imperial Red Granite': 'assets/20. Granite/Imperial red granite.jpg'
           };
         } else if (id === 'quartz') {
           imgMap = {
@@ -10440,15 +10448,15 @@
           };
         } else if (id === 'mirror') {
           imgMap = {
-            'Clear Mirror': 'assets/1.Cover Images/coming soon.jpg',
-            'Tinted Mirror': 'assets/1.Cover Images/coming soon.jpg',
-            'Antique Mirror': 'assets/1.Cover Images/coming soon.jpg',
-            'Bevelled Mirror': 'assets/1.Cover Images/coming soon.jpg',
-            'Mirror Tiles': 'assets/1.Cover Images/coming soon.jpg',
-            'Fluted Mirror': 'assets/1.Cover Images/coming soon.jpg',
-            'Etched Mirror': 'assets/1.Cover Images/coming soon.jpg',
-            'Back-Painted Mirror': 'assets/1.Cover Images/coming soon.jpg',
-            'LED Mirror': 'assets/1.Cover Images/coming soon.jpg'
+            'Clear Mirror': 'assets/36.Mirrors/1.Clear Mirror.jpg',
+            'Tinted Mirror': 'assets/36.Mirrors/2.Tinted Mirror.jpg',
+            'Antique Mirror': 'assets/36.Mirrors/3.Antique Mirror.jpg',
+            'Bevelled Mirror': 'assets/36.Mirrors/4.Bevelled Mirror.jpg',
+            'Mirror Tiles': 'assets/36.Mirrors/5.Mirror Tiles.jpg',
+            'Fluted Mirror': 'assets/36.Mirrors/6.Fluted Mirror.jpg',
+            'Etched Mirror': 'assets/36.Mirrors/7.Etched Mirror.jpg',
+            'Back-Painted Mirror': 'assets/36.Mirrors/8.Back-Painted Mirror.jpg',
+            'LED Mirror': 'assets/36.Mirrors/9.LED Mirror.jpg'
           };
         } else if (id === 'quartzite') {
           imgMap = {
@@ -10478,8 +10486,8 @@
             'Laminated Glass': 'assets/23. Glass/Laminated glass.jpg',
             'Frosted Glass': 'assets/23. Glass/Frosted glass.jpg',
             'Tinted Glass': 'assets/23. Glass/Tinted glass.jpg',
-            'Lacquered Glass': 'assets/23. Glass/Lacquered-Back Painted Glass.jpg',
-            'Lacquered/Back Painted Glass': 'assets/23. Glass/Lacquered-Back Painted Glass.jpg',
+      'Lacquered Glass': 'assets/23. Glass/Back painted  glass.jpg',
+      'Lacquered/Back Painted Glass': 'assets/23. Glass/Back painted  glass.jpg',
             'Fluted Glass': 'assets/23. Glass/Fluted glass.jpg',
             'Smoked Glass': 'assets/23. Glass/Smoked glass.jpg',
             'Sandwiched Glass': 'assets/23. Glass/Sandwiched glass.jpg',
@@ -10488,7 +10496,7 @@
         } else if (id === 'laminates') {
           imgMap = {
             'Regular Laminate': 'assets/24. Laminates/Wood Grain Laminate.jpg',
-            'PVC Laminate': 'assets/24. Laminates/Solid Color Laminate.jpg',
+            'PVC Laminate': 'assets/24. Laminates/Solid Colour Laminate.jpg',
             'High Pressure Laminate': 'assets/24. Laminates/Stone Finish Laminate.jpg',
             'Prelam Board': 'assets/24. Laminates/Marble Finish Laminate.jpg',
             'Core Laminate': 'assets/24. Laminates/Metallic Finish Laminate.jpg',
@@ -10499,12 +10507,12 @@
           };
         } else if (id === 'veneer') {
           imgMap = {
-            'Natural Wood Veneer': 'assets/25. Veneer/Natural Wood Veneer.jpg',
-            'Engineered Veneer': 'assets/25. Veneer/Recon.jpg',
-            'Teak Veneer': 'assets/25. Veneer/Teak Veneer.jpg',
-            'Walnut Veneer': '',
-            'Oak Veneer': '',
-            'Dyed Smoked Veneer': 'assets/25. Veneer/Dyed  Smoked Veneer.jpg'
+      'Natural Wood Veneer': 'assets/25. Veneer/Natural Wood Veneer.jpg',
+      'Engineered Veneer': 'assets/25. Veneer/Engineered Veneer.jpg',
+      'Teak Veneer': 'assets/25. Veneer/Teak Veneer.jpg',
+      'Walnut Veneer': 'assets/25. Veneer/Walnut Veneer.jpg',
+      'Oak Veneer': 'assets/25. Veneer/Oak Veneer.jpg',
+      'Dyed Smoked Veneer': 'assets/25. Veneer/Dyed Smoked Veneer.jpg'
           };
         }
         renderDataDrivenSection(el, {
@@ -10556,7 +10564,7 @@
         } else if (id === 'kitchen-must') {
           kitImgMap = {
             'Corner Drawers': 'assets/16.5 Kitchen Must Haves/Corner Drawers.jpg',
-            'Multi Functional Sink': 'assets/16.5 Kitchen Must Haves/Multi Functional Sink.jpg',
+            'Multi Functional Sink': 'assets/16.5 Kitchen Must Haves/Multi Fuctional Sink.jpg',
             'Tall Utility Unit': 'assets/16.5 Kitchen Must Haves/Tall Utility Unit.jpg',
             'Drawer Internals': 'assets/16.5 Kitchen Must Haves/Drawer Internals.jpg',
             'Shutter Storages (Upper and Lower)': 'assets/16.5 Kitchen Must Haves/Shutter Storages.jpg'
@@ -10581,95 +10589,95 @@
             'Flute Panel Doors': 'assets/6.Door Finishes/Flute Panel Doors.jpg',
             'Veneer Doors': 'assets/6.Door Finishes/Veneer Doors.jpg',
             'Laminate Doors': 'assets/6.Door Finishes/Laminate Doors.jpg',
-            'Metal Doors (SS/Brass/MS)': 'assets/6.Door Finishes/Metal Doors (SS-Brass-MS).jpg',
+            'Metal Doors (SS/Brass/MS)': 'assets/6.Door Finishes/Metal Doors.jpg',
             'PU Painted Doors': 'assets/6.Door Finishes/PU Painted Doors.jpg',
-            'Glass Doors (Clear/Fluted/Tinted/Smoked)': 'assets/6.Door Finishes/Glass Doors (Clear-Fluted-Tinted-Smoked).jpg'
+            'Glass Doors (Clear/Fluted/Tinted/Smoked)': 'assets/6.Door Finishes/Glass Doors.jpg'
           };
         } else if (id === 'bed') {
           imgMap = {
-            'LAMINATE FINISH': 'assets/5.Bed Finishes/Pre-Lam Particle Board Finish.jpg',
+            'LAMINATE FINISH': 'assets/5.Bed Finishes/Laminte Finish.jpg',
             'VENEER FINISH': 'assets/5.Bed Finishes/Veneer Finish.jpg',
             'PU PAINT FINISH': 'assets/5.Bed Finishes/Pu Paint Finish.jpg',
-            'SOLID WOOD FINISH (TEAK / SHEESHAM WOOD)': 'assets/5.Bed Finishes/Solid Wood Finish (Teak-Sheesham).jpg',
-            'UPHOLSTERED FINISH (FABRIC / LEATHER)': 'assets/5.Bed Finishes/Upholstered Finish (Fabric-Leather).jpg',
-            'METAL FINISH (MS / SS FRAME)': 'assets/5.Bed Finishes/Metal Finish (MS-SS Frame).jpg',
-            'PRE-LAM PARTICLE BOARD FINISH': 'assets/5.Bed Finishes/Pre-Lam Particle Board Finish.jpg',
-            'ACRYLIC FINISH': 'assets/5.Bed Finishes/Acrylic Finish.jpg',
-            'RATTAN CANE FINISH': 'assets/5.Bed Finishes/Rattan Cane Finish.jpg',
+            'SOLID WOOD FINISH (TEAK / SHEESHAM WOOD)': 'assets/5.Bed Finishes/Solid Wood Finish.jpg',
+            'UPHOLSTERED FINISH (FABRIC / LEATHER)': 'assets/5.Bed Finishes/Upholstered Bed.jpg',
+            'METAL FINISH (MS / SS FRAME)': 'assets/5.Bed Finishes/Metal Finish.jpg',
+            'PRE-LAM PARTICLE BOARD FINISH': 'assets/5.Bed Finishes/Pre Lam Particle Finish.jpg',
+            'ACRYLIC FINISH': 'assets/5.Bed Finishes/Acrylic bed.jpg',
+            'RATTAN CANE FINISH': 'assets/5.Bed Finishes/Cane Finish.jpg',
             'BAMBOO FINISH': 'assets/5.Bed Finishes/Bamboo Finish.jpg'
           };
         } else if (id === 'headboard') {
           imgMap = {
-            'FABRIC UPHOLSTERED': 'assets/7.Headboard Finishes/Fabric Upholstered.jpg',
-            'LEATHERITE': 'assets/7.Headboard Finishes/Leatherite.jpg',
+            'FABRIC UPHOLSTERED': 'assets/7.Headboard Finishes/Fabric Finish.jpg',
+            'LEATHERITE': 'assets/7.Headboard Finishes/Leatherite Finish.jpg',
             'RATTAN CANE': 'assets/7.Headboard Finishes/Rattan Cane.jpg',
             'CHARCOAL PANEL': 'assets/7.Headboard Finishes/Charcoal Panel.jpg',
-            'ACRYLIC': 'assets/7.Headboard Finishes/Acrylic.jpg',
-            'CNC CUT / JAALI DESIGN': 'assets/7.Headboard Finishes/CNC Cut - Jaali Design.jpg',
-            'PU PAINT FINISH': 'assets/7.Headboard Finishes/Pu Paint Finish.jpg',
+            'ACRYLIC': 'assets/7.Headboard Finishes/Acrylic Finish.jpg',
+            'CNC CUT / JAALI DESIGN': 'assets/7.Headboard Finishes/CNC Cut Design.jpg',
+            'PU PAINT FINISH': 'assets/7.Headboard Finishes/PU Paint Finish.jpg',
             'VENEER FINISH': 'assets/7.Headboard Finishes/Veneer Finish.jpg'
           };
         } else if (id === 'sidetable') {
           imgMap = {
             'LAMINATE FINISH': 'assets/8.Side Table Finishes/Laminate Finish.jpg',
             'VENEER FINISH': 'assets/8.Side Table Finishes/Veneer Finish.jpg',
-            'PU PAINT FINISH': 'assets/8.Side Table Finishes/Pu Paint Finish.jpg',
-            'SOLID WOOD TABLE (TEAK / SHEESHAM WOOD)': 'assets/8.Side Table Finishes/Solid Wood Table (Teak-Sheesham).jpg',
+            'PU PAINT FINISH': 'assets/8.Side Table Finishes/PU Paint Finish.jpg',
+            'SOLID WOOD TABLE (TEAK / SHEESHAM WOOD)': 'assets/8.Side Table Finishes/Solid Wood Table.jpg',
             'FABRIC FINISH': 'assets/8.Side Table Finishes/Fabric Finish.jpg',
-            'METAL FINISH (MS / SS FRAME)': 'assets/8.Side Table Finishes/Metal Finish (MS-SS Frame).jpg',
-            'PRE-LAM PARTICLE FINISH': 'assets/8.Side Table Finishes/Pre-Lam Particle Finish.jpg',
+            'METAL FINISH (MS / SS FRAME)': 'assets/8.Side Table Finishes/Metal Finish.jpg',
+            'PRE-LAM PARTICLE FINISH': 'assets/8.Side Table Finishes/Pre Lam Finish.jpg',
             'ACRYLIC FINISH': 'assets/8.Side Table Finishes/Acrylic Finish.jpg',
             'MIRROR FINISH': 'assets/8.Side Table Finishes/Mirror Finish.jpg',
-            'FLUTED PANEL FINISH': 'assets/8.Side Table Finishes/Fluted Panel Finish.jpg',
+            'FLUTED PANEL FINISH': 'assets/8.Side Table Finishes/Fluted Panel.jpg',
             'LEATHERITE FINISH': 'assets/8.Side Table Finishes/Leatherite Finish.jpg',
             'TERRAZZO FINISH': 'assets/8.Side Table Finishes/Terrazzo Finish.jpg',
             'CORIAN FINISH': 'assets/8.Side Table Finishes/Corian Finish.jpg',
-            'METAL INLAY / BRASS': 'assets/8.Side Table Finishes/Metal Inlay - Brass.jpg',
+            'METAL INLAY / BRASS': 'assets/8.Side Table Finishes/Metal Inlsy Finish.jpg',
             'MARBLE FINISH': 'assets/8.Side Table Finishes/Marble Finish.jpg'
           };
         } else if (id === 'study') {
           imgMap = {
             'Laminate Finish': 'assets/9.Study Table Finishes/Laminate Finish.jpg',
-            'Pre-Laminated Board': 'assets/9.Study Table Finishes/Pre-Laminated Board.jpg',
+            'Pre-Laminated Board': 'assets/9.Study Table Finishes/Pre laminted Board.jpg',
             'Veneer Finish': 'assets/9.Study Table Finishes/Veneer Finish.jpg',
-            'PU Paint': 'assets/9.Study Table Finishes/PU Paint.jpg',
-            'Solid Wood': 'assets/9.Study Table Finishes/Solid Wood.jpg',
+            'PU Paint': 'assets/9.Study Table Finishes/PU Paint Finish.jpg',
+            'Solid Wood': 'assets/9.Study Table Finishes/Solid Wood Finish.jpg',
             'Metal Finish': 'assets/9.Study Table Finishes/Metal Finish.jpg',
-            'Acrylic': 'assets/9.Study Table Finishes/Acrylic.jpg',
-            'Leatherette Finish': 'assets/9.Study Table Finishes/Leatherette Finish.jpg'
+            'Acrylic': 'assets/9.Study Table Finishes/Acrylic Finish.jpg',
+            'Leatherette Finish': 'assets/9.Study Table Finishes/Leatherite Finish.jpg'
           };
         } else if (id === 'dresser') {
           imgMap = {
             'Laminate Finish': 'assets/10.Dresser Table Finishes/Laminate Finish.jpg',
-            'Pre-Laminated Board': 'assets/10.Dresser Table Finishes/Pre-Laminated Board.jpg',
+            'Pre-Laminated Board': 'assets/10.Dresser Table Finishes/Pre Laminated Finish.jpg',
             'Veneer Finish': 'assets/10.Dresser Table Finishes/Veneer Finish.jpg',
             'PU Paint Finish': 'assets/10.Dresser Table Finishes/PU Paint Finish.jpg',
             'Mirror Finish': 'assets/10.Dresser Table Finishes/Mirror Finish.jpg',
             'Marble Finish': 'assets/10.Dresser Table Finishes/Marble Finish.jpg',
-            'Leatherette Finish': 'assets/10.Dresser Table Finishes/Leatherette Finish.jpg',
-            'Fluted Panel Finish': 'assets/10.Dresser Table Finishes/Fluted Panel Finish.jpg',
+            'Leatherette Finish': 'assets/10.Dresser Table Finishes/Leatherite Finish.jpg',
+            'Fluted Panel Finish': 'assets/10.Dresser Table Finishes/Flute Panel Finish.jpg',
             'Rattan Cane Finish': 'assets/10.Dresser Table Finishes/Rattan Cane Finish.jpg',
-            'PU Paint (Multi-coat)': 'assets/10.Dresser Table Finishes/PU Paint (Multi-coat).jpg'
+            'PU Paint (Multi-coat)': 'assets/10.Dresser Table Finishes/PU Paint Finish.jpg'
           };
         } else if (id === 'wardrobe') {
           imgMap = {
             'Fluted Glass': 'assets/11.Wardrobe Shutter Finishes/Fluted Glass.jpg',
-            'PU Paint': 'assets/11.Wardrobe Shutter Finishes/PU Paint.jpg',
+            'PU Paint': 'assets/11.Wardrobe Shutter Finishes/PU Paint Finish.jpg',
             'Rattan Cane': 'assets/11.Wardrobe Shutter Finishes/Rattan Cane.jpg',
-            'Leather / Leatherette': 'assets/11.Wardrobe Shutter Finishes/Leather.jpg',
+            'Leather / Leatherette': 'assets/11.Wardrobe Shutter Finishes/Leatherite.jpg',
             'Acrylic Matte': 'assets/11.Wardrobe Shutter Finishes/Acrylic Matte.jpg',
             'Wallpaper': 'assets/11.Wardrobe Shutter Finishes/Wallpaper.jpg',
             'Metallic Laminate': 'assets/11.Wardrobe Shutter Finishes/Metallic Laminate.jpg',
-            'Back-Painted Glass': 'assets/11.Wardrobe Shutter Finishes/Back-Painted Glass.jpg',
+            'Back-Painted Glass': 'assets/11.Wardrobe Shutter Finishes/Back Painted Glass.jpg',
             'Veneer': 'assets/11.Wardrobe Shutter Finishes/Veneer.jpg',
             'Fluted Panel (MDF/WPC/Wood)': 'assets/11.Wardrobe Shutter Finishes/Fluted Panel.jpg',
-            'Fabric Panels': 'assets/11.Wardrobe Shutter Finishes/Fabric Panels.jpg'
+            'Fabric Panels': 'assets/11.Wardrobe Shutter Finishes/Fabric Panel Finish.jpg'
           };
         } else if (id === 'wardrobe-must') {
           imgMap = {
             'Shoe Revolving Rack': 'assets/12.5 Must Wardrobe Haves/Shoe Revolving Rack.jpg',
-            'Hidden Watch Pull Down': 'assets/12.5 Must Wardrobe Haves/Hidden Watch Pull Down.jpg',
-            'Fingerprint Lock': 'assets/12.5 Must Wardrobe Haves/Fingerprint Lock.jpg',
+            'Hidden Watch Pull Down': 'assets/12.5 Must Wardrobe Haves/Hidden Wall Pull Down.jpg',
+            'Fingerprint Lock': 'assets/12.5 Must Wardrobe Haves/Finger Print Lock.jpg',
             'Drawer Organisers': 'assets/12.5 Must Wardrobe Haves/Drawer Organisers.jpg',
             'Seamless Handles': 'assets/12.5 Must Wardrobe Haves/Seamless Handles.jpg'
           };
@@ -10677,20 +10685,20 @@
           imgMap = {
             'LAMINATE FINISH': 'assets/13. TV Unit Finishes/Laminate Finish.jpg',
             'VENEER FINISH': 'assets/13. TV Unit Finishes/Veneer Finish.jpg',
-            'PU PAINT FINISH': 'assets/13. TV Unit Finishes/Pu Paint Finish.jpg',
+            'PU PAINT FINISH': 'assets/13. TV Unit Finishes/PU Paint Finish.jpg',
             'ACRYLIC FINISH': 'assets/13. TV Unit Finishes/Acrylic Finish.jpg',
-            'GLASS FINISH (BACK-PAINTED / FLUTED / TINTED)': 'assets/13. TV Unit Finishes/Glass Finish (Back-Painted-Fluted-Tinted).png',
-            'NATURAL STONE CLADDING (SLATE / SANDSTONE / STACK STONE)': 'assets/13. TV Unit Finishes/Natural Stone Cladding (Slate-Sandstone).jpg',
+            'GLASS FINISH (BACK-PAINTED / FLUTED / TINTED)': 'assets/13. TV Unit Finishes/Glass Finish.png',
+            'NATURAL STONE CLADDING (SLATE / SANDSTONE / STACK STONE)': 'assets/13. TV Unit Finishes/Natural Stone Cladding.jpg',
             'MARBLE CLADDING': 'assets/13. TV Unit Finishes/Marble Cladding.jpg',
-            'GRANITE CLADDING': 'assets/13. TV Unit Finishes/Granite Cladding.jpg',
-            'CHARCOAL PANELS': 'assets/13. TV Unit Finishes/Charcoal Panels.jpg',
-            'WPC PANELS (WOOD PLASTIC COMPOSITE)': 'assets/13. TV Unit Finishes/WPC Panels (Wood Plastic Composite).jpg',
-            'FLUTED / GROOVED PANELS': 'assets/13. TV Unit Finishes/Fluted - Grooved Panels.jpg',
-            'METAL ACCENTS (SS / BRASS / MS)': 'assets/13. TV Unit Finishes/Metal Accents (SS-Brass-MS).jpg',
+            'GRANITE CLADDING': 'assets/13. TV Unit Finishes/Granite Finish.jpg',
+            'CHARCOAL PANELS': 'assets/13. TV Unit Finishes/Charcoal Panel.jpg',
+            'WPC PANELS (WOOD PLASTIC COMPOSITE)': 'assets/13. TV Unit Finishes/WPC Panel.jpg',
+            'FLUTED / GROOVED PANELS': 'assets/13. TV Unit Finishes/Fluted Panel.jpg',
+            'METAL ACCENTS (SS / BRASS / MS)': 'assets/13. TV Unit Finishes/Metal Accents.jpg',
             'WALLPAPER FINISH': 'assets/13. TV Unit Finishes/Wallpaper Finish.jpg',
             'TEXTURED PAINT FINISH': 'assets/13. TV Unit Finishes/Textured Paint Finish.jpg',
             'MIRROR FINISH (CLEAR / BRONZE / SMOKED)': 'assets/13. TV Unit Finishes/Mirror Finish.jpg',
-            'LEATHER / UPHOLSTERED PANELS': 'assets/13. TV Unit Finishes/Leatherite Finish.jpg',
+            'LEATHER / UPHOLSTERED PANELS': 'assets/13. TV Unit Finishes/Leathertite Finish.jpg',
             'CNC CUT PANELS': 'assets/13. TV Unit Finishes/CNC Cut Panels.jpg',
             'CORIAN': 'assets/13. TV Unit Finishes/Corian Finish.jpg',
             'CONCRETE FINISH': 'assets/13. TV Unit Finishes/Concrete Finish.png',
@@ -10749,7 +10757,13 @@
           section: id,
           tableItems: listData[id].tableItems,
           detailItems: listData[id].detailItems,
-          imgMap: {},
+          imgMap: {
+            'Sucupira Veneer': 'assets/34.Designer Veneer/1.Sucupira Veneer.jpg',
+            'Wenge Veneer': 'assets/34.Designer Veneer/2.Wenge Veneer.jpg',
+            'Ebony Veneer': 'assets/34.Designer Veneer/3.Ebony Veneer.jpg',
+            'Zebrano Veneer': 'assets/34.Designer Veneer/4.Zebrano Veneer.jpg',
+            'Burl Veneer': 'assets/34.Designer Veneer/5.Burl Veneer.jpg'
+          },
           wrapperClass: 'designer-veneer-wrap'
         });
         return;
@@ -10762,7 +10776,14 @@
           section: id,
           tableItems: listData[id].tableItems,
           detailItems: listData[id].detailItems,
-          imgMap: {}
+          imgMap: {
+            'Teak Wood': 'assets/35.Wood/1.Teak Wood.jpg',
+            'Sheesham Wood': 'assets/35.Wood/2.Sheesham Wood.jpg',
+            'Oak Wood': 'assets/35.Wood/3.Oak Wood.jpg',
+            'Walnut Wood': 'assets/35.Wood/4.Walnut Wood.jpg',
+            'Pine Wood': 'assets/35.Wood/5. Pine Wood.jpg',
+            'Ash Wood': 'assets/35.Wood/6.Ash Wood.jpg'
+          }
         });
         return;
       }
@@ -10770,14 +10791,14 @@
       // Laminates Finishes premium routing
       if (id === 'laminates-finish') {
         var lamFinishImgMap = {
-          'Solid Color Laminate': 'assets/24. Laminates/laminates finish/1. Solid Colour Laminate.jpg',
-          'Wood Grain Laminate': 'assets/24. Laminates/laminates finish/2.Wood Grain Laminate.jpg',
-          'Marble Finish Laminate': 'assets/24. Laminates/laminates finish/3.Marble Finish Laminate.jpg',
-          'Fabric Finish Laminate': 'assets/24. Laminates/laminates finish/4. Fabric Finish Laminate.jpg',
-          'Metallic Finish Laminate': 'assets/24. Laminates/laminates finish/5.Metallic Finish Laminate.jpg',
-          'Digital Printed Laminate': 'assets/24. Laminates/laminates finish/6.Digital Printed Laminate.jpg',
-          'Cane Finish Laminate': 'assets/24. Laminates/laminates finish/7.Cane Finish Laminate.jpg',
-          'Stone Finish Laminate': 'assets/24. Laminates/laminates finish/8.Stone Finish Laminate.jpg'
+          'Solid Color Laminate': 'assets/33.Laminate Finishes/1.Regular Laminate.png',
+          'Wood Grain Laminate': 'assets/33.Laminate Finishes/2.PVC Laminate.jpg',
+          'Marble Finish Laminate': 'assets/33.Laminate Finishes/3.High Pressure Laminate.jpg',
+          'Fabric Finish Laminate': 'assets/33.Laminate Finishes/4.Prelam Board.jpg',
+          'Metallic Finish Laminate': 'assets/33.Laminate Finishes/5.Core Laminate.jpg',
+          'Digital Printed Laminate': 'assets/33.Laminate Finishes/6.Acrylic Laminate.jpg',
+          'Cane Finish Laminate': 'assets/33.Laminate Finishes/7.Anti-Fingerprint Laminate.jpg',
+          'Stone Finish Laminate': 'assets/33.Laminate Finishes/8.Textured Decorative Laminate.jpg'
         };
         renderDataDrivenSection(el, {
           title: listData[id].title,
@@ -10788,6 +10809,100 @@
           wrapperClass: 'laminate-finish-section'
         });
         return;
+      }
+
+      // Pre-populate explicit thumbnails for flooring
+      if (id === 'flooring') {
+        rowThumb['flooring:0'] = 'assets/30.Flooring/1. WPC.jpg';
+        rowThumb['flooring:1'] = 'assets/30.Flooring/2.SPC Flooring.jpg';
+        rowThumb['flooring:2'] = 'assets/30.Flooring/3.PVC Flooring.jpg';
+        rowThumb['flooring:3'] = 'assets/30.Flooring/4.Laminate wood Flooring.jpg';
+        rowThumb['flooring:4'] = 'assets/30.Flooring/5.Enginereed Wood Flooring.jpg';
+        rowThumb['flooring:5'] = 'assets/30.Flooring/6.Solid Wood Flooring.jpg';
+        rowThumb['flooring:6'] = 'assets/30.Flooring/7.Italian Marble Flooring.jpg';
+        rowThumb['flooring:7'] = 'assets/30.Flooring/8.Indian Marble Flooring.jpg';
+        rowThumb['flooring:8'] = 'assets/30.Flooring/9.Granite Flooring.jpg';
+        rowThumb['flooring:9'] = 'assets/30.Flooring/10.Kota Stone flooring.jpg';
+        rowThumb['flooring:10'] = 'assets/30.Flooring/11.Slate Stone Flooring.jpg';
+        rowThumb['flooring:11'] = 'assets/30.Flooring/12.Limestone Flooring.jpg';
+        rowThumb['flooring:12'] = 'assets/30.Flooring/13.Sandstone Flooring.jpg';
+        rowThumb['flooring:13'] = 'assets/30.Flooring/14.Terrazzo Flooring.jpg';
+        rowThumb['flooring:14'] = 'assets/30.Flooring/15.Cement IPS Flooring.jpg';
+        rowThumb['flooring:15'] = 'assets/30.Flooring/16.Microcement Flooring.jpg';
+        rowThumb['flooring:16'] = 'assets/30.Flooring/17.Epoxy Flooring.jpg';
+        rowThumb['flooring:17'] = 'assets/30.Flooring/17.Ceramic Tiles.jpg';
+        rowThumb['flooring:18'] = 'assets/30.Flooring/18.Vitrified Tiles.jpg';
+        rowThumb['flooring:19'] = 'assets/30.Flooring/19.Porcelain Tiles.jpg';
+        rowThumb['flooring:20'] = 'assets/30.Flooring/20.Bamboo Flooring.jpg';
+        rowThumb['flooring:21'] = 'assets/30.Flooring/21.Cork Flooring.jpg';
+        rowThumb['flooring:22'] = 'assets/30.Flooring/22.Concrete Polished Flooring.jpg';
+        rowThumb['flooring:23'] = 'assets/30.Flooring/23.Metal Inlay flooring.jpg';
+        rowThumb['flooring:24'] = 'assets/30.Flooring/24.Carpet Tiles.jpg';
+        rowThumb['flooring:25'] = 'assets/30.Flooring/25.Rubber Gym Tiles.jpg';
+        rowThumb['flooring:26'] = 'assets/30.Flooring/26.Artificial Turf.jpg';
+      }
+      // Pre-populate explicit thumbnails for ceiling
+      if (id === 'ceiling') {
+        rowThumb['ceiling:0'] = 'assets/31. False Ceiling/1.POP Ceiling.jpg';
+        rowThumb['ceiling:1'] = 'assets/31. False Ceiling/2.Gypsum Board.jpg';
+        rowThumb['ceiling:2'] = 'assets/31. False Ceiling/3.Calcium Silicate.jpg';
+        rowThumb['ceiling:3'] = 'assets/31. False Ceiling/4.PVC Panels.jpg';
+        rowThumb['ceiling:4'] = 'assets/31. False Ceiling/5.Aluminium GI.jpg';
+        rowThumb['ceiling:5'] = 'assets/31. False Ceiling/6.Mineral.jpg';
+        rowThumb['ceiling:6'] = 'assets/31. False Ceiling/7.Wooden Panels.jpg';
+        rowThumb['ceiling:7'] = 'assets/31. False Ceiling/8.WPC.jpg';
+        rowThumb['ceiling:8'] = 'assets/31. False Ceiling/9.Acoustic Panels.jpg';
+        rowThumb['ceiling:9'] = 'assets/31. False Ceiling/10.Glass ceiling.jpg';
+        rowThumb['ceiling:10'] = 'assets/31. False Ceiling/11.Stretch Ceiling.jpg';
+        rowThumb['ceiling:11'] = 'assets/31. False Ceiling/12.Veneer ceiling.jpg';
+        rowThumb['ceiling:12'] = 'assets/31. False Ceiling/13.Metal Baffle.jpg';
+        rowThumb['ceiling:13'] = 'assets/31. False Ceiling/14.Clay Plaster.jpg';
+        rowThumb['ceiling:14'] = 'assets/31. False Ceiling/15.Exposed Concrete.jpg';
+        rowThumb['ceiling:15'] = 'assets/31. False Ceiling/16.Texture Paint.jpg';
+        rowThumb['ceiling:16'] = 'assets/31. False Ceiling/17.Lime Wash.jpg';
+        rowThumb['ceiling:17'] = 'assets/31. False Ceiling/18.Venetian Plaster.jpg';
+        rowThumb['ceiling:18'] = 'assets/31. False Ceiling/19.Lime Plaster.jpg';
+      }
+      // Pre-populate explicit thumbnails for wall
+      if (id === 'wall') {
+        rowThumb['wall:0'] = 'assets/32.Wall/1.Texture Paint.jpg';
+        rowThumb['wall:1'] = 'assets/32.Wall/2.PU Paint.jpg';
+        rowThumb['wall:2'] = 'assets/32.Wall/3.Duco Paint.jpg';
+        rowThumb['wall:3'] = 'assets/32.Wall/4.Emulsion Paint.jpg';
+        rowThumb['wall:4'] = 'assets/32.Wall/5.Royale Paint.jpg';
+        rowThumb['wall:5'] = 'assets/32.Wall/6.Satin Paint.jpg';
+        rowThumb['wall:6'] = 'assets/32.Wall/7.Matt Paint.jpg';
+        rowThumb['wall:7'] = 'assets/32.Wall/8.Metallic Paint.jpg';
+        rowThumb['wall:8'] = 'assets/32.Wall/9.Stucco Finish.jpg';
+        rowThumb['wall:9'] = 'assets/32.Wall/10.Concrete Finish Paint.jpg';
+        rowThumb['wall:10'] = 'assets/32.Wall/11.Limewash Paint.jpg';
+        rowThumb['wall:11'] = 'assets/32.Wall/12.Lime Plaster.jpg';
+        rowThumb['wall:12'] = 'assets/32.Wall/13.Clay Plaster.jpg';
+        rowThumb['wall:13'] = 'assets/32.Wall/14.Veneer Paneling.jpg';
+        rowThumb['wall:14'] = 'assets/32.Wall/15.HDMR Paneling.jpg';
+        rowThumb['wall:15'] = 'assets/32.Wall/16.Laminate Wall Paneling.jpg';
+        rowThumb['wall:16'] = 'assets/32.Wall/17.MDF Jali Panels.jpg';
+        rowThumb['wall:17'] = 'assets/32.Wall/18.CNC Cut Panels.jpg';
+        rowThumb['wall:18'] = 'assets/32.Wall/19.Metal Wall Panels.jpg';
+        rowThumb['wall:19'] = 'assets/32.Wall/20.PVC Wall Panels.jpg';
+        rowThumb['wall:20'] = 'assets/32.Wall/21.WPC Panels.jpg';
+        rowThumb['wall:21'] = 'assets/32.Wall/22.Decorative Wall Tiles.jpg';
+        rowThumb['wall:22'] = 'assets/32.Wall/23.Marble Wall Cladding.jpg';
+        rowThumb['wall:23'] = 'assets/32.Wall/24.Granite Wall Cladding.jpg';
+        rowThumb['wall:24'] = 'assets/32.Wall/25.Slate stone.jpg';
+        rowThumb['wall:25'] = 'assets/32.Wall/26.Quartzite Wall Cladding.jpg';
+        rowThumb['wall:27'] = 'assets/32.Wall/27.Fabric Wall Panels.jpg';
+        rowThumb['wall:28'] = 'assets/32.Wall/28.Acoustic Panels.jpg';
+        rowThumb['wall:29'] = 'assets/32.Wall/29.Venetian Plaster.jpg';
+        rowThumb['wall:30'] = 'assets/32.Wall/30.Microcement.jpg';
+        rowThumb['wall:31'] = 'assets/32.Wall/31.Fluted Panels.jpg';
+        rowThumb['wall:32'] = 'assets/32.Wall/32.Charcoal Panels.jpg';
+        rowThumb['wall:33'] = 'assets/32.Wall/33.HPL Wall Cladding.jpg';
+        rowThumb['wall:34'] = 'assets/32.Wall/34.Stone Veneer Panels.jpg';
+        rowThumb['wall:35'] = 'assets/32.Wall/35.3D Wall Panels.jpg';
+        rowThumb['wall:36'] = 'assets/32.Wall/36.Upholstered Panels.jpg';
+        rowThumb['wall:37'] = 'assets/32.Wall/37.Liquid Metal Finish.jpg';
+        rowThumb['wall:38'] = 'assets/32.Wall/38.Wallpaper.jpg';
       }
 
       if (tableData[id]) {
@@ -11663,7 +11778,7 @@
         'Optical Fibre Fabric': 'assets/3. Top 10 Materials/OPTICAL FIBRE FABRIC (LUMINOUS TEXTILE).jpg',
         'Venetian Plaster': 'assets/3. Top 10 Materials/VENETIAN PLASTER (POLISHED PLASTER FINISH).jpg',
         'Flexible MDF Curves': 'assets/3. Top 10 Materials/FLEXIBLE MDF CURVES.jpg',
-        'Wall Acoustic Fluted Panels': 'assets/3. Top 10 Materials/Sound Proof Wall Acoustic Fluted Panels.jpg'
+        'Wall Acoustic Fluted Panels': 'assets/3. Top 10 Materials/SOUND PROOF WALL ACCOUSTIC FLUTED PANELS.jpg'
       };
       function top10Img(name) { return top10ImgMap[name] || ''; }
 
