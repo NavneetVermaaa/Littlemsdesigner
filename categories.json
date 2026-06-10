@@ -237,7 +237,7 @@
     "name": "Hardware",
     "desc": "Hinges, channels, handles and more",
     "tag": "carpentry",
-    "cnt": "Coming Soon"
+    "cnt": "22 types"
   },
   {
     "id": "door",
@@ -317,7 +317,7 @@
     "name": "Lights",
     "desc": "All types of lights for interiors",
     "tag": "electrical",
-    "cnt": "Coming Soon"
+    "cnt": "17 types"
   },
   {
     "id": "switches",
@@ -325,7 +325,7 @@
     "name": "Switch Boards",
     "desc": "Switch boards and plates",
     "tag": "electrical",
-    "cnt": "Coming Soon"
+    "cnt": "11 types"
   },
   {
     "id": "automation",
@@ -333,7 +333,7 @@
     "name": "Automation",
     "desc": "Home automation systems",
     "tag": "electrical",
-    "cnt": "Coming Soon"
+    "cnt": "11 types"
   },
   {
     "id": "kitchen-colors",
@@ -405,7 +405,7 @@
     "name": "Sanitary Fittings",
     "desc": "Toilets, basins, faucets and more",
     "tag": "bathroom",
-    "cnt": "Coming Soon"
+    "cnt": "33 types"
   },
   {
     "id": "bathroom-colors-2",

@@ -2232,6 +2232,32 @@
       min-width: 120px;
     }
 
+    /* Overview table typography - match other material tables */
+    .detail-tbl[data-id="overview"] td:first-child .badge {
+      font-size: 12px !important;
+      font-weight: 700;
+      color: var(--navy);
+      background: transparent;
+      letter-spacing: normal;
+      text-transform: none;
+      padding: 0;
+      border-radius: 0;
+      display: inline;
+    }
+    .detail-tbl[data-id="overview"] td.t-cat {
+      font-size: 12px !important;
+      font-weight: 700;
+      color: var(--navy);
+      white-space: nowrap;
+      text-transform: none;
+      letter-spacing: normal;
+    }
+    .detail-tbl[data-id="overview"] td.t-name {
+      font-size: 11px !important;
+      color: var(--text-light);
+      font-weight: 400;
+    }
+
     .detail-tbl .td-cost {
       font-weight: 700;
       color: #1e2d4a;
@@ -6762,7 +6788,12 @@
         "Top 10 Materials 2026": "38.Top 10 materials 2026.jpg",
         // [COMMENTED OUT] "Materials That Look Expensive": "39.Materials that look expensive.jpg",
         "Marble vs Tiles": "marble vs tiles.png",
-        "Laminate vs Veneer": "laminate vs vaneer.png"
+        "Laminate vs Veneer": "laminate vs vaneer.png",
+        "Hardware": "51.Hardware.jpg",
+        "Sanitary Fittings": "49.Sanitary Fittings.jpg",
+        "Lights": "40.Lights.jpg",
+        "Switch Boards": "41. Switch Boards.jpg",
+        "Automation": "42.Automation.jpg"
       },
 
       // Maps internal category IDs to their physical folder names
@@ -6804,13 +6835,18 @@
         "glass": "23. Glass",
         "glass-summary": "23. Glass",
         "mirror": "36.Mirrors",
-        "laminates": "24. Laminates",
-        "designer-laminates": "24. Laminates",
+        "laminates": "24. Laminate",
+        "designer-laminates": "24. Laminate",
         "veneer": "25. Veneer",
         "designer-veneer": "34.Designer Veneer",
         "ceiling": "31. False Ceiling",
         "wood-types": "35.Wood",
-        "laminates-finish": "33.Laminate Finishes"
+        "laminates-finish": "33.Laminate Finishes",
+        "hardware": "37. Hardware",
+        "sanitary": "38.Sanitary Fittings",
+        "lights": "38.Lights",
+        "switches": "39.Switch Board",
+        "automation": "40.Automation"
       }
     };
 
@@ -7303,7 +7339,7 @@
           ['Cost Range', '₹70 – ₹600+ per sq ft', '₹120 – ₹1200+ per sq ft'],
           ['Installation & Time', 'Adhesive pasting; quick and easy installation', 'Adhesive + polishing; slow and requires skilled labor'],
           ['Durability & Resistance', 'Scratch-resistant, water-resistant, good for high-use areas', 'Durable but porous; sensitive to moisture, depends on polish'],
-          ['Repairability & Longevity', '❌ Cannot be repaired; replacement required if damaged\nLifespan: 5–10 years', '✅ Can be sanded & repolished multiple times\nLifespan: 10–20+ years'],
+          ['Repairability & Longevity', 'Cannot be repaired; replacement required if damaged\nLifespan: 5–10 years', 'Can be sanded & repolished multiple times\nLifespan: 10–20+ years'],
           ['Maintenance', 'Very low; simple cleaning', 'High; requires polishing and careful use'],
           ['Design Flexibility', 'Very high — wide variety of colors, textures, patterns, finishes', 'Limited to wood aesthetics but offers unmatched natural richness'],
           ['Applications', 'Kitchens, wardrobes, furniture, offices, rentals', 'Wall panels, luxury furniture, doors, premium interiors'],
@@ -9678,6 +9714,1534 @@
           }
         ]
       },
+      hardware: {
+        title: 'Hardware',
+        tableItems: [
+          'Soft Close Hinge||₹80 – ₹500 / hinge||0.8 – 1.5||Kitchen shutters, wardrobes, storage units||Hettich, Hafele, Blum, Ebco',
+          'Telescopic Channel||₹150 – ₹1,000 / pair||35 – 45||Drawer systems, study tables, wardrobes||Hettich, Ebco, Hafele',
+          'Tandem Box System||₹2,000 – ₹8,000 / drawer||N/A||Premium kitchen drawers||Blum, Hettich, Hafele',
+          'Gola Profile||₹150 – ₹600 / rft||Aluminium Profile||Handleless kitchens & wardrobes||Hafele, Hettich, Ebco',
+          'Profile Handle||₹100 – ₹500 / rft||Aluminium||Modern kitchens, wardrobes||Hafele, Ebco, Ozone',
+          'Cabinet Handle||₹50 – ₹2,000 / pc||N/A||Kitchen shutters, wardrobes, drawers||Dorset, Ozone, Hafele',
+          'Door Hinge||₹50 – ₹800 / hinge||2 – 4||Main doors, bedroom doors, bathroom doors||Dorset, Godrej, Yale, Hafele',
+          'Door Handle||₹200 – ₹15,000 / set||10 – 25||Main doors, internal doors||Dorset, Ozone, Yale, Hafele',
+          'Mortise Lock||₹500 – ₹8,000||45 – 70 Door Thickness||Bedroom & entrance doors||Godrej, Yale, Dorset',
+          'Digital Door Lock||₹5,000 – ₹50,000||35 – 100 Door Thickness||Main entrance doors||Yale, Godrej, Hafele',
+          'Concealed Door Closer||₹800 – ₹12,000||N/A||Offices, commercial spaces, heavy doors||Dorma, Hafele, Ozone',
+          'Door Stopper||₹100 – ₹2,000||N/A||All doors||Ozone, Dorset, Godrej',
+          'Tower Bolt||₹50 – ₹1,000||N/A||Bathrooms, utility areas||Godrej, Dorset',
+          'Magnetic Door Catcher||₹100 – ₹500||N/A||Bedroom & office doors||Hafele, Ebco',
+          'Floor Spring||₹2,500 – ₹20,000||Glass 10 – 15||Frameless glass doors||Dorma, Hafele',
+          'Patch Fitting||₹300 – ₹5,000 / pc||Glass 10 – 15||Glass doors & partitions||Dorma, Ozone',
+          'Spider Fitting||₹1,000 – ₹15,000 / pc||Glass 12 – 20||Glass façades||Dorma, Ozone',
+          'Shower Hinge||₹1,000 – ₹8,000 / pair||Glass 8 – 12||Shower cubicles||Hafele, Ozone',
+          'Glass Connector||₹200 – ₹2,500||Glass 8 – 15||Glass partitions||Ozone, Dorma',
+          'Curtain Track||₹100 – ₹1,500 / rft||N/A||Living rooms, bedrooms||Forest, Silent Gliss',
+          'Curtain Rod||₹150 – ₹3,000 / rft||19 – 32 Dia||Windows & balcony doors||D\'Decor, Ikea',
+          'Sliding Door System||₹2,000 – ₹25,000 / door||Door 18 – 45||Room dividers, balcony partitions||Hafele, Hettich'
+        ],
+        detailItems: [
+          {
+            title: 'Soft Close Hinge', rows: [
+              { label: 'Material', value: 'Hinge with built-in damping mechanism that prevents slamming and ensures silent door closing.' },
+              ['Types', 'Clip-on, Slide-on, Screw-on'],
+              ['Sizes', '35mm cup dia, 0–15mm overlay adjustment'],
+              ['Thk (mm)', '0.8 – 1.5'],
+              ['Cost (pc)', '₹80 – ₹500 / hinge'],
+              ['Installation Method', 'Screw-mount on cabinet frame and door panel'],
+              ['Maintenance', 'Wipe clean; occasional lubrication of moving parts'],
+              { label: '\u2713 Pros', value: 'Silent operation, prevents wear, easy installation', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Premium brands are expensive', cls: 'cons' },
+              ['Best Places to Use', 'Kitchen shutters, wardrobes, storage units'],
+              ['Brands', 'Hettich, Hafele, Blum, Ebco']
+            ]
+          },
+          {
+            title: 'Telescopic Channel', rows: [
+              { label: 'Material', value: 'Full-extension ball-bearing slide channel for smooth drawer movement.' },
+              ['Types', 'Partial extension, Full extension, Heavy-duty'],
+              ['Sizes', '250mm – 600mm length'],
+              ['Thk (mm)', '35 – 45 (channel width)'],
+              ['Cost (pair)', '₹150 – ₹1,000 / pair'],
+              ['Installation Method', 'Side-mount or under-mount on drawer boxes'],
+              ['Maintenance', 'Wipe clean; occasional lubrication'],
+              { label: '\u2713 Pros', value: 'Smooth sliding, full drawer access, durable', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Can jam if overloaded', cls: 'cons' },
+              ['Best Places to Use', 'Drawer systems, study tables, wardrobes'],
+              ['Brands', 'Hettich, Ebco, Hafele']
+            ]
+          },
+          {
+            title: 'Tandem Box System', rows: [
+              { label: 'Material', value: 'Complete drawer system with integrated runners, sides, and back panel.' },
+              ['Types', 'Tandem, Tandem XL, Legrabox'],
+              ['Sizes', '250mm – 600mm width, custom depths'],
+              ['Thk (mm)', 'N/A (integrated system)'],
+              ['Cost (drawer)', '₹2,000 – ₹8,000 / drawer'],
+              ['Installation Method', 'Clip-mount on cabinet frame; pre-assembled drawer box'],
+              ['Maintenance', 'Wipe clean; minimal maintenance'],
+              { label: '\u2713 Pros', value: 'Smooth action, high load capacity, premium feel', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Expensive, requires precise cabinetry', cls: 'cons' },
+              ['Best Places to Use', 'Premium kitchen drawers'],
+              ['Brands', 'Blum, Hettich, Hafele']
+            ]
+          },
+          {
+            title: 'Gola Profile', rows: [
+              { label: 'Material', value: 'Aluminium profile used as a handle alternative on cabinet shutters.' },
+              ['Types', 'C-profile, L-profile, U-channel'],
+              ['Sizes', '8ft standard length, custom cut'],
+              ['Thk (mm)', 'Aluminium Profile (1 – 2mm wall thickness)'],
+              ['Cost (rft)', '₹150 – ₹600 / rft'],
+              ['Installation Method', 'Screw-mount or adhesive-mount on shutter edge'],
+              ['Maintenance', 'Wipe clean with mild detergent'],
+              { label: '\u2713 Pros', value: 'Sleek look, no protruding handles, modern aesthetic', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Can collect dust in groove', cls: 'cons' },
+              ['Best Places to Use', 'Handleless kitchens & wardrobes'],
+              ['Brands', 'Hafele, Hettich, Ebco']
+            ]
+          },
+          {
+            title: 'Profile Handle', rows: [
+              { label: 'Material', value: 'Aluminium or stainless steel horizontal/vertical profile used as a handle.' },
+              ['Types', 'Anodized, Powder-coated, Brushed finish'],
+              ['Sizes', 'Custom lengths up to 8ft'],
+              ['Thk (mm)', 'Aluminium (1.5 – 3mm)'],
+              ['Cost (rft)', '₹100 – ₹500 / rft'],
+              ['Installation Method', 'Screw-mount on shutter or drawer front'],
+              ['Maintenance', 'Wipe clean; avoid abrasive cleaners'],
+              { label: '\u2713 Pros', value: 'Durable, sleek, wide variety of finishes', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Can be sharp on edges if not finished well', cls: 'cons' },
+              ['Best Places to Use', 'Modern kitchens, wardrobes'],
+              ['Brands', 'Hafele, Ebco, Ozone']
+            ]
+          },
+          {
+            title: 'Cabinet Handle', rows: [
+              { label: 'Material', value: 'Decorative and functional handle for cabinets and drawers.' },
+              ['Types', 'Bar handles, T-handles, Ring handles, Drop handles'],
+              ['Sizes', '32mm – 512mm hole centers, various lengths'],
+              ['Thk (mm)', 'N/A (varies by design)'],
+              ['Cost (pc)', '₹50 – ₹2,000 / pc'],
+              ['Installation Method', 'Screw-mount on shutter or drawer front'],
+              ['Maintenance', 'Polish with dry cloth; clean with mild soap'],
+              { label: '\u2713 Pros', value: 'Wide design variety, easy to replace, affordable options', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Can loosen over time, needs tightening', cls: 'cons' },
+              ['Best Places to Use', 'Kitchen shutters, wardrobes, drawers'],
+              ['Brands', 'Dorset, Ozone, Hafele']
+            ]
+          },
+          {
+            title: 'Door Hinge', rows: [
+              { label: 'Material', value: 'Heavy-duty hinge for main doors and room doors.' },
+              ['Types', 'Butt hinge, Piano hinge, Pivot hinge, Ball-bearing hinge'],
+              ['Sizes', '3 inch, 4 inch, 5 inch, 6 inch'],
+              ['Thk (mm)', '2 – 4 (leaf thickness)'],
+              ['Cost (hinge)', '₹50 – ₹800 / hinge'],
+              ['Installation Method', 'Recess-mount on door frame and door leaf'],
+              ['Maintenance', 'Oil moving parts periodically'],
+              { label: '\u2713 Pros', value: 'Strong, reliable, wide load capacity', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Heavy doors may need 3+ hinges', cls: 'cons' },
+              ['Best Places to Use', 'Main doors, bedroom doors, bathroom doors'],
+              ['Brands', 'Dorset, Godrej, Yale, Hafele']
+            ]
+          },
+          {
+            title: 'Door Handle', rows: [
+              { label: 'Material', value: 'Decorative and functional handle for entry and internal doors.' },
+              ['Types', 'Lever handles, Knob handles, Pull handles, Privacy sets'],
+              ['Sizes', 'Various lengths from 100mm – 1500mm'],
+              ['Thk (mm)', '10 – 25 (handle diameter or width)'],
+              ['Cost (set)', '₹200 – ₹15,000 / set'],
+              ['Installation Method', 'Screw-mount on door with through-bolts'],
+              ['Maintenance', 'Polish with dry cloth; tighten screws if loose'],
+              { label: '\u2713 Pros', value: 'Enhances door aesthetics, wide variety of styles', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Premium designs are expensive', cls: 'cons' },
+              ['Best Places to Use', 'Main doors, internal doors'],
+              ['Brands', 'Dorset, Ozone, Yale, Hafele']
+            ]
+          },
+          {
+            title: 'Mortise Lock', rows: [
+              { label: 'Material', value: 'Recessed door lock mechanism installed inside the door edge.' },
+              ['Types', 'Standard, Deadbolt, Night latch, Smart-ready'],
+              ['Sizes', '4 inch, 5 inch, 6 inch backset'],
+              ['Thk (mm)', '45 – 70 Door Thickness'],
+              ['Cost', '₹500 – ₹8,000'],
+              ['Installation Method', 'Cut-out recess in door edge + screw mounting'],
+              ['Maintenance', 'Lubricate keyway and latch periodically'],
+              { label: '\u2713 Pros', value: 'Secure, concealed mechanism, durable', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Complex installation, requires door preparation', cls: 'cons' },
+              ['Best Places to Use', 'Bedroom & entrance doors'],
+              ['Brands', 'Godrej, Yale, Dorset']
+            ]
+          },
+          {
+            title: 'Digital Door Lock', rows: [
+              { label: 'Material', value: 'Electronic lock with keypad, fingerprint, or smart access.' },
+              ['Types', 'Biometric, RFID, Bluetooth, Wi-Fi enabled, Face recognition'],
+              ['Sizes', 'Standard door prep, various finishes'],
+              ['Thk (mm)', '35 – 100 Door Thickness'],
+              ['Cost', '₹5,000 – ₹50,000'],
+              ['Installation Method', 'Replace existing mortise lock; screw-mount on door'],
+              ['Maintenance', 'Battery replacement every 6–12 months; wipe clean'],
+              { label: '\u2713 Pros', value: 'Keyless entry, remote access, multiple user codes', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Battery-dependent, expensive, needs tech support', cls: 'cons' },
+              ['Best Places to Use', 'Main entrance doors'],
+              ['Brands', 'Yale, Godrej, Hafele']
+            ]
+          },
+          {
+            title: 'Concealed Door Closer', rows: [
+              { label: 'Material', value: 'Hydraulic or pneumatic door closing mechanism hidden in floor or frame.' },
+              ['Types', 'Floor spring, Overhead closer, Concealed in frame'],
+              ['Sizes', 'Various load ratings (40kg – 150kg)'],
+              ['Thk (mm)', 'N/A (mechanism size varies)'],
+              ['Cost', '₹800 – ₹12,000'],
+              ['Installation Method', 'Recess-mount in floor or door frame'],
+              ['Maintenance', 'Check hydraulic fluid; adjust closing speed'],
+              { label: '\u2713 Pros', value: 'Automatic closing, neat appearance, adjustable speed', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Complex installation, harder to service', cls: 'cons' },
+              ['Best Places to Use', 'Offices, commercial spaces, heavy doors'],
+              ['Brands', 'Dorma, Hafele, Ozone']
+            ]
+          },
+          {
+            title: 'Door Stopper', rows: [
+              { label: 'Material', value: 'Fitting that prevents doors from swinging too far or damaging walls.' },
+              ['Types', 'Wall-mounted, Floor-mounted, Hinge-pin type, Magnetic'],
+              ['Sizes', 'Various sizes for different door gaps'],
+              ['Thk (mm)', 'N/A'],
+              ['Cost', '₹100 – ₹2,000'],
+              ['Installation Method', 'Screw-mount on wall, floor, or baseboard'],
+              ['Maintenance', 'Tighten if loose; replace rubber bumper if worn'],
+              { label: '\u2713 Pros', value: 'Prevents wall damage, affordable, easy installation', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Can be a tripping hazard if floor-mounted', cls: 'cons' },
+              ['Best Places to Use', 'All doors'],
+              ['Brands', 'Ozone, Dorset, Godrej']
+            ]
+          },
+          {
+            title: 'Tower Bolt', rows: [
+              { label: 'Material', value: 'Sliding bolt lock for additional door security.' },
+              ['Types', 'Aluminium, Brass, Stainless Steel, Zinc alloy'],
+              ['Sizes', '4 inch, 6 inch, 8 inch, 12 inch'],
+              ['Thk (mm)', 'N/A'],
+              ['Cost', '₹50 – ₹1,000'],
+              ['Installation Method', 'Screw-mount on door and frame'],
+              ['Maintenance', 'Lubricate sliding bolt occasionally'],
+              { label: '\u2713 Pros', value: 'Simple, reliable, inexpensive', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Manual operation, not key-lockable', cls: 'cons' },
+              ['Best Places to Use', 'Bathrooms, utility areas'],
+              ['Brands', 'Godrej, Dorset']
+            ]
+          },
+          {
+            title: 'Magnetic Door Catcher', rows: [
+              { label: 'Material', value: 'Magnetic fitting that holds doors in open position.' },
+              ['Types', 'Surface mount, Flush mount, Heavy-duty'],
+              ['Sizes', 'Standard size for most doors'],
+              ['Thk (mm)', 'N/A'],
+              ['Cost', '₹100 – ₹500'],
+              ['Installation Method', 'Screw-mount on door and wall/floor'],
+              ['Maintenance', 'Clean magnet surface; tighten screws'],
+              { label: '\u2713 Pros', value: 'Holds door securely, silent operation, compact', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Magnet weakens over time', cls: 'cons' },
+              ['Best Places to Use', 'Bedroom & office doors'],
+              ['Brands', 'Hafele, Ebco']
+            ]
+          },
+          {
+            title: 'Floor Spring', rows: [
+              { label: 'Material', value: 'Hydraulic door closer mechanism installed in the floor for heavy doors.' },
+              ['Types', 'Single-acting, Double-acting'],
+              ['Sizes', 'Load capacity up to 300kg'],
+              ['Thk (mm)', 'Glass 10 – 15 (for glass door applications)'],
+              ['Cost', '₹2,500 – ₹20,000'],
+              ['Installation Method', 'Floor recess installation with concrete anchoring'],
+              ['Maintenance', 'Check hydraulic oil level; adjust closing speed'],
+              { label: '\u2713 Pros', value: 'Invisible mechanism, handles heavy doors, smooth operation', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Expensive installation, difficult to repair', cls: 'cons' },
+              ['Best Places to Use', 'Frameless glass doors'],
+              ['Brands', 'Dorma, Hafele']
+            ]
+          },
+          {
+            title: 'Patch Fitting', rows: [
+              { label: 'Material', value: 'Glass-to-glass or glass-to-frame connector for frameless glass doors.' },
+              ['Types', 'Corner patch, Side patch, Spigot patch'],
+              ['Sizes', 'Various sizes for 8–15mm glass'],
+              ['Thk (mm)', 'Glass 10 – 15'],
+              ['Cost (pc)', '₹300 – ₹5,000 / pc'],
+              ['Installation Method', 'Clamp-mount on glass edge with rubber gaskets'],
+              ['Maintenance', 'Tighten screws periodically; clean glass'],
+              { label: '\u2713 Pros', value: 'Minimalist look, secure glass holding', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Precision alignment required', cls: 'cons' },
+              ['Best Places to Use', 'Glass doors & partitions'],
+              ['Brands', 'Dorma, Ozone']
+            ]
+          },
+          {
+            title: 'Spider Fitting', rows: [
+              { label: 'Material', value: 'Multi-arm glass connector used for structural glass façades and railings.' },
+              ['Types', '4-arm, 6-arm, Wall-mount, Floor-mount'],
+              ['Sizes', 'Various for 12–20mm glass'],
+              ['Thk (mm)', 'Glass 12 – 20'],
+              ['Cost (pc)', '₹1,000 – ₹15,000 / pc'],
+              ['Installation Method', 'Bolted through glass with countersunk holes'],
+              ['Maintenance', 'Check bolt tightness; clean periodically'],
+              { label: '\u2713 Pros', value: 'Creates seamless glass look, strong structural hold', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Requires glass drilling, complex installation', cls: 'cons' },
+              ['Best Places to Use', 'Glass façades'],
+              ['Brands', 'Dorma, Ozone']
+            ]
+          },
+          {
+            title: 'Shower Hinge', rows: [
+              { label: 'Material', value: 'Hinge specifically designed for glass shower enclosure doors.' },
+              ['Types', '90-degree, 180-degree, Pivot hinge, Spring hinge'],
+              ['Sizes', 'Various for 8–12mm glass'],
+              ['Thk (mm)', 'Glass 8 – 12'],
+              ['Cost (pair)', '₹1,000 – ₹8,000 / pair'],
+              ['Installation Method', 'Clamp or drill-through mount on glass door'],
+              ['Maintenance', 'Clean glass and hinge; lubricate moving parts'],
+              { label: '\u2713 Pros', value: 'Holds glass securely, corrosion-resistant', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Can rust if not stainless steel', cls: 'cons' },
+              ['Best Places to Use', 'Shower cubicles'],
+              ['Brands', 'Hafele, Ozone']
+            ]
+          },
+          {
+            title: 'Glass Connector', rows: [
+              { label: 'Material', value: 'Connector used to join two glass panels at various angles.' },
+              ['Types', 'L-connector, T-connector, Line connector, Angle connector'],
+              ['Sizes', 'Various for 8–15mm glass'],
+              ['Thk (mm)', 'Glass 8 – 15'],
+              ['Cost', '₹200 – ₹2,500'],
+              ['Installation Method', 'Clamp-mount on glass edges with rubber lining'],
+              ['Maintenance', 'Tighten screws if loose'],
+              { label: '\u2713 Pros', value: 'Enables seamless glass panel joins, versatile angles', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Visible hardware may not suit all aesthetics', cls: 'cons' },
+              ['Best Places to Use', 'Glass partitions'],
+              ['Brands', 'Ozone, Dorma']
+            ]
+          },
+          {
+            title: 'Curtain Track', rows: [
+              { label: 'Material', value: 'Track system for hanging and sliding curtains smoothly.' },
+              ['Types', 'Ceiling mount, Wall mount, Curved, Motorized'],
+              ['Sizes', '1m – 6m standard lengths, custom cut'],
+              ['Thk (mm)', 'N/A'],
+              ['Cost (rft)', '₹100 – ₹1,500 / rft'],
+              ['Installation Method', 'Screw-mount on ceiling or wall with brackets'],
+              ['Maintenance', 'Clean track; lubricate gliders'],
+              { label: '\u2713 Pros', value: 'Smooth glide, quiet operation, various styles', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Installation requires precise alignment', cls: 'cons' },
+              ['Best Places to Use', 'Living rooms, bedrooms'],
+              ['Brands', 'Forest, Silent Gliss']
+            ]
+          },
+          {
+            title: 'Curtain Rod', rows: [
+              { label: 'Material', value: 'Decorative rod for hanging curtains with rings.' },
+              ['Types', 'Metal, Wood, Acrylic, Tension rods'],
+              ['Sizes', '1m – 4m lengths, 19mm – 32mm diameter'],
+              ['Thk (mm)', '19 – 32 Dia'],
+              ['Cost (rft)', '₹150 – ₹3,000 / rft'],
+              ['Installation Method', 'Bracket-mount on wall above window'],
+              ['Maintenance', 'Dust regularly; tighten brackets'],
+              { label: '\u2713 Pros', value: 'Classic look, easy installation, widely available', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Can sag under heavy curtains if too long', cls: 'cons' },
+              ['Best Places to Use', 'Windows & balcony doors'],
+              ['Brands', 'D\'Decor, Ikea']
+            ]
+          },
+          {
+            title: 'Sliding Door System', rows: [
+              { label: 'Material', value: 'Complete system for sliding doors with tracks, rollers, and guides.' },
+              ['Types', 'Top hung, Bottom rolling, Pocket door, Barn door'],
+              ['Sizes', 'Door width 600mm – 1200mm, custom heights'],
+              ['Thk (mm)', 'Door 18 – 45'],
+              ['Cost (door)', '₹2,000 – ₹25,000 / door'],
+              ['Installation Method', 'Track-mount on ceiling or floor; hang door on rollers'],
+              ['Maintenance', 'Clean track; lubricate rollers; adjust alignment'],
+              { label: '\u2713 Pros', value: 'Space-saving, modern look, smooth operation', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Track can collect dust, higher hardware cost', cls: 'cons' },
+              ['Best Places to Use', 'Room dividers, balcony partitions'],
+              ['Brands', 'Hafele, Hettich']
+            ]
+          }
+        ]
+      },
+      sanitary: {
+        title: 'Sanitary Fittings',
+        tableItems: [
+          'Floor Mounted WC||₹4,000 – ₹25,000||N/A||Standard residential bathrooms||Jaquar, Cera, Hindware, Parryware',
+          'Wall Hung WC||₹8,000 – ₹60,000||N/A||Premium apartments, villas||Kohler, Jaquar, Roca, Cera',
+          'Countertop Wash Basin||₹2,000 – ₹50,000||12–20||Vanity counters||Kohler, Cera, Jaquar',
+          'Wall Hung Wash Basin||₹1,500 – ₹20,000||12–20||Compact bathrooms||Hindware, Cera, Parryware',
+          'Full Pedestal Basin||₹2,000 – ₹15,000||12–20||Guest bathrooms||Cera, Hindware, Jaquar',
+          'Under Counter Basin||₹3,000 – ₹30,000||12–20||Luxury vanities||Kohler, Roca, Jaquar',
+          'Basin Mixer Faucet||₹2,000 – ₹30,000||N/A||Vanity areas||Jaquar, Grohe, Kohler',
+          'Tall Body Basin Mixer||₹4,000 – ₹50,000||N/A||Countertop basins||Kohler, Grohe, Jaquar',
+          'Wall Mounted Faucet||₹1,500 – ₹20,000||N/A||Wash basins||Cera, Jaquar, Hindware',
+          'Health Faucet||₹500 – ₹8,000||N/A||WC areas||Jaquar, Cera, Hindware',
+          'Wall Mounted Shower Head||₹500 – ₹10,000||N/A||Standard residential bathrooms||Jaquar, Cera, Hindware',
+          'Overhead Rain Shower||₹2,000 – ₹60,000||200–600 Dia||Master bathrooms||Jaquar, Kohler, Grohe',
+          'Ceiling Mounted Rain Shower||₹5,000 – ₹1,00,000+||200–800 Dia||Luxury bathrooms||Kohler, Grohe, TOTO',
+          'Hand Shower Set||₹1,000 – ₹15,000||N/A||All bathrooms||Jaquar, Cera, Grohe',
+          'Concealed Shower Mixer||₹3,000 – ₹40,000||N/A||Modern bathrooms||Jaquar, Grohe',
+          'Exposed Shower Mixer||₹2,000 – ₹15,000||N/A||Budget & renovation projects||Jaquar, Cera',
+          'Thermostatic Shower Mixer||₹10,000 – ₹75,000||N/A||Luxury bathrooms||Grohe, Kohler, Hansgrohe',
+          'Shower Panel||₹8,000 – ₹1,50,000||N/A||Premium bathrooms||Kohler, Jaquar',
+          'Body Jets||₹2,000 – ₹15,000 / jet||N/A||Spa-style showers||Grohe, Kohler',
+          'Waterfall Shower||₹10,000 – ₹1,00,000+||N/A||Luxury villas & resorts||Kohler, Grohe',
+          'Dual Shower System||₹8,000 – ₹75,000||N/A||Master bathrooms||Jaquar, Grohe',
+          'Shower Channel Drain||₹1,500 – ₹20,000||50–100 Width||Walk-in showers||Geberit, Jaquar',
+          'Linear Floor Drain||₹1,000 – ₹15,000||50–100 Width||Modern shower areas||Geberit, Kohler',
+          'Steam Shower System||₹50,000 – ₹10,00,000+||N/A||Wellness & luxury projects||Kohler, TOTO',
+          'Digital Shower Control||₹25,000 – ₹3,00,000+||N/A||Smart homes||Kohler, Grohe',
+          'Sensor Shower System||₹15,000 – ₹1,50,000||N/A||Commercial projects||Jaquar, Grohe',
+          'Freestanding Bathtub||₹20,000 – ₹5,00,000+||Acrylic 5–15||Luxury villas, master baths||Kohler, Roca, Jaquar',
+          'Built-In Bathtub||₹15,000 – ₹2,00,000||Acrylic 5–15||Premium residences||Jaquar, Hindware',
+          'Urinal||₹3,000 – ₹25,000||N/A||Commercial projects||Cera, Hindware, Jaquar',
+          'Sensor Faucet||₹5,000 – ₹50,000||N/A||Commercial & luxury projects||Grohe, Kohler, Jaquar',
+          'Flush Plate||₹1,000 – ₹20,000||N/A||Concealed cistern systems||Geberit, Grohe, Jaquar',
+          'Floor Drain / Nahani Trap||₹300 – ₹5,000||75–150||Bathrooms, utility areas||Jaquar, Hindware',
+          'Bottle Trap||₹500 – ₹8,000||N/A||Designer wash basins||Kohler, Jaquar'
+        ],
+        detailItems: [
+          {
+            title: 'Floor Mounted WC', rows: [
+              { label: 'Material', value: 'Standard two-piece toilet with floor-mounted bowl and concealed or exposed cistern.' },
+              ['Types', 'Two-piece, One-piece, Angled flush, Horizontal flush'],
+              ['Sizes', 'Standard: 650–750mm length x 350–400mm width'],
+              ['Thk (mm)', 'N/A'],
+              ['Cost', '₹4,000 – ₹25,000'],
+              ['Installation Method', 'Floor mounting with flange and wax ring seal'],
+              ['Maintenance', 'Regular cleaning with mild bathroom cleaner'],
+              { label: '\u2713 Pros', value: 'Widely available, easy installation, economical', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Takes floor space, harder to clean underneath', cls: 'cons' },
+              ['Best Place To Use', 'Standard residential bathrooms'],
+              ['Brands', 'Jaquar, Cera, Hindware, Parryware']
+            ]
+          },
+          {
+            title: 'Wall Hung WC', rows: [
+              { label: 'Material', value: 'Wall-mounted toilet with concealed cistern for a modern, space-saving look.' },
+              ['Types', 'Round bowl, Elongated bowl, Compact, Rimless'],
+              ['Sizes', 'Standard: 500–600mm projection from wall'],
+              ['Thk (mm)', 'N/A'],
+              ['Cost', '₹8,000 – ₹60,000'],
+              ['Installation Method', 'Mount on wall frame with concealed carrier system'],
+              ['Maintenance', 'Easy floor cleaning; access panel for cistern service'],
+              { label: '\u2713 Pros', value: 'Space-saving, modern look, easy floor cleaning', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Higher cost, complex installation, requires wall frame', cls: 'cons' },
+              ['Best Place To Use', 'Premium apartments, villas'],
+              ['Brands', 'Kohler, Jaquar, Roca, Cera']
+            ]
+          },
+          {
+            title: 'Countertop Wash Basin', rows: [
+              { label: 'Material', value: 'Basin that sits on top of a vanity counter, creating a statement look.' },
+              ['Types', 'Round, Oval, Square, Rectangular, Vessel, Semi-recessed'],
+              ['Sizes', '300–600mm diameter or width'],
+              ['Thk (mm)', '12 – 20'],
+              ['Cost', '₹2,000 – ₹50,000'],
+              ['Installation Method', 'Place on counter with sealant; connect to wall plumbing'],
+              ['Maintenance', 'Wipe with soft cloth; avoid abrasive cleaners'],
+              { label: '\u2713 Pros', value: 'Designer look, easy to install, wide variety', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Requires tall body mixer, more counter space needed', cls: 'cons' },
+              ['Best Place To Use', 'Vanity counters'],
+              ['Brands', 'Kohler, Cera, Jaquar']
+            ]
+          },
+          {
+            title: 'Wall Hung Wash Basin', rows: [
+              { label: 'Material', value: 'Wall-mounted basin without a pedestal, ideal for compact spaces.' },
+              ['Types', 'Wall hung, Semi-pedestal, Wall-mounted with shelf'],
+              ['Sizes', '400–600mm width x 300–500mm depth'],
+              ['Thk (mm)', '12 – 20'],
+              ['Cost', '₹1,500 – ₹20,000'],
+              ['Installation Method', 'Wall mounting with heavy-duty brackets and anchors'],
+              ['Maintenance', 'Regular cleaning; accessible plumbing for repairs'],
+              { label: '\u2713 Pros', value: 'Compact, space-saving, exposed plumbing is accessible', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Plumbing visible unless boxed', cls: 'cons' },
+              ['Best Place To Use', 'Compact bathrooms'],
+              ['Brands', 'Hindware, Cera, Parryware']
+            ]
+          },
+          {
+            title: 'Full Pedestal Basin', rows: [
+              { label: 'Material', value: 'Basin with a full pedestal that conceals the plumbing.' },
+              ['Types', 'Full pedestal, Semi pedestal, Two-piece'],
+              ['Sizes', '500–700mm width x 400–500mm depth'],
+              ['Thk (mm)', '12 – 20'],
+              ['Cost', '₹2,000 – ₹15,000'],
+              ['Installation Method', 'Wall mounting over pedestal; pedestal rests on floor'],
+              ['Maintenance', 'Clean basin and pedestal with mild cleaner'],
+              { label: '\u2713 Pros', value: 'Concealed plumbing, classic look, affordable', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Pedestal takes floor space, harder to clean around', cls: 'cons' },
+              ['Best Place To Use', 'Guest bathrooms'],
+              ['Brands', 'Cera, Hindware, Jaquar']
+            ]
+          },
+          {
+            title: 'Under Counter Basin', rows: [
+              { label: 'Material', value: 'Basin installed beneath the countertop for a seamless look.' },
+              ['Types', 'Undermount rectangular, Oval, Square'],
+              ['Sizes', '400–600mm width x 300–500mm depth'],
+              ['Thk (mm)', '12 – 20'],
+              ['Cost', '₹3,000 – ₹30,000'],
+              ['Installation Method', 'Under-mount adhesive + clamp to stone/laminate counter'],
+              ['Maintenance', 'Wipe counter; seal edges periodically'],
+              { label: '\u2713 Pros', value: 'Seamless counter look, easy counter cleaning', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Requires professional installation, higher cost', cls: 'cons' },
+              ['Best Place To Use', 'Luxury vanities'],
+              ['Brands', 'Kohler, Roca, Jaquar']
+            ]
+          },
+          {
+            title: 'Basin Mixer Faucet', rows: [
+              { label: 'Material', value: 'Single-lever faucet for basin mixing hot and cold water.' },
+              ['Types', 'Single lever, Dual lever, Sensor, Deck-mount'],
+              ['Sizes', 'Standard deck mount, 35mm hole'],
+              ['Thk (mm)', 'N/A'],
+              ['Cost', '₹2,000 – ₹30,000'],
+              ['Installation Method', 'Deck-mount on basin or counter through pre-drilled hole'],
+              ['Maintenance', 'Clean aerator; wipe with dry cloth'],
+              { label: '\u2713 Pros', value: 'Easy temperature control, sleek design', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Can drip if cartridge wears out', cls: 'cons' },
+              ['Best Place To Use', 'Vanity areas'],
+              ['Brands', 'Jaquar, Grohe, Kohler']
+            ]
+          },
+          {
+            title: 'Tall Body Basin Mixer', rows: [
+              { label: 'Material', value: 'Tall faucet designed for countertop wash basins with extra height clearance.' },
+              ['Types', 'Deck mount, Wall mount, Thermostatic'],
+              ['Sizes', 'Height: 250–400mm, Spout reach: 100–200mm'],
+              ['Thk (mm)', 'N/A'],
+              ['Cost', '₹4,000 – ₹50,000'],
+              ['Installation Method', 'Deck-mount on counter behind basin'],
+              ['Maintenance', 'Clean spout and body; descale aerator'],
+              { label: '\u2713 Pros', value: 'Perfect for vessel basins, elegant look', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Expensive, requires taller counter clearance', cls: 'cons' },
+              ['Best Place To Use', 'Countertop basins'],
+              ['Brands', 'Kohler, Grohe, Jaquar']
+            ]
+          },
+          {
+            title: 'Wall Mounted Faucet', rows: [
+              { label: 'Material', value: 'Faucet mounted on the wall above the basin, freeing counter space.' },
+              ['Types', 'Single hole, Centerset, Widespread, Gooseneck'],
+              ['Sizes', 'Spout projection: 150–250mm'],
+              ['Thk (mm)', 'N/A'],
+              ['Cost', '₹1,500 – ₹20,000'],
+              ['Installation Method', 'Wall mounting with concealed plumbing connections'],
+              ['Maintenance', 'Wipe clean; access valve through wall access panel'],
+              { label: '\u2713 Pros', value: 'Clean countertop, modern look', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Requires in-wall plumbing, harder to retrofit', cls: 'cons' },
+              ['Best Place To Use', 'Wash basins'],
+              ['Brands', 'Cera, Jaquar, Hindware']
+            ]
+          },
+          {
+            title: 'Health Faucet', rows: [
+              { label: 'Material', value: 'Handheld bidet spray attached near the WC for personal hygiene.' },
+              ['Types', 'Wall-mounted, Deck-mounted, Concealed'],
+              ['Sizes', 'Hose length: 1.0m – 1.5m'],
+              ['Thk (mm)', 'N/A'],
+              ['Cost', '₹500 – ₹8,000'],
+              ['Installation Method', 'Wall mounting near WC with T-connection to water line'],
+              ['Maintenance', 'Replace hose if cracked; clean spray head'],
+              { label: '\u2713 Pros', value: 'Hygienic, low cost, easy to install', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Basic models can leak over time', cls: 'cons' },
+              ['Best Place To Use', 'WC areas'],
+              ['Brands', 'Jaquar, Cera, Hindware']
+            ]
+          },
+          {
+            title: 'Wall Mounted Shower Head', rows: [
+              { label: 'Material', value: 'Fixed or adjustable shower head mounted on the wall.' },
+              ['Types', 'Fixed head, Adjustable angle, Swivel arm'],
+              ['Sizes', '100–300mm diameter'],
+              ['Thk (mm)', 'N/A'],
+              ['Cost', '₹500 – ₹10,000'],
+              ['Installation Method', 'Wall mount with adjustable bracket on 1/2" threaded pipe'],
+              ['Maintenance', 'Clean nozzles periodically to remove limescale'],
+              { label: '\u2713 Pros', value: 'Affordable, easy to install, space-saving', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Fixed position cannot be moved', cls: 'cons' },
+              ['Best Place To Use', 'Standard residential bathrooms'],
+              ['Brands', 'Jaquar, Cera, Hindware']
+            ]
+          },
+          {
+            title: 'Overhead Rain Shower', rows: [
+              { label: 'Material', value: 'Large ceiling-mounted shower head that mimics rainfall.' },
+              ['Types', 'Round, Square, Rectangular, LED-lit'],
+              ['Sizes', '200–600mm diameter'],
+              ['Thk (mm)', '200–600 Dia'],
+              ['Cost', '₹2,000 – ₹60,000'],
+              ['Installation Method', 'Ceiling or overhead arm mount with concealed piping'],
+              ['Maintenance', 'Clean nozzles; descale periodically'],
+              { label: '\u2713 Pros', value: 'Luxurious rain effect, wide coverage', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Requires good water pressure, expensive', cls: 'cons' },
+              ['Best Place To Use', 'Master bathrooms'],
+              ['Brands', 'Jaquar, Kohler, Grohe']
+            ]
+          },
+          {
+            title: 'Ceiling Mounted Rain Shower', rows: [
+              { label: 'Material', value: 'Premium rain shower fully integrated into the ceiling.' },
+              ['Types', 'Flush mount, Semi-flush, LED', 'Stainless, Brass'],
+              ['Sizes', '200–800mm diameter'],
+              ['Thk (mm)', '200–800 Dia'],
+              ['Cost', '₹5,000 – ₹1,00,000+'],
+              ['Installation Method', 'Recessed ceiling mount with concealed rough-in valve'],
+              ['Maintenance', 'Clean and descale; occasional cartridge replacement'],
+              { label: '\u2713 Pros', value: 'Ultra-luxurious, seamless ceiling integration', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Very expensive, complex installation, high water flow needed', cls: 'cons' },
+              ['Best Place To Use', 'Luxury bathrooms'],
+              ['Brands', 'Kohler, Grohe, TOTO']
+            ]
+          },
+          {
+            title: 'Hand Shower Set', rows: [
+              { label: 'Material', value: 'Handheld shower head with flexible hose and wall bracket.' },
+              ['Types', 'Standard, Multi-function, Slide bar set'],
+              ['Sizes', 'Hose: 1.5m or 2.0m, Head: 80–120mm'],
+              ['Thk (mm)', 'N/A'],
+              ['Cost', '₹1,000 – ₹15,000'],
+              ['Installation Method', 'Wall bracket mounting + hose connection to shower arm'],
+              ['Maintenance', 'Rinse hose; clean head nozzles'],
+              { label: '\u2713 Pros', value: 'Flexible use, easy to clean, good for kids & elderly', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Hose can wear over time', cls: 'cons' },
+              ['Best Place To Use', 'All bathrooms'],
+              ['Brands', 'Jaquar, Cera, Grohe']
+            ]
+          },
+          {
+            title: 'Concealed Shower Mixer', rows: [
+              { label: 'Material', value: 'In-wall shower mixing valve with visible control plate only.' },
+              ['Types', 'Single lever, Dual lever, Thermostatic'],
+              ['Sizes', 'Concealed body fits in-wall'],
+              ['Thk (mm)', 'N/A'],
+              ['Cost', '₹3,000 – ₹40,000'],
+              ['Installation Method', 'In-wall rough-in valve with exposed trim plate and handle'],
+              ['Maintenance', 'Access internal cartridge through trim plate'],
+              { label: '\u2713 Pros', value: 'Clean wall look, saves space, modern aesthetic', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Requires wall demolition for repair, expensive', cls: 'cons' },
+              ['Best Place To Use', 'Modern bathrooms'],
+              ['Brands', 'Jaquar, Grohe']
+            ]
+          },
+          {
+            title: 'Exposed Shower Mixer', rows: [
+              { label: 'Material', value: 'Wall-mounted shower mixer with visible pipes and valve.' },
+              ['Types', 'Two-way, Three-way, Thermostatic'],
+              ['Sizes', 'Standard wall mount, 150mm centers'],
+              ['Thk (mm)', 'N/A'],
+              ['Cost', '₹2,000 – ₹15,000'],
+              ['Installation Method', 'Wall mounting on exposed hot/cold water connections'],
+              ['Maintenance', 'Easy access for repairs; clean visible parts'],
+              { label: '\u2713 Pros', value: 'Easy to install, repair-friendly, affordable', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Pipes exposed, less clean look', cls: 'cons' },
+              ['Best Place To Use', 'Budget & renovation projects'],
+              ['Brands', 'Jaquar, Cera']
+            ]
+          },
+          {
+            title: 'Thermostatic Shower Mixer', rows: [
+              { label: 'Material', value: 'Premium shower mixer that maintains constant water temperature.' },
+              ['Types', 'Exposed, Concealed, Digital'],
+              ['Sizes', 'Standard wall mount with thermostatic cartridge'],
+              ['Thk (mm)', 'N/A'],
+              ['Cost', '₹10,000 – ₹75,000'],
+              ['Installation Method', 'In-wall rough-in or surface mount with thermostatic valve'],
+              ['Maintenance', 'Replace thermostatic cartridge if temperature drifts'],
+              { label: '\u2713 Pros', value: 'Constant temperature, anti-scald safety, luxury feel', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Very expensive, complex to install and repair', cls: 'cons' },
+              ['Best Place To Use', 'Luxury bathrooms'],
+              ['Brands', 'Grohe, Kohler, Hansgrohe']
+            ]
+          },
+          {
+            title: 'Shower Panel', rows: [
+              { label: 'Material', value: 'All-in-one shower system with overhead shower, hand shower, and body jets.' },
+              ['Types', 'Single function, Multi-function, LED, Steam-ready'],
+              ['Sizes', 'Height: 1200–2000mm, Width: 200–400mm'],
+              ['Thk (mm)', 'N/A'],
+              ['Cost', '₹8,000 – ₹1,50,000'],
+              ['Installation Method', 'Wall mounting with concealed plumbing connections'],
+              ['Maintenance', 'Clean panel surface; descale jets'],
+              { label: '\u2713 Pros', value: 'Complete shower solution, spa experience', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Expensive, requires professional plumbing', cls: 'cons' },
+              ['Best Place To Use', 'Premium bathrooms'],
+              ['Brands', 'Kohler, Jaquar']
+            ]
+          },
+          {
+            title: 'Body Jets', rows: [
+              { label: 'Material', value: 'Small adjustable water jets installed in shower walls for hydrotherapy.' },
+              ['Types', 'Recessed, Surface mounted, Adjustable, Pulsating'],
+              ['Sizes', 'Jet diameter: 25–50mm each'],
+              ['Thk (mm)', 'N/A'],
+              ['Cost (jet)', '₹2,000 – ₹15,000 / jet'],
+              ['Installation Method', 'In-wall rough-in with directional nozzle'],
+              ['Maintenance', 'Clean nozzle heads; flush system periodically'],
+              { label: '\u2713 Pros', value: 'Spa-like hydrotherapy experience', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Expensive, complex installation, high water usage', cls: 'cons' },
+              ['Best Place To Use', 'Spa-style showers'],
+              ['Brands', 'Grohe, Kohler']
+            ]
+          },
+          {
+            title: 'Waterfall Shower', rows: [
+              { label: 'Material', value: 'Shower head that creates a wide cascading water flow like a waterfall.' },
+              ['Types', 'Ceiling mount, Wall mount, Custom size'],
+              ['Sizes', 'Width: 300–1000mm'],
+              ['Thk (mm)', 'N/A'],
+              ['Cost', '₹10,000 – ₹1,00,000+'],
+              ['Installation Method', 'Ceiling or wall mount with high-flow water supply'],
+              ['Maintenance', 'Clean water channels; descale periodically'],
+              { label: '\u2713 Pros', value: 'Dramatic visual effect, luxurious feel', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Requires very high water pressure, expensive', cls: 'cons' },
+              ['Best Place To Use', 'Luxury villas & resorts'],
+              ['Brands', 'Kohler, Grohe']
+            ]
+          },
+          {
+            title: 'Dual Shower System', rows: [
+              { label: 'Material', value: 'Shower system with both overhead rain shower and hand shower combined.' },
+              ['Types', 'Two-way diverter, Three-way diverter, Thermostatic'],
+              ['Sizes', 'Overhead: 200–400mm, Hand shower included'],
+              ['Thk (mm)', 'N/A'],
+              ['Cost', '₹8,000 – ₹75,000'],
+              ['Installation Method', 'In-wall rough-in valve with diverter + overhead arm'],
+              ['Maintenance', 'Clean both shower heads; service diverter cartridge'],
+              { label: '\u2713 Pros', value: 'Versatile, two shower modes in one system', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Expensive, requires dual plumbing', cls: 'cons' },
+              ['Best Place To Use', 'Master bathrooms'],
+              ['Brands', 'Jaquar, Grohe']
+            ]
+          },
+          {
+            title: 'Shower Channel Drain', rows: [
+              { label: 'Material', value: 'Linear drain system for walk-in showers with a sleek, tile-integrated look.' },
+              ['Types', 'Stainless steel, Brushed, Tile-insert'],
+              ['Sizes', 'Length: 500–1500mm, Width: 50–100mm'],
+              ['Thk (mm)', '50–100 Width'],
+              ['Cost', '₹1,500 – ₹20,000'],
+              ['Installation Method', 'Floor recess with slope; connect to waste pipe'],
+              ['Maintenance', 'Remove debris tray; clean trap periodically'],
+              { label: '\u2713 Pros', value: 'Sleek look, high drainage capacity, tile-integrated', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Expensive, requires precise floor sloping', cls: 'cons' },
+              ['Best Place To Use', 'Walk-in showers'],
+              ['Brands', 'Geberit, Jaquar']
+            ]
+          },
+          {
+            title: 'Linear Floor Drain', rows: [
+              { label: 'Material', value: 'Modern linear drain for bathrooms and wet areas.' },
+              ['Types', 'Stainless steel, ABS, Brass'],
+              ['Sizes', 'Length: 400–1200mm, Width: 50–100mm'],
+              ['Thk (mm)', '50–100 Width'],
+              ['Cost', '₹1,000 – ₹15,000'],
+              ['Installation Method', 'Floor recess installation with drainage pipe connection'],
+              ['Maintenance', 'Clean debris basket; flush with water'],
+              { label: '\u2713 Pros', value: 'Modern look, efficient drainage, customizable length', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Higher cost than traditional drains', cls: 'cons' },
+              ['Best Place To Use', 'Modern shower areas'],
+              ['Brands', 'Geberit, Kohler']
+            ]
+          },
+          {
+            title: 'Steam Shower System', rows: [
+              { label: 'Material', value: 'Enclosed shower system with steam generator for a spa-like steam bath experience.' },
+              ['Types', 'Prefabricated enclosure, Custom tile, Steam-only'],
+              ['Sizes', 'Custom: 900×900mm to 1500×2000mm'],
+              ['Thk (mm)', 'N/A'],
+              ['Cost', '₹50,000 – ₹10,00,000+'],
+              ['Installation Method', 'Steam generator + sealed enclosure with vapor-proof door'],
+              ['Maintenance', 'Descale generator; clean enclosure; replace seals'],
+              { label: '\u2713 Pros', value: 'Luxury spa experience, health benefits, premium home feature', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Extremely expensive, complex installation, high maintenance', cls: 'cons' },
+              ['Best Place To Use', 'Wellness & luxury projects'],
+              ['Brands', 'Kohler, TOTO']
+            ]
+          },
+          {
+            title: 'Digital Shower Control', rows: [
+              { label: 'Material', value: 'Digital interface for controlling water temperature, flow, and presets.' },
+              ['Types', 'Touchscreen, Knob, App-controlled, Voice-activated'],
+              ['Sizes', 'Control panel: 80–150mm square'],
+              ['Thk (mm)', 'N/A'],
+              ['Cost', '₹25,000 – ₹3,00,000+'],
+              ['Installation Method', 'In-wall control box with digital interface plate'],
+              ['Maintenance', 'Software updates; battery replacement if wireless'],
+              { label: '\u2713 Pros', value: 'Precise temperature control, presets, smart home integration', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Very expensive, requires power, tech support needed', cls: 'cons' },
+              ['Best Place To Use', 'Smart homes'],
+              ['Brands', 'Kohler, Grohe']
+            ]
+          },
+          {
+            title: 'Sensor Shower System', rows: [
+              { label: 'Material', value: 'Touchless shower system activated by motion sensor.' },
+              ['Types', 'Infrared sensor, Timer-based, Water-saving'],
+              ['Sizes', 'Standard shower head with sensor module'],
+              ['Thk (mm)', 'N/A'],
+              ['Cost', '₹15,000 – ₹1,50,000'],
+              ['Installation Method', 'Wall mount with sensor calibration'],
+              ['Maintenance', 'Clean sensor lens; replace batteries if battery-powered'],
+              { label: '\u2713 Pros', value: 'Touchless operation, water-saving, hygienic', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Sensor may be unreliable, expensive', cls: 'cons' },
+              ['Best Place To Use', 'Commercial projects'],
+              ['Brands', 'Jaquar, Grohe']
+            ]
+          },
+          {
+            title: 'Freestanding Bathtub', rows: [
+              { label: 'Material', value: 'Standalone bathtub that is not attached to walls, creating a centerpiece.' },
+              ['Types', 'Acrylic, Cast iron, Stone resin, Copper'],
+              ['Sizes', 'Length: 1500–1900mm, Width: 700–900mm'],
+              ['Thk (mm)', 'Acrylic 5–15'],
+              ['Cost', '₹20,000 – ₹5,00,000+'],
+              ['Installation Method', 'Place on floor; connect water supply and drainage'],
+              ['Maintenance', 'Clean with non-abrasive cleaner; avoid harsh chemicals'],
+              { label: '\u2713 Pros', value: 'Stunning focal point, flexible placement, deep soaking', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Very expensive, requires large space, heavy', cls: 'cons' },
+              ['Best Place To Use', 'Luxury villas, master baths'],
+              ['Brands', 'Kohler, Roca, Jaquar']
+            ]
+          },
+          {
+            title: 'Built-In Bathtub', rows: [
+              { label: 'Material', value: 'Bathtub built into a tiled or stone platform against the wall.' },
+              ['Types', 'Drop-in, Alcove, Corner, Whirlpool'],
+              ['Sizes', 'Length: 1500–1800mm, Width: 700–800mm'],
+              ['Thk (mm)', 'Acrylic 5–15'],
+              ['Cost', '₹15,000 – ₹2,00,000'],
+              ['Installation Method', 'Drop into framed enclosure; tile or stone surround'],
+              ['Maintenance', 'Clean tub surface; access plumbing through service panel'],
+              { label: '\u2713 Pros', value: 'Integrated look, space-efficient, durable', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Difficult to replace, permanent installation', cls: 'cons' },
+              ['Best Place To Use', 'Premium residences'],
+              ['Brands', 'Jaquar, Hindware']
+            ]
+          },
+          {
+            title: 'Urinal', rows: [
+              { label: 'Material', value: 'Wall-mounted sanitary fixture for male use, common in commercial bathrooms.' },
+              ['Types', 'Standard, Waterless, Flush valve, Manual flush'],
+              ['Sizes', 'Standard: 300–400mm width'],
+              ['Thk (mm)', 'N/A'],
+              ['Cost', '₹3,000 – ₹25,000'],
+              ['Installation Method', 'Wall mounting with concealed or exposed flush mechanism'],
+              ['Maintenance', 'Regular cleaning; deodorizer block replacement'],
+              { label: '\u2713 Pros', value: 'Water-saving, hygienic for commercial spaces', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Not common in residential, requires dedicated plumbing', cls: 'cons' },
+              ['Best Place To Use', 'Commercial projects'],
+              ['Brands', 'Cera, Hindware, Jaquar']
+            ]
+          },
+          {
+            title: 'Sensor Faucet', rows: [
+              { label: 'Material', value: 'Touchless faucet with infrared sensor for automatic water flow.' },
+              ['Types', 'Battery-powered, AC-powered, Deck-mount, Wall-mount'],
+              ['Sizes', 'Standard deck mount, 35mm hole'],
+              ['Thk (mm)', 'N/A'],
+              ['Cost', '₹5,000 – ₹50,000'],
+              ['Installation Method', 'Deck-mount on basin; connect to power and water supply'],
+              ['Maintenance', 'Clean sensor lens; replace batteries if applicable'],
+              { label: '\u2713 Pros', value: 'Touchless, hygienic, water-saving', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Battery lifespan limited, sensor can fail', cls: 'cons' },
+              ['Best Place To Use', 'Commercial & luxury projects'],
+              ['Brands', 'Grohe, Kohler, Jaquar']
+            ]
+          },
+          {
+            title: 'Flush Plate', rows: [
+              { label: 'Material', value: 'Wall plate for actuating concealed cisterns.' },
+              ['Types', 'Single flush, Dual flush, Pneumatic, Front actuation, Top actuation'],
+              ['Sizes', 'Standard: 160×250mm approx'],
+              ['Thk (mm)', 'N/A'],
+              ['Cost', '₹1,000 – ₹20,000'],
+              ['Installation Method', 'Clip-mount on concealed cistern frame'],
+              ['Maintenance', 'Clean plate surface; replace pneumatic cable if needed'],
+              { label: '\u2713 Pros', value: 'Sleek finish for concealed cisterns, dual flush saves water', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Requires compatible concealed cistern system', cls: 'cons' },
+              ['Best Place To Use', 'Concealed cistern systems'],
+              ['Brands', 'Geberit, Grohe, Jaquar']
+            ]
+          },
+          {
+            title: 'Floor Drain / Nahani Trap', rows: [
+              { label: 'Material', value: 'Floor drain with water seal trap to prevent sewer gases from entering.' },
+              ['Types', 'Regular, Heavy-duty, Decorative, Stainless steel'],
+              ['Sizes', '75–150mm drain diameter'],
+              ['Thk (mm)', '75–150'],
+              ['Cost', '₹300 – ₹5,000'],
+              ['Installation Method', 'Floor recess with slope; connect to waste pipe'],
+              ['Maintenance', 'Clean debris trap; flush with water; refill water seal'],
+              { label: '\u2713 Pros', value: 'Essential for all wet areas, affordable, easy to install', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Water seal can dry out if unused, letting gases in', cls: 'cons' },
+              ['Best Place To Use', 'Bathrooms, utility areas'],
+              ['Brands', 'Jaquar, Hindware']
+            ]
+          },
+          {
+            title: 'Bottle Trap', rows: [
+              { label: 'Material', value: 'Decorative under-sink trap with a bottle-like shape for open vanities.' },
+              ['Types', 'Brass, Chrome, Stainless steel, Colored finishes'],
+              ['Sizes', 'Standard: 32mm or 40mm connection'],
+              ['Thk (mm)', 'N/A'],
+              ['Cost', '₹500 – ₹8,000'],
+              ['Installation Method', 'Connect between basin drain and wall plumbing'],
+              ['Maintenance', 'Clean glass body; unscrew bottom for debris removal'],
+              { label: '\u2713 Pros', value: 'Designer look, easy to clean, visible water flow check', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Can clog easily, plastic ones look cheap', cls: 'cons' },
+              ['Best Place To Use', 'Designer wash basins'],
+              ['Brands', 'Kohler, Jaquar']
+            ]
+          }
+        ]
+      },
+      lights: {
+        title: 'Lights',
+        tableItems: [
+          'LED Downlight (Recessed Light)||₹200 – ₹2,000 / pc||Cutout 50–150||Living rooms, bedrooms, corridors, general lighting||Philips, Havells, Wipro, Crompton',
+          'COB Spotlight||₹300 – ₹3,500 / pc||Cutout 60–120||Artwork, feature walls, display units||Philips, Opple, Havells',
+          'Track Light||₹800 – ₹5,000 / light||Rail 20–35||Art walls, galleries, modern living rooms||Philips, Opple, Wipro',
+          'LED Strip Light||₹80 – ₹500 / rft||8–15||Cove lighting, wardrobes, shelves, mirrors||Philips, Wipro, LEDure',
+          'Cove Light System||₹100 – ₹600 / rft||10–15||False ceilings, ambient lighting||Philips, Wipro, Havells',
+          'Pendant Light||₹1,000 – ₹50,000+||N/A||Dining tables, kitchen islands, bedside lighting||IKEA, Philips, The White Teak Company',
+          'Chandelier||₹5,000 – ₹5,00,000+||N/A||Double-height spaces, living rooms, foyers||Saint Louis, The White Teak Company, Philips',
+          'Wall Sconce||₹500 – ₹15,000||N/A||Bedrooms, passages, accent walls||Philips, Jainsons, The White Teak Company',
+          'Surface Mounted Downlight||₹300 – ₹3,000||50–120 Height||Areas without false ceiling||Philips, Wipro, Havells',
+          'Linear Light||₹500 – ₹5,000 / rft||25–75||Offices, modern homes, workspaces||Opple, Philips, Wipro',
+          'Magnetic Track Lighting||₹3,000 – ₹15,000 / rft||35–60||Luxury residences, modern interiors||Flos, Opple, Hafele',
+          'Wall Washer Light||₹500 – ₹4,000||N/A||Textured walls, artwork, feature panels||Philips, Opple',
+          'Picture Light||₹1,000 – ₹10,000||N/A||Paintings, artwork displays||Philips, Hafele',
+          'Mirror Light||₹500 – ₹8,000||N/A||Vanity mirrors, bathrooms, dressers||Philips, Wipro',
+          'Floor Lamp||₹2,000 – ₹50,000+||N/A||Reading corners, living rooms||IKEA, The White Teak Company',
+          'Table Lamp||₹1,000 – ₹25,000||N/A||Bedside tables, study desks||IKEA, Philips',
+          'Step Light||₹500 – ₹5,000||40–100||Staircases, passages||Philips, Wipro'
+        ],
+        detailItems: [
+          {
+            title: 'LED Downlight (Recessed Light)', rows: [
+              { label: 'Material', value: 'Recessed LED light fixture installed into ceiling cutouts for clean, low-profile illumination.' },
+              ['Types', 'Fixed, Gimbal, Adjustable tilt, Anti-glare'],
+              ['Sizes', 'Cutout 50–150mm diameter'],
+              ['Wattage', '3W – 25W'],
+              ['Cost (pc)', '₹200 – ₹2,000 / pc'],
+              ['Installation Method', 'Cut ceiling hole, connect to mains, clip light into place'],
+              ['Maintenance', 'Minimal; replace LED module if dimming'],
+              { label: '\u2713 Pros', value: 'Sleek, energy-efficient, long life, even light distribution', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Requires false ceiling or access above', cls: 'cons' },
+              ['Best Places to Use', 'Living rooms, bedrooms, corridors, general lighting'],
+              ['Brands', 'Philips, Havells, Wipro, Crompton']
+            ]
+          },
+          {
+            title: 'COB Spotlight', rows: [
+              { label: 'Material', value: 'Chip-on-board LED spotlight delivering high-intensity focused beam.' },
+              ['Types', 'Fixed, Track-mount, Gimbal, Surface-mount'],
+              ['Sizes', 'Cutout 60–120mm, various beam angles'],
+              ['Wattage', '5W – 30W'],
+              ['Cost (pc)', '₹300 – ₹3,500 / pc'],
+              ['Installation Method', 'Recess or surface mount; connect to junction box'],
+              ['Maintenance', 'Wipe lens; replace driver if needed'],
+              { label: '\u2713 Pros', value: 'High brightness, excellent color rendering, focused beam', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Can be glare-prone without proper shielding', cls: 'cons' },
+              ['Best Places to Use', 'Artwork, feature walls, display units'],
+              ['Brands', 'Philips, Opple, Havells']
+            ]
+          },
+          {
+            title: 'Track Light', rows: [
+              { label: 'Material', value: 'Adjustable light heads mounted on a continuous track for flexible directional lighting.' },
+              ['Types', 'Linear track, Flexible track, Monorail, 1-circuit, 3-circuit'],
+              ['Sizes', 'Rail 20–35mm wide, 1m – 4m lengths'],
+              ['Wattage', '5W – 20W per head'],
+              ['Cost (light)', '₹800 – ₹5,000 / light'],
+              ['Installation Method', 'Mount track on ceiling, snap in light heads, connect to power'],
+              ['Maintenance', 'Clean track and heads; replace individual heads if faulty'],
+              { label: '\u2713 Pros', value: 'Flexible positioning, modular, modern look', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Track can be visible, premium systems expensive', cls: 'cons' },
+              ['Best Places to Use', 'Art walls, galleries, modern living rooms'],
+              ['Brands', 'Philips, Opple, Wipro']
+            ]
+          },
+          {
+            title: 'LED Strip Light', rows: [
+              { label: 'Material', value: 'Flexible PCB with surface-mounted LEDs for linear accent lighting.' },
+              ['Types', 'Single color, RGB, RGBW, Addressable, High-density'],
+              ['Sizes', '8–15mm wide, 5m reels, cuttable every 25–50mm'],
+              ['Wattage', '4.8W – 24W per metre'],
+              ['Cost (rft)', '₹80 – ₹500 / rft'],
+              ['Installation Method', 'Adhesive mount on clean surface; connect to LED driver'],
+              ['Maintenance', 'Clean gently; replace driver if flickering'],
+              { label: '\u2713 Pros', value: 'Versatile, easy to install, creates ambient glow', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Requires diffuser for clean look, driver needed', cls: 'cons' },
+              ['Best Places to Use', 'Cove lighting, wardrobes, shelves, mirrors'],
+              ['Brands', 'Philips, Wipro, LEDure']
+            ]
+          },
+          {
+            title: 'Cove Light System', rows: [
+              { label: 'Material', value: 'Indirect lighting system installed in ceiling coves for ambient glow.' },
+              ['Types', 'LED strip-based, T5/T8 linear, Rope light'],
+              ['Sizes', '10–15mm strip width, custom lengths'],
+              ['Wattage', '5W – 20W per metre'],
+              ['Cost (rft)', '₹100 – ₹600 / rft'],
+              ['Installation Method', 'Install LED strip or linear light in cove recess; conceal from view'],
+              ['Maintenance', 'Clean cove area; replace strip if sections fail'],
+              { label: '\u2713 Pros', value: 'Soft ambient glow, no visible source, enhances ceiling design', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Requires architectural cove, light loss over distance', cls: 'cons' },
+              ['Best Places to Use', 'False ceilings, ambient lighting'],
+              ['Brands', 'Philips, Wipro, Havells']
+            ]
+          },
+          {
+            title: 'Pendant Light', rows: [
+              { label: 'Material', value: 'Suspended light fixture hanging from ceiling by cord, chain, or rod.' },
+              ['Types', 'Single pendant, Multi-light, Mini pendant, Drum, Globe'],
+              ['Sizes', 'Diameter 150–600mm, drop length adjustable'],
+              ['Wattage', '5W – 60W per fixture'],
+              ['Cost', '₹1,000 – ₹50,000+'],
+              ['Installation Method', 'Ceiling mount with canopy; wire to ceiling junction box'],
+              ['Maintenance', 'Dust shade; replace bulb/LED module'],
+              { label: '\u2713 Pros', value: 'Designer statement piece, focused task lighting', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Can obstruct view, requires ceiling anchoring', cls: 'cons' },
+              ['Best Places to Use', 'Dining tables, kitchen islands, bedside lighting'],
+              ['Brands', 'IKEA, Philips, The White Teak Company']
+            ]
+          },
+          {
+            title: 'Chandelier', rows: [
+              { label: 'Material', value: 'Decorative multi-arm ceiling light fixture, often ornate and grand.' },
+              ['Types', 'Crystal, Modern, Rustic, Mini, Flush-mount'],
+              ['Sizes', 'Width 300–1500mm, variable height'],
+              ['Wattage', '20W – 200W total'],
+              ['Cost', '₹5,000 – ₹5,00,000+'],
+              ['Installation Method', 'Ceiling mount with heavy-duty bracket; support chain'],
+              ['Maintenance', 'Dust crystals/arms; periodic bulb replacement'],
+              { label: '\u2713 Pros', value: 'Spectacular focal point, adds grandeur and luxury', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Very expensive, heavy, requires high ceiling', cls: 'cons' },
+              ['Best Places to Use', 'Double-height spaces, living rooms, foyers'],
+              ['Brands', 'Saint Louis, The White Teak Company, Philips']
+            ]
+          },
+          {
+            title: 'Wall Sconce', rows: [
+              { label: 'Material', value: 'Wall-mounted light fixture providing accent or ambient lighting.' },
+              ['Types', 'Up-light, Down-light, Swing-arm, Picture, Candle-style'],
+              ['Sizes', 'Height 150–600mm, projection 100–300mm'],
+              ['Wattage', '3W – 15W'],
+              ['Cost', '₹500 – ₹15,000'],
+              ['Installation Method', 'Wall mount with backplate; wire to wall junction box'],
+              ['Maintenance', 'Dust shade; replace bulb when needed'],
+              { label: '\u2713 Pros', value: 'Space-saving, decorative, layered lighting', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Hardwired installation, difficult to reposition', cls: 'cons' },
+              ['Best Places to Use', 'Bedrooms, passages, accent walls'],
+              ['Brands', 'Philips, Jainsons, The White Teak Company']
+            ]
+          },
+          {
+            title: 'Surface Mounted Downlight', rows: [
+              { label: 'Material', value: 'LED light mounted directly on ceiling surface, ideal where no false ceiling exists.' },
+              ['Types', 'Round, Square, Ultra-slim, Adjustable tilt'],
+              ['Sizes', 'Height 50–120mm, diameter 150–300mm'],
+              ['Wattage', '6W – 24W'],
+              ['Cost', '₹300 – ₹3,000'],
+              ['Installation Method', 'Surface mount on ceiling with screws; wire to junction box'],
+              ['Maintenance', 'Clean diffuser; replace LED module if needed'],
+              { label: '\u2713 Pros', value: 'No false ceiling needed, easy retrofit, affordable', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Projects below ceiling, less sleek than recessed', cls: 'cons' },
+              ['Best Places to Use', 'Areas without false ceiling'],
+              ['Brands', 'Philips, Wipro, Havells']
+            ]
+          },
+          {
+            title: 'Linear Light', rows: [
+              { label: 'Material', value: 'Slim rectangular LED light for clean architectural lines.' },
+              ['Types', 'Surface mount, Recessed, Suspended, Continuous row'],
+              ['Sizes', 'Width 25–75mm, length 300–3000mm'],
+              ['Wattage', '10W – 60W'],
+              ['Cost (rft)', '₹500 – ₹5,000 / rft'],
+              ['Installation Method', 'Surface or recess mount; link multiple units for continuous line'],
+              ['Maintenance', 'Clean diffuser; replace individual section if faulty'],
+              { label: '\u2713 Pros', value: 'Clean lines, even light distribution, modern aesthetic', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Installation alignment critical, harder to retrofit', cls: 'cons' },
+              ['Best Places to Use', 'Offices, modern homes, workspaces'],
+              ['Brands', 'Opple, Philips, Wipro']
+            ]
+          },
+          {
+            title: 'Magnetic Track Lighting', rows: [
+              { label: 'Material', value: 'Track system using magnetic attachment for easy light head positioning.' },
+              ['Types', 'Recessed track, Surface track, Suspended track'],
+              ['Sizes', 'Width 35–60mm, lengths 1m – 6m'],
+              ['Wattage', '5W – 25W per head'],
+              ['Cost (rft)', '₹3,000 – ₹15,000 / rft'],
+              ['Installation Method', 'Recess or surface mount track; magnetically attach light heads'],
+              ['Maintenance', 'Clean track; swap heads easily without tools'],
+              { label: '\u2713 Pros', value: 'Tool-less adjustment, ultra-modern, flexible layout', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Very expensive, premium system', cls: 'cons' },
+              ['Best Places to Use', 'Luxury residences, modern interiors'],
+              ['Brands', 'Flos, Opple, Hafele']
+            ]
+          },
+          {
+            title: 'Wall Washer Light', rows: [
+              { label: 'Material', value: 'Light designed to wash a wall with even illumination, highlighting texture.' },
+              ['Types', 'Recessed, Surface, Linear, Adjustable angle'],
+              ['Sizes', 'Various lengths and beam angles'],
+              ['Wattage', '5W – 30W'],
+              ['Cost', '₹500 – ₹4,000'],
+              ['Installation Method', 'Ceiling or wall mount, angled towards wall surface'],
+              ['Maintenance', 'Clean lens; adjust angle if needed'],
+              { label: '\u2713 Pros', value: 'Enhances wall texture, creates dramatic effect', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Requires smooth wall surface for best effect', cls: 'cons' },
+              ['Best Places to Use', 'Textured walls, artwork, feature panels'],
+              ['Brands', 'Philips, Opple']
+            ]
+          },
+          {
+            title: 'Picture Light', rows: [
+              { label: 'Material', value: 'Focused light designed to illuminate artwork or photographs.' },
+              ['Types', 'Battery-powered, Hardwired, Clip-on, Adjustable arm'],
+              ['Sizes', 'Arm length 200–600mm'],
+              ['Wattage', '3W – 10W'],
+              ['Cost', '₹1,000 – ₹10,000'],
+              ['Installation Method', 'Mount above artwork; direct beam onto canvas/frame'],
+              ['Maintenance', 'Clean lens; replace batteries if battery-powered'],
+              { label: '\u2713 Pros', value: 'Highlights art, adjustable beam, gallery look', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Limited to single artwork, wiring can be visible', cls: 'cons' },
+              ['Best Places to Use', 'Paintings, artwork displays'],
+              ['Brands', 'Philips, Hafele']
+            ]
+          },
+          {
+            title: 'Mirror Light', rows: [
+              { label: 'Material', value: 'Light designed for installation above or around mirrors for even facial illumination.' },
+              ['Types', 'Above mirror, Side strip, Integrated, Backlit'],
+              ['Sizes', 'Length 400–1200mm, width 30–80mm'],
+              ['Wattage', '5W – 20W'],
+              ['Cost', '₹500 – ₹8,000'],
+              ['Installation Method', 'Mount above or beside mirror; wire to junction box'],
+              ['Maintenance', 'Clean fixture; keep connections moisture-free'],
+              { label: '\u2713 Pros', value: 'Even shadow-free lighting, essential for grooming', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Requires electrical planning, moisture-prone area', cls: 'cons' },
+              ['Best Places to Use', 'Vanity mirrors, bathrooms, dressers'],
+              ['Brands', 'Philips, Wipro']
+            ]
+          },
+          {
+            title: 'Floor Lamp', rows: [
+              { label: 'Material', value: 'Freestanding tall lamp providing ambient or task lighting.' },
+              ['Types', 'Torchiere, Arc, Reading, Tripod, LED'],
+              ['Sizes', 'Height 1200–2000mm, base 200–400mm'],
+              ['Wattage', '10W – 60W'],
+              ['Cost', '₹2,000 – ₹50,000+'],
+              ['Installation Method', 'Plug into wall outlet, no installation required'],
+              ['Maintenance', 'Dust shade; replace bulb'],
+              { label: '\u2713 Pros', value: 'Portable, no installation, versatile placement', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Takes floor space, cord can be visible', cls: 'cons' },
+              ['Best Places to Use', 'Reading corners, living rooms'],
+              ['Brands', 'IKEA, The White Teak Company']
+            ]
+          },
+          {
+            title: 'Table Lamp', rows: [
+              { label: 'Material', value: 'Compact lamp designed to sit on tables, desks, or nightstands.' },
+              ['Types', 'Desk, Bedside, Decorative, LED, USB'],
+              ['Sizes', 'Height 300–700mm, base 100–200mm'],
+              ['Wattage', '5W – 25W'],
+              ['Cost', '₹1,000 – ₹25,000'],
+              ['Installation Method', 'Place on surface; plug into outlet'],
+              ['Maintenance', 'Dust shade; replace bulb'],
+              { label: '\u2713 Pros', value: 'Space-saving, task-focused, portable', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Limited coverage, cord management needed', cls: 'cons' },
+              ['Best Places to Use', 'Bedside tables, study desks'],
+              ['Brands', 'IKEA, Philips']
+            ]
+          },
+          {
+            title: 'Step Light', rows: [
+              { label: 'Material', value: 'Low-level light for illuminating stair treads for safety and ambiance.' },
+              ['Types', 'Recessed, Surface mount, Strip, Round'],
+              ['Sizes', 'Width 40–100mm, length 80–300mm'],
+              ['Wattage', '1W – 5W per light'],
+              ['Cost', '₹500 – ₹5,000'],
+              ['Installation Method', 'Recess or surface mount on stair riser; wire to low-voltage driver'],
+              ['Maintenance', 'Clean lens; check connections if flickering'],
+              { label: '\u2713 Pros', value: 'Safety enhancement, elegant look, low energy', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Requires wiring, can be dim if under-powered', cls: 'cons' },
+              ['Best Places to Use', 'Staircases, passages'],
+              ['Brands', 'Philips, Wipro']
+            ]
+          }
+        ]
+      },
+      switches: {
+        title: 'Switch Boards',
+        tableItems: [
+          'Basic Modular Switch Board||₹150 – ₹800 / plate||6 – 8||Budget homes, utility rooms, rental projects||Anchor Roma, GM Modular, Goldmedal',
+          'Premium Modular Switch Board||₹500 – ₹3,000 / plate||7 – 10||Living rooms, bedrooms, premium residences||Legrand Myrius, Schneider Livia, Havells Fabio',
+          'Luxury Switch Board (Glass Finish)||₹1,500 – ₹10,000+ / plate||8 – 12||Luxury homes, villas, hospitality projects||Legrand Arteor, Norisys Cube, Goldmedal Air',
+          'Touch Switch Board||₹2,000 – ₹15,000 / plate||8 – 12||Smart homes, modern residences||Wipro Smart, Goldmedal i-Touch, Schneider',
+          'Wi-Fi Smart Switch Board||₹3,000 – ₹25,000 / plate||8 – 12||Home automation projects||Philips Wiz, Wipro Smart, Schneider Wiser',
+          'USB Charging Switch Board||₹500 – ₹5,000 / plate||6 – 10||Bedside tables, study areas, offices||Legrand, Schneider, GM',
+          'Pop-Up Socket Box||₹2,000 – ₹15,000||60 – 100 Depth||Workstations, conference tables, kitchen islands||Hafele, Ozone, Legrand',
+          'Floor Socket Box||₹1,500 – ₹12,000||50 – 80 Depth||Living rooms, offices, conference rooms||Legrand, Schneider, Hager',
+          'Weatherproof Switch Board (IP Rated)||₹500 – ₹5,000||8 – 15||Balconies, terraces, outdoor spaces||Schneider, Legrand, Hager',
+          'Dimmer Switch Board||₹500 – ₹8,000||Standard Modular||Living rooms, bedrooms, mood lighting||Legrand, Schneider, Havells',
+          'Motion Sensor Switch Board||₹1,000 – ₹8,000||Standard Modular||Bathrooms, passages, utility areas||Legrand, Schneider, Philips'
+        ],
+        detailItems: [
+          {
+            title: 'Basic Modular Switch Board', rows: [
+              { label: 'Material', value: 'Entry-level modular switches with standard functionality and finish.' },
+              ['Types', 'Piano, Rocker, Toggle'],
+              ['Sizes', 'Standard modular plate: 6–8mm thickness'],
+              ['Rating', '6A – 16A'],
+              ['Cost (plate)', '₹150 – ₹800 / plate'],
+              ['Installation Method', 'Mount on wall box; wire to electrical circuit'],
+              ['Maintenance', 'Wipe with dry cloth; tighten screws if loose'],
+              { label: '\u2713 Pros', value: 'Affordable, widely available, easy installation', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Basic look, limited design options', cls: 'cons' },
+              ['Best Places to Use', 'Budget homes, utility rooms, rental projects'],
+              ['Brands', 'Anchor Roma, GM Modular, Goldmedal']
+            ]
+          },
+          {
+            title: 'Premium Modular Switch Board', rows: [
+              { label: 'Material', value: 'Mid-range modular switches with better finish, feel, and durability.' },
+              ['Types', 'Rocker, Slimline, Wide plate'],
+              ['Sizes', 'Standard modular: 7–10mm thickness'],
+              ['Rating', '6A – 16A'],
+              ['Cost (plate)', '₹500 – ₹3,000 / plate'],
+              ['Installation Method', 'Mount on wall box; screw or clip-on cover'],
+              ['Maintenance', 'Wipe clean; replace individual modules if needed'],
+              { label: '\u2713 Pros', value: 'Better aesthetics, smooth operation, modular design', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Costlier than basic, plate may yellow over time', cls: 'cons' },
+              ['Best Places to Use', 'Living rooms, bedrooms, premium residences'],
+              ['Brands', 'Legrand Myrius, Schneider Livia, Havells Fabio']
+            ]
+          },
+          {
+            title: 'Luxury Switch Board (Glass Finish)', rows: [
+              { label: 'Material', value: 'Premium switch plates with tempered glass finish for a high-end look.' },
+              ['Types', 'Glass touch, Glass rocker, Scratch-resistant glass'],
+              ['Sizes', 'Plate: 8–12mm glass thickness'],
+              ['Rating', '6A – 16A'],
+              ['Cost (plate)', '₹1,500 – ₹10,000+ / plate'],
+              ['Installation Method', 'Mount on wall box; screw or magnetic clip-on'],
+              ['Maintenance', 'Wipe glass with soft cloth; avoid abrasive cleaners'],
+              { label: '\u2713 Pros', value: 'Luxurious finish, scratch-resistant, elegant', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Expensive, fingerprints visible', cls: 'cons' },
+              ['Best Places to Use', 'Luxury homes, villas, hospitality projects'],
+              ['Brands', 'Legrand Arteor, Norisys Cube, Goldmedal Air']
+            ]
+          },
+          {
+            title: 'Touch Switch Board', rows: [
+              { label: 'Material', value: 'Touch-sensitive switch panel with capacitive touch technology.' },
+              ['Types', 'Single touch, Multi-touch, Glass touch'],
+              ['Sizes', 'Standard modular plate: 8–12mm'],
+              ['Rating', '6A – 10A'],
+              ['Cost (plate)', '₹2,000 – ₹15,000 / plate'],
+              ['Installation Method', 'Mount on wall box; connect neutral wire required'],
+              ['Maintenance', 'Clean touch surface; reset if unresponsive'],
+              { label: '\u2713 Pros', value: 'Modern look, easy to clean, smooth surface', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Requires neutral wire, costlier than mechanical', cls: 'cons' },
+              ['Best Places to Use', 'Smart homes, modern residences'],
+              ['Brands', 'Wipro Smart, Goldmedal i-Touch, Schneider']
+            ]
+          },
+          {
+            title: 'Wi-Fi Smart Switch Board', rows: [
+              { label: 'Material', value: 'Smart switch board with Wi-Fi connectivity for remote control via app.' },
+              ['Types', 'Single channel, Multi-channel, Dimmer, Curtain'],
+              ['Sizes', 'Standard modular plate: 8–12mm'],
+              ['Rating', '6A – 10A'],
+              ['Cost (plate)', '₹3,000 – ₹25,000 / plate'],
+              ['Installation Method', 'Mount on wall box; connect to Wi-Fi via app'],
+              ['Maintenance', 'Reset router if offline; firmware updates via app'],
+              { label: '\u2713 Pros', value: 'Remote control, voice control, scheduling, energy monitoring', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Requires stable Wi-Fi, neutral wire needed', cls: 'cons' },
+              ['Best Places to Use', 'Home automation projects'],
+              ['Brands', 'Philips Wiz, Wipro Smart, Schneider Wiser']
+            ]
+          },
+          {
+            title: 'USB Charging Switch Board', rows: [
+              { label: 'Material', value: 'Switch plate with integrated USB charging ports for devices.' },
+              ['Types', 'USB-A, USB-C, Quick Charge, Combo'],
+              ['Sizes', 'Standard modular plate: 6–10mm'],
+              ['Rating', '2.1A – 3.1A USB output'],
+              ['Cost (plate)', '₹500 – ₹5,000 / plate'],
+              ['Installation Method', 'Mount on wall box; connect to mains power'],
+              ['Maintenance', 'Clean ports; check charging performance'],
+              { label: '\u2713 Pros', value: 'No adapter needed, convenient bedside charging', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'USB ports may become outdated (USB-C upgrade)', cls: 'cons' },
+              ['Best Places to Use', 'Bedside tables, study areas, offices'],
+              ['Brands', 'Legrand, Schneider, GM']
+            ]
+          },
+          {
+            title: 'Pop-Up Socket Box', rows: [
+              { label: 'Material', value: 'Concealed power socket that pops up from countertop or table surface.' },
+              ['Types', 'Round, Rectangular, Single module, Multi-module'],
+              ['Sizes', 'Depth: 60–100mm below surface'],
+              ['Rating', '6A – 16A'],
+              ['Cost', '₹2,000 – ₹15,000'],
+              ['Installation Method', 'Cut hole in countertop; mount body underneath; wire to mains'],
+              ['Maintenance', 'Clean top surface; ensure mechanism opens/closes smoothly'],
+              { label: '\u2713 Pros', value: 'Concealed when not in use, neat countertop', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Requires under-counter depth, expensive', cls: 'cons' },
+              ['Best Places to Use', 'Workstations, conference tables, kitchen islands'],
+              ['Brands', 'Hafele, Ozone, Legrand']
+            ]
+          },
+          {
+            title: 'Floor Socket Box', rows: [
+              { label: 'Material', value: 'Recessed floor box with flip-lid access for power/data connections.' },
+              ['Types', 'Single gang, Double gang, Data + power combo'],
+              ['Sizes', 'Depth: 50–80mm'],
+              ['Rating', '6A – 16A'],
+              ['Cost', '₹1,500 – ₹12,000'],
+              ['Installation Method', 'Cut floor opening; embed box in screed/subfloor; wire to mains'],
+              ['Maintenance', 'Clean lid opening; keep mechanism free of debris'],
+              { label: '\u2713 Pros', value: 'Invisible when not in use, floor-level convenience', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Requires floor cut-out, can collect dust', cls: 'cons' },
+              ['Best Places to Use', 'Living rooms, offices, conference rooms'],
+              ['Brands', 'Legrand, Schneider, Hager']
+            ]
+          },
+          {
+            title: 'Weatherproof Switch Board (IP Rated)', rows: [
+              { label: 'Material', value: 'Water and dust resistant switch board rated for outdoor use.' },
+              ['Types', 'IP54, IP65, IP66 with gaskets and covers'],
+              ['Sizes', '8–15mm plate thickness'],
+              ['Rating', '6A – 16A, IP54–IP66'],
+              ['Cost', '₹500 – ₹5,000'],
+              ['Installation Method', 'Mount on outdoor wall with weatherproof conduit'],
+              ['Maintenance', 'Check gasket integrity; clean exterior'],
+              { label: '\u2713 Pros', value: 'Weather-resistant, safe for outdoor use', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Bulky, limited design options', cls: 'cons' },
+              ['Best Places to Use', 'Balconies, terraces, outdoor spaces'],
+              ['Brands', 'Schneider, Legrand, Hager']
+            ]
+          },
+          {
+            title: 'Dimmer Switch Board', rows: [
+              { label: 'Material', value: 'Switch with integrated dimmer control for adjustable light brightness.' },
+              ['Types', 'Rotary, Slide, Touch, Smart Wi-Fi dimmer'],
+              ['Sizes', 'Standard modular plate'],
+              ['Rating', '60W – 400W load capacity'],
+              ['Cost', '₹500 – ₹8,000'],
+              ['Installation Method', 'Mount on wall box; compatible dimmable bulbs required'],
+              ['Maintenance', 'Clean surface; replace dimmer module if flickering'],
+              { label: '\u2713 Pros', value: 'Adjustable brightness, energy saving, mood setting', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Requires dimmable bulbs, may generate hum', cls: 'cons' },
+              ['Best Places to Use', 'Living rooms, bedrooms, mood lighting'],
+              ['Brands', 'Legrand, Schneider, Havells']
+            ]
+          },
+          {
+            title: 'Motion Sensor Switch Board', rows: [
+              { label: 'Material', value: 'Switch with built-in motion sensor for automatic light activation.' },
+              ['Types', 'PIR sensor, Microwave sensor, Hybrid'],
+              ['Sizes', 'Standard modular plate'],
+              ['Rating', '6A – 10A'],
+              ['Cost', '₹1,000 – ₹8,000'],
+              ['Installation Method', 'Mount on wall box; set sensitivity and time delay'],
+              ['Maintenance', 'Clean sensor lens; adjust settings seasonally'],
+              { label: '\u2713 Pros', value: 'Automatic on/off, energy saving, convenient', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'False triggering, limited coverage area', cls: 'cons' },
+              ['Best Places to Use', 'Bathrooms, passages, utility areas'],
+              ['Brands', 'Legrand, Schneider, Philips']
+            ]
+          }
+        ]
+      },
+      automation: {
+        title: 'Automation',
+        tableItems: [
+          'Smart Lighting Automation||₹50 – ₹300 / sq.ft.||N/A||Entire home, living rooms, bedrooms||KNX, Control4, Lutron, Legrand',
+          'Smart Switch Automation||₹2,000 – ₹15,000 / switch||Standard Modular||Living rooms, bedrooms||Schneider Wiser, Legrand, Wipro',
+          'Curtain & Blind Automation||₹10,000 – ₹75,000 / window||N/A||Living rooms, bedrooms, double-height spaces||Somfy, Dooya, Forest',
+          'Smart Home Hub / Controller||₹20,000 – ₹3,00,000+||N/A||Central automation system||Control4, KNX, Crestron',
+          'Voice Control Integration||₹5,000 – ₹50,000||N/A||Entire home||Alexa, Google Home, Control4',
+          'Motion Sensor Automation||₹1,500 – ₹15,000 / point||N/A||Bathrooms, passages, staircases||Schneider, Legrand, Philips',
+          'Occupancy Sensors||₹2,000 – ₹20,000||N/A||Offices, home offices, corridors||KNX, Schneider',
+          'Smart HVAC / AC Automation||₹10,000 – ₹1,00,000+||N/A||Bedrooms, living rooms||Daikin, Mitsubishi, KNX',
+          'Smart Thermostat||₹5,000 – ₹50,000||N/A||Climate-controlled homes||Ecobee, Honeywell, Schneider',
+          'Smart Door Lock System||₹8,000 – ₹75,000||Door 35–100||Main entrance doors||Yale, Godrej, Hafele',
+          'Video Door Phone (VDP)||₹8,000 – ₹1,50,000||N/A||Villas, apartments||Hikvision, CP Plus, Legrand'
+        ],
+        detailItems: [
+          {
+            title: 'Smart Lighting Automation', rows: [
+              { label: 'Material', value: 'Automated lighting control system with dimming, scenes, and scheduling.' },
+              ['Types', 'Wired (KNX/DALI), Wireless (Zigbee/Z-Wave), Hybrid'],
+              ['Sizes', 'Per point: switch, dimmer, or sensor module'],
+              ['Cost', '₹50 – ₹300 / sq.ft.'],
+              ['Installation Method', 'Wired: run control cables during construction. Wireless: retrofit with smart bulbs/ modules'],
+              ['Maintenance', 'Update firmware; replace battery in wireless sensors'],
+              { label: '\u2713 Pros', value: 'Energy saving, mood scenes, remote control, increased property value', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Higher upfront cost, complex for retrofit, requires planning', cls: 'cons' },
+              ['Best Places to Use', 'Entire home, living rooms, bedrooms'],
+              ['Brands', 'KNX, Control4, Lutron, Legrand']
+            ]
+          },
+          {
+            title: 'Smart Switch Automation', rows: [
+              { label: 'Material', value: 'Smart switches replacing traditional switches, controllable via app or voice.' },
+              ['Types', 'Wi-Fi, Zigbee, Z-Wave, Bluetooth mesh'],
+              ['Sizes', 'Standard modular plate'],
+              ['Cost (switch)', '₹2,000 – ₹15,000 / switch'],
+              ['Installation Method', 'Replace existing switch; neutral wire may be required'],
+              ['Maintenance', 'Reset if offline; update firmware via app'],
+              { label: '\u2713 Pros', value: 'Easy retrofit, remote control, scheduling, scene integration', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Neutral wire needed, Wi-Fi dependent', cls: 'cons' },
+              ['Best Places to Use', 'Living rooms, bedrooms'],
+              ['Brands', 'Schneider Wiser, Legrand, Wipro']
+            ]
+          },
+          {
+            title: 'Curtain & Blind Automation', rows: [
+              { label: 'Material', value: 'Motorized curtain track or blind system with remote or app control.' },
+              ['Types', 'Curtain track, Roller blind, Roman blind, Venetian blind'],
+              ['Sizes', 'Per window: 1–12m track length'],
+              ['Cost (window)', '₹10,000 – ₹75,000 / window'],
+              ['Installation Method', 'Mount motorized track/roller; connect to power and control system'],
+              ['Maintenance', 'Clean track; lubricate moving parts; replace motor battery (if battery-powered)'],
+              { label: '\u2713 Pros', value: 'Convenience, scheduled operation, clean look', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Expensive, motor noise, power supply needed', cls: 'cons' },
+              ['Best Places to Use', 'Living rooms, bedrooms, double-height spaces'],
+              ['Brands', 'Somfy, Dooya, Forest']
+            ]
+          },
+          {
+            title: 'Smart Home Hub / Controller', rows: [
+              { label: 'Material', value: 'Central brain of the smart home system controlling all connected devices.' },
+              ['Types', 'Wired controller (KNX IP), Wireless hub (Hubitat, SmartThings), Pro (Control4)'],
+              ['Sizes', 'Desktop or rack-mount unit'],
+              ['Cost', '₹20,000 – ₹3,00,000+'],
+              ['Installation Method', 'Connect to network; pair with all devices; configure via software'],
+              ['Maintenance', 'Software updates; backup configuration; UPS recommended'],
+              { label: '\u2713 Pros', value: 'Unified control, automation logic, remote access', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Expensive, single point of failure, complex setup', cls: 'cons' },
+              ['Best Places to Use', 'Central automation system'],
+              ['Brands', 'Control4, KNX, Crestron']
+            ]
+          },
+          {
+            title: 'Voice Control Integration', rows: [
+              { label: 'Material', value: 'Integration of voice assistants to control smart home devices.' },
+              ['Types', 'Amazon Alexa, Google Home, Apple HomeKit, Control4 voice'],
+              ['Sizes', 'Smart speaker or in-wall display'],
+              ['Cost', '₹5,000 – ₹50,000'],
+              ['Installation Method', 'Connect smart speaker to Wi-Fi; pair with smart devices'],
+              ['Maintenance', 'Update software; check voice recognition accuracy'],
+              { label: '\u2713 Pros', value: 'Hands-free control, convenient, accessible', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Privacy concerns, requires internet, accent limitations', cls: 'cons' },
+              ['Best Places to Use', 'Entire home'],
+              ['Brands', 'Alexa, Google Home, Control4']
+            ]
+          },
+          {
+            title: 'Motion Sensor Automation', rows: [
+              { label: 'Material', value: 'Sensor that detects motion to trigger lights, alarms, or other actions.' },
+              ['Types', 'PIR, Microwave, Dual-tech, Ceiling/wall mount'],
+              ['Sizes', 'Per point: 40–120mm diameter'],
+              ['Cost (point)', '₹1,500 – ₹15,000 / point'],
+              ['Installation Method', 'Mount on wall/ceiling; wire to control system or smart hub'],
+              ['Maintenance', 'Clean sensor lens; adjust sensitivity'],
+              { label: '\u2713 Pros', value: 'Automatic control, energy saving, security benefit', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'False triggers, limited range, pets can activate', cls: 'cons' },
+              ['Best Places to Use', 'Bathrooms, passages, staircases'],
+              ['Brands', 'Schneider, Legrand, Philips']
+            ]
+          },
+          {
+            title: 'Occupancy Sensors', rows: [
+              { label: 'Material', value: 'Advanced sensor detecting presence for lighting and HVAC optimization.' },
+              ['Types', 'PIR, Ultrasonic, Dual-tech, Ceiling mount'],
+              ['Sizes', '40–120mm diameter'],
+              ['Cost', '₹2,000 – ₹20,000'],
+              ['Installation Method', 'Ceiling/wall mount; integrate with building management system'],
+              ['Maintenance', 'Clean sensor; recalibrate if needed'],
+              { label: '\u2713 Pros', value: 'Energy optimization, hands-free, ideal for offices', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'More expensive than motion sensors, may have blind spots', cls: 'cons' },
+              ['Best Places to Use', 'Offices, home offices, corridors'],
+              ['Brands', 'KNX, Schneider']
+            ]
+          },
+          {
+            title: 'Smart HVAC / AC Automation', rows: [
+              { label: 'Material', value: 'Automated control of heating, ventilation, and air conditioning systems.' },
+              ['Types', 'Zoned control, VRF integration, Smart AC controller'],
+              ['Sizes', 'Per zone: controller + temperature sensor'],
+              ['Cost', '₹10,000 – ₹1,00,000+'],
+              ['Installation Method', 'Connect to HVAC system; install sensors in each zone'],
+              ['Maintenance', 'Clean filters; check sensor accuracy; update firmware'],
+              { label: '\u2713 Pros', value: 'Energy efficient, zone control, remote scheduling', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Expensive, requires professional installation', cls: 'cons' },
+              ['Best Places to Use', 'Bedrooms, living rooms'],
+              ['Brands', 'Daikin, Mitsubishi, KNX']
+            ]
+          },
+          {
+            title: 'Smart Thermostat', rows: [
+              { label: 'Material', value: 'Programmable thermostat with learning capability and remote access.' },
+              ['Types', 'Learning, Programmable, Zoned, Line voltage, Low voltage'],
+              ['Sizes', 'Standard wall plate, 80–120mm'],
+              ['Cost', '₹5,000 – ₹50,000'],
+              ['Installation Method', 'Replace existing thermostat; connect to HVAC system and Wi-Fi'],
+              ['Maintenance', 'Clean screen; update schedule seasonally'],
+              { label: '\u2713 Pros', value: 'Auto scheduling, energy reports, remote control', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Compatibility issues with older HVAC systems', cls: 'cons' },
+              ['Best Places to Use', 'Climate-controlled homes'],
+              ['Brands', 'Ecobee, Honeywell, Schneider']
+            ]
+          },
+          {
+            title: 'Smart Door Lock System', rows: [
+              { label: 'Material', value: 'Electronic door lock with keyless entry via code, fingerprint, or smartphone.' },
+              ['Types', 'Biometric, Keypad, Bluetooth, Wi-Fi enabled'],
+              ['Sizes', 'Fits standard door: 35–100mm thickness'],
+              ['Cost', '₹8,000 – ₹75,000'],
+              ['Installation Method', 'Replace existing deadbolt; install strike plate and connect to power'],
+              ['Maintenance', 'Replace batteries; clean fingerprint sensor; update firmware'],
+              { label: '\u2713 Pros', value: 'Keyless entry, temporary codes, remote access, monitoring', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Battery-dependent, vulnerable to hacking if unencrypted', cls: 'cons' },
+              ['Best Places to Use', 'Main entrance doors'],
+              ['Brands', 'Yale, Godrej, Hafele']
+            ]
+          },
+          {
+            title: 'Video Door Phone (VDP)', rows: [
+              { label: 'Material', value: 'Doorbell system with camera, two-way audio, and remote smartphone access.' },
+              ['Types', 'Wired, Wireless, IP-based, with/without monitor'],
+              ['Sizes', 'Outdoor unit: 60–120mm, Monitor: 7–10 inch'],
+              ['Cost', '₹8,000 – ₹1,50,000'],
+              ['Installation Method', 'Mount outdoor unit at entrance; run cable to indoor monitor; connect to network'],
+              ['Maintenance', 'Clean camera lens; check wiring; update firmware'],
+              { label: '\u2713 Pros', value: 'See and speak to visitors remotely, security recording', cls: 'pros' },
+              { label: '\u2715 Cons', value: 'Requires wiring (wired type), internet-dependent (IP type)', cls: 'cons' },
+              ['Best Places to Use', 'Villas, apartments'],
+              ['Brands', 'Hikvision, CP Plus, Legrand']
+            ]
+          }
+        ]
+      },
       'kitchen-counter': {
         title: 'Kitchen Counter Top Finishes',
         tableItems: [
@@ -10419,7 +11983,7 @@
           renderOpts.detailItems = listData[id].detailItems;
         } else if (id === 'indian-marbles') {
           imgMap = {
-            'Makrana Marble': 'assets/18. Marbles/Makrana Marble.jpg',
+            'Makrana Marble': 'assets/18. Marbles/Makrana marble.jpg',
             'Banswara Marble': 'assets/18. Marbles/Banswara Marble.jpg',
             'Katni Marble': 'assets/18. Marbles/Katni Marble.jpg',
             'Ambaji Marble': 'assets/18. Marbles/Ambaji Marble.jpg',
@@ -10482,7 +12046,7 @@
           };
         } else if (id === 'quartz') {
           imgMap = {
-            'Calacatta Quartz': 'assets/21. Quartz/Calacatta Quartz.jpg',
+            'Calacatta Quartz': 'assets/21. Quartz/CALACATTA GOLD QUARTZ.jpg',
             'Carrara Quartz': 'assets/21. Quartz/Carrara Quartz.jpg',
             'Solid White Quartz': 'assets/21. Quartz/Solid White Quartz.jpg',
             'Black Quartz': 'assets/21. Quartz/Black Quartz.jpg',
@@ -10539,15 +12103,15 @@
           };
         } else if (id === 'laminates') {
           imgMap = {
-            'Regular Laminate': 'assets/24. Laminates/Wood Grain Laminate.jpg',
-            'PVC Laminate': 'assets/24. Laminates/Solid Colour Laminate.jpg',
-            'High Pressure Laminate': 'assets/24. Laminates/Stone Finish Laminate.jpg',
-            'Prelam Board': 'assets/24. Laminates/Marble Finish Laminate.jpg',
-            'Core Laminate': 'assets/24. Laminates/Metallic Finish Laminate.jpg',
-            'Acrylic Laminate': 'assets/24. Laminates/Digital Printed Laminate.jpg',
-            'Anti-Fingerprint Laminate': 'assets/24. Laminates/Fabric Finish Laminate.jpg',
-            'Textured Decorative Laminate': 'assets/24. Laminates/Cane Finish Laminate.jpg',
-            'Exterior Grade Laminate': 'assets/24. Laminates/Stone Finish Laminate.jpg'
+            'Regular Laminate': 'assets/24. Laminate/1.Regular Laminate.png',
+            'PVC Laminate': 'assets/24. Laminate/2.PVC Laminate.jpg',
+            'High Pressure Laminate': 'assets/24. Laminate/3.High Pressure Laminate.jpg',
+            'Prelam Board': 'assets/24. Laminate/4.Prelam Board.jpg',
+            'Core Laminate': 'assets/24. Laminate/5.Core Laminate.jpg',
+            'Acrylic Laminate': 'assets/24. Laminate/6.Acrylic Laminate.jpg',
+            'Anti-Fingerprint Laminate': 'assets/24. Laminate/7.Anti-Fingerprint Laminate.jpg',
+            'Textured Decorative Laminate': 'assets/24. Laminate/8.Textured Decorative Laminate.jpg',
+            'Exterior Grade Laminate': 'assets/24. Laminate/9.Exterior Grade Laminate.jpg'
           };
         } else if (id === 'veneer') {
           imgMap = {
@@ -10832,17 +12396,173 @@
         return;
       }
 
+      // Hardware premium routing
+      if (id === 'hardware') {
+        renderDataDrivenSection(el, {
+          title: listData[id].title,
+          section: id,
+          tableItems: listData[id].tableItems,
+          detailItems: listData[id].detailItems,
+          imgMap: {
+            'Soft Close Hinge': 'assets/37. Hardware/1.Soft Close Hinge.jpg',
+            'Telescopic Channel': 'assets/37. Hardware/2.Telescopic Channel.jpg',
+            'Tandem Box System': 'assets/37. Hardware/3.Tandem Box System.jpg',
+            'Gola Profile': 'assets/37. Hardware/4.Gola Profile.jpg',
+            'Profile Handle': 'assets/37. Hardware/5.Profile Handle.jpg',
+            'Cabinet Handle': 'assets/37. Hardware/6.Cabinet Handle.jpg',
+            'Door Hinge': 'assets/37. Hardware/7.Door Hinge.jpg',
+            'Door Handle': 'assets/37. Hardware/8.Door Handle.jpg',
+            'Mortise Lock': 'assets/37. Hardware/9.Mortise Lock.jpg',
+            'Digital Door Lock': 'assets/37. Hardware/10.Digital Door Lock.jpg',
+            'Concealed Door Closer': 'assets/37. Hardware/11.Concelaed Door Closer.jpg',
+            'Door Stopper': 'assets/37. Hardware/12.Door Stopper.jpg',
+            'Tower Bolt': 'assets/37. Hardware/13.Tower Bolt.jpg',
+            'Magnetic Door Catcher': 'assets/37. Hardware/14.Magnetic Door Catcher.jpg',
+            'Floor Spring': 'assets/37. Hardware/15.Floor Spring.jpg',
+            'Patch Fitting': 'assets/37. Hardware/16.Patch Fitting.jpg',
+            'Spider Fitting': 'assets/37. Hardware/17.Spider Fitting.jpg',
+            'Shower Hinge': 'assets/37. Hardware/18.Shower Hinge.jpg',
+            'Glass Connector': 'assets/37. Hardware/19.Glass Connector.jpg',
+            'Curtain Track': 'assets/37. Hardware/20.Curtain Track.jpg',
+            'Curtain Rod': 'assets/37. Hardware/21.Curtain Rod.jpg',
+            'Sliding Door System': 'assets/37. Hardware/22.Sliding Door System.jpg'
+          }
+        });
+        return;
+      }
+
+      // Sanitary Fittings premium routing
+      if (id === 'sanitary') {
+        renderDataDrivenSection(el, {
+          title: listData[id].title,
+          section: id,
+          tableItems: listData[id].tableItems,
+          detailItems: listData[id].detailItems,
+          imgMap: {
+            'Floor Mounted WC': 'assets/38.Sanitary Fittings/Floor Mounted WC.jpg',
+            'Wall Hung WC': 'assets/38.Sanitary Fittings/Wall Hung WC.jpg',
+            'Countertop Wash Basin': 'assets/38.Sanitary Fittings/Countertop Wash Basin.jpg',
+            'Wall Hung Wash Basin': 'assets/38.Sanitary Fittings/Wall Hung Wash Basin.jpg',
+            'Full Pedestal Basin': 'assets/38.Sanitary Fittings/Full Pedestal Basin.jpg',
+            'Under Counter Basin': 'assets/38.Sanitary Fittings/Under Counter Basin.jpg',
+            'Basin Mixer Faucet': 'assets/38.Sanitary Fittings/Basin Mixer Faucet.jpg',
+            'Tall Body Basin Mixer': 'assets/38.Sanitary Fittings/Tall Body Basin Mixer.jpg',
+            'Wall Mounted Faucet': 'assets/38.Sanitary Fittings/Wall Mounted Faucet.jpg',
+            'Health Faucet': 'assets/38.Sanitary Fittings/Health Faucet.jpg',
+            'Wall Mounted Shower Head': 'assets/38.Sanitary Fittings/Wall Mounted Shower Head.jpg',
+            'Overhead Rain Shower': 'assets/38.Sanitary Fittings/Overhead Rain Shower.jpg',
+            'Ceiling Mounted Rain Shower': 'assets/38.Sanitary Fittings/Ceiling Mounted Rain Shower.jpg',
+            'Hand Shower Set': 'assets/38.Sanitary Fittings/Hand Shower Set.jpg',
+            'Concealed Shower Mixer': 'assets/38.Sanitary Fittings/Concealed Shower Mixer.jpg',
+            'Exposed Shower Mixer': 'assets/38.Sanitary Fittings/Exposed Shower Mixer.jpg',
+            'Thermostatic Shower Mixer': 'assets/38.Sanitary Fittings/Thermostatic Shower Mixer.jpg',
+            'Shower Panel': 'assets/38.Sanitary Fittings/Shower Panel.jpg',
+            'Body Jets': 'assets/38.Sanitary Fittings/Body Jets.jpg',
+            'Waterfall Shower': 'assets/38.Sanitary Fittings/Waterfall Shower.jpg',
+            'Dual Shower System': 'assets/38.Sanitary Fittings/Dual Shower System.jpg',
+            'Shower Channel Drain': 'assets/38.Sanitary Fittings/Shower Channel Drain.jpg',
+            'Linear Floor Drain': 'assets/38.Sanitary Fittings/Linear Floor Drain.jpg',
+            'Steam Shower System': 'assets/38.Sanitary Fittings/Steam Shower System.jpg',
+            'Digital Shower Control': 'assets/38.Sanitary Fittings/Digital Shower Control.jpg',
+            'Sensor Shower System': 'assets/38.Sanitary Fittings/Sensor Shower System.jpg',
+            'Freestanding Bathtub': 'assets/38.Sanitary Fittings/Freestanding Bathtub.jpg',
+            'Built-In Bathtub': 'assets/38.Sanitary Fittings/Built-In Bathtub.jpg',
+            'Urinal': 'assets/38.Sanitary Fittings/Urinal.jpg',
+            'Sensor Faucet': 'assets/38.Sanitary Fittings/Sensor Faucet.jpg',
+            'Flush Plate': 'assets/38.Sanitary Fittings/Flush Plate.jpg',
+            'Floor Drain / Nahani Trap': 'assets/38.Sanitary Fittings/Floor Drain - Nahani Trap.jpg',
+            'Bottle Trap': 'assets/38.Sanitary Fittings/Bottle Trap.jpg'
+          }
+        });
+        return;
+      }
+
+      // Lights premium routing
+      if (id === 'lights') {
+        renderDataDrivenSection(el, {
+          title: listData[id].title,
+          section: id,
+          tableItems: listData[id].tableItems,
+          detailItems: listData[id].detailItems,
+          imgMap: {
+            'LED Downlight (Recessed Light)': 'assets/38.Lights/1.LED Downlight.jpg',
+            'COB Spotlight': 'assets/38.Lights/2.COB Spotlight.jpg',
+            'Track Light': 'assets/38.Lights/3.Track Light.jpg',
+            'LED Strip Light': 'assets/38.Lights/4.LED Strip Light.jpg',
+            'Pendant Light': 'assets/38.Lights/5.Pendant Light.jpg',
+            'Chandelier': 'assets/38.Lights/6.Chandelier.jpg',
+            'Wall Sconce': 'assets/38.Lights/7.Wall Sconce.jpg',
+            'Surface Mounted Downlight': 'assets/38.Lights/8.Surface Mounted Downlight.jpg',
+            'Linear Light': 'assets/38.Lights/9.Concealed Linear Light.jpg',
+            'Magnetic Track Lighting': 'assets/38.Lights/10.Magnetic Track Lighting.jpg',
+            'Wall Washer Light': 'assets/38.Lights/11.Wall Washer Light.jpg',
+            'Picture Light': 'assets/38.Lights/12.Picture Light.jpg',
+            'Mirror Light': 'assets/38.Lights/13.Mirror Light.jpg',
+            'Floor Lamp': 'assets/38.Lights/14.Floor Lamp.jpg',
+            'Table Lamp': 'assets/38.Lights/15.Table Lamp.jpg',
+            'Step Light': 'assets/38.Lights/16.Step Light.jpg'
+          }
+        });
+        return;
+      }
+
+      // Switch Board premium routing
+      if (id === 'switches') {
+        renderDataDrivenSection(el, {
+          title: listData[id].title,
+          section: id,
+          tableItems: listData[id].tableItems,
+          detailItems: listData[id].detailItems,
+          imgMap: {
+            'Basic Modular Switch Board': 'assets/39.Switch Board/1.Basic Modular Switch Board.jpg',
+            'Premium Modular Switch Board': 'assets/39.Switch Board/2.Premium Modular Switch Board.jpg',
+            'Touch Switch Board': 'assets/39.Switch Board/3.Touch Switch Board.jpg',
+            'Wi-Fi Smart Switch Board': 'assets/39.Switch Board/4.Wi-Fi Smart Switch Board.jpg',
+            'USB Charging Switch Board': 'assets/39.Switch Board/5.USB Charging Switch Board.jpg',
+            'Pop-Up Socket Box': 'assets/39.Switch Board/6.Pop-Up Socket Box.jpg',
+            'Floor Socket Box': 'assets/39.Switch Board/7.Floor Socket Box.jpg',
+            'Weatherproof Switch Board (IP Rated)': 'assets/39.Switch Board/8.Weatherproof Switch Board.jpg',
+            'Dimmer Switch Board': 'assets/39.Switch Board/9.Dimmer.jpg',
+            'Motion Sensor Switch Board': 'assets/39.Switch Board/10.Motion Sensor Foot Light.jpg'
+          }
+        });
+        return;
+      }
+
+      // Automation premium routing
+      if (id === 'automation') {
+        renderDataDrivenSection(el, {
+          title: listData[id].title,
+          section: id,
+          tableItems: listData[id].tableItems,
+          detailItems: listData[id].detailItems,
+          imgMap: {
+            'Smart Lighting Automation': 'assets/40.Automation/1.Smart Lighting Automation.jpg',
+            'Smart Switch Automation': 'assets/40.Automation/2.Smart Switch Automation.jpg',
+            'Curtain & Blind Automation': 'assets/40.Automation/3.Curtain & Blind Automation.jpg',
+            'Smart Home Hub / Controller': 'assets/40.Automation/4.Smart Home Hub Controller.jpg',
+            'Voice Control Integration': 'assets/40.Automation/5.Voice Control Integration.jpg',
+            'Motion Sensor Automation': 'assets/40.Automation/6.Motion Sensor Automation.jpg',
+
+            'Smart HVAC / AC Automation': 'assets/40.Automation/7.Smart AC Automation.jpg',
+            'Smart Thermostat': 'assets/40.Automation/8.Smart Thermostat.jpg',
+            'Smart Door Lock System': 'assets/40.Automation/9.Smart Door Lock System.jpg'
+          }
+        });
+        return;
+      }
+
       // Laminates Finishes premium routing
       if (id === 'laminates-finish') {
         var lamFinishImgMap = {
-          'Solid Color Laminate': 'assets/33.Laminate Finishes/1.Regular Laminate.png',
-          'Wood Grain Laminate': 'assets/33.Laminate Finishes/2.PVC Laminate.jpg',
-          'Marble Finish Laminate': 'assets/33.Laminate Finishes/3.High Pressure Laminate.jpg',
-          'Fabric Finish Laminate': 'assets/33.Laminate Finishes/4.Prelam Board.jpg',
-          'Metallic Finish Laminate': 'assets/33.Laminate Finishes/5.Core Laminate.jpg',
-          'Digital Printed Laminate': 'assets/33.Laminate Finishes/6.Acrylic Laminate.jpg',
-          'Cane Finish Laminate': 'assets/33.Laminate Finishes/7.Anti-Fingerprint Laminate.jpg',
-          'Stone Finish Laminate': 'assets/33.Laminate Finishes/8.Textured Decorative Laminate.jpg'
+          'Solid Color Laminate': 'assets/33. Laminate Finishes/Solid Colour Laminate.jpg',
+          'Wood Grain Laminate': 'assets/33. Laminate Finishes/Wood Grain Laminate.jpg',
+          'Marble Finish Laminate': 'assets/33. Laminate Finishes/Marble Finish Laminate.jpg',
+          'Fabric Finish Laminate': 'assets/33. Laminate Finishes/Fabric Finish Laminate.jpg',
+          'Metallic Finish Laminate': 'assets/33. Laminate Finishes/Metallic Finish Laminate.jpg',
+          'Digital Printed Laminate': 'assets/33. Laminate Finishes/Digital Printed Laminate.jpg',
+          'Cane Finish Laminate': 'assets/33. Laminate Finishes/Cane Finish Laminate.jpg',
+          'Stone Finish Laminate': 'assets/33. Laminate Finishes/Stone Finish Laminate.jpg'
         };
         renderDataDrivenSection(el, {
           title: listData[id].title,
@@ -10960,7 +12680,7 @@
           <span class="sec-count">${d.rows.length} materials</span>
         </div>
         ${imgRow(id)}
-        <div class="${tableWrapClass}"><table class="${tableClass}">
+        <div class="${tableWrapClass}"><table class="${tableClass}" data-id="${id}">
           <thead><tr><th style="width:50px">Photo</th>${d.cols.map(c => `<th>${c}</th>`).join('')}</tr></thead>
           <tbody>${d.rows.map((r, ri) => `<tr>
             ${thumbTD(id, ri, r[2] || r[1] || '')}
