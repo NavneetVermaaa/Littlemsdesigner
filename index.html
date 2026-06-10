@@ -1208,7 +1208,9 @@
       text-transform: uppercase;
       color: var(--navy);
       background: var(--light);
-      white-space: nowrap;
+      white-space: nowrap !important;
+      word-break: keep-all !important;
+      min-width: 130px;
     }
 
     /* -- LIST TABLE -- */
@@ -1336,6 +1338,38 @@
     .lmd-footer a {
       color: var(--blue-mid);
       text-decoration: none;
+    }
+
+    .dev-footer {
+      background: var(--navy);
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      text-align: right;
+      padding: 18px 20px;
+      font-size: 11px;
+      letter-spacing: 0.04em;
+      color: rgba(255, 255, 255, 0.5);
+      line-height: 1.8;
+    }
+
+    .dev-footer .dev-name {
+      font-size: 13px;
+      color: var(--blue-mid);
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+
+    .dev-footer .dev-name:hover {
+      opacity: 0.75;
+    }
+
+    .dev-footer a {
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .dev-footer a:hover {
+      color: var(--blue-mid);
     }
 
     /* -- MOBILE -- */
@@ -6591,6 +6625,16 @@
       Prices are indicative and subject to market variation.</p>
   </footer>
 
+  <footer class="dev-footer">
+    <p>Developed By</p>
+    <p class="dev-name">Navneet V</p>
+    <p>
+      <a href="https://wa.me/919322962133" target="_blank" rel="noopener">WhatsApp</a>
+      &nbsp;|&nbsp;
+      <a href="https://x.com/NAVNEET_CODES" target="_blank" rel="noopener">Twitter</a>
+    </p>
+  </footer>
+
   <script>
     // Fix table overflow - scale table to fit viewport
     (function fitTableMobile() {
@@ -6695,7 +6739,7 @@
         "Liquid Metallic Ombres": "21.Liquid Mettalic Ombres.jpg",
         "Natural Finishes Comparison": "22. Natural Finishes Comparison.jpg",
         "Italian Marbles": "23.Marbles.jpg",
-        "Indian Marbles": "23.Marbles.jpg",
+        "Indian Marbles": "52.Indian Marble.jpg",
         "Marble": "23.Marbles.jpg",
         "Tiles": "24.Tiles.jpg",
         "Types of Tiles": "24.Tiles.jpg",
@@ -10859,8 +10903,8 @@
         rowThumb['ceiling:13'] = 'assets/31. False Ceiling/14.Clay Plaster.jpg';
         rowThumb['ceiling:14'] = 'assets/31. False Ceiling/15.Exposed Concrete.jpg';
         rowThumb['ceiling:15'] = 'assets/31. False Ceiling/16.Texture Paint.jpg';
-        rowThumb['ceiling:16'] = 'assets/31. False Ceiling/17.Lime Wash.jpg';
-        rowThumb['ceiling:17'] = 'assets/31. False Ceiling/18.Venetian Plaster.jpg';
+        rowThumb['ceiling:16'] = 'assets/31. False Ceiling/17.Venetian Plaster.jpg';
+        rowThumb['ceiling:17'] = 'assets/31. False Ceiling/18.Lime Wash.jpg';
         rowThumb['ceiling:18'] = 'assets/31. False Ceiling/19.Lime Plaster.jpg';
       }
       // Pre-populate explicit thumbnails for wall
