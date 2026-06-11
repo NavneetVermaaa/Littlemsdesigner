@@ -54,6 +54,7 @@
 
     :root {
       --navy: #1e2d4a;
+      --gold: #C9A96E;
       --blue: #2e5d9e;
       --blue-mid: #3a6bb5;
       --blue-light: #e8eef8;
@@ -101,6 +102,14 @@
       --detail-count-border: rgba(0, 0, 0, 0.08);
       --detail-count-color: #999;
       --lb-bg: rgba(0, 0, 0, 0.92);
+    }
+
+    @font-face {
+      font-family: "Magire";
+      src: url("assets/fonts/Magire.otf") format("opentype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
     }
 
     .dark-mode {
@@ -1342,34 +1351,71 @@
 
     .dev-footer {
       background: var(--navy);
-      border-top: 1px solid rgba(255, 255, 255, 0.07);
-      text-align: right;
-      padding: 18px 20px;
-      font-size: 11px;
-      letter-spacing: 0.04em;
-      color: rgba(255, 255, 255, 0.5);
-      line-height: 1.8;
+      border-top: 1px solid rgba(201, 169, 110, 0.18);
+      text-align: center;
+      padding: 44px 20px 40px;
+    }
+
+    .dev-footer-inner {
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .dev-label {
+      font-family: 'Playfair Display', serif;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 8px;
+      line-height: 1;
     }
 
     .dev-footer .dev-name {
-      font-size: 13px;
-      color: var(--blue-mid);
-      font-weight: 600;
-      transition: opacity 0.2s;
+      font-family: "Magire", 'Playfair Display', serif;
+      font-size: 34px;
+      font-style: normal;
+      font-weight: 400;
+      color: var(--gold);
+      margin: 0 0 18px;
+      line-height: 1.15;
+      letter-spacing: 0.03em;
+      transition: opacity 0.35s ease;
     }
 
     .dev-footer .dev-name:hover {
       opacity: 0.75;
     }
 
-    .dev-footer a {
-      color: rgba(255, 255, 255, 0.5);
-      text-decoration: none;
-      transition: color 0.2s;
+    .dev-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .dev-footer a:hover {
-      color: var(--blue-mid);
+    .dev-links a {
+      font-family: 'Playfair Display', serif;
+      font-size: 9.5px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(201, 169, 110, 0.65);
+      text-decoration: none;
+      padding: 6px 16px;
+      transition: all 0.3s ease;
+    }
+
+    .dev-links a:hover {
+      color: var(--gold);
+      text-shadow: 0 0 24px rgba(201, 169, 110, 0.25);
+    }
+
+    .dev-divider {
+      display: inline-block;
+      width: 1px;
+      height: 11px;
+      background: rgba(201, 169, 110, 0.3);
     }
 
     /* -- MOBILE -- */
@@ -6654,13 +6700,15 @@
   </footer>
 
   <footer class="dev-footer">
-    <p>Developed By</p>
-    <p class="dev-name">Navneet V</p>
-    <p>
-      <a href="https://wa.me/919322962133" target="_blank" rel="noopener">WhatsApp</a>
-      &nbsp;|&nbsp;
-      <a href="https://x.com/NAVNEET_CODES" target="_blank" rel="noopener">Twitter</a>
-    </p>
+    <div class="dev-footer-inner">
+      <p class="dev-label">Developed By</p>
+      <p class="dev-name">Navneet V</p>
+      <div class="dev-links">
+        <a href="https://wa.me/919322962133" target="_blank" rel="noopener">WhatsApp</a>
+        <span class="dev-divider"></span>
+        <a href="https://x.com/NAVNEET_CODES" target="_blank" rel="noopener">Twitter</a>
+      </div>
+    </div>
   </footer>
 
   <script>
