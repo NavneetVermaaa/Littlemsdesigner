@@ -2244,6 +2244,7 @@
       border-radius: 0;
       display: inline;
     }
+
     .detail-tbl[data-id="overview"] td.t-cat {
       font-size: 12px !important;
       font-weight: 700;
@@ -2252,6 +2253,7 @@
       text-transform: none;
       letter-spacing: normal;
     }
+
     .detail-tbl[data-id="overview"] td.t-name {
       font-size: 11px !important;
       color: var(--text-light);
@@ -6814,7 +6816,7 @@
         "wardrobe-must": "12.5 Must Wardrobe Haves",
         "tvunit": "13. TV Unit Finishes",
         "kitchen-counter": "14. Kitchen Counter Tops",
-        "kitchen-shutter": "14. Kitchen Shutters",
+        "kitchen-shutter": "14.5 Kitchen Shutters",
         "kitchen-must": "16.5 Kitchen Must Haves",
         "flooring": "30.Flooring",
         "wall": "32.Wall",
@@ -6843,7 +6845,7 @@
         "wood-types": "35.Wood",
         "laminates-finish": "33.Laminate Finishes",
         "hardware": "37. Hardware",
-        "sanitary": "38.Sanitary Fittings",
+        "sanitary": "41. Sanitary Fittings",
         "lights": "38.Lights",
         "switches": "39.Switch Board",
         "automation": "40.Automation"
@@ -8212,8 +8214,7 @@
           'PU Paint||₹180–₹450 per sq ft||MDF/ply base + multiple PU coats||Seamless, smooth, premium look; Any colour possible||Expensive; Chips on impact; High labour cost||Modern, minimal, high-end interiors',
           'Acrylic||₹250–₹600 per sq ft||1 mm acrylic sheet on MDF||High gloss, mirror-like finish; Very modern||Scratches easily; Fingerprints visible||Contemporary homes, sleek TV units',
           'Glass||₹250–₹900 per sq ft||5–12 mm toughened glass||Reflective finish makes spaces look larger; Modern aesthetic||Fingerprints visible; Fragile if mishandled||Small living rooms, modern luxury spaces',
-          'Natural Stone Finish||₹250–₹800 per sq ft||10–25 mm (varies by stone type)||Natural textured look; Adds depth and warmth; Excellent for feature surfaces||Uneven surface collects dust; Requires sealing; Not a sleek finish||Rustic interiors, accent TV walls, textured backdrops',
-          'Charcoal Panel||₹180–₹400 per sq ft||8–25 mm panels||Modern matte finish; Termite-resistant; Moisture-resistant; Lightweight compared to wood||Limited colour options; Can look repetitive if overused||Contemporary TV feature walls, fluted panel backdrops, modern interiors'
+          'Natural Stone Finish||₹250–₹800 per sq ft||10–25 mm (varies by stone type)||Natural textured look; Adds depth and warmth; Excellent for feature surfaces||Uneven surface collects dust; Requires sealing; Not a sleek finish||Rustic interiors, accent TV walls, textured backdrops'
         ],
         detailItems: [
           {
@@ -8280,17 +8281,6 @@
               { label: '\u2713 Pros', value: '• Natural textured look.<br>• Adds depth and warmth.<br>• Excellent for feature surfaces.', cls: 'pros' },
               { label: '\u2715 Cons', value: '• Uneven surface collects dust.<br>• Requires sealing.<br>• Not a sleek finish.', cls: 'cons' },
               ['Best Places to Use', 'Rustic interiors, accent TV walls, textured backdrops.'],
-            ]
-          },
-          {
-            title: 'Charcoal Panel', rows: [
-              ['Raw Material Cost', '₹180–₹400 per sq ft'],
-              ['Thickness Required', '8–25 mm panels'],
-              ['Installation Process', 'Panels are cut to size and fixed on a plywood/MDF base using adhesive or screws; joints aligned seamlessly.'],
-              ['Maintenance', 'Easy dusting with cloth or vacuum; occasional wiping.'],
-              { label: '\u2713 Pros', value: '• Modern matte finish.<br>• Termite-resistant.<br>• Moisture-resistant.<br>• Lightweight compared to wood.', cls: 'pros' },
-              { label: '\u2715 Cons', value: '• Limited colour options.<br>• Can look repetitive if overused.', cls: 'cons' },
-              ['Best Places to Use', 'Contemporary TV feature walls, fluted panel backdrops, modern interiors.'],
             ]
           }
         ]
@@ -10089,18 +10079,13 @@
           'Overhead Rain Shower||₹2,000 – ₹60,000||200–600 Dia||Master bathrooms||Jaquar, Kohler, Grohe',
           'Ceiling Mounted Rain Shower||₹5,000 – ₹1,00,000+||200–800 Dia||Luxury bathrooms||Kohler, Grohe, TOTO',
           'Hand Shower Set||₹1,000 – ₹15,000||N/A||All bathrooms||Jaquar, Cera, Grohe',
-          'Concealed Shower Mixer||₹3,000 – ₹40,000||N/A||Modern bathrooms||Jaquar, Grohe',
           'Exposed Shower Mixer||₹2,000 – ₹15,000||N/A||Budget & renovation projects||Jaquar, Cera',
           'Thermostatic Shower Mixer||₹10,000 – ₹75,000||N/A||Luxury bathrooms||Grohe, Kohler, Hansgrohe',
           'Shower Panel||₹8,000 – ₹1,50,000||N/A||Premium bathrooms||Kohler, Jaquar',
           'Body Jets||₹2,000 – ₹15,000 / jet||N/A||Spa-style showers||Grohe, Kohler',
           'Waterfall Shower||₹10,000 – ₹1,00,000+||N/A||Luxury villas & resorts||Kohler, Grohe',
-          'Dual Shower System||₹8,000 – ₹75,000||N/A||Master bathrooms||Jaquar, Grohe',
-          'Shower Channel Drain||₹1,500 – ₹20,000||50–100 Width||Walk-in showers||Geberit, Jaquar',
-          'Linear Floor Drain||₹1,000 – ₹15,000||50–100 Width||Modern shower areas||Geberit, Kohler',
           'Steam Shower System||₹50,000 – ₹10,00,000+||N/A||Wellness & luxury projects||Kohler, TOTO',
           'Digital Shower Control||₹25,000 – ₹3,00,000+||N/A||Smart homes||Kohler, Grohe',
-          'Sensor Shower System||₹15,000 – ₹1,50,000||N/A||Commercial projects||Jaquar, Grohe',
           'Freestanding Bathtub||₹20,000 – ₹5,00,000+||Acrylic 5–15||Luxury villas, master baths||Kohler, Roca, Jaquar',
           'Built-In Bathtub||₹15,000 – ₹2,00,000||Acrylic 5–15||Premium residences||Jaquar, Hindware',
           'Urinal||₹3,000 – ₹25,000||N/A||Commercial projects||Cera, Hindware, Jaquar',
@@ -10321,21 +10306,6 @@
             ]
           },
           {
-            title: 'Concealed Shower Mixer', rows: [
-              { label: 'Material', value: 'In-wall shower mixing valve with visible control plate only.' },
-              ['Types', 'Single lever, Dual lever, Thermostatic'],
-              ['Sizes', 'Concealed body fits in-wall'],
-              ['Thk (mm)', 'N/A'],
-              ['Cost', '₹3,000 – ₹40,000'],
-              ['Installation Method', 'In-wall rough-in valve with exposed trim plate and handle'],
-              ['Maintenance', 'Access internal cartridge through trim plate'],
-              { label: '\u2713 Pros', value: 'Clean wall look, saves space, modern aesthetic', cls: 'pros' },
-              { label: '\u2715 Cons', value: 'Requires wall demolition for repair, expensive', cls: 'cons' },
-              ['Best Place To Use', 'Modern bathrooms'],
-              ['Brands', 'Jaquar, Grohe']
-            ]
-          },
-          {
             title: 'Exposed Shower Mixer', rows: [
               { label: 'Material', value: 'Wall-mounted shower mixer with visible pipes and valve.' },
               ['Types', 'Two-way, Three-way, Thermostatic'],
@@ -10411,51 +10381,6 @@
             ]
           },
           {
-            title: 'Dual Shower System', rows: [
-              { label: 'Material', value: 'Shower system with both overhead rain shower and hand shower combined.' },
-              ['Types', 'Two-way diverter, Three-way diverter, Thermostatic'],
-              ['Sizes', 'Overhead: 200–400mm, Hand shower included'],
-              ['Thk (mm)', 'N/A'],
-              ['Cost', '₹8,000 – ₹75,000'],
-              ['Installation Method', 'In-wall rough-in valve with diverter + overhead arm'],
-              ['Maintenance', 'Clean both shower heads; service diverter cartridge'],
-              { label: '\u2713 Pros', value: 'Versatile, two shower modes in one system', cls: 'pros' },
-              { label: '\u2715 Cons', value: 'Expensive, requires dual plumbing', cls: 'cons' },
-              ['Best Place To Use', 'Master bathrooms'],
-              ['Brands', 'Jaquar, Grohe']
-            ]
-          },
-          {
-            title: 'Shower Channel Drain', rows: [
-              { label: 'Material', value: 'Linear drain system for walk-in showers with a sleek, tile-integrated look.' },
-              ['Types', 'Stainless steel, Brushed, Tile-insert'],
-              ['Sizes', 'Length: 500–1500mm, Width: 50–100mm'],
-              ['Thk (mm)', '50–100 Width'],
-              ['Cost', '₹1,500 – ₹20,000'],
-              ['Installation Method', 'Floor recess with slope; connect to waste pipe'],
-              ['Maintenance', 'Remove debris tray; clean trap periodically'],
-              { label: '\u2713 Pros', value: 'Sleek look, high drainage capacity, tile-integrated', cls: 'pros' },
-              { label: '\u2715 Cons', value: 'Expensive, requires precise floor sloping', cls: 'cons' },
-              ['Best Place To Use', 'Walk-in showers'],
-              ['Brands', 'Geberit, Jaquar']
-            ]
-          },
-          {
-            title: 'Linear Floor Drain', rows: [
-              { label: 'Material', value: 'Modern linear drain for bathrooms and wet areas.' },
-              ['Types', 'Stainless steel, ABS, Brass'],
-              ['Sizes', 'Length: 400–1200mm, Width: 50–100mm'],
-              ['Thk (mm)', '50–100 Width'],
-              ['Cost', '₹1,000 – ₹15,000'],
-              ['Installation Method', 'Floor recess installation with drainage pipe connection'],
-              ['Maintenance', 'Clean debris basket; flush with water'],
-              { label: '\u2713 Pros', value: 'Modern look, efficient drainage, customizable length', cls: 'pros' },
-              { label: '\u2715 Cons', value: 'Higher cost than traditional drains', cls: 'cons' },
-              ['Best Place To Use', 'Modern shower areas'],
-              ['Brands', 'Geberit, Kohler']
-            ]
-          },
-          {
             title: 'Steam Shower System', rows: [
               { label: 'Material', value: 'Enclosed shower system with steam generator for a spa-like steam bath experience.' },
               ['Types', 'Prefabricated enclosure, Custom tile, Steam-only'],
@@ -10483,21 +10408,6 @@
               { label: '\u2715 Cons', value: 'Very expensive, requires power, tech support needed', cls: 'cons' },
               ['Best Place To Use', 'Smart homes'],
               ['Brands', 'Kohler, Grohe']
-            ]
-          },
-          {
-            title: 'Sensor Shower System', rows: [
-              { label: 'Material', value: 'Touchless shower system activated by motion sensor.' },
-              ['Types', 'Infrared sensor, Timer-based, Water-saving'],
-              ['Sizes', 'Standard shower head with sensor module'],
-              ['Thk (mm)', 'N/A'],
-              ['Cost', '₹15,000 – ₹1,50,000'],
-              ['Installation Method', 'Wall mount with sensor calibration'],
-              ['Maintenance', 'Clean sensor lens; replace batteries if battery-powered'],
-              { label: '\u2713 Pros', value: 'Touchless operation, water-saving, hygienic', cls: 'pros' },
-              { label: '\u2715 Cons', value: 'Sensor may be unreliable, expensive', cls: 'cons' },
-              ['Best Place To Use', 'Commercial projects'],
-              ['Brands', 'Jaquar, Grohe']
             ]
           },
           {
@@ -10614,7 +10524,6 @@
           'COB Spotlight||₹300 – ₹3,500 / pc||Cutout 60–120||Artwork, feature walls, display units||Philips, Opple, Havells',
           'Track Light||₹800 – ₹5,000 / light||Rail 20–35||Art walls, galleries, modern living rooms||Philips, Opple, Wipro',
           'LED Strip Light||₹80 – ₹500 / rft||8–15||Cove lighting, wardrobes, shelves, mirrors||Philips, Wipro, LEDure',
-          'Cove Light System||₹100 – ₹600 / rft||10–15||False ceilings, ambient lighting||Philips, Wipro, Havells',
           'Pendant Light||₹1,000 – ₹50,000+||N/A||Dining tables, kitchen islands, bedside lighting||IKEA, Philips, The White Teak Company',
           'Chandelier||₹5,000 – ₹5,00,000+||N/A||Double-height spaces, living rooms, foyers||Saint Louis, The White Teak Company, Philips',
           'Wall Sconce||₹500 – ₹15,000||N/A||Bedrooms, passages, accent walls||Philips, Jainsons, The White Teak Company',
@@ -10687,21 +10596,6 @@
               { label: '\u2715 Cons', value: 'Requires diffuser for clean look, driver needed', cls: 'cons' },
               ['Best Places to Use', 'Cove lighting, wardrobes, shelves, mirrors'],
               ['Brands', 'Philips, Wipro, LEDure']
-            ]
-          },
-          {
-            title: 'Cove Light System', rows: [
-              { label: 'Material', value: 'Indirect lighting system installed in ceiling coves for ambient glow.' },
-              ['Types', 'LED strip-based, T5/T8 linear, Rope light'],
-              ['Sizes', '10–15mm strip width, custom lengths'],
-              ['Wattage', '5W – 20W per metre'],
-              ['Cost (rft)', '₹100 – ₹600 / rft'],
-              ['Installation Method', 'Install LED strip or linear light in cove recess; conceal from view'],
-              ['Maintenance', 'Clean cove area; replace strip if sections fail'],
-              { label: '\u2713 Pros', value: 'Soft ambient glow, no visible source, enhances ceiling design', cls: 'pros' },
-              { label: '\u2715 Cons', value: 'Requires architectural cove, light loss over distance', cls: 'cons' },
-              ['Best Places to Use', 'False ceilings, ambient lighting'],
-              ['Brands', 'Philips, Wipro, Havells']
             ]
           },
           {
@@ -10891,7 +10785,6 @@
         tableItems: [
           'Basic Modular Switch Board||₹150 – ₹800 / plate||6 – 8||Budget homes, utility rooms, rental projects||Anchor Roma, GM Modular, Goldmedal',
           'Premium Modular Switch Board||₹500 – ₹3,000 / plate||7 – 10||Living rooms, bedrooms, premium residences||Legrand Myrius, Schneider Livia, Havells Fabio',
-          'Luxury Switch Board (Glass Finish)||₹1,500 – ₹10,000+ / plate||8 – 12||Luxury homes, villas, hospitality projects||Legrand Arteor, Norisys Cube, Goldmedal Air',
           'Touch Switch Board||₹2,000 – ₹15,000 / plate||8 – 12||Smart homes, modern residences||Wipro Smart, Goldmedal i-Touch, Schneider',
           'Wi-Fi Smart Switch Board||₹3,000 – ₹25,000 / plate||8 – 12||Home automation projects||Philips Wiz, Wipro Smart, Schneider Wiser',
           'USB Charging Switch Board||₹500 – ₹5,000 / plate||6 – 10||Bedside tables, study areas, offices||Legrand, Schneider, GM',
@@ -10930,21 +10823,6 @@
               { label: '\u2715 Cons', value: 'Costlier than basic, plate may yellow over time', cls: 'cons' },
               ['Best Places to Use', 'Living rooms, bedrooms, premium residences'],
               ['Brands', 'Legrand Myrius, Schneider Livia, Havells Fabio']
-            ]
-          },
-          {
-            title: 'Luxury Switch Board (Glass Finish)', rows: [
-              { label: 'Material', value: 'Premium switch plates with tempered glass finish for a high-end look.' },
-              ['Types', 'Glass touch, Glass rocker, Scratch-resistant glass'],
-              ['Sizes', 'Plate: 8–12mm glass thickness'],
-              ['Rating', '6A – 16A'],
-              ['Cost (plate)', '₹1,500 – ₹10,000+ / plate'],
-              ['Installation Method', 'Mount on wall box; screw or magnetic clip-on'],
-              ['Maintenance', 'Wipe glass with soft cloth; avoid abrasive cleaners'],
-              { label: '\u2713 Pros', value: 'Luxurious finish, scratch-resistant, elegant', cls: 'pros' },
-              { label: '\u2715 Cons', value: 'Expensive, fingerprints visible', cls: 'cons' },
-              ['Best Places to Use', 'Luxury homes, villas, hospitality projects'],
-              ['Brands', 'Legrand Arteor, Norisys Cube, Goldmedal Air']
             ]
           },
           {
@@ -11078,11 +10956,9 @@
           'Smart Home Hub / Controller||₹20,000 – ₹3,00,000+||N/A||Central automation system||Control4, KNX, Crestron',
           'Voice Control Integration||₹5,000 – ₹50,000||N/A||Entire home||Alexa, Google Home, Control4',
           'Motion Sensor Automation||₹1,500 – ₹15,000 / point||N/A||Bathrooms, passages, staircases||Schneider, Legrand, Philips',
-          'Occupancy Sensors||₹2,000 – ₹20,000||N/A||Offices, home offices, corridors||KNX, Schneider',
           'Smart HVAC / AC Automation||₹10,000 – ₹1,00,000+||N/A||Bedrooms, living rooms||Daikin, Mitsubishi, KNX',
           'Smart Thermostat||₹5,000 – ₹50,000||N/A||Climate-controlled homes||Ecobee, Honeywell, Schneider',
-          'Smart Door Lock System||₹8,000 – ₹75,000||Door 35–100||Main entrance doors||Yale, Godrej, Hafele',
-          'Video Door Phone (VDP)||₹8,000 – ₹1,50,000||N/A||Villas, apartments||Hikvision, CP Plus, Legrand'
+          'Smart Door Lock System||₹8,000 – ₹75,000||Door 35–100||Main entrance doors||Yale, Godrej, Hafele'
         ],
         detailItems: [
           {
@@ -11170,20 +11046,6 @@
             ]
           },
           {
-            title: 'Occupancy Sensors', rows: [
-              { label: 'Material', value: 'Advanced sensor detecting presence for lighting and HVAC optimization.' },
-              ['Types', 'PIR, Ultrasonic, Dual-tech, Ceiling mount'],
-              ['Sizes', '40–120mm diameter'],
-              ['Cost', '₹2,000 – ₹20,000'],
-              ['Installation Method', 'Ceiling/wall mount; integrate with building management system'],
-              ['Maintenance', 'Clean sensor; recalibrate if needed'],
-              { label: '\u2713 Pros', value: 'Energy optimization, hands-free, ideal for offices', cls: 'pros' },
-              { label: '\u2715 Cons', value: 'More expensive than motion sensors, may have blind spots', cls: 'cons' },
-              ['Best Places to Use', 'Offices, home offices, corridors'],
-              ['Brands', 'KNX, Schneider']
-            ]
-          },
-          {
             title: 'Smart HVAC / AC Automation', rows: [
               { label: 'Material', value: 'Automated control of heating, ventilation, and air conditioning systems.' },
               ['Types', 'Zoned control, VRF integration, Smart AC controller'],
@@ -11225,24 +11087,10 @@
               ['Brands', 'Yale, Godrej, Hafele']
             ]
           },
-          {
-            title: 'Video Door Phone (VDP)', rows: [
-              { label: 'Material', value: 'Doorbell system with camera, two-way audio, and remote smartphone access.' },
-              ['Types', 'Wired, Wireless, IP-based, with/without monitor'],
-              ['Sizes', 'Outdoor unit: 60–120mm, Monitor: 7–10 inch'],
-              ['Cost', '₹8,000 – ₹1,50,000'],
-              ['Installation Method', 'Mount outdoor unit at entrance; run cable to indoor monitor; connect to network'],
-              ['Maintenance', 'Clean camera lens; check wiring; update firmware'],
-              { label: '\u2713 Pros', value: 'See and speak to visitors remotely, security recording', cls: 'pros' },
-              { label: '\u2715 Cons', value: 'Requires wiring (wired type), internet-dependent (IP type)', cls: 'cons' },
-              ['Best Places to Use', 'Villas, apartments'],
-              ['Brands', 'Hikvision, CP Plus, Legrand']
-            ]
-          }
         ]
       },
-      'kitchen-counter': {
-        title: 'Kitchen Counter Top Finishes',
+    'kitchen-counter': {
+      title: 'Kitchen Counter Top Finishes',
         tableItems: [
           'Engineered Quartz||₹400–₹1200||15–20||Modern kitchens||Caesarstone, Kalinga Stone',
           'Granite||₹150–₹600||18–20||Indian kitchens||RK Marble',
@@ -11255,21 +11103,21 @@
           'Porcelain Stone||₹600–₹2000||6–12||High-end modern kitchens||AGL',
           'Stainless Steel||₹800–₹2500||1.2||Commercial kitchens||Jindal Stainless'
         ],
-        detailItems: [
-          'Engineered Quartz||₹400–₹1200||15–20||Factory-cut slabs installed over base; joints sealed.||Very low, easy cleaning.||Non-porous, stain-resistant, uniform finish.||Not fully heat-proof; expensive.||Modern kitchens||Caesarstone, Kalinga Stone',
-          'Granite||₹150–₹600||18–20||Slab installed and edge polished.||Very low, occasional sealing.||Highly durable, heat-resistant, affordable.||Limited patterns vs quartz.||Indian kitchens||RK Marble',
-          'Natural Quartzite||₹500–₹2000||18–20||Slab installed and edge polished.||Moderate; sealing required.||Stronger than marble; natural luxury look.||Expensive; limited availability.||High-end luxury kitchens||Balaji Stone Export',
-          '15 MM Tiles||₹80–₹250||15||Tiles fixed over base with grout joints.||Grout cleaning required.||Budget-friendly, easy replacement.||Joints visible; less premium.||Budget kitchens, utility areas||Italica Tiles',
-          'Corian||₹800–₹2500||6–12||Seamless joining; can integrate sink.||Easy; scratches repairable.||Seamless, hygienic, premium finish.||Heat-sensitive; expensive.||Luxury kitchens||Evo Surfaces',
-          'Natural Marble||₹300–₹1500||18–20||Slabs installed and polished.||Needs sealing; prone to stains.||Premium, elegant, natural beauty.||Porous; stains easily; high maintenance.||Low-usage luxury kitchens||Classic Marble Company',
-          'Terrazzo Slabs||₹300–₹900||15–20||Precast slabs installed and polished.||Easy; durable surface.||Unique patterns, trendy look.||Slightly porous; niche aesthetic.||Designer kitchens||Kalinga Stone',
-          'Concrete Microtopping||₹200–₹600||10–40||Cast-in-place or coated over base.||Sealing required.||Seamless, modern, industrial look.||Can crack; requires expertise.||Industrial kitchens||Colortale',
-          'Porcelain Stone||₹600–₹2000||6–12||Installed over support base.||Very low maintenance.||Heat-proof, scratch-resistant, ultra-modern.||Expensive; needs skilled installation.||High-end modern kitchens||AGL',
-          'Stainless Steel||₹800–₹2500||1.2||Fabricated and fixed.||Easy; hygienic cleaning.||Waterproof, hygienic, heat-resistant.||Scratches visible; industrial look.||Commercial kitchens||Jindal Stainless'
-        ]
-      },
-      'italian-marbles': {
-        title: 'Italian Marbles',
+          detailItems: [
+            'Engineered Quartz||₹400–₹1200||15–20||Factory-cut slabs installed over base; joints sealed.||Very low, easy cleaning.||Non-porous, stain-resistant, uniform finish.||Not fully heat-proof; expensive.||Modern kitchens||Caesarstone, Kalinga Stone',
+            'Granite||₹150–₹600||18–20||Slab installed and edge polished.||Very low, occasional sealing.||Highly durable, heat-resistant, affordable.||Limited patterns vs quartz.||Indian kitchens||RK Marble',
+            'Natural Quartzite||₹500–₹2000||18–20||Slab installed and edge polished.||Moderate; sealing required.||Stronger than marble; natural luxury look.||Expensive; limited availability.||High-end luxury kitchens||Balaji Stone Export',
+            '15 MM Tiles||₹80–₹250||15||Tiles fixed over base with grout joints.||Grout cleaning required.||Budget-friendly, easy replacement.||Joints visible; less premium.||Budget kitchens, utility areas||Italica Tiles',
+            'Corian||₹800–₹2500||6–12||Seamless joining; can integrate sink.||Easy; scratches repairable.||Seamless, hygienic, premium finish.||Heat-sensitive; expensive.||Luxury kitchens||Evo Surfaces',
+            'Natural Marble||₹300–₹1500||18–20||Slabs installed and polished.||Needs sealing; prone to stains.||Premium, elegant, natural beauty.||Porous; stains easily; high maintenance.||Low-usage luxury kitchens||Classic Marble Company',
+            'Terrazzo Slabs||₹300–₹900||15–20||Precast slabs installed and polished.||Easy; durable surface.||Unique patterns, trendy look.||Slightly porous; niche aesthetic.||Designer kitchens||Kalinga Stone',
+            'Concrete Microtopping||₹200–₹600||10–40||Cast-in-place or coated over base.||Sealing required.||Seamless, modern, industrial look.||Can crack; requires expertise.||Industrial kitchens||Colortale',
+            'Porcelain Stone||₹600–₹2000||6–12||Installed over support base.||Very low maintenance.||Heat-proof, scratch-resistant, ultra-modern.||Expensive; needs skilled installation.||High-end modern kitchens||AGL',
+            'Stainless Steel||₹800–₹2500||1.2||Fabricated and fixed.||Easy; hygienic cleaning.||Waterproof, hygienic, heat-resistant.||Scratches visible; industrial look.||Commercial kitchens||Jindal Stainless'
+          ]
+    },
+    'italian-marbles': {
+      title: 'Italian Marbles',
         tableItems: [
           'Carrara Marble||₹500 – ₹1,500||16–18||Flooring, wall panels, bathrooms, countertops||Classic Marble Company, Elegant Marble',
           'Calacatta Marble||₹2,000 – ₹6,000||18–20||Luxury flooring, statement walls, countertops||Classic Marble Company, Elegant Marble',
@@ -11282,171 +11130,171 @@
           'Bianco Lasa Marble||₹1,500 – ₹4,000||16–20||Premium flooring, wall cladding, bathrooms, luxury feature walls||Classic Marble Company, Elegant Marble',
           'Travertine Marble||₹250 – ₹800||16–20||Living room flooring, bathroom walls, outdoor flooring, staircases||Classic Marble Company, Elegant Marble'
         ],
-        detailItems: [
-          {
-            title: 'Carrara Marble',
-            rows: [
-              { label: 'Material', value: 'Light grey or white background with soft grey veining' },
-              { label: 'Types', value: 'Bianco Carrara, Carrara Venato' },
-              { label: 'Sizes', value: 'Slabs 8\u201310 ft length, 4\u20136 ft width' },
-              { label: 'Thk (mm)', value: '16\u201318\u201320' },
-              { label: 'Slab Cost (sq.ft)', value: '\u20b9500 \u2013 \u20b91500' },
-              { label: 'Installation Method', value: 'Cement bedding or stone adhesive' },
-              { label: 'Maintenance', value: 'Sealing recommended' },
-              { label: '\u2713 Pros', value: 'Elegant look, relatively affordable for Italian marble', cls: 'pros' },
-              { label: '\u2715 Cons', value: 'Can stain easily', cls: 'cons' },
-              { label: 'Best Places to Use', value: 'Flooring, wall panels, bathrooms, countertops' },
-              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' }
-            ]
-          },
-          {
-            title: 'Calacatta Marble',
-            rows: [
-              { label: 'Material', value: 'Luxurious Italian marble with a white base and dramatic thick gold or grey veining.' },
-              { label: 'Types', value: 'Calacatta Gold, Calacatta Borghini, Calacatta Oro' },
-              { label: 'Sizes', value: '8\u201310 ft length' },
-              { label: 'Thk (mm)', value: '18mm \u2013 20mm' },
-              { label: 'Slab Cost (sq.ft)', value: '\u20b92000 \u2013 \u20b95000' },
-              { label: 'Installation Method', value: 'Installed using marble adhesive' },
-              { label: 'Maintenance', value: 'Requires sealing' },
-              { label: '\u2713 Pros', value: 'Highly luxurious aesthetic, bold dramatic veining', cls: 'pros' },
-              { label: '\u2715 Cons', value: 'Very expensive, porous', cls: 'cons' },
-              { label: 'Best Places to Use', value: 'Luxury flooring, statement walls, countertops' },
-              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' }
-            ]
-          },
-          {
-            title: 'Statuario Marble',
-            rows: [
-              { label: 'Material', value: 'Bright white background with bold grey veins.' },
-              { label: 'Types', value: 'Statuario Classic, Statuario Extra, Statuario Venato' },
-              { label: 'Sizes', value: '8\u201310 ft length' },
-              { label: 'Thk (mm)', value: '16\u201318\u201320' },
-              { label: 'Slab Cost (sq.ft)', value: '\u20b91500 \u2013 \u20b95000' },
-              { label: 'Installation Method', value: 'Installed using cement mortar or stone adhesive' },
-              { label: 'Maintenance', value: 'Requires sealing' },
-              { label: '\u2713 Pros', value: 'Premium appearance, elegant veining', cls: 'pros' },
-              { label: '\u2715 Cons', value: 'Expensive, porous', cls: 'cons' },
-              { label: 'Best Places to Use', value: 'Luxury flooring, wall cladding, bathrooms, tabletops' },
-              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' }
-            ]
-          },
-          {
-            title: 'Crema Marfil',
-            rows: [
-              { label: 'Material', value: 'Beige marble from Spain with subtle veining.' },
-              { label: 'Types', value: 'Crema Marfil Classic, Crema Marfil Select, Crema Marfil Coto' },
-              { label: 'Sizes', value: '7\u20139 ft' },
-              { label: 'Thk (mm)', value: '18\u201320' },
-              { label: 'Slab Cost (sq.ft)', value: '\u20b9600 \u2013 \u20b91500' },
-              { label: 'Installation Method', value: 'Cement mortar bedding' },
-              { label: 'Maintenance', value: 'Requires sealing' },
-              { label: '\u2713 Pros', value: 'Warm neutral tone suitable for many interiors, Very versatile', cls: 'pros' },
-              { label: '\u2715 Cons', value: 'Porous stone', cls: 'cons' },
-              { label: 'Best Places to Use', value: 'Flooring, staircases, wall panels' },
-              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' }
-            ]
-          },
-          {
-            title: 'Onyx Marble',
-            rows: [
-              { label: 'Material', value: 'Translucent natural stone with dramatic patterns and vibrant colors.' },
-              { label: 'Types', value: 'Honey Onyx, Green Onyx, White Onyx, Pink Onyx' },
-              { label: 'Sizes', value: '6\u20139 ft' },
-              { label: 'Thk (mm)', value: '16\u201320' },
-              { label: 'Slab Cost (sq.ft)', value: '\u20b92000 \u2013 \u20b97000' },
-              { label: 'Installation Method', value: 'Special stone adhesive with back support' },
-              { label: 'Maintenance', value: 'Careful cleaning and sealing' },
-              { label: '\u2713 Pros', value: 'Translucent, unique patterns', cls: 'pros' },
-              { label: '\u2715 Cons', value: 'Fragile and expensive', cls: 'cons' },
-              { label: 'Best Places to Use', value: 'Feature walls, bar counters, luxury interiors' },
-              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' }
-            ]
-          },
-          {
-            title: 'Armani Brown Marble',
-            rows: [
-              { label: 'Material', value: 'Dark brown marble with fine linear veins and elegant texture.' },
-              { label: 'Types', value: 'Armani Brown Classic, Armani Grey, Armani Bronze' },
-              { label: 'Sizes', value: '8\u201310 ft length' },
-              { label: 'Thk (mm)', value: '16\u201320' },
-              { label: 'Slab Cost (sq.ft)', value: '\u20b9700 \u2013 \u20b92000' },
-              { label: 'Installation Method', value: 'Installed with cement mortar or stone adhesive with proper leveling' },
-              { label: 'Maintenance', value: 'Periodic polishing and sealing recommended' },
-              { label: '\u2713 Pros', value: 'Rich elegant colour, luxurious appearance, suitable for modern interiors', cls: 'pros' },
-              { label: '\u2715 Cons', value: 'Requires sealing, darker colour may show dust', cls: 'cons' },
-              { label: 'Best Places to Use', value: 'Luxury flooring, wall cladding, bathrooms, feature walls' },
-              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' }
-            ]
-          },
-          {
-            title: 'White Portoro Marble',
-            rows: [
-              { label: 'Material', value: 'Characterized by a deep black base with dramatic gold and white veins.' },
-              { label: 'Types', value: 'Portoro Gold, Portoro Black' },
-              { label: 'Sizes', value: '6\u20138 ft' },
-              { label: 'Thk (mm)', value: '18\u201320' },
-              { label: 'Slab Cost (sq.ft)', value: '\u20b92500 \u2013 \u20b98000' },
-              { label: 'Installation Method', value: 'Installed using stone adhesive with skilled stone installation' },
-              { label: 'Maintenance', value: 'Regular sealing and careful cleaning recommended' },
-              { label: '\u2713 Pros', value: 'Highly luxurious appearance, unique veining pattern', cls: 'pros' },
-              { label: '\u2715 Cons', value: 'Very expensive, limited availability', cls: 'cons' },
-              { label: 'Best Places to Use', value: 'Feature walls, luxury bathrooms, decorative panels' },
-              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' }
-            ]
-          },
-          {
-            title: 'Michelangelo Marble',
-            rows: [
-              { label: 'Material', value: 'Soft white background with elegant grey and beige veining' },
-              { label: 'Types', value: 'Michelangelo White, Michelangelo Grey' },
-              { label: 'Sizes', value: '8\u201310 ft length' },
-              { label: 'Thk (mm)', value: '18\u201320' },
-              { label: 'Slab Cost (sq.ft)', value: '\u20b9900 \u2013 \u20b92500' },
-              { label: 'Installation Method', value: 'Installed using cement mortar bedding or stone adhesive by skilled marble installers' },
-              { label: 'Maintenance', value: 'Periodic sealing and polishing recommended' },
-              { label: '\u2713 Pros', value: 'Elegant veining, premium aesthetic, versatile for modern and classic interiors', cls: 'pros' },
-              { label: '\u2715 Cons', value: 'Porous material, requires sealing', cls: 'cons' },
-              { label: 'Best Places to Use', value: 'Luxury flooring, wall cladding, bathrooms, countertops, decorative wall panels' },
-              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' }
-            ]
-          },
-          {
-            title: 'Bianco Lasa Marble',
-            rows: [
-              { label: 'Material', value: 'Bright white appearance, with fine grey veining' },
-              { label: 'Types', value: 'Bianco Lasa Classic, Bianco Lasa Venato' },
-              { label: 'Sizes', value: '7\u20139 ft' },
-              { label: 'Thk (mm)', value: '16\u201320' },
-              { label: 'Slab Cost (sq.ft)', value: '\u20b91500 \u2013 \u20b94000' },
-              { label: 'Installation Method', value: 'Installed with cement mortar or marble adhesive with professional stone fixing' },
-              { label: 'Maintenance', value: 'Sealing and periodic polishing required to maintain shine' },
-              { label: '\u2713 Pros', value: 'Bright white appearance, elegant and timeless design', cls: 'pros' },
-              { label: '\u2715 Cons', value: 'Expensive and requires regular maintenance', cls: 'cons' },
-              { label: 'Best Places to Use', value: 'Premium flooring, wall cladding, bathrooms, luxury feature walls' },
-              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' }
-            ]
-          },
-          {
-            title: 'Travertine Marble',
-            rows: [
-              { label: 'Material', value: 'Natural limestone in warm earthy tones with naturally occurring holes and linear patterns.' },
-              { label: 'Types', value: 'Classic Travertine, Silver Travertine, Walnut Travertine, Ivory Travertine' },
-              { label: 'Sizes', value: '7\u201310 ft length' },
-              { label: 'Thk (mm)', value: '15 \u2013 20 mm (flooring), 12 \u2013 16 mm (wall cladding)' },
-              { label: 'Slab Cost (sq.ft)', value: '\u20b9250 \u2013 \u20b9800' },
-              { label: 'Installation Method', value: 'Installed using cement mortar or stone adhesive on a prepared base' },
-              { label: 'Maintenance', value: 'Seal the stone. Clean with mild pH-neutral stone cleaner. Avoid acidic cleaners.' },
-              { label: '\u2713 Pros', value: 'Elegant natural texture, unique patterns, Cool Temperature, Durable', cls: 'pros' },
-              { label: '\u2715 Cons', value: 'Porous material, Natural holes may require filling, Can stain, Softer', cls: 'cons' },
-              { label: 'Best Places to Use', value: 'Living room flooring, Bathroom walls, Outdoor flooring and patios, Staircases' },
-              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' }
-            ]
-          }
-        ]
-      },
-      'indian-marbles': {
-        title: 'Indian Marbles',
+          detailItems: [
+            {
+              title: 'Carrara Marble',
+              rows: [
+                { label: 'Material', value: 'Light grey or white background with soft grey veining' },
+                { label: 'Types', value: 'Bianco Carrara, Carrara Venato' },
+                { label: 'Sizes', value: 'Slabs 8\u201310 ft length, 4\u20136 ft width' },
+                { label: 'Thk (mm)', value: '16\u201318\u201320' },
+                { label: 'Slab Cost (sq.ft)', value: '\u20b9500 \u2013 \u20b91500' },
+                { label: 'Installation Method', value: 'Cement bedding or stone adhesive' },
+                { label: 'Maintenance', value: 'Sealing recommended' },
+                { label: '\u2713 Pros', value: 'Elegant look, relatively affordable for Italian marble', cls: 'pros' },
+                { label: '\u2715 Cons', value: 'Can stain easily', cls: 'cons' },
+                { label: 'Best Places to Use', value: 'Flooring, wall panels, bathrooms, countertops' },
+                { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' }
+              ]
+            },
+            {
+              title: 'Calacatta Marble',
+              rows: [
+                { label: 'Material', value: 'Luxurious Italian marble with a white base and dramatic thick gold or grey veining.' },
+                { label: 'Types', value: 'Calacatta Gold, Calacatta Borghini, Calacatta Oro' },
+                { label: 'Sizes', value: '8\u201310 ft length' },
+                { label: 'Thk (mm)', value: '18mm \u2013 20mm' },
+                { label: 'Slab Cost (sq.ft)', value: '\u20b92000 \u2013 \u20b95000' },
+                { label: 'Installation Method', value: 'Installed using marble adhesive' },
+                { label: 'Maintenance', value: 'Requires sealing' },
+                { label: '\u2713 Pros', value: 'Highly luxurious aesthetic, bold dramatic veining', cls: 'pros' },
+                { label: '\u2715 Cons', value: 'Very expensive, porous', cls: 'cons' },
+                { label: 'Best Places to Use', value: 'Luxury flooring, statement walls, countertops' },
+                { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' }
+              ]
+            },
+            {
+              title: 'Statuario Marble',
+              rows: [
+                { label: 'Material', value: 'Bright white background with bold grey veins.' },
+                { label: 'Types', value: 'Statuario Classic, Statuario Extra, Statuario Venato' },
+                { label: 'Sizes', value: '8\u201310 ft length' },
+                { label: 'Thk (mm)', value: '16\u201318\u201320' },
+                { label: 'Slab Cost (sq.ft)', value: '\u20b91500 \u2013 \u20b95000' },
+                { label: 'Installation Method', value: 'Installed using cement mortar or stone adhesive' },
+                { label: 'Maintenance', value: 'Requires sealing' },
+                { label: '\u2713 Pros', value: 'Premium appearance, elegant veining', cls: 'pros' },
+                { label: '\u2715 Cons', value: 'Expensive, porous', cls: 'cons' },
+                { label: 'Best Places to Use', value: 'Luxury flooring, wall cladding, bathrooms, tabletops' },
+                { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' }
+              ]
+            },
+            {
+              title: 'Crema Marfil',
+              rows: [
+                { label: 'Material', value: 'Beige marble from Spain with subtle veining.' },
+                { label: 'Types', value: 'Crema Marfil Classic, Crema Marfil Select, Crema Marfil Coto' },
+                { label: 'Sizes', value: '7\u20139 ft' },
+                { label: 'Thk (mm)', value: '18\u201320' },
+                { label: 'Slab Cost (sq.ft)', value: '\u20b9600 \u2013 \u20b91500' },
+                { label: 'Installation Method', value: 'Cement mortar bedding' },
+                { label: 'Maintenance', value: 'Requires sealing' },
+                { label: '\u2713 Pros', value: 'Warm neutral tone suitable for many interiors, Very versatile', cls: 'pros' },
+                { label: '\u2715 Cons', value: 'Porous stone', cls: 'cons' },
+                { label: 'Best Places to Use', value: 'Flooring, staircases, wall panels' },
+                { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' }
+              ]
+            },
+            {
+              title: 'Onyx Marble',
+              rows: [
+                { label: 'Material', value: 'Translucent natural stone with dramatic patterns and vibrant colors.' },
+                { label: 'Types', value: 'Honey Onyx, Green Onyx, White Onyx, Pink Onyx' },
+                { label: 'Sizes', value: '6\u20139 ft' },
+                { label: 'Thk (mm)', value: '16\u201320' },
+                { label: 'Slab Cost (sq.ft)', value: '\u20b92000 \u2013 \u20b97000' },
+                { label: 'Installation Method', value: 'Special stone adhesive with back support' },
+                { label: 'Maintenance', value: 'Careful cleaning and sealing' },
+                { label: '\u2713 Pros', value: 'Translucent, unique patterns', cls: 'pros' },
+                { label: '\u2715 Cons', value: 'Fragile and expensive', cls: 'cons' },
+                { label: 'Best Places to Use', value: 'Feature walls, bar counters, luxury interiors' },
+                { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' }
+              ]
+            },
+            {
+              title: 'Armani Brown Marble',
+              rows: [
+                { label: 'Material', value: 'Dark brown marble with fine linear veins and elegant texture.' },
+                { label: 'Types', value: 'Armani Brown Classic, Armani Grey, Armani Bronze' },
+                { label: 'Sizes', value: '8\u201310 ft length' },
+                { label: 'Thk (mm)', value: '16\u201320' },
+                { label: 'Slab Cost (sq.ft)', value: '\u20b9700 \u2013 \u20b92000' },
+                { label: 'Installation Method', value: 'Installed with cement mortar or stone adhesive with proper leveling' },
+                { label: 'Maintenance', value: 'Periodic polishing and sealing recommended' },
+                { label: '\u2713 Pros', value: 'Rich elegant colour, luxurious appearance, suitable for modern interiors', cls: 'pros' },
+                { label: '\u2715 Cons', value: 'Requires sealing, darker colour may show dust', cls: 'cons' },
+                { label: 'Best Places to Use', value: 'Luxury flooring, wall cladding, bathrooms, feature walls' },
+                { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' }
+              ]
+            },
+            {
+              title: 'White Portoro Marble',
+              rows: [
+                { label: 'Material', value: 'Characterized by a deep black base with dramatic gold and white veins.' },
+                { label: 'Types', value: 'Portoro Gold, Portoro Black' },
+                { label: 'Sizes', value: '6\u20138 ft' },
+                { label: 'Thk (mm)', value: '18\u201320' },
+                { label: 'Slab Cost (sq.ft)', value: '\u20b92500 \u2013 \u20b98000' },
+                { label: 'Installation Method', value: 'Installed using stone adhesive with skilled stone installation' },
+                { label: 'Maintenance', value: 'Regular sealing and careful cleaning recommended' },
+                { label: '\u2713 Pros', value: 'Highly luxurious appearance, unique veining pattern', cls: 'pros' },
+                { label: '\u2715 Cons', value: 'Very expensive, limited availability', cls: 'cons' },
+                { label: 'Best Places to Use', value: 'Feature walls, luxury bathrooms, decorative panels' },
+                { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' }
+              ]
+            },
+            {
+              title: 'Michelangelo Marble',
+              rows: [
+                { label: 'Material', value: 'Soft white background with elegant grey and beige veining' },
+                { label: 'Types', value: 'Michelangelo White, Michelangelo Grey' },
+                { label: 'Sizes', value: '8\u201310 ft length' },
+                { label: 'Thk (mm)', value: '18\u201320' },
+                { label: 'Slab Cost (sq.ft)', value: '\u20b9900 \u2013 \u20b92500' },
+                { label: 'Installation Method', value: 'Installed using cement mortar bedding or stone adhesive by skilled marble installers' },
+                { label: 'Maintenance', value: 'Periodic sealing and polishing recommended' },
+                { label: '\u2713 Pros', value: 'Elegant veining, premium aesthetic, versatile for modern and classic interiors', cls: 'pros' },
+                { label: '\u2715 Cons', value: 'Porous material, requires sealing', cls: 'cons' },
+                { label: 'Best Places to Use', value: 'Luxury flooring, wall cladding, bathrooms, countertops, decorative wall panels' },
+                { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' }
+              ]
+            },
+            {
+              title: 'Bianco Lasa Marble',
+              rows: [
+                { label: 'Material', value: 'Bright white appearance, with fine grey veining' },
+                { label: 'Types', value: 'Bianco Lasa Classic, Bianco Lasa Venato' },
+                { label: 'Sizes', value: '7\u20139 ft' },
+                { label: 'Thk (mm)', value: '16\u201320' },
+                { label: 'Slab Cost (sq.ft)', value: '\u20b91500 \u2013 \u20b94000' },
+                { label: 'Installation Method', value: 'Installed with cement mortar or marble adhesive with professional stone fixing' },
+                { label: 'Maintenance', value: 'Sealing and periodic polishing required to maintain shine' },
+                { label: '\u2713 Pros', value: 'Bright white appearance, elegant and timeless design', cls: 'pros' },
+                { label: '\u2715 Cons', value: 'Expensive and requires regular maintenance', cls: 'cons' },
+                { label: 'Best Places to Use', value: 'Premium flooring, wall cladding, bathrooms, luxury feature walls' },
+                { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' }
+              ]
+            },
+            {
+              title: 'Travertine Marble',
+              rows: [
+                { label: 'Material', value: 'Natural limestone in warm earthy tones with naturally occurring holes and linear patterns.' },
+                { label: 'Types', value: 'Classic Travertine, Silver Travertine, Walnut Travertine, Ivory Travertine' },
+                { label: 'Sizes', value: '7\u201310 ft length' },
+                { label: 'Thk (mm)', value: '15 \u2013 20 mm (flooring), 12 \u2013 16 mm (wall cladding)' },
+                { label: 'Slab Cost (sq.ft)', value: '\u20b9250 \u2013 \u20b9800' },
+                { label: 'Installation Method', value: 'Installed using cement mortar or stone adhesive on a prepared base' },
+                { label: 'Maintenance', value: 'Seal the stone. Clean with mild pH-neutral stone cleaner. Avoid acidic cleaners.' },
+                { label: '\u2713 Pros', value: 'Elegant natural texture, unique patterns, Cool Temperature, Durable', cls: 'pros' },
+                { label: '\u2715 Cons', value: 'Porous material, Natural holes may require filling, Can stain, Softer', cls: 'cons' },
+                { label: 'Best Places to Use', value: 'Living room flooring, Bathroom walls, Outdoor flooring and patios, Staircases' },
+                { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' }
+              ]
+            }
+          ]
+    },
+    'indian-marbles': {
+      title: 'Indian Marbles',
         tableItems: [
           'Makrana Marble||₹200 – ₹700||16–20||Flooring, temples, wall cladding||Classic Marble Company, Elegant Marble',
           'Banswara Marble||₹120 – ₹400||16–20||Living room flooring, Staircases, Feature walls||Classic Marble Company, Elegant Marble',
@@ -11454,91 +11302,91 @@
           'Ambaji Marble||₹100 – ₹350||12–18||Flooring, staircases, wall panels||RK Marble',
           'Morwad Marble||₹90 – ₹250||12–18||Bedrooms, Living room flooring, Staircases||Rajasthan marble suppliers'
         ],
-        detailItems: [
-          {
-            title: 'Makrana Marble',
-            rows: [
-              { label: 'Material', value: 'Pure white colour' },
-              { label: 'Types', value: 'Makrana White, Makrana Albeta' },
-              { label: 'Sizes', value: '8\u201310 ft length slabs, Cut tiles: 1\u00d71 ft, 2\u00d72 ft, 2\u00d74 ft' },
-              { label: 'Thk (mm)', value: '16\u201318 flooring, 18\u201320 staircases, 12\u201315 wall cladding' },
-              { label: 'Slab Cost (sq.ft)', value: '\u20b9200 \u2013 \u20b9700' },
-              { label: 'Installation Method', value: 'Cement mortar bedding' },
-              { label: 'Maintenance', value: 'Periodic polishing' },
-              { label: '\u2713 Pros', value: 'Durable and long-lasting', cls: 'pros' },
-              { label: '\u2715 Cons', value: 'Limited vein patterns', cls: 'cons' },
-              { label: 'Best Places to Use', value: 'Flooring, temples, wall cladding' },
-              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' }
-            ]
-          },
-          {
-            title: 'Banswara Marble',
-            rows: [
-              { label: 'Material', value: 'White marble with distinctive purple or grey veins' },
-              { label: 'Types', value: 'Banswara White, Banswara Purple, Banswara Gold' },
-              { label: 'Sizes', value: '5\u20139 ft length slabs, Cut tiles 2\u00d72 ft, 2\u00d74 ft' },
-              { label: 'Thk (mm)', value: '16\u201318 flooring, 18\u201320 heavy-use areas, 12\u201315 wall cladding' },
-              { label: 'Slab Cost (sq.ft)', value: '\u20b9120 \u2013 \u20b9400' },
-              { label: 'Installation Method', value: 'Cement mortar bed installation, Polishing after laying' },
-              { label: 'Maintenance', value: 'Periodic sealing recommended, Avoid acidic cleaners' },
-              { label: '\u2713 Pros', value: 'Attractive natural veining, Good durability, Suitable for large flooring areas', cls: 'pros' },
-              { label: '\u2715 Cons', value: 'Requires sealing, Slight colour variation between slabs', cls: 'cons' },
-              { label: 'Best Places to Use', value: 'Living room flooring, Staircases, Feature walls' },
-              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' }
-            ]
-          },
-          {
-            title: 'Katni Marble',
-            rows: [
-              { label: 'Material', value: 'Beige and cream tones with subtle veining' },
-              { label: 'Types', value: 'Katni Beige, Katni Brown, Katni Pink' },
-              { label: 'Sizes', value: '4\u20138 ft length slabs, Tiles 1\u00d71 ft, 2\u00d72 ft' },
-              { label: 'Thk (mm)', value: '16\u201318 flooring, 12\u201315 wall cladding' },
-              { label: 'Slab Cost (sq.ft)', value: '\u20b990 \u2013 \u20b9250' },
-              { label: 'Installation Method', value: 'Installed with cement mortar, Mirror polishing done after installation' },
-              { label: 'Maintenance', value: 'Seal periodically, Regular cleaning with mild detergent' },
-              { label: '\u2713 Pros', value: 'Affordable, Neutral colours, Widely available', cls: 'pros' },
-              { label: '\u2715 Cons', value: 'Slightly porous, Less luxurious than Italian marbles', cls: 'cons' },
-              { label: 'Best Places to Use', value: 'Living rooms, Bedrooms, Commercial flooring' },
-              { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' }
-            ]
-          },
-          {
-            title: 'Ambaji Marble',
-            rows: [
-              { label: 'Material', value: 'Milky white marble with uniform appearance and smooth texture' },
-              { label: 'Types', value: 'Ambaji White, Ambaji Grey' },
-              { label: 'Sizes', value: 'Slabs 5\u20138 ft length, Tiles 2\u00d72 ft, 2\u00d74 ft' },
-              { label: 'Thk (mm)', value: '16\u201318 flooring, 12\u201315 cladding' },
-              { label: 'Slab Cost (sq.ft)', value: '\u20b9100 \u2013 \u20b9350' },
-              { label: 'Installation Method', value: 'Installed using cement mortar or stone adhesive' },
-              { label: 'Maintenance', value: 'Periodic polishing, Use pH-neutral cleaners' },
-              { label: '\u2713 Pros', value: 'Clean white appearance, Affordable, Easy to polish', cls: 'pros' },
-              { label: '\u2715 Cons', value: 'Can stain if not sealed, Slightly porous', cls: 'cons' },
-              { label: 'Best Places to Use', value: 'Flooring, Wall cladding, Staircases' },
-              { label: 'Brands', value: 'RK Marble' }
-            ]
-          },
-          {
-            title: 'Morwad Marble',
-            rows: [
-              { label: 'Material', value: 'White marble with subtle grey patterns' },
-              { label: 'Types', value: 'Morwad White, Morwad Light Vein' },
-              { label: 'Sizes', value: 'Slabs 5\u20138 ft length, Tiles 2\u00d72 ft' },
-              { label: 'Thk (mm)', value: '16\u201318 flooring, 12\u201315 cladding' },
-              { label: 'Slab Cost (sq.ft)', value: '\u20b990 \u2013 \u20b9250' },
-              { label: 'Installation Method', value: 'Cement mortar installation, Polishing after laying' },
-              { label: 'Maintenance', value: 'Periodic sealing recommended, Clean with mild stone cleaner' },
-              { label: '\u2713 Pros', value: 'Budget-friendly marble, Light colour brightens interiors, Easy to install', cls: 'pros' },
-              { label: '\u2715 Cons', value: 'Slightly softer than premium marbles, May require regular polishing', cls: 'cons' },
-              { label: 'Best Places to Use', value: 'Bedrooms, Living room flooring, Staircases' },
-              { label: 'Brands', value: 'Rajasthan marble suppliers' }
-            ]
-          }
-        ]
-      },
-      'kitchen-colors-2': {
-        title: 'Kitchen Colour Combinations',
+          detailItems: [
+            {
+              title: 'Makrana Marble',
+              rows: [
+                { label: 'Material', value: 'Pure white colour' },
+                { label: 'Types', value: 'Makrana White, Makrana Albeta' },
+                { label: 'Sizes', value: '8\u201310 ft length slabs, Cut tiles: 1\u00d71 ft, 2\u00d72 ft, 2\u00d74 ft' },
+                { label: 'Thk (mm)', value: '16\u201318 flooring, 18\u201320 staircases, 12\u201315 wall cladding' },
+                { label: 'Slab Cost (sq.ft)', value: '\u20b9200 \u2013 \u20b9700' },
+                { label: 'Installation Method', value: 'Cement mortar bedding' },
+                { label: 'Maintenance', value: 'Periodic polishing' },
+                { label: '\u2713 Pros', value: 'Durable and long-lasting', cls: 'pros' },
+                { label: '\u2715 Cons', value: 'Limited vein patterns', cls: 'cons' },
+                { label: 'Best Places to Use', value: 'Flooring, temples, wall cladding' },
+                { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' }
+              ]
+            },
+            {
+              title: 'Banswara Marble',
+              rows: [
+                { label: 'Material', value: 'White marble with distinctive purple or grey veins' },
+                { label: 'Types', value: 'Banswara White, Banswara Purple, Banswara Gold' },
+                { label: 'Sizes', value: '5\u20139 ft length slabs, Cut tiles 2\u00d72 ft, 2\u00d74 ft' },
+                { label: 'Thk (mm)', value: '16\u201318 flooring, 18\u201320 heavy-use areas, 12\u201315 wall cladding' },
+                { label: 'Slab Cost (sq.ft)', value: '\u20b9120 \u2013 \u20b9400' },
+                { label: 'Installation Method', value: 'Cement mortar bed installation, Polishing after laying' },
+                { label: 'Maintenance', value: 'Periodic sealing recommended, Avoid acidic cleaners' },
+                { label: '\u2713 Pros', value: 'Attractive natural veining, Good durability, Suitable for large flooring areas', cls: 'pros' },
+                { label: '\u2715 Cons', value: 'Requires sealing, Slight colour variation between slabs', cls: 'cons' },
+                { label: 'Best Places to Use', value: 'Living room flooring, Staircases, Feature walls' },
+                { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' }
+              ]
+            },
+            {
+              title: 'Katni Marble',
+              rows: [
+                { label: 'Material', value: 'Beige and cream tones with subtle veining' },
+                { label: 'Types', value: 'Katni Beige, Katni Brown, Katni Pink' },
+                { label: 'Sizes', value: '4\u20138 ft length slabs, Tiles 1\u00d71 ft, 2\u00d72 ft' },
+                { label: 'Thk (mm)', value: '16\u201318 flooring, 12\u201315 wall cladding' },
+                { label: 'Slab Cost (sq.ft)', value: '\u20b990 \u2013 \u20b9250' },
+                { label: 'Installation Method', value: 'Installed with cement mortar, Mirror polishing done after installation' },
+                { label: 'Maintenance', value: 'Seal periodically, Regular cleaning with mild detergent' },
+                { label: '\u2713 Pros', value: 'Affordable, Neutral colours, Widely available', cls: 'pros' },
+                { label: '\u2715 Cons', value: 'Slightly porous, Less luxurious than Italian marbles', cls: 'cons' },
+                { label: 'Best Places to Use', value: 'Living rooms, Bedrooms, Commercial flooring' },
+                { label: 'Brands', value: 'Classic Marble Company, Elegant Marble' }
+              ]
+            },
+            {
+              title: 'Ambaji Marble',
+              rows: [
+                { label: 'Material', value: 'Milky white marble with uniform appearance and smooth texture' },
+                { label: 'Types', value: 'Ambaji White, Ambaji Grey' },
+                { label: 'Sizes', value: 'Slabs 5\u20138 ft length, Tiles 2\u00d72 ft, 2\u00d74 ft' },
+                { label: 'Thk (mm)', value: '16\u201318 flooring, 12\u201315 cladding' },
+                { label: 'Slab Cost (sq.ft)', value: '\u20b9100 \u2013 \u20b9350' },
+                { label: 'Installation Method', value: 'Installed using cement mortar or stone adhesive' },
+                { label: 'Maintenance', value: 'Periodic polishing, Use pH-neutral cleaners' },
+                { label: '\u2713 Pros', value: 'Clean white appearance, Affordable, Easy to polish', cls: 'pros' },
+                { label: '\u2715 Cons', value: 'Can stain if not sealed, Slightly porous', cls: 'cons' },
+                { label: 'Best Places to Use', value: 'Flooring, Wall cladding, Staircases' },
+                { label: 'Brands', value: 'RK Marble' }
+              ]
+            },
+            {
+              title: 'Morwad Marble',
+              rows: [
+                { label: 'Material', value: 'White marble with subtle grey patterns' },
+                { label: 'Types', value: 'Morwad White, Morwad Light Vein' },
+                { label: 'Sizes', value: 'Slabs 5\u20138 ft length, Tiles 2\u00d72 ft' },
+                { label: 'Thk (mm)', value: '16\u201318 flooring, 12\u201315 cladding' },
+                { label: 'Slab Cost (sq.ft)', value: '\u20b990 \u2013 \u20b9250' },
+                { label: 'Installation Method', value: 'Cement mortar installation, Polishing after laying' },
+                { label: 'Maintenance', value: 'Periodic sealing recommended, Clean with mild stone cleaner' },
+                { label: '\u2713 Pros', value: 'Budget-friendly marble, Light colour brightens interiors, Easy to install', cls: 'pros' },
+                { label: '\u2715 Cons', value: 'Slightly softer than premium marbles, May require regular polishing', cls: 'cons' },
+                { label: 'Best Places to Use', value: 'Bedrooms, Living room flooring, Staircases' },
+                { label: 'Brands', value: 'Rajasthan marble suppliers' }
+              ]
+            }
+          ]
+    },
+    'kitchen-colors-2': {
+      title: 'Kitchen Colour Combinations',
         items: [
           'White Countertop + Mint Green Shutters',
           'White Marble Countertop + Beige Shutters',
@@ -11553,9 +11401,9 @@
           'Light Plum Overhead + Light Green Countertop + Greyish-Green Undercounter',
           'Plumish-Brown Overhead + Light Cream Countertop + Light Beige Undercounter'
         ]
-      },
-      'kitchen-colors': {
-        title: 'Kitchen Colour Combinations',
+    },
+    'kitchen-colors': {
+      title: 'Kitchen Colour Combinations',
         items: [
           'White Countertop + Mint Green Shutters',
           'White Marble Countertop + Beige Shutters',
@@ -11570,9 +11418,9 @@
           'Light Plum Overhead + Light Green Countertop + Greyish-Green Undercounter',
           'Plumish-Brown Overhead + Light Cream Countertop + Light Beige Undercounter'
         ]
-      },
-      'bathroom-colors': {
-        title: 'Bathroom Colour Combinations',
+    },
+    'bathroom-colors': {
+      title: 'Bathroom Colour Combinations',
         items: [
           'Taupe + Beige',
           'Light Plum + White',
@@ -11591,9 +11439,9 @@
           'Light Plum Overhead + Light Green Countertop + Greyish-Green Undercounter',
           'Plumish-Brown Overhead + Light Cream Countertop + Light Beige Undercounter'
         ]
-      },
-      'bedroom-colors': {
-        title: 'Bedroom Colour Combinations',
+    },
+    'bedroom-colors': {
+      title: 'Bedroom Colour Combinations',
         items: [
           'Taupe and Dark wood',
           'Blue + Light Wood',
@@ -11607,9 +11455,9 @@
           'Green + Brown',
           'Plum + Grey'
         ]
-      },
-      'living-colors': {
-        title: 'Living Room Colour Combinations',
+    },
+    'living-colors': {
+      title: 'Living Room Colour Combinations',
         items: [
           'Greige + Green',
           'Taupe + Cane',
@@ -11617,7 +11465,7 @@
           'Light Grey + Mushroom',
           'Beige + Wine'
         ]
-      },
+    },
     };
 
 
@@ -11967,16 +11815,16 @@
         var renderOpts = { title: listData[id].title };
         if (id === 'kitchen-counter') {
           imgMap = {
-      'Engineered Quartz': 'assets/14. Kitchen Counter Tops/Engineered Quartz.jpg',
-      'Granite': 'assets/14. Kitchen Counter Tops/Granite.jpg',
-      'Natural Quartzite': 'assets/14. Kitchen Counter Tops/Natural Quartzite.jpg',
-      '15 MM Tiles': 'assets/14. Kitchen Counter Tops/15 mm Tile.jpg',
-      'Corian': 'assets/14. Kitchen Counter Tops/Corian.jpg',
-      'Natural Marble': 'assets/14. Kitchen Counter Tops/Natural Marble.jpg',
-      'Terrazzo Slabs': 'assets/14. Kitchen Counter Tops/Terrazzo.jpg',
-      'Concrete Microtopping': 'assets/14. Kitchen Counter Tops/Concrete.jpg',
-      'Porcelain Stone': 'assets/14. Kitchen Counter Tops/Porcelain Stone.jpg',
-      'Stainless Steel': 'assets/14. Kitchen Counter Tops/Stainless Steel.jpg'
+            'Engineered Quartz': 'assets/14. Kitchen Counter Tops/Engineered Quartz.jpg',
+            'Granite': 'assets/14. Kitchen Counter Tops/Granite.jpg',
+            'Natural Quartzite': 'assets/14. Kitchen Counter Tops/Natural Quartzite.jpg',
+            '15 MM Tiles': 'assets/14. Kitchen Counter Tops/15 mm Tile.jpg',
+            'Corian': 'assets/14. Kitchen Counter Tops/Corian.jpg',
+            'Natural Marble': 'assets/14. Kitchen Counter Tops/Natural Marble.jpg',
+            'Terrazzo Slabs': 'assets/14. Kitchen Counter Tops/Terrazzo.jpg',
+            'Concrete Microtopping': 'assets/14. Kitchen Counter Tops/Concrete.jpg',
+            'Porcelain Stone': 'assets/14. Kitchen Counter Tops/Porcelain Stone.jpg',
+            'Stainless Steel': 'assets/14. Kitchen Counter Tops/Stainless Steel.jpg'
           };
           renderOpts.tableItems = listData[id].tableItems;
           renderOpts.detailItems = listData[id].detailItems;
@@ -12035,13 +11883,13 @@
           };
         } else if (id === 'granite') {
           imgMap = {
-      'Black Granite': 'assets/20. Granite/Black Granite.jpg',
-      'Black Galaxy Granite': 'assets/20. Granite/Black Galaxy Granite.jpg',
-      'Steel Grey Granite': 'assets/20. Granite/Steel grey Granite.jpg',
-      'Tan Brown Granite': 'assets/20. Granite/Tan Brown Granite.jpg',
-      'Viscount White Granite': 'assets/20. Granite/Viscount White Granite.jpg',
-      'Alaska White Granite': 'assets/20. Granite/Alaska White Granite.jpg',
-      'Imperial Red Granite': 'assets/20. Granite/Imperial red granite.jpg'
+            'Black Granite': 'assets/20. Granite/Black Granite.jpg',
+            'Black Galaxy Granite': 'assets/20. Granite/Black Galaxy Granite.jpg',
+            'Steel Grey Granite': 'assets/20. Granite/Steel grey Granite.jpg',
+            'Tan Brown Granite': 'assets/20. Granite/Tan Brown Granite.jpg',
+            'Viscount White Granite': 'assets/20. Granite/Viscount White Granite.jpg',
+            'Alaska White Granite': 'assets/20. Granite/Alaska White Granite.jpg',
+            'Imperial Red Granite': 'assets/20. Granite/Imperial red granite.jpg'
           };
         } else if (id === 'quartz') {
           imgMap = {
@@ -12093,8 +11941,8 @@
             'Laminated Glass': 'assets/23. Glass/Laminated glass.jpg',
             'Frosted Glass': 'assets/23. Glass/Frosted glass.jpg',
             'Tinted Glass': 'assets/23. Glass/Tinted glass.jpg',
-      'Lacquered Glass': 'assets/23. Glass/Back painted  glass.jpg',
-      'Lacquered/Back Painted Glass': 'assets/23. Glass/Back painted  glass.jpg',
+            'Lacquered Glass': 'assets/23. Glass/Back painted  glass.jpg',
+            'Lacquered/Back Painted Glass': 'assets/23. Glass/Back painted  glass.jpg',
             'Fluted Glass': 'assets/23. Glass/Fluted glass.jpg',
             'Smoked Glass': 'assets/23. Glass/Smoked glass.jpg',
             'Sandwiched Glass': 'assets/23. Glass/Sandwiched glass.jpg',
@@ -12114,12 +11962,12 @@
           };
         } else if (id === 'veneer') {
           imgMap = {
-      'Natural Wood Veneer': 'assets/25. Veneer/Natural Wood Veneer.jpg',
-      'Engineered Veneer': 'assets/25. Veneer/Engineered Veneer.jpg',
-      'Teak Veneer': 'assets/25. Veneer/Teak Veneer.jpg',
-      'Walnut Veneer': 'assets/25. Veneer/Walnut Veneer.jpg',
-      'Oak Veneer': 'assets/25. Veneer/Oak Veneer.jpg',
-      'Dyed Smoked Veneer': 'assets/25. Veneer/Dyed Smoked Veneer.jpg'
+            'Natural Wood Veneer': 'assets/25. Veneer/Natural Wood Veneer.jpg',
+            'Engineered Veneer': 'assets/25. Veneer/Engineered Veneer.jpg',
+            'Teak Veneer': 'assets/25. Veneer/Teak Veneer.jpg',
+            'Walnut Veneer': 'assets/25. Veneer/Walnut Veneer.jpg',
+            'Oak Veneer': 'assets/25. Veneer/Oak Veneer.jpg',
+            'Dyed Smoked Veneer': 'assets/25. Veneer/Dyed Smoked Veneer.jpg'
           };
         }
         renderDataDrivenSection(el, {
@@ -12160,13 +12008,12 @@
         var kitImgMap = {};
         if (id === 'kitchen-shutter') {
           kitImgMap = {
-            'Laminate': 'assets/14. Kitchen Shutters/laminate.jpg',
-            'Veneer': 'assets/14. Kitchen Shutters/veneer.jpg',
-            'PU Paint': 'assets/14. Kitchen Shutters/PU Paint.jpg',
-            'Acrylic': 'assets/14. Kitchen Shutters/acrylic.jpg',
-            'Glass': 'assets/14. Kitchen Shutters/glass.jpg',
-            'Natural Stone Finish': 'assets/14. Kitchen Shutters/Natural Stone.jpg',
-            'Charcoal Panel': 'assets/14. Kitchen Shutters/Charcoal Panel.jpg'
+            'Laminate': 'assets/14.5 Kitchen Shutters/Laminate.jpg',
+            'Veneer': 'assets/14.5 Kitchen Shutters/Veneer.jpg',
+            'PU Paint': 'assets/14.5 Kitchen Shutters/PU Paint.jpg',
+            'Acrylic': 'assets/14.5 Kitchen Shutters/Acrylic.jpg',
+            'Glass': 'assets/14.5 Kitchen Shutters/Glass.jpg',
+            'Natural Stone Finish': 'assets/14.5 Kitchen Shutters/Natural Stone.jpg'
           };
         } else if (id === 'kitchen-must') {
           kitImgMap = {
@@ -12437,39 +12284,34 @@
           tableItems: listData[id].tableItems,
           detailItems: listData[id].detailItems,
           imgMap: {
-            'Floor Mounted WC': 'assets/38.Sanitary Fittings/Floor Mounted WC.jpg',
-            'Wall Hung WC': 'assets/38.Sanitary Fittings/Wall Hung WC.jpg',
-            'Countertop Wash Basin': 'assets/38.Sanitary Fittings/Countertop Wash Basin.jpg',
-            'Wall Hung Wash Basin': 'assets/38.Sanitary Fittings/Wall Hung Wash Basin.jpg',
-            'Full Pedestal Basin': 'assets/38.Sanitary Fittings/Full Pedestal Basin.jpg',
-            'Under Counter Basin': 'assets/38.Sanitary Fittings/Under Counter Basin.jpg',
-            'Basin Mixer Faucet': 'assets/38.Sanitary Fittings/Basin Mixer Faucet.jpg',
-            'Tall Body Basin Mixer': 'assets/38.Sanitary Fittings/Tall Body Basin Mixer.jpg',
-            'Wall Mounted Faucet': 'assets/38.Sanitary Fittings/Wall Mounted Faucet.jpg',
-            'Health Faucet': 'assets/38.Sanitary Fittings/Health Faucet.jpg',
-            'Wall Mounted Shower Head': 'assets/38.Sanitary Fittings/Wall Mounted Shower Head.jpg',
-            'Overhead Rain Shower': 'assets/38.Sanitary Fittings/Overhead Rain Shower.jpg',
-            'Ceiling Mounted Rain Shower': 'assets/38.Sanitary Fittings/Ceiling Mounted Rain Shower.jpg',
-            'Hand Shower Set': 'assets/38.Sanitary Fittings/Hand Shower Set.jpg',
-            'Concealed Shower Mixer': 'assets/38.Sanitary Fittings/Concealed Shower Mixer.jpg',
-            'Exposed Shower Mixer': 'assets/38.Sanitary Fittings/Exposed Shower Mixer.jpg',
-            'Thermostatic Shower Mixer': 'assets/38.Sanitary Fittings/Thermostatic Shower Mixer.jpg',
-            'Shower Panel': 'assets/38.Sanitary Fittings/Shower Panel.jpg',
-            'Body Jets': 'assets/38.Sanitary Fittings/Body Jets.jpg',
-            'Waterfall Shower': 'assets/38.Sanitary Fittings/Waterfall Shower.jpg',
-            'Dual Shower System': 'assets/38.Sanitary Fittings/Dual Shower System.jpg',
-            'Shower Channel Drain': 'assets/38.Sanitary Fittings/Shower Channel Drain.jpg',
-            'Linear Floor Drain': 'assets/38.Sanitary Fittings/Linear Floor Drain.jpg',
-            'Steam Shower System': 'assets/38.Sanitary Fittings/Steam Shower System.jpg',
-            'Digital Shower Control': 'assets/38.Sanitary Fittings/Digital Shower Control.jpg',
-            'Sensor Shower System': 'assets/38.Sanitary Fittings/Sensor Shower System.jpg',
-            'Freestanding Bathtub': 'assets/38.Sanitary Fittings/Freestanding Bathtub.jpg',
-            'Built-In Bathtub': 'assets/38.Sanitary Fittings/Built-In Bathtub.jpg',
-            'Urinal': 'assets/38.Sanitary Fittings/Urinal.jpg',
-            'Sensor Faucet': 'assets/38.Sanitary Fittings/Sensor Faucet.jpg',
-            'Flush Plate': 'assets/38.Sanitary Fittings/Flush Plate.jpg',
-            'Floor Drain / Nahani Trap': 'assets/38.Sanitary Fittings/Floor Drain - Nahani Trap.jpg',
-            'Bottle Trap': 'assets/38.Sanitary Fittings/Bottle Trap.jpg'
+            'Floor Mounted WC': 'assets/41. Sanitary Fittings/1.Floor Mounted WC.jpg',
+            'Wall Hung WC': 'assets/41. Sanitary Fittings/2.Wall Hung WC.jpg',
+            'Countertop Wash Basin': 'assets/41. Sanitary Fittings/3.Countertop Wash Basin.jpg',
+            'Wall Hung Wash Basin': 'assets/41. Sanitary Fittings/4.Wall Hung Wash Basin.jpg',
+            'Full Pedestal Basin': 'assets/41. Sanitary Fittings/5.Full Pedestal Basin.jpg',
+            'Under Counter Basin': 'assets/41. Sanitary Fittings/6.Under Counter Basin.jpg',
+            'Basin Mixer Faucet': 'assets/41. Sanitary Fittings/7.Basin Mixer Faucet.jpg',
+            'Tall Body Basin Mixer': 'assets/41. Sanitary Fittings/8.Tall Body Basin Mixer.jpg',
+            'Wall Mounted Faucet': 'assets/41. Sanitary Fittings/9.Wall Mounted Faucet.jpg',
+            'Health Faucet': 'assets/41. Sanitary Fittings/10.Health Faucet.jpg',
+            'Wall Mounted Shower Head': 'assets/41. Sanitary Fittings/11.Wall Mounted Shower Head.jpg',
+            'Overhead Rain Shower': 'assets/41. Sanitary Fittings/12.Overhead Rain Shower.jpg',
+            'Ceiling Mounted Rain Shower': 'assets/41. Sanitary Fittings/13.Ceiling Mounted Rain Shower.jpg',
+            'Hand Shower Set': 'assets/41. Sanitary Fittings/14.Hand Shower Set.jpg',
+            'Exposed Shower Mixer': 'assets/41. Sanitary Fittings/15.Exposed Shower Mixer.jpg',
+            'Thermostatic Shower Mixer': 'assets/41. Sanitary Fittings/16.Thermostatic Shower Mixer.jpg',
+            'Shower Panel': 'assets/41. Sanitary Fittings/17.Shower Panel.jpg',
+            'Body Jets': 'assets/41. Sanitary Fittings/18.Body Jets.jpg',
+            'Waterfall Shower': 'assets/41. Sanitary Fittings/19.Waterfall Shower.jpg',
+            'Steam Shower System': 'assets/41. Sanitary Fittings/20.Steam Shower System.jpg',
+            'Digital Shower Control': 'assets/41. Sanitary Fittings/21.Digital Shower Control.jpg',
+            'Freestanding Bathtub': 'assets/41. Sanitary Fittings/22.Freestanding Bathtub.jpg',
+            'Built-In Bathtub': 'assets/41. Sanitary Fittings/23.Built-In Bathtub.jpg',
+            'Urinal': 'assets/41. Sanitary Fittings/24.Urinal.jpg',
+            'Sensor Faucet': 'assets/41. Sanitary Fittings/25.Sensor Faucet.jpg',
+            'Flush Plate': 'assets/41. Sanitary Fittings/26.Flush Plate.jpg',
+            'Floor Drain / Nahani Trap': 'assets/41. Sanitary Fittings/27.Floor Drain Nahani Trap.jpg',
+            'Bottle Trap': 'assets/41. Sanitary Fittings/28.Bottle Trap. Perfect for basins where every element i___.jpg'
           }
         });
         return;
@@ -12541,7 +12383,6 @@
             'Smart Home Hub / Controller': 'assets/40.Automation/4.Smart Home Hub Controller.jpg',
             'Voice Control Integration': 'assets/40.Automation/5.Voice Control Integration.jpg',
             'Motion Sensor Automation': 'assets/40.Automation/6.Motion Sensor Automation.jpg',
-
             'Smart HVAC / AC Automation': 'assets/40.Automation/7.Smart AC Automation.jpg',
             'Smart Thermostat': 'assets/40.Automation/8.Smart Thermostat.jpg',
             'Smart Door Lock System': 'assets/40.Automation/9.Smart Door Lock System.jpg'
@@ -12669,7 +12510,7 @@
 
       if (tableData[id]) {
         const d = tableData[id];
-        const isRoomFinishesTable = ['flooring', 'wall', 'ceiling'].indexOf(id) >= 0;
+        const isRoomFinishesTable = ['flooring', 'wall', 'ceiling', 'overview'].indexOf(id) >= 0;
         const tableWrapClass = isRoomFinishesTable ? 'room-finishes-wrap' : 'table-wrap table-responsive custom-table';
         const tableClass = isRoomFinishesTable ? 'room-finishes-table' : 'table custom-table-inner detail-tbl';
         el.innerHTML = `
@@ -12682,21 +12523,26 @@
           <thead><tr><th style="width:50px">Photo</th>${d.cols.map(c => `<th>${c}</th>`).join('')}</tr></thead>
           <tbody>${d.rows.map((r, ri) => `<tr>
             ${thumbTD(id, ri, r[2] || r[1] || '')}
-            ${isRoomFinishesTable ? [
-          `<td><span class="badge">${r[0]}</span></td>`,
-          `<td class="t-name">${r[2]}</td>`,
-          `<td class="t-price">${r[4]}</td>`,
-          `<td>${r[3]}</td>`,
-          `<td>${r[6]}</td>`,
-          `<td class="t-brand">${r[5]}</td>`
-        ].join('') : r.map((cell, i) => {
-          if (i === 0) return `<td><span class="badge">${cell}</span></td>`;
-          if (i === 1) return `<td class="t-cat">${cell}</td>`;
-          if (i === 2) return `<td class="t-name">${cell}</td>`;
-          if (i === 4) return `<td class="t-price">${cell}</td>`;
-          if (i === 5) return `<td class="t-brand">${cell}</td>`;
-          return `<td>${cell}</td>`;
-        }).join('')}
+            ${isRoomFinishesTable ? (
+            id === 'overview' ? [
+            `<td class="t-name">${r[0]}</td>`,
+            `<td class="t-price">${r[1]}</td>`,
+            `<td class="t-brand">${r[2]}</td>`
+          ].join('') : [
+            `<td><span class="badge">${r[0]}</span></td>`,
+            `<td class="t-name">${r[2]}</td>`,
+            `<td class="t-price">${r[4]}</td>`,
+            `<td>${r[3]}</td>`,
+            `<td>${r[6]}</td>`,
+            `<td class="t-brand">${r[5]}</td>`
+          ]) : r.map((cell, i) => {
+            if (i === 0) return `<td><span class="badge">${cell}</span></td>`;
+            if (i === 1) return `<td class="t-cat">${cell}</td>`;
+            if (i === 2) return `<td class="t-name">${cell}</td>`;
+            if (i === 4) return `<td class="t-price">${cell}</td>`;
+            if (i === 5) return `<td class="t-brand">${cell}</td>`;
+            return `<td>${cell}</td>`;
+          }).join('')}
           </tr>`).join('')}</tbody>
         </table></div>`;
       } else if (listData[id]) {
